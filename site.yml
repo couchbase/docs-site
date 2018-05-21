@@ -1,0 +1,12 @@
+site:
+  title: Couchbase Docs
+  start_page: operator:ROOT:overview.adoc
+content:
+  sources:
+  - url: git@github.com:cb-docs-review-space/couchbase-operator.git
+    branches: v*
+    start_path: docs/user
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
