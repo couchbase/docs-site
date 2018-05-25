@@ -9,6 +9,9 @@ content:
   - url: git@github.com:cb-docs-review-space/asterix-opt.git
     branches: v*
     start_path: cbas/doc-publish
+  - url: https://github.com/cb-docs-review-space/couchbase-cli.git
+    branches: v*
+    start_path: docs
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
