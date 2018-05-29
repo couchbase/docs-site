@@ -12,6 +12,9 @@ content:
   - url: https://github.com/cb-docs-review-space/couchbase-cli.git
     branches: v*
     start_path: docs
+  - url: git@github.com:cb-docs-review-space/backup.git
+    branches: v*
+    start_path: docs
 asciidoc:
   extensions:
   - ./lib/inline-man-macro.js
