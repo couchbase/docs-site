@@ -15,6 +15,9 @@ content:
   - url: git@github.com:cb-docs-review-space/backup.git
     branches: v*
     start_path: docs
+  # server-docs is currently last so nav key wins
+  - url: git@github.com:cb-docs-review-space/couchbase-server-docs.git
+    branches: v*
 asciidoc:
   extensions:
   - ./lib/inline-man-macro.js
