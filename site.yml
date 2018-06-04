@@ -6,9 +6,8 @@ content:
   - url: git@github.com:cb-docs-review-space/couchbase-operator.git
     branches: v*
     start_path: docs/user
-  - url: git@github.com:cb-docs-review-space/asterix-opt.git
+  - url: https://github.com/cb-docs-review-space/cbas-doc-staging.git
     branches: v*
-    start_path: cbas/doc-publish
   - url: https://github.com/cb-docs-review-space/couchbase-cli.git
     branches: v*
     start_path: docs
@@ -16,7 +15,7 @@ content:
     branches: v*
     start_path: docs
   # server-docs is currently last so nav key wins
-  - url: git@github.com:cb-docs-review-space/couchbase-server-docs.git
+  - url: https://github.com/cb-docs-review-space/couchbase-server-docs.git
     branches: v*
 asciidoc:
   extensions:
