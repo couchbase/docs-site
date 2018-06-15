@@ -1,6 +1,6 @@
 site:
   title: Couchbase Docs (Review Site)
-  start_page: operator:ROOT:overview.adoc
+  start_page: server:introduction:intro.adoc
 content:
   sources:
   - url: git@github.com:cb-docs-review-space/couchbase-operator.git
