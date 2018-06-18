@@ -22,7 +22,6 @@ asciidoc:
   - ./lib/inline-man-macro.js
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-    snapshot: true
+    url: https://github.com/cb-docs-review-space/cb-docs-ui/releases/download/v4/ui-bundle.zip
 output:
   dir: ./public
