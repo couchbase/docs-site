@@ -14,7 +14,7 @@ content:
   - url: git@github.com:cb-docs-review-space/backup.git
     branches: v*
     start_path: docs
-  # server-docs is currently last so nav key wins
+  # server-docs is currently after other server repos so nav key wins
   - url: https://github.com/cb-docs-review-space/couchbase-server-docs.git
     branches: v*
 asciidoc:
@@ -22,6 +22,6 @@ asciidoc:
   - ./lib/inline-man-macro.js
 ui:
   bundle:
-    url: https://github.com/cb-docs-review-space/cb-docs-ui/releases/download/v10/ui-bundle.zip
+    url: https://github.com/cb-docs-review-space/cb-docs-ui/releases/download/v11/ui-bundle.zip
 output:
   dir: ./public
