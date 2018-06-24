@@ -22,6 +22,6 @@ asciidoc:
   - ./lib/inline-man-macro.js
 ui:
   bundle:
-    url: https://github.com/cb-docs-review-space/cb-docs-ui/releases/download/v11/ui-bundle.zip
+    url: https://github.com/cb-docs-review-space/cb-docs-ui/releases/download/v13/ui-bundle.zip
 output:
   dir: ./public
