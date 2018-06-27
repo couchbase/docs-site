@@ -3,8 +3,8 @@ site:
   start_page: server:introduction:intro.adoc
 content:
   sources:
-  - url: git@github.com:cb-docs-review-space/couchbase-operator.git
-    branches: v*
+  - url: git@github.com:couchbase/couchbase-operator.git
+    branches: beta2
     start_path: docs/user
   - url: https://github.com/cb-docs-review-space/cbas-doc-staging.git
     branches: v*
