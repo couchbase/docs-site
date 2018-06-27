@@ -3,9 +3,9 @@ site:
   start_page: server:introduction:intro.adoc
 content:
   sources:
-  - url: git@github.com:couchbase/couchbase-operator.git
-    branches: beta2
-    start_path: docs/user
+  #- url: git@github.com:couchbase/couchbase-operator.git
+  #  branches: beta2
+  #  start_path: docs/user
   - url: https://github.com/cb-docs-review-space/cbas-doc-staging.git
     branches: v*
   - url: https://github.com/cb-docs-review-space/couchbase-cli.git
