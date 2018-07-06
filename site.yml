@@ -16,7 +16,7 @@ content:
     branches: v*
     start_path: docs
   # server-docs is currently after other server repos so nav key wins
-  - url: https://github.com/cb-docs-review-space/couchbase-server-docs.git
+  - url: git@github.com:couchbase/docs-server.git
     branches: v*
 asciidoc:
   extensions:
