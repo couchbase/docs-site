@@ -7,8 +7,8 @@ content:
   - url: git@github.com:couchbase/couchbase-operator.git
     branches: [beta2, master]
     start_path: docs/user
-  - url: https://github.com/cb-docs-review-space/cbas-doc-staging.git
-    branches: v*
+  - url: git@github.com:couchbase/docs-analytics.git
+    branches: [1.0.x]
   - url: https://github.com/cb-docs-review-space/couchbase-cli.git
     branches: v*
     start_path: docs
