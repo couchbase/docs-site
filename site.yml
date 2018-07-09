@@ -19,6 +19,10 @@ content:
   - url: git@github.com:couchbase/docs-server.git
     branches: v*
 asciidoc:
+  attributes:
+    experimental: ''
+    toc: ~
+    xrefstyle: short
   extensions:
   - ./lib/inline-man-macro.js
 ui:
