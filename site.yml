@@ -18,6 +18,20 @@ content:
   # server-docs is currently after other server repos so nav key wins
   - url: git@github.com:couchbase/docs-server.git
     branches: v*
+  - url: https://github.com/cb-docs-review-space/docs-sdk-c.git
+    branches: v*
+  - url: https://github.com/cb-docs-review-space/docs-sdk-dotnet.git
+    branches: v*
+  - url: https://github.com/cb-docs-review-space/docs-sdk-go.git
+    branches: v*
+  - url: https://github.com/cb-docs-review-space/docs-sdk-java.git
+    branches: v*
+  - url: https://github.com/cb-docs-review-space/docs-sdk-nodejs.git
+    branches: v*
+  - url: https://github.com/cb-docs-review-space/docs-sdk-php.git
+    branches: v*
+  - url: https://github.com/cb-docs-review-space/docs-sdk-python.git
+    branches: v*
 asciidoc:
   attributes:
     experimental: ''
