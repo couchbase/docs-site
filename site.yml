@@ -7,7 +7,7 @@ content:
   branches: v*
   sources:
   - url: .
-    branches: .
+    branches: master
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
     branches: [beta2, master]
