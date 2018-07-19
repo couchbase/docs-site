@@ -6,7 +6,7 @@ site:
 content:
   branches: v*
   sources:
-  - url: .
+  - url: git@github.com:couchbase/docs-site.git
     branches: master
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
