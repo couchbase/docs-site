@@ -1,10 +1,14 @@
 site:
   title: Couchbase Docs (Review Site)
   url: https://docs-staging.couchbase.com
-  start_page: server:introduction:intro.adoc
+  #start_page: server:introduction:intro.adoc
+  start_page: home::index.adoc
 content:
   branches: v*
   sources:
+  - url: .
+    branches: .
+    start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
     branches: [beta2, master]
     start_path: docs/user
@@ -32,6 +36,6 @@ asciidoc:
   - ./lib/inline-man-macro.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v20/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v22/ui-bundle.zip
 output:
   dir: ./public

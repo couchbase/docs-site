@@ -1,0 +1,63 @@
+= Documentation Home
+:page-layout: home
+:!sectids:
+
+[.personas.blades.conceal-title]
+== {empty}
+
+[.blade]
+=== Couchbase for Administrators
+
+If you are a Couchbase administrator needing to configure, deploy, and manage Couchbase Data Platform
+
+* xref:server:getting-started:do-a-quick-install.adoc[5-Minute Install]
+* xref:server:install:install-client-server.adoc[Deployment Options]
+* xref:server:security:security-intro.adoc[Security]
+
+[.blade]
+=== Couchbase for Developers
+
+If you are a Couchbase user wanting to develop on an existing installation
+
+* xref:server:getting-started:do-a-quick-install.adoc[5-Minute Install]
+* xref:nodejs-sdk:common:development-intro.adoc[Developer's Intro]
+* xref:nodejs-sdk:common:sample-application.adoc[Sample Application]
+
+[.blade]
+=== Couchbase for SQL Specialists
+
+If you are a Couchbase user wanting to understand how to develop queries
+
+* xref:server:getting-started:do-a-quick-install.adoc[5-Minute Install]
+* xref:server:getting-started:try-a-query.adoc[N1QL Intro]
+* xref:server:tools:query-workbench.adoc[Query Workbench]
+
+[.browse.tiles]
+== Browse Documentation
+
+[.tile]
+.Server
+* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL]
+* xref:server:fts:full-text-intro.adoc[Full Text Search]
+* xref:server:analytics:introduction.adoc[Analytics (Beta)]
+* xref:server:eventing:eventing-overview.adoc[Eventing]
+* xref:server:sdks:index.adoc[SDKs]
+
+[.tile]
+.Couchbase Mobile
+* link:#[Lite]
+* link:#[Sync Gateway]
+
+[.tile]
+.Couchbase Cloud
+* link:#[Public Cloud]
+* xref:operator::overview.adoc[Autonomous Operator]
+
+[.tile]
+.Connectors
+* xref:server:connectors:elasticsearch/overview.adoc[Elasticsearch]
+* xref:server:connectors:hadoop-1.2/hadoop.adoc[Hadoop]
+* xref:server:connectors:kafka-3.2/kafka-intro.adoc[Kafka]
+* xref:server:connectors:spark-2.2/spark-intro.adoc[Spark]
+* xref:server:connectors:talend/talend.adoc[Talend]
+* xref:server:connectors:odbc-jdbc-drivers.adoc[SQL (ODBC/JDBC)]
