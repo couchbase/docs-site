@@ -20,7 +20,7 @@ If you are a Couchbase administrator needing to configure, deploy, and manage Co
 If you are a Couchbase user wanting to develop on an existing installation
 
 * xref:server:getting-started:do-a-quick-install.adoc[5-Minute Install]
-* xref:nodejs-sdk:common:development-intro.adoc[Developer's Intro]
+* xref:server:sdk:development-intro.adoc[Developer's Intro]
 * xref:nodejs-sdk:common:sample-application.adoc[Sample Application]
 
 [.blade]
@@ -41,7 +41,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 * xref:server:fts:full-text-intro.adoc[Full Text Search]
 * xref:server:analytics:introduction.adoc[Analytics (Beta)]
 * xref:server:eventing:eventing-overview.adoc[Eventing]
-* xref:server:sdks:index.adoc[SDKs]
+* xref:server:sdk:overview.adoc[SDKs]
 
 [.tile]
 .Couchbase Mobile
