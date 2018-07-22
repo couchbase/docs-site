@@ -39,8 +39,9 @@ asciidoc:
     xrefstyle: short
   extensions:
   - ./lib/inline-man-macro.js
+  - ./lib/block-swagger-ui-macro.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v51/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v52/ui-bundle.zip
 output:
   dir: ./public
