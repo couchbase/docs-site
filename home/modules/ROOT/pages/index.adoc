@@ -2,35 +2,38 @@
 :page-layout: home
 :!sectids:
 
+Built with the most powerful NoSQL technology, the Couchbase Data Platform is architected on top of an open source foundation for the massively interactive enterprise. 
+Our geo-distributed Engagement Database provides unmatched developer agility and manageability, as well as unparalleled performance at any scale, from any cloud to the edge.
+
 [.personas.blades.conceal-title]
 == {empty}
 
 [.blade]
 === Couchbase for Administrators
 
-If you are a Couchbase administrator needing to configure, deploy, and manage Couchbase Data Platform
+If you are a Couchbase administrator wanting to configure, deploy, and manage Couchbase Data Platform
 
-* xref:server:getting-started:do-a-quick-install.adoc[5-Minute Install]
-* xref:server:install:install-client-server.adoc[Deployment Options]
+* xref:server:install:get-started.adoc[Deployment Options]
 * xref:server:security:security-intro.adoc[Security]
+* xref:server:backup-restore:backup-restore.adoc[Backup and Restore]
 
 [.blade]
 === Couchbase for Developers
 
 If you are a Couchbase user wanting to develop on an existing installation
 
-* xref:server:getting-started:do-a-quick-install.adoc[5-Minute Install]
-* xref:server:sdk:development-intro.adoc[Developer's Intro]
-* xref:nodejs-sdk:common:sample-application.adoc[Sample Application]
+* xref:java-sdk:ROOT:start-using-sdk.adoc[Quick Install]
+* xref:java-sdk:common:sample-application.adoc[Sample Application]
+* xref:java-sdk:common:core-operations.adoc[CRUD]
 
 [.blade]
 === Couchbase for SQL Developers
 
 If you are a Couchbase user wanting to understand how to develop queries
 
-* xref:server:getting-started:do-a-quick-install.adoc[5-Minute Install]
-* xref:server:getting-started:try-a-query.adoc[N1QL Intro]
-* xref:server:tools:query-workbench.adoc[Query Workbench]
+* xref:server:getting-started:do-a-quick-install.adoc[Quick Install]
+* xref:server:getting-started:try-a-query.adoc[Try a N1QL Query]
+* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
 
 [.browse.tiles]
 == Browse Documentation
