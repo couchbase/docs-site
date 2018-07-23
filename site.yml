@@ -42,6 +42,6 @@ asciidoc:
   - ./lib/block-swagger-ui-macro.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v55/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v56/ui-bundle.zip
 output:
   dir: ./public

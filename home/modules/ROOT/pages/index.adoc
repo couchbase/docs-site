@@ -24,7 +24,7 @@ If you are a Couchbase user wanting to develop on an existing installation
 * xref:nodejs-sdk:common:sample-application.adoc[Sample Application]
 
 [.blade]
-=== Couchbase for SQL Specialists
+=== Couchbase for SQL Developers
 
 If you are a Couchbase user wanting to understand how to develop queries
 
@@ -40,7 +40,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL]
 * xref:server:fts:full-text-intro.adoc[Full Text Search]
 * xref:server:analytics:introduction.adoc[Analytics (Beta)]
-* xref:server:eventing:eventing-overview.adoc[Eventing]
+* xref:server:eventing:eventing-Introduction.adoc[Eventing]
 * xref:server:sdk:overview.adoc[SDKs]
 
 [.tile]
@@ -57,7 +57,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 .Connectors
 * xref:server:connectors:elasticsearch/overview.adoc[Elasticsearch]
 * xref:server:connectors:hadoop-1.2/hadoop.adoc[Hadoop]
-* xref:server:connectors:kafka-3.2/kafka-intro.adoc[Kafka]
+* xref:server:connectors:kafka/kafka-intro.adoc[Kafka]
 * xref:server:connectors:spark-2.2/spark-intro.adoc[Spark]
 * xref:server:connectors:talend/talend.adoc[Talend]
 * xref:server:connectors:odbc-jdbc-drivers.adoc[SQL (ODBC/JDBC)]
