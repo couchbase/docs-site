@@ -20,13 +20,13 @@ content:
     start_path: docs
   # server-docs is currently after other server repos so nav key wins
   - url: git@github.com:couchbase/docs-server.git
-  - url: https://github.com/cb-docs-review-space/docs-sdk-c.git
-  - url: https://github.com/cb-docs-review-space/docs-sdk-dotnet.git
-  - url: https://github.com/cb-docs-review-space/docs-sdk-go.git
-  - url: https://github.com/cb-docs-review-space/docs-sdk-java.git
-  - url: https://github.com/cb-docs-review-space/docs-sdk-nodejs.git
-  - url: https://github.com/cb-docs-review-space/docs-sdk-php.git
-  - url: https://github.com/cb-docs-review-space/docs-sdk-python.git
+  - url: git@github.com:couchbase/docs-sdk-c.git
+  - url: git@github.com:couchbase/docs-sdk-dotnet.git
+  - url: git@github.com:couchbase/docs-sdk-go.git
+  - url: git@github.com:couchbase/docs-sdk-java.git
+  - url: git@github.com:couchbase/docs-sdk-nodejs.git
+  - url: git@github.com:couchbase/docs-sdk-php.git
+  - url: git@github.com:couchbase/docs-sdk-python.git
   #- url: https://github.com/couchbaselabs/couchbase-lite-docs
   #  branches: master, release/2.0
   #- url: https://github.com/couchbase/kafka-connect-couchbase
