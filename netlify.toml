@@ -1,7 +1,7 @@
 [build]
   base = "netlify/"
   publish = "public/"
-  command = "sed -i \"s;git@github.com:;https://$GITHUB_TOKEN:x-oauth-basic@github.com/;g\" ../site.yml && node_modules/.bin/antora --pull --redirect-facility=netlify ../site.yml && sed -i \"s;^/index.html ;/ ;\" ../public/_redirects"
+  command = "sed -i \"s;git@github.com:;https://$GITHUB_TOKEN:x-oauth-basic@github.com/;g\" ../site.yml && URL=https://docs-staging.couchbase.com node_modules/.bin/antora --pull --redirect-facility=netlify ../site.yml && sed -i \"s;^/index.html ;/ ;\" ../public/_redirects"
 
 [build.environment]
   NODE_VERSION = "8"
