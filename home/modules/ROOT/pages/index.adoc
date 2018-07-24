@@ -22,7 +22,7 @@ If you are a Couchbase administrator wanting to configure, deploy, and manage Co
 
 If you are a Couchbase user wanting to develop on an existing installation
 
-* xref:java-sdk:ROOT:start-using-sdk.adoc[Quick Install]
+* xref:java-sdk::start-using-sdk.adoc[Quick Install]
 * xref:java-sdk:common:sample-application.adoc[Sample Application]
 * xref:java-sdk:common:core-operations.adoc[CRUD]
 
@@ -48,12 +48,12 @@ If you are a Couchbase user wanting to understand how to develop queries
 
 [.tile]
 .Couchbase Mobile
-* link:#[Lite]
-* link:#[Sync Gateway]
+* https://developer.couchbase.com/documentation/mobile/current/couchbase-lite/index.html[Lite]
+* https://developer.couchbase.com/documentation/mobile/current/guides/sync-gateway/index.html[Sync Gateway]
 
 [.tile]
 .Couchbase Cloud
-* link:#[Public Cloud]
+* https://info.couchbase.com/rs/302-GJY-034/images/10min_to_Cloud_vF.pdf[Public Cloud]
 * xref:operator::overview.adoc[Autonomous Operator]
 
 [.tile]
