@@ -39,6 +39,7 @@ asciidoc:
   extensions:
   - ./lib/inline-man-macro.js
   - ./lib/block-swagger-ui-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/v59/ui-bundle.zip
