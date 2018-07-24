@@ -1,0 +1,26 @@
+= Couchbase Documentation Site
+// Settings
+ifdef::env-github[:outfilesuffix: .adoc]
+:hide-uri-scheme:
+// URLs
+:url-docs: https://docs.couchbase.com
+:url-org: https://github.com/couchbase
+:url-ui: {url-org}/docs-ui
+
+Antora playbook project for the Couchbase documentation site published at {url-docs}.
+
+== Playbook
+
+The playbook, _site.yml_, provides Antora with the site URL, docs component repository and branch locations, {url-ui}[site UI] location, global AsciiDoc attributes, and Asciidoctor extensions.
+
+== Home Docs Component
+
+The _home_ directory contains the Home documentation component.
+
+== Custom Asciidoctor Extensions
+
+The custom extensions in the _lib_ directory process the manpage macro (Couchbase CLI and Backup components) and the Swagger UI macro.
+
+== Contributing
+
+To learn how to use the playbook and generate the docs site locally, see our contributing guide.
