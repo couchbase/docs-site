@@ -19,7 +19,7 @@ The _home_ directory contains the Home documentation component.
 
 == Custom Asciidoctor Extensions
 
-The custom extensions in the _lib_ directory process the manpage macro (Couchbase CLI and Backup components) and the Swagger UI macro.
+The custom extensions in the _lib_ directory process the manpage macro (Couchbase CLI and Backup components), Swagger UI macro, and multi-row table headers.
 
 == Contributing
 
