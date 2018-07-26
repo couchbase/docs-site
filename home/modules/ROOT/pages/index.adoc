@@ -2,8 +2,15 @@
 :page-layout: home
 :!sectids:
 
-Built with the most powerful NoSQL technology, the Couchbase Data Platform is architected on top of an open source foundation for the massively interactive enterprise. 
-Our geo-distributed Engagement Database provides unmatched developer agility and manageability, as well as unparalleled performance at any scale, from any cloud to the edge.
+== Welcome to the new Couchbase Docs!
+
+The new documentation site, now in Beta, is a huge leap forward in our content strategy.
+As we work out the kinks, we’d love to get your feedback on what we’re doing well, and what we could be doing better.
+You can use the *Feedback* button at the bottom-right corner of any page, or simply send us an email at docs@couchbase.com.
+We look forward to hearing from you!
+
+Looking for the old site?
+Click https://developer.couchbase.com[here] to go back to the Developer Portal.
 
 [.personas.blades.conceal-title]
 == {empty}
@@ -42,7 +49,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 .Server
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL]
 * xref:server:fts:full-text-intro.adoc[Full Text Search]
-* xref:server:analytics:introduction.adoc[Analytics (Beta)]
+* xref:server:analytics:introduction.adoc[Analytics (Developer Preview)]
 * xref:server:eventing:eventing-Introduction.adoc[Eventing]
 * xref:server:sdk:overview.adoc[SDKs]
 
