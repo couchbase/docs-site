@@ -5,7 +5,8 @@ site:
 content:
   branches: v*
   sources:
-  - url: git@github.com:couchbase/docs-site.git
+  - url: .
+    # NOTE the branches value 'HEAD' doesn't work in CI if job doesn't run on a branch
     branches: master
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
@@ -17,7 +18,7 @@ content:
     start_path: docs
   - url: git@github.com:cb-docs-review-space/backup.git
     start_path: docs
-  # server-docs is currently after other server repos so nav key wins
+  # NOTE server-docs is currently after other server repos so nav key wins
   - url: git@github.com:couchbase/docs-server.git
   - url: git@github.com:couchbase/docs-sdk-c.git
   - url: git@github.com:couchbase/docs-sdk-dotnet.git
