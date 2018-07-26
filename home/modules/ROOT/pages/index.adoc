@@ -1,16 +1,15 @@
-= Documentation Home
+= Welcome to the new Couchbase Docs!
 :page-layout: home
 :!sectids:
 
-== Welcome to the new Couchbase Docs!
-
 The new documentation site, now in Beta, is a huge leap forward in our content strategy.
-As we work out the kinks, we’d love to get your feedback on what we’re doing well, and what we could be doing better.
-You can use the *Feedback* button at the bottom-right corner of any page, or simply send us an email at docs@couchbase.com.
+As we work out the kinks, we'd love to get your feedback on what we're doing well, and what we could be doing better.
+To let us know, please use the btn:[Feedback?] button at the bottom-right corner of any page, or send an email to docs@couchbase.com.
 We look forward to hearing from you!
 
-Looking for the old site?
-Click https://developer.couchbase.com[here] to go back to the Developer Portal.
+[.hint]
+Looking for the old documentation site?
+You can find it over at the https://developer.couchbase.com[Developer Portal].
 
 [.personas.blades.conceal-title]
 == {empty}
