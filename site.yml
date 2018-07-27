@@ -43,6 +43,6 @@ asciidoc:
   - ./lib/multirow-table-head-tree-processor.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v66/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v67/ui-bundle.zip
 output:
   dir: ./public
