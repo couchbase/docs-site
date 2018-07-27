@@ -9,8 +9,9 @@
   ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 
 [context.production.environment]
-  ALGOLIA_API_KEY = "ea9d60816cf2bd04472648bfb287fde1"
-  ALGOLIA_INDEX_NAME = "couchbase"
+  ALGOLIA_APP_ID = "E80Q5UHPOS"
+  ALGOLIA_API_KEY = "6e7248a6d21038512a92145e9b903757"
+  ALGOLIA_INDEX_NAME = "couchbase-docs-next"
   FEEDBACK_BUTTON = "true"
 
 [context.deploy-preview]
