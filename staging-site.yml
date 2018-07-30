@@ -1,6 +1,6 @@
 site:
-  title: Couchbase Docs (Beta)
-  url: http://docs.couchbase.com
+  title: Couchbase Docs (Staging)
+  url: http://docs-staging.couchbase.com
   start_page: home::index.adoc
 content:
   branches: v*
@@ -10,7 +10,7 @@ content:
     branches: .
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
-    branches: [beta2]
+    branches: [beta2, master]
     start_path: docs/user
   - url: git@github.com:couchbase/docs-analytics.git
     branches: [1.0.x]
@@ -27,6 +27,11 @@ content:
   - url: git@github.com:couchbase/docs-sdk-nodejs.git
   - url: git@github.com:couchbase/docs-sdk-php.git
   - url: git@github.com:couchbase/docs-sdk-python.git
+  #- url: https://github.com/couchbaselabs/couchbase-lite-docs
+  #  branches: master, release/2.0
+  #- url: https://github.com/couchbase/kafka-connect-couchbase
+  #  branches: master
+  #  start_path: docs
 asciidoc:
   attributes:
     experimental: ''

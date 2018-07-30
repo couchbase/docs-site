@@ -1,7 +1,7 @@
 [build]
   base = "netlify/"
   publish = "public/"
-  command = "git checkout -B $BRANCH && sed -i \"s;git@github.com:;https://$GITHUB_TOKEN:x-oauth-basic@github.com/;g\" ../site.yml && node_modules/.bin/antora --url https://docs-staging.couchbase.com --pull --redirect-facility=netlify ../site.yml && sed -i \"s;^/index.html ;/ ;\" ../public/_redirects"
+  command = "git checkout -B $BRANCH && sed -i \"s;git@github.com:;https://$GITHUB_TOKEN:x-oauth-basic@github.com/;g\" ../staging-site.yml && node_modules/.bin/antora --pull --redirect-facility=netlify ../staging-site.yml && sed -i \"s;^/index.html ;/ ;\" ../public/_redirects"
 
 [build.environment]
   NODE_VERSION = "8"
@@ -15,7 +15,7 @@
   FEEDBACK_BUTTON = "true"
 
 [context.deploy-preview]
-  command = "git checkout -B $BRANCH && sed -i \"s;git@github.com:;https://$GITHUB_TOKEN:x-oauth-basic@github.com/;g\" ../site.yml && node_modules/.bin/antora --url $DEPLOY_PRIME_URL --pull --redirect-facility=netlify ../site.yml && sed -i \"s;^/index.html ;/ ;\" ../public/_redirects"
+  command = "git checkout -B $BRANCH && sed -i \"s;git@github.com:;https://$GITHUB_TOKEN:x-oauth-basic@github.com/;g\" ../staging-site.yml && node_modules/.bin/antora --url $DEPLOY_PRIME_URL --pull --redirect-facility=netlify ../staging-site.yml && sed -i \"s;^/index.html ;/ ;\" ../public/_redirects"
 
 [[headers]]
   for = "/_/font/*"
