@@ -29,8 +29,8 @@ If you are a Couchbase administrator wanting to configure, deploy, and manage Co
 If you are a Couchbase user wanting to develop on an existing installation
 
 * xref:java-sdk::start-using-sdk.adoc[Quick Install]
-* xref:java-sdk:common:sample-application.adoc[Sample Application]
-* xref:java-sdk:common:core-operations.adoc[CRUD]
+* xref:java-sdk::common/sample-application.adoc[Sample Application]
+* xref:java-sdk::common/core-operations.adoc[CRUD]
 
 [.blade]
 === Couchbase for SQL Developers
