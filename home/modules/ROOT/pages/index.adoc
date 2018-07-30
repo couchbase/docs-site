@@ -49,7 +49,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL]
 * xref:server:fts:full-text-intro.adoc[Full Text Search]
 * xref:server:analytics:introduction.adoc[Analytics (Developer Preview)]
-* xref:server:eventing:eventing-Introduction.adoc[Eventing]
+* xref:server:eventing:eventing-overview.adoc[Eventing]
 * xref:server:sdk:overview.adoc[SDKs]
 
 [.tile]
