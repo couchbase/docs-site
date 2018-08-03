@@ -18,6 +18,9 @@ content:
     start_path: docs
   - url: git@github.com:cb-docs-review-space/backup.git
     start_path: docs
+  - url: https://github.com/cb-docs-review-space/kafka-connect-couchbase.git
+    branches: [server-v5.1, server-v5.5]
+    start_path: docs
   # NOTE server-docs is currently after other server repos so nav key wins
   - url: git@github.com:couchbase/docs-server.git
   - url: git@github.com:couchbase/docs-sdk-c.git
