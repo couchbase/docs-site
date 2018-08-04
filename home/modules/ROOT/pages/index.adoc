@@ -11,10 +11,10 @@ We look forward to hearing from you!
 Looking for the old documentation site?
 You can find it over at the https://developer.couchbase.com[Developer Portal].
 
-[.personas.blades.conceal-title]
+[.cards.personas.conceal-title]
 == {empty}
 
-[.blade]
+[.card]
 === Couchbase for Administrators
 
 If you are a Couchbase administrator wanting to configure, deploy, and manage Couchbase Data Platform
@@ -23,7 +23,7 @@ If you are a Couchbase administrator wanting to configure, deploy, and manage Co
 * xref:server:security:security-intro.adoc[Security]
 * xref:server:backup-restore:backup-restore.adoc[Backup and Restore]
 
-[.blade]
+[.card]
 === Couchbase for Developers
 
 If you are a Couchbase user wanting to develop on an existing installation
@@ -32,7 +32,7 @@ If you are a Couchbase user wanting to develop on an existing installation
 * xref:java-sdk::common/sample-application.adoc[Sample Application]
 * xref:java-sdk::common/core-operations.adoc[CRUD]
 
-[.blade]
+[.card]
 === Couchbase for SQL Developers
 
 If you are a Couchbase user wanting to understand how to develop queries
@@ -41,7 +41,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 * xref:server:getting-started:try-a-query.adoc[Try a N1QL Query]
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
 
-[.browse.tiles]
+[.tiles.browse]
 == Browse Documentation
 
 [.tile]

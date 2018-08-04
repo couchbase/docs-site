@@ -41,6 +41,6 @@ asciidoc:
   - ./lib/multirow-table-head-tree-processor.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v89/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v90/ui-bundle.zip
 output:
   dir: ./public
