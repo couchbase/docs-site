@@ -45,7 +45,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 == Browse Documentation
 
 [.tile]
-.Server
+.xref:server:introduction:intro.adoc[Server]
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL]
 * xref:server:fts:full-text-intro.adoc[Full Text Search]
 * xref:server:analytics:introduction.adoc[Analytics (Developer Preview)]
@@ -63,7 +63,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 * xref:operator::overview.adoc[Autonomous Operator]
 
 [.tile]
-.Connectors
+.xref:server:connectors:intro.adoc[Connectors]
 * xref:server:connectors:elasticsearch/overview.adoc[Elasticsearch]
 * xref:server:connectors:hadoop-1.2/hadoop.adoc[Hadoop]
 * xref:server:connectors:kafka/kafka-intro.adoc[Kafka]
