@@ -1,3 +1,4 @@
+/.cache/
 /public/
 /netlify/node_modules/
 /node_modules/
