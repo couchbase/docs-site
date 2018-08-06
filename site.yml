@@ -1,6 +1,6 @@
 site:
   title: Couchbase Docs (Beta)
-  url: http://docs.couchbase.com
+  url: https://docs.couchbase.com
   start_page: home::index.adoc
 content:
   branches: v*

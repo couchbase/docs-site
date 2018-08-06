@@ -1,6 +1,6 @@
 site:
   title: Couchbase Docs (Staging)
-  url: http://docs-staging.couchbase.com
+  url: https://docs-staging.couchbase.com
   start_page: home::index.adoc
 content:
   branches: v*
