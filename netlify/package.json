@@ -1,8 +1,8 @@
 {
-  "name": "couchbase-docs-site-review",
+  "name": "couchbase-docs-staging-site",
   "private": true,
   "devDependencies": {
-    "@antora/cli": "1.0.1",
-    "@antora/site-generator-default": "1.0.1"
+    "@antora/cli": "1.0.2",
+    "@antora/site-generator-default": "1.0.2"
   }
 }
