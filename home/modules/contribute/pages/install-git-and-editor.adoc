@@ -1,0 +1,61 @@
+= Install Git and an AsciiDoc Editor
+:url-atom-docs: https://flight-manual.atom.io/getting-started/sections/installing-atom
+:url-linux: {url-atom-docs}/#platform-linux
+:url-mac: {url-atom-docs}/#platform-mac
+:url-windows: {url-atom-docs}/#platform-windows
+
+== Create a GitHub Account
+
+The Couchbase documentation is stored on GitHub, so if you don't have a GitHub account, you need to https://github.com/join[create one].
+
+== Download and Install Git
+
+To clone and work with Git repositories on your device, i.e., local repositories, install Git using your operating system's package manager.
+Alternatively, you can download it from the https://git-scm.com/downloads[Git project].
+
+////
+To see if you have Git, open a terminal and type:
+
+[source,console]
+ $ git --version
+
+If a version number is not returned below the command line, you don't have Git and need to install it.
+////
+
+== Install an AsciiDoc Editor
+
+AsciiDoc is the markup language Couchbase uses for writing documentation.
+You can write an AsciiDoc document using any plain text editor.
+If you don't have a preferred text editor or IDE already, install Atom and the listed AsciiDoc packages for an enhanced experience.
+
+// NOTE: AsciiDoc and Antora packages for Visual Studio Code are planned for release in late 2018.
+
+=== Download and Install Atom
+
+Atom is an open source, extensible text editor that works on Linux, MacOS, and Windows.
+
+. Go to the https://atom.io/[Atom home page].
+The Atom home page should detect your operating system automatically and provide the correct download options.
+. Download and install Atom.
+Use the links below for additional installation instructions.
+** {url-linux}[Atom for Linux]
+** {url-mac}[Atom for MacOS]
+** {url-windows}[Atom for Windows]
+
+=== Install the AsciiDoc Packages
+
+. Start Atom and go to menu:Edit[Preferences] or press kbd:[Ctrl+,].
+This opens the Settings panel.
+. In the sidebar on the left, click btn:[Install].
+. In the input field labeled *Search packages*, enter each package listed below, and install it.
+
+language-asciidoc::
+The `language-asciidoc` package provides AsciiDoc syntax highlighting and snippets.
+
+asciidoc-preview::
+The `asciidoc-preview` package renders a preview an AsciiDoc document in Atom.
+
+== Next Steps
+
+. xref:set-up-workspace.adoc[Set up your local workspace].
+. xref:asciidoc.adoc[Learn about AsciiDoc].
