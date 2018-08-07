@@ -1,0 +1,129 @@
+= Set Up Your Local Git Workspace
+:url-git-server: https://github.com/couchbase/docs-server
+:url-git-cli: https://github.com/couchbase/couchbase-cli/tree/master/docs
+:url-git-sdk-c: https://github.com/couchbase/docs-sdk-c
+:url-git-sdk-go: https://github.com/couchbase/docs-sdk-go
+:url-git-sdk-java: https://github.com/couchbase/docs-sdk-java
+:url-git-sdk-dotnet: https://github.com/couchbase/docs-sdk-dotnet
+:url-git-sdk-nodejs: https://github.com/couchbase/docs-sdk-nodejs
+:url-git-sdk-php: https://github.com/couchbase/docs-sdk-php
+:url-git-sdk-python: https://github.com/couchbase/docs-sdk-python
+:url-git-home: https://github.com/couchbase/docs-site/tree/master/home
+
+You only need to do these steps the first time you're contributing to a repository.
+
+* [x] Fork the appropriate repository into your GitHub account.
+* [x] Create a clone of the repository on your device.
+* [x] Connect your local repository with the upstream repository.
+
+== Fork the Repository
+
+WARNING: To contribute documentation changes, you must fork the appropriate repository to your personal GitHub account.
+The Docs CI runner automatically fails and closes any pull request (PR) that isn't submitted from a fork.
+
+The Couchbase documentation is stored in multiple repositories.
+
+* {url-git-server}[Server]
+* {url-git-cli}[CLI]
+* {url-git-sdk-c}[C SDK]
+* {url-git-sdk-go}[Go SDK]
+* {url-git-sdk-java}[Java SDK]
+* {url-git-sdk-dotnet}[.NET SDK]
+* {url-git-sdk-nodejs}[Node.js SDK]
+* {url-git-sdk-php}[PHP SDK]
+* {url-git-sdk-python}[Python SDK]
+* {url-git-home}[Docs Site (Home page and Contributing Guide)]
+
+Go to the appropriate repository on GitHub and click btn:[Fork].
+
+NOTE: TODO DJA Add sidebar styles to UI to process following block.
+
+.When you can't find the right repository
+****
+Not all of the Couchbase documentation repositories can accept contributor pull requests at this time.
+To quickly find the source file for the page you want to edit, click on the image:edit.svg[,18,alt="edit"] icon at the top of the page.
+You'll be taken to the page's repository.
+Click btn:[Fork].
+
+If there isn't an image:edit.svg[,18,alt="edit"] icon on the page, then you can't submit changes to the file using a PR.
+However, you can contribute proposed fixes and improvements using the btn:[Feedback?] button at the bottom of the page.
+****
+
+== Clone the Repository
+
+After you fork the repository, clone the repository to your device.
+
+. Create or select the folder where you want to store the repository clone.
+. Open a terminal and change into the selected folder.
++
+[source,console]
+$ cd path/to/project/folder
+
+. Go to the repository on GitHub, and click btn:[Clone or download].
+. Click the Clipboard icon to copy the repository's Git URL.
+. In your terminal type `git clone`, paste the copied URL, and press kbd:[Enter].
+For example, to clone your fork of the docs-server repository, you'd enter:
++
+[source,console]
+$ git clone git@github.com:this-is-you/docs-server.git
+
+. Change into the repository folder created by the clone operation.
++
+[source,console]
+$ cd docs-server
+
+== Sync with the Upstream Repository
+
+You need to connect your local workspace to the upstream repository so the two repositories can stay in sync.
+
+. Go to the upstream repository on GitHub, and click btn:[Clone or download].
+. Click the Clipboard icon to copy the repository's Git URL.
+. In your terminal type `git remote add upstream`, paste the copied URL, and press kbd:[Enter].
+For example, to connect to the remote upstream docs-server repository, you'd enter:
++
+[source,console]
+$ git remote add upstream git@github.com:couchbase/docs-server.git
+
+Now you're ready to start working on the documentation.
+
+== Next Steps
+
+. Create a working branch
+. Commit your changes
+. Submit a pull request
+
+////
+== Common Workflow
+
+A common workflow can be found below:
+
+```
+# Only required when first setting up the local repo
+git clone https://github.com/<your-user>/docs-cb4.git
+
+cd docs-cb4
+
+BRANCH=DOC-XXXX
+# Ensure that we base our changes on master
+git checkout master
+# Creates a new branch with the desired name
+git branch $BRANCH
+
+# Creates the branch on your remote repo
+git push origin $BRANCH
+
+# Checks out the newly created branch
+git checkout $BRANCH
+
+# Edit the files in question
+
+# Add the edited files to be committed
+git add my_files
+
+# Commit the edited files
+git commit -m "DOC-XXXX: Created git workflow example"
+
+# Push the updated changes to your remote repository
+git push origin $BRANCH
+```
+////
