@@ -6,8 +6,7 @@ content:
   branches: v*
   sources:
   - url: .
-    # IMPORTANT the branches value '.' doesn't work in CI if job doesn't run on a branch
-    branches: .
+    branches: HEAD
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
     branches: [beta2, master]
