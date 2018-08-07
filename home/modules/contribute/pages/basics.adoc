@@ -1,0 +1,341 @@
+= AsciiDoc Basics
+:url-docs-antora: https://docs.antora.org/antora/1.0
+:url-docs-adoc: https://asciidoctor.org/docs/user-manual
+:url-pages: {url-docs-antora}/page
+:url-tables: {url-docs-adoc}/#tables
+
+== Document and Section Titles
+
+Documents that are saved in the _pages_ directory of a module must have a title.
+Heading 2 section titles, indicated by two equals signs (`==`), are displayed in the *On This Page* sidebar.
+
+----
+= Document Title (H1)
+== Heading 2 Section Title (H2)
+=== Heading 3 Section Title (H3)
+==== Heading 4 Section Title (H4)
+----
+
+Don't nest headings out of order.
+For example, a Heading 4 can't be directly inside a Heading 2 section; it must be nested inside a Heading 3 section.
+
+== Bold, Italic, and Code Styles
+
+----
+include::{examplesdir}/inline-styles.adoc[]
+----
+
+Rendered as:
+
+include::{examplesdir}/inline-styles.adoc[]
+
+You can add multiple inline styles to text as long as the syntax is placed in the correct order.
+
+* Monospace syntax (`++`++`) is always the outermost formatting set.
+* Bold syntax (`*`) must be outside the italic formatting set.
+* Italic syntax (`_`) is always the innermost formatting set.
+
+To mark up code blocks, include example files, and add callouts, see xref:code-blocks.adoc[Code Blocks and Callouts].
+
+== Button, Keyboard, and Menu UI Macros
+
+----
+include::{examplesdir}/ui-macros.adoc[]
+----
+
+Rendered as:
+
+include::{examplesdir}/ui-macros.adoc[]
+
+== URLs
+
+*Don't use URLs or system paths to link between docs.couchbase.com documents.*
+Document-to-document links are created with xref:cross-references.adoc[cross references] to ensure domain, component, and version portability.
+
+----
+File bugs at https://issues.couchbase.com.
+
+Join the https://gitter.im/antora/users[Antora chat room] to meet and get help from the community.
+----
+
+Rendered as:
+
+File bugs at https://issues.couchbase.com.
+
+Join the https://gitter.im/antora/users[Antora chat room] to meet and get help from the community.
+
+=== Escaping URLs
+
+When a URL should be inactive, you can escape it by placing a backslash (`\`) directly in front of it.
+To style and escape a URL, use the `+` passthrough inside any inline style markup.
+
+----
+If it is not specified, the default URL \http://localhost:8091 is used.
+
+If it is not specified, the default URL `+http://localhost:8091+` is used.
+----
+
+Rendered as:
+
+If it is not specified, the default URL \http://localhost:8091 is used.
+
+If it is not specified, the default URL `+http://localhost:8091+` is used.
+
+=== URL Best Practices
+
+* Always use `https://` for external webpage links.
+* Escape `+http://localhost+` URLs in regular text so they don't become links.
+* Create attributes for long URLs to improve the source readability for other contributors.
+* Create attributes for URLs that contain sets of symbols, such as multiple underscores (`_`) and backticks (`++`++`), that could be misinterpreted as inline markup.
+* Create attributes for URLs used several times on the same page.
+* Don't use URLs for linking between documentation pages or to in-page anchors.
+
+== Checklists
+
+----
+include::{examplesdir}/lists.adoc[tag=check]
+----
+
+Rendered as:
+
+include::{examplesdir}/lists.adoc[tag=check]
+
+== Description Lists
+
+----
+include::{examplesdir}/description-lists.adoc[tag=basic]
+----
+
+Rendered as:
+
+include::{examplesdir}/description-lists.adoc[tag=basic]
+
+.Description list with complex content
+----
+include::{examplesdir}/description-lists.adoc[tag=complex]
+----
+
+Rendered as:
+
+include::{examplesdir}/description-lists.adoc[tag=complex]
+
+== Ordered Lists
+
+.Ordered list with nested levels
+----
+include::{examplesdir}/lists.adoc[tag=ordered]
+----
+
+Rendered as:
+
+include::{examplesdir}/lists.adoc[tag=ordered]
+
+== Unordered Lists
+
+.Unordered list with nested levels
+----
+include::{examplesdir}/lists.adoc[tag=unordered]
+----
+
+Rendered as:
+
+include::{examplesdir}/lists.adoc[tag=unordered]
+
+== Images
+
+The block image macro (`image::[]`) and the inline image macro (`image:[]`) accept SVG, PNG, JPG/JPEG, and GIF file formats.
+
+Block images, indicated by two colons (`::`), are entered on their own line and displayed on their own line.
+Optional attributes and values are entered inside the macro's attribute list (`[]`).
+In the <<block,block image example>>, the first positional value is empty, so the opening square bracket (`[`) is directly followed by a comma (`,`).
+The second positional value, `280`, indicates the maximum width of the image.
+The next attribute, `align`, and its assigned value `left`, places the image against the left page margin.
+
+If the macro's attribute list is empty (e.g., `image::filename.jpg[]`), the image is displayed at its original size and centered on the page.
+
+[#block]
+.Block image
+----
+image::console-login.png[,280,align=left]
+----
+
+Rendered as:
+
+image::console-login.png[,280,align=left]
+
+The inline image macro, indicated by a single colon (`:`), is used for displaying small images and icons directly in the flow of a sentence.
+
+.Inline image
+----
+Click the image:edit.svg[,16] icon.
+----
+
+Rendered as:
+
+Click the image:edit.svg[,16] icon.
+
+== Admonitions
+
+There are five built-in admonition labels.
+
+* NOTE
+* TIP
+* IMPORTANT
+* CAUTION
+* WARNING
+
+.Basic admonitions
+----
+include::{examplesdir}/admonitions.adoc[tag=basic]
+----
+
+Rendered as:
+
+include::{examplesdir}/admonitions.adoc[tag=basic]
+
+.Complex admonition
+----
+include::{examplesdir}/admonitions.adoc[tag=complex]
+----
+
+Rendered as:
+
+include::{examplesdir}/admonitions.adoc[tag=complex]
+
+== Tables
+
+Tables are delimited by `|===` (a vertical bar followed by three equals signs).
+The number of columns in a table is determined by the number of cells found in the first non-blank line after the table delimiter (`|===`) or by the values assigned to the `cols` attribute.
+A new cell is created each time the processor encounters a vertical bar (`|`).
+Cells are grouped into rows.
+Each row must share the same number of cells, taking into account any column or row spans.
+
+.Table with implicit column value and header row
+----
+|=== // <1>
+|Name of Column 1 |Name of Column 2 // <2> <3>
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1 // <4>
+
+|Cell in column 1, row 2 |Cell in column 2, row 2 // <5>
+|===
+----
+<1> A table is delimited by `|===`.
+<2> When a cell, marked by a vertical bar (`|`), is placed on the line directly below the delimiter, it is interpreted as a header row.
+<3> The number of cells found in the header row indicates the number of columns (sets `cols` implicitly).
+<4> The cells in a row can be entered on separate lines.
+<5> The cells in a row can be entered on the same line.
+
+Rendered as:
+
+|===
+|Name of Column 1 |Name of Column 2
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2 |Cell in column 2, row 2
+|===
+
+Since tables are AsciiDoc block elements they can have titles, roles, IDs, as well as table-specific attributes.
+
+.Table with title, ID, `cols`, and `options="header"`
+----
+.Optional title
+[#optional-id,cols="1,1,2",options="header"] // <1> <2> <3> <4>
+|===
+
+|Name of Column 1
+|Name of Column 2
+|Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+----
+<1> If assigned, an ID must be set first in the table's attribute list.
+<2> The number of values assigned to `cols` indicates the number of columns, in this case, the table has three columns.
+<3> The proportion of each value assigned to `cols` relative to its other values indicates the width of each column.
+In this example, column 1 and column 2 will be half the width of column 3.
+<4> To make the first row a header row, assign `header` to the `options` attribute.
+
+Rendered as:
+
+.Optional title
+[#optional-id,cols="1,1,2",options="header"]
+|===
+
+|Name of Column 1
+|Name of Column 2
+|Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+
+Here's an example of a table with a title, implicit header row, and the proportional width of the two columns set.
+
+----
+include::{examplesdir}/tables.adoc[tag=two-col]
+----
+
+Rendered as:
+
+include::{examplesdir}/tables.adoc[tag=two-col]
+
+=== Block Elements in Tables
+
+Any block-level elements, such as code blocks, lists, admonitions, etc., can be entered into a cell.
+However, the specifier `a` (which stands for AsciiDoc) must be placed on the cell, row, or column in order for them to be processed as AsciiDoc blocks.
+In the following example, the `a` specifier is placed on the cells containing block elements.
+
+....
+include::{examplesdir}/tables.adoc[tag=adoc]
+....
+
+Rendered as:
+
+include::{examplesdir}/tables.adoc[tag=adoc]
+
+=== Column and Row Spans
+
+The span factor is the number of columns or rows, including the starting row or column, the cell should span.
+
+* To have a cell span multiple columns, place the span factor and `+` operator directly before the `|` of the starting cell.
+* To span multiple rows, place a dot (`.`) directly before the span factor and `+` operator.
+
+----
+include::{examplesdir}/tables.adoc[tag=spans]
+----
+
+Rendered as:
+
+include::{examplesdir}/tables.adoc[tag=spans]
+
+=== Table Attributes and Options
+
+There are many more AsciiDoc table attributes, options, and specifiers.
+For more examples and information, see the {url-tables}[Asciidoctor table documentation].
+
+== Learn More
+
+* xref:cross-references.adoc[Document-to-document cross references]
+//* Anchors and IDs
+* xref:code-blocks.adoc[Code blocks]
+* xref:code-blocks.adoc#callouts[Callout numbers]
+//* Partial file includes
+//* Page, block, and inline roles
+//* Attributes and metadata
+
+Also, you can find more AsciiDoc examples in the {url-pages}[Antora documentation].
