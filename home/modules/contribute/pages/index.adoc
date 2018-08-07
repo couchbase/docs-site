@@ -4,12 +4,9 @@
 // URLs
 :url-issues: https://issues.couchbase.com
 :url-issues-doc: {url-issues}/projects/DOC/issues
-:url-docs: https://docs.couchbase.com
 :url-2056: {url-issues}/browse/DOC-2056
 
 Thank you for taking the time and effort to improve the Couchbase documentation.
-
-//The following is a short guide for contributing to the Couchbase documentation.
 
 == Reporting Bugs and Requesting Enhancements
 
@@ -17,14 +14,14 @@ All bugs and enhancements for the Couchbase documentation are tracked on the {ur
 If you find an error or think there is room for improvement please don't keep it to yourself, even if you don't intend to make the change yourself!
 Raise a DOC bug and someone on the team will look at it.
 
-You can also raise a DOC issue by clicking the btn:[Feedback?] button in the bottom-right of any page on {url-docs}.
+You can also raise a DOC issue by clicking the btn:[Feedback?] button in the bottom-right corner of any page on docs.couchbase.com.
 
-=== How do I submit a good DOC issue?
+=== How Do I Submit a Good DOC Issue?
 
-Use a clear and descriptive title::
-E.g "`Instructions for disabling THP on RHEL/Centos 7 and later do not work`".
+*Use a clear and descriptive title*.
+E.g Instructions for disabling THP on RHEL/Centos 7 and later do not work.
 
-Describe the problem or enhancement in full::
+*Describe the problem or enhancement in full*.
 For any problem, describe it in detail, including any expected results and how they differ from the real results.
 Remember, the documentation team are not experts in every aspect of Couchbase.
 For that reason, be as descriptive as possible, providing the correct text or command.
@@ -36,15 +33,19 @@ This drastically reduces the time it takes to resolve the issue.
 If you want to contribute the changes to resolve an issue yourself, then this is greatly encouraged!
 
 You can submit simple changes, such as typo fixes and minor clarifications, using the <<simple>>.
-For more extensive content additions and updates, or if you prefer to work locally, see the Docs Writer Complete Workflow.
-// add workflow xref
+For more extensive content additions and updates, or if you prefer to work locally, see the xref:writer-workflow.adoc[Complete Workflow].
 
 [#simple]
 == Simple Edits Workflow
 //Quick Edits Workflow
 
-For simple edits and fixes, you can edit the content directly on GitHub by clicking the edit icon found on many of the documentation pages.
-// add inline image
+For simple changes and fixes, you can edit the content directly on GitHub by clicking the image:edit.svg[,16,alt="edit"] icon found on many of the documentation pages.
 
-Once you've made the changes, replace the default "`Update this-page.adoc`" commit message with a short, direct description of your change, and click btn:[Commit Changes].
+Once you've made your edits, replace the default commit message with a short description of your change, and click btn:[Commit Changes].
 Then follow the on-screen instructions to open a pull request.
+
+== Next Steps
+
+. xref:install-git-and-editor.adoc[Install Git and an AsciiDoc editor] to work on the documentation locally.
+. xref:set-up-workspace.adoc[Set up your local workspace].
+. xref:asciidoc.adoc[Learn about AsciiDoc].
