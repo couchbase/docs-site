@@ -1,0 +1,26 @@
+* xref:index.adoc[Docs Contributing Guide]
+* xref:install-git-and-editor.adoc[Install Git and an AsciiDoc Editor]
+* xref:set-up-workspace.adoc[Set Up Local Git Workspace]
+* xref:writer-workflow.adoc[Writer Workflow]
+// ** Repository Organization
+
+* xref:asciidoc.adoc[AsciiDoc]
+** xref:basics.adoc[AsciiDoc Basics]
+** xref:cross-references.adoc[Cross References]
+** xref:code-blocks.adoc[Code Blocks & Callouts]
+//** Partial File Includes
+//** Roles & Conditionals (Pending)
+//** Attributes & Metadata (Pending)
+//** Custom Extensions (Pending)
+
+* Antora (Group pending)
+** Install Antora
+** Get Playbook
+//*** Contributor versus Staging Playbook
+//*** Repository Authentication
+** Build Site with Local Changes
+** Preview Site
+
+* xref:style-and-voice.adoc[Style and Voice]
+
+* Additional Resources

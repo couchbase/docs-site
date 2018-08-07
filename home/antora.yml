@@ -1,3 +1,5 @@
 name: home
 title: Home
 version: master
+nav:
+- modules/contribute/nav.adoc
