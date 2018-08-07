@@ -1,0 +1,90 @@
+= Code Blocks and Callouts
+:url-docs-antora: https://docs.antora.org/antora/1.0
+:url-docs-adoc: https://asciidoctor.org/docs/user-manual
+:url-examplesdir: {url-docs-antora}/modules/#examples-dir
+:url-include: {url-docs-antora}/asciidoc/include-content/#include-example
+:url-tags: {url-docs-adoc}/#by-tagged-regions
+:url-indent: {url-docs-adoc}/#normalize-block-indentation
+
+== Code Blocks
+
+Source code examples are entered into AsciiDoc listing blocks.
+Listing block content is displayed exactly as entered, and any indents and endlines are preserved.
+If the `source` style and a language are assigned to the block, the code is syntax highlighted on the site.
+
+[listing]
+.Delimited code block with title
+....
+include::{examplesdir}/code-blocks.adoc[tag=dl-co]
+....
+<1> Assign the block style `source` to the first position in the attribute list.
+<2> Assign a source language to the second position.
+<3> Code the contains blank lines must be entered into a delimited listing block (`----`).
+
+Rendered as:
+
+include::{examplesdir}/code-blocks.adoc[tag=dl]
+
+Commands executed in a CLI are assigned the language `console` and lines are preceded by the command prompt (`$`).
+
+....
+include::{examplesdir}/code-blocks.adoc[tag=console]
+....
+
+Rendered as:
+
+include::{examplesdir}/code-blocks.adoc[tag=console]
+
+Short code snippets don't need delimiters as long as they don't contain blank lines or callouts.
+
+....
+include::{examplesdir}/code-blocks.adoc[tag=single]
+....
+
+Rendered as:
+
+include::{examplesdir}/code-blocks.adoc[tag=single]
+
+[#callouts]
+== Callout Numbers
+
+Callouts add annotations to lines in code blocks.
+The first callout number must be placed after the final character on a code line.
+The responding callout is listed below the block and followed by the annotation text.
+Multiple callout numbers can be used on a single line.
+
+[source,subs=-callouts]
+....
+include::{examplesdir}/code-blocks.adoc[tag=callouts]
+....
+
+Rendered as:
+
+include::{examplesdir}/code-blocks.adoc[tag=callouts]
+
+TIP: To make callouts copy-and-paste friendly, put them behind the line comment syntax of the code snippet's language.
+For example, callouts in a YAML example are placed behind the hash symbol (`#`).
+
+[#include-code]
+== Inserting Examples with the Include Directive
+
+You can use the include directive to insert entire source code files or tagged snippets from a file stored in the _examples_ directory into a listing block.
+
+The include directive's target starts with the attribute reference `+{examplesdir}+` and is followed by the relative path of the example file.
+
+....
+.Query result
+[source,json]
+----
+\include::{examplesdir}/contact.json[]
+----
+....
+
+== Additional Resources
+
+The Antora documentation provides more information about the _examples_ directory and including code snippets.
+
+* {url-examplesdir}[The component examples directory]
+* {url-include}[Insert code snippets and files with the include directive]
+* {url-tags}[Select code regions with the tag macro]
+* {url-indent}[Normalize block indentation with the indent attribute]

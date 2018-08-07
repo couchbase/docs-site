@@ -1,0 +1,9 @@
+Click the btn:[Submit] button.
+
+Press kbd:[esc] to exit insert mode.
+
+You can cancel a running query by using the kbd:[Ctrl+C] keys.
+
+In the tool bar, select menu:File[Save].
+
+Select menu:View[Zoom > Reset] to reset the zoom level.

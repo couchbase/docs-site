@@ -1,0 +1,53 @@
+// tag::dl-co[]
+.Optional title
+[source,java] // <1> <2>
+---- // <3>
+KStreamBuilder builder = new KStreamBuilder();
+
+KStream<String, GenericRecord> source = builder
+        .stream("streaming-topic-beer-sample");
+----
+// end::dl-co[]
+
+// tag::dl[]
+.Optional title
+[source,java]
+----
+KStreamBuilder builder = new KStreamBuilder();
+
+KStream<String, GenericRecord> source = builder
+        .stream("streaming-topic-beer-sample");
+----
+// end::dl[]
+
+// tag::console[]
+[source,console]
+----
+$ curl GET -u admin:password http://ip.for.destination.cluster:8091/pools/default/buckets
+----
+// end::console[]
+
+// tag::single[]
+[source,sql]
+SELECT country FROM `travel-sample` WHERE name = "Excel Airways";
+// end::single[]
+
+// tag::callouts[]
+[source,javascript]
+----
+function OnUpdate(doc, meta) {
+  var strong = 70;
+  var stmt =
+    SELECT *                  // <1>
+    FROM `beer-samples`       // <2>
+    WHERE abv > $strong;
+  for (var beer of stmt) {    // <3>
+    break;                    // <4>
+  }
+}
+----
+<1> N1QL queries are embedded directly.
+<2> Token escaping is standard N1QL style.
+<3> Stream results using 'for' iterator.
+<4> Cancel streaming query by breaking out.
+// end::callouts[]

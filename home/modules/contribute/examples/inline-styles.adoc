@@ -1,0 +1,7 @@
+A bold *word*, a *bold phrase*, and bold c**hara**cter**s**.
+
+An italic _word_, an _italic phrase_, and italic c__hara__cter__s__.
+
+A monospace `word`, a `monospace phrase`, and monospace c``hara``cter``s``.
+
+`*_monospace bold italic phrase_*` and ``**__char__**``acter``**__s__**``
