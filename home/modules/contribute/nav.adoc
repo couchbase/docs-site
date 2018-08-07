@@ -23,4 +23,4 @@
 
 * xref:style-and-voice.adoc[Style and Voice]
 
-* Additional Resources
+* Additional Resources (Pending)

@@ -1,0 +1,71 @@
+= Cross References
+:url-docs-antora: https://docs.antora.org/antora/1.0
+:url-docs-adoc: https://asciidoctor.org/docs/user-manual
+:url-pageid: {url-docs-antora}/page/page-id/#important
+:url-xref: {url-docs-antora}/asciidoc/page-to-page-xref/
+
+To link between documentation pages, use the cross reference macro (`xref`) and a page ID.
+The number of page ID coordinates you need to specify in the xref depends on the location of the current page in relation to the location of the destination page (i.e., the page you want to link to).
+The closer the two files are, the shorter the page ID.
+
+== Link to a Page in the Same Module
+
+To link to a page in the same module as the current page, all you need to know is the file name of the document.
+
+ xref:name-of-file.adoc[link text]
+
+For example, to link to the AsciiDoc Basics page, a document that is in the same module as this page, Cross References, you'd write:
+
+ xref:basics.adoc[This links to the AsciiDoc Basics page].
+
+And this is the result:
+
+xref:basics.adoc[This links to the AsciiDoc Basics page].
+
+== Link to a Page in the Same Component
+
+To link to a page in the same component as the current page, but in a different module, you need to know the file name of the document and the module name.
+The module name is the name of the top-level folder in the modules directory the document is stored in.
+
+ xref:module-name:name-of-file.adoc[link text]
+
+For example, to link to the document _index.adoc_, which is in the same component as this page but stored in the ROOT module, you'd write:
+
+ Let's go to the xref:ROOT:index.adoc[documentation home page].
+
+This renders as:
+
+Let's go to the xref:ROOT:index.adoc[documentation home page].
+
+== Link to a Page in a Different Component
+
+To link to a page in a different component, you need to know the destination component's name, module name, and file name.
+
+ xref:component-name:module-name:name-of-file.adoc[link text]
+
+The component's name is located in the component descriptor file, _antora.yml_, which is found in the destination component's repository.
+
+.antora.yml in docs-server repository
+[source,yaml]
+----
+name: server # <1>
+title: Couchbase Server
+version: '5.5'
+start_page: introduction:intro.adoc
+nav:
+- modules/ROOT/nav.adoc
+----
+<1> Component name to use in xrefs
+
+To link from this page, to the What's New? page in the server component, you'd write:
+
+ xref:server:introduction:whats-new.adoc[What's new] in Couchbase Server?
+
+This renders as:
+
+xref:server:introduction:whats-new.adoc[What's new] in Couchbase Server?
+
+== Additional Resources
+
+* {url-pageid}[Why is the page ID important?]
+* {url-xref}[More xref usage examples]
