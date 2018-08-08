@@ -1,7 +1,7 @@
 * xref:index.adoc[Docs Contributing Guide]
 * xref:install-git-and-editor.adoc[Install Git and an AsciiDoc Editor]
 * xref:set-up-workspace.adoc[Set Up Local Git Workspace]
-* xref:writer-workflow.adoc[Writer Workflow]
+* xref:workflow.adoc[Docs Workflow]
 // ** Repository Organization
 
 * xref:asciidoc.adoc[AsciiDoc]

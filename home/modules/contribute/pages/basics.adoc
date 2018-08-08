@@ -141,6 +141,7 @@ Rendered as:
 
 include::{examplesdir}/lists.adoc[tag=unordered]
 
+[#images]
 == Images
 
 The block image macro (`image::[]`) and the inline image macro (`image:[]`) accept SVG, PNG, JPG/JPEG, and GIF file formats.

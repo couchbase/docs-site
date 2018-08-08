@@ -1,0 +1,181 @@
+= Docs Contributor Workflow
+
+This workflow is for frequent contributors and Couchbase Docs team members who make major changes, add documents, examples, and images, and plan to work on the same set of changes over several days before requesting sign-off.
+
+Before starting this workflow, make sure you've:
+
+* [x] xref:install-git-and-editor.adoc[Installed Git and an AsciiDoc editor]
+* [x] xref:set-up-local-workspace.adoc[Set up your local workspace]
+
+[#work-branch]
+== Create a Working Branch
+
+. Select the version branch you want to base your changes off of and check it out.
+
+ $ git checkout version-branch-name
+
+. Get the latest upstream changes from the version branch.
+
+ $ git pull upstream version-branch-name
+
+. Create your working branch.
+This is the branch where you make changes and that you'll push to your fork.
+
+ $ git branch name-of-working-branch
+
+== Create and Edit
+
+If this is the first time you've worked on a repository, it may not appear in the Project panel when you open the Atom editor.
+Go to menu:File[Add Project Folder] and add the folder containing your local repository.
+
+. Expand the project to view its folders and files.
+.. See <<docs-org>> if you're not familiar with the structure and purpose of the directories in an Antora documentation component.
+. Once you locate the file you want to work on, click on it, and it will open in an adjacent pane.
+. Add and edit the file's content.
+.. For AsciiDoc tips and help, see xref:basics.adoc[AsciiDoc Basics].
+
+[#commit]
+== Commit and Push
+
+When you complete your changes, it's time to commit and push them to your remote repository.
+
+. Add the new and changed files.
+
+ $ git add file-path-and-name
+
+. Commit the changes.
+
+ $ git commit -m "add example for magic bucket"
+
+. Push the committed changes to your remote fork.
+
+ $ git push origin name-of-working-branch
+
+[#pr]
+== Submit a Pull Request
+
+After you push your working branch to your remote repository on GitHub, you can submit a pull request to the upstream repository for review.
+
+. Go to your repository on GitHub, and click btn:[Compare & pull request].
+. On the Open a Pull Request screen, update the PR title if it needs clarification, and then click btn:[Create Pull Request]. 
+
+[#docs-org]
+=== Documentation Component Organization
+
+Couchbase uses Antora to manage and build docs.couchbase.com.
+The repositories that contain documentation use a standard structure and terminology.
+
+Component::
+A documentation component contains AsciiDoc files, their optional assets and examples, one or more optional navigation files, and a component descriptor file.
+These files are organized into a standard repository structure so that Antora can collect and catalog them.
+All of the files in a component are versioned together.
+
+Component Descriptor::
+A documentation component must contain a component descriptor file named _antora.yml_.
+When Antora finds _antora.yml_ in a repository, it knows it has located a docs component.
+The component descriptor file tags the files under its hierarchy with the specified component name and version.
+
+Module::
+A module is a discrete bundle of content, including text, images, and other source materials, organized in a hierarchy of folders by content format, then by optional topic if needed.
+A component can contain one or more modules.
+
+ROOT Module::
+The ROOT module contains all the content that's directly associated with the docs component itself.
+When pages in the ROOT module are published, these pages are promoted a level above any other modules' pages in that component's URL.
+
+Pages::
+The _pages_ directory contains all of a module's AsciiDoc files.
+These files are automatically enlisted by Antora and converted to standalone HTML pages.
+
+Partials::
+The _partials_ directory contains AsciiDoc files that are not standalone pages.
+These files are referenced by an include directive in a document in the _pages_ directory.
+
+Examples::
+Non-AsciiDoc files, such as source code and data values, are stored in the _examples_ directory.
+These files are often inserted into listing blocks using the xref:code-blocks.adoc[AsciiDoc include directive].
+
+Assets::
+Multimedia and supplemental files, organized by format, are stored in the _assets_ directory.
+Photographs, screenshots, and graphic files in _assets/images_ are inserted into pages using the xref:basics.adoc#images[AsciiDoc image macro].
+
+Navigation::
+A navigation file contains one or more AsciiDoc lists.
+Antora uses these files to build the documentation site's component navigation menus.
+A navigation file must be declared in the component descriptor in order to be displayed in the component's navigation menu.
+
+////
+== Common Workflow
+
+A common workflow can be found below:
+
+```
+# Only required when first setting up the local repo
+git clone https://github.com/<your-user>/docs-cb4.git
+
+cd docs-cb4
+
+BRANCH=DOC-XXXX
+# Ensure that we base our changes on master
+git checkout master
+# Creates a new branch with the desired name
+git branch $BRANCH
+
+# Creates the branch on your remote repo
+git push origin $BRANCH
+
+# Checks out the newly created branch
+git checkout $BRANCH
+
+# Edit the files in question
+
+# Add the edited files to be committed
+git add my_files
+
+# Commit the edited files
+git commit -m "DOC-XXXX: Created git workflow example"
+
+# Push the updated changes to your remote repository
+git push origin $BRANCH
+```
+
+== Submit a Pull Request
+
+Once your changes are in a branch on GitHub it is time to submit them to the main couchbase repository.
+
+This is done using pull requests, you can read more about pull requests in general at https://help.github.com/articles/creating-a-pull-request/.
+
+== Pull Request Testing and Review
+
+This section will focus on what happens once you have created your pull request from your fork's branch onto the master branch.
+
+1. As soon as your pull request has been submitted, the continuous integration will trigger, this can be seen as the check 'PR-Build'.
+This builds the entire documentation set including your changes to ensure that it builds successfully (thus preventing malformed dita from breaking master).
+Once it has done this it will report back whether or not it was successful, along with a link to a preview of any pages which have been updated in the PR.
+You can use these links to see what your changes will look like (and whether or not you think you need further changes).
+Every time the content of the PR is updated, this will retrigger.
+
+2. A member of the documentation team will review your pull request and let you know if any changes are required.
+Usually you will be asked to make any necessary changes yourself.
+Don't worry if you're asked to make changes, this is normal!
+
+3. Once the reviewer is happy with the changes, they will backport them to any necessary branches (please let them know if you think it needs backporting to certain releases) and merge your changes.
+
+== Publishing
+
+Accepted changes are pushed to docs.couchbase.com twice a week, so you may need to wait a few days to see your changes go live.
+
+Docs Git Workflow
+Complete Docs Workflow
+Local Edits Workflow
+Regular/Standard Edits Workflow
+
+* Branches
+** Protected
+** Working
+* Commit
+* Pull request
+* Validation
+* Review
+* Publishing
+////

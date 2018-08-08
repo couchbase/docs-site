@@ -33,7 +33,7 @@ This drastically reduces the time it takes to resolve the issue.
 If you want to contribute the changes to resolve an issue yourself, then this is greatly encouraged!
 
 You can submit simple changes, such as typo fixes and minor clarifications, using the <<simple>>.
-For more extensive content additions and updates, or if you prefer to work locally, see the xref:writer-workflow.adoc[Complete Workflow].
+For more extensive content additions and updates, or if you prefer to work locally, see the xref:workflow.adoc[Docs Contributor Workflow].
 
 [#simple]
 == Simple Edits Workflow

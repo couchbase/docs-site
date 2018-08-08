@@ -88,42 +88,6 @@ Now you're ready to start working on the documentation.
 
 == Next Steps
 
-. Create a working branch
-. Commit your changes
-. Submit a pull request
-
-////
-== Common Workflow
-
-A common workflow can be found below:
-
-```
-# Only required when first setting up the local repo
-git clone https://github.com/<your-user>/docs-cb4.git
-
-cd docs-cb4
-
-BRANCH=DOC-XXXX
-# Ensure that we base our changes on master
-git checkout master
-# Creates a new branch with the desired name
-git branch $BRANCH
-
-# Creates the branch on your remote repo
-git push origin $BRANCH
-
-# Checks out the newly created branch
-git checkout $BRANCH
-
-# Edit the files in question
-
-# Add the edited files to be committed
-git add my_files
-
-# Commit the edited files
-git commit -m "DOC-XXXX: Created git workflow example"
-
-# Push the updated changes to your remote repository
-git push origin $BRANCH
-```
-////
+. xref:workflow.adoc#work-branch[Create a working branch]
+. xref:workflow.adoc#commit[Commit your changes]
+. xref:workflow.adoc#pr[Submit a pull request]
