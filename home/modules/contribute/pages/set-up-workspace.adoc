@@ -1,14 +1,20 @@
 = Set Up Your Local Git Workspace
-:url-git-server: https://github.com/couchbase/docs-server
-:url-git-cli: https://github.com/couchbase/couchbase-cli/tree/master/docs
-:url-git-sdk-c: https://github.com/couchbase/docs-sdk-c
-:url-git-sdk-go: https://github.com/couchbase/docs-sdk-go
-:url-git-sdk-java: https://github.com/couchbase/docs-sdk-java
-:url-git-sdk-dotnet: https://github.com/couchbase/docs-sdk-dotnet
-:url-git-sdk-nodejs: https://github.com/couchbase/docs-sdk-nodejs
-:url-git-sdk-php: https://github.com/couchbase/docs-sdk-php
-:url-git-sdk-python: https://github.com/couchbase/docs-sdk-python
-:url-git-home: https://github.com/couchbase/docs-site/tree/master/home
+:url-git-cb:  https://github.com/couchbase
+:url-git-labs: https://github.com/couchbaselabs
+:url-git-server: {url-git-cb}/docs-server
+:url-git-cli: {url-git-cb}/couchbase-cli/tree/master/docs
+:url-git-lite: {url-git-labs}/couchbase-lite-docs
+:url-git-sync: {url-git-labs}/sync-gateway-docs
+:url-git-sdk-c: {url-git-cb}/docs-sdk-c
+:url-git-sdk-go: {url-git-cb}/docs-sdk-go
+:url-git-sdk-java: {url-git-cb}/docs-sdk-java
+:url-git-sdk-dotnet: {url-git-cb}/docs-sdk-dotnet
+:url-git-sdk-nodejs: {url-git-cb}/docs-sdk-nodejs
+:url-git-sdk-php: {url-git-cb}/docs-sdk-php
+:url-git-sdk-python: {url-git-cb}/docs-sdk-python
+:url-git-kafka: {url-git-cb}/kafka-connect-couchbase/tree/master/docs
+:url-git-spark: {url-git-cb}/couchbase-spark-connector/tree/master/docs
+:url-git-home: {url-git-cb}/docs-site/tree/master/home
 
 You only need to do these steps the first time you're contributing to a repository.
 
@@ -25,6 +31,8 @@ The Couchbase documentation is stored in multiple repositories.
 
 * {url-git-server}[Server]
 * {url-git-cli}[CLI]
+* {url-git-lite}[Lite]
+* {url-git-sync}[Sync Gateway]
 * {url-git-sdk-c}[C SDK]
 * {url-git-sdk-go}[Go SDK]
 * {url-git-sdk-java}[Java SDK]
@@ -32,6 +40,8 @@ The Couchbase documentation is stored in multiple repositories.
 * {url-git-sdk-nodejs}[Node.js SDK]
 * {url-git-sdk-php}[PHP SDK]
 * {url-git-sdk-python}[Python SDK]
+* {url-git-kafka}[Kafka Connector]
+* {url-git-spark}[Spark Connector]
 * {url-git-home}[Docs Site (Docs Home and Contributing Guide)]
 
 Go to the appropriate repository on GitHub and click btn:[Fork].
