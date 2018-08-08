@@ -1,11 +1,11 @@
-= Docs Contributor Workflow
+= Docs Workflow
 
 This workflow is for frequent contributors and Couchbase Docs team members who make major changes, add documents, examples, and images, and plan to work on the same set of changes over several days before requesting sign-off.
 
 Before starting this workflow, make sure you've:
 
 * [x] xref:install-git-and-editor.adoc[Installed Git and an AsciiDoc editor]
-* [x] xref:set-up-local-workspace.adoc[Set up your local workspace]
+* [x] xref:set-up-workspace.adoc[Set up your local Git workspace]
 
 [#work-branch]
 == Create a Working Branch
@@ -57,7 +57,7 @@ When you complete your changes, it's time to commit and push them to your remote
 After you push your working branch to your remote repository on GitHub, you can submit a pull request to the upstream repository for review.
 
 . Go to your repository on GitHub, and click btn:[Compare & pull request].
-. On the Open a Pull Request screen, update the PR title if it needs clarification, and then click btn:[Create Pull Request]. 
+. On the Open a Pull Request screen, update the PR title if it needs clarification, and then click btn:[Create Pull Request].
 
 [#docs-org]
 === Documentation Component Organization
