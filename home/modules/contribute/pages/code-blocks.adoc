@@ -1,5 +1,5 @@
 = Code Blocks and Callouts
-:url-docs-antora: https://docs.antora.org/antora/1.0
+:url-docs-antora: https://docs.antora.org/antora/latest
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
 :url-examplesdir: {url-docs-antora}/modules/#examples-dir
 :url-include: {url-docs-antora}/asciidoc/include-content/#include-example
