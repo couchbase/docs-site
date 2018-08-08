@@ -32,11 +32,9 @@ The Couchbase documentation is stored in multiple repositories.
 * {url-git-sdk-nodejs}[Node.js SDK]
 * {url-git-sdk-php}[PHP SDK]
 * {url-git-sdk-python}[Python SDK]
-* {url-git-home}[Docs Site (Home page and Contributing Guide)]
+* {url-git-home}[Docs Site (Docs Home and Contributing Guide)]
 
 Go to the appropriate repository on GitHub and click btn:[Fork].
-
-NOTE: TODO DJA Add sidebar styles to UI to process following block.
 
 .When you can't find the right repository
 ****
@@ -55,22 +53,19 @@ After you fork the repository, clone the repository to your device.
 
 . Create or select the folder where you want to store the repository clone.
 . Open a terminal and change into the selected folder.
-+
-[source,console]
-$ cd path/to/project/folder
+
+ $ cd path/to/project/folder
 
 . Go to the repository on GitHub, and click btn:[Clone or download].
 . Click the Clipboard icon to copy the repository's Git URL.
 . In your terminal type `git clone`, paste the copied URL, and press kbd:[Enter].
 For example, to clone your fork of the docs-server repository, you'd enter:
-+
-[source,console]
-$ git clone git@github.com:this-is-you/docs-server.git
+
+ $ git clone git@github.com:this-is-you/docs-server.git
 
 . Change into the repository folder created by the clone operation.
-+
-[source,console]
-$ cd docs-server
+
+ $ cd docs-server
 
 == Sync with the Upstream Repository
 
@@ -80,9 +75,8 @@ You need to connect your local workspace to the upstream repository so the two r
 . Click the Clipboard icon to copy the repository's Git URL.
 . In your terminal type `git remote add upstream`, paste the copied URL, and press kbd:[Enter].
 For example, to connect to the remote upstream docs-server repository, you'd enter:
-+
-[source,console]
-$ git remote add upstream git@github.com:couchbase/docs-server.git
+
+ $ git remote add upstream git@github.com:couchbase/docs-server.git
 
 Now you're ready to start working on the documentation.
 
