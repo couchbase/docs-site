@@ -1,0 +1,45 @@
+= Get the Site Playbook Project
+:url-git-playbook: https://github.com/couchbase/docs-site
+
+The Docs Site playbook project contains the:
+
+* staging playbook
+* production playbook
+* site extensions
+* Home docs component
+
+To generate the documentation site on your device, you need its playbook.
+The playbook provides the site configuration to Antora.
+
+== Fork and Clone the Playbook Project
+
+TIP: Go to xref:build-site.adoc[Build the Docs Site] if you're contributing (or have contributed) to the Home component.
+You've already completed the steps on this page.
+
+. Go to the {url-git-playbook}[Docs Site repository] on GitHub and click btn:[Fork].
+. Create or select the local folder where you want to store the repository on your device.
+. Open a terminal and change into the selected folder.
+
+ $ cd path/to/folder
+
+. Go to your repository on GitHub, and click btn:[Clone or download].
+. Click the Clipboard icon to copy the repository's Git URL.
+. In your terminal type `git clone`, paste the copied URL, and press kbd:[Enter].
+
+ $ git clone git@github.com:this-is-you/docs-site.git
+
+. Change into the repository folder created by the clone operation.
+
+ $ cd docs-site
+
+== Sync with the Upstream Repository
+
+You need to connect your local repository to the upstream repository so you can use the latest playbooks and extensions.
+
+. Go to the {url-git-playbook}[upstream Docs Site repository] and click btn:[Clone or download].
+. Click the Clipboard icon to copy the repository's Git URL.
+. In your terminal type `git remote add upstream`, paste the copied URL, and press kbd:[Enter].
+
+== Next Steps
+
+xref:build-site.adoc[Generate the documentation site].
