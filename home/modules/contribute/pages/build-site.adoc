@@ -1,0 +1,62 @@
+= Build the Docs Site
+
+If you've never built the docs site on your device, complete xref:playbook.adoc[Get the Site Playbook Project] steps first.
+
+== Configuring the Playbook
+
+To preview your changes on the site locally, you need to configure the playbook to use the component from your local workspace.
+
+. Copy the staging playbook, _staging-antora-playbook.yml_, and save it in the _docs-site_ repository.
+. Rename it _local-antora-playbook.yml_.
+. Open _local-antora-playbook.yml_ in Atom or your editor.
+. Under `sources`, find the `url` key that matches the upstream repository you plan to submit your changes to.
+Replace the repository URL with the system path to your local repository.
+For example, if you're making changes to files in the _docs-server_ repository, you'd enter:
++
+[source,yaml]
+- url: local/path/to/docs-server
+
+. If there isn't a `branches` key on the line directly below the `url` key, add it and assign it a value of `[v*, HEAD]`.
+`HEAD` tells Antora to use your working branch instead of the version branch it's based on.
++
+[source,yaml]
+- url: local/path/to/docs-server
+  branches: [v*, HEAD]
+
+. If there is a `branches` key on the line directly below the `url` key, replace the version branch you based your working branch on with `HEAD`.
+
+. Save the playbook.
+
+== Generating the Site
+
+. Open a terminal and switch to (`cd`) the _docs-site_ folder.
+. Run Antora with your local playbook:
+
+ docs-site $ antora local-antora-playbook
+
+. The cloning progress of each component repository is displayed in the console, followed by any AsciiDoc or Antora warning and error messages.
+.. A warning indicates that a document contains invalid AsciiDoc syntax.
+Antora will continue to build the site, but pages generated from invalid AsciiDoc will not display correctly.
+Before submitting your changes in a PR, you need to fix any documents that report warnings.
+.. Errors cause the site build to fail.
+
+. If no errors occur, site generation is complete when the command prompt (`$`) reappears in the terminal.
+. Antora generated the site into a directory named _public_.
+Switch to it.
+
+ docs-site $ cd public
+
+. On some operating systems, you can open the site directly from the command line by typing `open` and the name of an HTML file.
++
+--
+ public $ open index.html
+
+Or, you can navigate to and open _index.html_ using your file explorer or browser.
+--
+
+. Review your changes on the local site.
+
+== Next Steps
+
+. xref:workflow.adoc#commit[Commit your changes and push them to your remote repository].
+. xref:workflow.adoc#pr[Submit a pull request from your remote repository].
