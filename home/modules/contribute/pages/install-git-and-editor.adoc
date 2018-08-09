@@ -28,18 +28,16 @@ AsciiDoc is the markup language Couchbase uses for writing documentation.
 You can write an AsciiDoc document using any plain text editor.
 If you don't have a preferred text editor or IDE already, install Atom and the listed AsciiDoc packages for an enhanced experience.
 
-// NOTE: AsciiDoc and Antora packages for Visual Studio Code are planned for release in late 2018.
-
 === Download and Install Atom
 
-Atom is an open source, extensible text editor that works on Linux, MacOS, and Windows.
+Atom is an open source, extensible text editor that works on Linux, macOS, and Windows.
 
 . Go to the https://atom.io/[Atom home page].
 The Atom home page should detect your operating system automatically and provide the correct download options.
 . Download and install Atom.
 Use the links below for additional installation instructions.
 ** {url-linux}[Atom for Linux]
-** {url-mac}[Atom for MacOS]
+** {url-mac}[Atom for macOS]
 ** {url-windows}[Atom for Windows]
 
 === Install the AsciiDoc Packages
