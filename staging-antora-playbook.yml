@@ -31,9 +31,6 @@ content:
   - url: git@github.com:couchbase/docs-sdk-python.git
   #- url: https://github.com/couchbaselabs/couchbase-lite-docs
   #  branches: master, release/2.0
-  #- url: https://github.com/couchbase/kafka-connect-couchbase
-  #  branches: master
-  #  start_path: docs
 asciidoc:
   attributes:
     experimental: ''
