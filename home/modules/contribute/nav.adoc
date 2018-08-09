@@ -2,7 +2,6 @@
 * xref:install-git-and-editor.adoc[Install Git and an AsciiDoc Editor]
 * xref:set-up-workspace.adoc[Set Up Local Git Workspace]
 * xref:workflow.adoc[Docs Workflow]
-// ** Repository Organization
 
 * xref:asciidoc.adoc[AsciiDoc]
 ** xref:basics.adoc[AsciiDoc Basics]
@@ -13,13 +12,11 @@
 //** Attributes & Metadata (Pending)
 //** Custom Extensions (Pending)
 
-* Antora (Group pending)
-** Install Antora
-** Get Playbook
-//*** Contributor versus Staging Playbook
+* Antora
+** xref:install-antora.adoc[Install Antora]
+** xref:playbook.adoc[Get the Site Playbook Project]
 //*** Repository Authentication
-** Build Site with Local Changes
-** Preview Site
+** xref:build-site.adoc[Build the Docs Site]
 
 * xref:style-and-voice.adoc[Style and Voice]
 
