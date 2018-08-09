@@ -61,12 +61,12 @@ However, you can contribute proposed fixes and improvements using the btn:[Feedb
 
 After you fork the repository, clone the repository to your device.
 
-. Create or select the folder where you want to store the repository clone.
+. Create or select the folder where you want to store the repository on your device.
 . Open a terminal and change into the selected folder.
 
- $ cd path/to/project/folder
+ $ cd path/to/folder
 
-. Go to the repository on GitHub, and click btn:[Clone or download].
+. Go to your repository on GitHub, and click btn:[Clone or download].
 . Click the Clipboard icon to copy the repository's Git URL.
 . In your terminal type `git clone`, paste the copied URL, and press kbd:[Enter].
 For example, to clone your fork of the docs-server repository, you'd enter:

@@ -33,11 +33,12 @@ Go to menu:File[Add Project Folder] and add the folder containing your local rep
 . Once you locate the file you want to work on, click on it, and it will open in an adjacent pane.
 . Add and edit the file's content.
 .. For AsciiDoc tips and help, see xref:basics.adoc[AsciiDoc Basics].
+. xref:build-site.adoc[Build the docs site locally to test and preview your changes].
 
 [#commit]
 == Commit and Push
 
-When you complete your changes, it's time to commit and push them to your remote repository.
+When you complete your changes and fixed any warnings reported by Antora, it's time to commit and push them to your remote repository.
 
 . Add the new and changed files.
 
@@ -60,7 +61,7 @@ After you push your working branch to your remote repository on GitHub, you can 
 . On the Open a Pull Request screen, update the PR title if it needs clarification, and then click btn:[Create Pull Request].
 
 [#docs-org]
-=== Documentation Component Organization
+== Documentation Component Organization
 
 Couchbase uses Antora to manage and build docs.couchbase.com.
 The repositories that contain documentation use a standard structure and terminology.
