@@ -4,7 +4,7 @@
 :url-pageid: {url-docs-antora}/page/page-id/#important
 :url-xref: {url-docs-antora}/asciidoc/page-to-page-xref/
 
-To link between documentation pages, use the cross reference macro (`xref`) and a page ID.
+To link between documentation pages, use the cross reference macro (commonly called an xref) and a page ID.
 The number of page ID coordinates you need to specify in the xref depends on the location of the current page in relation to the location of the destination page (i.e., the page you want to link to).
 The closer the two files are, the shorter the page ID.
 
@@ -64,6 +64,20 @@ To link from this page, to the What's New? page in the server component, you'd w
 This renders as:
 
 xref:server:introduction:whats-new.adoc[What's new] in Couchbase Server?
+
+== Link to an Element in a Page
+
+To link to a specific element in a page in a different component, you need to know the element's ID.
+Add a hash (`#`) directly after the file name, followed by the ID of the element.
+For example, to link from this page to the Images section on the AsciiDoc Basics page, you'd write:
+
+ See xref:basics.adoc#images[Images].
+
+This renders as:
+
+See xref:basics.adoc#images[Images].
+
+See xref:ids.adoc[Element IDs and Same-Page Cross References] to learn how to create element IDs.
 
 == Additional Resources
 
