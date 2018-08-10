@@ -239,7 +239,7 @@ Rendered as:
 |Cell in column 1, row 2 |Cell in column 2, row 2
 |===
 
-Since tables are AsciiDoc block elements they can have titles, roles, IDs, as well as table-specific attributes.
+Since tables are AsciiDoc block elements they can have titles, roles, xref:ids.adoc[IDs], as well as table-specific attributes.
 
 .Table with title, ID, `cols`, and `options="header"`
 ----
@@ -332,7 +332,7 @@ For more examples and information, see the {url-tables}[Asciidoctor table docume
 == Learn More
 
 * xref:cross-references.adoc[Document-to-document cross references]
-//* Anchors and IDs
+* xref:ids.adoc[Element IDs]
 * xref:code-blocks.adoc[Code blocks]
 * xref:code-blocks.adoc#callouts[Callout numbers]
 //* Partial file includes
