@@ -3,7 +3,7 @@ site:
   url: https://docs.couchbase.com
   start_page: home::index.adoc
 content:
-  branches: v*
+  branches: release/*
   sources:
   - url: .
     branches: HEAD
@@ -14,8 +14,10 @@ content:
   - url: git@github.com:couchbase/docs-analytics.git
     branches: [1.0.x]
   - url: https://github.com/cb-docs-review-space/couchbase-cli.git
+    branches: v*
     start_path: docs
   - url: git@github.com:cb-docs-review-space/backup.git
+    branches: v*
     start_path: docs
   - url: https://github.com/cb-docs-review-space/kafka-connect-couchbase.git
     branches: [server-v5.1, server-v5.5]
