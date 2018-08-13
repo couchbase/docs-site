@@ -44,13 +44,14 @@ asciidoc:
   - ./lib/multirow-table-head-tree-processor.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v99/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v102/ui-bundle.zip
   supplemental_files:
   - path: robots.txt
     contents: |
       User-agent: *
       Disallow: /
   - path: ui.yml
-    contents: 'static_files: [robots.txt]'
+    contents: |
+      static_files: [robots.txt]
 output:
   dir: ./public
