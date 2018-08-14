@@ -1,4 +1,4 @@
-= Set Up Your Local Git Workspace
+= Set Up Your Local Repository
 :url-git-cb:  https://github.com/couchbase
 :url-git-labs: https://github.com/couchbaselabs
 :url-git-server: {url-git-cb}/docs-server
@@ -16,35 +16,18 @@
 :url-git-spark: {url-git-cb}/couchbase-spark-connector/tree/master/docs
 :url-git-home: {url-git-cb}/docs-site/tree/master/home
 
-You only need to do these steps the first time you're contributing to a repository.
-
-* [x] Fork the appropriate repository into your GitHub account.
-* [x] Create a clone of the repository on your device.
-* [x] Connect your local repository with the upstream repository.
+You only need to do these steps the first time you contribute to a repository.
 
 == Fork the Repository
 
-WARNING: To contribute documentation changes, you must fork the appropriate repository to your personal GitHub account.
+Before you can contribute changes to the Couchbase documentation, you must fork the appropriate repository to your personal GitHub account.
 The Docs CI runner automatically fails and closes any pull request (PR) that isn't submitted from a fork.
 
-The Couchbase documentation is stored in multiple repositories.
-
-* {url-git-server}[Server]
-* {url-git-cli}[CLI]
-* {url-git-lite}[Lite]
-* {url-git-sync}[Sync Gateway]
-* {url-git-sdk-c}[C SDK]
-* {url-git-sdk-go}[Go SDK]
-* {url-git-sdk-java}[Java SDK]
-* {url-git-sdk-dotnet}[.NET SDK]
-* {url-git-sdk-nodejs}[Node.js SDK]
-* {url-git-sdk-php}[PHP SDK]
-* {url-git-sdk-python}[Python SDK]
-* {url-git-kafka}[Kafka Connector]
-* {url-git-spark}[Spark Connector]
-* {url-git-home}[Docs Site (Docs Home and Contributing Guide)]
-
-Go to the appropriate repository on GitHub and click btn:[Fork].
+. Go to the appropriate repository on GitHub and click btn:[Fork].
++
+--
+include::{partialsdir}/repo-list.adoc[]
+--
 
 .When you can't find the right repository
 ****
@@ -59,7 +42,7 @@ However, you can contribute proposed fixes and improvements using the btn:[Feedb
 
 == Clone the Repository
 
-After you fork the repository, clone the repository to your device.
+After you fork the repository, clone it to your device.
 
 . Create or select the folder where you want to store the repository on your device.
 . Open a terminal and change into the selected folder.
@@ -79,7 +62,7 @@ For example, to clone your fork of the docs-server repository, you'd enter:
 
 == Sync with the Upstream Repository
 
-You need to connect your local workspace to the upstream repository so the two repositories can stay in sync.
+You need to connect your local repository to the upstream repository so the two repositories can stay in sync.
 
 . Go to the upstream repository on GitHub, and click btn:[Clone or download].
 . Click the Clipboard icon to copy the repository's Git URL.
@@ -88,10 +71,21 @@ For example, to connect to the remote upstream docs-server repository, you'd ent
 
  $ git remote add upstream git@github.com:couchbase/docs-server.git
 
+. View the configured upstream and origin values and confirm the URLs are correct.
++
+--
+ $ git remote -v
+
+The origin URLs should point to your personal fork, and the upstream URLs should point to the repository in the Couchbase organization.
+--
+
+. Download upstream changes.
+
+ $ git fetch upstream
+
 Now you're ready to start working on the documentation.
 
 == Next Steps
 
-. xref:workflow.adoc#work-branch[Create a working branch]
-. xref:workflow.adoc#commit[Commit your changes]
-. xref:workflow.adoc#pr[Submit a pull request]
+. xref:workflow-overview.adoc[Get an overview of the entire contributing workflow].
+. xref:branches.adoc[Choose a base branch].
