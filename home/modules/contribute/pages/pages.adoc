@@ -1,0 +1,71 @@
+= Standard Document Structure
+
+AsciiDoc documents follow a standard structure.
+Standard documents have a header, which includes the document title, and a body, which includes the remainder of the document's content.
+A standard AsciiDoc document is stored in the _pages_ directory of a module.
+
+== Document Title and Header
+
+The title of a document is placed on the first line of the file.
+It is specified by one equals sign (`=`), followed by one blank space, and then the text of the title.
+*All AsciiDoc documents stored in a _pages_ directory must have a document title*.
+
+On the line directly below the title and subsequent contiguous lines, you can add document attributes.
+Each attribute must be entered on its own line.
+Document attributes are optional.
+
+----
+= The Title of My Document
+:page-type: concept
+:url-query-tut: https://query-tutorial.couchbase.com/tutorial/#1
+
+This is the body of my document.
+Let's get started with N1QL!
+----
+
+A single blank line signals the end of the header.
+The document body starts on next line that has text.
+
+== Document Sections
+
+A document can be divided into sections by section titles.
+Heading 2 section titles, indicated by two equals signs (`==`), are displayed in the *On This Page* sidebar.
+
+----
+== Heading 2 Section Title (H2)
+
+=== Heading 3 Section Title (H3)
+
+==== Heading 4 Section Title (H4)
+----
+
+*Don't nest section headings out of order*.
+For example, a Heading 4 can't be directly inside a Heading 2 section; it must be nested inside a Heading 3 section.
+
+*Don't apply bold formatting to section headings*.
+
+== One Sentence Per Line
+
+Sentences that are part of paragraphs, lists, and tables should be entered on individual lines.
+This best practice makes reviewing pull requests and comparing versions of the same file much easier for maintainers.
+Also, it helps you find long sentences that need to be restructured (e.g., the first sentence in the example below).
+
+----
+== Establishing Demonstration Indexes
+
+The Java SDK code-example provided in xref:java-sdk::full-text-searching-with-sdk.adoc[Searching with the SDK] contains multiple demonstration calls — each featuring a different query-combination — and makes use of three different index-definitions, related to the `travel-sample` bucket: for the code example to run successfully, the three indexes must be appropriately pre-established.
+The definitions are provided in xref:fts-demonstration-indexes.adoc[Demonstration Indexes].
+----
+
+== File Format and Name
+
+* Use all lowercase letters.
+* Separate words with hyphens.
+* Save AsciiDoc files with the _.adoc_ extension.
+* Don't use symbols or special characters.
+
+Antora uses a file's name to create its page URL, so *changing a file's name will break cross references (xrefs) and incoming links to the page from external websites*.
+
+== Learn More
+
+xref:basics.adoc[Learn the basics of AsciiDoc].

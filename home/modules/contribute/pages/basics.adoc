@@ -4,21 +4,6 @@
 :url-pages: {url-docs-antora}/page/
 :url-tables: {url-docs-adoc}/#tables
 
-== Document and Section Titles
-
-Documents that are saved in the _pages_ directory of a module must have a title.
-Heading 2 section titles, indicated by two equals signs (`==`), are displayed in the *On This Page* sidebar.
-
-----
-= Document Title (H1)
-== Heading 2 Section Title (H2)
-=== Heading 3 Section Title (H3)
-==== Heading 4 Section Title (H4)
-----
-
-Don't nest headings out of order.
-For example, a Heading 4 can't be directly inside a Heading 2 section; it must be nested inside a Heading 3 section.
-
 == Bold, Italic, and Code Styles
 
 ----
