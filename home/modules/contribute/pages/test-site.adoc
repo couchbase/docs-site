@@ -1,0 +1,71 @@
+= Test Your Changes Locally
+:url-docs-antora: https://docs.antora.org/antora/latest
+:url-ssh: {url-docs-antora}/playbook/private-repository-auth/
+
+If you've never built the site on your device, complete the xref:install-antora.adoc[Install Antora] and xref:playbook.adoc[Get the Site Playbook Project] steps first.
+
+== Configuring the Playbook
+
+To preview your changes on the site locally, you need to configure the playbook to use your local repository.
+
+. Copy the staging playbook, _staging-antora-playbook.yml_, and save it in the _docs-site_ repository.
+. Rename it _local-antora-playbook.yml_.
+. Open _local-antora-playbook.yml_ in Atom or your editor.
+. Under `sources`, find the `url` key that matches the upstream repository you plan to submit your changes to.
+Replace the repository URL with either the relative system path from the playbook project to your local repository or the absolute path.
+For example, if you're making changes to files in the _docs-server_ repository, you'd enter:
++
+[source,yaml]
+- url: ./docs-server
+
+. If there isn't a `branches` key on the line directly below the `url` key, add it and assign it the list of version branch names, except for the version branch your working branch is based on.
+In place of the remote version branch, use the value of `HEAD`.
+`HEAD` tells Antora to use your working branch.
+For example, if your working branch is based off of the docs-server release/5.5 branch, you'd assign the following values to `branches`:
++
+[source,yaml]
+- url: ./docs-server
+  branches: [release/4.*, release/5.0, release/5.1, HEAD]
+
+. If there is a `branches` key on the line directly below the `url` key, replace the version branch name you based your working branch on with `HEAD`.
+
+. Save the playbook.
+
+== Generating the Site
+
+. Open a terminal and switch (`cd`) to the _docs-site_ folder.
+. Run Antora with your local playbook:
+
+ docs-site $ antora local-antora-playbook
+
+. The cloning progress of each component repository is displayed in the console, followed by any AsciiDoc or Antora warning and error messages.
+.. A warning indicates that a document contains invalid AsciiDoc syntax.
+Antora will continue to build the site, but pages generated from invalid AsciiDoc will not display correctly.
+.. Errors cause the site build to fail.
+. If no errors terminate the build, site generation is complete when the command prompt (`$`) reappears in the terminal.
+. Antora generated the site into a directory named _public_.
+Switch to it.
+
+ docs-site $ cd public
+
+. On some operating systems, you can open the site directly from the command line by typing `open` and the name of an HTML file.
++
+--
+ public $ open index.html
+
+Or, you can navigate to and open _index.html_ using your file explorer or browser.
+--
+
+. Review your changes on the local site.
+. Make additional edits if needed, and fix any documents that report warnings.
+. Run Antora again and review your changes in the site.
+
+When you're satisfied with your work and fixed any reported errors, it's time to send your changes upstream for review.
+
+TIP: Antora relies on the SSH agent to authenticate private repositories on your behalf.
+If Antora fails because it can't connect to the private repositories in the playbook, you're SSH agent probably isn't running.
+See {url-ssh}[SSH Authentication^] to learn how to configure and run your SSH agent.
+
+== Next Step
+
+xref:send-pr.adoc#commit[Commit your changes and push them to your remote repository].
