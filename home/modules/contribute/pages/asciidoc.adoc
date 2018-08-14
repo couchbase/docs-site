@@ -17,6 +17,6 @@ When creating a new file, use all lowercase letters, don't use symbols or specia
 Save AsciiDoc files with the _.adoc_ extension.
 ////
 
-== Next Steps
+== Next Step
 
 . xref:basics.adoc[Learn the basics of AsciiDoc].
