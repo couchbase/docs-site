@@ -31,7 +31,8 @@
 //** Revise Changes
 
 * Writing Documentation
-** xref:asciidoc.adoc[Document Structure]
+** xref:asciidoc-overview.adoc[Overview]
+** xref:pages.adoc[Standard Document Structure]
 ** xref:basics.adoc[AsciiDoc Basics]
 ** xref:cross-references.adoc[Cross References]
 *** xref:ids.adoc[IDs & Same-Page Cross References]
@@ -39,7 +40,6 @@
 //** Partial File Includes
 //** Roles & Conditionals (Pending)
 //** Attributes & Metadata (Pending)
-//** Custom Extensions (Pending)
 
 * Documentation Standards
 //Conventions
@@ -60,9 +60,8 @@
 ** xref:install-antora.adoc[Install Antora]
 ** xref:playbook.adoc[Get the Site Playbook Project]
 ** xref:build-site.adoc[Build the Site]
-
+//** Custom Extensions (Pending)
 //* Publishing Documentation
-
 //* Creating Release Branches
 
 * Additional Resources (Pending)

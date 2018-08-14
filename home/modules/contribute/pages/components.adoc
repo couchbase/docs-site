@@ -32,6 +32,7 @@ When pages in the ROOT module are published, these pages are promoted a level ab
 Pages::
 The _pages_ directory contains a module's AsciiDoc files.
 These files are automatically converted to standalone HTML pages.
+See xref:pages.adoc[Standard Document Structure] to learn how to structure an AsciiDoc file.
 
 Partials::
 The _{blank}_partials_ directory contains AsciiDoc files that aren't standalone pages.

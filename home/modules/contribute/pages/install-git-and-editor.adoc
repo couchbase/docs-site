@@ -56,4 +56,3 @@ The `asciidoc-preview` package renders a preview an AsciiDoc document in Atom.
 == Next Step
 
 xref:set-up-repository.adoc[Set up your local repository].
-//. xref:asciidoc.adoc[Learn about AsciiDoc].
