@@ -1,0 +1,23 @@
+.Server Repositories
+* {url-git-server}[Server^]
+* {url-git-cli}[CLI^]
+
+.Mobile Repositories
+* {url-git-lite}[Lite^]
+* {url-git-sync}[Sync Gateway^]
+
+.SDK Repositories
+* {url-git-sdk-c}[C SDK^]
+* {url-git-sdk-go}[Go SDK^]
+* {url-git-sdk-java}[Java SDK^]
+* {url-git-sdk-dotnet}[.NET SDK^]
+* {url-git-sdk-nodejs}[Node.js SDK^]
+* {url-git-sdk-php}[PHP SDK^]
+* {url-git-sdk-python}[Python SDK^]
+
+.Connector Repositories
+* {url-git-kafka}[Kafka Connector^]
+* {url-git-spark}[Spark Connector^]
+
+.Docs Site Repository
+* {url-git-home}[Home and Contributing^]

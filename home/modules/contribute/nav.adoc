@@ -1,9 +1,37 @@
-* xref:index.adoc[Docs Contributing Guide]
-* xref:install-git-and-editor.adoc[Install Git and an AsciiDoc Editor]
-* xref:set-up-workspace.adoc[Set Up Local Git Workspace]
-* xref:workflow.adoc[Docs Workflow]
+* xref:index.adoc[Contributing to the Documentation]
+//** How to Contribute
+//** Report a Bug
+//*** Where to Find Known Issues
+//*** Report a New Issue
+//** Propose a Change
+//** Contribute a Change
+//*** Before Your First Pull Request
+// Contribution Prerequisites
+//**** Code of Conduct
+//**** License
+//**** Quick Online Contributions
+//** How to Get in Touch
 
-* xref:asciidoc.adoc[AsciiDoc]
+* Setting Up Your Workspace
+//** Overview
+** xref:install-git-and-editor.adoc[Install Git and an AsciiDoc Editor]
+** xref:set-up-repository.adoc[Set Up Your Local Repository]
+//** xref:configure-ssh.adoc[Configure the SSH Agent]
+
+* Contributing Workflow
+** xref:workflow-overview.adoc[Overview]
+** xref:branches.adoc[Choose & Create Branches]
+** xref:components.adoc[Repository Organization]
+** xref:edit-pages.adoc[Edit Existing Documentation]
+** Add New Pages & Files (Pending)
+//** Document New Features or Behaviors
+** xref:test-site.adoc[Test Changes Locally]
+** xref:send-pr.adoc[Send Changes for Review]
+//** Team Review Process
+//** Revise Changes
+
+* Writing Documentation
+** xref:asciidoc.adoc[Document Structure]
 ** xref:basics.adoc[AsciiDoc Basics]
 ** xref:cross-references.adoc[Cross References]
 *** xref:ids.adoc[IDs & Same-Page Cross References]
@@ -13,11 +41,28 @@
 //** Attributes & Metadata (Pending)
 //** Custom Extensions (Pending)
 
-* Antora
+* Documentation Standards
+//Conventions
+//** Document Standards
+//*** File Names & Locations
+//*** Document Structure
+//** Navigation Structure & Entries
+//** Asset Standards
+//*** File Names & Locations
+//*** Optimizations
+//** Code Example Standards/Code Example Conventions
+//*** File Names & Locations
+//*** Formats & Syntax Highlighting
+** xref:style-and-voice.adoc[Style and Voice]
+
+* Testing Documentation Locally
+//** Overview
 ** xref:install-antora.adoc[Install Antora]
 ** xref:playbook.adoc[Get the Site Playbook Project]
-** xref:build-site.adoc[Build the Docs Site]
+** xref:build-site.adoc[Build the Site]
 
-* xref:style-and-voice.adoc[Style and Voice]
+//* Publishing Documentation
+
+//* Creating Release Branches
 
 * Additional Resources (Pending)

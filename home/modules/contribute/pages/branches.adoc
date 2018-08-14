@@ -1,0 +1,50 @@
+= Choose and Create Branches
+
+//Before starting this workflow, make sure to complete the steps under Setting Up Your Workspace.
+
+[#base-branch]
+== Choose the Right Base Branch
+//Are we going to forward port or back port?
+
+The Couchbase documentation repositories maintain two types of branches: master and release.
+
+New documentation for unreleased product features and non-bug related improvements should be based off of the master branch.
+Fixes related to product bugs and documentation errors in stable releases should be based off of the oldest supported release branch that is affected by the change.
+
+For example, if a broken code snippet is discovered in the Server 5.5 and 5.1 documentation, the working branch to fix this issue would be created from the `release/5.1` base branch.
+
+If you're unsure which branch to create your working branch from, check the associated issue's *Affects versions* field, or, in its comment section, ask the Docs team for more information.
+
+[#work-branch]
+== Create a Working Branch
+
+It's a best practice to isolate changes that solve a single issue in a working branch.
+You should always make a new working branch for your work, no matter how small the change.
+A working branch that only contains closely related changes is easier to test, review, and merge.
+
+. Open a terminal and change into the repository directory.
+
+ $ cd path/to/repository-folder
+
+. Download the latest changes from the upstream repository.
+
+ $ git fetch upstream
+
+. <<base-branch,Choose the right branch>> to base your changes on and check it out.
+
+ $ git checkout name-of-base-branch
+
+. Create a working branch from the base branch and checkout the working branch.
++
+--
+ $ git checkout -b DOC-$$$$
+
+The name of a working branch should match it with the issue it resolves.
+For example, you'd name the working branch for DOC issue #3891 `DOC-3891`.
+--
+
+== Next Steps
+
+. xref:components.adoc[Review the directory structure of the repository].
+. xref:edit-pages.adoc[Edit existing documentation]
+//. Add new pages, assets, examples, or partial files.

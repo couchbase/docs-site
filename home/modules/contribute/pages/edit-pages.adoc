@@ -1,0 +1,18 @@
+= Edit Existing Documentation
+
+. Start Atom (or the editor of your choice).
+.. If this is the first time you've worked on a repository, it may not appear in the Project panel when you start the Atom editor.
+Go to menu:File[Add Project Folder] and add the folder containing your local repository.
+. Expand the repository to view its folders and files.
+.. See xref:components.adoc[Documentation Repository Organization] if you're not familiar with the directory hierarchy of a component.
+. Locate the AsciiDoc or code example file you want to work on.
+Double click on it to open it in an adjacent pane.
+. Edit the file's content.
+.. For AsciiDoc tips and help, see xref:basics.adoc[AsciiDoc Basics].
+. If you installed the AsciiDoc Preview package in Atom, you can go to menu:Packages[AsciiDoc Preview > Toggle Preview] and see a basic preview of the rendered document.
+
+When your changes are complete, it's time to test them by building the documentation site on your device.
+
+== Next Step
+
+xref:build-site.adoc[Build the docs site locally to test and preview your changes].

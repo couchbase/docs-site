@@ -10,7 +10,7 @@ Thank you for taking the time and effort to improve the Couchbase documentation.
 
 == Reporting Bugs and Requesting Enhancements
 
-All bugs and enhancements for the Couchbase documentation are tracked on the {url-issues-doc}[DOC project issue board].
+All bugs and enhancements for the Couchbase documentation are tracked on the {url-issues-doc}[DOC project issue board^].
 If you find an error or think there is room for improvement please don't keep it to yourself, even if you don't intend to make the change yourself!
 Raise a DOC bug and someone on the team will look at it.
 
@@ -26,26 +26,24 @@ For any problem, describe it in detail, including any expected results and how t
 Remember, the documentation team are not experts in every aspect of Couchbase.
 For that reason, be as descriptive as possible, providing the correct text or command.
 This drastically reduces the time it takes to resolve the issue.
-{url-2056}[DOC-2056] is an example of a well-written DOC bug which allowed the assigned writer to make the necessary changes quickly.
+{url-2056}[DOC-2056^] is an example of a well-written DOC bug which allowed the assigned writer to make the necessary changes quickly.
 
 == Contributing Changes
 
 If you want to contribute the changes to resolve an issue yourself, then this is greatly encouraged!
 
-You can submit simple changes, such as typo fixes and minor clarifications, using the <<simple>>.
-For more extensive content additions and updates, or if you prefer to work locally, see the xref:workflow.adoc[Docs Contributor Workflow].
+You can submit simple changes, such as typo fixes and minor clarifications, using the <<simple>> workflow.
+For more extensive content additions and updates, or if you prefer to work locally, see the xref:workflow-overview.adoc[Contributing Workflow].
 
 [#simple]
-== Simple Edits Workflow
-//Quick Edits Workflow
+== Simple Online Edits
 
-For simple changes and fixes, you can edit the content directly on GitHub by clicking the image:edit.svg[,16,alt="edit"] icon found on many of the documentation pages.
+For simple changes, like fixing a typo or reworking a sentence, you can edit the content directly on GitHub by clicking the image:edit.svg[,16,alt="edit"] icon found on many of the documentation pages.
 
 Once you've made your edits, replace the default commit message with a short description of your change, and click btn:[Commit Changes].
 Then follow the on-screen instructions to open a pull request.
 
 == Next Steps
 
-. xref:install-git-and-editor.adoc[Install Git and an AsciiDoc editor] to work on the documentation locally.
-. xref:set-up-workspace.adoc[Set up your local workspace].
-. xref:asciidoc.adoc[Learn about AsciiDoc].
+. xref:install-git-and-editor.adoc[Install Git and an AsciiDoc editor].
+. xref:set-up-repository.adoc[Set up your local repository].
