@@ -13,10 +13,10 @@ The playbook provides the site configuration to Antora.
 
 == Fork and Clone the Playbook Project
 
-TIP: Go to xref:build-site.adoc[Build the Docs Site] if you're contributing (or have contributed) to the Home component.
+TIP: Go to xref:build-site.adoc[Build the Docs Site] if you've previously forked and cloned the {url-git-playbook}[Docs Site repository^].
 You've already completed the steps on this page.
 
-. Go to the {url-git-playbook}[Docs Site repository] on GitHub and click btn:[Fork].
+. Go to the {url-git-playbook}[Docs Site repository^] on GitHub and click btn:[Fork].
 . Create or select the local folder where you want to store the repository on your device.
 . Open a terminal and change into the selected folder.
 
@@ -36,10 +36,13 @@ You've already completed the steps on this page.
 
 You need to connect your local repository to the upstream repository so you can use the latest playbooks and extensions.
 
-. Go to the {url-git-playbook}[upstream Docs Site repository] and click btn:[Clone or download].
+. Go to the {url-git-playbook}[upstream Docs Site repository^] and click btn:[Clone or download].
 . Click the Clipboard icon to copy the repository's Git URL.
 . In your terminal type `git remote add upstream`, paste the copied URL, and press kbd:[Enter].
 
+Now you're ready to run Antora and build the documentation site on your device.
+
 == Next Steps
 
-xref:build-site.adoc[Generate the documentation site].
+* xref:build-site.adoc[Build the documentation site].
+* xref:test-site.adoc[Test your changes on the site].
