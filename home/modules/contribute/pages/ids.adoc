@@ -94,5 +94,7 @@ This example renders as:
 
 Before you can reference a destination element from a same-page xref, you must <<assign-id>>.
 
+== Learn More
+
 IDs are also used by the cross reference macro (`xref:[]`) to link from one page to an element in another page.
-See xref:cross-references.adoc[Cross References] for information and examples.
+See xref:cross-references.adoc#link-to-element[Cross References] for an example and more information.

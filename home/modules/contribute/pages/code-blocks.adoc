@@ -84,7 +84,7 @@ The include directive's target starts with the attribute reference `+{examplesdi
 
 The Antora documentation provides more information about the _examples_ directory and including code snippets.
 
-* {url-examplesdir}[The component examples directory]
-* {url-include}[Insert code snippets and files with the include directive]
-* {url-tags}[Select code regions with the tag macro]
-* {url-indent}[Normalize block indentation with the indent attribute]
+* {url-examplesdir}[The component examples directory^]
+* {url-include}[Insert code snippets and files with the include directive^]
+* {url-tags}[Select code regions with the tag macro^]
+* {url-indent}[Normalize block indentation with the indent attribute^]
