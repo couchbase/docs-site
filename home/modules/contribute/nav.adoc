@@ -20,11 +20,10 @@
 
 * Contributing Workflow
 ** xref:workflow-overview.adoc[Overview]
-** xref:branches.adoc[Choose & Create Branches]
-** xref:components.adoc[Repository Organization]
+** xref:repository-requirements.adoc[Repository Requirements & Organization]
+** xref:branches.adoc[Base & Working Branches]
 ** xref:edit-pages.adoc[Edit Existing Documentation]
-** Add New Pages & Files (Pending)
-//** Document New Features or Behaviors
+** xref:add-pages.adoc[Add a New Documentation Page]
 ** xref:test-site.adoc[Test Changes Locally]
 ** xref:send-pr.adoc[Send Changes for Review]
 //** Team Review Process
@@ -38,8 +37,7 @@
 *** xref:ids.adoc[IDs & Same-Page Cross References]
 ** xref:code-blocks.adoc[Code Blocks & Callouts]
 //** Partial File Includes
-//** Roles & Conditionals (Pending)
-//** Attributes & Metadata (Pending)
+//** Attributes & Roles
 
 * Documentation Standards
 //Conventions

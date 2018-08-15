@@ -1,9 +1,9 @@
 = Standard Document Structure
 
-AsciiDoc documents follow a standard structure.
-Standard documents have a header, which includes the document title, and a body, which includes the remainder of the document's content.
 A standard AsciiDoc document is stored in the _pages_ directory of a module.
+They have a header, which includes the document title, and a body, which includes the remainder of the document's content.
 
+[#doc-title]
 == Document Title and Header
 
 The title of a document is placed on the first line of the file.
@@ -28,7 +28,7 @@ The document body starts on next line that has text.
 
 == Document Sections
 
-A document can be divided into sections by section titles.
+A document can be divided into sections by heading titles.
 Heading 2 section titles, indicated by two equals signs (`==`), are displayed in the *On This Page* sidebar.
 
 ----
@@ -39,10 +39,10 @@ Heading 2 section titles, indicated by two equals signs (`==`), are displayed in
 ==== Heading 4 Section Title (H4)
 ----
 
-*Don't nest section headings out of order*.
-For example, a Heading 4 can't be directly inside a Heading 2 section; it must be nested inside a Heading 3 section.
+*Don't nest sections out of order*.
+For example, a heading 4 section can't be directly inside a heading 2 section; it must be nested inside a heading 3 section.
 
-*Don't apply bold formatting to section headings*.
+*Don't apply bold formatting to headings*.
 
 == One Sentence Per Line
 
@@ -64,7 +64,8 @@ The definitions are provided in xref:fts-demonstration-indexes.adoc[Demonstratio
 * Save AsciiDoc files with the _.adoc_ extension.
 * Don't use symbols or special characters.
 
-Antora uses a file's name to create its page URL, so *changing a file's name will break cross references (xrefs) and incoming links to the page from external websites*.
+The file's name is used to create its page URL.
+*Changing a file's name will break cross references (xrefs) and incoming links to the page from external websites*.
 
 == Learn More
 
