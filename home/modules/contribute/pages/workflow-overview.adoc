@@ -1,29 +1,6 @@
 = Workflow Overview
-:url-git-cb:  https://github.com/couchbase
-:url-git-labs: https://github.com/couchbaselabs
-:url-git-server: {url-git-cb}/docs-server
-:url-git-cli: {url-git-cb}/couchbase-cli/tree/master/docs
-:url-git-lite: {url-git-labs}/couchbase-lite-docs
-:url-git-sync: {url-git-labs}/sync-gateway-docs
-:url-git-sdk-c: {url-git-cb}/docs-sdk-c
-:url-git-sdk-go: {url-git-cb}/docs-sdk-go
-:url-git-sdk-java: {url-git-cb}/docs-sdk-java
-:url-git-sdk-dotnet: {url-git-cb}/docs-sdk-dotnet
-:url-git-sdk-nodejs: {url-git-cb}/docs-sdk-nodejs
-:url-git-sdk-php: {url-git-cb}/docs-sdk-php
-:url-git-sdk-python: {url-git-cb}/docs-sdk-python
-:url-git-kafka: {url-git-cb}/kafka-connect-couchbase/tree/master/docs
-:url-git-spark: {url-git-cb}/couchbase-spark-connector/tree/master/docs
-:url-git-home: {url-git-cb}/docs-site/tree/master/home
 
 This workflow is for frequent contributors and Couchbase Docs team members who make major changes, add documents, examples, and images, and plan to work on the same set of changes over several days before requesting sign-off.
-
-== Distributed Repositories
-
-The Couchbase documentation is stored across multiple repositories on GitHub.
-Some repositories only contain documentation, while others also store source code.
-
-include::{partialsdir}/repo-list.adoc[]
 
 == Workflow Steps
 
@@ -34,12 +11,13 @@ These steps, described under Setting Up Your Workspace, only need to be done onc
 * [x] Connect your local repository with the upstream repository.
 //* [x] Configure the SSH agent
 
-The following steps are completed each time you make a contribution to a repository.
+Most of the following steps are completed each time you make a contribution to a repository.
 
+* [x] xref:repository-requirements.adoc[Review each repository's requirements].
+* [x] xref:repository-requirements.adoc#dir-structure[Explore the component directory structure].
 * [x] xref:branches.adoc#base-branch[Choose a base branch].
 * [x] xref:branches.adoc#work-branch[Create a working branch].
-* [x] xref:edit-pages.adoc[Fix existing documentation].
-// or document new features and behaviors.
+* [x] xref:edit-pages.adoc[Fix existing documentation] or xref:add-pages.adoc[create a new documentation page].
 * [x] xref:test-site.adoc[Build the site locally and test your changes].
 * [x] xref:send-pr.adoc#commit[Commit, rebase, and push your changes].
 * [x] xref:send-pr.adoc#pr[Submit a pull request].
