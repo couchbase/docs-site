@@ -4,7 +4,7 @@
 .. If this is the first time you've worked on a repository, it may not appear in the Project panel when you start the Atom editor.
 Go to menu:File[Add Project Folder] and add the folder containing your local repository.
 . Expand the repository to view its folders and files.
-.. See xref:components.adoc[Documentation Repository Organization] if you're not familiar with the directory hierarchy of a component.
+.. See xref:repository-requirements.adoc#dir-structure[Directory Structure and Key Files] if you're not familiar with the structure of a documentation component.
 . Locate the AsciiDoc or code example file you want to work on.
 Double click on it to open it in an adjacent pane.
 . Edit the file's content.
