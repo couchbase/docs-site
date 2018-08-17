@@ -39,8 +39,9 @@ asciidoc:
     toc: ~
     xrefstyle: short
   extensions:
-  - ./lib/inline-man-macro.js
+  - ./lib/block-json-config-ui-macro.js
   - ./lib/block-swagger-ui-macro.js
+  - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
 ui:
   bundle:
