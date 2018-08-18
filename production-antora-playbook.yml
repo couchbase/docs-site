@@ -33,6 +33,7 @@ content:
   - url: git@github.com:couchbase/docs-sdk-python.git
 asciidoc:
   attributes:
+    site-stage-production: ''
     experimental: ''
     toc: ~
     xrefstyle: short
@@ -43,6 +44,6 @@ asciidoc:
   - ./lib/multirow-table-head-tree-processor.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v115/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v116/ui-bundle.zip
 output:
   dir: ./public

@@ -31,8 +31,8 @@ content:
   - url: git@github.com:couchbase/docs-sdk-nodejs.git
   - url: git@github.com:couchbase/docs-sdk-php.git
   - url: git@github.com:couchbase/docs-sdk-python.git
-  #- url: https://github.com/couchbaselabs/couchbase-lite-docs
-  #  branches: master, release/2.0
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite
+    branches: [master, release/2.0, release/1.4]
 asciidoc:
   attributes:
     experimental: ''
@@ -45,7 +45,7 @@ asciidoc:
   - ./lib/multirow-table-head-tree-processor.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v115/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v116/ui-bundle.zip
   supplemental_files:
   - path: robots.txt
     contents: |
