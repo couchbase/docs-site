@@ -9,7 +9,7 @@ content:
     branches: HEAD
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
-    branches: [beta2, master]
+    branches: [master]
     start_path: docs/user
   - url: git@github.com:couchbase/docs-analytics.git
     branches: [1.0.x]
