@@ -54,9 +54,14 @@ If you are a Couchbase user wanting to understand how to develop queries
 
 [.tile]
 .Couchbase Mobile
-ifdef::site-stage-production[* https://developer.couchbase.com/documentation/mobile/current/couchbase-lite/index.html[Lite]]
-ifndef::site-stage-production[* xref:couchbase-lite::index.adoc[Lite]]
+ifdef::site-stage-production[]
+* https://developer.couchbase.com/documentation/mobile/current/couchbase-lite/index.html[Lite]
 * https://developer.couchbase.com/documentation/mobile/current/guides/sync-gateway/index.html[Sync Gateway]
+endif::[]
+ifndef::site-stage-production[]
+* xref:couchbase-lite::index.adoc[Lite]
+* xref:sync-gateway::index.adoc[Sync Gateway]
+endif::[]
 
 [.tile]
 .Couchbase Cloud
