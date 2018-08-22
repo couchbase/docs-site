@@ -9,7 +9,7 @@ content:
     branches: HEAD
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
-    branches: [master]
+    branches: master
     start_path: docs/user
   - url: git@github.com:couchbase/docs-analytics.git
     branches: [1.0.x]
@@ -33,6 +33,8 @@ content:
   - url: git@github.com:couchbase/docs-sdk-python.git
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
     branches: [master, release/2.0, release/1.4]
+  - url: https://github.com/couchbaselabs/docs-sync-gateway
+    branches: [master, release/2.0]
 asciidoc:
   attributes:
     experimental: ''
