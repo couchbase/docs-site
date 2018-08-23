@@ -38,10 +38,10 @@ asciidoc:
     toc: ~
     xrefstyle: short
   extensions:
-  - ./lib/block-json-config-ui-macro.js
-  - ./lib/block-swagger-ui-macro.js
-  - ./lib/inline-man-macro.js
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/man-inline-macro.js
   - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
 ui:
   bundle:
