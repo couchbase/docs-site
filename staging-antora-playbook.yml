@@ -12,15 +12,12 @@ content:
     branches: master
     start_path: docs/user
   - url: git@github.com:couchbase/docs-analytics.git
-    branches: [release/5.5]
   - url: https://github.com/cb-docs-review-space/couchbase-cli.git
-    branches: v*
     start_path: docs
   - url: git@github.com:cb-docs-review-space/backup.git
-    branches: v*
     start_path: docs
   - url: https://github.com/cb-docs-review-space/kafka-connect-couchbase.git
-    branches: [server-v5.1, server-v5.5]
+    branches: server-v*
     start_path: docs
   # NOTE server-docs is currently after other server repos so nav key wins
   - url: git@github.com:couchbase/docs-server.git
