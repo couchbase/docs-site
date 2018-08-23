@@ -12,7 +12,7 @@ content:
     branches: [beta2]
     start_path: docs/user
   - url: git@github.com:couchbase/docs-analytics.git
-    branches: [1.0.x]
+    branches: [release/5.5]
   - url: https://github.com/cb-docs-review-space/couchbase-cli.git
     branches: v*
     start_path: docs
