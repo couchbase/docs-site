@@ -35,6 +35,7 @@ asciidoc:
   attributes:
     site-stage-production: ''
     experimental: ''
+    tabs: tabs
     toc: ~
     xrefstyle: short
   extensions:

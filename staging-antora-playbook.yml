@@ -38,6 +38,7 @@ content:
 asciidoc:
   attributes:
     experimental: ''
+    tabs: tabs
     toc: ~
     xrefstyle: short
   extensions:
