@@ -41,6 +41,8 @@ content:
 asciidoc:
   attributes:
     experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
     tabs: tabs
     toc: ~
     xrefstyle: short

@@ -36,8 +36,10 @@ content:
   - url: git@github.com:couchbase/docs-sdk-python.git
 asciidoc:
   attributes:
-    site-stage-production: ''
     experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    site-stage-production: ''
     tabs: tabs
     toc: ~
     xrefstyle: short
