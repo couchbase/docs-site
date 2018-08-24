@@ -11,6 +11,9 @@ content:
   - url: git@github.com:couchbase/couchbase-operator.git
     branches: beta2
     start_path: docs/user
+  - url: https://github.com/cb-docs-review-space/couchbase-elasticsearch-connector
+    branches: release/cypress-patched
+    start_path: docs
   - url: https://github.com/cb-docs-review-space/kafka-connect-couchbase.git
     branches: release/3.3-patched
     start_path: docs
@@ -43,6 +46,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v127/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v128/ui-bundle.zip
 output:
   dir: ./public
