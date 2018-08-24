@@ -9,15 +9,15 @@ content:
     branches: HEAD
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
-    branches: [beta2]
+    branches: beta2
     start_path: docs/user
+  - url: https://github.com/cb-docs-review-space/kafka-connect-couchbase.git
+    branches: release/3.3-patched
+    start_path: docs
   - url: git@github.com:couchbase/docs-analytics.git
   - url: https://github.com/cb-docs-review-space/couchbase-cli.git
     start_path: docs
   - url: git@github.com:cb-docs-review-space/backup.git
-    start_path: docs
-  - url: https://github.com/cb-docs-review-space/kafka-connect-couchbase.git
-    branches: [server-v*, '!server-v6.0']
     start_path: docs
   # NOTE server-docs is currently after other server repos so nav key wins
   - url: git@github.com:couchbase/docs-server.git
@@ -43,6 +43,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v125/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v127/ui-bundle.zip
 output:
   dir: ./public
