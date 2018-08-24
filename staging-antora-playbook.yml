@@ -17,8 +17,8 @@ content:
   - url: https://github.com/cb-docs-review-space/kafka-connect-couchbase.git
     branches: [master-patched, release/3.3-patched]
     start_path: docs
-  - url: https://github.com/cb-docs-review-space/couchbase-spark-connector.git
-    branches: master-patched
+  - url: https://github.com/couchbase/couchbase-spark-connector.git
+    branches: master
     start_path: docs
   - url: git@github.com:couchbase/docs-analytics.git
   - url: https://github.com/cb-docs-review-space/couchbase-cli.git
