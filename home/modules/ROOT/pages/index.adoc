@@ -70,7 +70,7 @@ endif::[]
 
 [.tile]
 .xref:server:connectors:intro.adoc[Connectors]
-* xref:elasticsearch-transport::index.adoc[Elasticsearch]
+* xref:elasticsearch-connector::index.adoc[Elasticsearch]
 * xref:server:connectors:hadoop-1.2/hadoop.adoc[Hadoop]
 * xref:kafka-connector::index.adoc[Kafka]
 * xref:spark-connector::index.adoc[Spark]
