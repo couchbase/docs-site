@@ -20,10 +20,11 @@
 
 * Contributing Workflow
 ** xref:workflow-overview.adoc[Overview]
-** xref:repository-requirements.adoc[Repository Requirements & Organization]
-** xref:branches.adoc[Base & Working Branches]
+** xref:repository-requirements.adoc[Repository Requirements and Organization]
+** xref:branches.adoc[Base and Working Branches]
 ** xref:edit-pages.adoc[Edit Existing Documentation]
 ** xref:add-pages.adoc[Add a New Documentation Page]
+** xref:update-nav.adoc[Update a Navigation File]
 ** xref:test-site.adoc[Test Changes Locally]
 ** xref:send-pr.adoc[Send Changes for Review]
 //** Team Review Process
@@ -34,24 +35,25 @@
 ** xref:pages.adoc[Standard Document Structure]
 ** xref:basics.adoc[AsciiDoc Basics]
 ** xref:cross-references.adoc[Cross References]
-*** xref:ids.adoc[IDs & Same-Page Cross References]
-** xref:code-blocks.adoc[Code Blocks & Callouts]
+*** xref:ids.adoc[IDs and Same-Page Cross References]
+** xref:code-blocks.adoc[Code Blocks and Callouts]
 //** Partial File Includes
 //** Attributes & Roles
 
-* Documentation Standards
-//Conventions
-//** Document Standards
+* Documentation Conventions & Styles
+//** Repositories, Components, & Modules
+//*** Component Configuration
+** xref:nav-menus-and-files.adoc[Navigation Menus and Files]
+//** Pages
 //*** File Names & Locations
 //*** Document Structure
-//** Navigation Structure & Entries
-//** Asset Standards
+//** Assets
 //*** File Names & Locations
 //*** Optimizations
-//** Code Example Standards/Code Example Conventions
+//** Code Examples
 //*** File Names & Locations
-//*** Formats & Syntax Highlighting
-** xref:style-and-voice.adoc[Style and Voice]
+//*** Language & Syntax Highlighting
+** xref:style-and-voice.adoc[Content Style and Voice]
 
 * Testing Documentation Locally
 //** Overview

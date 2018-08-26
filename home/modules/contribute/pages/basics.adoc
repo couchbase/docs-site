@@ -126,6 +126,8 @@ Rendered as:
 
 include::{examplesdir}/lists.adoc[tag=unordered]
 
+xref:update-nav.adoc[Navigation files] also use the unordered list syntax.
+
 [#images]
 == Images
 

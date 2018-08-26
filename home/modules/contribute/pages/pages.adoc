@@ -28,8 +28,8 @@ The document body starts on next line that has text.
 
 == Document Sections
 
-A document can be divided into sections by heading titles.
-Heading 2 section titles, indicated by two equals signs (`==`), are displayed in the *On This Page* sidebar.
+A document is divided into sections by heading titles.
+Heading 2 section titles, indicated by two equals signs (`==`), are displayed in the xref:nav-menus-and-files.adoc[On This Page sidebar].
 
 ----
 == Heading 2 Section Title (H2)
@@ -48,7 +48,6 @@ For example, a heading 4 section can't be directly inside a heading 2 section; i
 
 Sentences that are part of paragraphs, lists, and tables should be entered on individual lines.
 This best practice makes reviewing pull requests and comparing versions of the same file much easier for maintainers.
-Also, it helps you find long sentences that need to be restructured (e.g., the first sentence in the example below).
 
 ----
 == Establishing Demonstration Indexes
