@@ -25,5 +25,5 @@ Any AsciiDoc file that is saved in a _pages_ directory in an Antora documentatio
 
 == Next Steps
 
-* Add a page to a component navigation menu. (Pending)
+* xref:update-nav.adoc[Add a page to a component navigation menu].
 * xref:build-site.adoc[Build the docs site locally to test and preview your changes].

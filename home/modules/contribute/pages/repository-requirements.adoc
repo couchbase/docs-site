@@ -121,9 +121,8 @@ Non-AsciiDoc files, such as source code and data values, are stored in the _exam
 These files are often inserted into listing blocks using the xref:code-blocks.adoc[AsciiDoc include directive].
 
 Navigation::
-A navigation file, often named _nav.adoc_ contains one or more AsciiDoc lists.
-Antora uses these files to build the site's component navigation menus.
-A navigation file must be declared in the component descriptor in order to be displayed in the component's navigation menu.
+A xref:update-nav.adoc[navigation file], often named _nav.adoc_ contains one or more AsciiDoc lists.
+Antora uses these files to build the site's xref:nav-menus-and-files.adoc[component navigation menus].
 
 == Next Steps
 
