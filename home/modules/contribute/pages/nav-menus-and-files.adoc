@@ -7,12 +7,12 @@ The products and services listed in the custom component selector dropdown menu 
 
 == Component Version Selector Menu
 
-The component name and version number listed in the version selector menu are generated from the `title` and `version` keys in the _antora.yml_ file corresponding to that component version.
+The component name and version numbers listed in the version selector menu are generated from the xref:component-configuration.adoc#config[title and version keys] in the _antora.yml_ file corresponding to that component version.
 
 == Component Menu
 
 A component menu is the navigation displayed on the left side of the page when a visitor enters the documentation for a component.
-This menu is created from the <<nav-file,navigation file(s)>> registered in that component's _antora.yml_ file.
+This menu is created from the <<nav-file>> registered in that component's _antora.yml_ file.
 The order the files are registered is the order their contents are displayed in the menu.
 
 === Breadcrumbs
@@ -21,7 +21,7 @@ The breadcrumbs listed at the top of a page are computed from the parent entry l
 
 == On This Page Sidebar
 
-A page's heading 2 section titles, indicated by two equals signs (`==`), are displayed in the *On This Page* sidebar located on the right side of the page.
+A page's xref:pages.adoc#document-sections[heading 2 section titles] are displayed in the *On This Page* sidebar located on the right side of the page.
 
 [#nav-file]
 == Navigation Files

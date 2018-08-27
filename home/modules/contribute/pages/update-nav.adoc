@@ -67,7 +67,7 @@ When removing a list item, remember the following:
 
 === Xrefs
 
-Xrefs in a navigation file follow the same rules and structure as xrefs in a page.
+Xrefs in a navigation file follow the same rules and structure as xref:cross-references.adoc[xrefs in a page].
 If a page and a navigation file are in the same module, then only specify the page coordinate.
 
 .Same-module navigation xrefs
@@ -119,9 +119,11 @@ Write "`and`" as *and*.
 ** https://support.couchbase.com[Contact Support]
 ----
 
+////
 == Next Steps
 
 * Register (or unregister) a navigation file.
 * Adjust the order that navigation file lists are displayed in a component menu.
 * Include a navigation file into another navigation file.
 * Manage the navigation files in a distributed component (Server).
+////

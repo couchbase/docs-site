@@ -8,7 +8,7 @@ Before you can contribute changes to the Couchbase documentation, you must fork 
 The Docs CI runner automatically fails and closes any pull request (PR) that isn't submitted from a fork.
 
 . Go to the appropriate repository on GitHub and click btn:[Fork].
-See xref:repository-requirements.adoc#repo-urls[Repository Requirements and Organization] for the list of active repositories
+See xref:repositories.adoc#repo-urls[Repository Organization] for the list of active repositories
 
 .How to quickly find the right repository
 ****
@@ -18,7 +18,7 @@ Click btn:[Fork].
 
 //Not all of the Couchbase documentation repositories can accept contributor pull requests at this time.
 If there isn't an image:edit.svg[,18,alt="edit"] icon on the page, then the repository can't accept changes using the regular workflow.
-See xref:repository-requirements.adoc#repo-special[Repositories that Require Special Handling] for more information or propose fixes and improvements using the btn:[Feedback?] button at the bottom of the page.
+See xref:repositories.adoc#repo-special[Repositories that Require Special Handling] for more information or propose fixes and improvements using the btn:[Feedback?] button at the bottom of the page.
 ****
 
 == Clone the Repository

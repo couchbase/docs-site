@@ -20,7 +20,7 @@
 
 * Contributing Workflow
 ** xref:workflow-overview.adoc[Overview]
-** xref:repository-requirements.adoc[Repository Requirements and Organization]
+** xref:repositories.adoc[Repository Organization]
 ** xref:branches.adoc[Base and Working Branches]
 ** xref:edit-pages.adoc[Edit Existing Documentation]
 ** xref:add-pages.adoc[Add a New Documentation Page]
@@ -38,20 +38,19 @@
 *** xref:ids.adoc[IDs and Same-Page Cross References]
 ** xref:code-blocks.adoc[Code Blocks and Callouts]
 //** Partial File Includes
-//** Attributes & Roles
+//** Attributes and Roles
 
 * Documentation Conventions & Styles
-//** Repositories, Components, & Modules
-//*** Component Configuration
+** xref:component-configuration.adoc[Component Structure and Configuration]
 ** xref:nav-menus-and-files.adoc[Navigation Menus and Files]
 //** Pages
-//*** File Names & Locations
+//*** File Names and Locations
 //*** Document Structure
 //** Assets
-//*** File Names & Locations
+//*** File Names and Locations
 //*** Optimizations
 //** Code Examples
-//*** File Names & Locations
+//*** File Names and Locations
 //*** Language & Syntax Highlighting
 ** xref:style-and-voice.adoc[Content Style and Voice]
 
@@ -64,4 +63,4 @@
 //* Publishing Documentation
 //* Creating Release Branches
 
-* Additional Resources (Pending)
+//* Additional Resources (Pending)
