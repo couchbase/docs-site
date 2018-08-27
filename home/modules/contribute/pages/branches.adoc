@@ -20,7 +20,7 @@ Fixes related to product bugs and documentation errors in stable releases should
 For example, if a broken code snippet is discovered in the Server 5.5 and 5.1 documentation, the working branch to fix this issue would be created from the `release/5.1` base branch.
 
 If you're unsure which branch to create your working branch from, check the associated issue's *Affects versions* field, or, in its comment section, ask the Docs team for more information.
-Also note that a few of the repositories use custom branch names, see xref:repository-requirements.adoc#repo-special[Repositories that Require Special Handling] for more information.
+Also note that a few of the repositories use custom branch names, see xref:repositories.adoc#repo-special[Repositories that Require Special Handling] for more information.
 
 [#work-branch]
 == Create a Working Branch

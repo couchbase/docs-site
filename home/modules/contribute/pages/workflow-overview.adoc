@@ -13,8 +13,8 @@ These steps, described under Setting Up Your Workspace, only need to be done onc
 
 Most of the following steps are completed each time you make a contribution to a repository.
 
-* [x] xref:repository-requirements.adoc[Review each repository's requirements].
-* [x] xref:repository-requirements.adoc#dir-structure[Explore the component directory structure].
+* [x] xref:repositories.adoc[Review each repository's requirements].
+* [x] xref:repositories.adoc#dir-structure[Explore the component directory structure].
 * [x] xref:branches.adoc#base-branch[Choose a base branch].
 * [x] xref:branches.adoc#work-branch[Create a working branch].
 * [x] xref:edit-pages.adoc[Fix existing documentation] or xref:add-pages.adoc[create a new documentation page].
