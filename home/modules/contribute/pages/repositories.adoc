@@ -13,19 +13,21 @@
 :url-git-sdk-nodejs: {url-git-cb}/docs-sdk-nodejs
 :url-git-sdk-php: {url-git-cb}/docs-sdk-php
 :url-git-sdk-python: {url-git-cb}/docs-sdk-python
-:url-git-kafka: {url-git-cb}/kafka-connect-couchbase
-:url-git-spark: {url-git-cb}/couchbase-spark-connector
 :url-git-home: {url-git-cb}/docs-site
 :url-git-operator: {url-git-cb}/couchbase-operator
 :url-git-asterix: {url-git-labs}/asterix-opt
+:url-git-elastic: {url-git-labs}/couchbase-elasticsearch-connector
+:url-git-kafka: {url-git-cb}/kafka-connect-couchbase
+:url-git-spark: {url-git-cb}/couchbase-spark-connector
+:url-git-talend: {url-git-cb}/docs-connectors-talend
 //Couchbase uses Antora to manage and build docs.couchbase.com.
 
 The Couchbase documentation is stored in multiple repositories that are organized in a standard directory structure.
 
 [#repo-urls]
-== Distributed Repositories
+== Documentation Repository Roster
 
-The Couchbase documentation is distributed across several organizations and multiple repositories on GitHub.
+The Couchbase documentation is stored several organizations and multiple repositories on GitHub.
 The following repositories accept contributions via the regular workflow and use a standard branch pattern.
 
 * {url-git-server}[Server^]
@@ -38,26 +40,23 @@ The following repositories accept contributions via the regular workflow and use
 * {url-git-sdk-nodejs}[Node.js SDK^]
 * {url-git-sdk-php}[PHP SDK^]
 * {url-git-sdk-python}[Python SDK^]
-* {url-git-kafka}[Kafka Connector^]
-* {url-git-spark}[Spark Connector^]
 * {url-git-home}[Home and Contribute^]
 
 [#repo-special]
 === Repositories that Require Special Handling
 
-Some Couchbase repositories can only accept contributions via Gerrit, use custom branch patterns, and have additional content and AsciiDoc requirements.
-You should review the project's README for the latest contributing requirements and contact the project lead before working on documentation stored in these repositories.
+Some Couchbase repositories only accept contributions via Gerrit, use custom branch patterns, and have additional content and AsciiDoc requirements.
+Review the project's README for the latest contributing requirements, and contact the project lead before working on documentation stored in these repositories.
 
 ==== CLI and Backup
 
 The CLI and Backup repositories use the Gerrit workflow and custom branch patterns.
-Additionally, the AsciiDoc files in these repositories are used to create two sets of documentation: 1. the CLI and Backup pages incorporated in Couchbase Server on docs.couchbase.com, and 2. standalone man pages that are bundled with the Server software.
+Additionally, the AsciiDoc files in these repositories are used to create two sets of documentation: 1. the CLI and Backup pages incorporated in the Couchbase Server component and, 2., standalone man pages that are bundled with the Server software.
 When editing these files, use the man page section structure and formatting.
+//make note to special xref link text formatting
 
 * {url-git-cli}[CLI^]
 * {url-git-backup}[Backup^]
-
-//make note to special xref link text formatting
 
 ==== Autonomous Operator
 
@@ -72,6 +71,15 @@ The Analytics service documentation is maintained in collaboration with the Aste
 See its {url-git-asterix}/blob/master/README.md[README] for contributing instructions.
 
 * {url-git-asterix}[Analytics^]
+
+==== Connectors
+
+The connector repositories use the Gerrit workflow.
+
+* {url-git-elastic}[Elasticsearch Connector^]
+* {url-git-kafka}[Kafka Connector^]
+* {url-git-spark}[Spark Connector^]
+* {url-git-talend}[Talend Connector^]
 
 [#dir-structure]
 == Directory Structure and Key Files
