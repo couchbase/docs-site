@@ -14,8 +14,8 @@ content:
   - url: https://github.com/couchbaselabs/couchbase-elasticsearch-connector.git
     branches: release/cypress
     start_path: docs
-  - url: https://github.com/cb-docs-review-space/kafka-connect-couchbase.git
-    branches: [master-patched, release/3.3-patched]
+  - url: https://github.com/couchbase/kafka-connect-couchbase.git
+    branches: [master, release/3.3]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-spark-connector.git
     branches: master
