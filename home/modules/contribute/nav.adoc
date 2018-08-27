@@ -40,7 +40,7 @@
 //** Partial File Includes
 //** Attributes and Roles
 
-* Documentation Conventions & Styles
+* Conventions & Styles
 ** xref:component-configuration.adoc[Component Structure and Configuration]
 ** xref:nav-menus-and-files.adoc[Navigation Menus and Files]
 //** Pages
@@ -54,7 +54,7 @@
 //*** Language & Syntax Highlighting
 ** xref:style-and-voice.adoc[Content Style and Voice]
 
-* Testing Documentation Locally
+* Testing Locally
 //** Overview
 ** xref:install-antora.adoc[Install Antora]
 ** xref:playbook.adoc[Get the Site Playbook Project]
