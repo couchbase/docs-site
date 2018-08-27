@@ -43,9 +43,22 @@ You can log in to the Couchbase cluster and explore the items created.
 Sample buckets must be accessed according to the requirements of Couchbase [#control]_Role-Based Access Control_.
 ----
 
-== List Item IDs
+.Add an ID to a Code Block
+[#code-block-id]
+....
+[source#verify,console]
+----
+$ curl localhost:8092
 
-You can assign IDs to list items, but the syntax is slightly different.
+{"couchdb":"Welcome","version":"v4.5.1-60-g3cf258d","couchbase":"5.0.2-5506-community"}
+----
+....
+
+When a block has a style, like the above code block (`source`) example, the ID is attached to the end of the style.
+
+== Regular Text and List Item IDs
+
+You can assign IDs to regular text and list items, but the syntax is slightly different.
 
 * The ID *isn't* prefixed.
 * The ID is placed inside a double set of square brackets (`[[ ]]`).

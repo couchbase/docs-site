@@ -80,6 +80,10 @@ The include directive's target starts with the attribute reference `+{examplesdi
 ----
 ....
 
+== Learn More
+
+xref:ids.adoc#code-block-id[Assign an ID to a code block].
+
 == Additional Resources
 
 The Antora documentation provides more information about the _examples_ directory and including code snippets.
