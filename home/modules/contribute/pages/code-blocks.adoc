@@ -82,7 +82,8 @@ The include directive's target starts with the attribute reference `+{examplesdi
 
 == Learn More
 
-xref:ids.adoc#code-block-id[Assign an ID to a code block].
+* xref:ids.adoc#code-block-id[Assign an ID to a code block].
+* xref:tabs.adoc[Create a tabs set].
 
 == Additional Resources
 

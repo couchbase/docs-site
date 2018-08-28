@@ -1,0 +1,67 @@
+= Tabs
+:tabs:
+
+== Set and Create Tabs
+
+To use the tabs block in a page, set the `tabs` attribute in the document header.
+
+----
+= Page Title
+:tabs:
+----
+
+Then, in the body of your page, you can create a set of tabs.
+
+....
+[{tabs}] // <1>
+====     // <2>
+Tab 1 Title:: // <3>
++   // <4>
+--  // <5>
+This is the content of the first tab.
+
+Another paragraph in the first tab.
+
+[source,console]
+----
+$ a code block
+----
+--
+   // <6>
+Tab 2 Title::
++
+This is the content of the second tab.
+====
+....
+<1> Reference the tabs attribute in the block's attribute list.
+<2> Place the tab titles and content in a delimited example block (`====`).
+<3> The tab title is directly followed by two colons (`::`).
+<4> Insert a list continuation to attach the tab content to the tab title,
+even if the tab content is only a single block.
+<5> Enter complex tab content in a delimited open block (`--`).
+<6> Insert a blank line between a tab's content and the title of the next tab.
+
+This tabs set is rendered as:
+
+[{tabs}]
+====
+Tab 1 Title::
++
+--
+This is the content of the first tab.
+
+Another paragraph in the first tab.
+
+[source,console]
+----
+$ a code block
+----
+--
+
+Tab 2 Title::
++
+This is the content of the second tab.
+====
+
+See a tabs set in action on the xref:sync-gateway::getting-started.adoc#installation[Sync Gateway Getting Started page].
+// https://docs-staging.couchbase.com/home/index.html
