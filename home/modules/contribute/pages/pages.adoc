@@ -10,7 +10,7 @@ The title of a document is placed on the first line of the file.
 It is specified by one equals sign (`=`), followed by one blank space, and then the text of the title.
 *All AsciiDoc documents stored in a _pages_ directory must have a document title*.
 
-On the line directly below the title and subsequent contiguous lines, you can add document attributes.
+On the line directly below the title and subsequent contiguous lines, you can add xref:attributes-and-roles.adoc[document attributes].
 Each attribute must be entered on its own line.
 Document attributes are optional.
 
@@ -68,4 +68,5 @@ The file's name is used to create its page URL.
 
 == Learn More
 
-xref:basics.adoc[Learn the basics of AsciiDoc].
+* xref:basics.adoc[AsciiDoc basics].
+* xref:attributes-and-roles.adoc[Attributes and roles].
