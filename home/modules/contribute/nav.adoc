@@ -38,7 +38,7 @@
 ** xref:code-blocks.adoc[Code Blocks and Callouts]
 ** xref:tabs.adoc[Tabs Sets]
 //** Partial File Includes
-//** Attributes and Roles
+** xref:attributes-and-roles.adoc[Attributes and Roles]
 
 * Conventions & Styles
 ** xref:component-configuration.adoc[Component Structure and Configuration]

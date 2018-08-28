@@ -324,8 +324,8 @@ For more examples and information, see the {url-tables}[Asciidoctor table docume
 * xref:code-blocks.adoc#callouts[Callout numbers]
 * xref:tabs.adoc[Tabs sets]
 //* Partial file includes
-//* Page, block, and inline roles
-//* Attributes and metadata
+* xref:attributes-and-roles.adoc#using-roles[Page role]
+* xref:attributes-and-roles.adoc[Attributes]
 
 == Additional Resources
 

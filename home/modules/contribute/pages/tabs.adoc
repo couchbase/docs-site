@@ -1,4 +1,4 @@
-= Tabs
+= Tabs Sets
 :tabs:
 
 == Set and Create Tabs
