@@ -25,6 +25,7 @@ These attributes and roles add custom metadata and special processing or styling
 * xref:basics.adoc#images[Insert an image].
 * xref:cross-references.adoc[Create document-to-document cross references].
 * xref:code-blocks.adoc[Add source code examples to a document].
+* xref:tabs.adoc[Create a tabs set].
 
 == Additional Resources
 

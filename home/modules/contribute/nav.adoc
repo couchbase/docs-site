@@ -16,7 +16,6 @@
 //** Overview
 ** xref:install-git-and-editor.adoc[Install Git and an AsciiDoc Editor]
 ** xref:set-up-repository.adoc[Set Up Your Local Repository]
-//** xref:configure-ssh.adoc[Configure the SSH Agent]
 
 * Contributing Workflow
 ** xref:workflow-overview.adoc[Overview]
@@ -37,6 +36,7 @@
 ** xref:cross-references.adoc[Cross References]
 *** xref:ids.adoc[IDs and Same-Page Cross References]
 ** xref:code-blocks.adoc[Code Blocks and Callouts]
+** xref:tabs.adoc[Tabs Sets]
 //** Partial File Includes
 //** Attributes and Roles
 
