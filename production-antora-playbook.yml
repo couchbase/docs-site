@@ -36,6 +36,10 @@ content:
   - url: git@github.com:couchbase/docs-sdk-nodejs.git
   - url: git@github.com:couchbase/docs-sdk-php.git
   - url: git@github.com:couchbase/docs-sdk-python.git
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite.git
+    branches: [master, release/2.0, release/1.4]
+  - url: https://github.com/couchbaselabs/docs-sync-gateway.git
+    branches: [master, release/2.0]
 asciidoc:
   attributes:
     experimental: ''
