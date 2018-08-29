@@ -1,4 +1,4 @@
-= Welcome to the new Couchbase Docs!
+= Welcome to Couchbase Docs!
 :page-layout: home
 :!sectids:
 
@@ -40,6 +40,15 @@ If you are a Couchbase user wanting to understand how to develop queries
 * xref:server:getting-started:do-a-quick-install.adoc[Quick Install]
 * xref:server:getting-started:try-a-query.adoc[Try a N1QL Query]
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
+
+[.card]
+=== Couchbase for App Developers
+
+If you are a Couchbase user wanting to develop for applications on the edge
+
+* xref:sync-gateway::getting-started.adoc[Get Started with Sync Gateway]
+* xref:couchbase-lite::index.adoc[Get Started with Couchbase Lite]
+* xref:couchbase-lite::samples.adoc[Samples]
 
 [.tiles.browse]
 == Browse Documentation
