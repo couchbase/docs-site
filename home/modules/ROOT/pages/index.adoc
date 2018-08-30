@@ -2,14 +2,12 @@
 :page-layout: home
 :!sectids:
 
-The new documentation site, now in Beta, is a huge leap forward in our content strategy.
-As we work out the kinks, we'd love to get your feedback on what we're doing well, and what we could be doing better.
-To let us know, please use the btn:[Feedback?] button at the bottom-right corner of any page, or send an email to docs@couchbase.com.
-We look forward to hearing from you!
+*New!* Welcome to the new home of Couchbase documentation!
+We’d love to hear from you. Feel free to use the btn:[Feedback?] button on any page to share your feedback and concerns.
 
 [.hint]
-Looking for the old documentation site?
-You can find it over at the https://developer.couchbase.com[Developer Portal].
+Looking for non-documentation resources? 
+Check out the https://developer.couchbase.com[Developer Portal]!
 
 [.cards.cards-4.personas.conceal-title]
 == {empty}
