@@ -1,5 +1,5 @@
 site:
-  title: Couchbase Docs (Beta)
+  title: Couchbase Docs
   url: https://docs.couchbase.com
   start_page: home::index.adoc
 content:
@@ -9,13 +9,13 @@ content:
     branches: HEAD
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
-    branches: beta2
+    branches: master
     start_path: docs/user
-  - url: https://github.com/cb-docs-review-space/couchbase-elasticsearch-connector.git
+  - url: https://github.com/couchbaselabs/couchbase-elasticsearch-connector.git
     branches: release/cypress
     start_path: docs
-  - url: https://github.com/cb-docs-review-space/kafka-connect-couchbase.git
-    branches: release/3.3-patched
+  - url: https://github.com/couchbase/kafka-connect-couchbase.git
+    branches: [master, release/3.3]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-spark-connector.git
     branches: master
@@ -23,12 +23,14 @@ content:
   - url: git@github.com:couchbase/docs-connectors-talend.git
     branches: master
   - url: git@github.com:couchbase/docs-analytics.git
-  - url: https://github.com/cb-docs-review-space/couchbase-cli.git
+  - url: https://github.com/couchbase/couchbase-cli.git
+    branches: [vulcan, spock, 5.0.1]
     start_path: docs
-  - url: git@github.com:cb-docs-review-space/backup.git
+  - url: git@github.com:couchbase/backup.git
+    branches: [vulcan, spock, 5.0.x]
     start_path: docs
   # NOTE server-docs is currently after other server repos so nav key wins
-  - url: git@github.com:couchbase/docs-server.git
+  - url: https://github.com/couchbase/docs-server.git
   - url: git@github.com:couchbase/docs-sdk-c.git
   - url: git@github.com:couchbase/docs-sdk-dotnet.git
   - url: git@github.com:couchbase/docs-sdk-go.git
@@ -53,7 +55,7 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v132/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v137/ui-bundle.zip
   supplemental_files:
   - path: robots.txt
     contents: |
