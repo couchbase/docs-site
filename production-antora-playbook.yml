@@ -18,7 +18,7 @@ content:
     branches: [master, release/3.3]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-spark-connector.git
-    branches: master
+    branches: [master, release/2.1]
     start_path: docs
   - url: git@github.com:couchbase/docs-connectors-talend.git
     branches: master
