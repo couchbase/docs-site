@@ -11,7 +11,7 @@ We look forward to hearing from you!
 Looking for the old documentation site?
 You can find it over at the https://developer.couchbase.com[Developer Portal].
 
-[.cards.personas.conceal-title]
+[.cards.cards-4.personas.conceal-title]
 == {empty}
 
 [.card]
@@ -29,8 +29,8 @@ If you are a Couchbase administrator wanting to configure, deploy, and manage Co
 If you are a Couchbase user wanting to develop on an existing installation
 
 * xref:java-sdk::start-using-sdk.adoc[Quick Install]
-* xref:java-sdk::common/sample-application.adoc[Sample Application]
-* xref:java-sdk::common/core-operations.adoc[CRUD]
+* xref:java-sdk::sample-application.adoc[Sample Application]
+* xref:java-sdk::core-operations.adoc[CRUD]
 
 [.card]
 === Couchbase for SQL Developers
@@ -63,14 +63,8 @@ If you are a Couchbase user wanting to develop for applications on the edge
 
 [.tile]
 .Couchbase Mobile
-ifdef::site-stage-production[]
-* https://developer.couchbase.com/documentation/mobile/current/couchbase-lite/index.html[Lite]
-* https://developer.couchbase.com/documentation/mobile/current/guides/sync-gateway/index.html[Sync Gateway]
-endif::[]
-ifndef::site-stage-production[]
 * xref:couchbase-lite::index.adoc[Lite]
 * xref:sync-gateway::index.adoc[Sync Gateway]
-endif::[]
 
 [.tile]
 .Couchbase Cloud
