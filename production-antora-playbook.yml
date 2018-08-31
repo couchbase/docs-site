@@ -71,8 +71,6 @@ ui:
   - path: robots.txt
     contents: |
       User-agent: *
-      Disallow: /
-      Allow: /operator/
   - path: ui.yml
     contents: |
       static_files: [robots.txt]
