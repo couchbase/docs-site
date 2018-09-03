@@ -2,7 +2,7 @@
 
 == Terminology and Structure
 
-include::{partialsdir}/component-terms.adoc[]
+include::partial$component-terms.adoc[]
 
 [#config]
 == Configuring a Component
