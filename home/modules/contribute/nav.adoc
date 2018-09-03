@@ -1,22 +1,7 @@
-////
-* How to Contribute
-* Report a Bug
- ** Where to Find Known Issues
- ** Report a New Issue
- ** Propose a Change
- ** Contribute a Change
-  *** Before Your First Pull Request
-  *** Contribution Prerequisites
-* Code of Conduct
-* License
-* Quick Online Contributions
-* How to Get in Touch
-////
 .Contributing to the Documentation
 * xref:index.adoc[Overview]
 
 * Setting Up Your Workspace
-// ** Overview
  ** xref:install-git-and-editor.adoc[Install Git and an AsciiDoc Editor]
  ** xref:set-up-repository.adoc[Set Up Your Local Repository]
 
@@ -40,21 +25,12 @@
   *** xref:ids.adoc[IDs and Same-Page Cross References]
  ** xref:code-blocks.adoc[Code Blocks and Callouts]
  ** xref:tabs.adoc[Tabs Sets]
-// ** Partial File Includes
  ** xref:attributes-and-roles.adoc[Attributes and Roles]
+ ** xref:includes.adoc[Include Examples and Partials]
 
 * Conventions & Styles
  ** xref:component-configuration.adoc[Component Structure and Configuration]
  ** xref:nav-menus-and-files.adoc[Navigation Menus and Files]
-// ** Pages
-//  *** File Names and Locations
-//  *** Document Structure
-// ** Assets
-//  *** File Names and Locations
-//  *** Optimizations
-// ** Code Examples
-//  *** File Names and Locations
-//  *** Language & Syntax Highlighting
  ** xref:style-and-voice.adoc[Content Style and Voice]
 
 * Testing Locally
@@ -62,11 +38,5 @@
  ** xref:install-antora.adoc[Install Antora]
  ** xref:playbook.adoc[Get the Site Playbook Project]
  ** xref:build-site.adoc[Build the Site]
-
-//* Custom Extensions (Pending)
-
-//* Publishing Documentation (Pending)
-
-//* Creating Release Branches (Pending)
 
 //* Additional Resources (Pending)
