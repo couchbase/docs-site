@@ -7,12 +7,12 @@
 == Bold, Italic, and Code Styles
 
 ----
-include::{examplesdir}/inline-styles.adoc[]
+include::example$inline-styles.adoc[]
 ----
 
 Rendered as:
 
-include::{examplesdir}/inline-styles.adoc[]
+include::example$inline-styles.adoc[]
 
 You can add multiple inline styles to text as long as the syntax is placed in the correct order.
 
@@ -25,12 +25,12 @@ To mark up code blocks, include example files, and add callouts, see xref:code-b
 == Button, Keyboard, and Menu UI Macros
 
 ----
-include::{examplesdir}/ui-macros.adoc[]
+include::example$ui-macros.adoc[]
 ----
 
 Rendered as:
 
-include::{examplesdir}/ui-macros.adoc[]
+include::example$ui-macros.adoc[]
 
 == URLs
 
@@ -78,53 +78,53 @@ If it is not specified, the default URL `+http://localhost:8091+` is used.
 == Checklists
 
 ----
-include::{examplesdir}/lists.adoc[tag=check]
+include::example$lists.adoc[tag=check]
 ----
 
 Rendered as:
 
-include::{examplesdir}/lists.adoc[tag=check]
+include::example$lists.adoc[tag=check]
 
 == Description Lists
 
 ----
-include::{examplesdir}/description-lists.adoc[tag=basic]
+include::example$description-lists.adoc[tag=basic]
 ----
 
 Rendered as:
 
-include::{examplesdir}/description-lists.adoc[tag=basic]
+include::example$description-lists.adoc[tag=basic]
 
 .Description list with complex content
 ----
-include::{examplesdir}/description-lists.adoc[tag=complex]
+include::example$description-lists.adoc[tag=complex]
 ----
 
 Rendered as:
 
-include::{examplesdir}/description-lists.adoc[tag=complex]
+include::example$description-lists.adoc[tag=complex]
 
 == Ordered Lists
 
 .Ordered list with nested levels
 ----
-include::{examplesdir}/lists.adoc[tag=ordered]
+include::example$lists.adoc[tag=ordered]
 ----
 
 Rendered as:
 
-include::{examplesdir}/lists.adoc[tag=ordered]
+include::example$lists.adoc[tag=ordered]
 
 == Unordered Lists
 
 .Unordered list with nested levels
 ----
-include::{examplesdir}/lists.adoc[tag=unordered]
+include::example$lists.adoc[tag=unordered]
 ----
 
 Rendered as:
 
-include::{examplesdir}/lists.adoc[tag=unordered]
+include::example$lists.adoc[tag=unordered]
 
 xref:update-nav.adoc[Navigation files] also use the unordered list syntax.
 
@@ -174,21 +174,21 @@ There are five built-in admonition labels.
 
 .Basic admonitions
 ----
-include::{examplesdir}/admonitions.adoc[tag=basic]
+include::example$admonitions.adoc[tag=basic]
 ----
 
 Rendered as:
 
-include::{examplesdir}/admonitions.adoc[tag=basic]
+include::example$admonitions.adoc[tag=basic]
 
 .Complex admonition
 ----
-include::{examplesdir}/admonitions.adoc[tag=complex]
+include::example$admonitions.adoc[tag=complex]
 ----
 
 Rendered as:
 
-include::{examplesdir}/admonitions.adoc[tag=complex]
+include::example$admonitions.adoc[tag=complex]
 
 == Tables
 
@@ -275,12 +275,12 @@ Rendered as:
 Here's an example of a table with a title, implicit header row, and the proportional width of the two columns set.
 
 ----
-include::{examplesdir}/tables.adoc[tag=two-col]
+include::example$tables.adoc[tag=two-col]
 ----
 
 Rendered as:
 
-include::{examplesdir}/tables.adoc[tag=two-col]
+include::example$tables.adoc[tag=two-col]
 
 === Block Elements in Tables
 
@@ -289,12 +289,12 @@ However, the specifier `a` (which stands for AsciiDoc) must be placed on the cel
 In the following example, the `a` specifier is placed on the cells containing block elements.
 
 ....
-include::{examplesdir}/tables.adoc[tag=adoc]
+include::example$tables.adoc[tag=adoc]
 ....
 
 Rendered as:
 
-include::{examplesdir}/tables.adoc[tag=adoc]
+include::example$tables.adoc[tag=adoc]
 
 === Column and Row Spans
 
@@ -304,12 +304,12 @@ The span factor is the number of columns or rows, including the starting row or 
 * To span multiple rows, place a dot (`.`) directly before the span factor and `+` operator.
 
 ----
-include::{examplesdir}/tables.adoc[tag=spans]
+include::example$tables.adoc[tag=spans]
 ----
 
 Rendered as:
 
-include::{examplesdir}/tables.adoc[tag=spans]
+include::example$tables.adoc[tag=spans]
 
 === Table Attributes and Options
 
