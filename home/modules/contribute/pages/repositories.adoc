@@ -84,7 +84,7 @@ The connector repositories use the Gerrit workflow.
 [#dir-structure]
 == Directory Structure and Key Files
 
-include::{partialsdir}/component-terms.adoc[]
+include::partial$component-terms.adoc[]
 
 == Next Steps
 
