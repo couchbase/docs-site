@@ -1,5 +1,5 @@
 = Include Examples and Partials
-:url-docs-antora: https://docs.antora.org/antora/latest
+:url-docs-antora: https://docs.antora.org/antora/1.1
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
 :url-resource: {url-docs-antora}/page/resource-id/
 :url-include-example: {url-docs-antora}/asciidoc/include-example/
@@ -12,19 +12,29 @@
 == Example Files
 
 Examples are non-AsciiDoc files that contain reusable content, such as source code or programmatic output, that is often inserted into xref:code-blocks.adoc[code blocks].
-They're saved in the[_examples_ directory of module.
+They're saved in the xref:component-configuration.adoc#examples-dir[_examples_ directory of module].
 Regardless of an example's source module, it can be inserted into any standard page in your documentation site using the include directive and the example file's resource ID.
+
+.Include directive and example resource ID structure
+----
+\include::version@component:module:example$file.ext[]
+----
 
 == Partial Files
 
 Partials are AsciiDoc files that contain reusable snippets of content.
-They're saved in the _partials_ directory of a module.
+They're saved in the xref:component-configuration.adoc#partials-dir[_partials_ directory of a module].
 Regardless of a partial's source module, it can be inserted into any standard page in your documentation site using the include directive and the partial file's resource ID.
+
+.Include directive and partial resource ID structure
+----
+\include::version@component:module:partial$file.adoc[]
+----
 
 == Insert an Example or a Partial
 
 An entire example or partial (or a portion of) is inserted into a page using the include directive and file's resource ID.
-A resource ID is just like a page ID, but it has an extra coordinate, `family$`.
+A {url-resource}[resource ID^] is just like a page ID, but it has an extra coordinate, `family$`.
 The family coordinate for examples is `example$` and `partial$` for partials.
 Like the xref:cross-references.adoc[page ID in an xref], the more a page and the partial or example are related, the less coordinates you have to specify.
 
@@ -49,6 +59,7 @@ Like the xref:cross-references.adoc[page ID in an xref], the more a page and the
 \include::catalog::partial$ref/definitions.adoc[]
 ----
 
+[#tag-region]
 == Insert Tagged Content from an Example or Partial
 
 To include a snippet of content from an example or partial (instead of the whole file), use the `tag` directive.
@@ -101,8 +112,9 @@ For example, if you tag code in a YAML file, place a hash (`+#+`) before the tag
 
 == Additional Resources
 
-The Antora and Asciidoctor documentation provides more information about including partials, examples, and standard pages as well as optional attributes such as `indent` and `leveloffset`.
+The Antora and Asciidoctor documentation provide more information about including partials, examples, and standard pages as well as optional attributes such as `indent` and `leveloffset`.
 
+* {url-resource}[Antora resource ID structure^]
 * {url-include-example}[Insert examples with the include directive^]
 * {url-include-partial}[Insert partials with the include directive^]
 * {url-include-page}[The page-partial attribute and inserting a standard page with the include directive^]
