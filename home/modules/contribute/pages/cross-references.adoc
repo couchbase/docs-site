@@ -1,5 +1,5 @@
 = Cross References
-:url-docs-antora: https://docs.antora.org/antora/latest
+:url-docs-antora: https://docs.antora.org/antora/1.1
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
 :url-pageid: {url-docs-antora}/page/page-id/#important
 :url-xref: {url-docs-antora}/asciidoc/page-to-page-xref/

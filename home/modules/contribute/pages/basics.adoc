@@ -1,5 +1,5 @@
 = AsciiDoc Basics
-:url-docs-antora: https://docs.antora.org/antora/latest
+:url-docs-antora: https://docs.antora.org/antora/1.1
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
 :url-pages: {url-docs-antora}/page/
 :url-tables: {url-docs-adoc}/#tables
@@ -323,10 +323,10 @@ For more examples and information, see the {url-tables}[Asciidoctor table docume
 * xref:code-blocks.adoc[Code blocks]
 * xref:code-blocks.adoc#callouts[Callout numbers]
 * xref:tabs.adoc[Tabs sets]
-//* Partial file includes
+* xref:includes.adoc[Example and partial file includes]
 * xref:attributes-and-roles.adoc#using-roles[Page role]
 * xref:attributes-and-roles.adoc[Attributes]
 
 == Additional Resources
 
-You can find more AsciiDoc examples in the {url-pages}[Antora documentation^].
+You can find more AsciiDoc examples in the {url-pages}[Pages category of the Antora documentation^].

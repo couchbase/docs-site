@@ -36,18 +36,18 @@ The _pages_ directory contains a module's AsciiDoc files.
 These files are automatically converted to standalone HTML pages.
 See the xref:pages.adoc[Standard Document Structure] to learn how to structure an AsciiDoc file.
 
-Partials::
-The _{blank}_partials_ directory contains AsciiDoc files that aren't standalone pages.
-These files are referenced by an include directive from a document in the _pages_ directory.
+[[partials-dir]]Partials::
+The _partials_ directory contains AsciiDoc files that aren't standalone pages.
+These files are referenced by an xref:includes.adoc[include directive] from a document in the _pages_ directory.
 
 Assets::
 Multimedia and supplemental files, organized by format, are stored in the _assets_ directory.
-Photographs, screenshots, and graphic files in _assets/images_ are inserted into pages using the xref:basics.adoc#images[AsciiDoc image macro].
+Photographs, screenshots, and graphic files in _assets/images_ are inserted into pages using the xref:basics.adoc#images[image macro].
 
-Examples::
-Non-AsciiDoc files, such as source code and data values, are stored in the _examples_ directory.
-These files are often inserted into xref:code-blocks.adoc[code blocks] using the AsciiDoc include directive.
+[[examples-dir]]Examples::
+Non-AsciiDoc files, such as source code, are stored in the _examples_ directory.
+These files are often inserted into xref:code-blocks.adoc[code blocks] using an xref:includes.adoc[include directive].
 
 Navigation::
-A xref:update-nav.adoc[navigation file], often named _nav.adoc_ contains one or more AsciiDoc lists.
+A xref:update-nav.adoc[navigation file], often named _nav.adoc_, contains one or more AsciiDoc lists.
 Antora uses these files to build the site's xref:nav-menus-and-files.adoc[component navigation menus].
