@@ -1,5 +1,5 @@
 = Test Your Changes Locally
-:url-docs-antora: https://docs.antora.org/antora/latest
+:url-docs-antora: https://docs.antora.org/antora/1.1
 :url-ssh: {url-docs-antora}/playbook/private-repository-auth/
 
 If you've never built the site on your device, complete the xref:install-antora.adoc[Install Antora] and xref:playbook.adoc[Get the Site Playbook Project] steps first.

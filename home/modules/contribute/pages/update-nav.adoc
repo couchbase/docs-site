@@ -9,7 +9,6 @@ Navigation lists must be separated by at least one blank line.
 
 Each navigation list in the Couchbase documentation starts with a category title.
 A category is represented by a block title (`.Title of Category`).
-//There isn't a space between the dot (`.`) and the title content.
 
 On the line directly after the category title is a level 1 list item.
 A level 1 list item is marked by a single (`+*+`).
@@ -63,7 +62,6 @@ When removing a list item, remember the following:
 
 * If the item had child items, adjust their nesting level as needed.
 * Pages that aren't linked to from a navigation file are still published to the site; they are still indexed by the site search and search engines and can be referenced by any page.
-//(Antora manages files according to how they're stored in a component and related configuration instructions.)
 
 === Xrefs
 
@@ -71,7 +69,6 @@ Xrefs in a navigation file follow the same rules and structure as xref:cross-ref
 If a page and a navigation file are in the same module, then only specify the page coordinate.
 
 .Same-module navigation xrefs
-[source,asciidoc]
 ----
 .Category
 * xref:a-page-in-this-module.adoc[Same-module Page]
@@ -118,12 +115,3 @@ Write "`and`" as *and*.
 * Getting Help
 ** https://support.couchbase.com[Contact Support]
 ----
-
-////
-== Next Steps
-
-* Register (or unregister) a navigation file.
-* Adjust the order that navigation file lists are displayed in a component menu.
-* Include a navigation file into another navigation file.
-* Manage the navigation files in a distributed component (Server).
-////

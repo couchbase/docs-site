@@ -1,5 +1,5 @@
 = Build the Documentation Site Locally
-:url-docs-antora: https://docs.antora.org/antora/latest
+:url-docs-antora: https://docs.antora.org/antora/1.1
 :url-ssh: {url-docs-antora}/playbook/private-repository-auth/
 
 . Open a terminal and switch into the _docs-site_ folder.

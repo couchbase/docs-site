@@ -1,14 +1,14 @@
-= Base and Working Branches
+= Create a Working Branch
 
-A base branch contains the original source documentation.
-You create working branches from a base branch and send pull requests to a base branch for integration.
-// define base branch
-A working branch isolates changes that solve a single issue.
-A pull request submitted from a working branch that only contains closely related changes is easier to test, review, and merge.
+You can create a working branch in Atom or from the command line.
 
 [#base-branch]
 == Choose the Right Base Branch
-//Are we going to forward port or back port?
+
+A base branch contains the original source documentation.
+You create working branches from a base branch and send pull requests to a base branch for integration.
+A working branch isolates changes that solve a single issue.
+A pull request submitted from a working branch that only contains closely related changes is easier to test, review, and merge.
 
 The Couchbase documentation repositories maintain two types of base branches: master and release.
 
@@ -23,8 +23,41 @@ For example, if a broken code snippet is discovered in the Server 5.1 documentat
 If you're unsure which branch to create your working branch from, check the associated issue's *Affects versions* field, or, in its comment section, ask the Docs team for more information.
 Also note that some of the repositories use custom branch names, see xref:repositories.adoc#repo-special[Repositories that Require Special Handling] for more information.
 
-[#work-branch]
-== Create a Working Branch
+[#work-branch-atom]
+== Create a Working Branch in Atom
+
+Always make a new working branch for your work, no matter how small the change.
+
+. Open Atom and select the image:repo.svg[,14] repository directory that contains the files you want to edit.
++
+image::project-panel.png[,300,align=left]
+
+. <<base-branch,Choose the right branch>> to base your changes on.
+Click the image:git-branch.svg[,14] branch icon at the bottom of the editor.
+In the modal window, select the desired base branch from the dropdown menu.
++
+image::select-base-branch.png[,380,align=left]
+
+. Pull the latest changes from the upstream repository.
+Click the image:arrow-small-down.svg[,16] image:arrow-small-up.svg[,16] arrow icons at the bottom of the editor, then press btn:[Pull].
++
+image::pull-base-branch.png[,380,align=left]
+
+. Create a new working branch from the base branch.
+Click the image:git-branch.svg[,14] branch icon.
+In the modal window, press btn:[New Branch], and enter the name of the new working branch in the form field.
++
+--
+image::new-branch.png[,380,align=left]
+
+The name of a working branch should pair it with the issue it resolves.
+For example, if you're resolving DOC issue #3891, you'd name the working branch `DOC-3891`.
+--
+
+Now you're ready to <<next-steps,write or edit documentation>>.
+
+[#work-branch-cli]
+== Create a Working Branch from the Command Line
 
 Always make a new working branch for your work, no matter how small the change.
 
@@ -32,13 +65,13 @@ Always make a new working branch for your work, no matter how small the change.
 
  $ cd path/to/repository-folder
 
-. Download the latest changes from the upstream repository.
-
- $ git fetch upstream
-
 . <<base-branch,Choose the right branch>> to base your changes on and check it out.
 
  $ git checkout name-of-base-branch
+
+. Download the latest changes from the upstream repository.
+
+ $ git pull upstream name-of-base-branch
 
 . Create a working branch from the base branch and checkout the working branch.
 +
