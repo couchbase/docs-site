@@ -16,9 +16,10 @@ Alternatively, you can download it from the https://git-scm.com/downloads[Git pr
 == Install an AsciiDoc Editor
 
 AsciiDoc is the markup language Couchbase uses for writing documentation.
-You can write an AsciiDoc document using any plain text editor.
-If you don't have a preferred text editor or IDE already, install Atom and the listed AsciiDoc packages for an enhanced experience.
+You can write an AsciiDoc document using a plain text editor or integrated development environment (IDE).
+If you don't have a preferred text editor or IDE, install Atom and the listed AsciiDoc packages for an enhanced experience.
 
+[#install-atom]
 === Download and Install Atom
 
 Atom is an open source, extensible text editor that works on Linux, macOS, and Windows.
@@ -31,12 +32,13 @@ Use the links below for additional installation instructions.
 ** {url-mac}[Atom for macOS^]
 ** {url-windows}[Atom for Windows^]
 
+[#adoc-packages]
 === Install the AsciiDoc Packages
 
 . Start Atom and go to menu:Edit[Preferences] or press kbd:[Ctrl+,].
 This opens the Settings panel.
 . In the sidebar on the left, click btn:[Install].
-. In the input field labeled *Search packages*, enter each package listed below, and install it.
+. In the input field labeled *Search packages*, enter each package listed below, and install them.
 
 language-asciidoc::
 The `language-asciidoc` package provides AsciiDoc syntax highlighting and snippets.

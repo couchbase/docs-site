@@ -22,6 +22,7 @@ You can add multiple inline styles to text as long as the syntax is placed in th
 
 To mark up code blocks, include example files, and add callouts, see xref:code-blocks.adoc[Code Blocks and Callouts].
 
+[#ui-macros]
 == Button, Keyboard, and Menu UI Macros
 
 ----
