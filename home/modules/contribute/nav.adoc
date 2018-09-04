@@ -8,7 +8,7 @@
 * Contributing Workflow
  ** xref:workflow-overview.adoc[Overview]
  ** xref:repositories.adoc[Repository Organization]
- ** xref:branches.adoc[Base and Working Branches]
+ ** xref:create-branches.adoc[Create a Working Branch]
  ** xref:edit-pages.adoc[Edit Existing Documentation]
  ** xref:add-pages.adoc[Add a New Documentation Page]
  ** xref:update-nav.adoc[Update a Navigation File]

@@ -13,15 +13,6 @@ The Couchbase documentation is stored on GitHub, so if you don't have a GitHub a
 To clone and work with Git repositories on your device, i.e., local repositories, install Git using your operating system's package manager.
 Alternatively, you can download it from the https://git-scm.com/downloads[Git project^].
 
-////
-To see if you have Git, open a terminal and type:
-
-[source,console]
- $ git --version
-
-If a version number is not returned below the command line, you don't have Git and need to install it.
-////
-
 == Install an AsciiDoc Editor
 
 AsciiDoc is the markup language Couchbase uses for writing documentation.

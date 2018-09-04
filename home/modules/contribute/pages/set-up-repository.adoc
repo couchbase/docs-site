@@ -69,4 +69,5 @@ Now you're ready to start working on the documentation.
 == Next Steps
 
 . xref:workflow-overview.adoc[Get an overview of the entire contributing workflow].
-. xref:branches.adoc[Choose a base branch].
+. xref:create-branches.adoc#base-branch[Choose a base branch].
+. xref:create-branches.adoc#work-branch-atom[Create a working branch in Atom] or xref:create-branches.adoc#work-branch-cli[from the command line].

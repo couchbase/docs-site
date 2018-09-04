@@ -15,8 +15,8 @@ Most of the following steps are completed each time you make a contribution to a
 
 * [x] xref:repositories.adoc[Review each repository's requirements].
 * [x] xref:repositories.adoc#dir-structure[Explore the component directory structure].
-* [x] xref:branches.adoc#base-branch[Choose a base branch].
-* [x] xref:branches.adoc#work-branch[Create a working branch].
+* [x] xref:create-branches.adoc#base-branch[Choose a base branch].
+* [x] xref:create-branches.adoc#work-branch-atom[Create a working branch in Atom] or xref:create-branches.adoc#work-branch-cli[from the command line].
 * [x] xref:edit-pages.adoc[Fix existing documentation] or xref:add-pages.adoc[create a new documentation page].
 * [x] xref:test-site.adoc[Build the site locally and test your changes].
 * [x] xref:send-pr.adoc#commit[Commit, rebase, and push your changes].

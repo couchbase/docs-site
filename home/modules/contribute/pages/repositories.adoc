@@ -13,6 +13,7 @@
 :url-git-sdk-nodejs: {url-git-cb}/docs-sdk-nodejs
 :url-git-sdk-php: {url-git-cb}/docs-sdk-php
 :url-git-sdk-python: {url-git-cb}/docs-sdk-python
+:url-git-sdk-common: {url-git-cb}/docs-sdk-common
 :url-git-home: {url-git-cb}/docs-site
 :url-git-operator: {url-git-cb}/couchbase-operator
 :url-git-asterix: {url-git-labs}/asterix-opt
@@ -40,6 +41,7 @@ The following repositories accept contributions via the regular workflow and use
 * {url-git-sdk-nodejs}[Node.js SDK^]
 * {url-git-sdk-php}[PHP SDK^]
 * {url-git-sdk-python}[Python SDK^]
+* {url-git-sdk-common}[SDK Common^]
 * {url-git-home}[Home and Contribute^]
 
 [#repo-special]
@@ -88,5 +90,5 @@ include::partial$component-terms.adoc[]
 
 == Next Steps
 
-. xref:branches.adoc#base-branch[Choose a base branch].
-. xref:branches.adoc#work-branch[Create a working branch].
+. xref:create-branches.adoc#base-branch[Choose a base branch].
+. xref:create-branches.adoc#work-branch-atom[Create a working branch in Atom] or xref:create-branches.adoc#work-branch-cli[from the command line].
