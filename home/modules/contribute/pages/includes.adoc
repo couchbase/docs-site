@@ -12,7 +12,7 @@
 == Example Files
 
 Examples are non-AsciiDoc files that contain reusable content, such as source code or programmatic output, that is often inserted into xref:code-blocks.adoc[code blocks].
-They're saved in the xref:component-configuration.adoc#examples-dir[_examples_ directory of module].
+They're saved in the xref:component-configuration.adoc#examples-dir[_examples_ directory of a module].
 Regardless of an example's source module, it can be inserted into any standard page in your documentation site using the include directive and the example file's resource ID.
 
 .Include directive and example resource ID structure

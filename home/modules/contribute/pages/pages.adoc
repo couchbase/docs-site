@@ -44,6 +44,7 @@ For example, a heading 4 section can't be directly inside a heading 2 section; i
 
 *Don't apply bold formatting to headings*.
 
+[#vent]
 == One Sentence Per Line
 
 Sentences that are part of paragraphs, lists, and tables should be entered on individual lines.
@@ -70,3 +71,4 @@ The file's name is used to create its page URL.
 
 * xref:basics.adoc[AsciiDoc basics].
 * xref:attributes-and-roles.adoc[Attributes and roles].
+* xref:edit-pages.adoc#edit-server[Edit a page in the Server component].
