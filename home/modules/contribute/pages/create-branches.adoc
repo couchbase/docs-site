@@ -1,5 +1,6 @@
 = Create a Working Branch
 
+Always make a new working branch for your work, no matter how small the change.
 You can create a working branch in Atom or from the command line.
 
 [#base-branch]
@@ -26,9 +27,12 @@ Also note that some of the repositories use custom branch names, see xref:reposi
 [#work-branch-atom]
 == Create a Working Branch in Atom
 
-Always make a new working branch for your work, no matter how small the change.
+These instructions assume you've xref:install-git-and-editor.adoc#install-atom[installed Atom] and xref:set-up-repository.adoc[forked, cloned, and configured the upstream and origin remotes] of a documentation repository.
 
-. Open Atom and select the image:repo.svg[,14] repository directory that contains the files you want to edit.
+. Start Atom.
+. If this is the first time you've worked on a repository, it may not appear in Atom's *Project* panel.
+Go to menu:File[Add Project Folder] and add the folder containing your local repository.
+. Select the image:repo.svg[,14] repository directory that contains the files you want to edit.
 +
 image::project-panel.png[,300,align=left]
 
@@ -45,13 +49,13 @@ image::pull-base-branch.png[,380,align=left]
 
 . Create a new working branch from the base branch.
 Click the image:git-branch.svg[,14] branch icon.
-In the modal window, press btn:[New Branch], and enter the name of the new working branch in the form field.
+In the modal window, click btn:[New Branch], and enter the name of the new working branch in the form field.
 +
 --
 image::new-branch.png[,380,align=left]
 
 The name of a working branch should pair it with the issue it resolves.
-For example, if you're resolving DOC issue #3891, you'd name the working branch `DOC-3891`.
+For example, if you're resolving DOC issue #6500, you'd name the working branch `DOC-6500`.
 --
 
 Now you're ready to <<next-steps,write or edit documentation>>.
@@ -59,7 +63,7 @@ Now you're ready to <<next-steps,write or edit documentation>>.
 [#work-branch-cli]
 == Create a Working Branch from the Command Line
 
-Always make a new working branch for your work, no matter how small the change.
+These instructions assume you've xref:set-up-repository.adoc[forked, cloned, and configured the upstream and origin remotes] of a documentation repository.
 
 . Open a terminal and change into the repository directory that contains the files you want to edit.
 
@@ -79,10 +83,11 @@ Always make a new working branch for your work, no matter how small the change.
  $ git checkout -b DOC-$$$$
 
 The name of a working branch should pair it with the issue it resolves.
-For example, if you're resolving DOC issue #3891, you'd name the working branch `DOC-3891`.
+For example, if you're resolving DOC issue #6500, you'd name the working branch `DOC-6500`.
 --
 
 == Next Steps
 
-* xref:edit-pages.adoc[Edit existing documentation].
+* xref:edit-pages.adoc[Edit existing documentation using Atom].
+* xref:edit-pages.adoc#edit-server[Step through editing a page in the Server Component].
 * xref:add-pages.adoc[Add new documentation pages].
