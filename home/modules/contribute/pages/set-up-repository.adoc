@@ -5,7 +5,6 @@ You only need to do these steps the first time you contribute to a repository.
 == Fork the Repository
 
 Before you can contribute changes to the Couchbase documentation, you must fork the appropriate repository to your personal GitHub account.
-The Docs CI runner automatically fails and closes any pull request (PR) that isn't submitted from a fork.
 
 . Go to the appropriate repository on GitHub and click btn:[Fork].
 See xref:repositories.adoc#repo-urls[Repository Organization] for the list of active repositories
@@ -16,7 +15,6 @@ To quickly find a page's source file, click on the image:edit.svg[,18,alt="edit"
 You'll be taken to the page's repository.
 Click btn:[Fork].
 
-//Not all of the Couchbase documentation repositories can accept contributor pull requests at this time.
 If there isn't an image:edit.svg[,18,alt="edit"] icon on the page, then the repository can't accept changes using the regular workflow.
 See xref:repositories.adoc#repo-special[Repositories that Require Special Handling] for more information or propose fixes and improvements using the btn:[Feedback?] button at the bottom of the page.
 ****

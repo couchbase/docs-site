@@ -38,40 +38,6 @@ After you push your working branch to your remote repository on GitHub, you can 
 Get an overview of the Docs team review process. (Pending)
 
 ////
-== Common Workflow
-
-A common workflow can be found below:
-
-```
-# Only required when first setting up the local repo
-git clone https://github.com/<your-user>/docs-cb4.git
-
-cd docs-cb4
-
-BRANCH=DOC-XXXX
-# Ensure that we base our changes on master
-git checkout master
-# Creates a new branch with the desired name
-git branch $BRANCH
-
-# Creates the branch on your remote repo
-git push origin $BRANCH
-
-# Checks out the newly created branch
-git checkout $BRANCH
-
-# Edit the files in question
-
-# Add the edited files to be committed
-git add my_files
-
-# Commit the edited files
-git commit -m "DOC-XXXX: Created git workflow example"
-
-# Push the updated changes to your remote repository
-git push origin $BRANCH
-```
-
 == Submit a Pull Request
 
 Once your changes are in a branch on GitHub it is time to submit them to the main couchbase repository.
@@ -97,18 +63,4 @@ Don't worry if you're asked to make changes, this is normal!
 == Publishing
 
 Accepted changes are pushed to docs.couchbase.com twice a week, so you may need to wait a few days to see your changes go live.
-
-Docs Git Workflow
-Complete Docs Workflow
-Local Edits Workflow
-Regular/Standard Edits Workflow
-
-* Branches
-** Protected
-** Working
-* Commit
-* Pull request
-* Validation
-* Review
-* Publishing
 ////
