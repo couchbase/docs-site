@@ -11,11 +11,11 @@ See xref:repositories.adoc#repo-urls[Repository Organization] for the list of ac
 
 .How to quickly find the right repository
 ****
-To quickly find a page's source file, click on the image:edit.svg[,18,alt="edit"] icon at the top of the page.
+To quickly find a page's source file, click on the image:edit.svg[,16,role=icon] edit icon at the top of the page.
 You'll be taken to the page's repository.
 Click btn:[Fork].
 
-If there isn't an image:edit.svg[,18,alt="edit"] icon on the page, then the repository can't accept changes using the regular workflow.
+If there isn't an image:edit.svg[,16,role=icon] edit icon on the page, then the repository can't accept changes using the regular workflow.
 See xref:repositories.adoc#repo-special[Repositories that Require Special Handling] for more information or propose fixes and improvements using the btn:[Feedback?] button at the bottom of the page.
 ****
 

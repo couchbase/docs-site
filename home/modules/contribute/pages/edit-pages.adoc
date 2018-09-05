@@ -5,7 +5,7 @@ The following sections describe the document editing process using the Atom edit
 == General Editing Steps Using Atom
 
 . Make sure you've added the repository directory to the *Project* panel, xref:create-branches.adoc[created a working branch], and switched to it.
-The name of your working branch is displayed next to the image:git-branch.svg[,14] branch icon at the bottom of the editor.
+The name of your working branch is displayed next to the image:git-branch.svg[,16,role=icon] branch icon at the bottom of the editor.
 . In the project panel, expand the repository to view its folders and files.
 Locate the page, partial, or example file you want to edit and double click on it to open it in an editor pane.
 .. If you're not familiar with the structure of a documentation component, see xref:repositories.adoc#dir-structure[Directory Structure and Key Files].
@@ -27,7 +27,7 @@ The syntax changes described in this section represent some of the improvements 
 
 === 1. Open the File
 
-In the project panel, in the image:repo.svg[,14] docs-server repository, go to menu:modules[backup-restore > pages].
+In the project panel, in the image:repo.svg[,16,role=icon] docs-server repository, go to menu:modules[backup-restore > pages].
 Double click on _backup-restore.adoc_ to open the AsciiDoc file in the editor pane.
 
 image::edit-page-in-atom.png[]

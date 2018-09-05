@@ -32,23 +32,23 @@ These instructions assume you've xref:install-git-and-editor.adoc#install-atom[i
 . Start Atom.
 . If this is the first time you've worked on a repository, it may not appear in Atom's *Project* panel.
 Go to menu:File[Add Project Folder] and add the folder containing your local repository.
-. Select the image:repo.svg[,14] repository directory that contains the files you want to edit.
+. Select the image:repo.svg[,16,role=icon] repository directory that contains the files you want to edit.
 +
 image::project-panel.png[,300,align=left]
 
 . <<base-branch,Choose the right branch>> to base your changes on.
-Click the image:git-branch.svg[,14] branch icon at the bottom of the editor.
+Click the image:git-branch.svg[,16,role=icon] branch icon at the bottom of the editor.
 In the modal window, select the desired base branch from the dropdown menu.
 +
 image::select-base-branch.png[,380,align=left]
 
 . Pull the latest changes from the upstream repository.
-Click the image:arrow-small-down.svg[,16] image:arrow-small-up.svg[,16] arrow icons at the bottom of the editor, then press btn:[Pull].
+Click the image:arrow-small-down.svg[,16,role=icon]image:arrow-small-up.svg[,16,role=icon] arrow icons at the bottom of the editor, then press btn:[Pull].
 +
 image::pull-base-branch.png[,380,align=left]
 
 . Create a new working branch from the base branch.
-Click the image:git-branch.svg[,14] branch icon.
+Click the image:git-branch.svg[,16,role=icon] branch icon.
 In the modal window, click btn:[New Branch], and enter the name of the new working branch in the form field.
 +
 --

@@ -38,7 +38,7 @@ For more extensive content additions and updates, or if you prefer to work local
 [#simple]
 == Simple Online Edits
 
-For simple changes, like fixing a typo or reworking a sentence, you can edit the content directly on GitHub by clicking the image:edit.svg[,16,alt="edit"] icon found on many of the documentation pages.
+For simple changes, like fixing a typo or reworking a sentence, you can edit the content directly on GitHub by clicking the image:edit.svg[,16,role=icon] edit icon found on many of the documentation pages.
 
 Once you've made your edits, replace the default commit message with a short description of your change, and click btn:[Commit Changes].
 Then follow the on-screen instructions to open a pull request.
