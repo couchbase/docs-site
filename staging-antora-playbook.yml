@@ -24,10 +24,7 @@ content:
     branches: master
   - url: git@github.com:couchbase/docs-analytics.git
   - url: https://github.com/couchbase/couchbase-cli.git
-    branches: [vulcan, spock, 5.0.1]
-    start_path: docs
-  - url: https://github.com/cb-docs-review-space/couchbase-cli.git
-    branches: release/6.0
+    branches: [alice, vulcan, spock, 5.0.1]
     start_path: docs
   - url: git@github.com:couchbase/backup.git
     branches: [master, vulcan, spock, 5.0.x]
