@@ -44,8 +44,8 @@ For example, a heading 4 section can't be directly inside a heading 2 section; i
 
 *Don't apply bold formatting to headings*.
 
-[#vent]
-== One Sentence Per Line
+[#ventilate]
+== Ventilated Prose (aka Sentence Per Line)
 
 Sentences that are part of paragraphs, lists, and tables should be entered on individual lines.
 This best practice makes reviewing pull requests and comparing versions of the same file much easier for maintainers.
@@ -53,7 +53,7 @@ This best practice makes reviewing pull requests and comparing versions of the s
 ----
 == Establishing Demonstration Indexes
 
-The Java SDK code-example provided in xref:java-sdk::full-text-searching-with-sdk.adoc[Searching with the SDK] contains multiple demonstration calls — each featuring a different query-combination — and makes use of three different index-definitions, related to the `travel-sample` bucket: for the code example to run successfully, the three indexes must be appropriately pre-established.
+The Java SDK code-example provided in xref:java-sdk::full-text-searching-with-sdk.adoc[Searching with the SDK] contains multiple demonstration calls -- each featuring a different query-combination -- and makes use of three different index-definitions, related to the `travel-sample` bucket: for the code example to run successfully, the three indexes must be appropriately pre-established.
 The definitions are provided in xref:fts-demonstration-indexes.adoc[Demonstration Indexes].
 ----
 

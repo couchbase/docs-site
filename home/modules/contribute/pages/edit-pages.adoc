@@ -63,7 +63,7 @@ This helps ensure that you do not lose information in the event of a serious fai
 Couchbase provides multiple [...]
 ----
 
-To keep the paragraph as xref:pages.adoc#vent[ventilated text (sentence per line)] and not break the header, enter a space after the end of the first sentence, then a `\`.
+To keep the paragraph as xref:pages.adoc#ventilate[ventilated prose (aka sentence per line)] and not break the header, enter a space after the end of the first sentence, then a `\`.
 
 [source,asciidoc]
 ----
