@@ -2,11 +2,17 @@
 
 == Setting and Referencing Document Attributes
 
-AsciiDoc attributes are optional key value pairs.
-They are available and, if applicable, applied to an entire document when set in the document's header.
-Each attribute must be entered on its own line.
+AsciiDoc attributes are optional key-value pairs that can be used to hold names, URLs, and reusable content phrases.
 Some attributes are built-in to Asciidoctor; others are defined especially for the Couchbase documentation or by the writer.
-To set a document attribute, enter it in the document header inside a set of colons, followed by a value. (`:attribute-name: value`).
+
+When defined in the document header, these attributes become available to the whole document and all of its includes.
+Each attribute must be entered on a separate line, known as an attribute entry.
+The syntax of an attribute entry as follows:
+
+ :name: value
+
+In this case, `name` is the name of the attribute and `value` is the optional value.
+You can see several examples of attribute entries in the listing below.
 
 .Examples of document attributes
 [source,asciidoc]
@@ -32,7 +38,7 @@ In this case, the tabs feature is turned on by setting `tabs`.
 <5> Reference an attribute in the body of the document by entering the attribute name inside a set of curly brackets (`+{attribute-name}+`).
 <6> Code blocks are assigned the source language `javascript`.
 
-== Unsetting an Attribute
+== Unsetting a Document Attribute
 
 Some built-in attributes are set (turned on) by default and set for all of the Couchbase document in the playbook.
 
@@ -51,11 +57,84 @@ See the production and staging Antora playbooks to review which AsciiDoc attribu
 
 == Using Roles
 
-A role applies alternative or additional CSS styles to a document or an element.
-The role's styles are defined in the UI.
-The `page-role` attribute applies a role to an entire document.
-A role is applied to an inline element or block by prefixing the role name with a dot and entering it in a set of square brackets (`[.role-name]`).
+A role applies alternative or additional CSS styles to a document, block, or phrase.
+The styles for each role are defined by the UI.
+A role is applied to a block or phrase by prefixing the role name with a dot and inserting it between a set of square brackets (`[.role-name]`).
 
-Couchbase has one custom role: `tiles`.
-This role is assigned to an entire document using `page-role`.
-See the `tiles` role in action on the xref:server:getting-started:starter-kits.adoc[Starter Kits page].
+=== Page Role
+
+Assign a role to the page works a little differently.
+When set, the `page-role` attribute applies one or more roles to the entire page.
+`page-role` is an example of a <<Using Page Attributes,page attribute>>.
+It must be defined in the document header.
+
+Unlike with blocks and phrases, page roles are not prefixed with a dot and must be separated by a single space (following the same rules as CSS classes).
+
+The Couchbase documentation currently supports two page roles:
+
+* tiles
+* -toc
+
+These roles are often combined, as you can see in this example:
+
+[source,asciidoc]
+----
+= Document Title
+:page-role: tiles -toc
+
+Page contents.
+----
+
+You can see the `tiles -toc` page role combination in action on the xref:server:getting-started:starter-kits.adoc[Starter Kits page].
+The tiles role arranges the secondary section titles as tiles (in two columns).
+The -toc role tells the UI template not to add a table of contents (TOC) to the page.
+
+== Using Page Attributes
+
+Certain document attributes are reserved specifically for use with Antora.
+These are know as page attributes.
+All page attributes begin with the `page-` prefix.
+The prefix is removed and the remainder is passed on to the UI as metadata.
+For the most part, it's up to the UI to decide how to use this information.
+
+There are several built-in page attribute in Antora and a few others that the Couchbase UI already recognized.
+
+=== Built-in Page Attributes
+
+The built-in page attributes in Antora are as follows:
+
+page-layout:: Specifies the UI layout to apply to the page.
+If not set, the page layout defaults to `default` (hence loading the `default.hbs` template).
++
+The home page for the site uses the `home` layout by assigning `:page-layout: home` in the document header.
+
+page-partial:: Indicates that this page may be included in another page.
+Only requires for AsciiDoc files in the pages directory (not the partials directory).
+
+page-aliases:: A comma-separated list of alternate page IDs that should redirect to this page.
+When you move a page, you might want to list the old page ID in this attribute so that the web server will redirect visitors from the old page to the new location.
+
+Antora also assigns several page attributes on each page to provide information about which component, version, and module in which the page is located.
+You can find a list of these attributes in the https://docs.antora.org/antora/1.1/page/page-and-site-attributes/[Antora documentation].
+
+=== Custom Page Attributes
+
+Custom page attibutes are used to pass information from the document to the UI.
+It's up to the UI to give these attributes meaning.
+
+The Couchbase UI supports the following custom page attributes:
+
+page-edition:: Used to add a blue badge under the page title that indicates the server edition to which the content applies.
+The badge automatically links to \https://www.couchbase.com/products/editions.
+The value of the attribute is used as the text of the badge.
+
+page-status:: Used to add an orange badge under the page title that indicates the status of the page, such as beta or the minimum software version to which the content applies.
+The value of the attribute is used as the text of the badge.
+
+description:: Sets the value of the meta description in the HTML head.
+Note that the `page-` prefix is not required in this case.
+
+keywords:: Sets the value of the meta keywords in the HTML head.
+Note that the `page-` prefix is not required in this case.
+
+Additional custom page attributes can be added by agreeing on a contract between the page and the UI.
