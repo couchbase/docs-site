@@ -80,14 +80,6 @@
     {
       "url": "https://docs.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
-        "component": ["couchbase-lite"],
-        "version": ["1.4"]
-      },
-      "selectors_key": "headings-only"
-    },
-    {
-      "url": "https://docs.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
         "component": ["sync-gateway"],
         "version": ["2.1", "2.0"]
       }
