@@ -13,7 +13,7 @@ Check out the https://developer.couchbase.com[Developer Portal]!
 == {empty}
 
 [.card]
-=== Couchbase for Administrators
+=== Administrators
 
 If you are a Couchbase administrator wanting to configure, deploy, and manage Couchbase Data Platform
 
@@ -22,7 +22,7 @@ If you are a Couchbase administrator wanting to configure, deploy, and manage Co
 * xref:server:backup-restore:backup-restore.adoc[Backup and Restore]
 
 [.card]
-=== Couchbase for Developers
+=== Developers
 
 If you are a Couchbase user wanting to develop on an existing installation
 
@@ -31,7 +31,7 @@ If you are a Couchbase user wanting to develop on an existing installation
 * xref:java-sdk::core-operations.adoc[CRUD]
 
 [.card]
-=== Couchbase for SQL Developers
+=== SQL Developers
 
 If you are a Couchbase user wanting to understand how to develop queries
 
@@ -40,7 +40,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
 
 [.card]
-=== Couchbase for App Developers
+=== Mobile Developers
 
 If you are a Couchbase user wanting to develop for applications on the edge
 
