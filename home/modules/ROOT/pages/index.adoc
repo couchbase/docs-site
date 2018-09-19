@@ -24,7 +24,7 @@ If you are a Couchbase administrator wanting to configure, deploy, and manage Co
 [.card]
 === Developers
 
-If you are a Couchbase user wanting to develop on an existing installation
+If you are a Couchbase user wanting to develop an application using our SDKs
 
 * xref:java-sdk::start-using-sdk.adoc[Quick Install]
 * xref:java-sdk::sample-application.adoc[Sample Application]
