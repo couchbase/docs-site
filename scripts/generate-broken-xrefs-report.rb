@@ -65,7 +65,7 @@ broken_xrefs = Dir.chdir 'public' do
 end
 
 report = <<~EOS
-= Broken Xrefs Report :: #{DATESTAMP}
+= Broken Xrefs Report: #{DATESTAMP}
 ifndef::backend-pdf[]
 :toc: macro
 :toc-title: Component Versions
