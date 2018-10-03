@@ -68,14 +68,14 @@ To include a snippet of content from an example or partial (instead of the whole
 ----
 This page discusses how to develop Couchbase applications to function in times of node or network failure.
 
-// tag::failover-definition[] // <1> <2>
+// tag::failover-definition[] <1> <2>
 --
 Failover is the means by which a node is removed from the cluster and all its owned vBuckets are immediately:
 
 * Transferred to a replica node (if there are replica nodes)
 * Marked offline (if there are no replica nodes).
 --
-// end::failover-definition[] // <3> <4>
+// end::failover-definition[] <3> <4>
 ----
 <1> To indicate the start of a tagged region, insert a comment line (`+//+`) in the file.
 <2> Assign a unique name to the region in the `tag` directive, followed by a set of square brackets (`[]`).

@@ -204,13 +204,13 @@ Each row must share the same number of cells, taking into account any column or 
 
 .Table with implicit column value and header row
 ----
-|=== // <1>
-|Name of Column 1 |Name of Column 2 // <2> <3>
+|=== <1>
+|Name of Column 1 |Name of Column 2 <2> <3>
 
 |Cell in column 1, row 1
-|Cell in column 2, row 1 // <4>
+|Cell in column 2, row 1 <4>
 
-|Cell in column 1, row 2 |Cell in column 2, row 2 // <5>
+|Cell in column 1, row 2 |Cell in column 2, row 2 <5>
 |===
 ----
 <1> A table is delimited by `|===`.
@@ -235,7 +235,7 @@ Since tables are AsciiDoc block elements they can have titles, roles, xref:ids.a
 .Table with title, ID, `cols`, and `options="header"`
 ----
 .Optional title
-[#optional-id,cols="1,1,2",options="header"] // <1> <2> <3> <4>
+[#optional-id,cols="1,1,2",options="header"] <1> <2> <3> <4>
 |===
 
 |Name of Column 1

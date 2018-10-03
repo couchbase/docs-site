@@ -87,7 +87,7 @@ The link in the previous sentence was created using a same-page xref.
 
 .Same-page xref with link text to section
 ----
-Before you can reference a destination element from an in-page xref, you must <<assign-id,assign it an ID>>. // <1> <2> <3>
+Before you can reference a destination element from an in-page xref, you must <<assign-id,assign it an ID>>. <1> <2> <3>
 ----
 <1> Same-page xrefs are defined by a double set of angle brackets (`<< >>`).
 <2> The ID of the destination element is entered first and followed by a comma (`,`) if the xref also contains link text.

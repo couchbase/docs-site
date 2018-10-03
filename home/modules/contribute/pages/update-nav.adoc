@@ -19,14 +19,14 @@ The deepest nested level allowed is level five (`+*****+`).
 ----
 .Title of Category
 * Level 1 list item
-** Level 2 list item    // <1>
+** Level 2 list item    <1>
 *** Level 3 list item
 **** Level 4 list item
 ***** Level 5 list item
-                        // <2>
+                        <2>
 .Another Category
 * Level 1 list item
- ** Level 2 list item   // <3>
+ ** Level 2 list item   <3>
 * Level 1 list item
 ----
 <1> Regardless of level, list items can start flush against the left margin.
@@ -40,10 +40,10 @@ Navigation list items can be xrefs, regular text, inline image macros, or links 
 [source,asciidoc]
 ----
 .Category Title
-* xref:name-of-file.adoc[Link Text] // <1>
-** Settings // <2>
+* xref:name-of-file.adoc[Link Text] <1>
+** Settings <2>
 *** xref:another-file.adoc[Link Text]
-** https://support.couchbase.com[Link Text] // <3>
+** https://support.couchbase.com[Link Text] <3>
 ----
 <1> Xref list item.
 <2> Regular text list item.

@@ -18,14 +18,14 @@ You can see several examples of attribute entries in the listing below.
 [source,asciidoc]
 ....
 = Page Title
-:page-topic-type: concept // <1>
-:source-language: javascript // <2>
-:url-downloads: https://www.couchbase.com/downloads // <3>
-:tabs: // <4>
+:page-topic-type: concept <1>
+:source-language: javascript <2>
+:url-downloads: https://www.couchbase.com/downloads <3>
+:tabs: <4>
 
-Download Sync Gateway from the {url-downloads}[Couchbase downloads page]. // <5>
+Download Sync Gateway from the {url-downloads}[Couchbase downloads page]. <5>
 
-[source] // <6>
+[source] <6>
 ----
 Snippet of javascript source code
 ----
@@ -49,7 +49,7 @@ To unset (turn off) an attribute on a page, prefix the name with a bang (`!`).
 [source,asciidoc]
 ----
 = Page Title
-:!sectids: // <1>
+:!sectids: <1>
 ----
 <1> Unset `sectids` with a `!` so that sections IDs are not generated from the section titles in the document.
 
