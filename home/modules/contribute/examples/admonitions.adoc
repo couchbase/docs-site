@@ -11,17 +11,17 @@ WARNING: Never stop or restart Couchbase Server before you first remove that nod
 CAUTION: Don't stick forks in power sockets.
 // end::basic[]
 
-// tag::complex[]
+// tag::compound[]
 [IMPORTANT]
 .Optional Title
 ====
-Use an example block to create an admonition that contains complex content, such as:
+Use an example block to create an admonition that contains compound content, such as:
 
 * Lists
 * Multiple paragraphs
 * Source code
 ====
-// end::complex[]
+// end::compound[]
 
 https://docs-staging.couchbase.com/server/5.1/n1ql/n1ql-language-reference/createindex.html
 [caption=Attention]

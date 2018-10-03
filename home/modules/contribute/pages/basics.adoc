@@ -96,14 +96,14 @@ Rendered as:
 
 include::example$description-lists.adoc[tag=basic]
 
-.Description list with complex content
+.Description list with compound content
 ----
-include::example$description-lists.adoc[tag=complex]
+include::example$description-lists.adoc[tag=compound]
 ----
 
 Rendered as:
 
-include::example$description-lists.adoc[tag=complex]
+include::example$description-lists.adoc[tag=compound]
 
 == Ordered Lists
 
@@ -182,14 +182,17 @@ Rendered as:
 
 include::example$admonitions.adoc[tag=basic]
 
-.Complex admonition
+.Compound admonition
 ----
-include::example$admonitions.adoc[tag=complex]
+include::example$admonitions.adoc[tag=compound]
 ----
 
 Rendered as:
 
-include::example$admonitions.adoc[tag=complex]
+include::example$admonitions.adoc[tag=compound]
+
+A compound admonition is any admonition block that contains more than one paragraph or contains a block other than a paragraph.
+The contents of the block must be wrapped in the example block delimiters and the admonition type must be assigned as the block style.
 
 == Tables
 

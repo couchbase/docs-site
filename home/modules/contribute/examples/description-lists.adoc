@@ -6,7 +6,7 @@ Document ID:: Accepts the ID of a specific document.
 Leave this field blank to retrieve documents based on *Limit* and *Offset*.
 // end::basic[]
 
-// tag::complex[]
+// tag::compound[]
 term 1::
 This description needs two paragraphs.
 To attach them both to term 1, use a list continuation (`+`) on the line separating the paragraphs.
@@ -23,4 +23,4 @@ term 3::
 * unordered list item
 .. ordered list item
 ... another ordered list item
-// end::complex[]
+// end::compound[]
