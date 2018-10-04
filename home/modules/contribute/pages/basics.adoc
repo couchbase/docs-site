@@ -323,7 +323,7 @@ The default width for a table is set to 100%. There are three ways to override t
 * Set the autowidth option so that table only expands to accommodate the contents (e.g., %autowidth)
 * Assign a role to the table to allow the width to be controlled by CSS using presets (e.g., .narrow)
 
-For more information, see xref:https://asciidoctor.org/docs/user-manual/#table-width[Table Widths]
+For more information, see xref:https://asciidoctor.org/docs/user-manual.html#table-width[Table Widths]
 
 === Table Attributes and Options
 
