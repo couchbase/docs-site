@@ -315,6 +315,16 @@ Rendered as:
 
 include::example$tables.adoc[tag=spans]
 
+=== Table Widths
+
+The default width for a table is set to 100%. There are three ways to override this default:
+
+* Set the width explicitly (in percentage) using the width attribute (e.g., width=50%)
+* Set the autowidth option so that table only expands to accommodate the contents (e.g., %autowidth)
+* Assign a role to the table to allow the width to be controlled by CSS using presets (e.g., .narrow)
+
+For more information, see xref:https://asciidoctor.org/docs/user-manual/#table-width[Table Widths]
+
 === Table Attributes and Options
 
 There are a lot of AsciiDoc table attributes, options, and specifiers.
