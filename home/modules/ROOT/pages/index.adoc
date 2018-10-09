@@ -55,7 +55,7 @@ If you are a Couchbase user wanting to develop for applications on the edge
 .xref:server:introduction:intro.adoc[Server]
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL]
 * xref:server:fts:full-text-intro.adoc[Full Text Search]
-* xref:server:analytics:introduction.adoc[Analytics (Developer Preview)]
+* xref:server:analytics:introduction.adoc[Analytics]
 * xref:server:eventing:eventing-overview.adoc[Eventing]
 * xref:server:sdk:overview.adoc[SDKs]
 
