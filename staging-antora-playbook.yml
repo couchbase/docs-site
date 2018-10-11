@@ -53,7 +53,7 @@ asciidoc:
     xrefstyle: short
   extensions:
   - ./lib/json-config-ui-block-macro.js
-  - ./lib/man-inline-macro.js
+  - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
