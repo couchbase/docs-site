@@ -11,8 +11,8 @@ content:
   - url: git@github.com:couchbase/couchbase-operator.git
     branches: [master, 1.0.x]
     start_path: docs/user
-  - url: https://github.com/couchbaselabs/couchbase-elasticsearch-connector.git
-    branches: release/cypress
+  - url: https://github.com/couchbase/couchbase-elasticsearch-connector.git
+    branches: [master, release/cypress]
     start_path: docs
   - url: https://github.com/couchbase/kafka-connect-couchbase.git
     branches: [master, release/3.3]
