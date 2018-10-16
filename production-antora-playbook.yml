@@ -13,8 +13,8 @@ content:
   - url: git@github.com:couchbase/couchbase-operator.git
     branches: 1.0.x
     start_path: docs/user
-  - url: https://github.com/couchbaselabs/couchbase-elasticsearch-connector.git
-    branches: release/cypress
+  - url: https://github.com/couchbase/couchbase-elasticsearch-connector.git
+    branches: [master, release/cypress]
     start_path: docs
   - url: https://github.com/couchbase/kafka-connect-couchbase.git
     branches: [master, release/3.3]
@@ -56,13 +56,13 @@ asciidoc:
     xrefstyle: short
   extensions:
   - ./lib/json-config-ui-block-macro.js
-  - ./lib/man-inline-macro.js
+  - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v184/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v185/ui-bundle.zip
   supplemental_files:
   - path: robots.txt
     contents: |
