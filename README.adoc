@@ -20,6 +20,37 @@ The _home_ directory contains the Home documentation component.
 
 The custom extensions in the _lib_ directory process the manpage macro (Couchbase CLI and Backup components), Swagger UI macro, and multi-row table headers.
 
+== File watcher and LiveReload
+
+This repository contains a script to watch `.adoc`/`.yml` files and trigger a new Antora build when it detects changes to those files.
+The script also starts a web server and can use LiveReload to reload the browser tab after the Antora build completes.
+To use the script, run the following.
+
+. Install dependencies.
++
+[source,bash]
+----
+npm install gulp-cli -g
+npm install
+----
+. Install the LiveReload https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[chrome extension].
+. Start the script.
+The web server's host URL is printed to the console after the `watch` task completes.
++
+[source,bash]
+----
+gulp
+----
+. The console output will print status information every time a change is detected.
++
+[source,bash]
+----
+[16:24:28] Starting 'build'...
+[16:24:32] Finished 'build' after 3.6 s
+[16:24:32] Starting 'preview'...
+[16:24:32] Finished 'preview' after 1.17 ms
+----
+
 == Contributing
 
 To learn how to use the playbook and generate the docs site locally, see our contributing guide.
