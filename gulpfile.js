@@ -18,6 +18,9 @@ gulp.task('build', function (cb) {
    * It's analogous to `$ antora --playbook local-antora-playbook.yml`.
    * Having access to the generator in code may be useful for other
    * reasons in the future (i.e to implement custom features).
+   * NOTE: As opposed to building with the CLI, this method doesn't use
+   * a separate process for each run. So if a build error occurs with the `gulp`
+   * command it can be useful to check if it also happens with the CLI command.
    */
   generator(args, process.env)
     .then(() => {
