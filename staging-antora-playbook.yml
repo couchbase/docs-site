@@ -50,6 +50,9 @@ content:
   - url: https://github.com/couchbaselabs/universitylister-android.git
     branches: master-update-playbook
     start_path: content
+  - url: https://github.com/couchbaselabs/mobile-training-todo.git
+    branches: 1.x-update-playbook
+    start_path: content
 asciidoc:
   attributes:
     experimental: ''
