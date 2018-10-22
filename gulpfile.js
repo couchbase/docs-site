@@ -17,6 +17,10 @@ gulp.task('build', function (cb) {
     .then(() => {
       cb();
     })
+    .catch(err => {
+      console.log(err);
+      cb();
+    });
 });
 
 gulp.task('preview', ['build'], function () {
