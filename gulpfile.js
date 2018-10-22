@@ -13,6 +13,12 @@ let args = [
 ];
 
 gulp.task('build', function (cb) {
+  /**
+   * Use the '@antora/site-generator-default' node module to build.
+   * It's analogous to `$ antora --playbook local-antora-playbook.yml`.
+   * Having access to the generator in code may be useful for other
+   * reasons in the future (i.e to implement custom features).
+   */
   generator(args, process.env)
     .then(() => {
       cb();
