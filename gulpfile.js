@@ -37,6 +37,7 @@ gulp.task('watch', function () {
       `${source.url}/**/**.yml`,
       `${source.url}/**/**.adoc`
     ]);
+  dirs.push(['local-antora-playbook.yml']);
   gulp.watch(dirs, ['preview']);
 });
 
