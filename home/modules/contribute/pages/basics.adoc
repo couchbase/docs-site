@@ -3,6 +3,7 @@
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
 :url-pages: {url-docs-antora}/page/
 :url-tables: {url-docs-adoc}/#tables
+:url-table-width: {url-docs-adoc}/#table-width
 
 == Bold, Italic, and Code Styles
 
@@ -314,6 +315,16 @@ include::example$tables.adoc[tag=spans]
 Rendered as:
 
 include::example$tables.adoc[tag=spans]
+
+=== Table Widths
+
+The default width for a table is set to 100%. There are three ways to override this default:
+
+* Set the width explicitly (in percentage) using the width attribute (e.g., width=50%)
+* Set the autowidth option so that table only expands to accommodate the contents (e.g., %autowidth)
+* Assign a role to the table to allow the width to be controlled by CSS using presets (e.g., .narrow)
+
+For more information, see the {url-table-width}[Asciidoctor table width documentation^].
 
 === Table Attributes and Options
 
