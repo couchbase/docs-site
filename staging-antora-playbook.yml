@@ -46,12 +46,14 @@ content:
   - url: https://github.com/couchbaselabs/tutorials.git
     branches: master
   - url: https://github.com/couchbaselabs/hotel-finder-react-native.git
-    branches: master-playbook-update
-  - url: https://github.com/couchbaselabs/universitylister-android.git
-    branches: master-update-playbook
-    start_path: content
+    branches: tutorials
+  - url: https://github.com/couchbaselabs/hotel-lister-cordova.git
+    branches: tutorials
   - url: https://github.com/couchbaselabs/mobile-training-todo.git
-    branches: 1.x-update-playbook
+    branches: tutorials
+    start_path: content
+  - url: https://github.com/couchbaselabs/mobile-travel-sample.git
+    branches: tutorials
     start_path: content
 asciidoc:
   attributes:
@@ -69,7 +71,7 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v189/ui-bundle.zip
+    url: http://couchbase-docs.s3.amazonaws.com/antora/ui-bundle.zip
   supplemental_files:
   - path: robots.txt
     contents: |
