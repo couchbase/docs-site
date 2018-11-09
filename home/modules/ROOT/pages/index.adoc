@@ -6,7 +6,7 @@
 We’d love to hear from you. Feel free to use the btn:[Feedback?] button on any page to share your feedback and concerns.
 
 [.hint]
-Looking for non-documentation resources? 
+Looking for non-documentation resources?
 Check out the https://developer.couchbase.com[Developer Portal]!
 
 [.cards.cards-4.personas.conceal-title]
@@ -18,7 +18,7 @@ Check out the https://developer.couchbase.com[Developer Portal]!
 If you are a Couchbase administrator wanting to configure, deploy, and manage Couchbase Data Platform
 
 * xref:server:install:get-started.adoc[Deployment Options]
-* xref:server:security:security-intro.adoc[Security]
+* xref:server:learn:security/security-overview.adoc[Security]
 * xref:server:backup-restore:backup-restore.adoc[Backup and Restore]
 
 [.card]
