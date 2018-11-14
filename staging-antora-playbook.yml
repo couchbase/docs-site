@@ -53,6 +53,8 @@ content:
     branches: tutorials
   - url: https://github.com/couchbaselabs/hotel-lister-cordova.git
     branches: tutorials
+  - url: https://github.com/couchbaselabs/tutorials-contrib.git
+    branches: master
 asciidoc:
   attributes:
     experimental: ''
