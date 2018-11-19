@@ -71,7 +71,7 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v192/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v193/ui-bundle.zip
   supplemental_files:
   - path: robots.txt
     contents: |
