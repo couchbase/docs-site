@@ -46,6 +46,16 @@ Rendered as:
 
 include::example$code-blocks.adoc[tag=single]
 
+Code blocks can be grouped in a parent block element.
+
+....
+include::example$code-blocks.adoc[tag=group-code-blocks]
+....
+
+Rendered as:
+
+include::example$code-blocks.adoc[tag=group-code-blocks]
+
 [#callouts]
 == Callout Numbers
 
