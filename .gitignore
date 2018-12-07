@@ -1,5 +1,6 @@
 /.cache/
-/public/
+/docsearch/node_modules/
 /netlify/node_modules/
 /node_modules/
+/public/
 local-antora-playbook.yml
