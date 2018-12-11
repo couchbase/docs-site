@@ -294,6 +294,5 @@
       "desc(weight.level)",
       "asc(weight.position)"
     ]
-  },
-  "nb_hits": 147173
+  }
 }
