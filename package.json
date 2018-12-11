@@ -1,0 +1,17 @@
+{
+  "name": "docs-site",
+  "description": "Couchbase Documentation Site",
+  "homepage": "https://docs.couchbase.com",
+  "dependencies": {
+    "@antora/cli": "^1.1.1",
+    "@antora/site-generator-default": "^1.1.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.6.1",
+    "yaml-js": "^0.2.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/couchbase/docs-site.git"
+  }
+}
