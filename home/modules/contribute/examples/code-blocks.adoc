@@ -51,3 +51,25 @@ function OnUpdate(doc, meta) {
 <3> Stream results using 'for' iterator.
 <4> Cancel streaming query by breaking out.
 // end::callouts[]
+
+// tag::group-code-blocks[]
+====
+[source,n1ql]
+----
+SELECT CONTAINS("N1QL is awesome", "N1QL") as n1ql,
+       CONTAINS("N1QL is awesome", "SQL") as no_sql;
+----
+
+[source,json]
+----
+{
+    "results": [
+        {
+            "n1ql": true,
+            "no_sql": false
+        }
+    ]
+}
+----
+====
+// end::group-code-blocks[]
