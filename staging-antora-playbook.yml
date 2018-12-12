@@ -45,7 +45,7 @@ content:
     branches: [release/2.5, release/2.1, release/2.0, release/1.5, release/1.4, release/1.3]
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials.git
-    branches: master
+    branches: tutorials
   - url: https://github.com/couchbaselabs/mobile-travel-sample.git
     branches: tutorials
     start_path: content
@@ -74,7 +74,7 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v193/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/blob/d1363716040b0d04159f3b22fdb26c730cccd2b7/build/ui-bundle.zip?raw=true
   supplemental_files:
   - path: robots.txt
     contents: |
