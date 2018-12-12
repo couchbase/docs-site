@@ -56,7 +56,7 @@ gulp.task('watch', function () {
 
 gulp.task('connect', function() {
   connect.server({
-    port: 5252,
+    port: 5353,
     name: 'Dev Server',
     livereload: true,
     root: 'public',
