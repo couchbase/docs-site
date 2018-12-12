@@ -50,6 +50,8 @@ gulp
 [16:24:32] Starting 'preview'...
 [16:24:32] Finished 'preview' after 1.17 ms
 ----
+. Make changes to your AsciiDoc files locally.
+The browser tab should automatically reload after a short while.
 
 == Contributing
 
