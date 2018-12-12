@@ -48,6 +48,7 @@ gulp.task('watch', function () {
   let dirs = yaml_content.content.sources
     .map(source => [
       `${source.url}/**/**.yml`,
+      `${source.url}/**/**.yaml`,
       `${source.url}/**/**.adoc`
     ]);
   dirs.push(['local-antora-playbook.yml']);
