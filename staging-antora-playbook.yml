@@ -58,6 +58,9 @@ content:
   - url: https://github.com/couchbaselabs/mobile-training-todo.git
     branches: tutorials
     start_path: content
+  - url: https://github.com/couchbaselabs/UniversityLister-Android.git
+    branches: tutorials
+    start_path: content
 asciidoc:
   attributes:
     experimental: ''
