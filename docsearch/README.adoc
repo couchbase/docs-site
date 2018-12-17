@@ -37,7 +37,7 @@ Next, create an [.path]_.env_ file in the cloned repository to define the applic
 _To protect the API key, only the final four characters of the API key are shown here._
 
 ----
-APPLICATON_ID=NI1G57N08Q
+APPLICATION_ID=NI1G57N08Q
 API_KEY=****************************67dd
 ----
 
@@ -54,7 +54,7 @@ Run the following command to make sure Chromedriver is installed successfully:
  $ chromedriver --version
 
 Finally, you'll need the docsearch configuration file.
-This configuration file is located in the root of the playbook repository for the Couchbase document.
+This configuration file is located in the playbook repository for the Couchbase documentation.
 Download the file from {url-config} and save it to the cloned repository.
 
 You're now ready to run the scraper.
