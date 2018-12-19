@@ -77,7 +77,9 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/blob/d1363716040b0d04159f3b22fdb26c730cccd2b7/build/ui-bundle.zip?raw=true
+    # sourced from https://github.com/couchbase/docs-ui/pull/47
+    url: https://deploy-preview-47--cb-docs-ui.netlify.com/dist/ui-bundle.zip
+    snapshot: true
   supplemental_files:
   - path: robots.txt
     contents: |
