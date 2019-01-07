@@ -61,6 +61,9 @@ content:
   - url: https://github.com/couchbaselabs/UniversityLister-Android.git
     branches: tutorials
     start_path: content
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile.git
+    branches: [sync-update-playbook, query-update-playbook, standalone-update-playbook, backgroundfetch]
+    start_path: content
 asciidoc:
   attributes:
     experimental: ''
