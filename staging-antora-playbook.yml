@@ -62,7 +62,7 @@ content:
     branches: tutorials
     start_path: content
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile.git
-    branches: [sync-update-playbook, query-update-playbook, standalone-update-playbook, backgroundfetch]
+    branches: [sync, query-patch, standalone-patch, backgroundfetch-patch]
     start_path: content
 asciidoc:
   attributes:
