@@ -48,6 +48,9 @@ content:
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials-contrib.git
     branches: master
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile.git
+    branches: sync
+    start_path: content
 asciidoc:
   attributes:
     experimental: ''
