@@ -49,7 +49,7 @@ content:
   - url: https://github.com/couchbaselabs/tutorials-contrib.git
     branches: master
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile.git
-    branches: sync
+    branches: backgroundfetch
     start_path: content
 asciidoc:
   attributes:
