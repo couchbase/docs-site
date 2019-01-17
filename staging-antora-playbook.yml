@@ -50,9 +50,9 @@ content:
     branches: tutorials
     start_path: content
   - url: https://github.com/couchbaselabs/hotel-finder-react-native.git
-    branches: tutorials
+    branches: master
   - url: https://github.com/couchbaselabs/hotel-lister-cordova.git
-    branches: tutorials
+    branches: master
   - url: https://github.com/couchbaselabs/tutorials-contrib.git
     branches: master
   - url: https://github.com/couchbaselabs/mobile-training-todo.git
