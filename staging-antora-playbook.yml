@@ -59,7 +59,7 @@ content:
     branches: tutorials
     start_path: content
   - url: https://github.com/couchbaselabs/UniversityLister-Android.git
-    branches: tutorials
+    branches: master
     start_path: content
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile.git
     branches: [standalone, query, sync, backgroundfetch]

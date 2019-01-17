@@ -55,6 +55,9 @@ content:
     branches: master
   - url: https://github.com/couchbaselabs/hotel-lister-cordova.git
     branches: master
+  - url: https://github.com/couchbaselabs/UniversityLister-Android.git
+    branches: master
+    start_path: content
 asciidoc:
   attributes:
     experimental: ''
