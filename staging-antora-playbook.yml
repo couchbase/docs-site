@@ -47,7 +47,7 @@ content:
   - url: https://github.com/couchbaselabs/tutorials.git
     branches: tutorials
   - url: https://github.com/couchbaselabs/mobile-travel-sample.git
-    branches: tutorials
+    branches: master
     start_path: content
   - url: https://github.com/couchbaselabs/hotel-finder-react-native.git
     branches: master
