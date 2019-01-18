@@ -55,6 +55,9 @@ content:
     branches: master
   - url: https://github.com/couchbaselabs/tutorials-contrib.git
     branches: master
+  - url: https://github.com/couchbaselabs/mobile-training-todo.git
+    branches: tutorials
+    start_path: content
   - url: https://github.com/couchbaselabs/UniversityLister-Android.git
     branches: master
     start_path: content
