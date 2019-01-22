@@ -46,6 +46,8 @@ content:
   - url: https://github.com/couchbaselabs/docs-sync-gateway.git
     branches: [release/2.1, release/2.0, release/1.5, release/1.4, release/1.3]
   # Tutorial repositories
+  - url: https://github.com/couchbaselabs/tutorials.git
+    branches: master
   - url: https://github.com/couchbaselabs/mobile-travel-sample.git
     branches: master
     start_path: content
