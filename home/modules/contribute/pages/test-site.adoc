@@ -1,6 +1,4 @@
 = Test Your Changes Locally
-:url-docs-antora: https://docs.antora.org/antora/1.1
-:url-ssh: {url-docs-antora}/playbook/private-repository-auth/
 
 If you've never built the site on your device, complete the xref:install-antora.adoc[Install Antora] and xref:playbook.adoc[Get the Site Playbook Project] steps first.
 
@@ -62,9 +60,9 @@ Or, you can navigate to and open _index.html_ using your file explorer or browse
 
 When you're satisfied with your work and fixed any reported errors, it's time to send your changes upstream for review.
 
-TIP: Antora relies on the SSH agent to authenticate private repositories on your behalf.
-If Antora fails because it can't connect to the private repositories in the playbook, you're SSH agent probably isn't running.
-See {url-ssh}[SSH Authentication^] to learn how to configure and run your SSH agent.
+IMPORTANT: Since some of the respositories listed in the playbook are private, Antora will look for git credentials to use to connect to those repositories.
+If Antora fails because it can't connect to the private repositories, you're git credentials likely aren't configured.
+See xref:build-site.adoc#configure-git-credentials[git credentials] to learn how to configure the git credentials for Antora to use.
 
 == Next Step
 

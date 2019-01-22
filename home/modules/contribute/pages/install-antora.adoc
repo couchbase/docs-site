@@ -1,5 +1,5 @@
 = Install Antora
-:url-docs-antora: https://docs.antora.org/antora/1.1
+:url-docs-antora: https://docs.antora.org/antora/2.0
 :url-linux: {url-docs-antora}/install/linux-requirements/
 :url-macos: {url-docs-antora}/install/macos-requirements/
 :url-windows: {url-docs-antora}/install/windows-requirements/
@@ -7,13 +7,13 @@
 
 == Install System Prerequisites
 
-Antora runs on most Linux distributions, macOS, and Windows.
-If you've never used Antora, you may need to install a base build tools package and Node 8.
-Follow the prerequisite instructions for your operating system:
+Antora runs on all Linux distributions, macOS, and Windows.
+If you've never used Antora, you may first need to instal Node using nvm.
+Follow the instructions below that correspond to your operating system:
 
-* {url-linux}[Linux: Install base build tools and Node^]
-* {url-macos}[macOS: Install Xcode and Node^]
-* {url-windows}[Windows: Install Chocolaty and Node^]
+* {url-linux}[Linux: Install Node^]
+* {url-macos}[macOS: Install Node^]
+* {url-windows}[Windows: Install Node^]
 
 == Install the Antora CLI and Site Generator
 
