@@ -1,95 +1,33 @@
+#!/bin/env groovy
+
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      dir 'docsearch'
+      filename 'Dockerfile.jenkins'
+    }
+  }
   environment {
-    PATH="${env.WORKSPACE}/docsearch/chrome-install/opt/google/chrome:$PATH"
-    LD_LIBRARY_PATH="${env.WORKSPACE}/docsearch/chrome-install/usr/lib/x86_64-linux-gnu"
-    CHROMEDRIVER_PATH="${env.WORKSPACE}/docsearch/node_modules/.bin/chromedriver"
+    CONFIG="${env.WORKSPACE}/docsearch/production-config.json"
+    HOME='/docsearch'
+    PIPENV_HIDE_EMOJIS=true
+    PIPENV_NOSPIN=true
   }
   stages {
-    stage('Clone') {
-      steps {
-        checkout scm: [
-          $class: 'GitSCM',
-          userRemoteConfigs: [[
-            url: 'https://github.com/algolia/docsearch-scraper.git',
-            refspec: '+refs/heads/master:refs/remotes/origin/master'
-          ]],
-          branches: [[
-            name: 'refs/heads/master'
-          ]],
-          extensions: [
-            [$class: 'RelativeTargetDirectory', relativeTargetDir: 'docsearch/scraper'],
-            [$class: 'CloneOption', honorRefspec: true, noTags: true, shallow: true, depth: 1]
-          ]
-        ],
-        changelog: false,
-        poll: false
-      }
-    }
     stage('Install') {
       steps {
-        // Install Chrome locally and the libraries it requires (using LD_LIBRARY_PATH)
-        script {
-          [
-            'a/at-spi2-atk/libatk-bridge2.0-0_2.26.0-1ubuntu1_amd64.deb',
-            'a/at-spi2-core/libatspi2.0-0_2.30.0-5_amd64.deb',
-            'g/gtk+3.0/libgtk-3-0_3.24.1-1ubuntu2_amd64.deb',
-            'c/cairo/libcairo-gobject2_1.16.0-1_amd64.deb',
-            'libe/libepoxy/libepoxy0_1.5.3-0.1_amd64.deb',
-            'libx/libxkbcommon/libxkbcommon0_0.8.2-1_amd64.deb',
-            'w/wayland/libwayland-cursor0_1.16.0-1ubuntu2_amd64.deb',
-            'm/mesa/libwayland-egl1-mesa_18.0.5-0ubuntu0~16.04.1_amd64.deb',
-            'w/wayland/libwayland-client0_1.16.0-1ubuntu2_amd64.deb',
-            'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
-          ].each {
-            dir('docsearch/chrome-install/.cache/packages') {
-              sh "curl -sO ${it.startsWith('https://') ? '' : 'http://archive.ubuntu.com/ubuntu/pool/main/'}${it}"
-            }
-            dir('docsearch/chrome-install') {
-              sh "ar p .cache/packages/${it.substring(it.lastIndexOf('/') + 1)} data.tar.xz | tar xJ"
-            }
-          }
-        }
-        // Install Chromedriver and the Algolia client library
-        dir('docsearch') {
-          nodejs('node8') {
-            sh 'yarn'
-          }
-        }
-        // Prepare the Python environment to run the docsearch script
-        dir('docsearch/scraper') {
-          sh 'sed -i "/config[.]update_nb_hits/d" scraper/src/index.py'
-          writeFile file: '.env', text: "APPLICATION_ID=${ALGOLIA_APPLICATION_ID}\nAPI_KEY=${ALGOLIA_API_KEY}\n"
-          sh 'python -m pip install --user pipenv'
-          sh '$HOME/.local/bin/pipenv install'
-        }
+        sh '(cd /docsearch && pipenv install)'
       }
     }
     stage('Run') {
       steps {
-        dir('docsearch/scraper') {
-          sh '$HOME/.local/bin/pipenv run ./docsearch run ../production-config.json'
-        }
+        sh '(cd /docsearch && pipenv run python -m src.index)'
       }
     }
     stage('Activate') {
       steps {
-        dir('docsearch') {
-          sh 'node activate-production-index.js'
-        }
+        sh '(cd /docsearch && pipenv run python promote-index.py next_docs_couchbase prod_docs_couchbase)'
       }
-    }
-  }
-  post {
-    always {
-      script {
-        try {
-          dir('docsearch/scraper') {
-            sh '$HOME/.local/bin/pipenv --rm'
-          }
-        } catch (e) {}
-      }
-      deleteDir()
     }
   }
 }
