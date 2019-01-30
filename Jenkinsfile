@@ -12,9 +12,7 @@ def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsI
 // -------------------------
 // Category: Multibranch Pipeline
 // Pipeline name: docs.couchbase.com
-// Branch Sources:
-// Single repository & branch
-// Name: master
+// Branch Sources: Single repository & branch, Name: master
 // Source Code Managemnt: Git
 // Repository URL: https://github.com/couchbase/docs-site
 // Credentials: - none -
@@ -44,7 +42,7 @@ pipeline {
     disableConcurrentBuilds()
   }
   stages {
-    stage('Configure') {
+    stage('Init') {
       steps {
         script {
           properties([
