@@ -12,8 +12,9 @@ def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsI
 // -------------------------
 // Category: Multibranch Pipeline
 // Pipeline name: docs.couchbase.com
-// Branch Sources: Single repository & branch, Name: master
-// Source Code Managemnt: Git
+// Branch Sources: Single repository & branch
+// Name: master
+// Source Code Management: Git
 // Repository URL: https://github.com/couchbase/docs-site
 // Credentials: - none -
 // Refspec: +refs/heads/master:refs/remotes/origin/master
