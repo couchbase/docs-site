@@ -9,7 +9,6 @@ These steps, described under Setting Up Your Workspace, only need to be done onc
 * [x] Fork the repository into your GitHub account.
 * [x] Create a clone of the repository on your device.
 * [x] Connect your local repository with the upstream repository.
-//* [x] Configure the SSH agent
 
 Most of the following steps are completed each time you make a contribution to a repository.
 

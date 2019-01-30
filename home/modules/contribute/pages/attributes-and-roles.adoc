@@ -115,7 +115,7 @@ page-aliases:: A comma-separated list of alternate page IDs that should redirect
 When you move a page, you might want to list the old page ID in this attribute so that the web server will redirect visitors from the old page to the new location.
 
 Antora also assigns several page attributes on each page to provide information about which component, version, and module in which the page is located.
-You can find a list of these attributes in the https://docs.antora.org/antora/1.1/page/page-and-site-attributes/[Antora documentation].
+You can find a list of these attributes in the https://docs.antora.org/antora/2.0/page/page-and-site-attributes/[Antora documentation].
 
 === Custom Page Attributes
 

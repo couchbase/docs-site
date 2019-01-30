@@ -1,5 +1,5 @@
 = AsciiDoc Basics
-:url-docs-antora: https://docs.antora.org/antora/1.1
+:url-docs-antora: https://docs.antora.org/antora/2.0
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
 :url-pages: {url-docs-antora}/page/
 :url-tables: {url-docs-adoc}/#tables

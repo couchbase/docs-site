@@ -2,7 +2,7 @@
   "name": "couchbase-docs-staging-netlify",
   "private": true,
   "devDependencies": {
-    "@antora/cli": "1.1.1",
-    "@antora/site-generator-default": "1.1.1"
+    "@antora/cli": "2.0.0",
+    "@antora/site-generator-default": "2.0.0"
   }
 }
