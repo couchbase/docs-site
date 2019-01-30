@@ -43,7 +43,7 @@ pipeline {
     disableConcurrentBuilds()
   }
   stages {
-    stage('Init') {
+    stage('Configure') {
       steps {
         script {
           properties([
