@@ -10,20 +10,22 @@ def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsI
 
 // Jenkins job configuration
 // -------------------------
-// Category: Pipeline
+// Category: Multibranch Pipeline
 // Pipeline name: docs.couchbase.com
-// [x] Do not allow concurrent builds
-// GitHub Project: https://github.com/couchbase/docs-site/
-// [x] GitHub hook trigger for GITScm polling
-// Pipeline Definition: Pipeline script from SCM
-// SCM: Git
+// Branch Sources:
+// Single repository & branch
+// Name: master
+// Source Code Managemnt: Git
 // Repository URL: https://github.com/couchbase/docs-site
+// Credentials: - none -
 // Refspec: +refs/heads/master:refs/remotes/origin/master
 // Branch specifier: refs/heads/master
 // Advanced clone behaviors: [ ] Fetch tags, [x] Honor refspec on initial clone, [x] Shallow clone (depth: 3)
 // Polling ignores commits with certain messages: (?s).*\[skip ci\].*
-// Script path: Jenkinsfile
-// [x] Lightweight checkout
+// Build Configuration:
+// Mode: by Jenkinsfile
+// Script Path: Jenkinsfile
+// [x] Discard old items: Days to keep old items: 60
 pipeline {
   agent {
     dockerfile {
@@ -37,6 +39,9 @@ pipeline {
     FEEDBACK_BUTTON='true'
     FORCE_HTTPS='true'
     STAGE='production'
+  }
+  options {
+    disableConcurrentBuilds()
   }
   stages {
     stage('Build') {
