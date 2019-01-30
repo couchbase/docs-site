@@ -44,6 +44,16 @@ pipeline {
     disableConcurrentBuilds()
   }
   stages {
+    stage('Configure') {
+      steps {
+        script {
+          properties([
+            [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/couchbase/docs-site'],
+            pipelineTriggers([githubPush()]),
+          ])
+        }
+      }
+    }
     stage('Build') {
       steps {
         withCredentials([githubApiTokenCredentials]) {
