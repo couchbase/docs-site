@@ -2,11 +2,11 @@
 
 def awsCredentialsId = 'couchbase-prod-aws'
 def cfDistributionId = 'E2RGKCBK9HN257'
-def githubApiTokenCredentialsId = 'docs-robot-api-key'
+def githubApiTokenCredentialsId = 'docs-robot-github-token'
 def s3Bucket = 'docs.couchbase.com'
 
 def awsCredentials = [$class: 'AmazonWebServicesCredentialsBinding', credentialsId: awsCredentialsId, accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']
-def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsId, variable: 'GITHUB_API_TOKEN')
+def githubApiTokenCredentials = usernamePassword(credentialsId: githubApiTokenCredentialsId, usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_API_TOKEN')
 
 // Jenkins job configuration
 // -------------------------
@@ -52,6 +52,7 @@ pipeline {
           properties([
             [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/couchbase/docs-site'],
           ])
+          env.GIT_COMMIT = readFile('.git/HEAD').trim()
         }
       }
     }
@@ -75,8 +76,12 @@ pipeline {
     }
   }
   post {
+    success {
+      githubNotify credentialsId: githubApiTokenCredentialsId, account: 'couchbase', repo: 'docs-site', sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build succeeded', status: 'SUCCESS'
+    }
     failure {
       deleteDir()
+      githubNotify credentialsId: githubApiTokenCredentialsId, account: 'couchbase', repo: 'docs-site', sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build failed', status: 'FAILURE'
     }
   }
 }
