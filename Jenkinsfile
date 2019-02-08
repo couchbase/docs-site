@@ -39,6 +39,9 @@ pipeline {
     FORCE_HTTPS='true'
     STAGE='production'
   }
+  triggers {
+    githubPush()
+  }
   options {
     disableConcurrentBuilds()
   }
@@ -48,7 +51,7 @@ pipeline {
         script {
           properties([
             [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/couchbase/docs-site'],
-            pipelineTriggers([githubPush()]),
+            //pipelineTriggers([githubPush()]),
           ])
         }
       }
