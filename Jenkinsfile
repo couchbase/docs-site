@@ -51,7 +51,6 @@ pipeline {
         script {
           properties([
             [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/couchbase/docs-site'],
-            //pipelineTriggers([githubPush()]),
           ])
         }
       }
