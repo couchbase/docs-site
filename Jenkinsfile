@@ -74,6 +74,13 @@ pipeline {
         }
       }
     }
+    stage('Invalidate Cache') {
+      steps {
+        withCredentials([awsCredentials]) {
+          sh "aws --output text cloudfront create-invalidation --distribution-id ${cfDistributionId} --paths '/*'"
+        }
+      }
+    }
   }
   post {
     success {
