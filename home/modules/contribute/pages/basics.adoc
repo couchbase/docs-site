@@ -188,12 +188,30 @@ include::example$admonitions.adoc[tag=basic]
 include::example$admonitions.adoc[tag=compound]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$admonitions.adoc[tag=compound]
 
 A compound admonition is any admonition block that contains more than one paragraph or contains a block other than a paragraph.
 The contents of the block must be wrapped in the example block delimiters and the admonition type must be assigned as the block style.
+
+== Footnotes
+
+To avoid disrupting the flow of the text to include addendum information, you can tuck the information away in a footnote.
+You make footnotes using the footnote macro.
+
+----
+include::example$footnotes.adoc[]
+----
+
+Renders as:
+
+include::example$footnotes.adoc[]
+
+TIP: The ID, which is specified using the target slot of the macro, is optional.
+By assigning an ID (e.g., fn-1), you can reuse the footnote multiple times in the document, as show in the above example.
+You only have to specify the footnote text on the first occurance.
+The text can be filled in using an attribute reference.
 
 == Tables
 
