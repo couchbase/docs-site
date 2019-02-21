@@ -11,7 +11,7 @@
 include::example$inline-styles.adoc[]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$inline-styles.adoc[]
 
@@ -30,7 +30,7 @@ To mark up code blocks, include example files, and add callouts, see xref:code-b
 include::example$ui-macros.adoc[]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$ui-macros.adoc[]
 
@@ -45,7 +45,7 @@ File bugs at https://issues.couchbase.com.
 Join the https://gitter.im/antora/users[Antora chat room] to meet and get help from the community.
 ----
 
-Rendered as:
+Renders as:
 
 File bugs at https://issues.couchbase.com.
 
@@ -62,7 +62,7 @@ If it is not specified, the default URL \http://localhost:8091 is used.
 If it is not specified, the default URL `+http://localhost:8091+` is used.
 ----
 
-Rendered as:
+Renders as:
 
 If it is not specified, the default URL \http://localhost:8091 is used.
 
@@ -83,7 +83,7 @@ If it is not specified, the default URL `+http://localhost:8091+` is used.
 include::example$lists.adoc[tag=check]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$lists.adoc[tag=check]
 
@@ -93,7 +93,7 @@ include::example$lists.adoc[tag=check]
 include::example$description-lists.adoc[tag=basic]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$description-lists.adoc[tag=basic]
 
@@ -102,7 +102,7 @@ include::example$description-lists.adoc[tag=basic]
 include::example$description-lists.adoc[tag=compound]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$description-lists.adoc[tag=compound]
 
@@ -113,7 +113,7 @@ include::example$description-lists.adoc[tag=compound]
 include::example$lists.adoc[tag=ordered]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$lists.adoc[tag=ordered]
 
@@ -124,7 +124,7 @@ include::example$lists.adoc[tag=ordered]
 include::example$lists.adoc[tag=unordered]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$lists.adoc[tag=unordered]
 
@@ -149,7 +149,7 @@ If the macro's attribute list is empty (e.g., `image::filename.jpg[]`), the imag
 image::console-login.png[,280,align=left]
 ----
 
-Rendered as:
+Renders as:
 
 image::console-login.png[,280,align=left]
 
@@ -160,7 +160,7 @@ The inline image macro, indicated by a single colon (`:`), is used for displayin
 Click the image:edit.svg[,16] icon.
 ----
 
-Rendered as:
+Renders as:
 
 Click the image:edit.svg[,16] icon.
 
@@ -179,7 +179,7 @@ There are five built-in admonition labels.
 include::example$admonitions.adoc[tag=basic]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$admonitions.adoc[tag=basic]
 
@@ -220,7 +220,7 @@ Each row must share the same number of cells, taking into account any column or 
 <4> The cells in a row can be entered on separate lines.
 <5> The cells in a row can be entered on the same line.
 
-Rendered as:
+Renders as:
 
 |===
 |Name of Column 1 |Name of Column 2
@@ -258,7 +258,7 @@ Since tables are AsciiDoc block elements they can have titles, roles, xref:ids.a
 In this example, column 1 and column 2 will be half the width of column 3.
 <4> To make the first row a header row, assign `header` to the `options` attribute.
 
-Rendered as:
+Renders as:
 
 .Optional title
 [#optional-id,cols="1,1,2",options="header"]
@@ -283,7 +283,7 @@ Here's an example of a table with a title, implicit header row, and the proporti
 include::example$tables.adoc[tag=two-col]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$tables.adoc[tag=two-col]
 
@@ -297,7 +297,7 @@ In the following example, the `a` specifier is placed on the cells containing bl
 include::example$tables.adoc[tag=adoc]
 ....
 
-Rendered as:
+Renders as:
 
 include::example$tables.adoc[tag=adoc]
 
@@ -312,7 +312,7 @@ The span factor is the number of columns or rows, including the starting row or 
 include::example$tables.adoc[tag=spans]
 ----
 
-Rendered as:
+Renders as:
 
 include::example$tables.adoc[tag=spans]
 
