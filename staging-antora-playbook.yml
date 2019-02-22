@@ -80,8 +80,7 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    # sourced from https://github.com/couchbase/docs-ui/pull/47
-    url: https://deploy-preview-47--cb-docs-ui.netlify.com/dist/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v201/ui-bundle.zip
     snapshot: true
   supplemental_files:
   - path: robots.txt
