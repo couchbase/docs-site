@@ -12,6 +12,7 @@ To use the tabs block in a page, set the `tabs` attribute in the document header
 
 Then, in the body of your page, you can create a set of tabs.
 
+[line-comment=//]
 ....
 [{tabs}] <1>
 ==== <2>
@@ -27,7 +28,7 @@ Another paragraph in the first tab.
 $ a code block
 ----
 --
- <6>
+<6>
 Tab 2 Title::
 +
 This is the content of the second tab. <7>
