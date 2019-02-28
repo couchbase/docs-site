@@ -20,14 +20,14 @@ content:
   - url: https://github.com/couchbase/couchbase-spark-connector.git
     branches: [master, release/2.1]
     start_path: docs
-  - url: git@github.com:couchbase/docs-connectors-talend.git
+  - url: https://github.com/couchbase/docs-connectors-talend.git
     branches: master
-  - url: git@github.com:couchbase/docs-analytics.git
+  - url: https://github.com/couchbase/docs-analytics.git
   - url: https://github.com/couchbase/couchbase-cli.git
-    branches: [alice, vulcan, spock, 5.0.1]
+    branches: [master, alice, vulcan, spock, 5.0.1]
     start_path: docs
-  - url: git@github.com:couchbase/backup.git
-    branches: [master, vulcan, spock, 5.0.x]
+  - url: https://github.com/couchbase/backup.git
+    branches: [master, alice, vulcan, spock, 5.0.x]
     start_path: docs
   # NOTE server-docs is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server.git
