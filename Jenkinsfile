@@ -37,6 +37,7 @@ pipeline {
     ALGOLIA_INDEX_NAME='prod_docs_couchbase'
     FEEDBACK_BUTTON='true'
     FORCE_HTTPS='true'
+    NODE_OPTIONS='--max-old-space-size=8192'
     OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
     STAGE='production'
   }
@@ -61,7 +62,7 @@ pipeline {
       steps {
         withCredentials([githubApiTokenCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://${env.GITHUB_API_TOKEN}:@github.com"]) {
-            sh 'antora --cache-dir=./.cache/antora --clean --fetch $STAGE-antora-playbook.yml'
+            sh 'antora --cache-dir=./.cache/antora --clean --fetch --stacktrace $STAGE-antora-playbook.yml'
           }
         }
       }
