@@ -37,6 +37,7 @@ pipeline {
     ALGOLIA_INDEX_NAME='prod_docs_couchbase'
     FEEDBACK_BUTTON='true'
     FORCE_HTTPS='true'
+    OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
     STAGE='production'
   }
   triggers {
