@@ -1,4 +1,4 @@
-# This image extends the official Antora image to add bash and the aws command. It's used by the CI job.
+# This image extends the official Antora image to add bash, ca-certificates, and the aws command. It's used by the CI job.
 FROM antora/antora:2.0.0
 
 RUN apk add --no-cache --quiet bash ca-certificates python && \
