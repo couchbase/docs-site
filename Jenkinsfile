@@ -61,7 +61,8 @@ pipeline {
       steps {
         withCredentials([githubApiTokenCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://${env.GITHUB_API_TOKEN}:@github.com"]) {
-            sh 'antora --cache-dir=./.cache/antora --clean --pull $STAGE-antora-playbook.yml'
+            //sh 'antora --cache-dir=./.cache/antora --clean --fetch $STAGE-antora-playbook.yml'
+            sh 'antora --cache-dir=./.cache/antora --clean $STAGE-antora-playbook.yml'
           }
         }
       }
