@@ -37,6 +37,7 @@ pipeline {
     ALGOLIA_INDEX_NAME='prod_docs_couchbase'
     FEEDBACK_BUTTON='true'
     FORCE_HTTPS='true'
+    //NODE_OPTIONS='--max-old-space-size=8192'
     OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
     STAGE='production'
   }
@@ -61,6 +62,8 @@ pipeline {
       steps {
         withCredentials([githubApiTokenCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://${env.GITHUB_API_TOKEN}:@github.com"]) {
+            //sh 'curl -sL --create-dirs -o .cache/antora/ui-bundle.zip https://github.com/couchbase/docs-ui/releases/download/v201/ui-bundle.zip'
+            //sh 'antora --cache-dir=./.cache/antora --ui-bundle-url=./.cache/antora/ui-bundle.zip --clean --fetch --stacktrace $STAGE-antora-playbook.yml'
             sh 'antora --cache-dir=./.cache/antora --clean --fetch --stacktrace $STAGE-antora-playbook.yml'
           }
         }
@@ -69,16 +72,18 @@ pipeline {
     stage('Publish') {
       steps {
         withCredentials([awsCredentials]) {
-          sh "aws s3 cp public/ s3://${s3Bucket}/ --recursive --exclude '404.html' --exclude '_/font/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
-          sh "aws s3 cp public/_/font/ s3://${s3Bucket}/_/font/ --recursive --exclude '*' --include '*.woff' --acl public-read --cache-control 'public,max-age=604800' --content-type 'application/font-woff' --metadata-directive REPLACE --only-show-errors"
-          sh "aws s3 cp public/_/font/ s3://${s3Bucket}/_/font/ --recursive --exclude '*' --include '*.woff2' --acl public-read --cache-control 'public,max-age=604800' --content-type 'font/woff2' --metadata-directive REPLACE --only-show-errors"
+          echo 'publish'
+          //sh "aws s3 cp public/ s3://${s3Bucket}/ --recursive --exclude '404.html' --exclude '_/font/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
+          //sh "aws s3 cp public/_/font/ s3://${s3Bucket}/_/font/ --recursive --exclude '*' --include '*.woff' --acl public-read --cache-control 'public,max-age=604800' --content-type 'application/font-woff' --metadata-directive REPLACE --only-show-errors"
+          //sh "aws s3 cp public/_/font/ s3://${s3Bucket}/_/font/ --recursive --exclude '*' --include '*.woff2' --acl public-read --cache-control 'public,max-age=604800' --content-type 'font/woff2' --metadata-directive REPLACE --only-show-errors"
         }
       }
     }
     stage('Invalidate Cache') {
       steps {
         withCredentials([awsCredentials]) {
-          sh "aws --output text cloudfront create-invalidation --distribution-id ${cfDistributionId} --paths '/*'"
+          echo 'invalidate cache'
+          //sh "aws --output text cloudfront create-invalidation --distribution-id ${cfDistributionId} --paths '/*'"
         }
       }
     }
@@ -88,7 +93,7 @@ pipeline {
       githubNotify credentialsId: githubApiTokenCredentialsId, account: 'couchbase', repo: 'docs-site', sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build succeeded', status: 'SUCCESS'
     }
     failure {
-      //deleteDir()
+      deleteDir()
       githubNotify credentialsId: githubApiTokenCredentialsId, account: 'couchbase', repo: 'docs-site', sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build failed', status: 'FAILURE'
     }
   }
