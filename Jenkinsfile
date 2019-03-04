@@ -26,18 +26,14 @@ def githubApiTokenCredentials = usernamePassword(credentialsId: githubApiTokenCr
 // Script Path: Jenkinsfile
 // [x] Discard old items: Days to keep old items: 60
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile.jenkins'
-    }
-  }
+  agent any
   environment {
     ALGOLIA_APP_ID='NI1G57N08Q'
     ALGOLIA_API_KEY='d3eff3e8bcc0860b8ceae87360a47d54'
     ALGOLIA_INDEX_NAME='prod_docs_couchbase'
     FEEDBACK_BUTTON='true'
     FORCE_HTTPS='true'
-    //NODE_OPTIONS='--max-old-space-size=8192'
+    NODE_OPTIONS='--max-old-space-size=4096'
     OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
     STAGE='production'
   }
@@ -58,11 +54,21 @@ pipeline {
         }
       }
     }
+    stage('Install') {
+      steps {
+        nodejs('node10') {
+          sh '(cd netlify && yarn --cache-folder=../.cache/yarn --pure-lockfile)'
+        }
+      }
+    }
     stage('Build') {
       steps {
         withCredentials([githubApiTokenCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://${env.GITHUB_API_TOKEN}:@github.com"]) {
-            sh 'antora --cache-dir=./.cache/antora --clean --fetch --stacktrace $STAGE-antora-playbook.yml'
+            nodejs('node10') {
+              sh 'rm -rf .cache/antora'
+              sh '(cd netlify && $(npm bin)/antora --cache-dir=./.cache/antora --clean --fetch ../$STAGE-antora-playbook.yml)'
+            }
           }
         }
       }
@@ -70,16 +76,18 @@ pipeline {
     stage('Publish') {
       steps {
         withCredentials([awsCredentials]) {
-          sh "aws s3 cp public/ s3://${s3Bucket}/ --recursive --exclude '404.html' --exclude '_/font/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
-          sh "aws s3 cp public/_/font/ s3://${s3Bucket}/_/font/ --recursive --exclude '*' --include '*.woff' --acl public-read --cache-control 'public,max-age=604800' --content-type 'application/font-woff' --metadata-directive REPLACE --only-show-errors"
-          sh "aws s3 cp public/_/font/ s3://${s3Bucket}/_/font/ --recursive --exclude '*' --include '*.woff2' --acl public-read --cache-control 'public,max-age=604800' --content-type 'font/woff2' --metadata-directive REPLACE --only-show-errors"
+          echo 'Publish'
+          //sh "aws s3 cp public/ s3://${s3Bucket}/ --recursive --exclude '404.html' --exclude '_/font/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
+          //sh "aws s3 cp public/_/font/ s3://${s3Bucket}/_/font/ --recursive --exclude '*' --include '*.woff' --acl public-read --cache-control 'public,max-age=604800' --content-type 'application/font-woff' --metadata-directive REPLACE --only-show-errors"
+          //sh "aws s3 cp public/_/font/ s3://${s3Bucket}/_/font/ --recursive --exclude '*' --include '*.woff2' --acl public-read --cache-control 'public,max-age=604800' --content-type 'font/woff2' --metadata-directive REPLACE --only-show-errors"
         }
       }
     }
     stage('Invalidate Cache') {
       steps {
         withCredentials([awsCredentials]) {
-          sh "aws --output text cloudfront create-invalidation --distribution-id ${cfDistributionId} --paths '/*'"
+          echo 'Invalidate Cache'
+          //sh "aws --output text cloudfront create-invalidation --distribution-id ${cfDistributionId} --paths '/*'"
         }
       }
     }
