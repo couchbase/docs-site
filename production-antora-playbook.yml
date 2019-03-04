@@ -25,6 +25,7 @@ content:
   - url: git@github.com:couchbase/docs-connectors-talend.git
     branches: master
   - url: git@github.com:couchbase/docs-analytics.git
+    branches: [release/6.0, release/5.5]
   - url: https://github.com/couchbase/couchbase-cli.git
     branches: [alice, vulcan, spock, 5.0.1]
     start_path: docs
