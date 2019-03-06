@@ -2,7 +2,7 @@
 :page-layout: home
 :!sectids:
 
-*New!* Welcome to the new home of Couchbase documentation!
+Welcome to the new home of Couchbase documentation!
 We’d love to hear from you. Feel free to use the btn:[Feedback?] button on any page to share your feedback and concerns.
 
 [.hint]
@@ -29,7 +29,7 @@ If you are a Couchbase user wanting to develop an application using our SDKs
 * xref:java-sdk::start-using-sdk.adoc[Quick Install]
 * xref:java-sdk::sample-application.adoc[Sample Application]
 * xref:java-sdk::core-operations.adoc[CRUD]
-* xref:tutorials::index.adoc[Tutorials]
+* xref:tutorials::index.adoc[Tutorials] ^image:new-item.svg[,32]^
 
 [.card]
 === SQL Developers
@@ -48,7 +48,7 @@ If you are a Couchbase user wanting to develop for applications on the edge
 * xref:sync-gateway::getting-started.adoc[Get Started: Sync Gateway]
 * xref:couchbase-lite::index.adoc[Get Started: Couchbase Lite]
 * xref:couchbase-lite::samples.adoc[Samples]
-* xref:tutorials::index.adoc[Tutorials]
+* xref:tutorials::index.adoc[Tutorials] ^image:new-item.svg[,32]^
 
 [.tiles.browse]
 == Browse Documentation
