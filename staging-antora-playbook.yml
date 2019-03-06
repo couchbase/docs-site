@@ -31,6 +31,7 @@ content:
     start_path: docs
   # NOTE server-docs is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server.git
+    branches: [mad-hatter]
   - url: https://github.com/couchbase/docs-sdk-common.git
   - url: https://github.com/couchbase/docs-sdk-c.git
   - url: https://github.com/couchbase/docs-sdk-dotnet.git
