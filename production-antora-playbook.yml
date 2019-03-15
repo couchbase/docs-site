@@ -70,6 +70,8 @@ content:
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile.git
     branches: [standalone, query, sync, backgroundfetch]
     start_path: content
+  - url: https://github.com/jamiltz/UserProfileDemo.git
+    branches: fundamentals-asciidoc-review
 asciidoc:
   attributes:
     experimental: ''
