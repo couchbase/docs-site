@@ -2,7 +2,7 @@
 :page-layout: home
 :!sectids:
 
-*New!* Welcome to the new home of Couchbase documentation!
+Welcome to the new home of Couchbase documentation!
 We’d love to hear from you. Feel free to use the btn:[Feedback?] button on any page to share your feedback and concerns.
 
 [.hint]
