@@ -71,7 +71,7 @@ content:
     branches: [standalone, query, sync, backgroundfetch]
     start_path: content
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin.git
-    branches: [standalone, query, sync, backgroundfetch]
+    branches: standalone
 asciidoc:
   attributes:
     experimental: ''
