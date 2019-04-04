@@ -70,7 +70,6 @@ content:
     start_path: content
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin.git
     branches: standalone
-    start_path: content
 asciidoc:
   attributes:
     experimental: ''
