@@ -22,6 +22,14 @@ And this is the result:
 
 xref:basics.adoc[This links to the AsciiDoc Basics page].
 
+.Link to a page in a topic folder
+[source,asciidoc]
+xref:concept/index.adoc[Key Concepts]
+
+.Link to a page in the same module but in a different version
+[source,asciidoc]
+xref:3.3@error-handling.adoc#message-list[error messages]
+
 == Link to a Page in the Same Component
 
 To link to a page in the same component as the current page, but in a different module, you need to know the file name of the document and the module name.
