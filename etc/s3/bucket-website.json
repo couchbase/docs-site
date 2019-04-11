@@ -1,0 +1,50 @@
+{
+    "IndexDocument": {
+        "Suffix": "index.html"
+    },
+    "RoutingRules": [
+        {
+            "Condition": {
+                "HttpErrorCodeReturnedEquals": "403"
+            },
+            "Redirect": {
+                "ReplaceKeyWith": ""
+            }
+        },
+        {
+            "Condition": {
+                "HttpErrorCodeReturnedEquals": "404",
+                "KeyPrefixEquals": "developer/n1ql-dp4"
+            },
+            "Redirect": {
+                "ReplaceKeyWith": "home/index.html"
+            }
+        },
+        {
+            "Condition": {
+                "HttpErrorCodeReturnedEquals": "404",
+                "KeyPrefixEquals": "developer"
+            },
+            "Redirect": {
+                "ReplaceKeyWith": "home/index.html"
+            }
+        },
+        {
+            "Condition": {
+                "HttpErrorCodeReturnedEquals": "404",
+                "KeyPrefixEquals": "admin"
+            },
+            "Redirect": {
+                "ReplaceKeyWith": "home/index.html"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "prerelease/analytics-dp1/"
+            },
+            "Redirect": {
+                "ReplaceKeyWith": "server/6.0/"
+            }
+        }
+    ]
+}
