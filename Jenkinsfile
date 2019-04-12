@@ -113,11 +113,11 @@ pipeline {
   }
   post {
     success {
-      build 'docsearch-scraper'
+      build job: '/Antora/docsearch-scraper', wait: false
       // only run when build is triggered; requires upgrade to Pipeline: Supporting APIs >= 2.22
       //script {
       //  if (!currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').isEmpty()) {
-      //    build 'docsearch-scraper'
+      //    build job: '/Antora/docsearch-scraper', wait: false
       //  }
       //}
       githubNotify credentialsId: githubApiCredentialsId, account: githubAccount, repo: githubRepo, sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build succeeded', status: 'SUCCESS'
