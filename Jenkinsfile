@@ -50,6 +50,7 @@ pipeline {
   }
   triggers {
     githubPush()
+    cron('H H(21-23) * * *')
   }
   options {
     disableConcurrentBuilds()
