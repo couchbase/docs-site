@@ -72,6 +72,8 @@ content:
     start_path: content
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin.git
     branches: [standalone, query]
+  - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground.git
+    branches: master
 asciidoc:
   attributes:
     experimental: ''
