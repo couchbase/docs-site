@@ -13,6 +13,9 @@ def githubRepo = 'docs-site'
 def awsCredentials = [$class: 'AmazonWebServicesCredentialsBinding', credentialsId: awsCredentialsId, accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']
 def githubApiCredentials = usernamePassword(credentialsId: githubApiCredentialsId, usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_TOKEN')
 
+def triggerEventType
+def dayOfWeek
+
 // Jenkins job configuration
 // -------------------------
 // Category: Multibranch Pipeline
@@ -61,6 +64,8 @@ pipeline {
         script {
           properties([[$class: 'GithubProjectProperty', projectUrlStr: "https://github.com/$githubAccount/$githubRepo"]])
           env.GIT_COMMIT = readFile('.git/HEAD').trim()
+          triggerEventType = sh(script: 'git log -n 1 --oneline --since "5 minutes ago"', returnStdout: true).trim().empty ? 'cron' : 'push'
+          dayOfWeek = sh(script: 'date +%u', returnStdout: true).trim()
         }
         withCredentials([awsCredentials]) {
           withEnv(sh(script: "aws s3 cp s3://$infraS3Bucket/$infraProfile/infra.conf -", returnStdout: true).trim().split("\n") as List) {
@@ -89,10 +94,11 @@ pipeline {
         sh 'node scripts/print-site-stats.js'
         withCredentials([awsCredentials]) {
           script {
+            def s3Cmd = triggerEventType == 'cron' && dayOfWeek == '7' ? 'sync --delete' : 'cp --recursive'
             def includeFilter = sh(script: 'find public -mindepth 1 -maxdepth 1 -type d -name [a-z_]\\* -printf %f\\\\0', returnStdout: true).trim().split('\0').sort().collect { "--include '$it/*'" }.join(' ')
-            sh "aws s3 sync public/ s3://$siteS3Bucket/ --exclude '*' ${includeFilter} --exclude '_/font/*' --delete --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
+            sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' ${includeFilter} --exclude '_/font/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
+            sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' --include 'sitemap*.xml' --include 'index.html' --include '404.html' --include 'robots.txt' --exclude '*/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
           }
-          sh "aws s3 sync public/ s3://$siteS3Bucket/ --exclude '*' --include 'sitemap*.xml' --include 'index.html' --include '404.html' --include 'robots.txt' --exclude '*/*' --delete --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
           sh "aws s3 cp public/_/font/ s3://$siteS3Bucket/_/font/ --recursive --exclude '*' --include '*.woff' --acl public-read --cache-control 'public,max-age=604800' --content-type 'application/font-woff' --metadata-directive REPLACE --only-show-errors"
           sh "aws s3 cp public/_/font/ s3://$siteS3Bucket/_/font/ --recursive --exclude '*' --include '*.woff2' --acl public-read --cache-control 'public,max-age=604800' --content-type 'font/woff2' --metadata-directive REPLACE --only-show-errors"
           sh "aws s3 cp public/.etc/nginx/combined-rewrites.conf s3://$siteS3Bucket/.rewrites.conf --metadata-directive REPLACE --only-show-errors"
