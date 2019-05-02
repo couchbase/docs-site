@@ -63,7 +63,7 @@ pipeline {
       steps {
         script {
           properties([[$class: 'GithubProjectProperty', projectUrlStr: "https://github.com/$githubAccount/$githubRepo"]])
-          env.GIT_COMMIT = readFile('.git/HEAD').trim()
+          env.GIT_COMMIT = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
           triggerEventType = sh(script: 'git log -n 1 --oneline --since "5 minutes ago"', returnStdout: true).trim().empty ? 'cron' : 'push'
           dayOfWeek = sh(script: 'date +%u', returnStdout: true).trim()
         }
