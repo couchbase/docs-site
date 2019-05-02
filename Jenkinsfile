@@ -121,13 +121,13 @@ pipeline {
   }
   post {
     success {
-      build job: '/Antora/docsearch-scraper', wait: false
-      // only run when build is triggered; requires upgrade to Pipeline: Supporting APIs >= 2.22
-      //script {
-      //  if (!currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').isEmpty()) {
-      //    build job: '/Antora/docsearch-scraper', wait: false
-      //  }
-      //}
+      script {
+        // this is the correct way to detect a scheduled job, but requires upgrade to Pipeline: Supporting APIs >= 2.22
+        //if (!currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').isEmpty()) {
+        if (triggerEventType == 'cron') {
+          build job: '/Antora/docsearch-scraper', wait: false
+        }
+      }
       githubNotify credentialsId: githubApiCredentialsId, account: githubAccount, repo: githubRepo, sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build succeeded', status: 'SUCCESS'
     }
     failure {
