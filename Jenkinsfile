@@ -44,12 +44,13 @@ pipeline {
     ALGOLIA_APP_ID='NI1G57N08Q'
     ALGOLIA_API_KEY='d3eff3e8bcc0860b8ceae87360a47d54'
     ALGOLIA_INDEX_NAME='prod_docs_couchbase'
-    FEEDBACK_BUTTON='true'
     // CloudFront is now configured to force http -> https
     FORCE_HTTPS='false'
     //NODE_OPTIONS='--max-old-space-size=4096'
     OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
     NODE_PATH='/usr/local/share/.config/yarn/global/node_modules'
+    SHOW_FEEDBACK_BUTTON='true'
+    SUPPORTS_CURRENT_URL='true'
   }
   triggers {
     githubPush()
