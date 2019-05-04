@@ -89,7 +89,6 @@ asciidoc:
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/v205/ui-bundle.zip
-    snapshot: true
   supplemental_files:
   - path: robots.txt
     contents: |
