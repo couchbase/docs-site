@@ -11,7 +11,7 @@ content:
     branches: HEAD
     start_path: home
   - url: git@github.com:couchbase/couchbase-operator.git
-    branches: [master, 1.1.x, 1.0.x]
+    branches: [1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector.git
     branches: [release/4.0, release/cypress]
