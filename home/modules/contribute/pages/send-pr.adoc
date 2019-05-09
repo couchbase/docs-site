@@ -42,6 +42,9 @@ After you push your working branch to your remote repository on GitHub, you can 
 
 === Submit a Gerrit Change Request
 
+Some projects use the Gerrit code review process.
+The following sections describe the steps to initialize a repository with Gerrit and how to submit a change request.
+
 ==== External Contributors
 
 To submit your first documentation contribution you must sign the contributor license agreement.
@@ -64,12 +67,10 @@ chmod +x
 
 ==== Submit a Change on Gerrit
 
-Some projects use the Gerrit code review process, where one of our engineers will look at your change and run tests to verify your fix.
-
 Once you have a topic branch with changes ready for review, run through the following.
 
 . Set up Gerrit as a new Git remote.
-Replace *PROJECT_NAME* with the repository title.
+Replace *PROJECT_NAME* with the repository name.
 +
 [source,console]
 ----
@@ -100,10 +101,8 @@ git checkout bug_666
 git push gerrit HEAD:refs/for/[BRANCH_NAME]
 ----
 
-You should next go into the gerrit's web page for the change's and add reviewers. Otherwise, it's unlikely anyone will review your code. Adding a reviewer causes the change to show up in the reviewer's "Reviewable by me" list, and they also get an email.
-
-Others will go and review your code (you can also request reviews specifically in the admin UI).
-
+You should next go into the Gerrit web page for the change and add reviewers.
+Adding a reviewer causes the change to show up in the reviewer's "Reviewable by me" list, and they also get notified by email.
 
 == Next Step
 
