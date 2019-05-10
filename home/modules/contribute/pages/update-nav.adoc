@@ -57,6 +57,13 @@ When adding and editing list items, remember the following:
 * Write <<nav-text,category, regular, and link text>> according to their style guidelines.
 * The link text of any parent list items is displayed in the breadcrumbs at the top of a page.
 * List items that contain a lot of text and/or are deeply nested will wrap in the component menu.
+* To open the nav link in a new tab, use the `window="_blank"` attribute.
++
+[source,asciidoc]
+----
+** https://support.couchbase.com[Link Text, window="_blank"]
+----
+NOTE: The shorthand syntax (`[Link Text^]`) is not supported for nav links.
 
 When removing a list item, remember the following:
 
