@@ -1,8 +1,0 @@
-{
-  "name": "docsearch-scraper",
-  "private": true,
-  "dependencies": {
-    "algoliasearch": "^3.31.0",
-    "chromedriver": "^2.44.1"
-  }
-}

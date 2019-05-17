@@ -125,34 +125,10 @@ Proceed to <<Activate Index>> to learn how to make the index live.
 To avoid clobbering the production index by an accidental run, the scraper is configured to write to a temporary index.
 You'll need to run a script to move it into place.
 
-First, install the docsearch package for Node.
+First, make sure you have run `pipenv install && pipenv shell` as documented above.
+Then, execute the `promote-index.py` script from the `docsearch-scraper` directory:
 
- $ yarn add algoliasearch
-
-Next, create the script `activate-production-index.js` in the current folder and populate it with the following contents:
-
-.activate-production-index.js
-[source,js]
-----
-const algoliasearch = require('algoliasearch')
-const fs = require('fs')
-
-;(async () => {
-  const env = fs.readFileSync('.env', 'utf-8')
-  const { APPLICATION_ID: appId, API_KEY: apiKey } = env.trim().split('\n').reduce((vars, line) => {
-    const [ k, v ] = line.split('=')
-    vars[k] = v
-    return vars
-  }, {})
-  const algoliaclient = algoliasearch(appId, apiKey)
-  await algoliaclient.deleteIndex('prod_docs_couchbase')
-  await algoliaclient.moveIndex('next_docs_couchbase', 'prod_docs_couchbase')
-})()
-----
-
-Finally, run the script using the following command:
-
- $ node activate-production-index.js
+ $ python ../promote-index.py next_docs_couchbase prod_docs_couchbase
 
 This script performs the following steps:
 
