@@ -22,3 +22,9 @@ command = "node_modules/.bin/antora --url $DEPLOY_PRIME_URL --fetch --redirect-f
 for = "/_/font/*"
   [headers.values]
   Cache-Control = "public,max-age=604800"
+
+[[redirects]]
+from = "/operator/1.2/whats-new.html"
+to = "https://docs.couchbase.com/operator/1.2/whats-new.html"
+status = 302
+force = true
