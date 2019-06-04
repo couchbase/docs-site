@@ -47,7 +47,7 @@ The following sections describe the steps to initialize a repository with Gerrit
 
 ==== Initial Account Setup
 
-To submit your first documentation contribution you must sign the contributor license agreement.
+Before you submit your first contribution, you must sign the contributor license agreement.
 
 . Open http://review.couchbase.org/[review.couchbase.org^].
 . Log in using your GitHub credentials.
@@ -104,7 +104,7 @@ Run through the following steps to submit a change on the Gerrit server.
 ----
 git branch bug_666 gerrit/[BRANCH_NAME]
 ----
-. Checkout on the topic branch.
+. Switch to the topic branch using the `git checkout` command.
 +
 [source,console]
 ----
@@ -116,7 +116,7 @@ git checkout bug_666
 ----
 git push gerrit HEAD:refs/for/[BRANCH_NAME]
 ----
-If successful, you'll see a URL in the command output.
+If successful, you'll see a review URL in the command output (e.g "http://review.couchbase.org/110063").
 . Open that URL to access the Gerrit web page and add reviewers.
 Adding a reviewer causes the change to show up in the reviewer's "Reviewable by me" list, and they also get notified by email.
 
