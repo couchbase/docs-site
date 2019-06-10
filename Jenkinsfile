@@ -38,6 +38,7 @@ pipeline {
     dockerfile {
       filename 'Dockerfile.jenkins'
       additionalBuildArgs '--build-arg GROUP_ID=$(id -g) --build-arg USER_ID=$(id -u)'
+      args '--entrypoint=\'\''
     }
   }
   environment {
