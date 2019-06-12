@@ -14,3 +14,5 @@ client.delete_index(argv[2])\n\
 client.move_index(argv[1], argv[2])' >> /docsearch/promote-index.py && \
     find /docsearch/src -type d -exec chmod 755 {} \; &&\
     find /docsearch -type f -exec chmod 644 {} \;
+
+ENTRYPOINT [ "" ]
