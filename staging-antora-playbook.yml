@@ -73,7 +73,7 @@ content:
   - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground.git
     branches: master
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android.git
-    branches: standalone
+    branches: [standalone, query]
 asciidoc:
   attributes:
     experimental: ''
