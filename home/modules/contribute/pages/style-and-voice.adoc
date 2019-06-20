@@ -20,7 +20,7 @@ Below is our documentation style guide:
 * Write in American English spelling and word usage.
 * Use consistent terminology (this isn't creative writing, so you don't need to describe the same thing differently every time you mention it).
 * Spell out acronyms and include them in parentheses the first time they are used in a document, e.g., General Motors (GM).
-Common acronyms like noSQL don’t require spelling out.
+Common acronyms like NoSQL don’t require spelling out.
 * Use parallel structure in lists (that means use the same sentence pattern for each item).
 If your list is made up of fully formed sentences then they should end with full stops.
 * Use title case for page titles and section headings (capitalize all significant words, use lowercase for words like "`to`", "`and`", and "`for`").
