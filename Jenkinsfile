@@ -66,7 +66,7 @@ pipeline {
           properties([[$class: 'GithubProjectProperty', projectUrlStr: "https://github.com/$githubAccount/$githubRepo"]])
           env.GIT_COMMIT = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
           //triggerEventType = sh(script: 'git log -n 1 --oneline --since "5 minutes ago"', returnStdout: true).trim().empty ? 'cron' : 'push'
-          triggerEventType = currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').isEmpty() ? 'push' : 'cron'
+          triggerEventType = currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size() > 0 ? 'cron' : 'push'
           echo triggerEventType
           dayOfWeek = sh(script: 'date +%u', returnStdout: true).trim()
         }
