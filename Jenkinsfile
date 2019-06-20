@@ -65,7 +65,9 @@ pipeline {
         script {
           properties([[$class: 'GithubProjectProperty', projectUrlStr: "https://github.com/$githubAccount/$githubRepo"]])
           env.GIT_COMMIT = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
-          triggerEventType = sh(script: 'git log -n 1 --oneline --since "5 minutes ago"', returnStdout: true).trim().empty ? 'cron' : 'push'
+          //triggerEventType = sh(script: 'git log -n 1 --oneline --since "5 minutes ago"', returnStdout: true).trim().empty ? 'cron' : 'push'
+          triggerEventType = currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').isEmpty() ? 'push' : 'cron'
+          echo triggerEventType
           dayOfWeek = sh(script: 'date +%u', returnStdout: true).trim()
         }
         withCredentials([awsCredentials]) {
@@ -123,8 +125,6 @@ pipeline {
   post {
     success {
       script {
-        // this is the correct way to detect a scheduled job, but requires upgrade to Pipeline: Supporting APIs >= 2.22
-        //if (!currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').isEmpty()) {
         if (triggerEventType == 'cron') {
           build job: '/Antora/docsearch-scraper', wait: false
         }
