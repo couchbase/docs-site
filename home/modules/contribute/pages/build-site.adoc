@@ -52,4 +52,4 @@ Switch to it.
 Or, you can navigate to and open _index.html_ using your file explorer or browser.
 --
 
-Now that you're set up to build the full site on your own machine, you'll also be ablee to use a xref:test-site.adoc[personal playbook] to test your local documentation changes.
+Now that you're set up to build the full site on your own machine, you'll also be able to use a xref:test-site.adoc[personal playbook] to test your local documentation changes.
