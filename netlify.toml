@@ -1,7 +1,10 @@
 [build]
 base = "netlify/"
 publish = "public/"
-command = "node_modules/.bin/antora --fetch --redirect-facility=netlify ../$STAGE-antora-playbook.yml"
+command = """\
+! node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../$STAGE-antora-playbook.yml && \
+node_modules/.bin/antora --redirect-facility=netlify ../$STAGE-antora-playbook.yml \
+"""
 
 [build.environment]
 NODE_VERSION = "10"
@@ -16,7 +19,10 @@ OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-
 SHOW_FEEDBACK_BUTTON = "true"
 
 [context.deploy-preview]
-command = "node_modules/.bin/antora --url $DEPLOY_PRIME_URL --fetch --redirect-facility=netlify ../$STAGE-antora-playbook.yml"
+command = """\
+! node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../$STAGE-antora-playbook.yml && \
+node_modules/.bin/antora --redirect-facility=netlify --url $DEPLOY_PRIME_URL ../$STAGE-antora-playbook.yml \
+"""
 
 [[headers]]
 for = "/_/font/*"
