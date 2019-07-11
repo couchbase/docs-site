@@ -85,10 +85,11 @@ pipeline {
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com", "STAGE=$siteProfile"]) {
             script {
+              // NOTE to enforce this validation, remove this try-catch block
               try {
                 sh "antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace $siteProfile-antora-playbook.yml > xref-validator.log 2>&1"
               } catch (err) {
-                sh 'cat xref-validator.log'
+                sh 'cat xref-validator.log | grep -v "^asciidoctor: "'
               }
             }
             // NOTE we don't use --fetch here since it was already done when running the xref validator
