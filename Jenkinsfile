@@ -84,10 +84,12 @@ pipeline {
       steps {
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com", "STAGE=$siteProfile"]) {
-            try {
-              sh "antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace $siteProfile-antora-playbook.yml > xref-validator.log 2>&1"
-            } catch (err) {
-              sh 'cat xref-validator.log'
+            script {
+              try {
+                sh "antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace $siteProfile-antora-playbook.yml > xref-validator.log 2>&1"
+              } catch (err) {
+                sh 'cat xref-validator.log'
+              }
             }
             // NOTE we don't use --fetch here since it was already done when running the xref validator
             sh "antora --cache-dir=./.cache/antora --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL $siteProfile-antora-playbook.yml"
