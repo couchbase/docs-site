@@ -3,6 +3,7 @@
 :hide-uri-scheme:
 // URLs:
 :url-docs: https://docs.couchbase.com
+:url-contribute: {url-docs}/home/contribute/
 :url-org: https://github.com/couchbase
 :url-ui: {url-org}/docs-ui
 
@@ -55,4 +56,4 @@ The browser tab should automatically reload after a short while.
 
 == Contributing
 
-To learn how to use the playbook and generate the docs site locally, see our contributing guide.
+To learn how to use the playbook and generate the docs site locally, see our {url-contribute}[contributing guide].
