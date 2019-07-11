@@ -89,7 +89,7 @@ pipeline {
               try {
                 sh "antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace $siteProfile-antora-playbook.yml > xref-validator.log 2>&1"
               } catch (err) {
-                sh 'cat xref-validator.log | grep -v "^asciidoctor: "'
+                sh 'cat xref-validator.log'
               }
             }
             // NOTE we don't use --fetch here since it was already done when running the xref validator
