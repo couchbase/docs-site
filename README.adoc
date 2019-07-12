@@ -46,10 +46,13 @@ To use the script, run the following.
 
 . If you're using Chrome, install the LiveReload https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[chrome extension].
 Firefox has built-in support for LiveReload.
-. Start the script.
+. Start the build.
 +
 --
  $ LIVERELOAD=true gulp
+
+The build first generates the site using Antora, analgous to the `antora local-antora-playbook.yml` command.
+It then serves the files in the output directory using a local web server.
 
 The web server's host URL is printed to the console after the `watch` task completes.
 

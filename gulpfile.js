@@ -8,9 +8,10 @@ const { series, src, watch } = require('gulp')
 const yaml = require('js-yaml')
 
 const playbookFilename = 'local-antora-playbook.yml'
-const antoraArgs = ['--playbook', playbookFilename]
 const playbook = yaml.safeLoad(fs.readFileSync(playbookFilename, 'utf8'))
-const serverConfig = { name: 'Preview Site', livereload, port: 5000, root: playbook.output.dir || 'public' }
+const outputDir = (playbook.output || {}).dir || './build/site'
+const serverConfig = { name: 'Preview Site', livereload, port: 5000, root: outputDir }
+const antoraArgs = ['--playbook', playbookFilename]
 const watchPatterns = playbook.content.sources.filter((source) => !source.url.includes(':')).reduce((accum, source) => {
   accum.push(`${source.url}/${source.start_path ? source.start_path + '/' : ''}antora.yml`)
   accum.push(`${source.url}/${source.start_path ? source.start_path + '/' : ''}**/*.adoc`)
@@ -18,7 +19,6 @@ const watchPatterns = playbook.content.sources.filter((source) => !source.url.in
 }, [])
 
 function generate (done) {
-  // analogous to the `antora local-antora-playbook.yml` command
   generator(antoraArgs, process.env)
     .then(() => done())
     .catch((err) => {
