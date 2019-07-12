@@ -9,24 +9,33 @@
 :url-org: https://github.com/couchbase
 :url-ui: {url-org}/docs-ui
 
-Antora playbook project for the Couchbase documentation site published at {url-docs}.
+This is the Antora playbook project (aka site build) for the Couchbase documentation site published at {url-docs}.
 
 == Playbook
 
-The playbook, _antora-playbook.yml_, provides Antora with the site URL, docs component repository and branch locations, {url-ui}[site UI] location, global AsciiDoc attributes, and Asciidoctor extensions.
+The playbook, defined in a playbook file, configures the build for the site.
+The playbook specifies the content sources (repository and branches), site URL, UI bundle URL, global AsciiDoc attributes, and Asciidoctor extensions.
+
+There are two playbook files in this repository, one for each environment.
+
+production-antora-playbook.yml:: Configures the build for the *production* site.
+staging-antora-playbook.yml:: Configures the build for the *staging* site.
+
+The staging site is built for each pull request.
+The production site is built for each change to the master branch.
 
 == Home Docs Component
 
-The _home_ directory in this repository contains the source for the Home documentation component.
+The [.path]_home/_ directory in this repository contains the source for the Home documentation component.
 All other content is sourced from separate repositories and branches.
 
 == Custom Asciidoctor Extensions
 
-The custom extensions in the _lib_ directory process the manpage macro (Couchbase CLI and Backup components), Swagger UI macro, and multi-row table headers.
+The custom extensions in the [.path]_lib/_ directory process the manpage macro (Couchbase CLI and Backup components), Swagger UI macro, and multi-row table headers.
 
 == File Watcher and LiveReload
 
-This repository contains a script to watch `.adoc` and `.yml` files and trigger a new Antora build when it detects changes to those files.
+This repository contains a script that watches `.adoc` and `antora.yml` files in the author workspace (as defined by local-antora-playbook.yml) and triggers a new Antora build when it detects changes to those files.
 The script also starts a web server and can use LiveReload to reload the browser tab after the Antora build completes.
 To use the script, run the following.
 
@@ -35,23 +44,35 @@ To use the script, run the following.
  $ npm i -g gulp-cli
  $ npm i
 
-. Install the LiveReload https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[chrome extension].
+. If you're using Chrome, install the LiveReload https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[chrome extension].
+Firefox has built-in support for LiveReload.
 . Start the script.
++
+--
+ $ LIVERELOAD=true gulp
+
 The web server's host URL is printed to the console after the `watch` task completes.
 
- $ gulp
+....
+[17:43:27] Starting server...
+[17:43:27] Documentation Site Preview started http://localhost:5000
+[17:43:27] LiveReload started on port 35729
+[17:43:27] Running server
+....
+
+TIP: To skip the initial build, use `gulp serve` as the Gulp command.
+--
 
 . The console output will print status information every time a change is detected.
 +
 ....
-[16:24:28] Starting 'build'...
-[16:24:32] Finished 'build' after 3.6 s
-[16:24:32] Starting 'preview'...
-[16:24:32] Finished 'preview' after 1.17 ms
+[17:33:59] Starting 'generate'...
+[17:34:02] Finished 'generate' after 3.35 s
 ....
 
 . Make changes to your AsciiDoc files locally.
 The browser tab should automatically reload after a short while.
+. Use Ctrl+C to stop the process.
 
 == Xref Validation
 
@@ -109,7 +130,7 @@ Then, run the xref validator as follows:
  $ ./node_modules/.bin/antora --fetch --generator=@antora/xref-validator production-antora-playbook.yml > xref-validator.log 2>&1
 
 Finally, view the report.
-You can then find the report in the xref-validator.log file.
+You can find the report in the [.path]_xref-validator.log_ file.
 
 == Contributing
 

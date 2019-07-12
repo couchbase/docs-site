@@ -1,68 +1,38 @@
 'use strict'
 
-const connect = require('gulp-connect');
-const fs = require('fs');
-const generator = require('@antora/site-generator-default');
-const gulp = require('gulp');
-const yaml = require('yaml-js');
+const connect = require('gulp-connect')
+const fs = require('fs')
+const generator = require('@antora/site-generator-default')
+const { reload: livereload } = process.env.LIVERELOAD === 'true' ? require('gulp-connect') : {}
+const { series, src, watch } = require('gulp')
+const yaml = require('js-yaml')
 
-let filename = "local-antora-playbook.yml";
-let args = [
-  "--playbook",
-  filename
-];
+const playbookFilename = 'local-antora-playbook.yml'
+const antoraArgs = ['--playbook', playbookFilename]
+const playbook = yaml.safeLoad(fs.readFileSync(playbookFilename, 'utf8'))
+const serverConfig = { name: 'Preview Site', livereload, port: 5000, root: playbook.output.dir || 'public' }
+const watchPatterns = playbook.content.sources.filter((source) => !source.url.includes(':')).reduce((accum, source) => {
+  accum.push(`${source.url}/${source.start_path ? source.start_path + '/' : ''}antora.yml`)
+  accum.push(`${source.url}/${source.start_path ? source.start_path + '/' : ''}**/*.adoc`)
+  return accum
+}, [])
 
-gulp.task('build', function (cb) {
-  /**
-   * Use the '@antora/site-generator-default' node module to build.
-   * It's analogous to `$ antora --playbook local-antora-playbook.yml`.
-   * Having access to the generator in code may be useful for other
-   * reasons in the future (i.e to implement custom features).
-   * NOTE: As opposed to building with the CLI, this method doesn't use
-   * a separate process for each run. So if a build error occurs with the `gulp`
-   * command it can be useful to check if it also happens with the CLI command.
-   */
-  generator(args, process.env)
-    .then(() => {
-      cb();
+function generate (done) {
+  // analogous to the `antora local-antora-playbook.yml` command
+  generator(antoraArgs, process.env)
+    .then(() => done())
+    .catch((err) => {
+      console.log(err)
+      done()
     })
-    .catch(err => {
-      console.log(err);
-      cb();
-    });
-});
+}
 
-gulp.task('preview', ['build'], function () {
-  /**
-   * Remove the line gulp.src('README.adoc')
-   * This is placeholder code to follow the gulp-connect
-   * example. Could not make it work any other way.
-   */
-  gulp.src('README.adoc')
-    .pipe(connect.reload());
-})
+function serve (done) {
+  connect.server(serverConfig, function () {
+    this.server.on('close', done)
+    watch(watchPatterns, generate)
+    if (livereload) watch(this.root).on('change', (filepath) => src(filepath, { read: false }).pipe(livereload()))
+  })
+}
 
-gulp.task('watch', function () {
-  let json_content = fs.readFileSync(`${__dirname}/${filename}`, 'UTF-8');
-  let yaml_content = yaml.load(json_content);
-  let dirs = yaml_content.content.sources
-    .map(source => [
-      `${source.url}/**/**.yml`,
-      `${source.url}/**/**.adoc`
-    ]);
-  dirs.push(['local-antora-playbook.yml']);
-  gulp.watch(dirs, ['preview']);
-});
-
-gulp.task('connect', function() {
-  connect.server({
-    port: 5353,
-    name: 'Dev Server',
-    livereload: {
-      port: 35730
-    },
-    root: 'public',
-  });
-});
-
-gulp.task('default', ['connect', 'watch', 'build'])
+module.exports = { serve, generate, default: series(generate, serve) }
