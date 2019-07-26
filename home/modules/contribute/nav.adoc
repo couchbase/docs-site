@@ -13,7 +13,9 @@
  ** xref:add-pages.adoc[Add a New Documentation Page]
  ** xref:update-nav.adoc[Update a Navigation File]
  ** xref:test-site.adoc[Test Changes Locally]
- ** xref:send-pr.adoc[Send Changes for Review]
+ ** xref:send-review.adoc[Send Changes for Review]
+  *** xref:github-pr.adoc[GitHub Pull Request]
+  *** xref:gerrit-change-request.adoc[Gerrit Change Request]
 // ** Team Review Process
 // ** Revise Changes
 

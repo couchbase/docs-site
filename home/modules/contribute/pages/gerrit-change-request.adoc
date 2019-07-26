@@ -1,0 +1,80 @@
+= Submit a Gerrit Change Request
+
+Some projects use the Gerrit code review process.
+The following sections describe the steps to initialize a repository with Gerrit and how to submit a change request.
+
+== Initial Account Setup
+
+Before you submit your first contribution, you must sign the contributor license agreement.
+
+. Open http://review.couchbase.org/[review.couchbase.org^].
+. Log in using your GitHub credentials.
+. http://review.couchbase.org/#/settings/agreements[Fill out the agreement] under _Settings > Agreements_.
+. Configure SSH access.
+.. Add your SSH key under _Settings > SSH Public Keys_.
++
+NOTE: Do not forget to setup your username on the Settings screen.
+.. Add an entry for http://review.couchbase.org/[review.couchbase.org] to your *.ssh/config* file.
++
+[source,text]
+----
+Host review.couchbase.org
+  HostName review.couchbase.org
+  Port 29418
+  User <Your gerrit Username>
+----
+
+== Initial Project Setup
+
+If a Couchbase project is using Gerrit for code reviews, you'll need to configure your local clone to submit changes on Gerrit.
+
+. Download link:{attachmentsdir}/commit-msg.sh[commit-msg.sh].
+. Save the *commit-msg.sh* script to *.git/hooks/commit-msg.sh* in the clone of the repository you are working on.
+. Make that file executable.
++
+[source,console]
+----
+chmod +x .git/hooks/commit-msg.sh
+----
+. You can test that you've setup the *commit-msg.sh* script correctly by doing a commit and then looking at the output of the `git log` command.
+You should see a "Change-Id: I[hex]" line in your commit message text.
+. Set up Gerrit as a new Git remote with the following command.
+Replace *PROJECT_NAME* with the repository name.
++
+[source,console]
+----
+git remote add gerrit ssh://review.couchbase.org:29418/[PROJECT_NAME].git
+----
+. Retrieve the latest changes from the Gerrit server.
++
+[source,console]
+----
+git fetch gerrit
+----
+
+== Code Workflow
+
+Run through the following steps to submit a change on the Gerrit server.
+
+. Create a new branch where *BRANCH_NAME* is the remote branch to commit changes to.
++
+[source,console]
+----
+git branch bug_666 gerrit/[BRANCH_NAME]
+----
+. Switch to the topic branch using the `git checkout` command.
++
+[source,console]
+----
+git checkout bug_666
+----
+. Make all of the topic-specific changes on your branch.
+. Push the changes to the Gerrit server.
++
+[source,console]
+----
+git push gerrit HEAD:refs/for/[BRANCH_NAME]
+----
+If successful, you'll see a review URL in the command output (e.g "http://review.couchbase.org/110063").
+. Open that URL to access the Gerrit web page and add reviewers.
+Adding a reviewer causes the change to show up in the reviewer's "Reviewable by me" list, and they also get notified by email.

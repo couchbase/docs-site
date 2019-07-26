@@ -1,0 +1,32 @@
+= Submit a GitHub pull request
+
+[#commit]
+== Commit, Rebase, and Push
+
+. Add the new and changed files.
+
+ $ git add file-path-and-name
+
+. Commit your changes.
+
+ $ git commit -m "fix magic bucket example"
+
+. Fetch any upstream base branch changes.
+
+ $ git fetch upstream name-of-base-branch
+
+. If the upstream base branch has changed, rebase your working branch against it.
+
+ $ git rebase upstream/name-of-base-branch
+
+. Push your working branch to your remote fork on GitHub.
+
+ $ git push origin DOC-$$$$
+
+[#pr]
+== Submit a GitHub Pull Request
+
+After you push your working branch to your remote repository on GitHub, you can submit a pull request to the upstream repository for review.
+
+. Go to your repository on GitHub, and click btn:[Compare & pull request].
+. On the Open a Pull Request screen, update the PR title if it needs clarification, and then click btn:[Create Pull Request].
