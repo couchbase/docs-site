@@ -105,6 +105,21 @@ For example, if you tag code in a YAML file, place a hash (`+#+`) before the tag
     - public/
 ----
 
+== Couchbase Documentation Partials
+
+=== Developer Preview Partial
+
+To call out a section of a page as Developer Preview, use the `developer-preview` partial.
+Otherwise if the whole page is Developer Preview content, you can use the xref:attributes-and-roles.adoc#custom-page-attributes[page-status] attribute.
+
+----
+\include::home:ROOT:partial$developer-preview.adoc[]
+----
+
+Renders as:
+
+include::home:ROOT:partial$developer-preview.adoc[]
+
 == Learn More
 
 * xref:code-blocks.adoc#include-code[Insert examples into code blocks with the include directive].
