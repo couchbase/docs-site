@@ -119,7 +119,8 @@ Under an origin, you'll see an entry like this:
 path: docs/user/modules/ROOT/pages/cluster-status-guide.adoc | xref: admin-console-access.adoc
 ....
 
-Looking in the origin from above, find the path docs/user/modules/ROOT/pages/cluster-status-guide.adoc and look for an xref to .admin-console-access.adoc. That's the xref that needs to be fixed (if it's still broken).
+Looking in the origin from above, find the path docs/user/modules/ROOT/pages/cluster-status-guide.adoc and look for an xref to admin-console-access.adoc.
+That's the xref that needs to be fixed (if it's still broken).
 
 === Generating the Report
 
