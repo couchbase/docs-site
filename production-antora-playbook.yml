@@ -14,7 +14,7 @@ content:
     branches: [1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector.git
-    branches: [release/4.0, release/cypress]
+    branches: [master, release/4.0, release/cypress]
     start_path: docs
   - url: https://github.com/couchbase/kafka-connect-couchbase.git
     branches: [master, release/3.3]
