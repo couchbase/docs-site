@@ -45,6 +45,8 @@ content:
     branches: [release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.4, release/1.3]
   - url: https://github.com/couchbaselabs/docs-sync-gateway.git
     branches: [release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5, release/1.4, release/1.3]
+  - url: https://github.com/couchbase-partners/test-drive-couchbase
+    branches: [docs-site-pub]
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials.git
     branches: master
