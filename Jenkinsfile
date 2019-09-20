@@ -47,6 +47,7 @@ pipeline {
     // CloudFront is now configured to force http -> https
     FORCE_HTTPS='false'
     //NODE_OPTIONS='--max-old-space-size=4096'
+    NODE_OPTIONS='--max-old-space-size=8192'
     OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
     NODE_PATH='/usr/local/share/.config/yarn/global/node_modules'
     SHOW_FEEDBACK_BUTTON='true'
