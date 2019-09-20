@@ -46,8 +46,7 @@ pipeline {
     ALGOLIA_INDEX_NAME='prod_docs_couchbase'
     // CloudFront is now configured to force http -> https
     FORCE_HTTPS='false'
-    //NODE_OPTIONS='--max-old-space-size=4096'
-    NODE_OPTIONS='--max-old-space-size=8192'
+    NODE_OPTIONS='--max-old-space-size=4096'
     OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
     NODE_PATH='/usr/local/share/.config/yarn/global/node_modules'
     SHOW_FEEDBACK_BUTTON='true'
@@ -93,10 +92,10 @@ pipeline {
               //} catch (err) {
                 //sh 'cat xref-validator.log'
               //}
-           // }
+            //}
             // NOTE we don't use --fetch here since it was already done when running the xref validator
-            sh "rm -rf .cache"
-            sh "antora --cache-dir=./.cache/antora --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL $siteProfile-antora-playbook.yml"
+            sh 'rm -rf .cache'
+            sh "antora --cache-dir=./.cache/antora --clean --fetch --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL $siteProfile-antora-playbook.yml"
           }
         }
         sh 'cat etc/nginx/snippets/rewrites.conf public/.etc/nginx/rewrite.conf | awk -F \' +\\\\{ +\' \'{ if ($1 && a[$1]++) { print sprintf("Duplicate location found on line %s: %s", NR, $0) > "/dev/stderr" } else { print $0 } }\' > public/.etc/nginx/combined-rewrites.conf'
