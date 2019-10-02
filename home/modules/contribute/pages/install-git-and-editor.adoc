@@ -35,7 +35,7 @@ Use the links below for additional installation instructions.
 [#adoc-packages]
 === Install the AsciiDoc Packages
 
-. Start Atom and go to menu:Edit[Preferences] or press kbd:[Ctrl+,].
+. Start Atom and go to menu:Atom[Preferences] or press kbd:[Ctrl+,].
 This opens the Settings panel.
 . In the sidebar on the left, click btn:[Install].
 . In the input field labeled *Search packages*, enter each package listed below, and install them.
