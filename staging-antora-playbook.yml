@@ -105,3 +105,4 @@ ui:
       static_files: [robots.txt]
 output:
   dir: ./public
+
