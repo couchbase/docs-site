@@ -90,9 +90,10 @@ pipeline {
                 sh "antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace $siteProfile-antora-playbook.yml > xref-validator.log 2>&1"
               } catch (err) {
                 def report = readFile('xref-validator.log')
-                echo report
                 if (!report.contains('antora: xref validation failed')) {
-                  throw err
+                  echo 'xref validator failed to run; see next invocation for reason'
+                } else {
+                  echo report
                 }
               }
             }
