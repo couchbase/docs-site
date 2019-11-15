@@ -81,7 +81,7 @@ Develop applications on the edge with Couchbase Mobile
 
 [.tile]
 .xref:server:sdk:overview.doc[SDKs]
-* xref:@c-sdk::start-using-sdk.adoc[C/C++]
+* xref:c-sdk::start-using-sdk.adoc[C/C++]
 * xref:dotnet-sdk::start-using-sdk.adoc[.NET]
 * xref:go-sdk::start-using-sdk.adoc[Go]
 * xref:java-sdk::start-using-sdk.adoc[Java]
