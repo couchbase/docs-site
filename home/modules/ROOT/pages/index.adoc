@@ -2,7 +2,7 @@
 :page-layout: home
 :!sectids:
 
-Welcome to the new home of Couchbase documentation!
+Welcome to the Couchbase documentation!
 We’d love to hear from you. Feel free to use the btn:[Feedback?] button on any page to share your feedback and concerns.
 
 [.hint]
@@ -15,7 +15,7 @@ Check out the https://developer.couchbase.com[Developer Portal]!
 [.card]
 === Administrators
 
-If you are a Couchbase administrator wanting to configure, deploy, and manage Couchbase Data Platform
+Configure, deploy, and manage Couchbase
 
 * xref:server:install:get-started.adoc[Deployment Options]
 * xref:server:learn:security/security-overview.adoc[Security]
@@ -24,7 +24,7 @@ If you are a Couchbase administrator wanting to configure, deploy, and manage Co
 [.card]
 === Developers
 
-If you are a Couchbase user wanting to develop an application using our SDKs
+Develop an application on Couchbase Server
 
 * xref:java-sdk::start-using-sdk.adoc[Quick Install]
 * xref:java-sdk::sample-application.adoc[Sample Application]
@@ -43,7 +43,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 [.card]
 === Mobile Developers
 
-If you are a Couchbase user wanting to develop for applications on the edge
+Develop applications on the edge with Couchbase Mobile
 
 * xref:sync-gateway::getting-started.adoc[Get Started: Sync Gateway]
 * xref:couchbase-lite::index.adoc[Get Started: Couchbase Lite]
@@ -78,3 +78,15 @@ If you are a Couchbase user wanting to develop for applications on the edge
 * xref:spark-connector::index.adoc[Spark]
 * xref:talend-connector::index.adoc[Talend]
 * xref:server:connectors:odbc-jdbc-drivers.adoc[SQL (ODBC/JDBC)]
+
+[.tile]
+.xref:server:sdk:overview.doc[SDKs]
+* xref:@c-sdk::start-using-sdk.adoc[C/C++]
+* xref:dotnet-sdk::start-using-sdk.adoc[.NET]
+* xref:go-sdk::start-using-sdk.adoc[Go]
+* xref:java-sdk::start-using-sdk.adoc[Java]
+* xref:nodejs-sdk::start-using-sdk.adoc[Node.js]
+* xref:php-sdk::start-using-sdk.adoc[PHP]
+* xref:python-sdk::start-using-sdk.adoc[Python]
+* xref:scala-sdk::start-using-sdk.adoc[Scala]
+
