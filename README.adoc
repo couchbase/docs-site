@@ -1,28 +1,27 @@
-= Couchbase Documentation Site
+= Couchbase Docs Archive Site
 :idprefix:
 :idseparator: -
 // Settings:
 :hide-uri-scheme:
 // URLs:
-:url-docs: https://docs.couchbase.com
-:url-contribute: {url-docs}/home/contribute/
+:url-docs: https://docs-archive.couchbase.com
+:url-contribute: https://docs.couchbase.com/home/contribute/
 :url-org: https://github.com/couchbase
 :url-ui: {url-org}/docs-ui
 
-This is the Antora playbook project (aka site build) for the Couchbase documentation site published at {url-docs}.
+This is the Antora playbook project (aka site build) for the Couchbase docs archive site published at {url-docs}.
 
 == Playbook
 
 The playbook, defined in a playbook file, configures the build for the site.
 The playbook specifies the content sources (repository and branches), site URL, UI bundle URL, global AsciiDoc attributes, and Asciidoctor extensions.
 
-There are two playbook files in this repository, one for each environment.
+There's one playbook files in this repository:
 
-production-antora-playbook.yml:: Configures the build for the *production* site.
-staging-antora-playbook.yml:: Configures the build for the *staging* site.
+antora-playbook.yml:: Configures the build for the *archive* site.
 
-The staging site is built for each pull request.
-The production site is built for each change to the master branch.
+The archive site is built for each change to the archive branch.
+A preview of the archive site is built for each pull request.
 
 == Home Docs Component
 
@@ -33,6 +32,7 @@ All other content is sourced from separate repositories and branches.
 
 The custom extensions in the [.path]_lib/_ directory process the manpage macro (Couchbase CLI and Backup components), Swagger UI macro, and multi-row table headers.
 
+////
 == File Watcher and LiveReload
 
 This repository contains a script that watches `.adoc` and `antora.yml` files in the author workspace (as defined by local-antora-playbook.yml) and triggers a new Antora build when it detects changes to those files.
@@ -76,6 +76,7 @@ TIP: To skip the initial build, use `gulp serve` as the Gulp command.
 . Make changes to your AsciiDoc files locally.
 The browser tab should automatically reload after a short while.
 . Use Ctrl+C to stop the process.
+////
 
 == Xref Validation
 

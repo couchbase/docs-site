@@ -1,36 +1,19 @@
 [build]
 base = "netlify/"
 publish = "public/"
-command = """\
-node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../$STAGE-antora-playbook.yml || true; \
-node_modules/.bin/antora --redirect-facility=netlify ../$STAGE-antora-playbook.yml \
 """
 
 [build.environment]
 NODE_VERSION = "10"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
-STAGE = "staging"
-
-[context.production.environment]
-ALGOLIA_APP_ID = "NI1G57N08Q"
-ALGOLIA_API_KEY = "d3eff3e8bcc0860b8ceae87360a47d54"
-ALGOLIA_INDEX_NAME = "prod_docs_couchbase"
-OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js"
-SHOW_FEEDBACK_BUTTON = "true"
 
 [context.deploy-preview]
 command = """\
-node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../$STAGE-antora-playbook.yml || true; \
-node_modules/.bin/antora --redirect-facility=netlify --url $DEPLOY_PRIME_URL ../$STAGE-antora-playbook.yml \
+node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
+node_modules/.bin/antora --redirect-facility=netlify --url $DEPLOY_PRIME_URL ../antora-playbook.yml \
 """
 
 [[headers]]
 for = "/_/font/*"
   [headers.values]
   Cache-Control = "public,max-age=604800"
-
-[[redirects]]
-from = "/operator/1.2/whats-new.html"
-to = "https://docs.couchbase.com/operator/1.2/whats-new.html"
-status = 302
-force = true

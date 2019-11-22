@@ -1,9 +1,9 @@
-= Welcome to Couchbase Docs!
+= Welcome to Couchbase Docs Archive!
 :page-layout: home
 :!sectids:
 
-Welcome to the new home of Couchbase documentation!
-We’d love to hear from you. Feel free to use the btn:[Feedback?] button on any page to share your feedback and concerns.
+Welcome to the Couchbase documentation archive!
+Use the links below to find your way around the vault.
 
 [.hint]
 Looking for non-documentation resources?
