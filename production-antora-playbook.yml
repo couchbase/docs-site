@@ -88,6 +88,8 @@ asciidoc:
     tabs: tabs
     toc: ~
     xrefstyle: short
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
   extensions:
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
