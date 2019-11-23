@@ -1,8 +1,11 @@
+# $(npm bin)/antora --generator=@antora/site-generator-ms --fetch --clean antora-playbook.yml
 site:
   title: Couchbase Docs Archive
   url: https://docs-archive.couchbase.com
   start_page: home::index.adoc
   robots: disallow
+git:
+  ensure_git_suffix: false
 content:
   sources:
   - url: .
@@ -39,10 +42,10 @@ content:
     branches: [release/1.4, release/1.3]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/1.4, release/1.3]
-git:
-  ensure_git_suffix: false
 asciidoc:
   attributes:
+    primary-site-url: 'https://docs.couchbase.com'
+    primary-site-manifest-path: './primary-site-manifest.json.gz'
     experimental: ''
     idprefix: '@'
     idseparator: '-@'
