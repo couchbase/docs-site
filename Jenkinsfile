@@ -52,10 +52,11 @@ pipeline {
     SHOW_FEEDBACK_BUTTON='true'
     SUPPORTS_CURRENT_URL='true'
   }
-  triggers {
-    githubPush()
-    cron('TZ=Etc/UTC\nH H(2-4) * * *')
-  }
+  // Disabling automatic builds until the weekend 12/01/2019
+  //triggers {
+  //  githubPush()
+  //  cron('TZ=Etc/UTC\nH H(2-4) * * *')
+ // }
   options {
     disableConcurrentBuilds()
   }
