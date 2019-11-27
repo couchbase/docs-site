@@ -1,0 +1,29 @@
+site:
+  title: Couchbase Docs
+  url: https://ibsoln.github.io/DOC-5872
+content:
+  sources:
+  - url: ./../cbl
+    branches: HEAD
+  - url: ./../cbl-2.7
+    branches: HEAD
+  - url: ./../sg
+    branches: HEAD
+asciidoc:
+  attributes:
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    tabs: tabs
+    toc: ~
+    xrefstyle: short
+  extensions:
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/tabs-block.js
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/v224/ui-bundle.zip
+output:
+  dir: ../ibsoln.github.io/DOC-5872
