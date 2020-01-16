@@ -26,9 +26,9 @@ If you are a Couchbase administrator wanting to configure, deploy, and manage Co
 
 If you are a Couchbase user wanting to develop an application using our SDKs
 
-* xref:java-sdk::start-using-sdk.adoc[Quick Install]
-* xref:java-sdk::sample-application.adoc[Sample Application]
-* xref:java-sdk::core-operations.adoc[CRUD]
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Quick Install]
+* xref:java-sdk:hello-world:sample-application.adoc[Sample Application]
+* xref:java-sdk:howtos:kv-operations.adoc[CRUD]
 * xref:tutorials::index.adoc[Tutorials]
 
 [.card]
