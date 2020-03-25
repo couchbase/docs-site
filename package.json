@@ -5,6 +5,6 @@
   "private": true,
   "dependencies": {
     "@antora/cli": "2.3.0-beta.1",
-    "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#v2.3.0-2.cb"
+    "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#v2.3.0-3.cb"
   }
 }
