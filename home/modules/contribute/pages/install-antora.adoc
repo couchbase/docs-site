@@ -12,7 +12,7 @@ If you've never used Antora, you may first need to instal Node using nvm.
 Follow the instructions below that correspond to your operating system:
 
 * {url-linux}[Linux: Install Node^]
-* {url-macos}[macOS: Install Node^]
+* {url-macos}[macOS: Install Node^] - note if you get an error installing nvm run "xcode-select --install" to install xcode
 * {url-windows}[Windows: Install Node^]
 
 == Install the Antora CLI and Site Generator
