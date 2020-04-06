@@ -84,8 +84,10 @@ div.body main.home div.tiles.centered-tiles h2 {
   font-size: 1.5rem;
   padding-bottom: 0px;
 }
-div.body main.home div.tiles.centered-tiles .tile .paragraph {
+div.body main.home div.tiles.centered-tiles .tile .paragraph p {
   text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 div.body main.home div.tiles.more-info .tile {
   padding-left: 1rem;
@@ -97,6 +99,16 @@ div.body main.home .banner h2 {
   padding: 10px 10px 10px 10px;
   text-align: center;
 }
+div.body main.home .banner.cta h2 {
+  padding: 40px 0 40px 0;
+  font-weight: normal
+}
+div.body main.home .banner.cta h2 a {
+  margin: 8px 10px 8px 10px;
+  background-color: #4287d6;
+  padding: 8px 20px 8px 20px;
+  color: white;
+}
 </style>
 ++++
 endif::[]
@@ -106,7 +118,7 @@ A modern database for building applications with
 agility, performance, scale and resilience.
 
 image:../../server/6.5/manage/_images/manage-ui/documentsScreenWithDocuments.png[,180,]
-image:../../server/6.5/tools/_images/query-workbench-areas.png[,180,]
+image:../../server/6.5/tools/_images/query-monitor.png[,180,]
 image:../../server/6.5/manage/_images/manage-ui/queryScreenIWithBucket.png[,180,]
 
 [.logos]
@@ -293,6 +305,9 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 {nbsp}
 
 {nbsp}
+
+[.banner.cta]
+== **https://docs.couchbase.com/server/current/getting-started/start-here.html[Get Started]** https://query-tutorial.couchbase.com/[Try the online N1QL tutorial]
 
 // -------------------------------------------------------
 // -------------------------------------------------------
