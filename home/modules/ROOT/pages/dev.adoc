@@ -62,7 +62,7 @@ div.body main.home div.tiles.code-samples h3 {
 }
 div.body main.home .listingblock .content .highlight {
   background-color: #eee;
-  padding: 5px 5px 5px 5px;
+  padding: 20px 5px 20px 5px;
   font-size: 0.7em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -93,6 +93,9 @@ div.body main.home div.tiles.more-info .tile {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+div.body main.home div.tiles.more-info .tile.shots img {
+  border: 1px solid #d8d8d8;
+}
 div.body main.home .banner h2 {
   margin-top: 50px;
   background-color: aliceblue;
@@ -113,13 +116,13 @@ div.body main.home .banner.cta h2 a {
 ++++
 endif::[]
 
-[.subtitle]
+[.subtitle.shots]
 A modern database for building applications with
 agility, performance, scale and resilience.
 
 image:../../server/6.5/manage/_images/manage-ui/documentsScreenWithDocuments.png[,180,]
 image:../../server/6.5/tools/_images/query-monitor.png[,180,]
-image:../../server/6.5/manage/_images/manage-ui/queryScreenIWithBucket.png[,180,]
+image:../../server/6.5/manage/_images/manage-ui/indexInQueryWorkbench.png[,180,]
 
 [.logos]
 == {empty}
@@ -209,19 +212,6 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 * https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/index.html[N1QL language reference]
 * https://docs.couchbase.com/server/current/tools/query-workbench.html[Query workbench] for N1QL
 
-==== SDK's and connectors
-
-* SDK for https://docs.couchbase.com/java-sdk/current/start-using-sdk.html[Java]
-* SDK for https://docs.couchbase.com/dotnet-sdk/current/start-using-sdk.html[C# / .NET]
-* SDK for https://docs.couchbase.com/nodejs-sdk/current/hello-world/start-using-sdk.html[Node.js]
-* SDK for https://docs.couchbase.com/python-sdk/current/start-using-sdk.html[Python]
-* SDK for https://docs.couchbase.com/php-sdk/current/hello-world/start-using-sdk.html[PHP]
-* SDK for https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html[C / C++]
-* SDK for https://docs.couchbase.com/go-sdk/current/hello-world/start-using-sdk.html[Go]
-* ...and https://docs.couchbase.com/server/current/sdk/overview.html[more]
-
-* https://docs.couchbase.com/server/current/connectors/intro.html[Connectors] for Kafka, Spark, Hadoop, ODBC/JDBC and more
-
 [.tile]
 === Try Couchbase Server
 
@@ -237,7 +227,80 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 * https://docs.couchbase.com/server/current/install/plan-for-production.html[System requirements]
 * Community and Enterprise https://docs.couchbase.com/server/current/introduction/editions.html[Editions] are available to launch fast & to grow -- and to have the option for business-critical long term support
 
-==== Management
+[.tiles.more-info]
+== {empty}
+
+[.tile]
+=== SDK's and connectors
+
+* SDK for https://docs.couchbase.com/java-sdk/current/start-using-sdk.html[Java]
+* SDK for https://docs.couchbase.com/dotnet-sdk/current/start-using-sdk.html[C# / .NET]
+* SDK for https://docs.couchbase.com/nodejs-sdk/current/hello-world/start-using-sdk.html[Node.js]
+* SDK for https://docs.couchbase.com/python-sdk/current/start-using-sdk.html[Python]
+* SDK for https://docs.couchbase.com/php-sdk/current/hello-world/start-using-sdk.html[PHP]
+* SDK for https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html[C / C++]
+* SDK for https://docs.couchbase.com/go-sdk/current/hello-world/start-using-sdk.html[Go]
+* ...and https://docs.couchbase.com/server/current/sdk/overview.html[more]
+
+* https://docs.couchbase.com/server/current/connectors/intro.html[Connectors] for Kafka, Spark, Hadoop, ODBC/JDBC and more
+
+[.tile]
+=== {empty}
+
+[source,java]
+----
+// upsert JSON document
+MutationResult upsertResult = db.upsert(
+    "user-1234",
+    JsonObject.create().put("name", "mike")
+);
+
+// fetch JSON document
+GetResult getResult = db.get("user-1234");
+System.out.println(getResult);
+
+----
+
+[.tiles.more-info]
+== {empty}
+
+[.tile]
+=== Advanced operations
+
+* https://docs.couchbase.com/java-sdk/current/subdocument-operations.html[Sub-document operations] for efficient JSON manipulation
+* https://docs.couchbase.com/java-sdk/current/howtos/concurrent-async-apis.html[Async & reactive API's] for higher concurrency
+* https://docs.couchbase.com/server/current/learn/data/transactions.html[Distributed transactions] for multi-document ACID mutations
+* https://docs.couchbase.com/server/current/learn/services-and-indexes/indexes/indexes.html[Indexing] to improve query and search performance
+* https://docs.couchbase.com/server/current/fts/full-text-intro.html[Full-text search] to power up search boxes and more
+* https://docs.couchbase.com/server/current/analytics/introduction.html[Analytics] for complex queries and data analysis
+* https://docs.couchbase.com/server/current/eventing/eventing-overview.html[Eventing] for asynchronous triggers on data changes
+
+[.tile.shots]
+=== {empty}
+
+image::../../server/6.5/manage/_images/manage-ui/indexScreenWithIndexes.png[,380,]
+
+[.tiles.more-info]
+== {empty}
+
+[.tile]
+=== Production scale
+
+* https://docs.couchbase.com/server/current/learn/clusters-and-availability/clusters-and-availability.html[Clustering] of Couchbase server nodes for share-nothing, scale-out performance and availability
+* https://docs.couchbase.com/server/current/learn/buckets-memory-and-storage/vbuckets.html[Auto-sharding] and automatic placement of shard replicas
+* https://docs.couchbase.com/server/current/manage/manage-xdcr/xdcr-management-overview.html[Replication between remote datacenters] for geographic distribution
+* https://docs.couchbase.com/server/current/learn/security/security-overview.html[Advanced security] with authentication, authorization, role-based access control, encryption and auditing
+
+[.tile.shots]
+=== {empty}
+
+image::../../server/6.5/manage/_images/manage-nodes/rebalanceProgressBarFollowingRemoval.png[,380,]
+
+[.tiles.more-info]
+== {empty}
+
+[.tile]
+=== Management tools
 
 * https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html[Web management UI] and admin REST{nbsp}API
 * https://docs.couchbase.com/server/current/manage/manage-nodes/add-node-and-rebalance.html[Dynamic cluster membership] and automated data shard rebalancing
@@ -245,31 +308,10 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 * https://docs.couchbase.com/server/current/backup-restore/cbbackupmgr.html[Backup / restore]
 * https://docs.couchbase.com/server/current/install/install-production-deployment.html[Deployment guidelines] with security and sizing considerations
 
-[.tiles]
-== {empty}
+[.tile.shots]
+=== {empty}
 
-[.tile]
-=== Go deeper
-
-{nbsp}
-
-* https://docs.couchbase.com/java-sdk/current/subdocument-operations.html[Sub-document operations] for efficient JSON manipulation
-* https://docs.couchbase.com/java-sdk/current/howtos/concurrent-async-apis.html[Async & reactive API's] for higher concurrency
-* https://docs.couchbase.com/server/current/learn/data/transactions.html[Distributed transactions] for multi-document ACID mutations
-* https://docs.couchbase.com/server/current/fts/full-text-intro.html[Full-text search] to power up search boxes and more
-* https://docs.couchbase.com/server/current/analytics/introduction.html[Analytics] for complex queries and data analysis
-* https://docs.couchbase.com/server/current/eventing/eventing-overview.html[Eventing] for asynchronous triggers on data changes
-
-[.tile]
-=== {nbsp}
-
-{nbsp}
-
-* https://docs.couchbase.com/server/current/learn/clusters-and-availability/clusters-and-availability.html[Clustering] of Couchbase server nodes for share-nothing, scale-out performance and availability
-* https://docs.couchbase.com/server/current/learn/buckets-memory-and-storage/vbuckets.html[Auto-sharding] and automatic placement of shard replicas
-* https://docs.couchbase.com/server/current/manage/manage-xdcr/xdcr-management-overview.html[Replication between remote datacenters] for geographic distribution
-* https://docs.couchbase.com/server/current/learn/services-and-indexes/indexes/indexes.html[Indexing] to improve query and search performance
-* https://docs.couchbase.com/server/current/learn/security/security-overview.html[Advanced security] with authentication, authorization, role-based access control, encryption and auditing
+image::../../server/6.5/manage/_images/manage-groups/groupsScreenWithOpenGroup.png[,380,]
 
 {nbsp}
 
