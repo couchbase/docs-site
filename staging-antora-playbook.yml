@@ -23,14 +23,14 @@ content:
   - url: https://github.com/couchbase/docs-connectors-talend.git
     branches: master
   # NOTE only include server 5.5 and newer in staging site
-  - url: https://github.com/couchbase/docs-analytics.git
-    branches: [release/6.5, release/6.0, release/5.5]
+  #- url: https://github.com/couchbase/docs-analytics.git
+  #  branches: [release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/couchbase-cli.git
     branches: [mad-hatter, alice, vulcan]
     start_path: docs
-  - url: https://github.com/couchbase/backup.git
-    branches: [mad-hatter, alice, vulcan]
-    start_path: docs
+  #- url: https://github.com/couchbase/backup.git
+  #  branches: [mad-hatter, alice, vulcan]
+  #  start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server.git
     branches: [release/6.5, release/6.0, release/5.5]
@@ -49,8 +49,8 @@ content:
     branches: [release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5, release/1.4, release/1.3]
   - url: https://github.com/couchbase-partners/test-drive-couchbase
     branches: [docs-site-pub]
-  - url: https://github.com/couchbase/docs-ngdm.git
-    branches: [master]
+  #- url: https://github.com/couchbase/docs-ngdm.git
+  #  branches: [master]
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials.git
     branches: master
