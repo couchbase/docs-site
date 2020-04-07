@@ -20,6 +20,7 @@ SHOW_FEEDBACK_BUTTON = "true"
 
 [context.deploy-preview]
 command = """\
+echo $TEST_TOKEN; \
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../$STAGE-antora-playbook.yml || true; \
 node_modules/.bin/antora --redirect-facility=netlify --url $DEPLOY_PRIME_URL ../$STAGE-antora-playbook.yml \
 """
