@@ -2,7 +2,7 @@
 base = "netlify/"
 publish = "public/"
 command = """\
-if [ -v GITHUB_TOKEN ]; then GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
+if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../$STAGE-antora-playbook.yml || true; \
 node_modules/.bin/antora --redirect-facility=netlify ../$STAGE-antora-playbook.yml \
 """
@@ -21,7 +21,7 @@ SHOW_FEEDBACK_BUTTON = "true"
 
 [context.deploy-preview]
 command = """\
-if [ -v GITHUB_TOKEN ]; then GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
+if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../$STAGE-antora-playbook.yml || true; \
 node_modules/.bin/antora --redirect-facility=netlify --url $DEPLOY_PRIME_URL ../$STAGE-antora-playbook.yml \
 """
