@@ -6,6 +6,7 @@ site:
     google_analytics: GTM-MVPNN2
 content:
   branches: release/*
+  # NOTE the git@ segment in the URL indicates which repositories are private
   sources:
   - url: .
     branches: HEAD
