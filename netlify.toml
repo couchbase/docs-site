@@ -10,7 +10,6 @@ node_modules/.bin/antora --redirect-facility=netlify ../$STAGE-antora-playbook.y
 NODE_VERSION = "10"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 STAGE = "staging"
-GIT_CREDENTIALS = "https://$GITHUB_TOKEN:@github.com"
 
 [context.production.environment]
 ALGOLIA_APP_ID = "NI1G57N08Q"
@@ -21,6 +20,7 @@ SHOW_FEEDBACK_BUTTON = "true"
 
 [context.deploy-preview]
 command = """\
+if [ -v GITHUB_TOKEN ]; then GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../$STAGE-antora-playbook.yml || true; \
 node_modules/.bin/antora --redirect-facility=netlify --url $DEPLOY_PRIME_URL ../$STAGE-antora-playbook.yml \
 """
