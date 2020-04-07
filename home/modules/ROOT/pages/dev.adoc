@@ -112,6 +112,9 @@ div.body main.home .banner.cta h2 a {
   padding: 8px 20px 8px 20px;
   color: white;
 }
+div.body main.home .tiles.centered-tiles.community-more h2 {
+  font-size: 2rem;
+}
 </style>
 ++++
 endif::[]
@@ -343,6 +346,28 @@ image::../../server/6.5/manage/_images/manage-groups/groupsScreenWithOpenGroup.p
 
 * https://docs.couchbase.com/sync-gateway/current/shared-bucket-access.html[Data synchronization] with Sync Gateway
 * https://docs.couchbase.com/sync-gateway/current/kubernetes/deploy-cluster.html[Kubernetes image:kubernetes-logo.svg[,18,] option] for deploying Sync Gateway
+
+{nbsp}
+
+{nbsp}
+
+[.tiles.centered-tiles.community-more]
+== Community resources
+
+[.tile]
+=== {empty}
+
+https://www.couchbase.com/community[Community links]
+
+[.tile]
+=== {empty}
+
+https://forums.couchbase.com/[Forums]
+
+[.tile]
+=== {empty}
+
+https://developer.couchbase.com/open-source-projects[Open source projects]
 
 {nbsp}
 
