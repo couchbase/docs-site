@@ -43,7 +43,7 @@ For simple changes, like fixing a typo or reworking a sentence, you can edit the
 Once you've made your edits, replace the default commit message with a short description of your change, and click btn:[Commit Changes].
 Then follow the on-screen instructions to open a pull request.
 
-== Next Steps
+== Next steps
 
 . xref:install-git-and-editor.adoc[Install Git and an AsciiDoc editor].
 . xref:set-up-repository.adoc[Set up your local repository].
