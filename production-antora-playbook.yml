@@ -10,7 +10,7 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbase/couchbase-operator.git
+  - url: https://git@github.com/couchbase/couchbase-operator.git
     branches: [master, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector.git
@@ -22,14 +22,14 @@ content:
   - url: https://github.com/couchbase/couchbase-spark-connector.git
     branches: [master, release/2.3, release/2.2, release/2.1]
     start_path: docs
-  - url: https://github.com/couchbase/docs-connectors-talend.git
+  - url: https://git@github.com/couchbase/docs-connectors-talend.git
     branches: master
-  - url: https://github.com/couchbase/docs-analytics.git
+  - url: https://git@github.com/couchbase/docs-analytics.git
     branches: [release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/couchbase-cli.git
     branches: [mad-hatter, alice, vulcan, spock, 5.0.1]
     start_path: docs
-  - url: https://github.com/couchbase/backup.git
+  - url: https://git@github.com/couchbase/backup.git
     branches: [mad-hatter, alice, vulcan, spock, 5.0.x]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
