@@ -270,11 +270,11 @@ System.out.println(getResult);
 [.tile]
 === Advanced operations
 
-* https://docs.couchbase.com/java-sdk/current/subdocument-operations.html[Sub-document operations] for efficient JSON manipulation
+* https://docs.couchbase.com/java-sdk/current/howtos/subdocument-operations.html[Sub-document operations] for efficient JSON manipulation
 * https://docs.couchbase.com/java-sdk/current/howtos/concurrent-async-apis.html[Async & reactive API's] for higher concurrency
 * https://docs.couchbase.com/server/current/learn/data/transactions.html[Distributed transactions] for multi-document ACID mutations
 * https://docs.couchbase.com/server/current/learn/services-and-indexes/indexes/indexes.html[Indexing] to improve query and search performance
-* https://docs.couchbase.com/server/current/fts/full-text-intro.html[Full-text search] to power up search boxes and more
+* https://docs.couchbase.com/server/current/fts/full-text-intro.html[Full-text search] to power up language aware, relevant searches and more
 * https://docs.couchbase.com/server/current/analytics/introduction.html[Analytics] for complex queries and data analysis
 * https://docs.couchbase.com/server/current/eventing/eventing-overview.html[Eventing] for asynchronous triggers on data changes
 
