@@ -1,4 +1,4 @@
-= Welcome to Couchbase Docs!
+= Welcome to Couchbase Docs Staging Site!
 :page-layout: home
 :!sectids:
 
