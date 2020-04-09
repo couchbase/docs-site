@@ -89,6 +89,13 @@ div.body main.home div.tiles.centered-tiles .tile .paragraph p {
   font-weight: bold;
   font-size: 1.25rem;
 }
+div.body main.home div.tiles.centered-tiles.new-to-couchbase {
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  background-color: white;
+  padding-bottom: 15px;
+}
 div.body main.home div.tiles.more-info .tile {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -171,7 +178,7 @@ https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
    s="California")
 ----
 
-[.tiles.centered-tiles]
+[.tiles.centered-tiles.new-to-couchbase]
 == New to Couchbase?
 
 [.tile]
