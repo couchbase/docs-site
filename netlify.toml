@@ -1,18 +1,22 @@
 [build]
-publish = "public/"
-command = """\
-export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; \
-netlify/node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify antora-playbook.yml\
-"""
+base = "netlify"
+publish = "public"
 
 [build.environment]
-NODE_VERSION = "10"
-ANTORA_CACHE_DIR = "netlify/node_modules/.cache/antora"
+CI = "true"
+NODE_VERSION = "12"
+ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+
+[context.production]
+command = """\
+export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; \
+node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify ../antora-playbook.yml\
+"""
 
 [context.deploy-preview]
 command = """\
-export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; \
-netlify/node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --url $DEPLOY_PRIME_URL antora-playbook.yml\
+if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
+node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
 """
 
 [[headers]]
