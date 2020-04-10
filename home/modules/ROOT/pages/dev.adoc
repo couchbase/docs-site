@@ -122,6 +122,17 @@ div.body main.home .banner.cta h2 a {
 div.body main.home .tiles.centered-tiles.community-more h2 {
   font-size: 2rem;
 }
+div.body main.home a.github {
+  padding: 10px 50px 10px 10px;
+  color: #fff;
+  background: url("_images/github-blacktocat.png") #4287d6 no-repeat 95% 50%;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 2px;
+}
+div.body main.home a.github:hover {
+  text-decoration: underline #fff;
+}
 </style>
 ++++
 endif::[]
@@ -365,16 +376,12 @@ image::../../server/6.5/manage/_images/manage-groups/groupsScreenWithOpenGroup.p
 === {empty}
 
 https://www.couchbase.com/community[Community links]
-
-[.tile]
-=== {empty}
-
+{nbsp}{nbsp}{nbsp}
 https://forums.couchbase.com/[Forums]
-
-[.tile]
-=== {empty}
-
+{nbsp}{nbsp}{nbsp}
 https://developer.couchbase.com/open-source-projects[Open source projects]
+{nbsp}
+link:https://github.com/couchbase[GitHub,,role=github]
 
 {nbsp}
 
