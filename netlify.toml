@@ -10,13 +10,13 @@ ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 [context.production]
 command = """\
 export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; \
-node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=publish ../antora-playbook.yml\
+node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public ../antora-playbook.yml\
 """
 
 [context.deploy-preview]
 command = """\
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
-node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=publish --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
+node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
 """
 
 [[headers]]
