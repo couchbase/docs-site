@@ -1,6 +1,6 @@
 [build]
 base = "netlify"
-publish = "public"
+publish = "../public"
 
 [build.environment]
 CI = "true"
