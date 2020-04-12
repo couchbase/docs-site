@@ -5,6 +5,12 @@
 ifdef::basebackend-html[]
 ++++
 <style type="text/css">
+body header .navbar {
+  position: relative;
+}
+div.body.container {
+  margin-top: 2rem;
+}
 div.body main.home a {
   color: #4287d6;
 }
