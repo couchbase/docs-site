@@ -228,7 +228,11 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 
 * https://docs.couchbase.com/server/current/getting-started/start-here.html[Getting started] step-by-step tutorial
 
-* https://docs.couchbase.com/server/current/sdk/development-intro.html[Developer's intro] to basic CRUD operations with Couchbase
+* https://docs.couchbase.com/server/current/sdk/development-intro.html[Developer's introduction]
+
+//-
+
+* **https://docs.couchbase.com/[Documentation]**
 
 ==== N1QL and SQL++
 
