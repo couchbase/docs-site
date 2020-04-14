@@ -1,0 +1,3 @@
+== Getting Started
+
+http://docs.couchbase.com/tutorials/tutorial-template/sample.html
