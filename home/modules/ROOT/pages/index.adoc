@@ -61,7 +61,7 @@ If you are a Couchbase user wanting to develop for applications on the edge
 * xref:server:sdk:overview.adoc[SDKs]
 
 [.tile]
-.Couchbase Mobile
+.xref:sync-gateway::cbmintro.adoc[Couchbase Mobile]
 * xref:couchbase-lite::index.adoc[Lite]
 * xref:sync-gateway::index.adoc[Sync Gateway]
 
