@@ -45,7 +45,7 @@ If you are a Couchbase user wanting to understand how to develop queries
 
 If you are a Couchbase user wanting to develop for applications on the edge
 
-* xref:sync-gateway::getting-started.adoc[Get Started: Sync Gateway]
+* xref:sync-gateway::gs-sgw-install.adoc[Get Started: Sync Gateway]
 * xref:couchbase-lite::index.adoc[Get Started: Couchbase Lite]
 * xref:tutorials::index.adoc[Tutorials]
 
