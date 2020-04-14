@@ -1,0 +1,382 @@
+= Couchbase Tutorials
+:page-layout: tutorials
+:page-role: tiles
+:!sectids:
+:page-aliases: couchbase-lite::samples
+
+[.developer]
+== Developer
+
+[.title]
+=== Customer 360 Data Ingestion
+
+==== {empty}
+[.summary]
+The goal of a Customer 360 system is to deliver a single, consistent view of all your data in one platform within an enterprise where that data is split up between many different systems. This tutorial will be focusing mainly on getting a complete view of a customer/person.
+[.links]
+xref:tutorials:customer-360:ingestion.adoc[Retail]
+
+===== {empty}
+
+====== Components 
+* Server 6.0
+* Kafka
+* Docker
+
+====== Languages 
+* JavaScript
+
+[.metadata]
+=== Intermediate
+
+[.developer]
+== Mobile Developer
+
+[.title]
+=== xref:tutorials:mobile-travel-sample:introduction.adoc[Couchbase Mobile Workshop]
+
+==== {empty}
+
+[.summary]
+An in-depth walkthrough of the Couchbase Mobile capabilities on iOS, Android, Java (desktop) and .NET (UWP and Xamarin) platforms.
+At the end of this multi-part tutorial, you should have a good understanding of how to architect a solution using Couchbase Mobile, including data modeling, sync, access control, channels, database CRUD and the query API in Couchbase Mobile.
+[.links]
+xref:tutorials:mobile-travel-sample:swift/installation/index.adoc[iOS]
+xref:tutorials:mobile-travel-sample:android/installation/index.adoc[Android]
+xref:tutorials:mobile-travel-sample:java/installation/index.adoc[Java]
+xref:tutorials:mobile-travel-sample:csharp/installation/index.adoc[.NET]
+
+===== {empty}
+
+====== Components
+* Server 6.5
+* Lite 2.7
+* Sync Gateway 2.7
+
+====== Languages
+* Swift
+* Java(Android and desktop)
+* C#
+
+[.metadata]
+=== Intermediate
+
+[.developer]
+== Developer
+
+[.title]
+=== xref:tutorials:session-storage:install.adoc[Using Couchbase Server as a Session Store]
+
+==== {empty}
+[.summary]
+An in-depth tutorial that demonstrates how to use Couchbase Server for session storage.
+You will learn how to read, write session data and query session data with N1QL for business insights.
+[.links]
+xref:tutorials:session-storage:aspnet.adoc[ASP.NET Core]
+xref:tutorials:session-storage:java.adoc[Java]
+
+===== {empty}
+
+====== Components
+* Server 6.0
+
+====== Languages
+* C#
+* Java
+
+[.metadata]
+=== Intermediate
+
+[.developer]
+== Mobile Developer
+
+[.title]
+=== Getting Started with Couchbase Mobile on iOS
+
+==== {empty}
+
+[.summary]
+The series of tutorials demonstrates the core capabilities of Couchbase Mobile with an iOS app:
+
+* "Standalone": database and CRUD operations.
+* "Query": querying capabilities.
+* "Sync": use of Sync Gateway for data sync between clients.
+
+[.links]
+xref:standalone@userprofile-couchbase-mobile:userprofile:userprofile_basic.adoc[Standalone]
+xref:query@userprofile-couchbase-mobile:userprofile:userprofile_query.adoc[Query]
+xref:sync@userprofile-couchbase-mobile:userprofile:userprofile_sync.adoc[Sync]
+
+===== {empty}
+
+====== Components
+* Server 5.5
+* Lite 2.1
+* Sync Gateway 2.1
+
+====== Languages
+* Swift
+
+[.metadata]
+=== Beginner
+
+[.developer]
+== Mobile Developer
+
+[.title]
+=== Getting Started with Couchbase Mobile on Android
+
+==== {empty}
+
+[.summary]
+The series of tutorials demonstrates the core capabilities of Couchbase Mobile with an Android app:
+
+* "Standalone": database and CRUD operations.
+* "Query": querying capabilities.
+* "Sync": use of Sync Gateway for data sync between clients.
+
+[.links]
+xref:standalone@userprofile-couchbase-mobile:userprofile:android/userprofile_basic.adoc[Standalone]
+xref:query@userprofile-couchbase-mobile:userprofile:android/userprofile_query.adoc[Query]
+xref:sync@userprofile-couchbase-mobile:userprofile:android/userprofile_sync.adoc[Sync]
+
+===== {empty}
+
+====== Components
+* Server 5.5
+* Couchbase Lite 2.6
+* Sync Gateway 2.6
+
+====== Languages
+* Java
+
+[.metadata]
+=== Beginner
+
+[.developer]
+== Mobile Developer
+
+[.title]
+=== Getting Started with Couchbase Mobile on Xamarin
+
+==== {empty}
+
+[.summary]
+The series of tutorials demonstrates the core capabilities of Couchbase Mobile with a Xamarin app:
+
+* "Standalone": database and CRUD operations.
+* "Query": querying capabilities.
+* "Sync": use of Sync Gateway for data sync between clients.
+
+[.links]
+xref:standalone@userprofile-couchbase-mobile:userprofile:xamarin/userprofile_basic.adoc[Standalone]
+xref:query@userprofile-couchbase-mobile:userprofile:xamarin/userprofile_query.adoc[Query]
+xref:sync@userprofile-couchbase-mobile:userprofile:xamarin/userprofile_sync.adoc[Sync]
+
+===== {empty}
+
+====== Components
+* Server 5.5
+* Lite 2.1
+* Sync Gateway 2.1
+
+====== Languages
+* C#
+
+[.metadata]
+=== Beginner
+
+[.developer]
+== Mobile Developer
+
+[.title]
+=== xref:backgroundfetch@userprofile-couchbase-mobile:userprofile:background-fetch.adoc[Background Fetch with Couchbase Lite on iOS]
+
+==== {empty}
+
+[.summary]
+This tutorial discusses how you can use iOS Background App Refresh capability to sync data when in the background. 
+
+===== {empty}
+
+====== Components
+* Server 5.5
+* Lite 2.1
+* Sync Gateway 2.1
+
+====== Languages
+* Swift
+
+[.metadata]
+=== Beginner
+
+[.developer]
+== Mobile Developer
+
+[.title]
+=== xref:tutorials:hotel-lister:introduction.adoc[Building a Cordova Plugin with Couchbase Lite]
+
+==== {empty}
+[.summary]
+In this tutorial, you will learn how to use Couchbase Lite in a Cordova plugin for an Ionic project targeting iOS and Android.
+The user Interface is written in JavaScript while the business logic and data model is written in native Swift/Java.
+[.links]
+xref:tutorials:hotel-lister:ios.adoc[Swift]
+xref:tutorials:hotel-lister:android.adoc[Java]
+
+===== {empty}
+
+====== Components
+* Couchbase Lite 2.1
+
+====== Languages
+* Swift
+* Java
+* Javascript
+
+[.metadata]
+=== Beginner
+
+[.developer]
+== Mobile Developer
+
+[.title]
+=== xref:tutorials:hotel-finder:introduction.adoc[Building a React Native Module with Couchbase Lite]
+
+==== {empty}
+[.summary]
+In this tutorial, you will learn how to use Couchbase Lite in a React Native project for iOS and Android.
+The user Interface is written in JavaScript while the business logic and data model is written in native Swift/Java.
+[.links]
+xref:tutorials:hotel-finder:ios.adoc[Swift]
+xref:tutorials:hotel-finder:android.adoc[Java]
+
+===== {empty}
+
+====== Components
+* Couchbase Lite 2.6
+
+====== Languages
+* Javascript
+* Swift
+* Java
+
+[.metadata]
+=== Beginner
+
+[.developer]
+== Mobile Developer
+
+[.title]
+=== xref:tutorials:university-lister:android.adoc[Android Recycler Views with Couchbase Lite]
+
+==== {empty}
+[.summary]
+This tutorial will demonstrate how you can use Couchbase Lite as a data source for Recycler Views in your Android application.
+
+===== {empty}
+
+====== Components
+* Couchbase Lite 2.1
+
+====== Languages
+* Java
+
+[.metadata]
+=== Beginner
+
+[.developer]
+== Developer
+
+[.title]
+=== xref:tutorials:profile-store:install.adoc[Using Couchbase Server as a User Profile Store]
+
+==== {empty}
+[.summary]
+An comprehensive tutorial that demonstrates how to use Couchbase Server, Spring Data, Full-Text Search and Cross Data Center Replication (XDCR) to build a production-grade User Profile Store micro-service.
+[.links]
+xref:tutorials:profile-store:dotnet.adoc[.NET]
+xref:tutorials:profile-store:java.adoc[Java]
+
+===== {empty}
+====== Components
+* Server 6.0
+* Full-Text Search
+* XDCR
+
+====== Languages
+* Java
+* .NET
+
+[.metadata]
+=== Beginner
+
+[.developer]
+== Mobile Developer
+
+[.title]
+=== xref:tutorials:swift-playground:overview.adoc[Xcode playground for Couchbase Lite Query]
+
+==== {empty}
+
+[.summary]
+A Xcode Playground to demonstrate and explore the Query interface in Couchbase Lite 2.0. While the playground demonstrates the queries in swift, given the unified nature of the QueryBuilder API, you should be able to easily translate the queries to any of the other platform languages supported on Couchbase Lite.
+
+===== {empty}
+
+====== Components
+* Lite 2.1
+
+====== Languages
+* Swift
+
+[.metadata]
+=== Beginner
+
+
+[.developer]
+== Developer
+
+[.title]
+=== xref:tutorials:spring-data-indexes:spring-index.adoc[Boosting Spring Data Performance with Couchbase]
+
+==== {empty}
+
+[.summary]
+Spring Data provides an easy programming model for data access in both relational and non-relational databases. It became very popular among Java/JVM developers because of the small learning curve and low codebase.
+
+However, developers quite often run into performance issues while using it, this tutorial aims to explain some of the common problems and how to fix them.
+
+===== {empty}
+
+====== Components
+* Spring Data
+
+====== Languages
+* Java
+
+[.metadata]
+=== Intermediate
+
+[.developer]
+== Developer
+
+[.title]
+=== xref:tutorials:openid-connect-implicit-flow:index.adoc[OpenID Connect Tutorial]
+
+==== {empty}
+
+[.summary]
+A complete tutorial on how to set up an OpenID Connect authentication (using the implicit flow method) for the Sync Gateway.
+
+===== {empty}
+
+====== Components
+* Keycloak / Couchbase Server
+* Sync Gateway / Couchbase Lite 2.7
+
+====== Languages
+* Java
+
+[.metadata]
+=== Intermediate
