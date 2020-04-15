@@ -57,14 +57,23 @@ div.body main.home div.logos div.paragraph p a {
   color: white;
 }
 div.body main.home div.tiles.code-samples {
-  margin-top: 60px;
+  margin-top: 45px;
 }
 div.body main.home div.tiles.code-samples h2 {
   display: none;
 }
-div.body main.home div.tiles.code-samples h3 {
-  font-size: 1rem;
-  font-weight: normal;
+div.body main.home div.tiles.code-samples .tile {
+  text-align: center;
+}
+div.body main.home div.tiles.code-samples .tile table {
+  width: 100%;
+  table-layout: fixed;
+  text-align: left;
+}
+div.body main.home div.tiles.code-samples .tile table td {
+  width: 50%;
+  padding: 0 10px 0 10px;
+  vertical-align: top;
 }
 div.body main.home .listingblock .content .highlight {
   background-color: #eee;
@@ -176,8 +185,14 @@ https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
 == {empty}
 
 [.tile]
-=== High performance JSON database operations
+=== {empty}
 
+[cols="1a,1a"]
+|===
+| High performance JSON database ops
+| SQL++ to easily query and access JSON
+
+| {empty}
 [source,python]
 ----
  conn.mutate_in('user-1234',
@@ -185,15 +200,15 @@ https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
    op.replace('email', 'doug11@hotmail.com'))
 ----
 
-[.tile]
-=== SQL++ to easily manipulate nested JSON
-
+| {empty}
 [source,python]
 ----
  results = conn.query(
    "SELECT * FROM users WHERE addrs.work.state=$s",
    s="California")
 ----
+
+|===
 
 [.tiles.centered-tiles.new-to-couchbase]
 == New to Couchbase?
