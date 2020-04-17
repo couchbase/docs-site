@@ -8,14 +8,16 @@ NODE_VERSION = "12"
 NPM_FLAGS = "--no-optional"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 
-[context.branch-deploy.environment]
+# NOTE production refers to the staging branch
+
+[context.production.environment]
 ALGOLIA_APP_ID = "NI1G57N08Q"
 ALGOLIA_API_KEY = "d3eff3e8bcc0860b8ceae87360a47d54"
 ALGOLIA_INDEX_NAME = "prod_docs_couchbase"
 OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js"
 SHOW_FEEDBACK_BUTTON = "true"
 
-[context.branch-deploy]
+[context.production]
 command = """\
 export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; \
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
