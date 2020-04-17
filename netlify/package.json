@@ -4,7 +4,7 @@
   "dependencies": {
     "@antora/cli": "2.3.0-rc.1",
     "@antora/site-generator-default": "2.3.0-rc.1",
-    "@antora/xref-validator": "git+https://gitlab.com/antora/xref-validator#v1.0.0-alpha.7",
+    "@antora/xref-validator": "git+https://gitlab.com/antora/xref-validator#v1.0.0-alpha.8",
     "js-yaml": "~3.13"
   }
 }
