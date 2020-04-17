@@ -13,7 +13,7 @@ ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 [context.branch-deploy]
 command = """\
 mkdir public && \
-echo -e '<!DOCTYPE html>\n<meta http-equiv="refresh" content="0; url=https://docs.couchbase.com">\n<meta name="robots" content="noindex">\n<title>Redirect Notice"</title>\n<p>Redirecting to <a href="https://docs.couchbase.com">docs.couchbase.com</a>...</p>\n' > public/index.html\n
+echo '<!DOCTYPE html>\n<meta http-equiv="refresh" content="0; url=https://docs.couchbase.com">\n<meta name="robots" content="noindex">\n<title>Redirect Notice"</title>\n<p>Redirecting to <a href="https://docs.couchbase.com">docs.couchbase.com</a>...</p>' > public/index.html\n
 """
 
 [context.deploy-preview]
