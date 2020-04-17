@@ -1,7 +1,10 @@
 site:
-  title: Couchbase Docs (Staging)
+  title: Couchbase Docs Staging
   url: https://docs-staging.couchbase.com
   start_page: home::index.adoc
+  robots: disallow
+git:
+  ensure_git_suffix: false
 content:
   branches: release/*
   # NOTE the git@ segment in the URL indicates which repositories are private
@@ -9,80 +12,82 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://git@github.com/couchbase/couchbase-operator.git
+  - url: https://git@github.com/couchbase/couchbase-operator
     branches: [master, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
-  - url: https://github.com/couchbase/couchbase-elasticsearch-connector.git
+  - url: https://github.com/couchbase/couchbase-elasticsearch-connector
     branches: [master, release/4.1, release/4.0, release/cypress]
     start_path: docs
-  - url: https://github.com/couchbase/kafka-connect-couchbase.git
+  - url: https://github.com/couchbase/kafka-connect-couchbase
     branches: [master, release/3.3]
     start_path: docs
-  - url: https://github.com/couchbase/couchbase-spark-connector.git
+  - url: https://github.com/couchbase/couchbase-spark-connector
     branches: [master, release/2.3, release/2.2, release/2.1]
     start_path: docs
-  - url: https://git@github.com/couchbase/docs-connectors-talend.git
+  - url: https://git@github.com/couchbase/docs-connectors-talend
     branches: master
   # NOTE only include server 5.5 and newer in staging site
-  - url: https://git@github.com/couchbase/docs-analytics.git
+  - url: https://git@github.com/couchbase/docs-analytics
     branches: [release/6.5, release/6.0, release/5.5]
-  - url: https://github.com/couchbase/couchbase-cli.git
+  - url: https://github.com/couchbase/couchbase-cli
     branches: [mad-hatter, alice, vulcan]
     start_path: docs
-  - url: https://git@github.com/couchbase/backup.git
+  - url: https://git@github.com/couchbase/backup
     branches: [mad-hatter, alice, vulcan]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
-  - url: https://github.com/couchbase/docs-server.git
+  - url: https://github.com/couchbase/docs-server
     branches: [release/6.5, release/6.0, release/5.5]
-  - url: https://github.com/couchbase/docs-sdk-common.git
-  - url: https://github.com/couchbase/docs-sdk-c.git
-  - url: https://github.com/couchbase/docs-sdk-dotnet.git
-  - url: https://github.com/couchbase/docs-sdk-go.git
-  - url: https://github.com/couchbase/docs-sdk-java.git
-  - url: https://github.com/couchbase/docs-sdk-nodejs.git
-  - url: https://github.com/couchbase/docs-sdk-php.git
-  - url: https://github.com/couchbase/docs-sdk-python.git
-  - url: https://github.com/couchbase/docs-sdk-scala.git
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite.git
+  - url: https://github.com/couchbase/docs-sdk-common
+  - url: https://github.com/couchbase/docs-sdk-c
+  - url: https://github.com/couchbase/docs-sdk-dotnet
+  - url: https://github.com/couchbase/docs-sdk-go
+  - url: https://github.com/couchbase/docs-sdk-java
+  - url: https://github.com/couchbase/docs-sdk-nodejs
+  - url: https://github.com/couchbase/docs-sdk-php
+  - url: https://github.com/couchbase/docs-sdk-python
+  - url: https://github.com/couchbase/docs-sdk-scala
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite
     branches: [release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.4, release/1.3]
-  - url: https://github.com/couchbaselabs/docs-sync-gateway.git
+  - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5, release/1.4, release/1.3]
   - url: https://github.com/couchbase-partners/test-drive-couchbase
     branches: [docs-site-pub]
-  - url: https://git@github.com/couchbase/docs-ngdm.git
+  - url: https://git@github.com/couchbase/docs-ngdm
     branches: [master]
   # Tutorial repositories
-  - url: https://github.com/couchbaselabs/tutorials.git
+  - url: https://github.com/couchbaselabs/tutorials
     branches: master
-  - url: https://github.com/couchbaselabs/tutorial-template.git
+  - url: https://github.com/couchbaselabs/tutorial-template
     branches: master
-  - url: https://github.com/couchbaselabs/mobile-travel-sample.git
+  - url: https://github.com/couchbaselabs/mobile-travel-sample
     branches: master
     start_path: content
-  - url: https://github.com/couchbaselabs/hotel-finder-react-native.git
+  - url: https://github.com/couchbaselabs/hotel-finder-react-native
     branches: master
-  - url: https://github.com/couchbaselabs/hotel-lister-cordova.git
+  - url: https://github.com/couchbaselabs/hotel-lister-cordova
     branches: master
-  - url: https://github.com/couchbaselabs/tutorials-contrib.git
+  - url: https://github.com/couchbaselabs/tutorials-contrib
     branches: master
-  - url: https://github.com/couchbaselabs/mobile-training-todo.git
+  - url: https://github.com/couchbaselabs/mobile-training-todo
     branches: tutorials
     start_path: content
-  - url: https://github.com/couchbaselabs/UniversityLister-Android.git
+  - url: https://github.com/couchbaselabs/UniversityLister-Android
     branches: master
     start_path: content
-  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile.git
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile
     branches: [standalone, query, sync, backgroundfetch]
     start_path: content
-  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin.git
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
     branches: [standalone, query, sync]
-  - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground.git
+  - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
     branches: master
-  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android.git
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
     branches: [standalone, query, sync]
 asciidoc:
   attributes:
+    max-include-depth: 10
+    page-partial: false
     experimental: ''
     idprefix: '@'
     idseparator: '-@'
@@ -100,13 +105,5 @@ asciidoc:
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/v246/ui-bundle.zip
-  supplemental_files:
-  - path: robots.txt
-    contents: |
-      User-agent: *
-      Disallow: /
-  - path: ui.yml
-    contents: |
-      static_files: [robots.txt]
 output:
   dir: ./public

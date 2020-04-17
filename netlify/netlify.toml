@@ -1,0 +1,35 @@
+[build]
+publish = "public"
+ignore = "false"
+
+[build.environment]
+CI = "true"
+NODE_VERSION = "12"
+NPM_FLAGS = "--no-optional"
+ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+
+[context.branch-deploy.environment]
+ALGOLIA_APP_ID = "NI1G57N08Q"
+ALGOLIA_API_KEY = "d3eff3e8bcc0860b8ceae87360a47d54"
+ALGOLIA_INDEX_NAME = "prod_docs_couchbase"
+OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js"
+SHOW_FEEDBACK_BUTTON = "true"
+
+[context.branch-deploy]
+command = """\
+export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; \
+node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
+node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
+"""
+
+[context.deploy-preview]
+command = """\
+if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node remove-private-content-sources.js ../antora-playbook.yml; fi; \
+node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
+node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
+"""
+
+[[headers]]
+for = "/_/font/*"
+  [headers.values]
+  Cache-Control = "public,max-age=604800"
