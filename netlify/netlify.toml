@@ -1,0 +1,26 @@
+[build]
+publish = "public"
+ignore = "false"
+
+[build.environment]
+CI = "true"
+NODE_VERSION = "12"
+NPM_FLAGS = "--no-optional"
+ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+
+# NOTE branch-deploy refers to the master branch
+
+[context.branch-deploy]
+command = ""
+
+[context.deploy-preview]
+command = """\
+if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node remove-private-content-sources.js ../production-antora-playbook.yml; fi; \
+node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../production-antora-playbook.yml || true; \
+node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../production-antora-playbook.yml\
+"""
+
+[[headers]]
+for = "/_/font/*"
+  [headers.values]
+  Cache-Control = "public,max-age=604800"
