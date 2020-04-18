@@ -57,7 +57,7 @@ content:
     branches: [master]
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials
-    branches: master
+    branches: openid-connect
   - url: https://github.com/couchbaselabs/tutorial-template
     branches: master
   - url: https://github.com/couchbaselabs/mobile-travel-sample
@@ -84,6 +84,9 @@ content:
     branches: master
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
     branches: [standalone, query, sync]
+  - url: https://github.com/amarantha-k/OpenID_connect_tutorial.git
+    branches: [tutorial]
+    start_path: content    
 asciidoc:
   attributes:
     max-include-depth: 10
