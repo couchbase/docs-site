@@ -217,7 +217,7 @@ Jump to: <<couchbase-server-docs,Couchbase Server Docs>> | <<couchbase-lite-docs
 * https://docs.couchbase.com/server/current/install/migrate-mysql.html[Migrating from relational databases]
 
 [.sdks]
-=== Client SDK\'s
+=== Client SDKs
 
 * https://docs.couchbase.com/server/current/sdk/overview.html[SDK overview]
 
