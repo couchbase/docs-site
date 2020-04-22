@@ -228,16 +228,13 @@ Jump to: <<couchbase-server-docs,Couchbase Server Docs>> | <<couchbase-lite-docs
 |https://docs.couchbase.com/sdk-api/couchbase-java-client/[API reference for Java]
 
 |https://docs.couchbase.com/dotnet-sdk/current/howtos/kv-operations.html[SDK for .NET]
-|
+|https://docs.couchbase.com/sdk-api/couchbase-net-client/[API reference for .NET]
 
 |https://docs.couchbase.com/nodejs-sdk/current/howtos/kv-operations.html[SDK for Node.js]
 |https://docs.couchbase.com/sdk-api/couchbase-node-client/[API reference for Node.js]
 
 |https://docs.couchbase.com/python-sdk/current/start-using-sdk.html[SDK for Python]
-|
-
-|https://docs.couchbase.com/php-sdk/current/howtos/kv-operations.html[SDK for PHP]
-|
+|https://docs.couchbase.com/sdk-api/couchbase-python-client[API reference for Python]
 
 |https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html[SDK for C]
 |https://docs.couchbase.com/sdk-api/couchbase-c-client/[API reference for C]
@@ -245,7 +242,7 @@ Jump to: <<couchbase-server-docs,Couchbase Server Docs>> | <<couchbase-lite-docs
 |https://docs.couchbase.com/go-sdk/current/howtos/kv-operations.html[SDK for Go]
 |https://pkg.go.dev/mod/github.com/couchbase/gocb?tab=versions[API reference for Go]
 
-|https://docs.couchbase.com/scala-sdk/current/howtos/kv-operations.html[SDK for Scala]
+|and https://docs.couchbase.com/server/current/sdk/overview.html[more languages]
 |
 
 |===
