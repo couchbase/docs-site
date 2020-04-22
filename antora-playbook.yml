@@ -84,6 +84,9 @@ content:
     branches: master
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
     branches: [standalone, query, sync]
+  - url: https://github.com/amarantha-k/OpenID_connect_tutorial.git
+    branches: [tutorial]
+    start_path: content    
 asciidoc:
   attributes:
     max-include-depth: 10
