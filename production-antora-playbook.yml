@@ -80,6 +80,9 @@ content:
     branches: master
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android.git
     branches: [standalone, query, sync]
+  - url: https://github.com/amarantha-k/OpenID_connect_tutorial.git
+    branches: [tutorial]
+    start_path: content  
 asciidoc:
   attributes:
     experimental: ''
