@@ -57,7 +57,7 @@ content:
     branches: [master]
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials
-    branches: openid-connect
+    branches: master
   - url: https://github.com/couchbaselabs/tutorial-template
     branches: master
   - url: https://github.com/couchbaselabs/mobile-travel-sample
