@@ -56,9 +56,6 @@ div.body main.home div.logos div.paragraph p img {
 div.body main.home div.logos div.paragraph p a {
   color: white;
 }
-div.body main.home div.tiles.code-samples {
-  margin-top: 45px;
-}
 div.body main.home div.tiles.code-samples h2 {
   display: none;
 }
@@ -160,27 +157,6 @@ image:../../server/6.5/manage/_images/manage-ui/documentsScreenWithDocuments.png
 image:../../server/6.5/tools/_images/query-monitor.png[,180,]
 image:../../server/6.5/manage/_images/manage-ui/indexInQueryWorkbench.png[,180,]
 
-[.logos]
-== {empty}
-
-image:white-logos/linkedin.svg[,100,]
-image:white-logos/united.svg[,100,]
-image:white-logos/tesco.svg[,100,]
-image:white-logos/sky.svg[,100,]
-image:white-logos/amadeus.svg[,100,]
-image:white-logos/marriott-international.svg[,100,]
-image:white-logos/bd.svg[,100,]
-image:white-logos/paypal.svg[,100,]
-image:white-logos/verizon.svg[,100,]
-image:white-logos/ebay.svg[,100,]
-image:white-logos/cisco.svg[,100,]
-image:white-logos/pge.svg[,100,]
-image:white-logos/wells-fargo.svg[,100,]
-image:white-logos/comcast.svg[,100,]
-image:white-logos/tommy-hilfiger.svg[,100,]
-image:white-logos/directv.svg[,100,]
-https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
-
 [.tiles.code-samples]
 == {empty}
 
@@ -209,6 +185,27 @@ https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
 ----
 
 |===
+
+[.logos]
+== {empty}
+
+image:white-logos/linkedin.svg[,100,]
+image:white-logos/united.svg[,100,]
+image:white-logos/tesco.svg[,100,]
+image:white-logos/sky.svg[,100,]
+image:white-logos/amadeus.svg[,100,]
+image:white-logos/marriott-international.svg[,100,]
+image:white-logos/bd.svg[,100,]
+image:white-logos/paypal.svg[,100,]
+image:white-logos/verizon.svg[,100,]
+image:white-logos/ebay.svg[,100,]
+image:white-logos/cisco.svg[,100,]
+image:white-logos/pge.svg[,100,]
+image:white-logos/wells-fargo.svg[,100,]
+image:white-logos/comcast.svg[,100,]
+image:white-logos/tommy-hilfiger.svg[,100,]
+image:white-logos/directv.svg[,100,]
+https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
 
 [.tiles.centered-tiles.new-to-couchbase]
 == New to Couchbase?
