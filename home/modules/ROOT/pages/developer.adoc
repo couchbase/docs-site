@@ -1,4 +1,4 @@
-= Couchbase For Developers
+= Couchbase for Developers
 :page-layout: home
 :!sectids:
 
@@ -153,12 +153,64 @@ div.body main.home a.github:hover {
 endif::[]
 
 [.subtitle.shots]
-A modern database for building applications with
-agility, performance, scale and resilience.
+Couchbase, a modern multicloud to edge database for building applications with
+agility, performance, scale, and resilience.
 
 image:../../server/6.5/manage/_images/manage-ui/documentsScreenWithDocuments.png[,180,]
 image:../../server/6.5/tools/_images/query-monitor.png[,180,]
 image:../../server/6.5/manage/_images/manage-ui/indexInQueryWorkbench.png[,180,]
+
+////
+[.logos]
+== {empty}
+
+image:white-logos/linkedin.svg[,100,]
+image:white-logos/united.svg[,100,]
+image:white-logos/tesco.svg[,100,]
+image:white-logos/sky.svg[,100,]
+image:white-logos/amadeus.svg[,100,]
+image:white-logos/marriott-international.svg[,100,]
+image:white-logos/bd.svg[,100,]
+image:white-logos/paypal.svg[,100,]
+image:white-logos/verizon.svg[,100,]
+image:white-logos/ebay.svg[,100,]
+image:white-logos/cisco.svg[,100,]
+image:white-logos/pge.svg[,100,]
+image:white-logos/wells-fargo.svg[,100,]
+image:white-logos/comcast.svg[,100,]
+image:white-logos/tommy-hilfiger.svg[,100,]
+image:white-logos/directv.svg[,100,]
+https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
+////
+
+[.tiles.code-samples]
+== {empty}
+
+[.tile]
+=== {empty}
+
+[cols="1a,1a"]
+|===
+| High-performance JSON database ops
+| SQL++ to easily query and access JSON
+
+| {empty}
+[source,python]
+----
+ conn.mutate_in('user-1234',
+   op.remove('addrs.billing'),
+   op.replace('email', 'doug11@hotmail.com'))
+----
+
+| {empty}
+[source,python]
+----
+ results = conn.query(
+   "SELECT * FROM users WHERE addrs.work.state=$s",
+   s="California")
+----
+
+|===
 
 [.logos]
 == {empty}
@@ -181,34 +233,6 @@ image:white-logos/tommy-hilfiger.svg[,100,]
 image:white-logos/directv.svg[,100,]
 https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
 
-[.tiles.code-samples]
-== {empty}
-
-[.tile]
-=== {empty}
-
-[cols="1a,1a"]
-|===
-| High performance JSON database ops
-| SQL++ to easily query and access JSON
-
-| {empty}
-[source,python]
-----
- conn.mutate_in('user-1234',
-   op.remove('addrs.billing'),
-   op.replace('email', 'doug11@hotmail.com'))
-----
-
-| {empty}
-[source,python]
-----
- results = conn.query(
-   "SELECT * FROM users WHERE addrs.work.state=$s",
-   s="California")
-----
-
-|===
 
 [.tiles.centered-tiles.new-to-couchbase]
 == New to Couchbase?
@@ -221,7 +245,7 @@ https://docs.couchbase.com/server/current/getting-started/start-here.html[Gettin
 [.tile]
 === {empty}
 
-https://docs.couchbase.com/server/current/introduction/intro.html[Why Couchbase?]
+https://docs.couchbase.com/server/current/introduction/intro.html[Why Couchbase]
 
 [.tile]
 === {empty}
@@ -229,7 +253,7 @@ https://docs.couchbase.com/server/current/introduction/intro.html[Why Couchbase?
 https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL with SQL++?]
 
 [.banner]
-== Docs, Tutorials and More
+== Couchbase Documentation, Tutorials, and More
 
 [.tiles.more-info]
 == Couchbase Server
@@ -241,7 +265,7 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 
 * https://docs.couchbase.com/server/current/learn/architecture-overview.html[What is Couchbase Server?]
 
-* https://docs.couchbase.com/server/current/getting-started/start-here.html[Getting started] step-by-step tutorial
+* https://docs.couchbase.com/server/current/getting-started/start-here.html[Get started] with a step-by-step tutorial
 
 * https://docs.couchbase.com/server/current/sdk/development-intro.html[Developer's introduction]
 
@@ -251,7 +275,7 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 
 ==== N1QL and SQL++
 
-**N1QL** is Couchbase's implementation of SQL++.
+**N1QL** is Couchbase's implementation of SQL++ for querying Couchbase apps.
 
 * https://docs.couchbase.com/server/current/getting-started/try-a-query.html[N1QL getting started]
 * https://docs.couchbase.com/server/current/n1ql/n1ql-intro/index.html[N1QL queries and results]
@@ -267,17 +291,17 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 
 ==== Installation
 
-* https://www.couchbase.com/downloads[Installers] for **OSX**, **Linux**, **Windows**
-* https://docs.couchbase.com/server/current/install/get-started.html[More options] for VM's, containers, Docker, Kubernetes and the public clouds
-* https://docs.couchbase.com/operator/current/overview.html[Kubernetes image:kubernetes-logo.svg[,18,] Autonomous Operator] for Couchbase for automated provisioning and management when using Kubernetes
 * https://docs.couchbase.com/server/current/install/plan-for-production.html[System requirements]
-* Community and Enterprise https://docs.couchbase.com/server/current/introduction/editions.html[Editions] are available to launch fast & to grow -- and to have the option for business-critical long term support
+* https://www.couchbase.com/downloads[Download] installers for **OSX**, **Linux**, **Windows**
+* https://docs.couchbase.com/server/current/install/get-started.html[More deployment options] for VMs, containers, Docker, Kubernetes, and the public clouds
+* https://docs.couchbase.com/operator/current/overview.html[Kubernetes image:kubernetes-logo.svg[,18,] Autonomous Operator] for Couchbase, enabling automated provisioning and management when using Kubernetes
+* Community and Enterprise https://docs.couchbase.com/server/current/introduction/editions.html[Editions] are available to launch fast and grow faster, with long-term support available for business-critical applications
 
 [.tiles.more-info]
 == {empty}
 
 [.tile]
-=== SDK's and connectors
+=== SDKs and Connectors
 
 * SDK for https://docs.couchbase.com/java-sdk/current/start-using-sdk.html[Java]
 * SDK for https://docs.couchbase.com/dotnet-sdk/current/start-using-sdk.html[C# / .NET]
@@ -287,8 +311,7 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 * SDK for https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html[C / C++]
 * SDK for https://docs.couchbase.com/go-sdk/current/hello-world/start-using-sdk.html[Go]
 * ...and https://docs.couchbase.com/server/current/sdk/overview.html[more]
-
-* https://docs.couchbase.com/server/current/connectors/intro.html[Connectors] for Kafka, Spark, Hadoop, ODBC/JDBC and more
+* https://docs.couchbase.com/server/current/connectors/intro.html[Connectors] for Kafka, Spark, Hadoop, ODBC/JDBC, and more
 
 [.tile]
 === {empty}
@@ -311,13 +334,13 @@ System.out.println(getResult);
 == {empty}
 
 [.tile]
-=== Advanced operations
+=== Advanced Operations
 
 * https://docs.couchbase.com/java-sdk/current/howtos/subdocument-operations.html[Sub-document operations] for efficient JSON manipulation
-* https://docs.couchbase.com/java-sdk/current/howtos/concurrent-async-apis.html[Async & reactive API's] for higher concurrency
+* https://docs.couchbase.com/java-sdk/current/howtos/concurrent-async-apis.html[Async and reactive APIs] for higher concurrency
 * https://docs.couchbase.com/server/current/learn/data/transactions.html[Distributed transactions] for multi-document ACID mutations
 * https://docs.couchbase.com/server/current/learn/services-and-indexes/indexes/indexes.html[Indexing] to improve query and search performance
-* https://docs.couchbase.com/server/current/fts/full-text-intro.html[Full-text search] to power up language aware, relevant searches and more
+* https://docs.couchbase.com/server/current/fts/full-text-intro.html[Full-text search] to power up language-aware, relevant searches and more
 * https://docs.couchbase.com/server/current/analytics/introduction.html[Analytics] for complex queries and data analysis
 * https://docs.couchbase.com/server/current/eventing/eventing-overview.html[Eventing] for asynchronous triggers on data changes
 
@@ -330,12 +353,12 @@ image::../../server/6.5/manage/_images/manage-ui/indexScreenWithIndexes.png[,380
 == {empty}
 
 [.tile]
-=== Production scale
+=== Production Scale
 
 * https://docs.couchbase.com/server/current/learn/clusters-and-availability/clusters-and-availability.html[Clustering] of Couchbase server nodes for share-nothing, scale-out performance and availability
 * https://docs.couchbase.com/server/current/learn/buckets-memory-and-storage/vbuckets.html[Auto-sharding] and automatic placement of shard replicas
 * https://docs.couchbase.com/server/current/manage/manage-xdcr/xdcr-management-overview.html[Replication between remote datacenters] for geographic distribution
-* https://docs.couchbase.com/server/current/learn/security/security-overview.html[Advanced security] with authentication, authorization, role-based access control, encryption and auditing
+* https://docs.couchbase.com/server/current/learn/security/security-overview.html[Advanced security] with authentication, authorization, role-based access control, encryption, and auditing
 
 [.tile.shots]
 === {empty}
@@ -346,7 +369,7 @@ image::../../server/6.5/manage/_images/manage-nodes/rebalanceProgressBarFollowin
 == {empty}
 
 [.tile]
-=== Management tools
+=== Management Tools
 
 * https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html[Web management UI] and admin REST{nbsp}API
 * https://docs.couchbase.com/server/current/manage/manage-nodes/add-node-and-rebalance.html[Dynamic cluster membership] and automated data shard rebalancing
@@ -373,17 +396,17 @@ image::../../server/6.5/manage/_images/manage-groups/groupsScreenWithOpenGroup.p
 
 {nbsp}
 
-* https://docs.couchbase.com/couchbase-lite/current/introduction.html[Couchbase Lite] is an embedded NoSQL JSON database for mobile/edge apps, available for Java, Android, Swift, Objective-C, C#, and JavaScript
+* https://docs.couchbase.com/couchbase-lite/current/introduction.html[Couchbase Lite] is an embedded NoSQL JSON database for mobile and edge apps, and is available for Java, Android, Swift, Objective-C, C#, and JavaScript
 
 [.tile]
 === Sync Gateway
 
 {nbsp}
 
-* https://docs.couchbase.com/sync-gateway/current/introduction.html[Sync Gateway] is an internet-facing server that securely transfers data between mobile/edge Couchbase Lite instances and Couchbase Server
+* https://docs.couchbase.com/sync-gateway/current/introduction.html[Sync Gateway] is an internet-facing server that securely transfers data between mobile and edge Couchbase Lite instances and Couchbase Server
 
 [.tile]
-=== Go deeper
+=== Go Deeper
 
 {nbsp}
 
@@ -395,7 +418,7 @@ image::../../server/6.5/manage/_images/manage-groups/groupsScreenWithOpenGroup.p
 {nbsp}
 
 [.tiles.centered-tiles.community-more]
-== Community resources
+== Community Resources
 
 [.tile]
 === {empty}
@@ -413,4 +436,4 @@ link:https://github.com/couchbase[GitHub,,role=github]
 {nbsp}
 
 [.banner.cta]
-== **https://docs.couchbase.com/server/current/getting-started/start-here.html[Get Started]** https://query-tutorial.couchbase.com/[Try the online N1QL tutorial]
+== **https://docs.couchbase.com/server/current/getting-started/start-here.html[Get Started]** https://query-tutorial.couchbase.com/[Try the Online N1QL Tutorial]
