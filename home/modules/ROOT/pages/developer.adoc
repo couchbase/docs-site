@@ -161,7 +161,6 @@ image:../../server/6.5/manage/_images/manage-ui/documentsScreenWithDocuments.png
 image:../../server/6.5/tools/_images/query-monitor.png[,180,]
 image:../../server/6.5/manage/_images/manage-ui/indexInQueryWorkbench.png[,180,]
 
-
 [.logos]
 == {empty}
 
@@ -182,7 +181,6 @@ image:white-logos/comcast.svg[,100,]
 image:white-logos/tommy-hilfiger.svg[,100,]
 image:white-logos/directv.svg[,100,]
 https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
-
 
 [.tiles.code-samples]
 == {empty}
@@ -210,6 +208,8 @@ https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
    "SELECT * FROM users WHERE addrs.work.state=$s",
    s="California")
 ----
+
+|===
 
 [.tiles.centered-tiles.new-to-couchbase]
 == New to Couchbase?
