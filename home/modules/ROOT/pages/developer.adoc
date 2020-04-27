@@ -1,5 +1,6 @@
 = Couchbase for Developers
 :page-layout: home
+:description: Learn the art of building apps on Couchbase, a modern multicloud to edge NoSQL database for building agile, scalable, resilient, and high-performance business applications.
 :!sectids:
 
 ifdef::basebackend-html[]
@@ -160,7 +161,7 @@ image:../../server/6.5/manage/_images/manage-ui/documentsScreenWithDocuments.png
 image:../../server/6.5/tools/_images/query-monitor.png[,180,]
 image:../../server/6.5/manage/_images/manage-ui/indexInQueryWorkbench.png[,180,]
 
-////
+
 [.logos]
 == {empty}
 
@@ -181,7 +182,7 @@ image:white-logos/comcast.svg[,100,]
 image:white-logos/tommy-hilfiger.svg[,100,]
 image:white-logos/directv.svg[,100,]
 https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
-////
+
 
 [.tiles.code-samples]
 == {empty}
@@ -209,30 +210,6 @@ https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
    "SELECT * FROM users WHERE addrs.work.state=$s",
    s="California")
 ----
-
-|===
-
-[.logos]
-== {empty}
-
-image:white-logos/linkedin.svg[,100,]
-image:white-logos/united.svg[,100,]
-image:white-logos/tesco.svg[,100,]
-image:white-logos/sky.svg[,100,]
-image:white-logos/amadeus.svg[,100,]
-image:white-logos/marriott-international.svg[,100,]
-image:white-logos/bd.svg[,100,]
-image:white-logos/paypal.svg[,100,]
-image:white-logos/verizon.svg[,100,]
-image:white-logos/ebay.svg[,100,]
-image:white-logos/cisco.svg[,100,]
-image:white-logos/pge.svg[,100,]
-image:white-logos/wells-fargo.svg[,100,]
-image:white-logos/comcast.svg[,100,]
-image:white-logos/tommy-hilfiger.svg[,100,]
-image:white-logos/directv.svg[,100,]
-https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
-
 
 [.tiles.centered-tiles.new-to-couchbase]
 == New to Couchbase?
@@ -275,7 +252,7 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 
 ==== N1QL and SQL++
 
-**N1QL** is Couchbase's implementation of SQL++ for querying Couchbase apps.
+**N1QL** is Couchbase's implementation of SQL++ for querying data.
 
 * https://docs.couchbase.com/server/current/getting-started/try-a-query.html[N1QL getting started]
 * https://docs.couchbase.com/server/current/n1ql/n1ql-intro/index.html[N1QL queries and results]
