@@ -29,7 +29,6 @@ div.body main.home #preamble img {
   border: 1px solid #d8d8d8;
 }
 div.body main.home div.logos {
-  margin-top: -20px;
   background-color: #4287d6;
   padding: 1px 20px 1px 20px;
   text-align: center;
@@ -58,9 +57,6 @@ div.body main.home div.logos div.paragraph p a {
 }
 div.body main.home div.tiles.code-samples {
   margin-top: 45px;
-}
-div.body main.home div.tiles.code-samples h2 {
-  display: none;
 }
 div.body main.home div.tiles.code-samples .tile {
   text-align: center;
@@ -98,6 +94,7 @@ div.body main.home div.tiles .tile p {
 div.body main.home div.tiles.centered-tiles h2 {
   font-size: 1.5rem;
   padding-bottom: 0px;
+  text-align: center;
 }
 div.body main.home div.tiles.centered-tiles .tile .paragraph p {
   text-align: center;
@@ -109,7 +106,7 @@ div.body main.home div.tiles.centered-tiles.new-to-couchbase {
   top: 0px;
   z-index: 10;
   background-color: white;
-  padding-bottom: 15px;
+  padding: .5rem;
 }
 div.body main.home div.tiles.more-info .tile {
   padding-left: 1rem;
@@ -118,23 +115,23 @@ div.body main.home div.tiles.more-info .tile {
 div.body main.home div.tiles.more-info .tile.shots img {
   border: 1px solid #d8d8d8;
 }
+div.body main.home .banner {
+  margin-top: 3rem;
+}
 div.body main.home .banner h2 {
   margin-top: 50px;
   background-color: aliceblue;
-  padding: 10px 10px 10px 10px;
+  padding: 2.5rem .5rem;
   text-align: center;
 }
-div.body main.home .banner.cta h2 {
-  padding: 40px 0 40px 0;
-  font-weight: normal
-}
+
 div.body main.home .banner.cta h2 a {
   margin: 8px 10px 8px 10px;
   background-color: #4287d6;
   padding: 8px 20px 8px 20px;
   color: white;
 }
-div.body main.home .tiles.centered-tiles.community-more h2 {
+div.body main.home .tiles.community-more h2 {
   font-size: 2rem;
 }
 div.body main.home a.github {
@@ -148,6 +145,9 @@ div.body main.home a.github {
 div.body main.home a.github:hover {
   text-decoration: underline #fff;
 }
+h3 {
+  margin-bottom: 1rem;
+}
 </style>
 ++++
 endif::[]
@@ -160,32 +160,9 @@ image:../../server/6.5/manage/_images/manage-ui/documentsScreenWithDocuments.png
 image:../../server/6.5/tools/_images/query-monitor.png[,180,]
 image:../../server/6.5/manage/_images/manage-ui/indexInQueryWorkbench.png[,180,]
 
-[.logos]
-== {empty}
-
-image:white-logos/linkedin.svg[,100,]
-image:white-logos/united.svg[,100,]
-image:white-logos/tesco.svg[,100,]
-image:white-logos/sky.svg[,100,]
-image:white-logos/amadeus.svg[,100,]
-image:white-logos/marriott-international.svg[,100,]
-image:white-logos/bd.svg[,100,]
-image:white-logos/paypal.svg[,100,]
-image:white-logos/verizon.svg[,100,]
-image:white-logos/ebay.svg[,100,]
-image:white-logos/cisco.svg[,100,]
-image:white-logos/pge.svg[,100,]
-image:white-logos/wells-fargo.svg[,100,]
-image:white-logos/comcast.svg[,100,]
-image:white-logos/tommy-hilfiger.svg[,100,]
-image:white-logos/directv.svg[,100,]
-https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
-
 [.tiles.code-samples]
-== {empty}
 
 [.tile]
-=== {empty}
 
 [cols="1a,1a"]
 |===
@@ -210,21 +187,38 @@ https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
 
 |===
 
+[.tiles.logos]
+
+image:white-logos/linkedin.svg[,100,]
+image:white-logos/united.svg[,100,]
+image:white-logos/tesco.svg[,100,]
+image:white-logos/sky.svg[,100,]
+image:white-logos/amadeus.svg[,100,]
+image:white-logos/marriott-international.svg[,100,]
+image:white-logos/bd.svg[,100,]
+image:white-logos/paypal.svg[,100,]
+image:white-logos/verizon.svg[,100,]
+image:white-logos/ebay.svg[,100,]
+image:white-logos/cisco.svg[,100,]
+image:white-logos/pge.svg[,100,]
+image:white-logos/wells-fargo.svg[,100,]
+image:white-logos/comcast.svg[,100,]
+image:white-logos/tommy-hilfiger.svg[,100,]
+image:white-logos/directv.svg[,100,]
+https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
+
 [.tiles.centered-tiles.new-to-couchbase]
 == New to Couchbase?
 
 [.tile]
-=== {empty}
 
 https://docs.couchbase.com/server/current/getting-started/start-here.html[Getting Started]
 
 [.tile]
-=== {empty}
 
 https://docs.couchbase.com/server/current/introduction/intro.html[Why Couchbase?]
 
 [.tile]
-=== {empty}
 
 https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL with SQL++?]
 
@@ -237,7 +231,6 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 [.tile]
 === Learn Couchbase Server
 
-{nbsp}
 
 * https://docs.couchbase.com/server/current/learn/architecture-overview.html[What is Couchbase Server?]
 
@@ -261,7 +254,6 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 [.tile]
 === Try Couchbase Server
 
-{nbsp}
 
 * **https://query-tutorial.couchbase.com/[Online playground]** for test driving and learning N1QL
 
@@ -274,7 +266,6 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 * Community and Enterprise https://docs.couchbase.com/server/current/introduction/editions.html[Editions] are available to launch fast & to grow -- and to have the option for business-critical long term support
 
 [.tiles.more-info]
-== {empty}
 
 [.tile]
 === SDK's and connectors
@@ -291,7 +282,6 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 * https://docs.couchbase.com/server/current/connectors/intro.html[Connectors] for Kafka, Spark, Hadoop, ODBC/JDBC and more
 
 [.tile]
-=== {empty}
 
 [source,java]
 ----
@@ -308,7 +298,6 @@ System.out.println(getResult);
 ----
 
 [.tiles.more-info]
-== {empty}
 
 [.tile]
 === Advanced operations
@@ -322,12 +311,10 @@ System.out.println(getResult);
 * https://docs.couchbase.com/server/current/eventing/eventing-overview.html[Eventing] for asynchronous triggers on data changes
 
 [.tile.shots]
-=== {empty}
 
 image::../../server/6.5/manage/_images/manage-ui/indexScreenWithIndexes.png[,380,]
 
 [.tiles.more-info]
-== {empty}
 
 [.tile]
 === Production scale
@@ -338,12 +325,10 @@ image::../../server/6.5/manage/_images/manage-ui/indexScreenWithIndexes.png[,380
 * https://docs.couchbase.com/server/current/learn/security/security-overview.html[Advanced security] with authentication, authorization, role-based access control, encryption and auditing
 
 [.tile.shots]
-=== {empty}
 
 image::../../server/6.5/manage/_images/manage-nodes/rebalanceProgressBarFollowingRemoval.png[,380,]
 
 [.tiles.more-info]
-== {empty}
 
 [.tile]
 === Management tools
@@ -355,15 +340,8 @@ image::../../server/6.5/manage/_images/manage-nodes/rebalanceProgressBarFollowin
 * https://docs.couchbase.com/server/current/install/install-production-deployment.html[Deployment guidelines] with security and sizing considerations
 
 [.tile.shots]
-=== {empty}
 
 image::../../server/6.5/manage/_images/manage-groups/groupsScreenWithOpenGroup.png[,380,]
-
-{nbsp}
-
-{nbsp}
-
-{nbsp}
 
 [.tiles.more-info]
 == Couchbase Mobile and Edge
@@ -371,34 +349,24 @@ image::../../server/6.5/manage/_images/manage-groups/groupsScreenWithOpenGroup.p
 [.tile]
 === Couchbase Lite
 
-{nbsp}
-
 * https://docs.couchbase.com/couchbase-lite/current/introduction.html[Couchbase Lite] is an embedded NoSQL JSON database for mobile/edge apps, available for Java, Android, Swift, Objective-C, C#, and JavaScript
 
 [.tile]
 === Sync Gateway
-
-{nbsp}
 
 * https://docs.couchbase.com/sync-gateway/current/introduction.html[Sync Gateway] is an internet-facing server that securely transfers data between mobile/edge Couchbase Lite instances and Couchbase Server
 
 [.tile]
 === Go deeper
 
-{nbsp}
-
 * https://docs.couchbase.com/sync-gateway/current/shared-bucket-access.html[Data synchronization] with Sync Gateway
 * https://docs.couchbase.com/sync-gateway/current/kubernetes/deploy-cluster.html[Kubernetes image:kubernetes-logo.svg[,18,] option] for deploying Sync Gateway
 
-{nbsp}
-
-{nbsp}
 
 [.tiles.centered-tiles.community-more]
 == Community resources
 
 [.tile]
-=== {empty}
 
 https://www.couchbase.com/community[Community links]
 {nbsp}{nbsp}{nbsp}
@@ -408,9 +376,6 @@ https://developer.couchbase.com/open-source-projects[Open source projects]
 {nbsp}
 link:https://github.com/couchbase[GitHub,,role=github]
 
-{nbsp}
-
-{nbsp}
-
 [.banner.cta]
 == **https://docs.couchbase.com/server/current/getting-started/start-here.html[Get Started]** https://query-tutorial.couchbase.com/[Try the online N1QL tutorial]
+
