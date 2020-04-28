@@ -1,6 +1,7 @@
 = Couchbase for Developers
 :page-layout: home
-:description: Learn the art of building apps on Couchbase, a modern multicloud to edge NoSQL database for building agile, scalable, resilient, and high-performance business applications.
+//:title: Couchbase for Developers
+:description: Access the documentation, tutorials, and resources you need for building apps on Couchbase, a modern multicloud to edge database with agility, performance, scale, and resilience.
 :!sectids:
 
 ifdef::basebackend-html[]
