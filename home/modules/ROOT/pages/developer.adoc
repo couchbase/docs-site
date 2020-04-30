@@ -281,7 +281,7 @@ https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[NoSQL 
 [.tile]
 === SDKs and Connectors
 
-* SDK for https://docs.couchbase.com/java-sdk/current/start-using-sdk.html[Java]
+* SDK for https://docs.couchbase.com/java-sdk/current/start-using-sdk.html[Java] and https://docs.couchbase.com/scala-sdk/current/hello-world/start-using-sdk.html[Scala]
 * SDK for https://docs.couchbase.com/dotnet-sdk/current/start-using-sdk.html[C# / .NET]
 * SDK for https://docs.couchbase.com/nodejs-sdk/current/hello-world/start-using-sdk.html[Node.js]
 * SDK for https://docs.couchbase.com/python-sdk/current/start-using-sdk.html[Python]
