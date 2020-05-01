@@ -1,7 +1,7 @@
 = Couchbase for Developers
 :page-layout: home
 //:title: Couchbase for Developers
-:description: Access the documentation, tutorials, and resources you need for building apps on Couchbase, a modern multicloud to edge database with agility, performance, scale, and resilience.
+:description: Access the documentation, tutorials, and resources you need for building apps on Couchbase, a modern multicloud to edge document NoSQL SQL++ JSON document database with agility, performance, scale, and resilience.
 :!sectids:
 
 ifdef::basebackend-html[]
@@ -45,7 +45,7 @@ div.body main.home div.logos div.paragraph p {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  overflow: scroll;
+  overflow: hidden;
 }
 div.body main.home div.logos div.paragraph p * {
   flex: 1;
