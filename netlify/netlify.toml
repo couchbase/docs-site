@@ -18,9 +18,9 @@ echo '<!DOCTYPE html>\n<meta http-equiv="refresh" content="0; url=https://docs.c
 
 [context.deploy-preview]
 command = """\
-if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node remove-private-content-sources.js ../production-antora-playbook.yml; fi; \
-node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../production-antora-playbook.yml || true; \
-node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../production-antora-playbook.yml\
+if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node remove-private-content-sources.js ../antora-playbook.yml; fi; \
+node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
+node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
 """
 
 [[headers]]

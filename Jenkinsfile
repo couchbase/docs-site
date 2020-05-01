@@ -3,7 +3,6 @@
 def awsCredentialsId = 'couchbase-prod-aws'
 def githubApiCredentialsId = 'docs-robot-github-token'
 def sshPrivKeyCredentialsId = 'terraform-ssh-key'
-def siteProfile = 'production'
 def siteS3Bucket = 'docs.couchbase.com'
 def infraProfile = 'prod'
 def infraS3Bucket = 'docs.couchbase.com-terraform-backend'
@@ -14,7 +13,7 @@ def awsCredentials = [$class: 'AmazonWebServicesCredentialsBinding', credentials
 def githubApiCredentials = usernamePassword(credentialsId: githubApiCredentialsId, usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_TOKEN')
 
 def triggerEventType
-def dayOfWeek
+def s3Cmd = 'cp --recursive'
 
 // Jenkins job configuration
 // -------------------------
@@ -32,7 +31,6 @@ def dayOfWeek
 // Build Configuration:
 // Mode: by Jenkinsfile
 // Script Path: Jenkinsfile
-// [x] Discard old items: Days to keep old items: 60
 pipeline {
   agent {
     dockerfile {
@@ -41,11 +39,11 @@ pipeline {
     }
   }
   environment {
+    CI='true'
     ALGOLIA_APP_ID='NI1G57N08Q'
     ALGOLIA_API_KEY='d3eff3e8bcc0860b8ceae87360a47d54'
     ALGOLIA_INDEX_NAME='prod_docs_couchbase'
-    // CloudFront is now configured to force http -> https
-    FORCE_HTTPS='false'
+    FORCE_HTTPS='false' // CloudFront is configured to force http -> https
     NODE_OPTIONS='--max-old-space-size=4096'
     OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
     NODE_PATH='/usr/local/share/.config/yarn/global/node_modules'
@@ -58,6 +56,7 @@ pipeline {
   //  cron('TZ=Etc/UTC\nH H(2-4) * * *')
  // }
   options {
+    buildDiscarder logRotator(artifactDaysToKeepStr: '60', artifactNumToKeepStr: '', daysToKeepStr: '60', numToKeepStr: '')
     disableConcurrentBuilds()
   }
   stages {
@@ -67,7 +66,9 @@ pipeline {
           properties([[$class: 'GithubProjectProperty', projectUrlStr: "https://github.com/$githubAccount/$githubRepo"]])
           env.GIT_COMMIT = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
           triggerEventType = currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size() > 0 ? 'cron' : 'push'
-          dayOfWeek = sh(script: 'date +%u', returnStdout: true).trim()
+          if (triggerEventType == 'cron' && Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+            s3Cmd = 'sync --delete --exact-timestamps'
+          }
         }
         withCredentials([awsCredentials]) {
           withEnv(sh(script: "aws s3 cp s3://$infraS3Bucket/$infraProfile/infra.conf -", returnStdout: true).trim().split("\n") as List) {
@@ -84,11 +85,11 @@ pipeline {
     stage('Build') {
       steps {
         withCredentials([githubApiCredentials]) {
-          withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com", "STAGE=$siteProfile"]) {
+          withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com"]) {
             script {
               // NOTE to enforce this validation, remove this try-catch block
               try {
-                sh "antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace $siteProfile-antora-playbook.yml > xref-validator.log 2>&1"
+                sh "antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace antora-playbook.yml > xref-validator.log 2>&1"
               } catch (err) {
                 def report = readFile('xref-validator.log')
                 if (!report.contains('antora: xref validation failed')) {
@@ -99,7 +100,7 @@ pipeline {
               }
             }
             // NOTE we don't use --fetch here since it was already done when running the xref validator
-            sh "antora --cache-dir=./.cache/antora --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL $siteProfile-antora-playbook.yml"
+            sh "antora --cache-dir=./.cache/antora --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
         sh 'cat etc/nginx/snippets/rewrites.conf public/.etc/nginx/rewrite.conf | awk -F \' +\\\\{ +\' \'{ if ($1 && a[$1]++) { print sprintf("Duplicate location found on line %s: %s", NR, $0) > "/dev/stderr" } else { print $0 } }\' > public/.etc/nginx/combined-rewrites.conf'
@@ -110,8 +111,6 @@ pipeline {
         sh 'node scripts/print-site-stats.js'
         withCredentials([awsCredentials]) {
           script {
-            // NOTE run sync during Sunday cron job to prune old files
-            def s3Cmd = triggerEventType == 'cron' && dayOfWeek == '7' ? 'sync --delete --exact-timestamps' : 'cp --recursive'
             def includeFilter = sh(script: 'find public -mindepth 1 -maxdepth 1 -type d -name [a-z_]\\* -printf %f\\\\0', returnStdout: true).trim().split('\0').sort().collect { "--include '$it/*'" }.join(' ')
             sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' ${includeFilter} --exclude '_/font/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
             sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' --include 'sitemap*.xml' --include 'index.html' --include '404.html' --include 'robots.txt' --exclude '*/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
