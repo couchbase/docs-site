@@ -57,7 +57,9 @@ content:
     branches: [master]
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials
-    branches: getting-started-ce
+    branches: quickstarts
+  - url: https://github.com/couchbase/developer-content
+    branches: master    
   - url: https://github.com/couchbaselabs/tutorial-template
     branches: master
   - url: https://github.com/couchbaselabs/mobile-travel-sample
