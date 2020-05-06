@@ -57,7 +57,7 @@ content:
     branches: [master]
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials
-    branches: quickstarts
+    branches: master
   - url: https://github.com/couchbase/developer-content
     branches: master    
   - url: https://github.com/couchbaselabs/tutorial-template
@@ -70,7 +70,7 @@ content:
   - url: https://github.com/couchbaselabs/hotel-lister-cordova
     branches: master
   - url: https://github.com/couchbaselabs/tutorials-contrib
-    branches: update-acoliver-pr
+    branches: master
   - url: https://github.com/couchbaselabs/mobile-training-todo
     branches: tutorials
     start_path: content
