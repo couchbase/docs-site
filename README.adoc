@@ -13,16 +13,12 @@ This is the Antora playbook project (aka site build) for the Couchbase documenta
 
 == Playbook
 
-The playbook, defined in a playbook file, configures the build for the site.
+The playbook, defined in the playbook file [.path]_antora-playbook.yml_, configures the build for this site.
 The playbook specifies the content sources (repository and branches), site URL, UI bundle URL, global AsciiDoc attributes, and Asciidoctor extensions.
 
-There are two playbook files in this repository, one for each environment.
-
-production-antora-playbook.yml:: Configures the build for the *production* site.
-staging-antora-playbook.yml:: Configures the build for the *staging* site.
-
-The staging site is built for each pull request.
 The production site is built for each change to the master branch.
+A deploy preview of the site is also published for each pull request, though without any of the private content sources (unless the pull request comes from a trusted source).
+The configuration for the deploy preview build is located in the [.path]_netlify_ folder.
 
 == Home Docs Component
 
@@ -42,7 +38,7 @@ To use the script, run the following.
 . Install dependencies.
 
  $ npm i -g gulp-cli
- $ npm i
+ $ npm i --no-optional
 
 . If you're using Chrome, install the LiveReload https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[chrome extension].
 Firefox has built-in support for LiveReload.
@@ -83,11 +79,10 @@ This project uses the @antora/xref-validator package to validate xrefs.
 The validation is currently handled using a separate invocation of Antora.
 
 For the production build, the validator is installed into the Docker container (see Dockerfile.jenkins).
-For the staging build, the validator is installed as a project dependency (see netlify/package.json).
-For local builds, the validator is also installed as a project depnedency (see package.json).
+For local builds, the validator is installed as a project depnedency (see package.json).
 
-The validator runs on every build (both production and staging) to check for broken xrefs (i.e., broken links between pages).
-Currently, the validator is non-enforcing in both environemnts.
+The validator runs on every build to check for broken xrefs (i.e., broken links between pages).
+Currently, the validator is not enforcing.
 
 === Reading the Report
 
@@ -127,11 +122,11 @@ That's the xref that needs to be fixed (if it's still broken).
 To run the report on your local machine, first switch to the playbook repository (i.e., docs-site).
 Next, install the dependencies (which you may have already done):
 
- $ npm i
+ $ npm i --no-optional
 
 Then, run the xref validator as follows:
 
- $ ./node_modules/.bin/antora --fetch --generator=@antora/xref-validator production-antora-playbook.yml > xref-validator.log 2>&1
+ $ ./node_modules/.bin/antora --fetch --generator=@antora/xref-validator antora-playbook.yml > xref-validator.log 2>&1
 
 Finally, view the report.
 You can find the report in the [.path]_xref-validator.log_ file.

@@ -7,6 +7,7 @@ CI = "true"
 NODE_VERSION = "12"
 NPM_FLAGS = "--no-optional"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+SUPPORTS_CURRENT_URL="true"
 
 # NOTE branch-deploy refers to the master branch
 
@@ -18,12 +19,21 @@ echo '<!DOCTYPE html>\n<meta http-equiv="refresh" content="0; url=https://docs.c
 
 [context.deploy-preview]
 command = """\
-if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node remove-private-content-sources.js ../production-antora-playbook.yml; fi; \
-node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../production-antora-playbook.yml || true; \
-node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../production-antora-playbook.yml\
+if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node remove-private-content-sources.js ../antora-playbook.yml; fi; \
+node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
+node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml && \
+node add-current-url-redirects.js ../etc/nginx/snippets/rewrites.conf\
 """
 
 [[headers]]
 for = "/_/font/*"
   [headers.values]
   Cache-Control = "public,max-age=604800"
+
+# NOTE the following redirects get appended to the redirects defined in the _redirects file
+
+[[redirects]]
+# NOTE all paths that don't resolve to a static file or previous redirect rule
+from = "/*"
+to = "/home/index.html"
+status = 302
