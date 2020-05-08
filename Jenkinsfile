@@ -113,7 +113,7 @@ pipeline {
           script {
             def includeFilter = sh(script: 'find public -mindepth 1 -maxdepth 1 -type d -name [a-z_]\\* -printf %f\\\\0', returnStdout: true).trim().split('\0').sort().collect { "--include '$it/*'" }.join(' ')
             sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' ${includeFilter} --exclude '_/font/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
-            sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' --include 'sitemap*.xml' --include 'index.html' --include '404.html' --include 'robots.txt' --exclude '*/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
+            sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' --include 'sitemap*.xml' --include 'site-manifest.json' --include 'index.html' --include '404.html' --include 'robots.txt' --exclude '*/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
           }
           // NOTE copy fonts again to fix content-type header
           sh "aws s3 cp public/_/font/ s3://$siteS3Bucket/_/font/ --recursive --exclude '*' --include '*.woff' --acl public-read --cache-control 'public,max-age=604800' --content-type 'application/font-woff' --metadata-directive REPLACE --only-show-errors"
