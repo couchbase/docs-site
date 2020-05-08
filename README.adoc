@@ -82,7 +82,7 @@ For the production build, the validator is installed into the Docker container (
 For local builds, the validator is installed as a project depnedency (see package.json).
 
 The validator runs on every build to check for broken xrefs (i.e., broken links between pages).
-Currently, the validator is not enforcing.
+Currently, the validator does not enforce these checks.
 
 === Reading the Report
 

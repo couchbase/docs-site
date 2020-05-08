@@ -100,7 +100,7 @@ pipeline {
               }
             }
             // NOTE we don't use --fetch here since it was already done when running the xref validator
-            sh "antora --cache-dir=./.cache/antora --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
+            sh "antora --cache-dir=./.cache/antora --clean --generator=@antora/site-generator-ms --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
         sh 'cat etc/nginx/snippets/rewrites.conf public/.etc/nginx/rewrite.conf | awk -F \' +\\\\{ +\' \'{ if ($1 && a[$1]++) { print sprintf("Duplicate location found on line %s: %s", NR, $0) > "/dev/stderr" } else { print $0 } }\' > public/.etc/nginx/combined-rewrites.conf'
