@@ -46,11 +46,11 @@ asciidoc:
   attributes:
     max-include-depth: 10
     page-partial: false
-    primary-site-manifest-url: ./primary-site-manifest.json.gz
+    #primary-site-manifest-url: ./primary-site-manifest.json.gz
+    primary-site-url: https://docs.couchbase.com
     experimental: ''
     idprefix: '@'
     idseparator: '-@'
-    site-stage-production: ''
     tabs: tabs
     toc: ~
     xrefstyle: short
