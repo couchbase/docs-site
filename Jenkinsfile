@@ -13,7 +13,7 @@ def awsCredentials = [$class: 'AmazonWebServicesCredentialsBinding', credentials
 def githubApiCredentials = usernamePassword(credentialsId: githubApiCredentialsId, usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_TOKEN')
 
 def triggerEventType
-def s3Cmd = 'aws s3 cp --recursive'
+def s3Cmd = 'cp --recursive'
 
 // Jenkins job configuration
 // -------------------------
@@ -66,7 +66,7 @@ pipeline {
           env.GIT_COMMIT = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
           triggerEventType = currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size() > 0 ? 'cron' : 'push'
           if (triggerEventType == 'cron' && Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-            s3Cmd = 'aws s3 sync --delete --exact-timestamps'
+            s3Cmd = 'sync --delete --exact-timestamps'
           }
         }
         withCredentials([awsCredentials]) {
@@ -108,9 +108,9 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        //sh 'node scripts/print-site-stats.js'
+        sh 'node scripts/print-site-stats.js'
         withCredentials([awsCredentials]) {
-          sh "${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '.etc/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
+          sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '.etc/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
           // NOTE copy fonts again to fix content-type header and set max-age
           sh "aws s3 cp public/_/font/ s3://$siteS3Bucket/_/font/ --recursive --exclude '*' --include '*.woff' --acl public-read --cache-control 'public,max-age=604800' --content-type 'application/font-woff' --metadata-directive REPLACE --only-show-errors"
           sh "aws s3 cp public/_/font/ s3://$siteS3Bucket/_/font/ --recursive --exclude '*' --include '*.woff2' --acl public-read --cache-control 'public,max-age=604800' --content-type 'font/woff2' --metadata-directive REPLACE --only-show-errors"
