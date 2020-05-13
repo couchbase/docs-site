@@ -46,7 +46,6 @@ asciidoc:
   attributes:
     max-include-depth: 10
     page-partial: false
-    #primary-site-manifest-url: ./primary-site-manifest.json.gz
     primary-site-url: https://docs.couchbase.com
     experimental: ''
     idprefix: '@'
