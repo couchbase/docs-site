@@ -67,7 +67,7 @@ If you are a Couchbase user wanting to develop for applications on the edge
 
 [.tile]
 .Couchbase Cloud
-* https://info.couchbase.com/rs/302-GJY-034/images/10min_to_Cloud_vF.pdf[Public Cloud]
+* https://resources.couchbase.com/quickstart-cb-in-the-cloud-id-zn-aj8[Public Cloud]
 * xref:operator::overview.adoc[Autonomous Operator]
 
 [.tile]
