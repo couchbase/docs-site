@@ -1,4 +1,4 @@
-# $(npm bin)/antora --generator=@antora/site-generator-ms --fetch --clean antora-playbook.yml
+# $(npm bin)/antora --clean --fetch --generator=@antora/site-generator-ms antora-playbook.yml
 site:
   title: Couchbase Docs Archive
   url: https://docs-archive.couchbase.com
