@@ -23,7 +23,7 @@ content:
   - url: https://github.com/couchbase/docs-server
     branches: [release/4.6, release/4.5, release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: release/*
+    branches: [release/6.0, release/5.5, release/5.1, release/4.6, release/4.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/2.9, release/2.8, release/2.7, release/2.6, release/2.5]
   - url: https://github.com/couchbase/docs-sdk-dotnet
