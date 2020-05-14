@@ -1,16 +1,20 @@
 [build]
-base = "netlify"
 publish = "public"
+ignore = "false"
 
 [build.environment]
 CI = "true"
 NODE_VERSION = "12"
+NPM_FLAGS = "--no-optional"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+SUPPORTS_CURRENT_URL="true"
 
-[context.production]
+# NOTE branch-deploy refers to the archive branch
+
+[context.branch-deploy]
 command = """\
-export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; \
-node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public ../antora-playbook.yml\
+mkdir public && \
+echo '<!DOCTYPE html>\n<meta http-equiv="refresh" content="0; url=https://docs.couchbase.com">\n<meta name="robots" content="noindex">\n<title>Redirect Notice"</title>\n<p>Redirecting to <a href="https://docs.couchbase.com">docs.couchbase.com</a>...</p>' > public/index.html\n
 """
 
 [context.deploy-preview]
