@@ -78,6 +78,7 @@ The browser tab should automatically reload after a short while.
 . Use Ctrl+C to stop the process.
 ////
 
+////
 == Xref Validation
 
 This project uses the @antora/xref-validator package to validate xrefs.
@@ -135,6 +136,7 @@ Then, run the xref validator as follows:
 
 Finally, view the report.
 You can find the report in the [.path]_xref-validator.log_ file.
+////
 
 == Contributing
 
