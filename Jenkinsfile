@@ -50,11 +50,10 @@ pipeline {
     SHOW_FEEDBACK_BUTTON='true'
     SUPPORTS_CURRENT_URL='true'
   }
-  // Disable auto-builds in prep for releases
-  //triggers {
-  //  githubPush()
-  //  cron('TZ=Etc/UTC\nH H(2-4) * * *')
- // }
+  triggers {
+    githubPush()
+    cron('TZ=Etc/UTC\nH H(2-4) * * *')
+  }
   options {
     buildDiscarder logRotator(artifactDaysToKeepStr: '60', artifactNumToKeepStr: '', daysToKeepStr: '60', numToKeepStr: '')
     disableConcurrentBuilds()
