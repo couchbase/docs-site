@@ -48,7 +48,7 @@ pipeline {
     OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
     NODE_PATH='/usr/local/share/.config/yarn/global/node_modules'
     SHOW_FEEDBACK_BUTTON='true'
-    //SUPPORTS_CURRENT_URL='true'
+    PRIMARY_SITE_SUPPORTS_CURRENT_URL='true'
   }
   triggers {
     githubPush()
