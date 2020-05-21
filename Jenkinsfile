@@ -74,8 +74,7 @@ pipeline {
             script {
               // exposes environment variables to other stages
               env.WEB_PUBLIC_IP = env.WEB_PUBLIC_IP
-              //env.WEB_PUBLIC_URL = env.WEB_PUBLIC_URL
-              env.WEB_PUBLIC_URL = env.CDN_URL
+              env.WEB_PUBLIC_URL = env.WEB_PUBLIC_URL
               env.CDN_DISTRIBUTION_ID = env.CDN_DISTRIBUTION_ID
             }
           }
