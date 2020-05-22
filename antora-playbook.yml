@@ -32,7 +32,7 @@ content:
     branches: [mad-hatter, 6.5.x-docs, alice, vulcan]
     start_path: docs
   - url: https://git@github.com/couchbase/backup
-    branches: [6.5.x-docs, alice, vulcan, spock, 5.0.x]
+    branches: [mad-hatter, 6.5.x-docs, alice, vulcan]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
