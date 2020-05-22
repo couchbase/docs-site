@@ -65,6 +65,7 @@ content:
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials
   - url: https://github.com/couchbase/developer-content
+    branches: master
   - url: https://github.com/couchbaselabs/tutorial-template
   - url: https://github.com/couchbaselabs/mobile-travel-sample
     start_path: content
