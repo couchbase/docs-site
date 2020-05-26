@@ -1,7 +1,7 @@
 # Extends the official Algolia docsearch-scraper image so it can be used with
 # Jenkins. It's used by the docsearch-scraper CI job, which is configured in the
 # adjacent Jenkinsfile.
-FROM algolia/docsearch-scraper:v1.3.1
+FROM algolia/docsearch-scraper:v1.6.0
 
 ARG GROUP_ID=1000
 ARG USER_ID=1000
