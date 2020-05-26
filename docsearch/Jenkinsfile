@@ -31,16 +31,15 @@ pipeline {
     UPDATE_NB_HITS=false
   }
   stages {
-    //stage('Install') {
-    //  steps {
-    //    sh '(cd /docsearch && pipenv install)'
-    //  }
-    //}
+    stage('Install') {
+      steps {
+        sh '(cd /docsearch && pipenv install)'
+      }
+    }
     stage('Run') {
       steps {
         configFileProvider([configFile(fileId: 'algolia-application-credentials', targetLocation: '.env')]) {
-          sh '(mv .env /docsearch/.env)'
-          //sh '(cd /docsearch && pipenv run python -m src.index)'
+          sh '(mv .env /docsearch/ && cd /docsearch && pipenv run python -m src.index)'
         }
       }
     }
