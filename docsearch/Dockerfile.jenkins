@@ -1,0 +1,12 @@
+# Extends the official Algolia docsearch-scraper image so it can be used with
+# Jenkins. It's used by the docsearch-scraper CI job, which is configured in the
+# adjacent Jenkinsfile.
+FROM algolia/docsearch-scraper:v1.3.1
+
+RUN mkdir -m 777 /docsearch &&\
+    cp /root/Pipfile* /docsearch/ &&\
+    cp -r /root/src /docsearch/ &&\
+    find /docsearch/src -type d -exec chmod 755 {} \; &&\
+    find /docsearch -type f -exec chmod 644 {} \;
+
+ENTRYPOINT [ "" ]

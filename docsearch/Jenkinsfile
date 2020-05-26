@@ -1,0 +1,46 @@
+#!/bin/env groovy
+
+// Jenkins job configuration
+// -------------------------
+// Category: Multibranch Pipeline
+// Pipeline name: docs-search-indexer
+// Branch Sources: Single repository & branch
+// Name: archive
+// Source Code Management: Git
+// Repository URL: https://github.com/couchbase/docs-site
+// Credentials: - none -
+// Refspec: +refs/heads/archive:refs/remotes/origin/archive
+// Branch specifier: refs/heads/archive
+// Advanced clone behaviors: [ ] Fetch tags, [x] Honor refspec on initial clone, [x] Shallow clone (depth: 3)
+// Build Configuration:
+// Mode: by Jenkinsfile
+// Script Path: docsearch/Jenkinsfile
+pipeline {
+  agent {
+    dockerfile {
+      dir 'docsearch'
+      filename 'Dockerfile.jenkins'
+    }
+  }
+  environment {
+    CONFIG="${env.WORKSPACE}/docsearch/archive-config.json"
+    HOME='/docsearch'
+    PIPENV_HIDE_EMOJIS=true
+    PIPENV_NOSPIN=true
+    UPDATE_NB_HITS=false
+  }
+  stages {
+    stage('Install') {
+      steps {
+        sh '(cd /docsearch && pipenv install)'
+      }
+    }
+    stage('Run') {
+      steps {
+        configFileProvider([configFile(fileId: 'algolia-application-credentials', targetLocation: '/docsearch/.env')]) {
+          sh '(cd /docsearch && pipenv run python -m src.index)'
+        }
+      }
+    }
+  }
+}
