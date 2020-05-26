@@ -39,7 +39,7 @@ pipeline {
     stage('Run') {
       steps {
         configFileProvider([configFile(fileId: 'algolia-application-credentials', targetLocation: '.env')]) {
-          sh 'ls -l .env'
+          sh '(source .env && echo $APPLICATION_ID)'
           //sh '(cd /docsearch && pipenv run python -m src.index)'
         }
       }
