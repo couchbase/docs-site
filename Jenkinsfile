@@ -40,9 +40,9 @@ pipeline {
   }
   environment {
     CI='true'
-    //ALGOLIA_APP_ID='NI1G57N08Q'
-    //ALGOLIA_API_KEY='d3eff3e8bcc0860b8ceae87360a47d54'
-    //ALGOLIA_INDEX_NAME='prod_docs_couchbase'
+    ALGOLIA_APP_ID='NI1G57N08Q'
+    ALGOLIA_API_KEY='d3eff3e8bcc0860b8ceae87360a47d54'
+    ALGOLIA_INDEX_NAME='archive_docs_couchbase'
     FORCE_HTTPS='false' // CloudFront is configured to force http -> https
     NODE_OPTIONS='--max-old-space-size=4096'
     OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
@@ -74,7 +74,8 @@ pipeline {
             script {
               // exposes environment variables to other stages
               env.WEB_PUBLIC_IP = env.WEB_PUBLIC_IP
-              env.WEB_PUBLIC_URL = env.WEB_PUBLIC_URL
+              //env.WEB_PUBLIC_URL = env.WEB_PUBLIC_URL
+              env.WEB_PUBLIC_URL = env.CDN_URL
               env.CDN_DISTRIBUTION_ID = env.CDN_DISTRIBUTION_ID
             }
           }
@@ -131,11 +132,11 @@ pipeline {
   }
   post {
     success {
-      //script {
-      //  if (triggerEventType == 'cron') {
-      //    build job: '/Antora/docsearch-scraper', wait: false
-      //  }
-      //}
+      script {
+        if (triggerEventType == 'cron') {
+          build job: '/Antora/docs-search-indexer/archive', wait: false
+        }
+      }
       githubNotify credentialsId: githubApiCredentialsId, account: githubAccount, repo: githubRepo, sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build succeeded', status: 'SUCCESS'
     }
     failure {
