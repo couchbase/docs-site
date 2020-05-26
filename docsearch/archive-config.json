@@ -2,7 +2,7 @@
   "index_name": "archive_docs_couchbase",
   "start_urls": [
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "server"
@@ -16,7 +16,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "c-sdk"
@@ -31,7 +31,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "dotnet-sdk"
@@ -46,7 +46,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "go-sdk"
@@ -60,7 +60,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "java-sdk"
@@ -75,7 +75,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "nodejs-sdk"
@@ -89,7 +89,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "php-sdk"
@@ -103,7 +103,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "python-sdk"
@@ -117,7 +117,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "couchbase-lite"
@@ -129,7 +129,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "sync-gateway"
@@ -141,7 +141,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "elasticsearch-connector"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "kafka-connector"
@@ -163,7 +163,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
       "variables": {
         "component": [
           "spark-connector"
@@ -178,23 +178,11 @@
   "sitemap_urls": [
     "https://dhmeggkl6g2xg.cloudfront.net/sitemap.xml"
   ],
-  "scrape_start_urls": false,
+  "scrape_start_urls": true,
   "stop_urls": [],
   "selectors": {
     "default": {
       "lvl0": {
-        "global": true,
-        "selector": ".navbar .component"
-      },
-      "lvl1": ".doc > h1.page",
-      "lvl2": ".doc .sect1 > h2:first-child",
-      "lvl3": ".doc .sect2 > h3:first-child",
-      "lvl4": ".doc .sect3 > h4:first-child",
-      "text": ".doc p, .doc dt"
-    },
-    "contribute": {
-      "lvl0": {
-        "default_value": "Contributing Guide",
         "global": true,
         "selector": ".navbar .component"
       },
