@@ -20,6 +20,7 @@ pipeline {
     dockerfile {
       dir 'docsearch'
       filename 'Dockerfile.jenkins'
+      additionalBuildArgs '--build-arg GROUP_ID=$(id -g) --build-arg USER_ID=$(id -u)'
     }
   }
   environment {
@@ -37,7 +38,9 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh '(cd /docsearch && pipenv run python -m src.index)'
+        configFileProvider([configFile(fileId: 'algolia-application-credentials', targetLocation: '.env')]) {
+          sh '(mv .env /docsearch/ && cd /docsearch && pipenv run python -m src.index)'
+        }
       }
     }
     stage('Activate') {

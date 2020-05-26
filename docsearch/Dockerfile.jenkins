@@ -3,7 +3,11 @@
 # adjacent Jenkinsfile.
 FROM algolia/docsearch-scraper:v1.3.1
 
-RUN mkdir -m 777 /docsearch &&\
+ARG GROUP_ID=1000
+ARG USER_ID=1000
+RUN groupadd -g $GROUP_ID jenkins && \
+    useradd -u $USER_ID -g $GROUP_ID -d /docsearch -M jenkins && \
+    mkdir /docsearch && \
     cp /root/Pipfile* /docsearch/ &&\
     cp -r /root/src /docsearch/ &&\
     echo 'from algoliasearch import algoliasearch\n\
@@ -12,7 +16,8 @@ from sys import argv\n\
 client = algoliasearch.Client(env["APPLICATION_ID"], env["API_KEY"])\n\
 client.delete_index(argv[2])\n\
 client.move_index(argv[1], argv[2])' >> /docsearch/promote-index.py && \
-    find /docsearch/src -type d -exec chmod 755 {} \; &&\
+    find /docsearch -exec chown jenkins:jenkins {} \; && \
+    find /docsearch -type d -exec chmod 755 {} \; && \
     find /docsearch -type f -exec chmod 644 {} \;
 
 ENTRYPOINT [ "" ]
