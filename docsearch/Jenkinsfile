@@ -1,5 +1,20 @@
 #!/bin/env groovy
 
+// Jenkins job configuration
+// -------------------------
+// Category: Multibranch Pipeline
+// Pipeline name: docs-search-indexer
+// Branch Sources: Single repository & branch
+// Name: master
+// Source Code Management: Git
+// Repository URL: https://github.com/couchbase/docs-site
+// Credentials: - none -
+// Refspec: +refs/heads/master:refs/remotes/origin/master
+// Branch specifier: refs/heads/master
+// Advanced clone behaviors: [ ] Fetch tags, [x] Honor refspec on initial clone, [x] Shallow clone (depth: 3)
+// Build Configuration:
+// Mode: by Jenkinsfile
+// Script Path: docsearch/Jenkinsfile
 pipeline {
   agent {
     dockerfile {
