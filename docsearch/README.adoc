@@ -17,7 +17,7 @@ The search index for the documentation is hosted by {url-algolia}[Algolia].
 The index, named *prod_docs_couchbase*, is stored in the Couchbase Algolia account.
 The index is populated by the {url-docsearch-scraper-repo}[docsearch scraper] (aka crawler).
 
-The sections below document the prerequisites for running the docsearch scraper, how to run the docsearch scraper to update the index, and how to activate the index once scraping is complete.
+The sections below document the prerequisites for running the docsearch scraper and how to run the docsearch scraper to update the index.
 
 == Prerequisites
 
@@ -89,7 +89,7 @@ Then, run the `docsearch` command again, but use the Docker container instead:
 
  $ ./docsearch docker:run production-config.json
 
-Now proceed to <<Activate Index>>.
+The search index is now updated.
 
 === docker run
 
@@ -117,26 +117,6 @@ Then, make it executable:
 Finally, run it, passing the configuration file as the first argument:
 
  $ ./scrape production-config.json
-
-Proceed to <<Activate Index>> to learn how to make the index live.
-
-== Activate Index
-
-To avoid clobbering the production index by an accidental run, the scraper is configured to write to a temporary index.
-You'll need to run a script to move it into place.
-
-First, make sure you have run `pipenv install && pipenv shell` as documented above.
-Then, execute the `promote-index.py` script from the `docsearch-scraper` directory:
-
- $ python ../promote-index.py next_docs_couchbase prod_docs_couchbase
-
-This script performs the following steps:
-
-. Deletes the *prod_docs_couchbase* index.
-. Renames the *next_docs_couchbase* index to *prod_docs_couchbase*.
-
-TIP: If you want to avoid this step, simply change the index name at the top of the docsearch configuration file to *prod_docs_couchbase*.
-The scraper already writes to a temporary index, then swaps it into place when it's finished.
 
 The search index is now updated.
 
