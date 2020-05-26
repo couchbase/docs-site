@@ -2,7 +2,7 @@
   "index_name": "archive_docs_couchbase",
   "start_urls": [
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "server"
@@ -16,7 +16,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "c-sdk"
@@ -31,7 +31,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "dotnet-sdk"
@@ -46,7 +46,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "go-sdk"
@@ -60,7 +60,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "java-sdk"
@@ -75,7 +75,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "nodejs-sdk"
@@ -89,7 +89,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "php-sdk"
@@ -103,7 +103,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "python-sdk"
@@ -117,7 +117,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "couchbase-lite"
@@ -129,7 +129,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "sync-gateway"
@@ -141,7 +141,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "elasticsearch-connector"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "kafka-connector"
@@ -163,7 +163,7 @@
       }
     },
     {
-      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/index.html",
+      "url": "https://dhmeggkl6g2xg.cloudfront.net/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "spark-connector"
@@ -178,7 +178,7 @@
   "sitemap_urls": [
     "https://dhmeggkl6g2xg.cloudfront.net/sitemap.xml"
   ],
-  "scrape_start_urls": true,
+  "scrape_start_urls": false,
   "stop_urls": [],
   "selectors": {
     "default": {
