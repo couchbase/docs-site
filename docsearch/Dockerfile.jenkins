@@ -3,7 +3,7 @@
 # adjacent Jenkinsfile.
 FROM algolia/docsearch-scraper:v1.3.1
 
-RUN mkdir -m 777 /docsearch &&\
+RUN mkdir -m 755 /docsearch &&\
     cp /root/Pipfile* /docsearch/ &&\
     cp -r /root/src /docsearch/ &&\
     find /docsearch/src -type d -exec chmod 755 {} \; &&\

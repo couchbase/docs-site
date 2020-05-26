@@ -32,15 +32,17 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh '(cd /docsearch && pipenv install)'
+        //sh '(cd /docsearch && pipenv install)'
+        sh 'ls -ld /docsearch'
+        sh 'touch /docsearch/.env'
       }
     }
-    stage('Run') {
-      steps {
-        configFileProvider([configFile(fileId: 'algolia-application-credentials', targetLocation: '/docsearch/.env')]) {
-          sh '(cd /docsearch && pipenv run python -m src.index)'
-        }
-      }
-    }
+    //stage('Run') {
+    //  steps {
+    //    configFileProvider([configFile(fileId: 'algolia-application-credentials', targetLocation: '/docsearch/.env')]) {
+    //      sh '(cd /docsearch && pipenv run python -m src.index)'
+    //    }
+    //  }
+    //}
   }
 }
