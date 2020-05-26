@@ -3,10 +3,15 @@
 # adjacent Jenkinsfile.
 FROM algolia/docsearch-scraper:v1.3.1
 
-RUN mkdir -m 755 /docsearch &&\
-    cp /root/Pipfile* /docsearch/ &&\
-    cp -r /root/src /docsearch/ &&\
-    find /docsearch/src -type d -exec chmod 755 {} \; &&\
+ARG GROUP_ID=1000
+ARG USER_ID=1000
+RUN addgroup -g $GROUP_ID jenkins && \
+    adduser -D -u $USER_ID -G jenkins jenkins && \
+    mkdir /docsearch && \
+    cp /root/Pipfile* /docsearch/ && \
+    cp -r /root/src /docsearch/ && \
+    find /docsearch -exec chown jenkins:jenkins {} \; && \
+    find /docsearch -type d -exec chmod 755 {} \; && \
     find /docsearch -type f -exec chmod 644 {} \;
 
 ENTRYPOINT [ "" ]
