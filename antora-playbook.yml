@@ -10,9 +10,9 @@ content:
   branches: release/*
   # NOTE the git@ segment in the URL indicates which repositories are private
   sources:
-  - url: .
-    branches: HEAD
-    start_path: home
+  #- url: .
+  #  branches: HEAD
+  #  start_path: home
   - url: https://git@github.com/couchbaselabs/project-avengers
     branches: master
     start_path: docs/public
