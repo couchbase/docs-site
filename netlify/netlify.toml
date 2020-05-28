@@ -8,9 +8,7 @@ NODE_VERSION = "12"
 NPM_FLAGS = "--no-optional"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 
-# NOTE branch-deploy refers to the sandbox branch
-
-[context.branch-deploy]
+[context.production]
 command = """\
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
 node_modules/.bin/antora --fetch --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
