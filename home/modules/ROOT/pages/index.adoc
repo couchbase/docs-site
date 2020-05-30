@@ -2,190 +2,178 @@
 :page-layout: home
 :!sectids:
 
-ifdef::basebackend-html[]
-++++
-<style type="text/css">
-.archive-banner {
-    text-align: center;
-    background-color: #ccc;
-    background-image: url(../img/caution.svg)
-    padding: 8px 20px 8px 20px;
-    border: 1px solid #ccc;
-    margin: 1rem 0;
-}
-</style>
-++++
-endif::[]
-
-[.archive-banner]
+--
+[CAUTION]
 We're no longer updating the content on this site regularly. Check out the https://www.couchbase.com/support-policy[Couchbase Support Policy] for information on version support and End of Life schedule.
 
-Click https://docs.couchbase.com/home/index.html[here] to return to the main documentation site.
+Click xref:home::index.adoc[here] to return to the main documentation site.
+--
 
 [.tiles.browse]
 == Couchbase Server
 
 [.tile]
 .Server
-* https://docs.couchbase.com/server/6.5/introduction/whats-new.html[Version 6.5]
-* https://docs.couchbase.com/server/6.0/introduction/whats-new.html[Version 6.0]
-* https://docs.couchbase.com/server/5.5/introduction/whats-new.html[Version 5.5]
-* https://docs.couchbase.com/server/5.1/introduction/whats-new.html[Version 5.1]
-* https://docs.couchbase.com/server/5.0/introduction/whats-new.html[Version 5.0]
-* https://docs-archive.couchbase.com/server/4.6/introduction/whats-new.html[Version 4.6]
-* https://docs-archive.couchbase.com/server/4.5/introduction/whats-new.html[Version 4.5]
-* https://docs-archive.couchbase.com/server/4.1/introduction/whats-new.html[Version 4.1]
-* https://docs-archive.couchbase.com/server/4.0/introduction/whats-new.html[Version 4.0]
+* xref:6.5@server:introduction:whats-new.adoc[Version 6.5]
+* xref:6.0@server:introduction:whats-new.adoc[Version 6.0]
+* xref:5.5@server:introduction:whats-new.adoc[Version 5.5]
+* xref:5.1@server:introduction:whats-new.adoc[Version 5.1]
+* xref:5.0@server:introduction:whats-new.adoc[Version 5.0]
+* xref:4.6@server:introduction:whats-new.adoc[Version 4.6]
+* xref:4.5@server:introduction:whats-new.adoc[Version 4.5]
+* xref:4.1@server:introduction:whats-new.adoc[Version 4.1]
+* xref:4.0@server:introduction:whats-new-40.adoc[Version 4.0]
 * https://developer.couchbase.com/documentation/server/3.x/admin/Couchbase-intro.html[Version 3.x]
-* http://docs.couchbase.com/couchbase-manual-2.5[Version 2.5]
-* http://docs.couchbase.com/couchbase-manual-2.2[Version 2.2]
-* http://docs.couchbase.com/couchbase-manual-2.1[Version 2.1]
-* http://docs.couchbase.com/couchbase-manual-2.0[Version 2.0]
-* http://docs.couchbase.com/couchbase-manual-1.8[Version 1.8]
+* https://docs.couchbase.com/couchbase-manual-2.5[Version 2.5]
+* https://docs.couchbase.com/couchbase-manual-2.2[Version 2.2]
+* https://docs.couchbase.com/couchbase-manual-2.1[Version 2.1]
+* https://docs.couchbase.com/couchbase-manual-2.0[Version 2.0]
+* https://docs.couchbase.com/couchbase-manual-1.8[Version 1.8]
 
 [.tile]
 .Couchbase Autonomous Operator (Kubernetes)
-* https://docs.couchbase.com/operator/1.2/whats-new.html[Version 1.2] 
-* https://docs.couchbase.com/operator/1.1/whats-new.html[Version 1.1] 
-* https://docs.couchbase.com/operator/1.0/overview.html[Version 1.0]
+* xref:2.0@operator::whats-new.adoc[Version 2.0]
+* xref:1.2@operator::whats-new.adoc[Version 1.2]
+* xref:1.1@operator::whats-new.adoc[Version 1.1]
+* xref:1.0@operator::whats-new.adoc[Version 1.0]
 
 [.tiles.browse]
 == Couchbase Mobile
 
 [.tile]
 .Couchbase Lite
-* https://docs.couchbase.com/couchbase-lite/2.5/index.html[Version 2.5]
-* https://docs.couchbase.com/couchbase-lite/2.1/index.html[Version 2.1]
-* https://docs.couchbase.com/couchbase-lite/2.0/index.html[Version 2.0]
-* https://docs.couchbase.com/couchbase-lite/1.4/index.html[Version 1.4]
-* https://docs.couchbase.com/couchbase-lite/1.3/index.html[Version 1.3]
-
+* xref:2.7@couchbase-lite::index.adoc[Version 2.7]
+* xref:2.6@couchbase-lite::index.adoc[Version 2.6]
+* xref:2.5@couchbase-lite::index.adoc[Version 2.5]
+* xref:2.1@couchbase-lite::index.adoc[Version 2.1]
+* xref:2.0@couchbase-lite::index.adoc[Version 2.0]
+* xref:1.4@couchbase-lite::index.adoc[Version 1.4]
+* xref:1.3@couchbase-lite::index.adoc[Version 1.3]
 
 [.tile]
 .Couchbase Sync Gateway
-* https://docs.couchbase.com/sync-gateway/2.5/index.html[Version 2.5]
-* https://docs.couchbase.com/sync-gateway/2.1/index.html[Version 2.1]
-* https://docs.couchbase.com/sync-gateway/2.0/index.html[Version 2.0]
-* https://docs.couchbase.com/sync-gateway/1.5/index.html[Version 1.5]
-* https://docs.couchbase.com/sync-gateway/1.4/index.html[Version 1.4]
-* https://docs.couchbase.com/sync-gateway/1.3/index.html[Version 1.3]
-
+* xref:2.7@sync-gateway::index.adoc[Version 2.7]
+* xref:2.6@sync-gateway::index.adoc[Version 2.6]
+* xref:2.5@sync-gateway::index.adoc[Version 2.5]
+* xref:2.1@sync-gateway::index.adoc[Version 2.1]
+* xref:2.0@sync-gateway::index.adoc[Version 2.0]
+* xref:1.5@sync-gateway::index.adoc[Version 1.5]
+* xref:1.4@sync-gateway::index.adoc[Version 1.4]
+* xref:1.3@sync-gateway::index.adoc[Version 1.3]
 
 [.tiles.browse]
 == Couchbase SDKs
 
 [.tile]
 .Java SDK
-* https://docs.couchbase.com/java-sdk/3.0/hello-world/start-using-sdk.html[Version 3.0]
-* https://docs.couchbase.com/java-sdk/2.7/start-using-sdk.html[Version 2.7]
-* https://docs.couchbase.com/java-sdk/2.6/start-using-sdk.html[Version 2.6]
-* https://docs.couchbase.com/java-sdk/2.5/start-using-sdk.html[Version 2.5]
-* https://docs.couchbase.com/java-sdk/2.4/start-using-sdk.html[Version 2.4]
-* https://docs.couchbase.com/java-sdk/2.3/start-using-sdk.html[Version 2.3]
-* https://docs.couchbase.com/java-sdk/2.2/java-intro.html[Version 2.2]
-* https://docs.couchbase.com/java-sdk/2.1/java-intro.html[Version 2.1]
+* xref:3.0@java-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
+* xref:2.7@java-sdk::start-using-sdk.adoc[Version 2.7]
+* xref:2.6@java-sdk::start-using-sdk.adoc[Version 2.6]
+* xref:2.5@java-sdk::start-using-sdk.adoc[Version 2.5]
+* xref:2.4@java-sdk::start-using-sdk.adoc[Version 2.4]
+* xref:2.3@java-sdk::start-using-sdk.adoc[Version 2.3]
+* xref:2.2@java-sdk::java-intro.adoc[Version 2.2]
+* xref:2.1@java-sdk::java-intro.adoc[Version 2.1]
 
 [.tile]
 .Node.js SDK
-* https://docs.couchbase.com/nodejs-sdk/3.0/hello-world/start-using-sdk.html[Version 3.0]
-* https://docs.couchbase.com/nodejs-sdk/2.6/start-using-sdk.html[Version 2.6]
-* https://docs.couchbase.com/nodejs-sdk/2.5/start-using-sdk.html[Version 2.5]
-* https://docs.couchbase.com/nodejs-sdk/2.4/start-using-sdk.html[Version 2.4]
-* https://docs.couchbase.com/nodejs-sdk/2.3/start-using-sdk.html[Version 2.3]
-* https://docs.couchbase.com/nodejs-sdk/2.2/start-using-sdk.html[Version 2.2]
-* https://docs.couchbase.com/nodejs-sdk/2.1/introduction.html[Version 2.1]
+* xref:3.0@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
+* xref:2.6@nodejs-sdk::start-using-sdk.adoc[Version 2.6]
+* xref:2.5@nodejs-sdk::start-using-sdk.adoc[Version 2.5]
+* xref:2.4@nodejs-sdk::start-using-sdk.adoc[Version 2.4]
+* xref:2.3@nodejs-sdk::start-using-sdk.adoc[Version 2.3]
+* xref:2.2@nodejs-sdk::start-using-sdk.adoc[Version 2.2]
+* xref:2.1@nodejs-sdk::introduction.adoc[Version 2.1]
 
 [.tile]
 ..NET SDK
-* https://docs.couchbase.com/dotnet-sdk/3.0/hello-world/start-using-sdk.html[Version 3.0]
-* https://docs.couchbase.com/dotnet-sdk/2.7/start-using-sdk.html[Version 2.7]
-* https://docs.couchbase.com/dotnet-sdk/2.6/start-using-sdk.html[Version 2.6]
-* https://docs.couchbase.com/dotnet-sdk/2.5/start-using-sdk.html[Version 2.5]
-* https://docs.couchbase.com/dotnet-sdk/2.4/start-using-sdk.html[Version 2.4]
-* https://docs.couchbase.com/dotnet-sdk/2.3/start-using-sdk.html[Version 2.3]
-* https://docs.couchbase.com/dotnet-sdk/2.2/dotnet-intro.html[Version 2.2]
-* https://docs.couchbase.com/dotnet-sdk/2.1/dotnet-intro.html[Version 2.1]
+* xref:3.0@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
+* xref:2.7@dotnet-sdk::start-using-sdk.adoc[Version 2.7]
+* xref:2.6@dotnet-sdk::start-using-sdk.adoc[Version 2.6]
+* xref:2.5@dotnet-sdk::start-using-sdk.adoc[Version 2.5]
+* xref:2.4@dotnet-sdk::start-using-sdk.adoc[Version 2.4]
+* xref:2.3@dotnet-sdk::start-using-sdk.adoc[Version 2.3]
+* xref:2.2@dotnet-sdk::dotnet-intro.adoc[Version 2.2]
+* xref:2.1@dotnet-sdk::dotnet-intro.adoc[Version 2.1]
 
 [.tile]
 .Python SDK
-* https://docs.couchbase.com/python-sdk/3.0/hello-world/start-using-sdk.html[Version 3.0]
-* https://docs.couchbase.com/python-sdk/2.5/start-using-sdk.html[Version 2.5]
-* https://docs.couchbase.com/python-sdk/2.4/start-using-sdk.html[Version 2.4]
-* https://docs.couchbase.com/python-sdk/2.3/start-using-sdk.html[Version 2.3]
-* https://docs.couchbase.com/python-sdk/2.2/start-using-sdk.html[Version 2.2]
-* https://docs.couchbase.com/python-sdk/2.1/start-using-sdk.html[Version 2.1]
-* https://docs.couchbase.com/python-sdk/2.0/introduction.html[Version 2.0]
+* xref:3.0@python-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
+* xref:2.5@python-sdk::start-using-sdk.adoc[Version 2.5]
+* xref:2.4@python-sdk::start-using-sdk.adoc[Version 2.4]
+* xref:2.3@python-sdk::start-using-sdk.adoc[Version 2.3]
+* xref:2.2@python-sdk::start-using-sdk.adoc[Version 2.2]
+* xref:2.1@python-sdk::start-using-sdk.adoc[Version 2.1]
+* xref:2.0@python-sdk::introduction.adoc[Version 2.0]
 
 [.tile]
 .Scala SDK
-* https://docs.couchbase.com/scala-sdk/1.0/hello-world/start-using-sdk.html[Version 1.0]
-
+* xref:1.0@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
 [.tile]
 .PHP SDK
-* https://docs.couchbase.com/php-sdk/3.0/hello-world/start-using-sdk.html[Version 3.0]
-* https://docs.couchbase.com/php-sdk/2.6/start-using-sdk.html[Version 2.6]
-* https://docs.couchbase.com/php-sdk/2.5/start-using-sdk.html[Version 2.5]
-* https://docs.couchbase.com/php-sdk/2.4/start-using-sdk.html[Version 2.4]
-* https://docs.couchbase.com/php-sdk/2.3/start-using-sdk.html[Version 2.3]
-* https://docs.couchbase.com/php-sdk/2.2/start-using-sdk.html[Version 2.2]
-* https://docs.couchbase.com/php-sdk/2.1/php-intro.html[Version 2.1]
+* xref:3.0@php-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
+* xref:2.6@php-sdk::start-using-sdk.adoc[Version 2.6]
+* xref:2.5@php-sdk::start-using-sdk.adoc[Version 2.5]
+* xref:2.4@php-sdk::start-using-sdk.adoc[Version 2.4]
+* xref:2.3@php-sdk::start-using-sdk.adoc[Version 2.3]
+* xref:2.2@php-sdk::start-using-sdk.adoc[Version 2.2]
+* xref:2.1@php-sdk::php-intro.adoc[Version 2.1]
 
 [.tile]
 .Go SDK
-* https://docs.couchbase.com/go-sdk/2.1/hello-world/start-using-sdk.html[Version 2.1]
-* https://docs.couchbase.com/go-sdk/2.0/hello-world/start-using-sdk.html[Version 2.0]
-* https://docs.couchbase.com/go-sdk/1.6/start-using-sdk.html[Version 1.6]
-* https://docs.couchbase.com/go-sdk/1.5/start-using-sdk.html[Version 1.5]
-* https://docs.couchbase.com/go-sdk/1.4/start-using-sdk.html[Version 1.4]
-* https://docs.couchbase.com/go-sdk/1.3/start-using-sdk.html[Version 1.3]
-* https://docs.couchbase.com/go-sdk/1.2/start-using-sdk.html[Version 1.2]
-* https://docs.couchbase.com/go-sdk/1.1/start-using-sdk.html[Version 1.1]
-* https://docs.couchbase.com/go-sdk/1.0/introduction.html[Version 1.0]
+* xref:2.1@go-sdk:hello-world:start-using-sdk.adoc[Version 2.1]
+* xref:2.0@go-sdk:hello-world:start-using-sdk.adoc[Version 2.0]
+* xref:1.6@go-sdk::start-using-sdk.adoc[Version 1.6]
+* xref:1.5@go-sdk::start-using-sdk.adoc[Version 1.5]
+* xref:1.4@go-sdk::start-using-sdk.adoc[Version 1.4]
+* xref:1.3@go-sdk::start-using-sdk.adoc[Version 1.3]
+* xref:1.2@go-sdk::start-using-sdk.adoc[Version 1.2]
+* xref:1.1@go-sdk::start-using-sdk.adoc[Version 1.1]
+* xref:1.0@go-sdk::introduction.adoc[Version 1.0]
 
 [.tile]
 .C SDK
-* https://docs.couchbase.com/c-sdk/3.0/hello-world/start-using-sdk.html[Version 3.0]
-* https://docs.couchbase.com/c-sdk/2.10/start-using-sdk.html[Version 2.10]
-* https://docs.couchbase.com/c-sdk/2.9/start-using-sdk.html[Version 2.9]
-* https://docs.couchbase.com/c-sdk/2.8/start-using-sdk.html[Version 2.8]
-* https://docs.couchbase.com/c-sdk/2.7/start-using-sdk.html[Version 2.7]
-* https://docs.couchbase.com/c-sdk/2.6/start-using-sdk.html[Version 2.6]
-* https://docs.couchbase.com/c-sdk/2.5/c-intro.html[Version 2.5]
+* xref:3.0@c-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
+* xref:2.10@c-sdk::start-using-sdk.adoc[Version 2.10]
+* xref:2.9@c-sdk::start-using-sdk.adoc[Version 2.9]
+* xref:2.8@c-sdk::start-using-sdk.adoc[Version 2.8]
+* xref:2.7@c-sdk::start-using-sdk.adoc[Version 2.7]
+* xref:2.6@c-sdk::start-using-sdk.adoc[Version 2.6]
+* xref:2.5@c-sdk::c-intro.adoc[Version 2.5]
 
 [.tiles.browse]
 == Couchbase Connectors
 
 [.tile]
 .Elasticsearch Plug-in
-* https://docs.couchbase.com/elasticsearch-connector/4.2/index.html[Version 4.2]
-* https://docs.couchbase.com/elasticsearch-connector/4.1/index.html[Version 4.1]
-* https://docs.couchbase.com/elasticsearch-connector/4.0/index.html[Version 4.0]
-* https://docs.couchbase.com/elasticsearch-connector/3.0/index.html[Version 3.0]
-
+* xref:4.2@elasticsearch-connector::index.adoc[Version 4.2]
+* xref:4.1@elasticsearch-connector::index.adoc[Version 4.1]
+* xref:4.0@elasticsearch-connector::index.adoc[Version 4.0]
+* xref:3.0@elasticsearch-connector::index.adoc[Version 3.0]
 
 [.tile]
 .Kafka Connector
-* https://docs.couchbase.com/kafka-connector/3.4/index.html[Version 3.4]
-* https://docs.couchbase.com/kafka-connector/3.3/index.html[Version 3.3]
-* https://docs.couchbase.com/server/5.0/connectors/kafka-3.2/kafka-intro.html[Version 3.2]
-* https://docs.couchbase.com/server/5.0/connectors/kafka-3.1/kafka-intro.html[Version 3.1]
-* https://docs.couchbase.com/server/4.6/connectors/kafka-3.0/kafka-intro.html[Version 3.0]
-* https://docs.couchbase.com/server/4.5/connectors/kafka-2.0/kafka-intro.html[Version 2.0]
-* https://docs.couchbase.com/server/4.5/connectors/kafka-1.2/kafka-intro.html[Version 1.2]
+* xref:3.4@kafka-connector::index.adoc[Version 3.4]
+* xref:3.3@kafka-connector::index.adoc[Version 3.3]
+* xref:5.0@server:connectors:kafka-3.2/kafka-intro.adoc[Version 3.2]
+* xref:5.0@server:connectors:kafka-3.1/kafka-intro.adoc[Version 3.1]
+* xref:4.6@server:connectors:kafka-3.0/kafka-intro.adoc[Version 3.0]
+* xref:4.5@server:connectors:kafka-2.0/kafka-intro.adoc[Version 2.0]
+* xref:4.5@server:connectors:kafka-1.2/kafka-intro.adoc[Version 1.2]
 
 [.tile]
 .Spark Connector
-* https://docs.couchbase.com/spark-connector/2.2/index.html[Version 2.2]
-* https://docs.couchbase.com/spark-connector/2.1/index.html[Version 2.1]
-* https://docs.couchbase.com/spark-connector/2.0/index.html[Version 2.0]
-* https://docs.couchbase.com/server/4.6/connectors/spark-1.2/spark-intro.html[Version 1.2]
-* https://docs.couchbase.com/server/4.6/connectors/spark-1.1/spark-intro.html[Version 1.1]
-* https://docs.couchbase.com/server/4.6/connectors/spark-1.0/spark-intro.html[Version 1.0]
-
+* xref:2.4@spark-connector::index.adoc[Version 2.4]
+* xref:2.3@spark-connector::index.adoc[Version 2.3]
+* xref:2.2@spark-connector::index.adoc[Version 2.2]
+* xref:2.1@spark-connector::index.adoc[Version 2.1]
+* xref:4.6@server:connectors:spark-2.0/spark-intro.adoc[Version 2.0]
+* xref:4.6@server:connectors:spark-1.2/spark-intro.adoc[Version 1.2]
+* xref:4.6@server:connectors:spark-1.1/spark-intro.adoc[Version 1.1]
+* xref:4.6@server:connectors:spark-1.0/spark-intro.adoc[Version 1.0]
 
 [.tile]
 .Others
-* https://docs.couchbase.com/server/current/connectors/odbc-jdbc-drivers.html[ODBC/JDBC Drivers]
-* https://docs.couchbase.com/server/4.6/connectors/hadoop-1.2/hadoop.html[Hadoop Connector 1.2]
-
+* xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC/JDBC Drivers]
+* xref:4.6@server:connectors:hadoop-1.2/hadoop.adoc[Hadoop Connector 1.2]
