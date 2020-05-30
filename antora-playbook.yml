@@ -1,4 +1,4 @@
-# $(npm bin)/antora --fetch --clean antora-playbook.yml
+# $(npm bin)/antora --clean --fetch antora-playbook.yml
 site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
@@ -96,7 +96,6 @@ asciidoc:
     experimental: ''
     idprefix: '@'
     idseparator: '-@'
-    site-stage-production: ''
     tabs: tabs
     toc: ~
     xrefstyle: short
@@ -110,6 +109,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v259/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v261/ui-bundle.zip
 output:
   dir: ./public
