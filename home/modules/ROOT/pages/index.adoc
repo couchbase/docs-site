@@ -86,7 +86,7 @@ Click https://docs.couchbase.com/home/index.html[here] to return to the main doc
 * https://docs.couchbase.com/java-sdk/2.1/java-intro.html[Version 2.1]
 
 [.tile]
-.Nodejs SDK
+.Node.js SDK
 * https://docs.couchbase.com/nodejs-sdk/3.0/hello-world/start-using-sdk.html[Version 3.0]
 * https://docs.couchbase.com/nodejs-sdk/2.6/start-using-sdk.html[Version 2.6]
 * https://docs.couchbase.com/nodejs-sdk/2.5/start-using-sdk.html[Version 2.5]
