@@ -1,5 +1,5 @@
 {
-  "index_name": "next_docs_couchbase",
+  "index_name": "prod_docs_couchbase",
   "start_urls": [
     {
       "url": "https://docs.couchbase.com/home/contribute/",
