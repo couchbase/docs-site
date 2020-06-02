@@ -6,7 +6,9 @@
 [CAUTION]
 We're no longer updating the content on this site regularly. Check out the https://www.couchbase.com/support-policy[Couchbase Support Policy] for information on version support and End of Life schedule.
 
-Click xref:home::index.adoc[here] to return to the main documentation site.
+ifdef::primary-site-url[]
+Click {primary-site-url}[here] to return to the main documentation site.
+endif::[]
 --
 
 [.tiles.browse]
