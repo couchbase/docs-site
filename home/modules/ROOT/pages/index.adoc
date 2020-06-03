@@ -5,8 +5,7 @@
 We’d love to hear from you. Feel free to use the btn:[Feedback] button on any content page to share your feedback and concerns.
 
 [.hint]
-Looking for non-documentation resources?
-Check out the https://developer.couchbase.com[Developer Portal].
+Looking for documentation for older versions? Check out the https://docs-archive.couchbase.com/home/index.html[Documentation Archive].
 
 [.cards.cards-4.personas.conceal-title]
 == {empty}
@@ -78,4 +77,3 @@ If you are a Couchbase user wanting to develop for applications on the edge
 * xref:talend-connector::index.adoc[Talend]
 * xref:server:connectors:odbc-jdbc-drivers.adoc[SQL (ODBC/JDBC)]
 
-Looking for documentation for older versions? Check out the https://docs-archive.couchbase.com/home/index.html[Documentation Archive].
