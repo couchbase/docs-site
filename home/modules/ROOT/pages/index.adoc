@@ -5,7 +5,7 @@
 We’d love to hear from you. Feel free to use the btn:[Feedback] button on any content page to share your feedback and concerns.
 
 [.hint]
-Looking for documentation for older versions? Check out the https://docs-archive.couchbase.com/home/index.html[Documentation Archive].
+Looking for older versions? Check out the https://docs-archive.couchbase.com/home/index.html[Documentation Archive].
 
 [.cards.cards-4.personas.conceal-title]
 == {empty}
