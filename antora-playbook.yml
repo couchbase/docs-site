@@ -13,9 +13,9 @@ content:
   #- url: .
   #  branches: HEAD
   #  start_path: home
-  - url: https://git@github.com/couchbaselabs/project-avengers
-    branches: master
-    start_path: docs/public
+ # - url: https://git@github.com/couchbaselabs/project-avengers
+  #  branches: master
+  #  start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
