@@ -20,16 +20,16 @@ SHOW_FEEDBACK_BUTTON = "true"
 [context.production]
 command = """\
 export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; \
+node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
 node_modules/.bin/antora --redirect-facility=netlify --to-dir=public ../antora-playbook.yml\
 """
-#node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
 
 [context.deploy-preview]
 command = """\
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node ../scripts/remove-private-content-sources.js ../antora-playbook.yml; fi; \
+node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
 node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
 """
-#node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
 
 [[headers]]
 for = "/_/font/*"
