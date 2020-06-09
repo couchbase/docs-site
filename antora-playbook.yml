@@ -108,6 +108,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v263/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/v264/ui-bundle.zip
 output:
   dir: ./public
