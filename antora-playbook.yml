@@ -20,7 +20,7 @@ content:
     branches: [master, release/4.1, release/4.0]
     start_path: docs
   - url: https://github.com/couchbase/kafka-connect-couchbase
-    branches: [release/3.4]
+    branches: [master, release/3.4]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-spark-connector
     branches: [master, release/2.3]
