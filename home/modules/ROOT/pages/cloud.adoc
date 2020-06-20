@@ -22,7 +22,7 @@ image::couchbase-in-the-cloud.png[]
 </div>
 ++++
 
-
+== {empty}
 ++++
 <div class="card-row two-column-row">
 ++++
