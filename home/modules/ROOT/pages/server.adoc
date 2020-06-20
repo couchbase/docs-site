@@ -1,0 +1,184 @@
+= Couchbase Server
+:page-layout: landing-page-core-concept
+:page-role: tiles
+:!sectids:
+
+= Couchbase Server
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+Couchbase Server is an open source, distributed, NoSQL document-oriented engagement database. It exposes a fast key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for fast queries and a powerful query engine for executing SQL-like queries.
+
+[.column]
+====== {empty}
+[.media-left]
+image::database-icon.svg[]
+
+++++
+</div>
+++++
+
+== Get Started with Couchbase Server
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Tutorials
+* xref:#[Get Started]
+* xref:#[Developer Bootstrap Exercises]
+* xref:#[Starter Kits]
+
+[.column]
+.Installation
+* xref:#[ System Requirements]
+* xref:#[ Production Checklist]
+* xref:#[ Installation]
+* xref:#[ Upgrade]
+
+[.column]
+.Develop
+* xref:#[ Data Models]
+* xref:#[ CRUD Operations]
+* xref:#[ Transactions]
+* xref:#[ Query Optimization]
+
+
+++++
+</div>
+++++
+
+== Services
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Data Service
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.Index Service
+* xref:#[ Index Types]
+* xref:#[ Storage Engine]
+* xref:#[ Query Optimization]
+
+
+[.column]
+.Query Service
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.Search Service
+* xref:#[Introduction to Couchbase Server]
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.Analytics Service
+* xref:#[Introduction to Couchbase Server]
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.Eventing Service
+* xref:#[Introduction to Couchbase Server]
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+++++
+</div>
+++++
+
+
+== Key Tenets For Data Protection
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Security
+* xref:#[Introduction to Couchbase Server]
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.Replication
+* xref:#[Cross Data Center Replication(XDCR) Architecture]
+* xref:#[XDCR for Cloud]
+* xref:#[Managing XDCR]
+
+
+[.column]
+.Backup and Restore
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+++++
+</div>
+++++
+
+== Administration and Tools
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Cluster Management
+* xref:#[Introduction to Couchbase Server]
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.Monitoring and Logging
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.Tools
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+++++
+</div>
+++++
+
+== Reference
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Concepts
+* xref:#[Introduction to Couchbase Server]
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.API References
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.Release Notes
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+++++
+</div>
+++++
