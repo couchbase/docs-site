@@ -103,6 +103,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
   extensions:
+  - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
@@ -110,6 +111,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/cloud-20/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/cloud-21/ui-bundle.zip
 output:
   dir: ./public
