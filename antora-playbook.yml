@@ -2,7 +2,7 @@
 site:
   title: Couchbase Docs Sandbox
   url: https://docs-sandbox.couchbase.com
-  start_page: home::index.adoc
+  start_page: home::server.adoc
   robots: disallow
 git:
   ensure_git_suffix: false
