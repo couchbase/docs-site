@@ -22,28 +22,34 @@ image::mobile-feature-top.png[]
 </div>
 ++++
 
-
+== {empty}
 ++++
-<div class="card-row two-column-row">
+<div class="card-row three-column-row">
 ++++
 
 [.column]
-====== {empty}
 .Couchbase Lite
 
 [.content]
 Couchbase Lite is an embedded, NoSQL JSON Document Style database for your mobile apps. It natively supports all major operating systems and platforms. Its NoSQL client database provides CRUD, full-text search and query capabilities that runs locally on the device.
 []
-xref:couchbase-lite:introduction.adoc[Go to Couchbase Lite Docs]
+xref:couchbase-lite::introduction.adoc[Go to Couchbase Lite Docs]
 
 [.column]
-====== {empty}
 .Sync Gateway
 [.content]
 Sync Gatway is an internet-facing synchronization mechanism designed to provide data synchronization for large-scale interactive web, mobile, and IoT applications.
 []
-xref:sync-gateway:introduction.adoc[Go to Sync Gateway Docs]
+xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
+
+[.column]
+.Tutorials
+[.content]
+Sample tutorials to build applications on the edge.
+[]
+xref:tutorials::index.adoc[Tutorials]
 
 ++++
 </div>
 ++++
+

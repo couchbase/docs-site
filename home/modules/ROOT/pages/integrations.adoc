@@ -29,22 +29,22 @@ image::database-icon.svg[]
 
 [.column]
 .Elasticsearch
-* xref:elasticsearch-connector:getting-started.adoc[Get Started]
-* xref:elasticsearch-connector:configuration.adoc[Configuration]
-* xref:elasticsearch-connector:migration.adoc[Migrating from Elasticsearch Plug-in]
+* xref:elasticsearch-connector::getting-started.adoc[Get Started]
+* xref:elasticsearch-connector::configuration.adoc[Configuration]
+* xref:elasticsearch-connector::migration.adoc[Migrating from Elasticsearch Plug-in]
 
 [.column]
 .Kafka
-* xref:kafka-connector:quickstart.adoc[Get Started]
-* xref:kafka-connector:source-configuration-options.adoc[Source Configuration]
-* xref:kafka-connector:sink-configuration-options.adoc[Sink Configuration]
-* xref:kafka-connector:streams-sample.adoc[Sample Application with Kafka Steams]
+* xref:kafka-connector::quickstart.adoc[Get Started]
+* xref:kafka-connector::source-configuration-options.adoc[Source Configuration]
+* xref:kafka-connector::sink-configuration-options.adoc[Sink Configuration]
+* xref:kafka-connector::streams-sample.adoc[Sample Application with Kafka Steams]
 
 [.column]
 .Spark
-* xref:spark-connector:getting-started.adoc[Get Started]
-* xref:spark-connector:dev-workflow.adoc[Development Workflow]
-* xref:spark-connector:java-api.adoc[Java API]
+* xref:spark-connector::getting-started.adoc[Get Started]
+* xref:spark-connector::dev-workflow.adoc[Development Workflow]
+* xref:spark-connector::java-api.adoc[Java API]
 
 [.column]
 .ODBC and JDBC Drivers
@@ -52,7 +52,7 @@ image::database-icon.svg[]
 [.content]
 ODBC and JDBC drivers enable any application based on the ODBC/JDBC standards, for example Microsoft Excel, QlikView, SAP Lumira, or Tableau, to connect to a Couchbase Server or cluster.
 
-xref:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
+xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
 
 
 ++++
