@@ -22,13 +22,12 @@ image::mobile-feature-top.png[]
 </div>
 ++++
 
-
+== {empty}
 ++++
 <div class="card-row three-column-row">
 ++++
 
 [.column]
-====== {empty}
 .Couchbase Lite
 
 [.content]
@@ -37,7 +36,6 @@ Couchbase Lite is an embedded, NoSQL JSON Document Style database for your mobil
 xref:couchbase-lite::introduction.adoc[Go to Couchbase Lite Docs]
 
 [.column]
-====== {empty}
 .Sync Gateway
 [.content]
 Sync Gatway is an internet-facing synchronization mechanism designed to provide data synchronization for large-scale interactive web, mobile, and IoT applications.
@@ -45,7 +43,6 @@ Sync Gatway is an internet-facing synchronization mechanism designed to provide 
 xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
 
 [.column]
-====== {empty}
 .Tutorials
 [.content]
 Sample tutorials to build applications on the edge.
