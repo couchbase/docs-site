@@ -1,5 +1,5 @@
 = Couchbase Mobile - Embedded Database on the Edge
-:page-layout: landing-page
+:page-layout: landing-page-core-concept
 :page-role: tiles
 :!sectids:
 
