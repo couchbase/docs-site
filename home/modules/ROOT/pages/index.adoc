@@ -648,6 +648,12 @@ clients running the **Couchbase Lite** database to servers running
 [.sticky.coontribute-to-docs]
 == Contribute to Documentation
 
+== {empty}
+
+[[couchbase-sync-gateway-docs]]**Couchbase Sync Gateway** is an
+internet-facing server that securely syncs data between mobile or edge
+clients running the **Couchbase Lite** database to servers running
+**Couchbase Server** databases.
 
 
 [.sticky.cta]
@@ -655,148 +661,3 @@ clients running the **Couchbase Lite** database to servers running
 
 [.banner.cta]
 == https://docs.couchbase.com/server/current/getting-started/start-here.html[**Get Started** with Couchbase Server] https://query-tutorial.couchbase.com/[Try the online N1QL tutorial]
-
-// -------------------------------------------------------
-// -------------------------------------------------------
-// -------------------------------------------------------
-
-// TODO * Technical advisories
-
-// TODO * N1QL best practices
-// TODO * N1QL troubleshooting
-// TODO * N1QL tuning
-
-// TODO * Production checklist
-// TODO * Topology patterns
-// TODO * Orchestration
-// TODO * Performance
-
-// TODO === Migrate
-// TODO * Overview
-// TODO * Migrate from Oracle
-// TODO * Migrate from Postgres
-// TODO * Migrate from MySQL
-
-// ------------------------------------------------------
-
-// TODO === Troubleshoot
-// TODO * Overview
-// TODO * Common errors
-// TODO * Cluster setup
-// TODO * N1QL troubleshooting
-// TODO * Support resources
-
-// TODO === Learn more
-// TODO * Architecture
-// TODO * SQL Feature Support
-// TODO * Whitepapers
-// TODO * Videos & Webinars
-// TODO * DB Comparisons
-// TODO * Online Training
-
-// TODO === Tutorials
-// TODO * Replication & Rebalancing
-// TODO * Fault Tolerance & Recovery
-// TODO * Low Latency Multi-Region Deployment
-// TODO * Serializable Transactions
-// TODO * Cross-Cloud Migration
-// TODO * Follow the-Workload
-// TODO * Orchestration with Kubernetes
-// TODO * JSON Support
-// TODO * SQL Tuning with EXPLAIN
-// TODO * Multi-Region Development and Deployment
-
-// TODO === Reference
-// TODO * Architecture
-// TODO ** Overview
-// TODO ** SQL Layer
-// TODO ** Transaction Layer
-// TODO ** Distribution Layer
-// TODO ** Replication Layer
-// TODO ** Storage Layer
-// TODO ** Life of a Distributed Transaction
-// TODO ** Reads and Writes Overview
-
-// === Internals
-// * Doxygen Docs
-// * Couchbase internals
-// * CI/Jenkins dashboard
-// * Test framework
-// * Building from source
-
-// === Advanced operations
-// * https://docs.couchbase.com/java-sdk/current/howtos/subdocument-operations.html[Sub-document operations] for efficient JSON manipulation
-// * https://docs.couchbase.com/java-sdk/current/howtos/concurrent-async-apis.html[Async & reactive API's] for higher concurrency
-// * https://docs.couchbase.com/server/current/learn/data/transactions.html[Distributed transactions] for multi-document ACID mutations
-// * https://docs.couchbase.com/server/current/learn/services-and-indexes/indexes/indexes.html[Indexing] to improve query and search performance
-
-// === Couchbase Lite
-// * https://docs.couchbase.com/couchbase-lite/current/introduction.html[Couchbase Lite] is an embedded NoSQL JSON database for mobile or edge apps, available for Java, Android, Swift, Objective-C, C#, and JavaScript
-
-// === Sync Gateway
-// * https://docs.couchbase.com/sync-gateway/current/introduction.html[Sync Gateway] is an internet-facing server that securely transfers data between mobile/edge Couchbase Lite instances and Couchbase Server
-
-// === Go deeper
-// * https://docs.couchbase.com/sync-gateway/current/shared-bucket-access.html[Data synchronization] with Sync Gateway
-// * https://docs.couchbase.com/sync-gateway/current/kubernetes/deploy-cluster.html[Kubernetes image:kubernetes-logo.svg[,18,] option] for deploying Sync Gateway
-
-// https://www.couchbase.com/community[Community links]
-// https://forums.couchbase.com/[Forums]
-// https://developer.couchbase.com/open-source-projects[Open source projects]
-// link:https://github.com/couchbase[GitHub,,role=github]
-
-// TODO / ideas...
-//
-// == Community and Support
-//
-// * Forums
-// * Blog
-// * Stack overflow
-// * Twitter
-// * Support and Professional Services
-// * Staying informed
-// ** Blog
-// ** Twitter
-// ** Events
-// ** Newsletter / Announcements / Subscribe
-// * Something missing?
-//
-// == Training, Courses
-//
-// free online courses
-// recommended courses
-//
-// Issue tracker: report a bug / problem
-// Get help
-// TODO: Need github logos, stars, etc.
-// * https://github.com/couchbase[Source]
-
-// Guides / Recipes
-// * guide to main concepts
-// * create a new couchbase app
-
-// ==== Recipes
-// ==== Glossary
-// ==== FAQ
-
-// ==== Architecture and design
-// * Data modeling
-// * Architecting apps with Couchbase
-// * Application developer guide
-// * Architecture guides
-// * Industry solutions and patterns
-// * Best practices
-// * Couchbase internals
-
-// couchbase for mysql/postgres/rdbms users
-// couchbase for mongodb users
-// couchbase for dynamo users
-
-// tutorials / learn by doing
-// before we start the tutorial (what are we building, prereqs)
-// setup for the tutorial (see react tutorial)
-// inspecting the starter code / sample app, ...
-
-// ==== Developer tools
-// * CLI
-// * VSCode extension
