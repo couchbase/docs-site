@@ -650,10 +650,7 @@ clients running the **Couchbase Lite** database to servers running
 
 == {empty}
 
-[[couchbase-sync-gateway-docs]]**Couchbase Sync Gateway** is an
-internet-facing server that securely syncs data between mobile or edge
-clients running the **Couchbase Lite** database to servers running
-**Couchbase Server** databases.
+[[contribute-to-docs]]We'd love to hear from you! Take a look at our xref:home:contribute:index.adoc[Contribution Guide] for information on submitting feedback and contributing to our documentation.
 
 
 [.sticky.cta]
