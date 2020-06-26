@@ -147,7 +147,7 @@ image::database-icon.svg[]
 .SDK API References
 
 [.content]
-https://docs.couchbase.com/sdk-api/couchbase-java-client/[Java] | https://docs.couchbase.com/sdk-api/couchbase-node-client/[Node.js] | https://docs.couchbase.com/sdk-api/couchbase-net-client/[.NET] | https://docs.couchbase.com/sdk-api/couchbase-php-client/[PHP] | https://docs.couchbase.com/sdk-api/couchbase-c-client/[C(libcouchbase)] | https://pkg.go.dev/github.com/couchbase/gocb/v2?tab=doc[Go] | https://docs.couchbase.com/sdk-api/couchbase-scala-client/[Scala] 
+https://docs.couchbase.com/sdk-api/couchbase-java-client/[Java] | https://docs.couchbase.com/sdk-api/couchbase-node-client/[Node.js] | https://docs.couchbase.com/sdk-api/couchbase-net-client/[.NET] | https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[PHP] | https://docs.couchbase.com/sdk-api/couchbase-python-client/[Python] | https://docs.couchbase.com/sdk-api/couchbase-c-client/[C (libcouchbase)] | https://pkg.go.dev/github.com/couchbase/gocb/v2?tab=doc[Go] | https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/index.html[Scala] 
 
 ++++
 </div>
