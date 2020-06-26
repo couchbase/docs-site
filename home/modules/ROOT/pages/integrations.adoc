@@ -11,12 +11,12 @@
 [.column]
 ====== {empty}
 [.content]
-Couchbase Connectors enable you to exchange data with a number of other platforms. 
+Couchbase Connectors enable you to exchange data with a number of other platforms. Learn how to use Couchbase with Elasticsearch, Kafka, and Spark.
 
 [.column]
 ====== {empty}
 [.media-left]
-image::database-icon.svg[]
+image::book-reader-icon.svg[]
 
 ++++
 </div>
@@ -51,7 +51,7 @@ image::database-icon.svg[]
 
 [.content]
 ODBC and JDBC drivers enable any application based on the ODBC/JDBC standards, for example Microsoft Excel, QlikView, SAP Lumira, or Tableau, to connect to a Couchbase Server or cluster.
-
+[]
 xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
 
 
