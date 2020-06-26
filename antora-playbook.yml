@@ -13,8 +13,10 @@ content:
   - url: .
     branches: HEAD
     start_path: home
+  - url: https://git@github.com/couchbaselabs/project-avengers
+    start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
-    branches: [master, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
+    branches: [2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
     branches: [master, release/4.1, release/4.0]
@@ -27,16 +29,16 @@ content:
     start_path: docs
   - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://git@github.com/couchbase/docs-analytics
-    branches: [release/6.6, release/6.5, release/6.0, release/5.5]
+    branches: [release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.1]
+    branches: [6.5.x-docs, alice, vulcan, spock, 5.0.1]
     start_path: docs
   - url: https://git@github.com/couchbase/backup
-    branches: [mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.x]
+    branches: [6.5.x-docs, alice, vulcan, spock, 5.0.x]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
+    branches: [landing-pages, release/6.0, release/5.5, release/5.1, release/5.0]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/docs-sdk-c
@@ -61,9 +63,9 @@ content:
     branches: [release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
   - url: https://github.com/couchbase-partners/test-drive-couchbase
     branches: [docs-site-pub]
-  - url: https://git@github.com/couchbase/docs-ngdm
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials
+    branches: index-v2
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
   - url: https://github.com/couchbaselabs/mobile-travel-sample
@@ -100,6 +102,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
   extensions:
+  - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
@@ -107,6 +110,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v264/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-48/ui-bundle.zip
 output:
   dir: ./public

@@ -1,5 +1,6 @@
 {
   "name": "couchbase-docs-staging-netlify",
+  "description": "Couchbase Docs Staging",
   "private": true,
   "dependencies": {
     "@antora/cli": "~2.3",

@@ -1,0 +1,15 @@
+{
+  "name": "scripts",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "~5.13",
+    "@fortawesome/fontawesome-svg-core": "~1.2",
+    "@fortawesome/free-brands-svg-icons": "~5.13",
+    "@fortawesome/free-solid-svg-icons": "~5.13",
+    "@fortawesome/free-regular-svg-icons": "~5.13"
+  },
+  "optionalDependencies": {
+    "@fortawesome/pro-solid-svg-icons": "~5.13",
+    "@fortawesome/pro-regular-svg-icons": "~5.13"
+  }
+}
