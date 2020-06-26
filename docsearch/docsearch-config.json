@@ -2,155 +2,7 @@
   "index_name": "staging_docs_couchbase",
   "start_urls": [
     {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "server"
-        ],
-        "version": [
-          "6.5",
-          "6.0",
-          "5.5",
-          "5.1",
-          "5.0"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "c-sdk"
-        ],
-        "version": [
-          "3.0",
-          "2.10"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "dotnet-sdk"
-        ],
-        "version": [
-          "3.0",
-          "2.7",
-          "2.6"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "go-sdk"
-        ],
-        "version": [
-          "2.1",
-          "2.0",
-          "1.6",
-          "1.5",
-          "1.4"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "java-sdk"
-        ],
-        "version": [
-          "3.0",
-          "2.7",
-          "2.6"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "nodejs-sdk"
-        ],
-        "version": [
-          "3.0",
-          "2.6",
-          "2.5"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "php-sdk"
-        ],
-        "version": [
-          "3.0",
-          "2.6",
-          "2.5"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "python-sdk"
-        ],
-        "version": [
-          "3.0",
-          "2.5",
-          "2.4"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "scala-sdk"
-        ],
-        "version": [
-          "1.0"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "couchbase-lite"
-        ],
-        "version": [
-          "2.7",
-          "2.6",
-          "2.5",
-          "2.1",
-          "2.0"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "sync-gateway"
-        ],
-        "version": [
-          "2.7",
-          "2.6",
-          "2.5",
-          "2.1",
-          "2.0"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://cb-docs-sandbox.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "operator"
@@ -162,46 +14,10 @@
           "1.0"
         ]
       }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "elasticsearch-connector"
-        ],
-        "version": [
-          "4.2",
-          "4.1",
-          "4.0"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "kafka-connector"
-        ],
-        "version": [
-          "3.4"
-        ]
-      }
-    },
-    {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
-      "variables": {
-        "component": [
-          "spark-connector"
-        ],
-        "version": [
-          "2.4",
-          "2.3"
-        ]
-      }
     }
   ],
   "sitemap_urls": [
-    "https://docs-staging.couchbase.com/sitemap.xml"
+    "https://cb-docs-sandbox.netlify.app/sitemap.xml"
   ],
   "scrape_start_urls": false,
   "stop_urls": [],
@@ -209,7 +25,7 @@
     "default": {
       "lvl0": {
         "global": true,
-        "selector": ".navbar .component"
+        "selector": ".component-frame .frame-body"
       },
       "lvl1": ".doc > h1.page",
       "lvl2": ".doc .sect1 > h2:first-child",
