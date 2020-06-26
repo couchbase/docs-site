@@ -22,33 +22,35 @@ image::database-icon.svg[]
 </div>
 ++++
 
-== Get Started with Couchbase Server
+== Get Started
 ++++
 <div class="card-row three-column-row">
 ++++
 
 [.column]
-.Tutorials
-* xref:server:getting-started:start-here.adoc[Get Started]
-* xref:tutorials:quickstart-docker-image-manual-cb65.adoc[Developer Bootstrap Exercises]
-* xref:server:getting-started:starter-kits.adoc[Starter Kits]
-* xref:java-sdk:hello-world:start-using-sdk.adoc[Hello World Using SDKs]
+.Concepts
+* xref:server:introduction:why-couchbase.adoc[Why Couchbase?]
+* xref:server:learn:data/n1ql-versus-sql.adoc[N1QL versus SQL]
+* xref:server:learn:architecture-overview.adoc[Overview of Couchbase Server]
+* xref:server:learn:data/data.adoc[Data & Transactions]
+* xref:server:learn:buckets-memory-and-storage/buckets-memory-and-storage.adoc[Database Clustering: Buckets, Memory, and Storage]
+* xref:server:learn:clusters-and-availability/clusters-and-availability.adoc[Clusters and Availability]
+* xref:server:learn:services-and-indexes/services-and-indexes.adoc[Services]
 
 [.column]
 .Installation
-* xref:server:nstall:get-started.adoc[Deployment Options]
+* xref:server:install:get-started.adoc[Deployment Options]
 * xref:server:install:install-production-deployment.adoc[Deployment Guidelines]
 * xref:server:install:install-intro.adoc[Installation]
 *  xref:server:install:upgrade.adoc[Upgrading Couchbase Server]
 * xref:server:install:install-uninstalling.adoc[Uninstall]
 
 [.column]
-.Concepts
-* xref:server:learn:architecture-overview.adoc[Overview of Couchbase Server]
-* xref:server:learn:data/data.adoc[Data & Transactions]
-* xref:server:learn:buckets-memory-and-storage/buckets-memory-and-storage.adoc[Database Clustering: Buckets, Memory, and Storage]
-* xref:server:learn:clusters-and-availability/clusters-and-availability.adoc[Clusters and Availability]
-* xref:server:learn:services-and-indexes/services-and-indexes.adoc[Services]
+.Tutorials
+* xref:server:getting-started:start-here.adoc[Get Started]
+* xref:tutorials:quick-start:quickstart-docker-image-manual-cb65.adoc[Developer Bootstrap Exercises]
+* xref:server:getting-started:starter-kits.adoc[Starter Kits]
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Hello World Using SDKs]
 
 ++++
 </div>
@@ -75,6 +77,31 @@ image::database-icon.svg[]
 .Data Modeling
 * xref:server:learn:data/document-data-model.adoc[Data Model]
 
+++++
+</div>
+++++
+
+=== Services
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Data Service
+* xref:server:learn:services-and-indexes/services/data-service.adoc[Data Service]
+* xref:server:learn:buckets-memory-and-storage/vbuckets.adoc[Database Sharding Using vBuckets]
+* xref:server:learn:buckets-memory-and-storage/expiration.adoc[Bucket Time to Live and Document Expiry]
+* xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
+
+[.column]
+.Index Service
+* xref:server:learn:services-and-indexes/services/index-service.adoc[Index Service]
+* xref:server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc[Global Secondary Indexes]
+* xref:server:learn:services-and-indexes/indexes/index-replication.adoc[Availability and Performance]
+* xref:server:learn:services-and-indexes/indexes/index-scans.adoc[Index Scans]
+* xref:server:learn:services-and-indexes/indexes/index_pushdowns.adoc[Index Pushdowns]
+* xref:server:learn:services-and-indexes/indexes/storage-modes.adoc[Index Storage Settings]
+
 [.column]
 .Query Service
 * xref:server:n1ql:query.adoc[Query Service]
@@ -91,7 +118,7 @@ image::database-icon.svg[]
 
 [.column]
 .Analytics Service
-* xref:server:analytics:1_intro.adoc[Analytics Service]
+* xref:server:learn:services-and-indexes/services/analytics-service.adoc[Analytics Service]
 * xref:server:analytics:1_intro.adoc[N1QL for Analytics]
 * xref:server:analytics:primer-beer.adoc[Tutorial]
 * xref:java-sdk:howtos:analytics-using-sdk.adoc[Analytics Using SDKs]
@@ -106,6 +133,56 @@ image::database-icon.svg[]
 </div>
 ++++
 
+=== SDKs
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.SDK Documentation
+* xref:server:sdk:overview.adoc[SDKs]
+* Server and SDK Compatibility: xref:java-sdk:project-docs:compatibility.adoc[Java] | xref:nodejs-sdk:project-docs:compatibility.adoc[Node.js] | xref:dotnet-sdk:project-docs:compatibility.adoc[.NET] | xref:python-sdk:project-docs:compatibility.adoc[Python] | xref:c-sdk:project-docs:compatibility.adoc[C] | xref:scala-sdk:project-docs:compatibility.adoc [Scala] | xref:php-sdk:project-docs:compatibility.adoc[PHP] | xref:go-sdk:project-docs:compatibility.adoc[Go]
+
+[.column]
+.SDK API References
+
+[.content]
+https://docs.couchbase.com/sdk-api/couchbase-java-client/[Java] | https://docs.couchbase.com/sdk-api/couchbase-node-client/[Node.js] | https://docs.couchbase.com/sdk-api/couchbase-net-client/[.NET] | https://docs.couchbase.com/sdk-api/couchbase-php-client/[PHP] | https://docs.couchbase.com/sdk-api/couchbase-c-client/[C(libcouchbase)] | https://pkg.go.dev/github.com/couchbase/gocb/v2?tab=doc[Go] | https://docs.couchbase.com/sdk-api/couchbase-scala-client/[Scala] 
+
+++++
+</div>
+++++
+
+
+== Administration and Tools
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Cluster Management
+* xref:server:manage:management-overview.adoc[Overview]
+* xref:server:manage:manage-nodes/node-management-overview.adoc[Manage Nodes and Clusters]
+* xref:server:manage:manage-buckets/bucket-management-overview.adoc[Manage Buckets]
+
+
+[.column]
+.Monitoring and Logging
+* xref:server:manage:monitor/monitor-intro.adoc[Monitoring]
+* xref:server:manage:manage-logging/manage-logging.adoc[Logging]
+* xref:server:manage:manage-settings/manage-settings.adoc[Settings]
+* xref:server:manage:troubleshoot/troubleshoot.adoc[Troubleshoot]
+
+[.column]
+.REST API and Tools 
+* xref:server:tools:cbimport.adoc[cbimport]
+* xref:server:tools:cbexport.adoc[cbexport]
+* xref:server:cli:cli-intro.adoc[Couchbase CLI]
+& xref:server:rest-api:rest-intro.adoc[REST API Reference]
+
+++++
+</div>
+++++
 
 == Key Tenets For Data Protection
 ++++
@@ -116,7 +193,7 @@ image::database-icon.svg[]
 .Security
 * xref:server:learn:security/security-overview.adoc[Security Overview]
 * xref:server:learn:security/authentication.adoc[Authentication]
-* xref:manage:manage-security/manage-certificates.adoc[Manage Certificates]
+* xref:server:manage:manage-security/manage-certificates.adoc[Manage Certificates]
 * xref:server:learn:security/authorization-overview.adoc[Authorization]
 * xref:server:manage:manage-security/manage-users-and-roles.adoc[Manage Users, Groups, and Roles]
 
@@ -133,59 +210,26 @@ image::database-icon.svg[]
 .Backup and Restore
 * xref:server:backup-restore:backup-restore.adoc[Manage Backup and Restore]
 * xref:server:backup-restore:cbbackupmgr-tutorial.adoc[cbbackupmgr Tutorial]
-* 
 
 ++++
 </div>
 ++++
 
-== Administration and Tools
+== Quick Links
 ++++
-<div class="card-row three-column-row">
-++++
-
-[.column]
-.Cluster Management
-* xref:server: manage:management-overview.adoc[Overview]
-* xref:server:manage:manage-nodes/node-management-overview.adoc[Manage Nodes and Clusters]
-* xref:server:manage:manage-buckets/bucket-management-overview.adoc[Manage Buckets]
-
-
-[.column]
-.Monitoring and Logging
-* xref:server:manage:monitor/monitor-intro.adoc[Monitoring]
-* xref:server:manage:manage-logging/manage-logging.adoc[Logging]
-* xref:server:manage:manage-settings/manage-settings.adoc[Settings]
-* xref:server:manage:troubleshoot/troubleshoot.adoc[Troubleshoot]
-
-[.column]
-.Tools
-* xref:server:tools:cbimport.adoc[cbimport]
-* xref:server:tools:cbexport.adoc[cbexport]
-* xref:server:cli:cli-intro.adoc[Couchbase CLI]
-
-++++
-</div>
-++++
-
-== References
-++++
-<div class="card-row three-column-row">
+<div class="card-row two-column-row">
 ++++
 
 [.column]
-.CLI References
-* xref:server:cli:cli-intro.adoc[Couchbase CLI]
-
-[.column]
-.API References
-* xref:server:rest-api:rest-intro.adoc[REST API Reference]
-* SDK API: https://docs.couchbase.com/sdk-api/couchbase-java-client/^[Java] | https://docs.couchbase.com/sdk-api/couchbase-node-client/^[Node.js] | https://docs.couchbase.com/sdk-api/couchbase-net-client/^[.NET] | https://docs.couchbase.com/sdk-api/couchbase-php-client/^[PHP] | https://docs.couchbase.com/sdk-api/couchbase-c-client/^[C(libcouchbase)] | https://pkg.go.dev/github.com/couchbase/gocb/v2?tab=doc^[Go] | https://docs.couchbase.com/sdk-api/couchbase-scala-client/^[Scala] 
-
-
-[.column]
-.Release Notes
+.Project Docs
 * xref:server:release-notes:relnotes.adoc[Release Notes]
+* xref:server:introduction:editions.adoc[Couchbase Server Editions]
+
+[.column]
+.Feedback
+* xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
+* xref:home:contribute:index.adoc[Contribute to the Documentation]
+
 
 ++++
 </div>
