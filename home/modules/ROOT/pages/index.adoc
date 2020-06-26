@@ -1,660 +1,82 @@
-= Couchbase Docs
-:page-layout: home
+= Couchbase Documentation
+:page-layout: landing-page-core-concept
+:page-role: tiles
 :!sectids:
 
-ifdef::basebackend-html[]
+= Couchbase Documentation
 ++++
-<style type="text/css">
-body header .navbar {
-  position: relative;
-}
-div.body.container {
-  margin-top: 2rem;
-}
-div.body.container main.home div.hr {
-  border-top: 1px solid #f0f0f0;
-  padding-top: 25px;
-}
-div.body main.home a {
-  color: #4287d6;
-}
-div.body main.home a::before {
-  transition-duration: 0s;
-  transition-property: none;
-}
-div.body main.home h1.page {
-  margin-top: 15px;
-  margin-left: 0px;
-  font-size: 2rem;
-  text-align: left;
-}
-div.body main.home #preamble:before {
-  margin-top: 0;
-  height: 0;
-}
-div.body main.home #preamble {
-  height: 0;
-}
-div.body main.home .sect1,
-div.body main.home .sect1.tiles {
-  padding: 0 20px 0 20px;
-  background-color: white;
-  font-size: 1rem;
-}
-div.body main.home .sect1.sticky {
-  position: sticky;
-  top: 0px;
-  min-height: 4.9rem;
-  z-index: 3;
-  background-color: white;
-  padding-top: 15px;
-}
-div.body main.home .sect1.sticky.couchbase-server {
-  border-top: 4px solid #4287d6;
-}
-div.body main.home .sect1.sticky.couchbase-lite {
-  border-top: 4px solid #8787d6;
-}
-div.body main.home .sect1.sticky.couchbase-sync-gateway {
-  border-top: 4px solid #d64287;
-}
-div.body main.home .sect1.sticky.cta {
-  border-top: 4px solid #4287d6;
-}
-div.body main.home .sect1.sticky h2 {
-  margin-top: 10px;
-}
-div.body main.home .sect1.tiles h2 {
-  display: none;
-}
-div.body main.home .sect1.tiles .sectionbody {
-  margin: 0 0;
-  flex-wrap: nowrap;
-  justify-content: left;
-}
-div.body main.home .sect1.tiles .sectionbody > div {
-  flex-grow: 1;
-  width: 50%;
-  margin-right: 30px;
-}
-div.body main.home div.sectionbody p {
-  overflow-wrap: normal;
-  word-break: normal;
-  hyphens: none;
-  font-size: 15px;
-}
-div.body main.home div.sectionbody div.sdks table {
-  margin-left: 40px;
-}
-div.body main.home div.sectionbody div.sdks table tr td {
-  vertical-align: top;
-  padding-right: 20px;
-  white-space: nowrap;
-}
-div.body main.home .banner h2 {
-  margin-top: 50px;
-  background-color: aliceblue;
-  padding: 10px 10px 10px 10px;
-  text-align: center;
-}
-div.body main.home .banner.cta h2 {
-  padding: 40px 0 40px 0;
-  font-weight: normal
-}
-div.body main.home .banner.cta h2 a {
-  margin: 8px 10px 8px 10px;
-  background-color: #4287d6;
-  padding: 8px 20px 8px 20px;
-  font-size: 1.1rem;
-  color: white;
-}
-</style>
+<div class="card-row">
 ++++
-endif::[]
 
-== {empty}
+[.column]
+====== {empty}
+[.content]
+Find the documentation, samples, and references to help you use Couchbase and build applications. 
 
-**Couchbase Server** is an open source, JSON document database that
-brings together NoSQL and SQL{plus}{plus}. It provides a scale-out,
-shared-nothing, auto-sharded, replicated document store with a managed
-cache, SQL{plus}{plus} querying, indexing and other capabilities.
+[.column]
+====== {empty}
+[.media-left]
+image::book-reader-icon.svg[]
 
-For mobile and edge environments, **Couchbase Lite** is a native,
-on-device, embeddable database that can synchronize data through
-**Couchbase Sync Gateway** to one or more clusters of Couchbase
-Server.
+++++
+</div>
+++++
 
-Jump to: <<couchbase-server-docs,Couchbase Server Docs>> | <<couchbase-autonomous-operator, Couchbase Autonomous Operator(Kubernetes)>>  | <<couchbase-lite-docs,Couchbase Lite Docs>> | <<couchbase-sync-gateway-docs, Couchbase Sync Gateway Docs>> | <<contribute-to-docs, Contribute to Documentation>>
+== Get Started
+++++
+<div class="card-row three-column-row">
+++++
 
-{nbsp}
+[.column]
+.Couchbase Cloud
 
-[.sticky.couchbase-server]
-== Couchbase Server Docs
+[.content]
+Couchbase Cloud is a fully-managed database as a service designed from the ground up to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
 
-== {empty}
+xref:cloud::index.adoc[Get Started with Couchbase Cloud]
 
-[[couchbase-server-docs]]**xref:server:getting-started:start-here.adoc[Getting started]**, including quick install and running a first SQL++ (N1QL) query.
+[.column]
+.Couchbase Server
 
-[.tiles]
-== {empty}
+[.content]
+Couchbase Server is an open source, distributed, NoSQL document-oriented engagement database. It exposes a fast key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for fast queries and a powerful query engine for executing SQL-like queries.
 
-=== Highlevel concepts
+xref:server:getting-started:start-here.adoc[Get Started with Couchbase Server Enterprise]
 
-* https://docs.couchbase.com/server/current/introduction/intro.html[Why Couchbase Server?]
+[.column]
+.Couchbase Mobile
 
-//-
+[.content]
+Couchbase Mobile brings the power of NoSQL to the edge. It comprises two components (Sync Gateway and Couchbase Lite), which combine with Couchbase Server to provde fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
 
-* https://docs.couchbase.com/server/current/learn/architecture-overview.html[Couchbase Server overview]
+xref:couchbase-lite::introduction.adoc[Get Started with Couchbase Lite]
 
-//-
+++++
+</div>
+++++
 
-* https://docs.couchbase.com/server/current/learn/data/data.html[Data and JSON documents]
-** https://docs.couchbase.com/server/current/learn/data/durability.html[Understanding durability]
-** https://docs.couchbase.com/server/current/learn/data/transactions.html[Understanding transactions]
+== Quick Links
+++++
+<div class="card-row three-column-row">
+++++
 
-//-
+[.column]
+.Learn More
+* xref:tutorials::index.adoc[Explore the Tutorials]
+* https://docs-archive.couchbase.com[Documentation for previous versions]
 
-* https://docs.couchbase.com/server/current/learn/buckets-memory-and-storage/buckets-memory-and-storage.html[Buckets, memory and storage]
 
-//-
+[.column]
+.Community Users
+* xref:tutorials:getting-started-ce:index.adoc[Get Started with Couchbase Server Community Edition]
+* https://forums.couchbase.com[Engage with us on Couchbase Forums]
 
-* https://docs.couchbase.com/server/current/learn/clusters-and-availability/clusters-and-availability.html[Clusters and availability]
-** https://docs.couchbase.com/server/current/learn/clusters-and-availability/nodes.html[Server nodes]
-** https://docs.couchbase.com/server/current/learn/clusters-and-availability/rebalance.html[Rebalancing] of data when cluster membership changes
-** https://docs.couchbase.com/server/current/learn/clusters-and-availability/replication-architecture.html[Replication] of data within a cluster
-** https://docs.couchbase.com/server/current/learn/clusters-and-availability/xdcr-overview.html[XDCR] or cross data center replication
+[.column]
+.Feedback
+* xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
+* xref:home:contribute:index.adoc[Contribute to the Documentation]
 
-//-
 
-* https://docs.couchbase.com/server/current/learn/services-and-indexes/services-and-indexes.html[Services] configurable for each server node
-
-//-
-
-* https://docs.couchbase.com/server/current/learn/security/security-overview.html[Security overview], including auth, auditing and encryption
-
-=== Releases
-
-* https://docs.couchbase.com/server/current/introduction/whats-new.html[What's New]
-* https://docs.couchbase.com/server/current/release-notes/relnotes.html[Release{nbsp}notes]
-
-//-
-
-* https://docs.couchbase.com/server/current/introduction/editions.html[Server editions], including +++<br/>+++ Community{nbsp}Edition and Enterprise{nbsp}Edition
-
-//-
-
-* https://docs-archive.couchbase.com/home/index.html[Previous version docs]
-
-{nbsp}
-
-[.tiles]
-== {empty}
-
-=== Develop
-
-* https://docs.couchbase.com/server/current/sdk/development-intro.html[Introduction for developers]
-
-//-
-
-* Getting started
-** https://docs.couchbase.com/server/current/install/install-intro.html[Install server] (Linux, Windows, macOS)
-** https://docs.couchbase.com/server/current/getting-started/do-a-quick-install.html[Install server with Docker]
-** Explore client SDK\'s and sample apps
-*** https://docs.couchbase.com/java-sdk/current/hello-world/start-using-sdk.html[Install SDK for Java] and https://docs.couchbase.com/java-sdk/current/hello-world/sample-application.html[sample{nbsp}application]
-*** https://docs.couchbase.com/nodejs-sdk/current/hello-world/start-using-sdk.html[Install SDK for Node.js] and https://docs.couchbase.com/nodejs-sdk/current/hello-world/sample-application.html[sample{nbsp}application]
-*** https://docs.couchbase.com/server/current/sdk/overview.html[more languages...]
-
-//-
-
-* https://docs.couchbase.com/tutorials/index.html[Tutorials]
-
-//-
-
-* https://docs.couchbase.com/server/current/learn/clusters-and-availability/size-limitations.html[Size limits] for keys, values and more
-
-//-
-
-* https://docs.couchbase.com/server/current/install/migrate-mysql.html[Migrating from relational databases]
-
-[.sdks]
-=== Client SDKs
-
-* https://docs.couchbase.com/server/current/sdk/overview.html[SDK overview]
-
-[cols="2,3"]
-|===
-
-|https://docs.couchbase.com/java-sdk/current/howtos/kv-operations.html[SDK for Java]
-|https://docs.couchbase.com/sdk-api/couchbase-java-client/[API reference for Java]
-
-|https://docs.couchbase.com/dotnet-sdk/current/howtos/kv-operations.html[SDK for .NET]
-|https://docs.couchbase.com/sdk-api/couchbase-net-client/[API reference for .NET]
-
-|https://docs.couchbase.com/nodejs-sdk/current/howtos/kv-operations.html[SDK for Node.js]
-|https://docs.couchbase.com/sdk-api/couchbase-node-client/[API reference for Node.js]
-
-|https://docs.couchbase.com/python-sdk/current/start-using-sdk.html[SDK for Python]
-|https://docs.couchbase.com/sdk-api/couchbase-python-client[API reference for Python]
-
-|https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html[SDK for C]
-|https://docs.couchbase.com/sdk-api/couchbase-c-client/[API reference for C]
-
-|https://docs.couchbase.com/go-sdk/current/howtos/kv-operations.html[SDK for Go]
-|https://pkg.go.dev/mod/github.com/couchbase/gocb?tab=versions[API reference for Go]
-
-|and https://docs.couchbase.com/server/current/sdk/overview.html[more languages]
-|
-
-|===
-
-* https://docs.couchbase.com/server/current/connectors/odbc-jdbc-drivers.html[ODBC and JDBC drivers]
-
-[.tiles]
-== {empty}
-
-=== Query / N1QL / SQL++
-
-N1QL is Couchbase's implementation of SQL++.
-
-* https://docs.couchbase.com/server/current/n1ql/query.html[N1QL fundamentals]
-
-//-
-
-* https://docs.couchbase.com/server/current/learn/data/n1ql-versus-sql.html[N1QL versus SQL]
-
-//-
-
-* https://docs.couchbase.com/server/current/n1ql/n1ql-intro/index.html[Running N1QL queries]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-intro/queriesandresults.html[N1QL queries and results]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-intro/sysinfo.html[N1QL system information]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/n1ql-error-codes.html[N1QL error codes]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/n1ql-auditing.html[N1QL auditing]
-
-//-
-
-* https://docs.couchbase.com/server/current/tools/query-workbench.html[N1QL query workbench UI]
-* https://docs.couchbase.com/server/current/tools/query-monitoring.html[N1QL query monitoring UI]
-
-//-
-
-* https://query-tutorial.couchbase.com/tutorial/[N1QL online tutorial]
-
-//-
-
-* https://index-advisor.couchbase.com[N1QL index advisor] online tool
-
-//-
-
-* http://docs.couchbase.com/files/Couchbase-N1QL-CheatSheet.pdf[N1QL cheat sheet (pdf)]
-
-{nbsp}
-
-=== {nbsp}
-
-{nbsp}
-
-* https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/index.html[N1QL language reference]
-
-//-
-
-* N1QL language reference frequently used...
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/selectintro.html[SELECT overview]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/select-syntax.html[SELECT syntax]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/selectclause.html[SELECT clause]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/insert.html[INSERT] | https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/update.html[UPDATE] | https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/delete.html[DELETE syntax]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/upsert.html[UPSERT] | https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/merge.html[MERGE syntax]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/datatypes.html[Data types] and https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/operators.html[operators]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/functions.html[Functions]
-*** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/arrayfun.html[Array], https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/datefun.html[date] and https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/objectfun.html[object functions]
-*** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/stringfun.html[String] and https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/typefun.html[type functions]
-*** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/userfun.html[User defined functions]
-*** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/windowfun.html[Window functions]
-*** and https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/functions.html[more]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/subqueries.html[Subqueries] and https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/correlated-subqueries.html[correlated subqueries]
-** https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/createindex.html[CREATE INDEX syntax]
-
-{nbsp}
-
-== {empty}
-
-=== Full text search
-
-Full text search provides language aware, relevant searches on inverted indexes.
-
-* https://docs.couchbase.com/server/current/fts/full-text-intro.html[Full text search fundamentals]
-* https://docs.couchbase.com/server/current/fts/fts-performing-searches.html[Performing searches]
-* https://docs.couchbase.com/server/current/fts/fts-creating-indexes.html[Defining full text search indexes]
-* https://docs.couchbase.com/server/current/fts/fts-using-analyzers.html[Understanding analyzers]
-* https://docs.couchbase.com/server/current/fts/fts-queries.html[Understanding queries]
-* https://docs.couchbase.com/server/current/fts/fts-troubleshooting.html[Full text search troubleshooting]
-
-{nbsp}
-
-=== Eventing
-
-Eventing provides asynchronous triggers on data changes.
-
-* https://docs.couchbase.com/server/current/eventing/eventing-overview.html[Eventing fundamentals]
-* https://docs.couchbase.com/server/current/eventing/eventing-Terminologies.html[Eventing terminology]
-* https://docs.couchbase.com/server/current/eventing/eventing-language-constructs.html[Eventing language constructs] and https://docs.couchbase.com/server/current/eventing/eventing-adding-function.html[adding an eventing function]
-* https://docs.couchbase.com/server/current/eventing/eventing-examples.html[Eventing examples]
-* https://docs.couchbase.com/server/current/eventing/eventing-debugging-and-diagnosability.html[Eventing debugging]
-* https://docs.couchbase.com/server/current/eventing/eventing-statistics.html[Eventing statistics]
-* https://docs.couchbase.com/server/current/eventing/troubleshooting-best-practices.html[Eventing troubleshooting and best practices]
-* https://docs.couchbase.com/server/current/eventing/eventing-faq.html[Eventing FAQ's]
-
-[.tiles]
-== {empty}
-
-=== Analytics
-
-Analytics supports complex N1QL queries and analysis.
-
-* https://docs.couchbase.com/server/current/analytics/introduction.html[Analytics introduction]
-
-//-
-
-* https://docs.couchbase.com/server/current/analytics/run-query.html[Running Analytics queries]
-** https://docs.couchbase.com/server/current/analytics/monitor.html[Monitoring Analytics queries]
-** https://docs.couchbase.com/server/current/analytics/rest-analytics.html[Analytics REST API]
-** https://docs.couchbase.com/server/current/analytics/config.html[Analytics configuration parameters]
-** https://docs.couchbase.com/server/current/analytics/query-params.html[Analytics query parameters]
-** https://docs.couchbase.com/server/current/analytics/query-responses.html[Analytics query responses]
-** https://docs.couchbase.com/server/current/analytics/error-codes.html[Analytics error codes]
-
-//-
-
-* https://docs.couchbase.com/server/current/analytics/primer-beer.html[Analytics tutorial]
-
-=== {nbsp}
-
-{nbsp}
-
-* https://docs.couchbase.com/server/current/analytics/1_intro.html[N1QL for Analytics reference]
-** https://docs.couchbase.com/server/current/analytics/2_expr.html[N1QL for Analytics expressions]
-** https://docs.couchbase.com/server/current/analytics/3_query.html[N1QL for Analytics query syntax]
-** https://docs.couchbase.com/server/current/analytics/4_error.html[N1QL for Analytics errors]
-** https://docs.couchbase.com/server/current/analytics/5_ddl.html[N1QL for Analytics data definition language (DDL)]
-** https://docs.couchbase.com/server/current/analytics/6_n1ql.html[N1QL for Analytics vs N1QL for Query]
-** https://docs.couchbase.com/server/current/analytics/7_using_index.html[Using indexes]
-** https://docs.couchbase.com/server/current/analytics/8_builtin.html[Builtin functions]
-** https://docs.couchbase.com/server/current/analytics/9_data_type.html[Data types] and https://docs.couchbase.com/server/current/analytics/appendix_1_keywords.html[reserved keywords]
-** https://docs.couchbase.com/server/current/analytics/appendix_2_parameters.html[Performance tuning]
-
-[.tiles.hr]
-== {nbsp}
-
-=== Manage
-
-* https://docs.couchbase.com/server/current/manage/management-overview.html[Management overview]
-* https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html[Web console UI overview]
-* https://docs.couchbase.com/server/current/install/startup-shutdown.html[Starting and stopping] a server
-
-//-
-
-* https://docs.couchbase.com/server/current/manage/manage-nodes/node-management-overview.html[Manage nodes and clustering], including changing cluster membership, rebalancing, failovers and recovery
-** https://docs.couchbase.com/server/current/manage/manage-nodes/initialize-node.html[Initialize a node]
-** https://docs.couchbase.com/server/current/manage/manage-nodes/create-cluster.html[Create a cluster]
-** https://docs.couchbase.com/server/current/manage/manage-nodes/add-node-and-rebalance.html[Add a node and rebalance data]
-** https://docs.couchbase.com/server/current/manage/manage-nodes/join-cluster-and-rebalance.html[Join a cluster and rebalance data]
-** https://docs.couchbase.com/server/current/manage/manage-nodes/list-cluster-nodes.html[List cluster nodes]
-** https://docs.couchbase.com/server/current/manage/manage-nodes/remove-node-and-rebalance.html[Remove a node]
-** https://docs.couchbase.com/server/current/manage/manage-nodes/fail-nodes-over.html[Failover], including graceful vs hard failovers
-** https://docs.couchbase.com/server/current/manage/manage-nodes/recover-nodes.html[Recovery] of nodes
-** https://docs.couchbase.com/server/current/manage/manage-nodes/apply-node-to-node-encryption.html[Node to node encryption]
-** https://docs.couchbase.com/server/current/manage/manage-nodes/manage-address-families.html[Manage address families]
-
-//-
-
-* https://docs.couchbase.com/server/current/manage/manage-buckets/bucket-management-overview.html[Manage buckets]
-** https://docs.couchbase.com/server/current/manage/manage-buckets/create-bucket.html[Bucket create] | https://docs.couchbase.com/server/current/manage/manage-buckets/edit-bucket.html[editing] | https://docs.couchbase.com/server/current/manage/manage-buckets/flush-bucket.html[flush] | https://docs.couchbase.com/server/current/manage/manage-buckets/delete-bucket.html[delete]
-
-//-
-
-* https://docs.couchbase.com/server/current/manage/manage-indexes/manage-indexes.html[Manage indexes]
-* https://docs.couchbase.com/server/current/manage/manage-logging/manage-logging.html[Manage logging]
-* https://docs.couchbase.com/server/current/manage/manage-settings/manage-settings.html[Manage settings]
-* https://docs.couchbase.com/server/current/manage/manage-groups/manage-groups.html[Manage server groups]
-* https://docs.couchbase.com/server/current/manage/manage-statistics/manage-statistics.html[Manage statistics]
-
-//-
-
-* https://docs.couchbase.com/server/current/manage/manage-xdcr/xdcr-management-overview.html[Manage XDCR] or cross data center replication
-** https://docs.couchbase.com/server/current/manage/manage-xdcr/prepare-for-xdcr.html[Preparing for XDCR]
-** https://docs.couchbase.com/server/current/manage/manage-xdcr/create-xdcr-reference.html[XDCR reference creation] | https://docs.couchbase.com/server/current/manage/manage-xdcr/delete-xdcr-reference.html[deletion]
-** https://docs.couchbase.com/server/current/manage/manage-xdcr/create-xdcr-replication.html[XDCR replication create] | https://docs.couchbase.com/server/current/manage/manage-xdcr/pause-xdcr-replication.html[pause] | https://docs.couchbase.com/server/current/manage/manage-xdcr/resume-xdcr-replication.html[resume] | https://docs.couchbase.com/server/current/manage/manage-xdcr/delete-xdcr-replication.html[delete]
-** https://docs.couchbase.com/server/current/manage/manage-xdcr/secure-xdcr-replication.html[XDCR security]
-** https://docs.couchbase.com/server/current/manage/manage-xdcr/filter-xdcr-replication.html[XDCR filtering]
-** https://docs.couchbase.com/server/current/manage/manage-xdcr/recover-data-with-xdcr.html[XDCR data recovery]
-** https://docs.couchbase.com/server/current/manage/manage-xdcr/monitor-xdcr-replication.html[XDCR monitoring]
-** https://docs.couchbase.com/server/current/xdcr-reference/xdcr-reference-intro.html[XDCR reference], including advanced settings and filtering expressions
-
-//-
-
-* https://docs.couchbase.com/server/current/rest-api/rest-intro.html[REST management API] reference
-
-//-
-
-* https://docs.couchbase.com/server/current/cli/cli-intro.html[CLI tools] reference
-
-=== Deploy
-
-* https://docs.couchbase.com/server/current/install/get-started.html[Deployment options], including on-premise, VM's, containers, Kubernetes and public clouds
-
-//-
-
-* https://docs.couchbase.com/server/current/introduction/editions.html[Server editions], including Community{nbsp}Edition and Enterprise{nbsp}Edition
-
-//-
-
-* https://docs.couchbase.com/operator/current/overview.html[Kubernetes image:kubernetes-logo.svg[,18,] Autonomous Operator] for Couchbase for automated provisioning and management with Kubernetes
-
-//-
-
-* https://docs.couchbase.com/server/current/install/plan-for-production.html[Planning for production], including system requirements
-* https://docs.couchbase.com/server/current/install/install-production-deployment.html[Deployment guidelines], including sizing and configuration tips
-
-//-
-
-* https://docs.couchbase.com/server/current/install/install-intro.html[Install] on https://docs.couchbase.com/server/current/install/install-linux.html[Linux], https://docs.couchbase.com/server/current/install/install-package-windows.html[Windows], https://docs.couchbase.com/server/current/install/macos-install.html[macOS]
-** https://docs.couchbase.com/server/current/cloud/couchbase-cloud-deployment.html[Cloud and container deployments]
-** https://docs.couchbase.com/server/current/install/testing.html[Verify the installation]
-* https://docs.couchbase.com/server/current/install/install-uninstalling.html[Uninstall]
-
-//-
-
-* https://docs.couchbase.com/server/current/install/upgrade.html[Upgrading], including rolling upgrades and offline upgrades
-
-//-
-
-* https://docs.couchbase.com/server/current/manage/monitor/monitor-intro.html[Monitoring], including through the UI, command-line or REST
-** https://docs.couchbase.com/server/current/manage/monitor/monitoring-stats-configuration.html[Manage monitoring options]
-** https://docs.couchbase.com/server/current/manage/monitor/ui-monitoring-statistics.html[Monitor with the UI]
-** https://docs.couchbase.com/server/current/manage/monitor/monitoring-cli.html[Monitor with cbstats]
-** https://docs.couchbase.com/server/current/manage/monitor/monitoring-rest.html[Monitor with REST]
-** https://docs.couchbase.com/server/current/manage/monitor/xdcr-monitor-timestamp-conflict-resolution.html[Monitor XDCR]
-** https://docs.couchbase.com/server/current/manage/monitor/monitoring-n1ql-query.html[Monitor queries]
-** https://docs.couchbase.com/server/current/manage/monitor/monitoring-indexes.html[Monitor indexes]
-
-//-
-
-* https://docs.couchbase.com/server/current/backup-restore/backup-restore.html[Backup and restore], including incremental backups
-
-//-
-
-* https://docs.couchbase.com/server/current/manage/troubleshoot/troubleshoot.html[Troubleshooting], including common issues
-
-[.tiles]
-== {empty}
-
-=== Security
-
-* https://docs.couchbase.com/server/current/manage/manage-security/security-management-overview.html[Manage security]
-** https://docs.couchbase.com/server/current/manage/manage-security/manage-security-settings.html[Security settings]
-** https://docs.couchbase.com/server/current/manage/manage-security/manage-users-and-roles.html[Users, groups and roles]
-** https://docs.couchbase.com/server/current/manage/manage-security/manage-authentication.html[Authentication], including LDAP, saslauthd, PAM
-** https://docs.couchbase.com/server/current/manage/manage-security/manage-certificates.html[Certificates] and https://docs.couchbase.com/server/current/manage/manage-security/manage-tls.html[TLS]
-*** https://docs.couchbase.com/server/current/manage/manage-security/configure-server-certificates.html[Configure server certificates]
-*** https://docs.couchbase.com/server/current/manage/manage-security/configure-client-certificates.html[Configure client certificates]
-*** https://docs.couchbase.com/server/current/manage/manage-security/enable-client-certificate-handling.html[Client certificate handling]
-*** https://docs.couchbase.com/server/current/manage/manage-security/rotate-server-certificates.html[Certificate rotation]
-*** https://docs.couchbase.com/server/current/manage/manage-security/handle-certificate-errors.html[Certificate error handling]
-** https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html[Auditing]
-** https://docs.couchbase.com/server/current/manage/manage-security/manage-sessions.html[Sessions] and https://docs.couchbase.com/server/current/manage/manage-security/manage-console-access.html[console access]
-** https://docs.couchbase.com/server/current/manage/manage-security/manage-system-secrets.html[System secrets]
-** https://docs.couchbase.com/server/current/manage/manage-security/manage-connections-and-disks.html[Securing connections and storage]
-
-=== Connectors
-
-* https://docs.couchbase.com/server/current/connectors/intro.html[Connector guides]
-** Connector for https://docs.couchbase.com/kafka-connector/current/index.html[Kafka]
-** Connector for https://docs.couchbase.com/spark-connector/current/index.html[Spark]
-** Connector for https://docs.couchbase.com/elasticsearch-connector/current/index.html[Elasticsearch]
-** https://docs.couchbase.com/server/current/connectors/odbc-jdbc-drivers.html[ODBC and JDBC drivers]
-
-{nbsp}
-
-[.tiles]
-== {empty}
-
-=== Glossary
-
-* https://docs.couchbase.com/server/current/learn/glossary.html[Server glossary]
-
-{nbsp}
-
-{nbsp}
-
-[.sticky.couchbase-lite]
-== Couchbase Lite Docs
-
-== {empty}
-
-[[couchbase-lite-docs]]**Couchbase Lite** is a native, on-device,
-embeddable database for mobile and edge environments that can
-synchronize data through **Couchbase Sync Gateway** to
-**Couchbase Server**.
-
-[.tiles]
-== {empty}
-
-=== Learn
-
-* https://docs.couchbase.com/couchbase-lite/current/introduction.html[Introduction to Couchbase Lite]
-
-//-
-
-* Couchbase Lite for...
-** https://docs.couchbase.com/couchbase-lite/current/swift.html[Swift]
-** https://docs.couchbase.com/couchbase-lite/current/objc.html[Objective-C]
-** https://docs.couchbase.com/couchbase-lite/current/java-android.html[Java (Android)]
-** https://docs.couchbase.com/couchbase-lite/current/java-platform.html[Java]
-** https://docs.couchbase.com/couchbase-lite/current/javascript.html[JavaScript]
-** https://docs.couchbase.com/couchbase-lite/current/csharp.html[C#]
-
-{nbsp}
-
-{nbsp}
-
-=== Releases
-
-* https://docs.couchbase.com/couchbase-lite/current/index.html[What's New]
-* https://docs.couchbase.com/couchbase-lite/current/compatibility.html[Compatibility matrix]
-
-{nbsp}
-
-[.sticky.couchbase-sync-gateway]
-== Couchbase Sync Gateway Docs
-
-== {empty}
-
-[[couchbase-sync-gateway-docs]]**Couchbase Sync Gateway** is an
-internet-facing server that securely syncs data between mobile or edge
-clients running the **Couchbase Lite** database to servers running
-**Couchbase Server** databases.
-
-[.tiles]
-== {empty}
-
-=== Key concepts
-
-* https://docs.couchbase.com/sync-gateway/current/introduction.html[Sync Gateway introduction]
-* https://docs.couchbase.com/sync-gateway/current/getting-started.html[Getting started]
-* https://docs.couchbase.com/sync-gateway/current/data-modeling.html[Data modeling]
-
-=== Releases
-
-* https://docs.couchbase.com/sync-gateway/current/index.html[What's New]
-* https://docs.couchbase.com/sync-gateway/current/release-notes.html[Release{nbsp}notes]
-* https://docs.couchbase.com/sync-gateway/current/supported-os.html[OS and cloud support]
-* https://docs.couchbase.com/sync-gateway/current/compatibility-matrix.html[Compatibility matrix]
-
-[.tiles]
-== {empty}
-
-=== Learn
-
-* https://docs.couchbase.com/sync-gateway/current/config-properties.html[Configuration file]
-* https://docs.couchbase.com/sync-gateway/current/command-line-options.html[Command line options]
-* https://docs.couchbase.com/sync-gateway/current/shared-bucket-access.html[Mobile-server data sync]
-* https://docs.couchbase.com/sync-gateway/current/managing-tombstones.html[Managing tombstones]
-* https://docs.couchbase.com/sync-gateway/current/server-integration.html[Webhooks and changes feed]
-* https://docs.couchbase.com/sync-gateway/current/resolving-conflicts.html[Resolving conflicts]
-* https://docs.couchbase.com/sync-gateway/current/integrating-external-stores.html[Integrating external data]
-* https://docs.couchbase.com/sync-gateway/current/running-replications.html[Inter-cluster replication]
-* https://docs.couchbase.com/sync-gateway/current/rest-api-client.html[REST API client]
-
-=== Access control
-
-* https://docs.couchbase.com/sync-gateway/current/users-and-roles.html[Users and roles]
-* https://docs.couchbase.com/sync-gateway/current/authentication.html[Authentication]
-* https://docs.couchbase.com/sync-gateway/current/sync-gateway-channels.html[Data routing] or channels
-* https://docs.couchbase.com/sync-gateway/current/read-access.html[Read access]
-* https://docs.couchbase.com/sync-gateway/current/write-access.html[Write access]
-* https://docs.couchbase.com/sync-gateway/current/sync-function.html[Sync functions]
-
-[.tiles]
-== {empty}
-
-=== Manage
-
-* https://docs.couchbase.com/sync-gateway/current/logging.html[Logging]
-* https://docs.couchbase.com/sync-gateway/current/stats-monitoring.html[Monitoring]
-* https://docs.couchbase.com/sync-gateway/current/sgcollect-info.html[sgcollect_info]
-
-=== Deploy
-
-* https://docs.couchbase.com/sync-gateway/current/security.html[Security]
-* https://docs.couchbase.com/sync-gateway/current/load-balancer.html[Load balancing]
-* https://docs.couchbase.com/sync-gateway/current/database-offline.html[Taking databases offline/online]
-* https://docs.couchbase.com/sync-gateway/current/os-level-tuning.html[Tuning]
-* https://docs.couchbase.com/sync-gateway/current/upgrade.html[Upgrades]
-
-//-
-
-* https://docs.couchbase.com/sync-gateway/current/kubernetes/deploy-cluster.html[Sync Gateway on Kubernetes image:kubernetes-logo.svg[,18,]]
-
-== {empty}
-
-=== API references
-
-* Sync Gateway https://docs.couchbase.com/sync-gateway/current/rest-api.html[public REST API]
-* Sync Gateway https://docs.couchbase.com/sync-gateway/current/admin-rest-api.html[admin REST API]
-
-{nbsp}
-
-{nbsp}
-
-[.sticky.coontribute-to-docs]
-== Contribute to Documentation
-
-== {empty}
-
-[[contribute-to-docs]]We'd love to hear from you! Take a look at our xref:home:contribute:index.adoc[Contribution Guide] for information on submitting feedback and contributing to our documentation.
-
-
-[.sticky.cta]
-== {nbsp}
-
-[.banner.cta]
-== https://docs.couchbase.com/server/current/getting-started/start-here.html[**Get Started** with Couchbase Server] https://query-tutorial.couchbase.com/[Try the online N1QL tutorial]
+++++
+</div>
+++++
