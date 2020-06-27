@@ -28,13 +28,13 @@ const iconPacks = {
 }
 iconPacks.fa = iconPacks.fas
 const iconShims = require('@fortawesome/fontawesome-free/js/v4-shims').reduce((accum, it) => {
-  accum[it[0]] = [it[1] || 'fas', it[2] || it[0]]
+  accum['fa-' + it[0]] = [it[1] || 'fas', 'fa-' + (it[2] || it[0])]
   return accum
 }, {})
 
 const ICON_SIGNATURE_CS = '<i class="fa'
 const ICON_RX = /<i class="fa[brs]? fa-[^" ]+/g
-const ICON_NS = 'fa-'
+const REQUIRED_ICON_NAMES_RX = /\biconNames: *(\[.*?\])/
 
 function runOnHtmlFiles (dir, fn) {
   return promisify(fs.readdir)(dir, { withFileTypes: true }).then((dirents) => {
@@ -48,16 +48,14 @@ function runOnHtmlFiles (dir, fn) {
 }
 
 function camelCase (str) {
-  return str.replace(/(?:^|-)(.)/g, function (_, l) {
-    return l.toUpperCase()
-  })
+  return str.replace(/-(.)/g, (_, l) => l.toUpperCase())
 }
 
 function scanForIconNames (dir) {
   return runOnHtmlFiles(dir, (path) =>
     promisify(fs.readFile)(path).then((contents) =>
       contents.includes(ICON_SIGNATURE_CS)
-        ? contents.toString().match(ICON_RX).map((it) => it.substr(10).replace(ICON_NS, ''))
+        ? contents.toString().match(ICON_RX).map((it) => it.substr(10))
         : undefined
     )
   ).then((scanResult) => [...new Set(scanResult)])
@@ -65,27 +63,35 @@ function scanForIconNames (dir) {
 
 ;(async () => {
   const siteDir = process.argv[2] || 'public'
-  const iconDefs = await scanForIconNames(siteDir).then((iconNames) => {
-    return iconNames.reduce((accum, iconKey) => {
-      const [iconPrefix, iconName] = iconKey.split(' ').slice(0, 2)
-      let iconDef = (iconPacks[iconPrefix] || {})['fa' + camelCase(iconName)]
-      if (iconDef) {
-        return accum.set(iconKey, { ...iconDef, prefix: iconPrefix })
-      } else if (iconPrefix === 'fa') {
-        const [realIconPrefix, realIconName] = iconShims[iconName] || []
-        if (
-          !accum.has((iconKey = `${realIconPrefix} ${realIconName}`)) &&
-          realIconName &&
-          (iconDef = (iconPacks[realIconPrefix] || {})['fa' + camelCase(realIconName)])
-        ) {
-          return accum.set(iconKey, { ...iconDef, prefix: realIconPrefix })
+  const iconDefsFile = ospath.join(siteDir, '_/js/vendor/fontawesome-icon-defs.js')
+  const iconDefs = await scanForIconNames(siteDir).then((iconNames) =>
+    promisify(fs.readFile)(iconDefsFile, 'utf8').then((contents) => {
+      try {
+        const requiredIconNames = JSON.parse(contents.match(REQUIRED_ICON_NAMES_RX)[1].replace(/'/g, '"'))
+        iconNames = [...new Set(iconNames.concat(requiredIconNames))]
+      } catch (e) {}
+    }).then(() =>
+      iconNames.reduce((accum, iconKey) => {
+        const [iconPrefix, iconName] = iconKey.split(' ').slice(0, 2)
+        let iconDef = (iconPacks[iconPrefix] || {})[camelCase(iconName)]
+        if (iconDef) {
+          return accum.set(iconKey, { ...iconDef, prefix: iconPrefix })
+        } else if (iconPrefix === 'fa') {
+          const [realIconPrefix, realIconName] = iconShims[iconName] || []
+          if (
+            realIconName &&
+            !accum.has((iconKey = `${realIconPrefix} ${realIconName}`)) &&
+            (iconDef = (iconPacks[realIconPrefix] || {})[camelCase(realIconName)])
+          ) {
+            return accum.set(iconKey, { ...iconDef, prefix: realIconPrefix })
+          }
         }
-      }
-      return accum
-    }, new Map())
-  })
+        return accum
+      }, new Map())
+    )
+  )
   await promisify(fs.writeFile)(
-    ospath.join(siteDir, '_/js/vendor/fontawesome-icon-defs.js'),
+    iconDefsFile,
     `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`,
     'utf8'
   )
