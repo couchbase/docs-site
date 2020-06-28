@@ -16,7 +16,7 @@ Couchbase Server is designed to run in the most popular cloud and container envi
 [.column]
 ====== {empty}
 [.media-left]
-image::couchbase-in-the-cloud.png[]
+video::bNOq6OeMCr4[youtube]
 
 ++++
 </div>
