@@ -11,7 +11,7 @@
 [.column]
 ====== {empty}
 [.content]
-Find the documentation, samples, and references to help you use Couchbase and build applications.
+Find the documentation, samples, and references to help you use Couchbase and build applications. 
 
 [.column]
 ====== {empty}
@@ -31,7 +31,7 @@ image::get-the-agility-of-sql-and-the-flexibility-of-json.svg[]
 .Couchbase Cloud
 
 [.content]
-Couchbase Cloud is a fully-managed database as a service designed from the ground up to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
+A fully-managed database as a service designed to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
 {empty}
 xref:cloud::index.adoc[Get Started with Couchbase Cloud]
 
@@ -39,7 +39,7 @@ xref:cloud::index.adoc[Get Started with Couchbase Cloud]
 .Couchbase Server
 
 [.content]
-Couchbase Server is an open source, distributed, NoSQL document-oriented engagement database. It exposes a fast key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for fast queries and a powerful query engine for executing SQL-like queries.
+An open source, distributed, JSON document database. It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
 {empty}
 xref:server:getting-started:start-here.adoc[Get Started: Couchbase Server Enterprise]
 
