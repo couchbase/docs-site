@@ -222,7 +222,7 @@
     "default": {
       "lvl0": {
         "global": true,
-        "selector": ".navbar .component"
+        "selector": ".component-frame h4.title, .component-frame .component"
       },
       "lvl1": ".doc > h1.page",
       "lvl2": ".doc .sect1 > h2:first-child",
@@ -241,16 +241,6 @@
       "lvl3": ".doc .sect2 > h3:first-child",
       "lvl4": ".doc .sect3 > h4:first-child",
       "text": ".doc p, .doc dt"
-    },
-    "headings-only": {
-      "lvl0": {
-        "global": true,
-        "selector": ".navbar .component"
-      },
-      "lvl1": ".doc > h1.page",
-      "lvl2": ".doc .sect1 > h2:first-child",
-      "lvl3": ".doc .sect2 > h3:first-child",
-      "lvl4": ".doc .sect3 > h4:first-child"
     }
   },
   "selectors_exclude": [
