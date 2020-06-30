@@ -24,7 +24,7 @@ image::get-the-agility-of-sql-and-the-flexibility-of-json.svg[]
 
 == Get Started
 ++++
-<div class="card-row three-column-row">
+<div class="card-row two-column-row">
 ++++
 
 [.column]
@@ -33,7 +33,16 @@ image::get-the-agility-of-sql-and-the-flexibility-of-json.svg[]
 [.content]
 A fully-managed database as a service designed to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
 {empty}
-xref:cloud::index.adoc[Get Started with Couchbase Cloud]
+* xref:cloud::index.adoc[Get Started with Couchbase Cloud]
+
+
+[.column]
+.Couchbase Autonomous Operator (Kubernetes)
+
+[.content]
+Native integration of Couchbase Server with open source Kubernetes and Red Hat OpenShift to automate the management of common Couchbase tasks such as the configuration, creation, scaling, and recovery of Couchbase clusters.
+{empty}
+* xref:operator::overview.adoc[Get Started with Autonomous Operator]
 
 [.column]
 .Couchbase Server
@@ -44,12 +53,13 @@ An open source, distributed, JSON document database. It exposes a scale-out, key
 xref:server:getting-started:start-here.adoc[Get Started: Couchbase Server Enterprise]
 
 [.column]
-.Couchbase Mobile
+.Couchbase for Mobile/Edge
 
 [.content]
-Couchbase Mobile brings the power of NoSQL to the edge. It comprises two components (Sync Gateway and Couchbase Lite), which combine with Couchbase Server to provde fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combined with Couchbase Server, it provides fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
 {empty}
-xref:couchbase-lite::introduction.adoc[Get Started with Couchbase Lite]
+* xref:couchbase-lite::introduction.adoc[Get Started with Couchbase Lite]
+* xref:sync-gateway::index.adoc[Get Started with Sync Gateway]
 
 ++++
 </div>
