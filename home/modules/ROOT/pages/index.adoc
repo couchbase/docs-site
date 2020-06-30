@@ -16,7 +16,7 @@ Find the documentation, samples, and references to help you use Couchbase and bu
 [.column]
 ====== {empty}
 [.media-left]
-image::get-the-agility-of-sql-and-the-flexibility-of-json.svg[]
+image::get-the-agility-of-sql-and-the-flexibility-of-json.svg[,300]
 
 ++++
 </div>
