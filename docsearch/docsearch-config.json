@@ -2,13 +2,10 @@
   "index_name": "staging_docs_couchbase",
   "start_urls": [
     {
-      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://docs-staging.couchbase.com/(?P<component>.*?)/",
       "variables": {
         "component": [
           "cloud"
-        ],
-        "version": [
-          "beta"
         ]
       }
     },
