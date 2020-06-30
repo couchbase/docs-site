@@ -105,7 +105,7 @@ pipeline {
             withCredentials([fontawesomeNpmTokenCredentials]) {
               writeFile file: 'scripts/.npmrc', text: '@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_TOKEN}\n'
               sh '(cd scripts && npm --no-package-lock i)'
-              sh 'scripts/populate-icon-defs.js public'
+              sh 'node scripts/populate-icon-defs.js public'
             }
           }
         }
