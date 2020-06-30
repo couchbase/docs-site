@@ -24,7 +24,7 @@ pipeline {
     }
   }
   environment {
-    CONFIG="${env.WORKSPACE}/docsearch/production-config.json"
+    CONFIG="${env.WORKSPACE}/docsearch/docsearch-config.json"
     HOME='/docsearch'
     INDEX_NAME_TMP="$BUILD_TAG"
     PIPENV_HIDE_EMOJIS=true

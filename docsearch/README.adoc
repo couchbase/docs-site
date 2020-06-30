@@ -2,7 +2,7 @@
 :url-algolia: https://www.algolia.com/doc/guides/getting-started/what-is-algolia/
 :url-docsearch-scraper-repo: https://github.com/algolia/docsearch-scraper
 :url-docsearch-scraper-docs: https://community.algolia.com/docsearch/run-your-own.html
-:url-config: https://github.com/couchbase/docs-site/raw/master/docsearch/production-config.json
+:url-config: https://github.com/couchbase/docs-site/raw/master/docsearch/docsearch-config.json
 :url-chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
 :url-pipenv: https://pipenv.readthedocs.io/en/latest/
 
@@ -73,7 +73,7 @@ WARNING: Rebuilding the index takes about 30 minutes because it has to visit eve
 
 To update the index, pass the config file to the `docsearch run` command:
 
- $ ./docsearch run production-config.json
+ $ ./docsearch run docsearch-config.json
 
 If that succeeds, skip to <<Activate Index>>.
 
@@ -87,7 +87,7 @@ First, make sure you have Docker running on your machine and that you can list i
 
 Then, run the `docsearch` command again, but use the Docker container instead:
 
- $ ./docsearch docker:run production-config.json
+ $ ./docsearch docker:run docsearch-config.json
 
 The search index is now updated.
 
@@ -116,7 +116,7 @@ Then, make it executable:
 
 Finally, run it, passing the configuration file as the first argument:
 
- $ ./scrape production-config.json
+ $ ./scrape docsearch-config.json
 
 The search index is now updated.
 
