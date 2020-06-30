@@ -16,7 +16,7 @@ Couchbase Server is an open source, distributed, NoSQL document-oriented engagem
 [.column]
 ====== {empty}
 [.media-left]
-image::database-icon.svg[]
+image::n1ql-ansi-join-example.png[,300]
 
 ++++
 </div>
