@@ -51,7 +51,7 @@ image::bigdata-elasticsearch-comp.png[,300]
 
 [.content]
 ODBC and JDBC drivers enable any application based on the ODBC/JDBC standards, for example Microsoft Excel, QlikView, SAP Lumira, or Tableau, to connect to a Couchbase Server or cluster.
-{empty}
+[]
 xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
 
 

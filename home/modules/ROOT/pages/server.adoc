@@ -1,6 +1,7 @@
 = Couchbase Server
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
+:dot: .
 :!sectids:
 
 = Couchbase Server
@@ -175,7 +176,7 @@ image::n1ql-ansi-join-example.png[,450]
 * https://docs.couchbase.com/sdk-api/couchbase-node-client/[API Reference]
 
 [.column]
-.NET SDK
+.{dot}NET SDK
 * xref:dotnet-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
 * xref:dotnet-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
 * xref:dotnet-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
