@@ -1,5 +1,5 @@
 = Big Data Integration Using Couchbase Connectors
-:page-layout: landing-page-core-concept
+:page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :!sectids:
 

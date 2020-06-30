@@ -1,5 +1,5 @@
 = Couchbase on Containers, Kubernetes, and Cloud
-:page-layout: landing-page-core-concept
+:page-layout: llanding-page-top-level-sdk
 :page-role: tiles
 :!sectids:
 
