@@ -16,7 +16,7 @@ Couchbase Mobile brings the power of NoSQL to the edge. It comprises two compone
 [.column]
 ====== {empty}
 [.media-left]
-image::secure-manage-and-develop-with-ease.svg[]
+image::secure-manage-and-develop-with-ease.svg[,300]
 
 ++++
 </div>
