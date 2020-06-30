@@ -38,7 +38,7 @@ content:
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [landing-pages, release/6.0, release/5.5, release/5.1, release/5.0]
+    branches: [release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/docs-sdk-c
@@ -65,7 +65,7 @@ content:
     branches: [docs-site-pub]
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials
-    branches: index-v2
+    branches: master
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
   - url: https://github.com/couchbaselabs/mobile-travel-sample
