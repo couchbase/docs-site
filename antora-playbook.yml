@@ -15,6 +15,8 @@ content:
   - url: .
     branches: HEAD
     start_path: home
+  - url: https://git@github.com/couchbaselabs/project-avengers
+    start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
@@ -101,6 +103,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
   extensions:
+  - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
@@ -108,6 +111,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v269/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-61/ui-bundle.zip
 output:
   dir: ./public

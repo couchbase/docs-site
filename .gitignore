@@ -3,5 +3,6 @@
 /netlify/node_modules/
 /node_modules/
 /public/
+/scripts/node_modules/
 local-antora-playbook.yml
 xref-validator.log

@@ -1,0 +1,49 @@
+= Couchbase on Containers, Kubernetes, and Cloud
+:page-layout: landing-page-top-level-sdk
+:page-role: tiles
+:!sectids:
+
+= Couchbase Cloud
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+Couchbase Server is designed to run in the most popular cloud and container environments. Deploy Couchbase in the cloud for its unique data model flexibility, elastic scalability, high performance, and 24x365 availability.
+
+[.column]
+====== {empty}
+[.media-left]
+video::bNOq6OeMCr4[youtube]
+
+++++
+</div>
+++++
+
+== {empty}
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+====== {empty}
+.Couchbase Cloud
+
+[.content]
+Couchbase Cloud is a fully-managed database as a service designed from the ground up to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
+[]
+xref:cloud::index.adoc[Go to Couchbase Cloud Docs]
+
+[.column]
+====== {empty}
+.Couchbase Autonomous Operator
+[.content]
+The Couchbase Autonomous Operator provides native integration of Couchbase Server with open source Kubernetes and Red Hat OpenShift. It enables you to automate the management of common Couchbase tasks such as the configuration, creation, scaling, and recovery of Couchbase clusters. By reducing the complexity of running a Couchbase cluster, it lets you focus on the desired configuration and not worry about the details of manual deployment and life-cycle management.
+[]
+xref:operator::overview.adoc[Go to Couchbase Autonomous Operator]
+
+++++
+</div>
+++++
