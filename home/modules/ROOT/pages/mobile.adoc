@@ -3,7 +3,7 @@
 :page-role: tiles
 :!sectids:
 
-= Couchbase Mobile
+= Couchbase for Mobile/Edge
 ++++
 <div class="card-row">
 ++++
@@ -11,7 +11,7 @@
 [.column]
 ====== {empty}
 [.content]
-Couchbase Mobile brings the power of NoSQL to the edge. It comprises two components (Sync Gateway and Couchbase Lite), which combine with Couchbase Server to provde fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combined with Couchbase Server, it provides fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
 
 [.column]
 ====== {empty}
