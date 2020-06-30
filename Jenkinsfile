@@ -1,6 +1,7 @@
 #!/bin/env groovy
 
 def awsCredentialsId = 'couchbase-prod-aws'
+def fontawesomeNpmTokenCredentialsId = 'fontawesome-npm-token'
 def githubApiCredentialsId = 'docs-robot-github-token'
 def sshPrivKeyCredentialsId = 'terraform-ssh-key'
 def siteS3Bucket = 'docs.couchbase.com'
@@ -11,6 +12,7 @@ def githubRepo = 'docs-site'
 
 def awsCredentials = [$class: 'AmazonWebServicesCredentialsBinding', credentialsId: awsCredentialsId, accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']
 def githubApiCredentials = usernamePassword(credentialsId: githubApiCredentialsId, usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_TOKEN')
+def fontawesomeNpmTokenCredentials = string(credentialsId: fontawesomeNpmTokenCredentialsId, variable: 'FONTAWESOME_NPM_TOKEN')
 
 def triggerEventType
 def s3Cmd = 'cp --recursive'
@@ -100,6 +102,11 @@ pipeline {
             }
             // NOTE we don't use --fetch here since it was already done when running the xref validator
             sh "antora --cache-dir=./.cache/antora --clean --generator=@antora/site-generator-ms --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
+            withCredentials([fontawesomeNpmTokenCredentials]) {
+              writeFile file: 'scripts/.npmrc', text: '@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_TOKEN}\n'
+              sh '(cd scripts && npm --no-package-lock i)'
+              sh 'scripts/populate-icon-defs.js public'
+            }
           }
         }
         sh 'cat etc/nginx/snippets/rewrites.conf public/.etc/nginx/rewrite.conf | awk -F \' +\\\\{ +\' \'{ if ($1 && a[$1]++) { print sprintf("Duplicate location found on line %s: %s", NR, $0) > "/dev/stderr" } else { print $0 } }\' > public/.etc/nginx/combined-rewrites.conf'
