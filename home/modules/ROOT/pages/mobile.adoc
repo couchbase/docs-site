@@ -16,7 +16,7 @@ Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combi
 [.column]
 ====== {empty}
 [.media-left]
-image::secure-manage-and-develop-with-ease.svg[,300]
+image::secure-manage-and-develop-with-ease.svg[,275]
 
 ++++
 </div>
