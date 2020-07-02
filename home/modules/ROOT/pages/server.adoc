@@ -18,7 +18,7 @@ For mobile and Internet of Things environments Couchbase also runs natively on-d
 [.column]
 ====== {empty}
 [.media-left]
-image::n1ql-ansi-join-example.png[,450]
+image::cb-docs-home.png[,450]
 
 ++++
 </div>
