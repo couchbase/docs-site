@@ -47,7 +47,8 @@ pipeline {
     ALGOLIA_INDEX_NAME='prod_docs_couchbase'
     FORCE_HTTPS='false' // CloudFront is configured to force http -> https
     NODE_OPTIONS='--max-old-space-size=4096'
-    OPTANON_SCRIPT_URL='https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js'
+    OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+    OPTANON_SCRIPT_DATA_DOMAIN_SCRIPT = "748511ff-10bf-44bf-88b8-36382e5b5fd9"
     NODE_PATH='/usr/local/share/.config/yarn/global/node_modules'
     SHOW_FEEDBACK_BUTTON='true'
     SUPPORTS_CURRENT_URL='true'
