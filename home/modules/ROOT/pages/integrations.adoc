@@ -24,7 +24,7 @@ image::bigdata-elasticsearch-comp.png[,300]
 
 == Big Data Connectors
 ++++
-<div class="card-row two-column-row">
+<div class="card-row three-column-row">
 ++++
 
 [.column]
@@ -40,13 +40,6 @@ image::bigdata-elasticsearch-comp.png[,300]
 * xref:kafka-connector::sink-configuration-options.adoc[Sink Configuration]
 * xref:kafka-connector::streams-sample.adoc[Sample Application with Kafka Steams]
 
-++++
-</div>
-++++
-
-++++
-<div class="card-row three-column-row">
-++++
 
 [.column]
 .Spark
@@ -68,6 +61,10 @@ xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
 [.content]
 Spring Data for Couchbase is part of the https://spring.io/projects/spring-data-couchbase[umbrella Spring Data project^] which aims to provide a familiar and consistent Spring-based programming model for new datastores while retaining store-specific features and capabilities.
 See the xref:java-sdk:project-docs:compatibility.adoc#spring-compat[Compatibility Table] to match Couchbase and Spring Data versions.
+
+[.column]
+{empty}
+
 ++++
 </div>
 ++++
