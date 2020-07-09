@@ -60,7 +60,7 @@ xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
 
 [.content]
 Spring Data for Couchbase is part of the https://spring.io/projects/spring-data-couchbase[umbrella Spring Data project^] which aims to provide a familiar and consistent Spring-based programming model for new datastores while retaining store-specific features and capabilities.
-See the xref:java-sdk:project-docs:compatibility.adoc#spring-compat[Compatibility Table] to match Couchbase and Spring Data versions.
+See the xref:java-sdk:project-docs:compatibility.adoc#spring-compat[Compatibility Table] to match Couchbase and Spring Data versions.
 
 [.column]
 {empty}
