@@ -222,7 +222,7 @@
     "default": {
       "lvl0": {
         "global": true,
-        "selector": ".component-frame h4.title, .component-frame .component"
+        "selector": ".component-frame h4.title span, .component-frame .component"
       },
       "lvl1": ".doc > h1.page",
       "lvl2": ".doc .sect1 > h2:first-child",
