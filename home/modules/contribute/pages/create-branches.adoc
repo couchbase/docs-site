@@ -13,9 +13,11 @@ A pull request submitted from a working branch that only contains closely relate
 
 The Couchbase documentation repositories maintain two types of base branches: master and release.
 
-The master branch (`master`) contains the documentation for the next, unreleased product version.
-New documentation for the next product version, its features, and non-bug related improvements should be based off of the master branch.
-This is the branch that you will most often base your working branch off of and submit pull requests to.
+For Couchbase Server, SDKs, and Mobile docs, the default branch will be the latest release -- e.g. release/6.5.
+For other docs repos it will be master, which contains the documentation for the next, unreleased product version.
+New documentation for the next product version, its features, and non-bug related improvements should be based off of the master branch where it exists.
+For the others, look for a development branch with an incremented release number.
+This, and the current release branch, are the ones that you will most often base your working branch off of and submit pull requests to.
 
 Release branches (`release/$.$`) contain the documentation specific to a stable product release.
 Fixes related to product bugs and documentation errors in stable releases are based off of a release branch *only* if that bug or error is *only* present in that release.
