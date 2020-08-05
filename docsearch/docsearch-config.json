@@ -125,6 +125,17 @@
       "url": "https://docs.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
+          "ruby-sdk"
+        ],
+        "version": [
+          "3.0"
+        ]
+      }
+    },
+    {
+      "url": "https://docs.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
           "scala-sdk"
         ],
         "version": [
