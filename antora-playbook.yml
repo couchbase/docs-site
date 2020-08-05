@@ -57,6 +57,8 @@ content:
     branches: [release/3.0, release/2.6, release/2.5]
   - url: https://github.com/couchbase/docs-sdk-python
     branches: [release/3.0, release/2.5, release/2.4]
+  - url: https://github.com/couchbase/docs-sdk-ruby
+    branches: [release/3.0]
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/1.0]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
@@ -111,6 +113,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-72/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-77/ui-bundle.zip
 output:
   dir: ./public
