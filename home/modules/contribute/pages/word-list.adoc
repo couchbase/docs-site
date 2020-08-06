@@ -10,7 +10,8 @@ Alphabetical listing of all words needing the attention of a consistent Style Gu
 
 Nevertheless, there is little room for ambiguity and doubt in enterprise software, and consistent documentation is a great aid to clarity.
 
-[Note] For items not covered here, refer to the Associated Press Stylebook -- and for spelling, capitalization, and hyphenation, refer to Webster's New World College Dictionary. 
+[NOTE]
+For items not covered here, refer to the Associated Press Stylebook -- and for spelling, capitalization, and hyphenation, refer to Webster's New World College Dictionary. 
 New Yorker, in particular, presents some interesting alternatives, and we may be open to some discussion, so consider opening a https://issues.couchbase.com/projects/DOC[JIRA ticket] against this document.
 
 == Alphabetical Listing
