@@ -2,7 +2,7 @@
 :page-topic-type: reference
 
 [abstract]
-Alphabetical listing of all words needing the attention of a consestent Style Guide, including Couchbase terms.
+Alphabetical listing of all words needing the attention of a consistent Style Guide, including Couchbase terms.
 
 
 “A foolish consistency is the hobgoblin of little minds, adored by little statesmen and philosophers and divines. With consistency a great soul has simply nothing to do. He may as well concern himself with his shadow on the wall. Speak what you think now in hard words, and to-morrow speak what to-morrow thinks in hard words again, though it contradict every thing you said to-day. — 'Ah, so you shall be sure to be misunderstood.' — Is it so bad, then, to be misunderstood? Pythagoras was misunderstood, and Socrates, and Jesus, and Luther, and Copernicus, and Galileo, and Newton, and every pure and wise spirit that ever took flesh. To be great is to be misunderstood.”
