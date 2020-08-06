@@ -23,7 +23,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 |===
 |.NET | A '.', then all caps for NET (never _dotnet_)
 | 1; 1 000; 1 000 000 | see _numbers, SI_
-| `->` | If you want a `->`, this will be fine inside a code block. Outside of a code block, Antora/asciidoc will convert it to `→` _a.k.a._ `&#8594;` -- to avoid this, escape the hyphen thus: `\->`
+| `\->` | If you want a `\->`, this will be fine inside a code block. Outside of a code block, Antora/asciidoc will convert it to `→` _a.k.a._ `&#8594;` -- to avoid this, escape the hyphen thus: `\\->`
 |===
 
 
