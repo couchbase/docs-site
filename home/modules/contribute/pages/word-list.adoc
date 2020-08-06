@@ -504,7 +504,6 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 | warmup |
 | web | website / webpage
-| Well |-suited
 | Whitelist | should be Allow list
 | whitepaper | 
 | wifi |
