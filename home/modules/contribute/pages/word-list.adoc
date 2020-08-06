@@ -95,7 +95,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | CentOS |
 | cheat sheet | is two words
 | checkbox(es) | is one word
-| checkpoint | (noun)| is one word
+| checkpoint | (noun) is one word
 | cloud | lower case (unless product name: _Couchbase Cloud_
 | cloud native | (cloud-native as adj. modifer)
 | cluster |
