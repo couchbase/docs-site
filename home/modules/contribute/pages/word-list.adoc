@@ -97,7 +97,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | cheat sheet | is two words
 | checkbox(es) | is one word
 | checkpoint | (noun) is one word
-| cloud | lower case (unless product name: _Couchbase Cloud_
+| cloud | lower case (unless product name: _Couchbase Cloud_)
 | cloud native | (cloud-native as adj. modifer)
 | cluster |
 | Cluster Manager |
@@ -111,7 +111,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | Couchbase Eventing Service |
 | Couchbase Functions |
 | Couchbase Managed Cloud |
-| Couchbase Server 7.0 | first instance; abbreviate to Server 7.0 in subsequent instances. When referencing general (both) okay to use Couchbase Server alone, no article.
+| Couchbase Server 7.0 | first instance; abbreviate to Server 7.0 in subsequent instances. When referencing general (both) okay to use Couchbase Server alone, no article
 | Couchstore |
 | cross datacenter replication (XDCR) |
 | cURL | is the name of Daniel Stenberg's data transfer tool (_Client URL_). `curl` is the verb, and its use on the command line
@@ -241,7 +241,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 | IaaS |
 | i.e. | use the full stops 
-| indexes | not indices - such are the degenerate times in which we live
+| indexes | not indices -- such are the degenerate times in which we live
 | IndexScan |
 | Industry standard | is a noun phrase, so not hyphenated
 | `initargs` |
