@@ -319,7 +319,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | MongoDB™ | Use the ™
 | multichannel |
 | multi-datacenter |
-| Multi-Dimensional Scaling (MDS) | when referrring to product. When referring to the capability, then it should simply be multi-dimensional scaling.  |
+| Multi-Dimensional Scaling (MDS) | when referrring to product. When referring to the capability, then it should simply be multi-dimensional scaling. 
 | multilingual |
 | Multi-master | see master 
 | multi-model |
