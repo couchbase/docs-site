@@ -1,0 +1,64 @@
+site:
+  title: Couchbase Docs (Staging)
+  url: https://docs-staging.couchbase.com
+  start_page: home::index.adoc
+content:
+  branches: release/*
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: home
+  - url: https://github.com/couchbase/couchbase-cli.git
+    branches: [master, alice]
+    start_path: docs
+  # NOTE server-docs is currently after other server repos so nav key wins
+  - url: ~/Couchbase/docs/docs-server/
+    branches: [release/6.5, release/6.6]
+  - url: ~/Couchbase/docs/docs-sdk-common/
+    branches: [release/6.0, release/6.5]
+  - url: ~/Couchbase/docs/docs-sdk-java/
+    branches: [release/2.7, release/3.0]
+  - url: ~/Couchbase/docs/docs-sdk-c/
+    branches: [release/2.10, release/3.0]
+  - url: ~/Couchbase/docs/docs-sdk-dotnet/
+    branches: [release/2.7, release/3.0]
+  - url: ~/Couchbase/docs/docs-sdk-go/
+    branches: [release/1.6, release/2.0, release/2.1]
+  - url: ~/Couchbase/docs/docs-sdk-nodejs/
+    branches: [release/2.6, release/3.0]
+  - url: ~/Couchbase/docs/docs-sdk-php/
+    branches: [release/2.6, release/3.0]
+  - url: ~/Couchbase/docs/docs-sdk-python/
+    branches: [release/2.5, release/3.0]
+  - url: ~/Couchbase/docs/docs-sdk-ruby/
+    branches: [release/3.0]
+  - url: ~/Couchbase/docs/docs-sdk-scala/
+    branches: [release/1.0]
+
+asciidoc:
+  attributes:
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    tabs: tabs
+    toc: ~
+    xrefstyle: short
+  extensions:
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/tabs-block.js
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/v259/ui-bundle.zip
+  supplemental_files:
+  - path: robots.txt
+    contents: |
+      User-agent: *
+      Disallow: /
+  - path: ui.yml
+    contents: |
+      static_files: [robots.txt]
+output:
+  dir: ./public
