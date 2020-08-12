@@ -208,6 +208,15 @@ image::n1ql-ansi-join-example.png[,450]
 * xref:go-sdk:howtos:collecting-information-and-logging.adoc[Logging]
 * https://pkg.go.dev/github.com/couchbase/gocb/v2?tab=doc[API Reference]
 
+[.column]
+.Ruby SDK
+* xref:ruby-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:ruby-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:ruby-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:ruby-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+// * xref:ruby-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[API Reference]
+
 ++++
 </div>
 ++++
