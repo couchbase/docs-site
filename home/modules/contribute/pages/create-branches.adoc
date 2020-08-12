@@ -13,7 +13,7 @@ A pull request submitted from a working branch that only contains closely relate
 
 The Couchbase documentation repositories maintain two types of base branches: master and release.
 
-For Couchbase Server, SDKs, and Mobile docs, the default branch will be the latest release -- e.g. release/6.5.
+For Couchbase Server, SDKs, and Mobile docs, the default branch will be the latest release -- e.g. release/6.6.
 For other docs repos it will be master, which contains the documentation for the next, unreleased product version.
 New documentation for the next product version, its features, and non-bug related improvements should be based off of the master branch where it exists.
 For the others, look for a development branch with an incremented release number.
