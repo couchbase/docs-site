@@ -13,7 +13,7 @@
 :url-git-sdk-nodejs: {url-git-cb}/docs-sdk-nodejs
 :url-git-sdk-php: {url-git-cb}/docs-sdk-php
 :url-git-sdk-python: {url-git-cb}/docs-sdk-python
-:url-git-sdk-python: {url-git-cb}/docs-sdk-ruby
+:url-git-sdk-ruby: {url-git-cb}/docs-sdk-ruby
 :url-git-sdk-scala: {url-git-cb}/docs-sdk-scala
 :url-git-sdk-common: {url-git-cb}/docs-sdk-common
 :url-git-home: {url-git-cb}/docs-site
