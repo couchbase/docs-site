@@ -64,6 +64,17 @@ IMPORTANT: Since some of the respositories listed in the playbook are private, A
 If Antora fails because it can't connect to the private repositories, you're git credentials likely aren't configured.
 See xref:build-site.adoc#configure-git-credentials[git credentials] to learn how to configure the git credentials for Antora to use.
 
+
+== Lightweight Local Playbook
+
+You may have to iterate over ammending the Antora playbook file a number of times, commenting out repos to which you do not have access.
+An easier approach could be starting with an intentionally minimalist playbook, and only adding the repos that you're planning to work on.
+This will have to include the `docs-server` repo which, amongst other things, contains the site navigation.
+
+For example, to work on local copies of our nine SDK docs repos, and the Server docs, and also include couchbase-cli in your local docs build, take a look at our 
+https://github.com/couchbase/docs-site/blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[example local-staging-antora-playbook.yml file].
+
+
 == Next Step
 
 xref:send-pr.adoc#commit[Commit your changes and push them to your remote repository].
