@@ -36,6 +36,8 @@ Rendered as:
 
 include::example$code-blocks.adoc[tag=console]
 
+Note, using `[source,console]` ensures that the `$` prompt is not copied when the user clicks the clipboard icon that appears upon mouseover above the code block.
+
 Short code snippets don't need delimiters as long as they don't contain blank lines or callouts.
 
 ....
@@ -89,6 +91,38 @@ Just specify the xref:includes.adoc[resource ID of the example file in the direc
 \include::example$contact.json[]
 ----
 ....
+
+You will find most of the SDK code samples included in `$examples` directories alongside the `pages` parent to the `.adoc` file that is calling them. 
+Else you will find thim in a special `devguide/examples` module in each SDK docs repo.
+Using `include::` adds a _Git hub_ link on mouseover, which leads to the code file on the repo.
+
+For a tagged region of a source file, set the tags around the code sample using the comment characcter appropriate to the source language, such as `//` or `#`:
+
+....
+[source,ruby]
+----
+# tag::read-only[]
+options = Cluster::QueryOptions.new
+options.readonly = true
+cluster.query(
+    'SELECT COUNT(*) AS airport_count FROM `travel-sample` WHERE type = "airport"',
+    options)
+# end::read-only[]
+----
+....
+
+And add the appropriate `[tag=]` to the `include::`.
+
+....
+.Read-only Query
+[source,json]
+----
+\include::example$query.rb[tag=read-only]
+----
+....
+
+Note that we aim to keep all code files in the examples directory runnable -- or at least compilable -- so if you are adding a snippet of code to an existing file, please test it.
+
 
 == Learn More
 
