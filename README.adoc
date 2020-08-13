@@ -20,7 +20,7 @@ The production site is built for each change to the master branch.
 A deploy preview of the site is also published for each pull request, though without any of the private content sources (unless the pull request comes from a trusted source).
 The configuration for the deploy preview build is located in the [.path]_netlify_ folder.
 
-If you're building a local version of the Couchbase docs for testing, and want a reduced-scope playbook that just builds Server docs with the components that you are editing locally, [here is an SDK-based playbook file](./blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml).
+If you're building a local version of the Couchbase docs for testing, and want a reduced-scope playbook that just builds Server docs with the components that you are editing locally, ./blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[here is an SDK-based playbook file].
 
 == Home Docs Component
 
