@@ -6,7 +6,7 @@ If you've never built the site on your device, complete the xref:install-antora.
 
 To preview your changes on the site locally, you need to configure the playbook to use your local repository.
 
-. Copy the staging playbook, _antora-playbook.yml_, and save it in the _docs-site_ repository.
+. Copy the Antora playbook, _antora-playbook.yml_, and save it in the _docs-site_ repository.
 . Rename it _local-antora-playbook.yml_.
 . Open _local-antora-playbook.yml_ in Atom or your editor.
 . Under `sources`, find the `url` key that matches the upstream repository you plan to submit your changes to.
