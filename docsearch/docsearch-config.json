@@ -208,6 +208,7 @@
           "kafka-connector"
         ],
         "version": [
+          "4.0",
           "3.4"
         ]
       }
