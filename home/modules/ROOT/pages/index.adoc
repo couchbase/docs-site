@@ -157,6 +157,7 @@ endif::[]
 
 [.tile]
 .Kafka Connector
+* xref:4.0@kafka-connector::index.adoc[Version 4.0]
 * xref:3.4@kafka-connector::index.adoc[Version 3.4]
 * xref:3.3@kafka-connector::index.adoc[Version 3.3]
 * xref:5.0@server:connectors:kafka-3.2/kafka-intro.adoc[Version 3.2]
