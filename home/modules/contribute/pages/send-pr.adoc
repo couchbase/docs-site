@@ -33,9 +33,9 @@ After you push your working branch to your remote repository on GitHub, you can 
 . Go to your repository on GitHub, and click btn:[Compare & pull request].
 . On the Open a Pull Request screen, update the PR title if it needs clarification, and then click btn:[Create Pull Request].
 
-Your pull request will be reviewed by a member of the docs team responsible for the area of documentation you are helping to improve.
+Your pull request will be reviewed by a member of the Documentation team.
 Feedback and suggestions for improvements to the pull request are a standard part of the process, to ensure consistency across the documentation.
-Response will normally be within a couple of working days, but can be longer -- please bear with us, we really do appreciate contrybutions from the community, but occasionally writers have to juggle many demands.
+Response will normally be within a couple of working days, but can sometimes take longer -- please bear with us, we really do appreciate contributions from the community.
 
 == Submit a Review
 
