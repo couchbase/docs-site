@@ -33,6 +33,10 @@ After you push your working branch to your remote repository on GitHub, you can 
 . Go to your repository on GitHub, and click btn:[Compare & pull request].
 . On the Open a Pull Request screen, update the PR title if it needs clarification, and then click btn:[Create Pull Request].
 
+Your pull request will be reviewed by a member of the Documentation team.
+Feedback and suggestions for improvements to the pull request are a standard part of the process, to ensure consistency across the documentation.
+Response will normally be within a couple of working days, but can sometimes take longer -- please bear with us, we really do appreciate contributions from the community.
+
 == Submit a Review
 
 To review an existing pull request, use GitHub's Pull Request Review features:
@@ -47,7 +51,13 @@ To incorporate feedback from a review of an existing pull request, use GitHub's 
 
 == Next Step
 
-Get an overview of the Docs team review process. (Pending)
+Learn how AsciiDoc xref:asciidoc-overview.adoc[is used for Couchbase documentation].
+
+
+
+
+
+// Can the below be deleted now?
 
 ////
 == Submit a Pull Request
