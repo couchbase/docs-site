@@ -63,9 +63,9 @@ content:
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/2.8,release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
+    branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/2.8,release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
+    branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
     # End::Mobile content                                                                       Mobile Content
   - url: https://github.com/couchbase-partners/test-drive-couchbase
     branches: [docs-site-pub]
