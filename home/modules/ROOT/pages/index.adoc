@@ -110,6 +110,12 @@ endif::[]
 * xref:2.0@python-sdk::introduction.adoc[Version 2.0]
 
 [.tile]
+.Ruby SDK
+* https://docs.couchbase.com/couchbase-sdk-ruby-1.3/[Version 1.3]
+* https://docs.couchbase.com/couchbase-sdk-ruby-1.2/[Version 1.2]
+* https://docs.couchbase.com/couchbase-sdk-ruby-1.1/[Version 1.1]
+
+[.tile]
 .Scala SDK
 * xref:1.0@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
