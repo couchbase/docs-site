@@ -49,7 +49,7 @@ Document-to-document links are created with xref:cross-references.adoc[cross ref
 ----
 File bugs at https://issues.couchbase.com.
 
-Join the https://gitter.im/antora/users[Antora chat room] to meet and get help from the community.
+Join the https://gitter.im/antora/users[Antora chat room^] to meet and get help from the community.
 ----
 
 Renders as:

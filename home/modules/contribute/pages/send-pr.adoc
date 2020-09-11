@@ -37,13 +37,13 @@ After you push your working branch to your remote repository on GitHub, you can 
 
 To review an existing pull request, use GitHub's Pull Request Review features:
 
-. https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request#starting-a-review[Starting a Review]
-. https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request#marking-a-file-as-viewed[Marking a File as Viewed]
-. https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request#submitting-your-review[Submitting your Review]
+. https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request#starting-a-review[Starting a Review^]
+. https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request#marking-a-file-as-viewed[Marking a File as Viewed^]
+. https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request#submitting-your-review[Submitting your Review^]
 
 == Incorporate Feedback from a Review
 
-To incorporate feedback from a review of an existing pull request, use GitHub's https://help.github.com/en/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes[Applying Suggested Changes] instruction page.
+To incorporate feedback from a review of an existing pull request, use GitHub's https://help.github.com/en/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes[Applying Suggested Changes^] instruction page.
 
 == Next Step
 
