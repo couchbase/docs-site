@@ -78,6 +78,12 @@ include::example$code-blocks.adoc[tag=callouts]
 TIP: To make callouts copy-and-paste friendly, put them behind the line comment syntax of the code snippet's language.
 For example, callouts in a YAML example are placed behind the hash symbol (`#`).
 
+The callout list does not have to follow immediately after the code block containing the callouts.
+For example, you can include an introductory sentence or paragraph between the code block and the callout list.
+
+Instead of marking up each callout with its own number, such as `<1>`, `<2>`, `<3>`, you can use `<.>` for each callout.
+When you use this method, the callouts are numbered automatically.
+
 [#include-code]
 == Inserting Examples with the Include Directive
 
