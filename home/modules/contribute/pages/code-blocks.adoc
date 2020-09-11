@@ -13,7 +13,7 @@ Source code examples are entered into AsciiDoc listing blocks.
 Listing block content is displayed exactly as entered, and any indents and endlines are preserved.
 If the `source` style and a language are assigned to the block, the code is syntax highlighted on the site.
 
-[listing]
+[source,asciidoc]
 .Delimited code block with title
 ....
 include::example$code-blocks.adoc[tag=dl-co]
@@ -28,6 +28,7 @@ include::example$code-blocks.adoc[tag=dl]
 
 Commands executed in a CLI are assigned the language `console` and lines are preceded by the command prompt (`$`).
 
+[source,asciidoc]
 ....
 include::example$code-blocks.adoc[tag=console]
 ....
@@ -38,6 +39,7 @@ include::example$code-blocks.adoc[tag=console]
 
 Short code snippets don't need delimiters as long as they don't contain blank lines or callouts.
 
+[source,asciidoc]
 ....
 include::example$code-blocks.adoc[tag=single]
 ....
@@ -48,6 +50,7 @@ include::example$code-blocks.adoc[tag=single]
 
 Code blocks can be grouped in a parent block element.
 
+[source,asciidoc]
 ....
 include::example$code-blocks.adoc[tag=group-code-blocks]
 ....
@@ -64,7 +67,7 @@ The first callout number must be placed after the final character on a code line
 The responding callout is listed below the block and followed by the annotation text.
 Multiple callout numbers can be used on a single line.
 
-[source,subs=-callouts]
+[source,asciidoc,subs=-callouts]
 ....
 include::example$code-blocks.adoc[tag=callouts]
 ....
@@ -88,6 +91,7 @@ When you use this method, the callouts are numbered automatically.
 The include directive inserts an entire file or tagged region from a file stored in the _examples_ directory of a module into a code block.
 Just specify the xref:includes.adoc[resource ID of the example file in the directive].
 
+[source,asciidoc]
 ....
 .Query result
 [source,json]
@@ -95,6 +99,40 @@ Just specify the xref:includes.adoc[resource ID of the example file in the direc
 \include::example$contact.json[]
 ----
 ....
+
+You will find most of the SDK code samples included in `$examples` directories alongside the `pages` parent to the `.adoc` file that is calling them. 
+Else you will find thim in a special `devguide/examples` module in each SDK docs repo.
+Using `include::` adds a _Git hub_ link on mouseover, which leads to the code file on the repo.
+
+For a tagged region of a source file, set the tags around the code sample using the comment characcter appropriate to the source language, such as `//` or `#`:
+
+[source,asciidoc]
+....
+[source,ruby]
+----
+# tag::read-only[]
+options = Cluster::QueryOptions.new
+options.readonly = true
+cluster.query(
+    'SELECT COUNT(*) AS airport_count FROM `travel-sample` WHERE type = "airport"',
+    options)
+# end::read-only[]
+----
+....
+
+And add the appropriate `[tag=]` to the `include::`.
+
+[source,asciidoc]
+....
+.Read-only Query
+[source,json]
+----
+\include::example$query.rb[tag=read-only]
+----
+....
+
+Note that we aim to keep all code files in the examples directory runnable -- or at least compilable -- so if you are adding a snippet of code to an existing file, please test it.
+
 
 == Learn More
 
