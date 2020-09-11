@@ -7,6 +7,7 @@
 
 == Bold, Italic, and Code Styles
 
+[source,asciidoc]
 ----
 include::example$inline-styles.adoc[]
 ----
@@ -26,6 +27,7 @@ To mark up code blocks, include example files, and add callouts, see xref:code-b
 [#ui-macros]
 == Button, Keyboard, and Menu UI Macros
 
+[source,asciidoc]
 ----
 include::example$ui-macros.adoc[]
 ----
@@ -46,6 +48,7 @@ To specify this, end the link text with a caret `^`.
 *Don't use URLs or system paths to link between docs.couchbase.com documents.*
 Document-to-document links are created with xref:cross-references.adoc[cross references] to ensure domain, component, and version portability.
 
+[source,asciidoc]
 ----
 File bugs at https://issues.couchbase.com.
 
@@ -63,6 +66,7 @@ Join the https://gitter.im/antora/users[Antora chat room^] to meet and get help 
 When a URL should be inactive, you can escape it by placing a backslash (`\`) directly in front of it.
 To style and escape a URL, use the `+` passthrough inside any inline style markup.
 
+[source,asciidoc]
 ----
 If it is not specified, the default URL \http://localhost:8091 is used.
 
@@ -86,6 +90,7 @@ If it is not specified, the default URL `+http://localhost:8091+` is used.
 
 == Checklists
 
+[source,asciidoc]
 ----
 include::example$lists.adoc[tag=check]
 ----
@@ -96,6 +101,7 @@ include::example$lists.adoc[tag=check]
 
 == Description Lists
 
+[source,asciidoc]
 ----
 include::example$description-lists.adoc[tag=basic]
 ----
@@ -105,6 +111,7 @@ Renders as:
 include::example$description-lists.adoc[tag=basic]
 
 .Description list with compound content
+[source,asciidoc]
 ----
 include::example$description-lists.adoc[tag=compound]
 ----
@@ -116,6 +123,7 @@ include::example$description-lists.adoc[tag=compound]
 == Ordered Lists
 
 .Ordered list with nested levels
+[source,asciidoc]
 ----
 include::example$lists.adoc[tag=ordered]
 ----
@@ -127,6 +135,7 @@ include::example$lists.adoc[tag=ordered]
 == Unordered Lists
 
 .Unordered list with nested levels
+[source,asciidoc]
 ----
 include::example$lists.adoc[tag=unordered]
 ----
@@ -152,6 +161,7 @@ If the macro's attribute list is empty (e.g., `image::filename.jpg[]`), the imag
 
 [#block]
 .Block image
+[source,asciidoc]
 ----
 image::console-login.png[,280,align=left]
 ----
@@ -163,6 +173,7 @@ image::console-login.png[,280,align=left]
 The inline image macro, indicated by a single colon (`:`), is used for displaying small images and icons directly in the flow of a sentence.
 
 .Inline image
+[source,asciidoc]
 ----
 Click the image:edit.svg[,16] icon.
 ----
@@ -182,6 +193,7 @@ There are five built-in admonition labels.
 * WARNING
 
 .Basic admonitions
+[source,asciidoc]
 ----
 include::example$admonitions.adoc[tag=basic]
 ----
@@ -191,6 +203,7 @@ Renders as:
 include::example$admonitions.adoc[tag=basic]
 
 .Compound admonition
+[source,asciidoc]
 ----
 include::example$admonitions.adoc[tag=compound]
 ----
@@ -207,6 +220,7 @@ The contents of the block must be wrapped in the example block delimiters and th
 To avoid disrupting the flow of the text to include addendum information, you can tuck the information away in a footnote.
 You make footnotes using the footnote macro.
 
+[source,asciidoc]
 ----
 include::example$footnotes.adoc[]
 ----
@@ -229,6 +243,7 @@ Cells are grouped into rows.
 Each row must share the same number of cells, taking into account any column or row spans.
 
 .Table with implicit column value and header row
+[source,asciidoc]
 ----
 |=== <1>
 |Name of Column 1 |Name of Column 2 <2> <3>
@@ -259,6 +274,7 @@ Renders as:
 Since tables are AsciiDoc block elements they can have titles, roles, xref:ids.adoc[IDs], as well as table-specific attributes.
 
 .Table with title, ID, `cols`, and `options="header"`
+[source,asciidoc]
 ----
 .Optional title
 [#optional-id,cols="1,1,2",options="header"] <1> <2> <3> <4>
@@ -304,6 +320,7 @@ Renders as:
 
 Here's an example of a table with a title, implicit header row, and the proportional width of the two columns set.
 
+[source,asciidoc]
 ----
 include::example$tables.adoc[tag=two-col]
 ----
@@ -318,6 +335,7 @@ Any block-level elements, such as code blocks, lists, admonitions, etc., can be 
 However, the specifier `a` (which stands for AsciiDoc) must be placed on the cell, row, or column in order for them to be processed as AsciiDoc blocks.
 In the following example, the `a` specifier is placed on the cells containing block elements.
 
+[source,asciidoc]
 ....
 include::example$tables.adoc[tag=adoc]
 ....
@@ -333,6 +351,7 @@ The span factor is the number of columns or rows, including the starting row or 
 * To have a cell span multiple columns, place the span factor and `+` operator directly before the `|` of the starting cell.
 * To span multiple rows, place a dot (`.`) directly before the span factor and `+` operator.
 
+[source,asciidoc]
 ----
 include::example$tables.adoc[tag=spans]
 ----
