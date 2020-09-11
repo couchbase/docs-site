@@ -87,6 +87,11 @@ This renders as:
 
 See xref:basics.adoc#images[Images].
 
+== Cross Reference Best Practices
+
+* Create attributes for long page ID coordinates to improve the source readability for other contributors.
+* Create attributes for page ID coordinates used several times on the same page.
+
 == Learn More
 
 See xref:ids.adoc[Element IDs and Same-Page Cross References] to learn how to create element IDs.
