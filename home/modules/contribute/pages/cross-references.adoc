@@ -12,11 +12,13 @@ The closer the two files are, the shorter the page ID.
 
 To link to a page in the same module as the current page, all you need to know is the file name of the document.
 
- xref:name-of-file.adoc[link text]
+[source,asciidoc]
+xref:name-of-file.adoc[link text]
 
 For example, to link to the AsciiDoc Basics page, a document that is in the same module as this page, Cross References, you write:
 
- xref:basics.adoc[This links to the AsciiDoc Basics page].
+[source,asciidoc]
+xref:basics.adoc[This links to the AsciiDoc Basics page].
 
 And this is the result:
 
@@ -35,11 +37,13 @@ xref:3.3@error-handling.adoc#message-list[error messages]
 To link to a page in the same component as the current page, but in a different module, you need to know the file name of the document and the module name.
 The module name is the name of the top-level folder in the modules directory the document is stored in.
 
- xref:module-name:name-of-file.adoc[link text]
+[source,asciidoc]
+xref:module-name:name-of-file.adoc[link text]
 
 For example, to link to the document _index.adoc_, which is in the same component as this page but stored in the ROOT module, you write:
 
- Let's go to the xref:ROOT:index.adoc[documentation home page].
+[source,asciidoc]
+Let's go to the xref:ROOT:index.adoc[documentation home page].
 
 This renders as:
 
@@ -50,7 +54,8 @@ Let's go to the xref:ROOT:index.adoc[documentation home page].
 
 To link to a page in a different component, you need to know the destination component's name, module name, and file name.
 
- xref:component-name:module-name:name-of-file.adoc[link text]
+[source,asciidoc]
+xref:component-name:module-name:name-of-file.adoc[link text]
 
 The component's name is located in the xref:component-configuration.adoc#config[component descriptor file, _antora.yml_], which is found in the destination component's repository.
 
@@ -68,7 +73,8 @@ nav:
 
 To link from this page, to the What's New? page in the server component, you write:
 
- xref:server:introduction:whats-new.adoc[What's new] in Couchbase Server?
+[source,asciidoc]
+xref:server:introduction:whats-new.adoc[What's new] in Couchbase Server?
 
 This renders as:
 
@@ -81,7 +87,8 @@ To link to a specific element in another page, you need to know the element's ID
 Add a hash (`#`) directly after the file name, followed by the ID of the element.
 For example, to link from this page to the Images section on the AsciiDoc Basics page, you write:
 
- See xref:basics.adoc#images[Images].
+[source,asciidoc]
+See xref:basics.adoc#images[Images].
 
 This renders as:
 
@@ -94,7 +101,8 @@ See xref:basics.adoc#images[Images].
 
 == Learn More
 
-See xref:ids.adoc[Element IDs and Same-Page Cross References] to learn how to create element IDs.
+* Refer to xref:ids.adoc[Element IDs and Same-Page Cross References] to learn how to create element IDs.
+* Refer to xref:attributes-and-roles.adoc[Attributes] to learn how to create document attributes.
 
 == Additional Resources
 
