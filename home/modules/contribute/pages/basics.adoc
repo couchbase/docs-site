@@ -36,6 +36,13 @@ include::example$ui-macros.adoc[]
 
 == URLs
 
+URLs that begin with one of the common schemes (`http`, `https`, `ftp`, `irc`, `mailto`, or any email address) are turned into links automatically.
+You can specify the link text in square brackets immediately after the URL.
+Avoid using the `link:` macro -- you'll only need it in rare circumstances, such as for links with unusual schemes.
+
+Links to external websites should all open in a new tab, so that readers don't leave our documentation.
+To specify this, end the link text with a caret `^`.
+
 *Don't use URLs or system paths to link between docs.couchbase.com documents.*
 Document-to-document links are created with xref:cross-references.adoc[cross references] to ensure domain, component, and version portability.
 
@@ -70,7 +77,7 @@ If it is not specified, the default URL `+http://localhost:8091+` is used.
 
 === URL Best Practices
 
-* Always use `https://` for external webpage links.
+* Always use the secure `https://` scheme for external webpage links.
 * Escape `+http://localhost+` URLs in regular text so they don't become links.
 * Create attributes for long URLs to improve the source readability for other contributors.
 * Create attributes for URLs that contain sets of symbols, such as multiple underscores (`_`) and backticks (`++`++`), that could be misinterpreted as inline markup.
@@ -210,7 +217,7 @@ include::example$footnotes.adoc[]
 
 TIP: The ID, which is specified using the target slot of the macro, is optional.
 By assigning an ID (e.g., fn-1), you can reuse the footnote multiple times in the document, as show in the above example.
-You only have to specify the footnote text on the first occurance.
+You only have to specify the footnote text on the first occurrence.
 The text can be filled in using an attribute reference.
 
 == Tables
