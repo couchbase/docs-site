@@ -1,4 +1,3 @@
-# $(npm bin)/antora --clean --fetch antora-playbook.yml
 site:
   title: Couchbase Docs
   # url: https://docs.couchbase.com
@@ -68,13 +67,17 @@ content:
   # - url: https://github.com/couchbase-partners/test-drive-couchbase
   #   branches: [docs-site-pub]
   # Tutorial repositories
-  - url: https://github.com/couchbaselabs/tutorials
+  # - url: https://github.com/couchbaselabs/tutorials
   # - url: https://github.com/couchbase/developer-content
   # - url: https://github.com/couchbaselabs/tutorial-template
-  # - url: ../tutorials
-    # branches: [p2p-sync-ws-ib]
+  - url: ../tutorials
+    branches: [HEAD]
+  - url: ../p2psamples
+    branches: [HEAD]
+    start_path: content
   # - url: https://github.com/couchbaselabs/mobile-travel-sample
-  #   start_path: content
+    # start_path: content
+    # start_path: content
   # - url: https://github.com/couchbaselabs/hotel-finder-react-native
   # - url: https://github.com/couchbaselabs/hotel-lister-cordova
   # - url: https://github.com/couchbaselabs/tutorials-contrib
