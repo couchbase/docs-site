@@ -29,16 +29,16 @@ content:
     start_path: docs
   - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://git@github.com/couchbase/docs-analytics
-    branches: [release/6.6, release/6.5, release/6.0, release/5.5]
+    branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.1]
+    branches: [master, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.1]
     start_path: docs
   - url: https://git@github.com/couchbase/backup
-    branches: [mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.x]
+    branches: [master, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.x]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
+    branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/docs-sdk-c
