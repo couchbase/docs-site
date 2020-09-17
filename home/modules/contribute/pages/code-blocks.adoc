@@ -13,7 +13,7 @@ Source code examples are entered into AsciiDoc listing blocks.
 Listing block content is displayed exactly as entered, and any indents and endlines are preserved.
 If the `source` style and a language are assigned to the block, the code is syntax highlighted on the site.
 
-[listing]
+[source,asciidoc]
 .Delimited code block with title
 ....
 include::example$code-blocks.adoc[tag=dl-co]
@@ -28,6 +28,7 @@ include::example$code-blocks.adoc[tag=dl]
 
 Commands executed in a CLI are assigned the language `console` and lines are preceded by the command prompt (`$`).
 
+[source,asciidoc]
 ....
 include::example$code-blocks.adoc[tag=console]
 ....
@@ -40,6 +41,7 @@ Note, using `[source,console]` ensures that the `$` prompt is not copied when th
 
 Short code snippets don't need delimiters as long as they don't contain blank lines or callouts.
 
+[source,asciidoc]
 ....
 include::example$code-blocks.adoc[tag=single]
 ....
@@ -50,6 +52,7 @@ include::example$code-blocks.adoc[tag=single]
 
 Code blocks can be grouped in a parent block element.
 
+[source,asciidoc]
 ....
 include::example$code-blocks.adoc[tag=group-code-blocks]
 ....
@@ -66,7 +69,7 @@ The first callout number must be placed after the final character on a code line
 The responding callout is listed below the block and followed by the annotation text.
 Multiple callout numbers can be used on a single line.
 
-[source,subs=-callouts]
+[source,asciidoc,subs=-callouts]
 ....
 include::example$code-blocks.adoc[tag=callouts]
 ....
@@ -78,12 +81,19 @@ include::example$code-blocks.adoc[tag=callouts]
 TIP: To make callouts copy-and-paste friendly, put them behind the line comment syntax of the code snippet's language.
 For example, callouts in a YAML example are placed behind the hash symbol (`#`).
 
+The callout list does not have to follow immediately after the code block containing the callouts.
+For example, you can include an introductory sentence or paragraph between the code block and the callout list.
+
+Instead of marking up each callout with its own number, such as `<1>`, `<2>`, `<3>`, you can use `<.>` for each callout.
+When you use this method, the callouts are numbered automatically.
+
 [#include-code]
 == Inserting Examples with the Include Directive
 
 The include directive inserts an entire file or tagged region from a file stored in the _examples_ directory of a module into a code block.
 Just specify the xref:includes.adoc[resource ID of the example file in the directive].
 
+[source,asciidoc]
 ....
 .Query result
 [source,json]
@@ -98,6 +108,7 @@ Using `include::` adds a _Git hub_ link on mouseover, which leads to the code fi
 
 For a tagged region of a source file, set the tags around the code sample using the comment characcter appropriate to the source language, such as `//` or `#`:
 
+[source,asciidoc]
 ....
 [source,ruby]
 ----
@@ -113,6 +124,7 @@ cluster.query(
 
 And add the appropriate `[tag=]` to the `include::`.
 
+[source,asciidoc]
 ....
 .Read-only Query
 [source,json]

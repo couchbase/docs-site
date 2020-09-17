@@ -72,7 +72,7 @@ An easier approach could be starting with an intentionally minimalist playbook, 
 This will have to include the `docs-server` repo which, amongst other things, contains the site navigation.
 
 For example, to work on local copies of our nine SDK docs repos, and the Server docs, and also include couchbase-cli in your local docs build, take a look at our 
-https://github.com/couchbase/docs-site/blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[example local-staging-antora-playbook.yml file].
+https://github.com/couchbase/docs-site/blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[example local-staging-antora-playbook.yml file^].
 
 
 == Next Step
