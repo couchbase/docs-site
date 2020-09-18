@@ -444,7 +444,6 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | SDKs | _No grocer’s apostrophe_
 | Search Service | _use title case_
 | See | see refer to
-| Serial Comma | Use it!  See _Oxford Comma_.
 | Service / service | For Couchbase _Foo_ Service, capitalize _Service_. For referring to, e.g., _the service in the cluster_, lowercase.
 | setup | (n & adj) Set up (v)
 | SGCollect |
