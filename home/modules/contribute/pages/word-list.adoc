@@ -36,15 +36,16 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 | a / an | unless specifically noted in this list, all words starting with a consonant get an ‘a’ (sorry, _not_ an hotel), and all words beginning with a vowel receive an ‘an’ as the indefinite article.
 | about | information about, not information on
+| Access List | Use Allowlist, unless accesslist is idiomatic to the service or platform.
 | ACID Transactions | see Transactions
 | adapter | not adaptor
 | ad hoc | no hyphen, should be one of: `adhoc` -- N1QL parameter for SDKs; ad hoc -- no need to italicize.
 | admin | verb or noun,
 | Afterwards | not afterward
-| Allow list / deny list | 2 words
+| Allowlist / denylist | 1 word, no hyphen
 | Amazon cloud |
 | Amber | traffic lights (or health warning colour) -- middle colour is _amber_, not yellow.
-| Analytics Service |
+| Analytics Service | _use title case_
 | APAC |
 | API |
 | App / Application | _apps_ as restricted & reduced in functionality. Can be used in Mobile component, for example. _Application_ is the preferred term for client software generally. Note, refer to Couchbase (Server & other software) itself as an _application_. For avoiding app/application, use _Client_
@@ -72,7 +73,8 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | BI | 
 | bidirectional | 
 | big data | 
-| Blacklist | Do not use -- should be Deny list 
+| Blacklist | Do not use -- should be denylist (and allowlist)
+| Blocklist | Use _denylist_
 | blog | always abbreviate weblog to blog
 | bootstrap | 
 | buckets | 
@@ -134,12 +136,15 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | DataOps | (similar styling to DevOps)
 | dataset | (not data set)
 | datacenter replication |
-| datasheet |
+| datasheet | 
+| Data Service | _aka_ KV Service -- _use title case_
 | data store |
 | data structure | not datastructure
 | DCP | Database Change Protocol
 | decrypter | not decryptor (see encrypter)
 | deduplicate |
+| Denylist / allowlist | 1 word, no hyphen
+| Deprecated | means “still available, but will be removed in a future release, so you’re advised not to use it”. It is not a synonym for “removed”. Always add that the feature “will be removed”.
 | design document |
 | DevOps |
 | different from | Not different to (or than). 95% of readers will be indifferent to this, but 5% will care deeply
@@ -171,6 +176,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | error-free report | Or the report is error free
 | etc. | Try not to over-use -- try _and so on_
 | Event-Condition -Action model | is used in Couchbase developer documentation (most companies use lowercase event-condition-action model) 
+| Eventing Service | _use title case_
 | extract, transform, load (ETL) operations |
 |===
 
@@ -195,7 +201,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | free-form |
 | full-stack | as an adj. modifier (full-stack data management)
 | full-text indexes | with hyphen
-| Full-Text Search (FTS) | & full-text search
+| Full-Text Search (FTS) | & full-text search -- note, _Search Service_ to be preferred in most cases
 |===
 
 
@@ -276,7 +282,8 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 | Kafka |
 | keyspace |
-| key-value | adj. KV (abbreviation) used for KV service, once explained
+| key-value | adj. KV (abbreviation) used for KV Service, once explained
+| KV Service | _aka_ Data Service -- _use title case_
 |===
 
 
@@ -303,7 +310,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | Term | Notes
 
 | MapReduce |
-| MapReduce views |
+| MapReduce views | Views Service
 | massively parallel processing (MPP) |
 | Master | avoid master/slave, use primary/secondary
 | Memcached bucket | 
@@ -376,6 +383,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | Term | Notes
 
 | parameterized |
+| Passlist | Use _allowlist_
 | peer to peer | but hyphate as adj. modifier
 | PDF |
 | Pluggable Authentication Modules (PAM) | 
@@ -395,6 +403,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | query monitoring |
 | query planner |
 | query plan visualizer | 
+| Query Service | _use title case_
 | query shell | product name is CBQ
 | Query Workbench |
 | quick links | 2 words
@@ -433,7 +442,9 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | screenshot |
 | SDK | Software Development Kit -- too well understood to need the acronym expanding
 | SDKs | _No grocer’s apostrophe_
+| Search Service | _use title case_
 | See | see refer to
+| Service / service | For Couchbase _Foo_ Service, capitalize _Service_. For referring to, e.g., _the service in the cluster_, lowercase.
 | setup | (n & adj) Set up (v)
 | SGCollect |
 | sign up | (verb) sign-up (noun)
@@ -476,6 +487,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | Term | Notes
 
 | Ubuntu | _an_ Ubuntu (not _a_ Ubuntu), if necessary, or just plain Ubuntu
+| Under construction | Preferred term to use to label an incomplete-yet-published page.
 | uninstall |
 | UNNEST |
 |===
@@ -491,6 +503,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | vBucketMap |
 | vBuckets |
 | VBucketServerMap |
+| Views Service | _use title case_
 | Virtualization |
 | vmstat |
 | VMware |
@@ -508,6 +521,8 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | Whitelist | should be Allow list
 | whitepaper | 
 | wifi |
+| wip | See _work-in-progress_
+| Work in progress | Do not use as a banner on incomplete pages -- use _under construction_.
 |===
 
 
