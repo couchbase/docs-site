@@ -72,7 +72,7 @@ content:
   - url: https://git@github.com/couchbase/docs-ngdm
   # Tutorial repositories
   - url: https://github.com/couchbase/tutorials
-    branches: p2p-sync-ws
+    branches: p2p-sync-ws-ib
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
   - url: https://github.com/couchbaselabs/mobile-travel-sample
@@ -96,8 +96,8 @@ content:
   - url: https://github.com/amarantha-k/OpenID_connect_tutorial
     branches: [tutorial]
     start_path: content
-  - url: https://github.com/rajagp/couchbase-lite-peer-to-peer-sync-websocket-samples
-    branches: [docs-build]
+  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-websocket-samples
+    branches: [master]
     start_path: content
 asciidoc:
   attributes:
