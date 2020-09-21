@@ -5,7 +5,7 @@
 // Category: Multibranch Pipeline
 // Pipeline name: docs-search-indexer
 // Branch Sources: Single repository & branch
-// Name: archive
+// Name: staging
 // Source Code Management: Git
 // Repository URL: https://github.com/couchbase/docs-site
 // Credentials: - none -
