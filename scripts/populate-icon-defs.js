@@ -1,3 +1,5 @@
+'use strict'
+
 // Prerequisite:
 //
 //  $ npm --no-package-lock i

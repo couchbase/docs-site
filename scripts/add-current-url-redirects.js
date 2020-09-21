@@ -1,3 +1,5 @@
+'use strict'
+
 const fs = require('fs')
 
 NGINX_REWRITES_FILE = process.argv[2] || '../etc/nginx/snippets/rewrites.conf'

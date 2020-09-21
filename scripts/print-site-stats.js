@@ -1,3 +1,5 @@
+'use strict'
+
 const { Transform } = require('stream')
 const map = (transform) => new Transform({ objectMode: true, transform })
 const path = require('path')
