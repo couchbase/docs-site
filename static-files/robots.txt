@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# enter custom rules here

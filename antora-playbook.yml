@@ -3,7 +3,6 @@ site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
   start_page: home::index.adoc
-  robots: allow
   keys:
     google_analytics: GTM-MVPNN2
 git:
@@ -114,5 +113,6 @@ asciidoc:
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-77/ui-bundle.zip
+    supplemental_files: ./static-files
 output:
   dir: ./public
