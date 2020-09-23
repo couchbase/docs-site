@@ -142,7 +142,7 @@ image::n1ql-ansi-join-example.png[,450]
 
 [.column]
 .Java SDK
-* xref:java-sdk:hello-world:sdk:overview.adoc[Start Using the SDK]
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
 * xref:java-sdk:howtos:managing-connections.adoc[Managing Connections]
 * xref:java-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
 * xref:java-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
