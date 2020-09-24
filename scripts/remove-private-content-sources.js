@@ -3,7 +3,7 @@
 const yaml = require('js-yaml')
 const fs = require('fs')
 
-PLAYBOOK_FILE = process.argv[2] || '../antora-playbook.yml'
+const PLAYBOOK_FILE = process.argv[2] || '../antora-playbook.yml'
 
 const playbook = yaml.safeLoad(fs.readFileSync(PLAYBOOK_FILE, 'utf8').trim())
 playbook.content.sources = playbook.content.sources.filter((it) => !it.url.startsWith('https://git@'))

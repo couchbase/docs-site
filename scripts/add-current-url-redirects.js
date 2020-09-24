@@ -2,8 +2,8 @@
 
 const fs = require('fs')
 
-NGINX_REWRITES_FILE = process.argv[2] || '../etc/nginx/snippets/rewrites.conf'
-NETLIFY_REDIRECTS_FILE = 'public/_redirects'
+const NGINX_REWRITES_FILE = process.argv[2] || '../etc/nginx/snippets/rewrites.conf'
+const NETLIFY_REDIRECTS_FILE = 'public/_redirects'
 
 const rewrites = fs.readFileSync(NGINX_REWRITES_FILE, 'utf8')
 const redirects = fs.readFileSync(NETLIFY_REDIRECTS_FILE, 'utf8').trimRight()
