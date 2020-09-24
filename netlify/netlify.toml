@@ -4,7 +4,7 @@ ignore = "false"
 
 [build.environment]
 CI = "true"
-NODE_VERSION = "12"
+NODE_VERSION = "10"
 NPM_FLAGS = "--no-optional"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 
