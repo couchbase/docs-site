@@ -171,7 +171,7 @@ xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Di
 [.content]
 Atomicity against multiple document transactions with the .NET SDK.
 []
-xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Trancsactions]
+xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Trancsactions]
 
 
 [.column]
@@ -181,7 +181,7 @@ xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Di
 [.content]
 Atomicity against multiple document transactions with the C SDK, _libcouchbase_.
 []
-xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Trancsactions]
+xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C++ Distributed Trancsactions]
 
 ++++
 </div>
