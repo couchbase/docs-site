@@ -148,6 +148,10 @@ SDK doctor is a tool to diagnose application-server-side connectivity issues wit
 xref:sdk:sdk-doctor.adoc[SDK doctor]
 
 
+[.column]
+====== {empty}
+
+
 == Distributed ACID Transactions
 
 ++++
