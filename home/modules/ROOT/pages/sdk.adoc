@@ -1,0 +1,342 @@
+= SDKs & Connectors
+:page-aliases: sdks:intro.adoc
+:page-layout: landing-page-top-level-sdk
+:page-role: tiles
+:!sectids:
+
+
+= SDKs & Connectors
+  
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+Couchbase provides several SDKs to allow applications to access a Couchbase cluster, as well as Mobile SDKs to carry your application to the edge. 
+To exchange data with other platforms, we offer various Big Data Connectors.
+
+[.column]
+====== {empty}
+[.content]
+[source,scala]
+----
+val json = JsonObject("foo" -> "bar", "baz" -> "qux")
+
+collection.reactive.upsert("document-key", json)
+    .doOnError(err  => println(s"Error during upsert: ${err}"))
+    .doOnNext(_     => println("Success"))
+    .subscribe()
+----
+
+++++
+</div>
+++++
+
+== Server SDKs
+
+The Couchbase SDKs allows applications to access a Couchbase cluster. 
+They offer traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+====== {empty}
+.Java SDK
+
+[.content]
+The Java SDK forms the cornerstone of our JVM clients.
+It allows Java applications to access a Couchbase Server cluster.
+The Java SDK offers traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
+[]
+xref:3.0@java-sdk:hello-world:start-using-sdk.adoc[Java SDK 3.0]
+
+
+[.column]
+====== {empty}
+.Scala SDK
+
+[.content]
+Our new Scala SDK allows Scala applications to access a Couchbase Server cluster.
+It offers synchronous, asynchronous, and reactive APIs for flexibility and maximum performance.
+[]
+xref:1.0@scala-sdk:hello-world:start-using-sdk.adoc[Scala SDK 1.0]
+
+[.column]
+====== {empty}
+..NET SDK
+
+[.content]
+The .NET SDK enables you to interact with a Couchbase Server cluster from the .NET Framework using any Common Language Runtime (CLR) language, including C#, F#, and VB.NET. 
+It offers both a traditional synchronous API and an asynchronous API based on the Task-based Asynchronous Pattern (TAP).
+[]
+xref:3.0@dotnet-sdk:hello-world:start-using-sdk.adoc[.NET SDK 3.0]
+
+[.column]
+====== {empty}
+.C SDK
+
+[.content]
+The Couchbase C SDK (`libcouchbase`) enables C and C++ programs to access a Couchbase Server cluster.
+The C SDK is also commonly used as a core dependency of SDKs written in other language to provide a common implementation and high performance.
+Libcouchbase also contains the `cbc` suite of command line tools.
+[]
+xref:3.0@c-sdk:hello-world:start-using-sdk.adoc[C SDK 3.0]
+
+
+[.column]
+====== {empty}
+.Node.js SDK
+
+[.content]
+The Node.js SDK allows you to connect to a Couchbase Server cluster from Node.js.
+The Node.js SDK is a native Node.js module using the very fast `libcouchbase` library to handle communicating with the cluster over the Couchbase binary protocol.
+[]
+xref:3.0@nodejs-sdk:hello-world:start-using-sdk.adoc[Node.js SDK 3.0]
+
+[.column]
+====== {empty}
+.PHP SDK
+
+[.content]
+The PHP SDK allows you to connect to a Couchbase Server cluster from PHP.
+The PHP SDK is a native PHP extension and uses the Couchbase high-performance C library `libcouchbase` to handle communicating to the cluster over Couchbase binary protocols.
+[]
+xref:3.0@php-sdk:hello-world:start-using-sdk.adoc[PHP SDK 3.0]
+
+[.column]
+====== {empty}
+.Python SDK
+
+[.content]
+The Python SDK allows Python applications to access a Couchbase Server cluster.
+The Python SDK offers a traditional synchronous API as well as integration with twisted, gevent, and asyncio.
+It depends on the C SDK (`libcouchbase`) and utilizes it for performance and reliability.
+[]
+xref:3.0@python-sdk:hello-world:start-using-sdk.adoc[Python SDK 3.0]
+
+[.column]
+====== {empty}
+.Ruby SDK
+
+[.content]
+The Ruby SDK allows Ruby applications to access a Couchbase Server cluster. 
+The Ruby SDK includes high-performance native Ruby extensions to handle communicating to the cluster over Couchbase's binary protocols.
+[]
+xref:3.0@ruby-sdk:hello-world:start-using-sdk.adoc[Ruby SDK 3.0]
+
+[.column]
+====== {empty}
+.Go SDK
+
+[.content]
+The Couchbase Go SDK allows you to connect to a Couchbase Server cluster from Go.
+The Go SDK is a native Go library and uses the high-performance gocbcore to handle communicating to the cluster over Couchbase's binary protocols.
+[]
+xref:2.1@go-sdk:hello-world:start-using-sdk.adoc[Go SDK 2.1]
+
+++++
+</div>
+++++
+
+=== SDK doctor
+[]
+SDK doctor is a tool to diagnose application-server-side connectivity issues with your Couchbase Cluster.
+xref:sdk:sdk-doctor.adoc[SDK doctor]
+
+
+[.column]
+====== {empty}
+
+
+== Distributed ACID Transactions
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+====== {empty}
+.Java Transactions
+
+[.content]
+Atomicity against multiple document transactions with the Java SDK.
+[]
+xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
+
+
+[.column]
+====== {empty}
+.C# Transactions
+
+[.content]
+Atomicity against multiple document transactions with the .NET SDK.
+[]
+xref:3.0@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
+
+
+[.column]
+====== {empty}
+.C++ Transactions
+
+[.content]
+Atomicity against multiple document transactions with the C SDK, _libcouchbase_.
+[]
+xref:3.0@c-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C++ Distributed Transactions]
+
+++++
+</div>
+++++
+
+
+[.column]
+====== {empty}
+
+== Mobile SDKs
+
+++++
+<div class="card-row three-column-row">
+++++
+
+
+
+[.column]
+====== {empty}
+.JavaScript
+
+[.content]
+You to use Couchbase Lite as an embedded database within your app with various JavaScript frameworks' APIs.
+[]
+xref:2.7@couchbase-lite::javascript.adoc[Couchbase Lite JavaScript 2.7]
+
+
+[.column]
+====== {empty}
+.C# SDK
+
+[.content]
+Create your mobile app in C#, using .NET Standard 2.0.
+[]
+xref:2.7@couchbase-lite::csharp.adoc[Couchbase Lite C# 2.7]
+
+
+[.column]
+====== {empty}
+.Java SDK
+
+[.content]
+Develop and deploy your Couchbase Lite applications to a JVM environment. 
+[]
+xref:2.7@couchbase-lite::java-platform.adoc[Couchbase Lite Java 2.7]
+
+[.column]
+====== {empty}
+.Java Android SDK
+
+[.content]
+Create an Android app, using Couchbase Lite as an embedded database.
+[]
+xref:2.7@couchbase-lite::java-android.adoc[Couchbase Lite Java Android 2.7]
+
+
+[.column]
+====== {empty}
+.Swift SDK
+
+[.content]
+Create an iOS app in Swift, using Couchbase Lite as an embedded database.
+[]
+xref:2.7@couchbase-lite::swift.adoc[Couchbase Lite Swift 2.7]
+
+[.column]
+====== {empty}
+.Objective-C SDK
+
+[.content]
+Create an iOS app in Objective-C, using Couchbase Lite as an embedded database.
+[]
+xref:2.7@couchbase-lite::objc.adoc[Couchbase Lite Objective-C 2.7]
+
+
+
+++++
+</div>
+++++
+
+[.column]
+====== {empty}
+
+== Big Data Connectors
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Elasticsearch
+* xref:elasticsearch-connector::getting-started.adoc[Get Started]
+* xref:elasticsearch-connector::configuration.adoc[Configuration]
+* xref:elasticsearch-connector::migration.adoc[Migrating from Elasticsearch Plug-in]
+
+[.column]
+.Kafka
+* xref:kafka-connector::quickstart.adoc[Get Started]
+* xref:kafka-connector::source-configuration-options.adoc[Source Configuration]
+* xref:kafka-connector::sink-configuration-options.adoc[Sink Configuration]
+* xref:kafka-connector::streams-sample.adoc[Sample Application with Kafka Steams]
+
+[.column]
+.Spark
+* xref:spark-connector::getting-started.adoc[Get Started]
+* xref:spark-connector::dev-workflow.adoc[Development Workflow]
+* xref:spark-connector::java-api.adoc[Java API]
+
+[.column]
+.ODBC and JDBC Drivers
+
+[.content]
+ODBC and JDBC drivers enable any application based on the ODBC/JDBC standards, for example Microsoft Excel, QlikView, SAP Lumira, or Tableau, to connect to a Couchbase Server or cluster.
+{empty}
+xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
+
+
+++++
+</div>
+++++
+
+[.column]
+====== {empty}
+
+== Couchbase Community
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+====== {empty}
+.Community Help
+
+[.content]
+In addition to the Couchbase https://www.couchbase.com/support-policy[Support Team], help can be found from the community in our https://forums.couchbase.com/[forums], and on our https://gitter.im/couchbase/discuss[Gitter page].
+
+[.column]
+====== {empty}
+.Integrations
+
+[.content]
+Information on some 3rd-party SDK integrations, such as xref:3.0@java-sdk:project-docs:compatibility.adoc#spring-compat[Spring Data], can be found in the SDK docs.
+
+[.column]
+====== {empty}
+.Tutorials
+
+[.content]
+The https://docs.couchbase.com/tutorials/quick-start/quickstart-java3-native-intellij-firstquery-cb65.html[developer bootstrap exercises and other tutorials] highlight the use of Couchbase SDKs in the stacks you are most likely to use in development, such as Spring Data, Node Ottoman, and Python Flask.
+
+++++
+</div>
+++++
