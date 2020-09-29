@@ -151,7 +151,7 @@ xref:sdk:sdk-doctor.adoc[SDK doctor]
 [.column]
 ====== {empty}
 
-
+////
 == Distributed ACID Transactions
 
 ++++
@@ -190,7 +190,7 @@ xref:3.0@c-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C++ Distri
 ++++
 </div>
 ++++
-
+////
 
 [.column]
 ====== {empty}
