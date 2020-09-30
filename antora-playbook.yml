@@ -37,7 +37,7 @@ content:
     branches: [master, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.x]
     start_path: docs
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/6.6, release/6.5, release/6.0]
+    branches: [release/7.0, release/6.6, release/6.5, release/6.0]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
