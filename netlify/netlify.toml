@@ -4,10 +4,10 @@ ignore = "false"
 
 [build.environment]
 CI = "true"
-NODE_VERSION = "12"
+NODE_VERSION = "10"
+NODE_OPTIONS = "--max-old-space-size=4096"
 NPM_FLAGS = "--no-optional"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
-SUPPORTS_CURRENT_URL="true"
 
 # NOTE branch-deploy refers to the master branch
 
@@ -22,9 +22,8 @@ command = """\
 if [ -v FONTAWESOME_NPM_TOKEN ]; then echo -e '@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=$''{FONTAWESOME_NPM_TOKEN}\\n' > ../scripts/.npmrc; fi; \
 (cd ../scripts; npm --no-package-lock i || true) && \
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node ../scripts/remove-private-content-sources.js ../antora-playbook.yml; fi; \
-node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
-node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml && \
-node ../scripts/add-current-url-redirects.js ../etc/nginx/snippets/rewrites.conf && \
+time node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
+time node_modules/.bin/antora --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml && \
 node ../scripts/populate-icon-defs.js public\
 """
 

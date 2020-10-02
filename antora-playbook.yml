@@ -8,6 +8,9 @@ site:
     google_analytics: GTM-MVPNN2
 git:
   ensure_git_suffix: false
+urls:
+  latest_version_segment: current
+  latest_version_segment_strategy: redirect:to
 content:
   branches: master
   # NOTE the git@ segment in the URL indicates which repositories are private
@@ -116,6 +119,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-82/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-83/ui-bundle.zip
 output:
   dir: ./public
