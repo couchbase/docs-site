@@ -9,8 +9,8 @@ site:
 git:
   ensure_git_suffix: false
 urls:
-  latest_version_segment: current
   latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
 content:
   branches: master
   # NOTE the git@ segment in the URL indicates which repositories are private
