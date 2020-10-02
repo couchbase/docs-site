@@ -109,6 +109,8 @@ pipeline {
           }
         }
         sh 'node scripts/populate-icon-defs.js public'
+        // patch Antora 3.0.0-alpha.1 output to use the correct kind of rewrites
+        sh 'sed -i "s/{ rewrite \\(.*\\); }$/{ rewrite \\1 redirect; }/" public/.etc/nginx/rewrite.conf'
         sh 'cat etc/nginx/snippets/rewrites.conf public/.etc/nginx/rewrite.conf | awk -F \' +\\\\{ +\' \'{ if ($1 && a[$1]++) { print sprintf("Duplicate location found on line %s: %s", NR, $0) > "/dev/stderr" } else { print $0 } }\' > public/.etc/nginx/combined-rewrites.conf'
       }
     }
