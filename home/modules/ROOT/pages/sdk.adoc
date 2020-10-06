@@ -145,7 +145,7 @@ xref:2.1@go-sdk:hello-world:start-using-sdk.adoc[Go SDK 2.1]
 === SDK doctor
 []
 SDK doctor is a tool to diagnose application-server-side connectivity issues with your Couchbase Cluster.
-xref:sdk:sdk-doctor.adoc[SDK doctor]
+xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 
 
 [.column]
