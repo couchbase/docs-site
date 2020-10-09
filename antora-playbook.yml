@@ -100,7 +100,7 @@ content:
     branches: [tutorial]
     start_path: content
   - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-websocket-samples
-    branches: [master]
+    branches: [scripted]
     start_path: content
 asciidoc:
   attributes:
