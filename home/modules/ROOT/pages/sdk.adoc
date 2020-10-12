@@ -185,7 +185,7 @@ xref:3.0@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Di
 [.content]
 Atomicity against multiple document transactions with the C SDK, _libcouchbase_.
 []
-xref:3.0@c-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C++ Distributed Transactions]
+xref:3.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[C++ Distributed Transactions]
 
 ++++
 </div>
