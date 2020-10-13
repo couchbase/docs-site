@@ -67,10 +67,13 @@ content:
     branches: [release/3.0]
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/1.0]
+    # Begin::Mobile content                                                                     Mobile Content
+  - url: https://github.com/couchbase/docs-mobile
+    branches: [release/2.8]  
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
+    branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
+    branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
   - url: https://github.com/couchbase-partners/test-drive-couchbase
     branches: [docs-site-pub]
   # Tutorial repositories
@@ -97,6 +100,9 @@ content:
     branches: [standalone, query, sync]
   - url: https://github.com/amarantha-k/OpenID_connect_tutorial
     branches: [tutorial]
+    start_path: content
+  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-websocket-samples
+    branches: [master]
     start_path: content
 asciidoc:
   attributes:
