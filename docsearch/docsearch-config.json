@@ -21,7 +21,7 @@
           "server"
         ],
         "version": [
-          "6.6",
+          "current",
           "6.5",
           "6.0",
           "5.5",
@@ -37,7 +37,7 @@
           "c-sdk"
         ],
         "version": [
-          "3.0",
+          "current",
           "2.10"
         ]
       }
@@ -49,7 +49,7 @@
           "dotnet-sdk"
         ],
         "version": [
-          "3.0",
+          "current",
           "2.7",
           "2.6"
         ]
@@ -62,7 +62,7 @@
           "go-sdk"
         ],
         "version": [
-          "2.1",
+          "current",
           "2.0",
           "1.6",
           "1.5",
@@ -77,7 +77,7 @@
           "java-sdk"
         ],
         "version": [
-          "3.0",
+          "current",
           "2.7",
           "2.6"
         ]
@@ -90,7 +90,7 @@
           "nodejs-sdk"
         ],
         "version": [
-          "3.0",
+          "current",
           "2.6",
           "2.5"
         ]
@@ -103,7 +103,7 @@
           "php-sdk"
         ],
         "version": [
-          "3.0",
+          "current",
           "2.6",
           "2.5"
         ]
@@ -116,7 +116,7 @@
           "python-sdk"
         ],
         "version": [
-          "3.0",
+          "current",
           "2.5",
           "2.4"
         ]
@@ -129,7 +129,7 @@
           "ruby-sdk"
         ],
         "version": [
-          "3.0"
+          "current"
         ]
       }
     },
@@ -140,7 +140,7 @@
           "scala-sdk"
         ],
         "version": [
-          "1.0"
+          "current"
         ]
       }
     },
@@ -151,7 +151,7 @@
           "couchbase-lite"
         ],
         "version": [
-          "2.8",
+          "current",
           "2.7",
           "2.6",
           "2.5",
@@ -167,7 +167,7 @@
           "sync-gateway"
         ],
         "version": [
-          "2.8",
+          "current",
           "2.7",
           "2.6",
           "2.5",
@@ -183,7 +183,7 @@
           "operator"
         ],
         "version": [
-          "2.0",
+          "current",
           "1.2",
           "1.1",
           "1.0"
@@ -197,7 +197,7 @@
           "elasticsearch-connector"
         ],
         "version": [
-          "4.2",
+          "current",
           "4.1",
           "4.0"
         ]
@@ -210,7 +210,7 @@
           "kafka-connector"
         ],
         "version": [
-          "4.0",
+          "current",
           "3.4"
         ]
       }
@@ -222,7 +222,7 @@
           "spark-connector"
         ],
         "version": [
-          "2.4",
+          "current",
           "2.3"
         ]
       }
