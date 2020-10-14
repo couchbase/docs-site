@@ -151,11 +151,11 @@ xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 [.column]
 ====== {empty}
 
-////
+
 == Distributed ACID Transactions
 
 ++++
-<div class="card-row three-column-row">
+<div class="card-row two-column-row">
 ++++
 
 [.column]
@@ -167,7 +167,7 @@ Atomicity against multiple document transactions with the Java SDK.
 []
 xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
 
-
+////
 [.column]
 ====== {empty}
 .C# Transactions
@@ -176,21 +176,21 @@ xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Di
 Atomicity against multiple document transactions with the .NET SDK.
 []
 xref:3.0@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
-
+////
 
 [.column]
 ====== {empty}
 .C++ Transactions
 
 [.content]
-Atomicity against multiple document transactions with the C SDK, _libcouchbase_.
+Atomicity against multiple document transactions with the {cpp} API.
 []
-xref:3.0@c-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C++ Distributed Transactions]
+xref:1.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[C++ Distributed Transactions]
 
 ++++
 </div>
 ++++
-////
+
 
 [.column]
 ====== {empty}
