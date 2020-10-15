@@ -1,5 +1,6 @@
 = SDKs & Connectors
 :page-aliases: sdks:intro.adoc
+// 7.0@server:sdk:overview.adoc
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :!sectids:
@@ -155,7 +156,7 @@ xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 == Distributed ACID Transactions
 
 ++++
-<div class="card-row two-column-row">
+<div class="card-row three-column-row">
 ++++
 
 [.column]
@@ -167,7 +168,7 @@ Atomicity against multiple document transactions with the Java SDK.
 []
 xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
 
-////
+
 [.column]
 ====== {empty}
 .C# Transactions
@@ -176,7 +177,7 @@ xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Di
 Atomicity against multiple document transactions with the .NET SDK.
 []
 xref:3.0@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
-////
+
 
 [.column]
 ====== {empty}
