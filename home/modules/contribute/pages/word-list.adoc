@@ -88,6 +88,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 |===
 | Term | Notes
 
+| {cpp} | Antora will sometimes interpret ++ as markup instructions, and leave only *C* on the page. Follow https://asciidoctor.org/docs/user-manual/#charref-attributes[asciidoctor recommendations] and use \{cpp}.
 | CAS | Not Cas, cas -- Compare and Swap (was _Check and Set_ in the < 3.x Server docs)
 | `cbbackupmgr` |
 | `cbcollect` |
