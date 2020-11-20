@@ -20,7 +20,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == Numbers & Symbols
 
-[cols="20,70"]
+[cols="30,60"]
 |===
 |.NET | A '.', then all caps for NET (never _dotnet_)
 | 1; 1 000; 1 000 000 | see _numbers, SI_
@@ -315,8 +315,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | massively parallel processing (MPP) |
 | Master | avoid master/slave, use primary/secondary
 | Memcached bucket | 
-| memcached | early Couchbase component 
-| memcached | distributed memory object caching system from Memcached 
+| memcached | (Early Couchbase component) distributed memory object caching system from Memcached 
 | memory-optimized indexes (MOI) |
 | metadata |
 | microservices  |
