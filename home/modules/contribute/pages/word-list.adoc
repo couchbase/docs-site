@@ -20,7 +20,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == Numbers & Symbols
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 |.NET | A '.', then all caps for NET (never _dotnet_)
 | 1; 1 000; 1 000 000 | see _numbers, SI_
@@ -30,7 +30,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == A
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -61,7 +61,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == B
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -84,7 +84,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == C
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -123,7 +123,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == D
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -157,7 +157,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == E
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -184,7 +184,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == F
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -208,7 +208,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == G
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -224,7 +224,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == H
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -242,7 +242,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == I
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -262,7 +262,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == J
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -277,7 +277,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == K
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -290,7 +290,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == L
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -306,7 +306,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == M
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -337,7 +337,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == N
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -356,7 +356,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == O
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -378,7 +378,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == P
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -394,7 +394,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == Q
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -413,7 +413,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == R
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -434,7 +434,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == S
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -444,6 +444,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | SDKs | _No grocer’s apostrophe_
 | Search Service | _use title case_
 | See | see refer to
+| Serial Comma | Use it!  See _Oxford Comma_.
 | Service / service | For Couchbase _Foo_ Service, capitalize _Service_. For referring to, e.g., _the service in the cluster_, lowercase.
 | setup | (n & adj) Set up (v)
 | SGCollect |
@@ -463,7 +464,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == T
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -482,7 +483,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == U
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -495,7 +496,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == V
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -512,7 +513,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == W
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -528,7 +529,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == X
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -540,7 +541,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == Y
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
@@ -550,7 +551,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 
 == Z
 
-[cols="30,51"]
+[cols="31,51"]
 |===
 | Term | Notes
 
