@@ -72,9 +72,8 @@ content:
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
     # End::Mobile content                                                                       Mobile Content
-  - url: https://github.com/couchbase/service-broker 
+  - url: https://github.com/couchbase/docs-service-broker.git 
     branches: [master]
-    start_path: documentation
   - url: https://git@github.com/couchbase/docs-ngdm
   # Tutorial repositories
   - url: https://github.com/couchbase/tutorials
