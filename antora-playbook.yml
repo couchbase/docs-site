@@ -101,7 +101,7 @@ content:
   - url: https://github.com/amarantha-k/OpenID_connect_tutorial
     branches: [tutorial]
     start_path: content
-  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-websocket-samples
+  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
     branches: [master]
     start_path: content
 asciidoc:
