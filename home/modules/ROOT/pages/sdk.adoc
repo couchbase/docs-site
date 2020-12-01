@@ -52,7 +52,7 @@ The Java SDK forms the cornerstone of our JVM clients.
 It allows Java applications to access a Couchbase Server cluster.
 The Java SDK offers traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
 []
-xref:3.0@java-sdk:hello-world:start-using-sdk.adoc[Java SDK 3.0]
+xref:3.1@java-sdk:hello-world:overview.adoc[Java SDK 3.1]
 
 
 [.column]
@@ -63,7 +63,7 @@ xref:3.0@java-sdk:hello-world:start-using-sdk.adoc[Java SDK 3.0]
 Our new Scala SDK allows Scala applications to access a Couchbase Server cluster.
 It offers synchronous, asynchronous, and reactive APIs for flexibility and maximum performance.
 []
-xref:1.0@scala-sdk:hello-world:start-using-sdk.adoc[Scala SDK 1.0]
+xref:1.1@scala-sdk:hello-world:overview.adoc[Scala SDK 1.1]
 
 [.column]
 ====== {empty}
@@ -73,7 +73,7 @@ xref:1.0@scala-sdk:hello-world:start-using-sdk.adoc[Scala SDK 1.0]
 The .NET SDK enables you to interact with a Couchbase Server cluster from the .NET Framework using any Common Language Runtime (CLR) language, including C#, F#, and VB.NET. 
 It offers both a traditional synchronous API and an asynchronous API based on the Task-based Asynchronous Pattern (TAP).
 []
-xref:3.0@dotnet-sdk:hello-world:start-using-sdk.adoc[.NET SDK 3.0]
+xref:3.1@dotnet-sdk:hello-world:overview.adoc[.NET SDK 3.1]
 
 [.column]
 ====== {empty}
@@ -84,7 +84,7 @@ The Couchbase C SDK (`libcouchbase`) enables C and C++ programs to access a Couc
 The C SDK is also commonly used as a core dependency of SDKs written in other language to provide a common implementation and high performance.
 Libcouchbase also contains the `cbc` suite of command line tools.
 []
-xref:3.0@c-sdk:hello-world:start-using-sdk.adoc[C SDK 3.0]
+xref:3.1@c-sdk:hello-world:overview.adoc[C SDK 3.1]
 
 
 [.column]
@@ -95,7 +95,7 @@ xref:3.0@c-sdk:hello-world:start-using-sdk.adoc[C SDK 3.0]
 The Node.js SDK allows you to connect to a Couchbase Server cluster from Node.js.
 The Node.js SDK is a native Node.js module using the very fast `libcouchbase` library to handle communicating with the cluster over the Couchbase binary protocol.
 []
-xref:3.0@nodejs-sdk:hello-world:start-using-sdk.adoc[Node.js SDK 3.0]
+xref:3.1@nodejs-sdk:hello-world:overview.adoc[Node.js SDK 3.1]
 
 [.column]
 ====== {empty}
@@ -105,7 +105,7 @@ xref:3.0@nodejs-sdk:hello-world:start-using-sdk.adoc[Node.js SDK 3.0]
 The PHP SDK allows you to connect to a Couchbase Server cluster from PHP.
 The PHP SDK is a native PHP extension and uses the Couchbase high-performance C library `libcouchbase` to handle communicating to the cluster over Couchbase binary protocols.
 []
-xref:3.0@php-sdk:hello-world:start-using-sdk.adoc[PHP SDK 3.0]
+xref:3.1@php-sdk:hello-world:overview.adoc[PHP SDK 3.1]
 
 [.column]
 ====== {empty}
@@ -116,7 +116,7 @@ The Python SDK allows Python applications to access a Couchbase Server cluster.
 The Python SDK offers a traditional synchronous API as well as integration with twisted, gevent, and asyncio.
 It depends on the C SDK (`libcouchbase`) and utilizes it for performance and reliability.
 []
-xref:3.0@python-sdk:hello-world:start-using-sdk.adoc[Python SDK 3.0]
+xref:3.1@python-sdk:hello-world:overview.adoc[Python SDK 3.1]
 
 [.column]
 ====== {empty}
@@ -126,7 +126,7 @@ xref:3.0@python-sdk:hello-world:start-using-sdk.adoc[Python SDK 3.0]
 The Ruby SDK allows Ruby applications to access a Couchbase Server cluster. 
 The Ruby SDK includes high-performance native Ruby extensions to handle communicating to the cluster over Couchbase's binary protocols.
 []
-xref:3.0@ruby-sdk:hello-world:start-using-sdk.adoc[Ruby SDK 3.0]
+xref:3.1@ruby-sdk:hello-world:overview.adoc[Ruby SDK 3.1]
 
 [.column]
 ====== {empty}
@@ -136,7 +136,7 @@ xref:3.0@ruby-sdk:hello-world:start-using-sdk.adoc[Ruby SDK 3.0]
 The Couchbase Go SDK allows you to connect to a Couchbase Server cluster from Go.
 The Go SDK is a native Go library and uses the high-performance gocbcore to handle communicating to the cluster over Couchbase's binary protocols.
 []
-xref:2.1@go-sdk:hello-world:start-using-sdk.adoc[Go SDK 2.1]
+xref:2.2@go-sdk:hello-world:overview.adoc[Go SDK 2.2]
 
 ++++
 </div>
@@ -165,7 +165,7 @@ xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 [.content]
 Atomicity against multiple document transactions with the Java SDK.
 []
-xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
+xref:3.1@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
 
 
 [.column]
@@ -175,7 +175,7 @@ xref:3.0@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Di
 [.content]
 Atomicity against multiple document transactions with the .NET SDK.
 []
-xref:3.0@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
+xref:3.1@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
 
 
 [.column]
@@ -183,9 +183,9 @@ xref:3.0@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Di
 .C++ Transactions
 
 [.content]
-Atomicity against multiple document transactions with the C SDK, _libcouchbase_.
+Atomicity against multiple document transactions with the {cpp} API.
 []
-xref:3.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[C++ Distributed Transactions]
+xref:1.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[C++ Distributed Transactions]
 
 ++++
 </div>
@@ -210,7 +210,7 @@ xref:3.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[C++ Distribut
 [.content]
 You to use Couchbase Lite as an embedded database within your app with various JavaScript frameworks' APIs.
 []
-xref:2.7@couchbase-lite::javascript.adoc[Couchbase Lite JavaScript 2.7]
+xref:2.8@couchbase-lite::javascript.adoc[Couchbase Lite JavaScript 2.8]
 
 
 [.column]
@@ -220,7 +220,7 @@ xref:2.7@couchbase-lite::javascript.adoc[Couchbase Lite JavaScript 2.7]
 [.content]
 Create your mobile app in C#, using .NET Standard 2.0.
 []
-xref:2.7@couchbase-lite::csharp.adoc[Couchbase Lite C# 2.7]
+xref:2.8@couchbase-lite::csharp.adoc[Couchbase Lite C# 2.8]
 
 
 [.column]
@@ -230,7 +230,7 @@ xref:2.7@couchbase-lite::csharp.adoc[Couchbase Lite C# 2.7]
 [.content]
 Develop and deploy your Couchbase Lite applications to a JVM environment. 
 []
-xref:2.7@couchbase-lite::java-platform.adoc[Couchbase Lite Java 2.7]
+xref:2.8@couchbase-lite::java-platform.adoc[Couchbase Lite Java 2.8]
 
 [.column]
 ====== {empty}
@@ -239,7 +239,7 @@ xref:2.7@couchbase-lite::java-platform.adoc[Couchbase Lite Java 2.7]
 [.content]
 Create an Android app, using Couchbase Lite as an embedded database.
 []
-xref:2.7@couchbase-lite::java-android.adoc[Couchbase Lite Java Android 2.7]
+xref:2.8@couchbase-lite::java-android.adoc[Couchbase Lite Java Android 2.8]
 
 
 [.column]
@@ -249,7 +249,7 @@ xref:2.7@couchbase-lite::java-android.adoc[Couchbase Lite Java Android 2.7]
 [.content]
 Create an iOS app in Swift, using Couchbase Lite as an embedded database.
 []
-xref:2.7@couchbase-lite::swift.adoc[Couchbase Lite Swift 2.7]
+xref:2.8@couchbase-lite::swift.adoc[Couchbase Lite Swift 2.8]
 
 [.column]
 ====== {empty}
@@ -258,7 +258,7 @@ xref:2.7@couchbase-lite::swift.adoc[Couchbase Lite Swift 2.7]
 [.content]
 Create an iOS app in Objective-C, using Couchbase Lite as an embedded database.
 []
-xref:2.7@couchbase-lite::objc.adoc[Couchbase Lite Objective-C 2.7]
+xref:2.8@couchbase-lite::objc.adoc[Couchbase Lite Objective-C 2.8]
 
 
 
@@ -328,7 +328,7 @@ In addition to the Couchbase https://www.couchbase.com/support-policy[Support Te
 .Integrations
 
 [.content]
-Information on some 3rd-party SDK integrations, such as xref:3.0@java-sdk:project-docs:compatibility.adoc#spring-compat[Spring Data], can be found in the SDK docs.
+Information on some 3rd-party SDK integrations, such as xref:3.1@java-sdk:project-docs:compatibility.adoc#spring-compat[Spring Data], can be found in the SDK docs.
 
 [.column]
 ====== {empty}
