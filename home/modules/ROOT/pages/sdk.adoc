@@ -220,7 +220,7 @@ xref:2.8@couchbase-lite::javascript.adoc[Couchbase Lite JavaScript 2.8]
 [.content]
 Create your mobile app in C#, using .NET Standard 2.0.
 []
-xref:2.8@couchbase-lite::csharp.adoc[Couchbase Lite C# 2.8]
+xref:2.8@couchbase-lite:csharp:quickstart.adoc[Couchbase Lite C# 2.8]
 
 
 [.column]
@@ -230,7 +230,7 @@ xref:2.8@couchbase-lite::csharp.adoc[Couchbase Lite C# 2.8]
 [.content]
 Develop and deploy your Couchbase Lite applications to a JVM environment. 
 []
-xref:2.8@couchbase-lite::java-platform.adoc[Couchbase Lite Java 2.8]
+xref:2.8@couchbase-lite:java:quickstart.adoc[Couchbase Lite Java 2.8]
 
 [.column]
 ====== {empty}
@@ -239,7 +239,7 @@ xref:2.8@couchbase-lite::java-platform.adoc[Couchbase Lite Java 2.8]
 [.content]
 Create an Android app, using Couchbase Lite as an embedded database.
 []
-xref:2.8@couchbase-lite::java-android.adoc[Couchbase Lite Java Android 2.8]
+xref:2.8@couchbase-lite:android:quickstart.adoc[Couchbase Lite Java Android 2.8]
 
 
 [.column]
@@ -249,7 +249,7 @@ xref:2.8@couchbase-lite::java-android.adoc[Couchbase Lite Java Android 2.8]
 [.content]
 Create an iOS app in Swift, using Couchbase Lite as an embedded database.
 []
-xref:2.8@couchbase-lite::swift.adoc[Couchbase Lite Swift 2.8]
+xref:2.8@couchbase-lite:swift:quickstart.adoc[Couchbase Lite Swift 2.8]
 
 [.column]
 ====== {empty}
@@ -258,7 +258,7 @@ xref:2.8@couchbase-lite::swift.adoc[Couchbase Lite Swift 2.8]
 [.content]
 Create an iOS app in Objective-C, using Couchbase Lite as an embedded database.
 []
-xref:2.8@couchbase-lite::objc.adoc[Couchbase Lite Objective-C 2.8]
+xref:2.8@couchbase-lite:objc:quickstart.adoc[Couchbase Lite Objective-C 2.8]
 
 
 
