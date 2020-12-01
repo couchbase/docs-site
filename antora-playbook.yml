@@ -77,7 +77,7 @@ content:
   - url: https://git@github.com/couchbase/docs-ngdm
   # Tutorial repositories
   - url: https://github.com/couchbase/tutorials
-    branches: cbc-self-service-trials
+    branches: master
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
   - url: https://github.com/couchbaselabs/mobile-travel-sample
@@ -85,7 +85,6 @@ content:
   - url: https://github.com/couchbaselabs/hotel-finder-react-native
   - url: https://github.com/couchbaselabs/hotel-lister-cordova
   - url: https://github.com/couchbaselabs/tutorials-contrib
-    branches: cbc-first-timer
   - url: https://github.com/couchbaselabs/mobile-training-todo
     branches: tutorials
     start_path: content
