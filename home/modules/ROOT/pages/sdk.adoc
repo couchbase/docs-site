@@ -53,7 +53,7 @@ The Java SDK forms the cornerstone of our JVM clients.
 It allows Java applications to access a Couchbase Server cluster.
 The Java SDK offers traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
 []
-xref:3.0@java-sdk:hello-world:start-using-sdk.adoc[Java SDK 3.0]
+xref:3.1@java-sdk:hello-world:overview.adoc[Java SDK 3.1]
 
 
 [.column]
@@ -74,7 +74,7 @@ xref:1.0@scala-sdk:hello-world:start-using-sdk.adoc[Scala SDK 1.0]
 The .NET SDK enables you to interact with a Couchbase Server cluster from the .NET Framework using any Common Language Runtime (CLR) language, including C#, F#, and VB.NET. 
 It offers both a traditional synchronous API and an asynchronous API based on the Task-based Asynchronous Pattern (TAP).
 []
-xref:3.0@dotnet-sdk:hello-world:start-using-sdk.adoc[.NET SDK 3.0]
+xref:3.1@dotnet-sdk:hello-world:overview.adoc[.NET SDK 3.1]
 
 [.column]
 ====== {empty}
@@ -96,7 +96,7 @@ xref:3.0@c-sdk:hello-world:start-using-sdk.adoc[C SDK 3.0]
 The Node.js SDK allows you to connect to a Couchbase Server cluster from Node.js.
 The Node.js SDK is a native Node.js module using the very fast `libcouchbase` library to handle communicating with the cluster over the Couchbase binary protocol.
 []
-xref:3.0@nodejs-sdk:hello-world:start-using-sdk.adoc[Node.js SDK 3.0]
+xref:3.1@nodejs-sdk:hello-world:overview.adoc[Node.js SDK 3.1]
 
 [.column]
 ====== {empty}
