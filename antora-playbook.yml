@@ -85,6 +85,7 @@ content:
   - url: https://github.com/couchbaselabs/hotel-finder-react-native
   - url: https://github.com/couchbaselabs/hotel-lister-cordova
   - url: https://github.com/couchbaselabs/tutorials-contrib
+    branches: [cbc-eventing]
   - url: https://github.com/couchbaselabs/mobile-training-todo
     branches: tutorials
     start_path: content
