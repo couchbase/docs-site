@@ -34,8 +34,4 @@ for = "/_/font/*"
 
 # NOTE the following redirects get appended to the redirects defined in the _redirects file
 
-[[redirects]]
-# NOTE all paths that don't resolve to a static file or previous redirect rule
-from = "/*"
-to = "/home/index.html"
-status = 302
+#[[redirects]]
