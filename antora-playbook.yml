@@ -74,6 +74,8 @@ content:
     # End::Mobile content                                                                       Mobile Content
   - url: https://github.com/couchbase/docs-service-broker.git 
     branches: [master]
+  - url: https://github.com/couchbase/docs-cloud-native.git 
+    branches: [cndp-nav]    
   - url: https://git@github.com/couchbase/docs-ngdm
   # Tutorial repositories
   - url: https://github.com/couchbase/tutorials
@@ -126,6 +128,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/sandbox-1/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-88/ui-bundle.zip
 output:
   dir: ./public
