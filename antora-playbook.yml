@@ -21,7 +21,7 @@ content:
   - url: https://git@github.com/couchbaselabs/project-avengers
     start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
-    branches: [2.0.x, 1.2.x, 1.1.x, 1.0.x]
+    branches: [2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
     branches: [master, release/4.1, release/4.0]
@@ -76,6 +76,11 @@ content:
     branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
+  # Cloud-Native Database repositories
+  - url: https://github.com/couchbase/docs-service-broker.git 
+    branches: [master]
+  - url: https://github.com/couchbase/docs-cloud-native.git 
+    branches: [master]
   # Tutorial repositories
   - url: https://github.com/couchbaselabs/tutorials
   - url: https://github.com/couchbase/developer-content
