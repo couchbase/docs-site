@@ -48,13 +48,13 @@ xref:cloud-native-database::index.adoc[Go to Couchbase Cloud-Native Database]
 [.column]
 ====== {empty}
 [.media-left]
-image::kubernettes_2.svg[,400]
+image::kubernetes_2.svg[,400]
 
 ++++
 </div>
 ++++
 
-=== Cloud-Native Technologies
+// === Cloud-Native Technologies
 ++++
 <div class="card-row two-column-row">
 ++++
