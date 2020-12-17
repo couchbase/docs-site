@@ -50,14 +50,14 @@ xref:cloud-native-database::index.adoc[Go to Couchbase Cloud-Native Database]
 [.media-left]
 image::kubernetes_2.svg[,400]
 
-++++
-</div>
-++++
+// ++++
+// </div>
+// ++++
 
 // === Cloud-Native Technologies
-++++
-<div class="card-row two-column-row">
-++++
+// ++++
+// <div class="card-row two-column-row">
+// ++++
 
 [.column]
 ====== {empty}
