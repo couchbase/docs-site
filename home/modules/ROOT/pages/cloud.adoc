@@ -62,6 +62,7 @@ image::kubernetes_2.svg[,400]
 [.column]
 ====== {empty}
 .Couchbase Autonomous Operator
+
 [.content]
 The Couchbase Autonomous Operator provides native integration of Couchbase Server with open source Kubernetes and Red Hat OpenShift. It enables you to automate the management of common Couchbase tasks such as the configuration, creation, scaling, and recovery of Couchbase clusters. By reducing the complexity of running a Couchbase cluster, it lets you focus on the desired configuration and not worry about the details of manual deployment and life-cycle management.
 []
@@ -70,6 +71,7 @@ xref:operator::overview.adoc[Go to Couchbase Autonomous Operator]
 [.column]
 ====== {empty}
 .Couchbase Service Broker
+
 [.content]
 The Service Broker implements the https://www.openservicebrokerapi.org/[Open Service Broker API^]. It is a simple web-service that creates Kubernetes resources on demand as requested by the API.
 []
