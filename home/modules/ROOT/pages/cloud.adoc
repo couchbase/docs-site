@@ -24,7 +24,9 @@ xref:cloud::index.adoc[Go to Couchbase Cloud Docs]
 [.column]
 ====== {empty}
 [.media-left]
-video::https://share.vidyard.com/watch/AH7NwJbbGseearDaDMRU8Q?[]
+++++
+<iframe class="vidyard_iframe" src="https://share.vidyard.com/watch/AH7NwJbbGseearDaDMRU8Q?" width="640" height="360" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+++++
 
 ++++
 </div>
@@ -46,7 +48,9 @@ xref:cloud-native-database::index.adoc[Go to Couchbase Cloud-Native Database]
 [.column]
 ====== {empty}
 [.media-left]
-video::https://share.vidyard.com/watch/T7vQp1PY9FdCP4YL1CaL2J[]
+++++
+<iframe class="vidyard_iframe" src="https://share.vidyard.com/watch/T7vQp1PY9FdCP4YL1CaL2J" width="640" height="360" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+++++
 
 ++++
 </div>
