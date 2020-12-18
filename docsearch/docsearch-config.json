@@ -183,6 +183,22 @@
       }
     },
     {
+      "url": "https://docs.couchbase.com/(?P<component>.*?)/",
+      "variables": {
+        "component": [
+          "cloud-native-database"
+        ]
+      }
+    },
+    {
+      "url": "https://docs.couchbase.com/(?P<component>.*?)/",
+      "variables": {
+        "component": [
+          "service-broker"
+        ]
+      }
+    },
+    {
       "url": "https://docs.couchbase.com/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
@@ -190,6 +206,7 @@
         ],
         "version": [
           "current",
+          "2.0",
           "1.2",
           "1.1",
           "1.0"
