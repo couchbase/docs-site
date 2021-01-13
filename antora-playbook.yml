@@ -86,7 +86,7 @@ content:
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
   - url: https://github.com/amarantha-k/mobile-travel-sample
-    branches: [patch-4]
+    branches: [patch-5]
     start_path: content
   - url: https://github.com/couchbaselabs/hotel-finder-react-native
   - url: https://github.com/couchbaselabs/hotel-lister-cordova
