@@ -45,8 +45,10 @@ content:
     branches: [release/7.0, release/6.6, release/6.5, release/6.0]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
-  - url: https://github.com/couchbase/docs-server
-    branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
+  #- url: https://github.com/couchbase/docs-server
+  #  branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
+  - url: https://github.com/jon-strabala/docs-server
+    branches: [release/7.0, release/6.6]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/6.6, release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/docs-sdk-c
@@ -85,8 +87,8 @@ content:
   - url: https://github.com/couchbaselabs/tutorials
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
-  - url: https://github.com/couchbaselabs/mobile-travel-sample
-    # branches: [fix-tabs]
+  - url: https://github.com/amarantha-k/mobile-travel-sample
+    branches: [patch-5]
     start_path: content
   - url: https://github.com/couchbaselabs/hotel-finder-react-native
   - url: https://github.com/couchbaselabs/hotel-lister-cordova
