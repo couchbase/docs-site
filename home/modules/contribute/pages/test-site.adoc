@@ -67,7 +67,7 @@ See xref:build-site.adoc#configure-git-credentials[git credentials] to learn how
 
 == Lightweight Local Playbook
 
-You may have to iterate over ammending the Antora playbook file a number of times, commenting out repos to which you do not have access.
+You may have to iterate over amending the Antora playbook file a number of times, commenting out repos to which you do not have access.
 An easier approach could be starting with an intentionally minimalist playbook, and only adding the repos that you're planning to work on.
 This will have to include the `docs-server` repo which, amongst other things, contains the site navigation.
 
