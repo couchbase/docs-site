@@ -13,7 +13,7 @@ content:
     start_path: docs
   # NOTE server-docs is currently after other server repos so nav key wins
   - url: ~/Couchbase/docs/docs-server/
-    branches: [release/6.5, release/6.6]
+    branches: [release/6.5, release/6.6, release/7.0]
   - url: ~/Couchbase/docs/docs-sdk-common/
     branches: [release/6.0, release/6.5, release/6.6]
   - url: ~/Couchbase/docs/docs-sdk-java/
