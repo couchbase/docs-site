@@ -104,7 +104,7 @@ xref:3.1@nodejs-sdk:hello-world:overview.adoc[Node.js SDK 3.1]
 The PHP SDK allows you to connect to a Couchbase Server cluster from PHP.
 The PHP SDK is a native PHP extension and uses the Couchbase high-performance C library `libcouchbase` to handle communicating to the cluster over Couchbase binary protocols.
 []
-xref:3.0@php-sdk:hello-world:overview.adoc[PHP SDK 3.0]
+xref:3.1@php-sdk:hello-world:overview.adoc[PHP SDK 3.1]
 
 [.column]
 ====== {empty}
