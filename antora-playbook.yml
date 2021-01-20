@@ -62,7 +62,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [release/3.1, release/3.0, release/2.6, release/2.5]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [release/3.0, release/2.6, release/2.5]
+    branches: [release/3.1, release/3.0, release/2.6, release/2.5]
   - url: https://github.com/couchbase/docs-sdk-python
     branches: [release/3.0, release/2.5, release/2.4]
   - url: https://github.com/couchbase/docs-sdk-ruby
