@@ -1,17 +1,15 @@
 [build]
-publish = "public"
 ignore = "false"
+publish = "public"
 
 [build.environment]
+ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 CI = "true"
 NODE_VERSION = "10"
 NODE_OPTIONS = "--max-old-space-size=4096"
 NPM_FLAGS = "--no-optional"
-ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 
-# NOTE branch-deploy refers to the master branch
-
-[context.branch-deploy]
+[context.production]
 command = """\
 mkdir public && \
 echo '<!DOCTYPE html>\n<meta http-equiv="refresh" content="0; url=https://docs.couchbase.com">\n<meta name="robots" content="noindex">\n<title>Redirect Notice"</title>\n<p>Redirecting to <a href="https://docs.couchbase.com">docs.couchbase.com</a>...</p>' > public/index.html\n
@@ -31,7 +29,3 @@ node ../scripts/populate-icon-defs.js public\
 for = "/_/font/*"
   [headers.values]
   Cache-Control = "public,max-age=604800"
-
-# NOTE the following redirects get appended to the redirects defined in the _redirects file
-
-#[[redirects]]
