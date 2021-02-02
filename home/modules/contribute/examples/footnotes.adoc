@@ -1,0 +1,5 @@
+This sentence is followed by a footnote.footnote:fn-1[This is the footnote text.]
+When the document is converted, a number will appear in place of the footnote.
+The reader can use the footnote number to navigate to and from the footnote.
+
+This sentence is followed by the same footnote.footnote:fn-1[]

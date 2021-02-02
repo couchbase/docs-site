@@ -1,0 +1,304 @@
+= Couchbase Server
+:page-layout: landing-page-top-level-sdk
+:page-role: tiles
+:!sectids:
+
+= Couchbase Server
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+Couchbase Server is an open source, distributed, JSON document database.
+It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries and a powerful query engine for executing SQL-like queries.
+For mobile and Internet of Things environments Couchbase also runs natively on-device and manages synchronization to the server.
+
+[.column]
+====== {empty}
+[.media-left]
+image::n1ql-ansi-join-example.png[,450]
+
+++++
+</div>
+++++
+
+== Get Started
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Concepts
+* xref:server:introduction:why-couchbase.adoc[Why Couchbase?]
+* xref:server:learn:data/n1ql-versus-sql.adoc[N1QL versus SQL]
+* xref:server:learn:architecture-overview.adoc[Overview of Couchbase Server]
+* xref:server:learn:data/data.adoc[Data & Transactions]
+* xref:server:learn:buckets-memory-and-storage/buckets-memory-and-storage.adoc[Database Clustering: Buckets, Memory, and Storage]
+* xref:server:learn:clusters-and-availability/clusters-and-availability.adoc[Clusters and Availability]
+* xref:server:learn:services-and-indexes/services-and-indexes.adoc[Services]
+
+[.column]
+.Installation
+* xref:server:install:get-started.adoc[Deployment Options]
+* xref:server:install:install-production-deployment.adoc[Deployment Guidelines]
+* xref:server:install:install-intro.adoc[Installation]
+*  xref:server:install:upgrade.adoc[Upgrading Couchbase Server]
+* xref:server:install:install-uninstalling.adoc[Uninstall]
+
+[.column]
+.Tutorials
+* xref:server:getting-started:start-here.adoc[Get Started]
+* xref:tutorials:quick-start:quickstart-docker-image-manual-cb65.adoc[Developer Bootstrap Exercises]
+* xref:server:getting-started:starter-kits.adoc[Starter Kits]
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Hello World Using SDKs]
+
+++++
+</div>
+++++
+
+== Develop
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.CRUD Operations
+* xref:server:sdk:development-intro.adoc[Developer's Intro]
+* xref:server:sdk:overview.adoc[SDKs]
+* xref:java-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+
+[.column]
+.Transactions & Durability
+* xref:server:learn:data/transactions.adoc[Transactions]
+* xref:server:learn:data/durability.adoc[Durability]
+
+
+[.column]
+.Data Modeling
+* xref:server:learn:data/document-data-model.adoc[Data Model]
+
+++++
+</div>
+++++
+
+=== Services
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Data Service
+* xref:server:learn:services-and-indexes/services/data-service.adoc[Data Service]
+* xref:server:learn:buckets-memory-and-storage/vbuckets.adoc[Database Sharding Using vBuckets]
+* xref:server:learn:buckets-memory-and-storage/expiration.adoc[Bucket Time to Live and Document Expiry]
+* xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
+
+[.column]
+.Index Service
+* xref:server:learn:services-and-indexes/services/index-service.adoc[Index Service]
+* xref:server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc[Global Secondary Indexes]
+* xref:server:learn:services-and-indexes/indexes/index-replication.adoc[Availability and Performance]
+* xref:server:learn:services-and-indexes/indexes/index-scans.adoc[Index Scans]
+* xref:server:learn:services-and-indexes/indexes/index_pushdowns.adoc[Index Pushdowns]
+* xref:server:learn:services-and-indexes/indexes/storage-modes.adoc[Index Storage Settings]
+
+[.column]
+.Query Service
+* xref:server:n1ql:query.adoc[Query Service]
+* xref:server:learn:services-and-indexes/indexes/indexes.adoc[Using Indexes for Query Performance]
+* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
+* xref:java-sdk:howtos:n1ql-queries-with-sdk.adoc[N1QL Query Using SDKs]
+
+[.column]
+.Search Service
+* xref:server:fts:full-text-intro.adoc[Search Service]
+* xref:server:fts:fts-troubleshooting.adoc[Troubleshooting and FAQs]
+* xref:java-sdk:howtos:full-text-searching-with-sdk.adoc[Full Text Search Using SDKs]
+
+
+[.column]
+.Analytics Service
+* xref:server:learn:services-and-indexes/services/analytics-service.adoc[Analytics Service]
+* xref:server:analytics:1_intro.adoc[N1QL for Analytics]
+* xref:server:analytics:primer-beer.adoc[Tutorial]
+* xref:java-sdk:howtos:analytics-using-sdk.adoc[Analytics Using SDKs]
+
+[.column]
+.Eventing Service
+* xref:server:eventing:eventing-overview.adoc[Eventing Service]
+* xref:server:eventing:eventing-language-constructs.adoc[Language Constructs]
+* xref:server:eventing:eventing-examples.adoc[Examples: Using the Eventing Service]
+
+++++
+</div>
+++++
+
+=== SDKs
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Java SDK
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:java-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:java-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:java-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:java-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-java-client/[API Reference] 
+
+[.column]
+.Scala SDK
+* xref:scala-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:scala-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:scala-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:scala-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:scala-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference]
+
+[.column]
+.C SDK
+* xref:c-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:c-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:c-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:c-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* https://docs.couchbase.com/sdk-api/couchbase-c-client/[API Reference]
+
+[.column]
+.Node.js SDK
+* xref:nodejs-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:nodejs-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:nodejs-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:nodejs-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-node-client/[API Reference]
+
+[.column]
+.NET SDK
+* xref:dotnet-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:dotnet-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:dotnet-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:dotnet-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-net-client/[API Reference]
+
+[.column]
+.PHP SDK
+* xref:php-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:php-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:php-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:php-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[API Reference]
+
+[.column]
+.Python SDK
+* xref:python-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:python-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:python-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:python-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:python-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-python-client/[API Reference]
+
+[.column]
+.Go SDK
+* xref:go-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:go-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:go-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:go-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:go-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://pkg.go.dev/github.com/couchbase/gocb/v2?tab=doc[API Reference]
+
+[.column]
+.Ruby SDK
+* xref:ruby-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:ruby-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:ruby-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:ruby-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:ruby-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[API Reference]
+
+++++
+</div>
+++++
+
+
+== Administration and Tools
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Cluster Management
+* xref:server:manage:management-overview.adoc[Overview]
+* xref:server:manage:manage-nodes/node-management-overview.adoc[Manage Nodes and Clusters]
+* xref:server:manage:manage-buckets/bucket-management-overview.adoc[Manage Buckets]
+
+
+[.column]
+.Monitoring and Logging
+* xref:server:manage:monitor/monitor-intro.adoc[Monitoring]
+* xref:server:manage:manage-logging/manage-logging.adoc[Logging]
+* xref:server:manage:manage-settings/manage-settings.adoc[Settings]
+* xref:server:manage:troubleshoot/troubleshoot.adoc[Troubleshoot]
+
+[.column]
+.REST API and Tools
+* xref:server:tools:cbimport.adoc[cbimport]
+* xref:server:tools:cbexport.adoc[cbexport]
+* xref:server:cli:cli-intro.adoc[Couchbase CLI]
+* xref:server:rest-api:rest-intro.adoc[REST API Reference]
+
+++++
+</div>
+++++
+
+== {empty}
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Security
+* xref:server:learn:security/security-overview.adoc[Security Overview]
+* xref:server:learn:security/authentication.adoc[Authentication]
+* xref:server:manage:manage-security/manage-certificates.adoc[Manage Certificates]
+* xref:server:learn:security/authorization-overview.adoc[Authorization]
+* xref:server:manage:manage-security/manage-users-and-roles.adoc[Manage Users, Groups, and Roles]
+
+
+[.column]
+.Replication
+* xref:server:learn:clusters-and-availability/replication-architecture.adoc[Cross Data Center Replication(XDCR) Architecture]
+* xref:server:learn:clusters-and-availability/xdcr-filtering.adoc[XDCR Advanced Filtering]
+* xref:server:learn:clusters-and-availability/xdcr-cloud-deployment.adoc[XDCR Cloud Deployment]
+* xref:server:manage:manage-xdcr/xdcr-management-overview.adoc[Manage XDCR]
+
+
+[.column]
+.Backup and Restore
+* xref:server:backup-restore:backup-restore.adoc[Manage Backup and Restore]
+* xref:server:backup-restore:cbbackupmgr-tutorial.adoc[cbbackupmgr Tutorial]
+
+++++
+</div>
+++++
+
+== Quick Links
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Project Docs
+* xref:server:release-notes:relnotes.adoc[Release Notes]
+* xref:server:introduction:editions.adoc[Couchbase Server Editions]
+
+[.column]
+.Feedback
+* xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
+* xref:home:contribute:index.adoc[Contribute to the Documentation]
+
+
+++++
+</div>
+++++

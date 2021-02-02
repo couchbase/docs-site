@@ -1,0 +1,29 @@
+= Add a New Documentation Page
+
+== Create a New AsciiDoc File
+
+. Start Atom.
+. In Atom's Project panel, navigate to the _pages_ folder in the module where you want to add a new page.
+. Right click on *pages* and select *New File*.
+. Enter a name for the new file in the field.
+The file name becomes the page's URL fragment when it's published to the documentation site.
+** Use lowercase letters.
+** Separate words with hyphens.
+** Don't use symbols or special characters.
+. Add the AsciiDoc file extension, _.adoc_, to the end of the file name, and press kbd:[Enter].
+The new file will open in the editing pane.
+. Enter a xref:pages.adoc#doc-title[document title] on the first line of the file.
++
+----
+= Title of My Document
+----
+. Mark up the new documentation with valid AsciiDoc syntax.
+For AsciiDoc help, see xref:basics.adoc[AsciiDoc Basics].
+. Save the file.
+
+Any AsciiDoc file that is saved in a _pages_ directory in an Antora documentation component is automatically published to the site.
+
+== Next Steps
+
+* xref:update-nav.adoc[Add a page to a component navigation menu].
+* xref:build-site.adoc[Build the docs site locally to test and preview your changes].

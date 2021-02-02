@@ -1,0 +1,72 @@
+= Component Structure and Configuration
+
+== Terminology and Structure
+
+include::partial$component-terms.adoc[]
+
+[#config]
+== Configuring a Component
+
+Usually, you only edit the component descriptor file, _antora.yml_, when cutting a release branch and registering or deregistering a navigation file.
+The component descriptor assigns metadata to each component-version and used to build its page IDs, navigation menus, and URL segments.
+The following example shows the configuration for Couchbase Server 5.5 that's specified in its _antora.yml_ file.
+
+.antora.yml for Couchbase Server 5.5
+[source#primary,yaml]
+----
+name: server
+title: Couchbase Server
+version: '5.5'
+start_page: introduction:intro.adoc
+nav:
+- modules/ROOT/nav.adoc
+----
+
+`name`:: The component coordinate used when creating an xref:cross-references.adoc#component-coordinate[xref from a page in one component to a page in another component].
+
+`title`:: The component name displayed in the xref:nav-menus-and-files.adoc[component and component version selector menus].
+
+`version`:: The version coordinate used when locking an xref destination target to a specific version of a page.
+Writers rarely use this coordinate because in-component xrefs target pages in the same component-version by default, and xrefs that link to pages in other components automatically jump to the latest version of the other component.
++
+The UI uses `version` to sort component-versions in the xref:nav-menus-and-files.adoc[component version selector menu].
+
+`version_title`:: The version name displayed in the xref:nav-menus-and-files.adoc[component version selector menu].
+If this key isn't set, the value of `version` is used instead.
+
+`start_page`:: By default, Antora looks in ROOT for the file _index.adoc_ and uses it as the start page for a component.
+If ROOT doesn't contain _index.adoc_ (or you don't want to use that file as the component's start page), you must explicitly set a start page using its page ID.
+
+`nav`:: The nav key accepts a list of xref:nav-menus-and-files.adoc#nav-file[navigation file] paths.
+The order of the values dictates the order the contents of the navigation files are assembled in the published xref:nav-menus-and-files.adoc#component-menu[component menu].
+
+== Supplemental Component Descriptor Files
+
+The Server component is aggregated from the _docs-server_, _couchbase-cli_, _backup_, and _asterix-opt_ repositories.
+When parts of a component are stored in multiple repositories, one _antora.yml_ file acts as the primary component descriptor.
+The primary file contains the `name`, `title`, `version`, and `nav` configuration.
+The component descriptor files in the other repositories are supplemental.
+They only contain `name` and `version`, so Antora can classify the content files`' component-versions.
+
+The following _antora.yml_ file supplements the <<primary,primary component descriptor file>> shown in the previous section.
+
+.Supplemental _antora.yml_ in couchbase-cli repository
+[source,yaml]
+----
+name: server
+version: '5.5'
+----
+
+Before releasing a new version of the Couchbase Server component to the production site, all of the repositories that contribute documentation to Server must have a branch containing a matching component-version.
+Otherwise, the new version will be missing pages and contain broken links.
+
+== Learn More
+
+* xref:cross-references.adoc#component-coordinate[Reference (xref) a page in another component].
+* xref:update-nav.adoc[Update a navigation file].
+
+//== Additional Resources
+
+//* component descriptor
+//* register nav
+//* modules

@@ -1,0 +1,70 @@
+= Big Data Integration Using Couchbase Connectors
+:page-layout: landing-page-top-level-sdk
+:page-role: tiles
+:!sectids:
+
+= Couchbase Connectors
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+Couchbase Connectors enable you to exchange data with a number of other platforms.
+
+[.column]
+====== {empty}
+[.media-left]
+image::bigdata-elasticsearch-comp.png[,300]
+
+++++
+</div>
+++++
+
+== Big Data Connectors
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Elasticsearch
+* xref:elasticsearch-connector::getting-started.adoc[Get Started]
+* xref:elasticsearch-connector::configuration.adoc[Configuration]
+* xref:elasticsearch-connector::migration.adoc[Migrating from Elasticsearch Plug-in]
+
+[.column]
+.Kafka
+* xref:kafka-connector::quickstart.adoc[Get Started]
+* xref:kafka-connector::source-configuration-options.adoc[Source Configuration]
+* xref:kafka-connector::sink-configuration-options.adoc[Sink Configuration]
+* xref:kafka-connector::streams-sample.adoc[Sample Application with Kafka Steams]
+
+
+[.column]
+.Spark
+* xref:spark-connector::getting-started.adoc[Get Started]
+* xref:spark-connector::dev-workflow.adoc[Development Workflow]
+* xref:spark-connector::java-api.adoc[Java API]
+
+[.column]
+.ODBC and JDBC Drivers
+
+[.content]
+ODBC and JDBC drivers enable any application based on the ODBC/JDBC standards, for example Microsoft Excel, QlikView, SAP Lumira, or Tableau, to connect to a Couchbase Server or cluster.
+{empty}
+xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
+
+[.column]
+.Spring Data
+
+[.content]
+Spring Data for Couchbase is part of the https://spring.io/projects/spring-data-couchbase[umbrella Spring Data project^] which aims to provide a familiar and consistent Spring-based programming model for new datastores while retaining store-specific features and capabilities.
+See the xref:java-sdk:project-docs:compatibility.adoc#spring-compat[Compatibility Table] to match Couchbase and Spring Data versions.
+
+[.column]
+{empty}
+
+++++
+</div>
+++++

@@ -1,0 +1,33 @@
+= Writing Documentation Overview
+
+== AsciiDoc and Asciidoctor
+
+The Couchbase documentation is written using AsciiDoc.
+AsciiDoc is a lightweight markup language that supports the structural and semantic elements necessary for writing web-first, technical documentation.
+You can write an AsciiDoc document using Atom, VS Code, or your preferred plain text editor.
+
+If a document contains incorrect AsciiDoc syntax, you'll see a warning message that starts with `asciidoctor` when you build the site.
+
+ asciidoctor: WARNING: backup-and-restore.adoc: line 12: invalid style for listing block: code
+
+Asciidoctor is the AsciiDoc parser.
+It reports the syntax errors it encounters when converting the documents to HTML.
+
+== Predefined Attributes and Roles
+
+The Couchbase documentation uses a number of predefined AsciiDoc attributes and roles.
+These attributes and roles add custom metadata and special processing or styling behaviors to certain pages.
+
+== Learn More
+
+* xref:pages.adoc[Learn how to name and structure an AsciiDoc document].
+* xref:basics.adoc[Mark up common content elements, like lists and tables, with AsciiDoc].
+* xref:basics.adoc#images[Insert an image].
+* xref:cross-references.adoc[Create document-to-document cross references].
+* xref:code-blocks.adoc[Add source code examples to a document].
+* xref:tabs.adoc[Create a tabs set].
+
+== Additional Resources
+
+The https://asciidoctor.org/[Asciidoctor project^] maintains and releases AsciiDoc under the MIT license.
+//It is the native markup language of Antora.

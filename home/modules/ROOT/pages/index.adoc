@@ -1,0 +1,92 @@
+= Couchbase Documentation
+:page-layout: landing-page-top-level-sdk
+:page-role: tiles
+:!sectids:
+
+= Couchbase Documentation
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+Find the documentation, samples, and references to help you use Couchbase and build applications. 
+
+[.column]
+====== {empty}
+[.media-left]
+image::get-the-agility-of-sql-and-the-flexibility-of-json.svg[,300]
+
+++++
+</div>
+++++
+
+== Get Started
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Couchbase Cloud
+
+[.content]
+A fully-managed database as a service designed to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
+{empty}
+* xref:cloud::index.adoc[Get Started with Couchbase Cloud]
+
+
+[.column]
+.Couchbase Autonomous Operator (Kubernetes)
+
+[.content]
+Native integration of Couchbase Server with open source Kubernetes and Red Hat OpenShift to automate the management of common Couchbase tasks such as the configuration, creation, scaling, and recovery of Couchbase clusters.
+{empty}
+* xref:operator::overview.adoc[Get Started with Autonomous Operator]
+
+[.column]
+.Couchbase Server
+
+[.content]
+An open source, distributed, JSON document database. It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
+{empty}
+xref:server:getting-started:start-here.adoc[Get Started: Couchbase Server Enterprise]
+
+[.column]
+.Couchbase for Mobile/Edge
+
+[.content]
+Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combined with Couchbase Server, it provides fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+{empty}
+* xref:couchbase-lite::introduction.adoc[Get Started with Couchbase Lite]
+* xref:sync-gateway::index.adoc[Get Started with Sync Gateway]
+
+++++
+</div>
+++++
+
+== Quick Links
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Learn More
+* xref:tutorials::index.adoc[Explore the Tutorials]
+* https://docs-archive.couchbase.com[Documentation for Previous Versions]
+
+
+[.column]
+.Community Users
+* xref:tutorials:getting-started-ce:index.adoc[Get Started: Couchbase Community Edition]
+* https://forums.couchbase.com[Engage with us on Couchbase Forums]
+
+[.column]
+.Feedback
+* xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
+* xref:home:contribute:index.adoc[Contribute to the Documentation]
+
+
+++++
+</div>
+++++
