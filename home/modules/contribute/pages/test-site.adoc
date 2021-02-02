@@ -6,7 +6,7 @@ If you've never built the site on your device, complete the xref:install-antora.
 
 To preview your changes on the site locally, you need to configure the playbook to use your local repository.
 
-. Copy the staging playbook, _staging-antora-playbook.yml_, and save it in the _docs-site_ repository.
+. Copy the Antora playbook, _antora-playbook.yml_, and save it in the _docs-site_ repository.
 . Rename it _local-antora-playbook.yml_.
 . Open _local-antora-playbook.yml_ in Atom or your editor.
 . Under `sources`, find the `url` key that matches the upstream repository you plan to submit your changes to.
@@ -63,6 +63,17 @@ When you're satisfied with your work and fixed any reported errors, it's time to
 IMPORTANT: Since some of the respositories listed in the playbook are private, Antora will look for git credentials to use to connect to those repositories.
 If Antora fails because it can't connect to the private repositories, you're git credentials likely aren't configured.
 See xref:build-site.adoc#configure-git-credentials[git credentials] to learn how to configure the git credentials for Antora to use.
+
+
+== Lightweight Local Playbook
+
+You may have to iterate over amending the Antora playbook file a number of times, commenting out repos to which you do not have access.
+An easier approach could be starting with an intentionally minimalist playbook, and only adding the repos that you're planning to work on.
+This will have to include the `docs-server` repo which, amongst other things, contains the site navigation.
+
+For example, to work on local copies of our nine SDK docs repos, and the Server docs, and also include couchbase-cli in your local docs build, take a look at our 
+https://github.com/couchbase/docs-site/blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[example local-staging-antora-playbook.yml file^].
+
 
 == Next Step
 

@@ -13,6 +13,8 @@
 :url-git-sdk-nodejs: {url-git-cb}/docs-sdk-nodejs
 :url-git-sdk-php: {url-git-cb}/docs-sdk-php
 :url-git-sdk-python: {url-git-cb}/docs-sdk-python
+:url-git-sdk-ruby: {url-git-cb}/docs-sdk-ruby
+:url-git-sdk-scala: {url-git-cb}/docs-sdk-scala
 :url-git-sdk-common: {url-git-cb}/docs-sdk-common
 :url-git-home: {url-git-cb}/docs-site
 :url-git-operator: {url-git-cb}/couchbase-operator
@@ -20,7 +22,6 @@
 :url-git-elastic: {url-git-labs}/couchbase-elasticsearch-connector
 :url-git-kafka: {url-git-cb}/kafka-connect-couchbase
 :url-git-spark: {url-git-cb}/couchbase-spark-connector
-:url-git-talend: {url-git-cb}/docs-connectors-talend
 //Couchbase uses Antora to manage and build docs.couchbase.com.
 
 The Couchbase documentation is stored in multiple repositories that are organized in a standard directory structure.
@@ -41,6 +42,8 @@ The following repositories accept contributions via the regular workflow and use
 * {url-git-sdk-nodejs}[Node.js SDK^]
 * {url-git-sdk-php}[PHP SDK^]
 * {url-git-sdk-python}[Python SDK^]
+* {url-git-sdk-ruby}[Ruby SDK^]
+* {url-git-sdk-scala}[Scala SDK^]
 * {url-git-sdk-common}[SDK Common^]
 * {url-git-home}[Home and Contribute^]
 
@@ -81,7 +84,6 @@ The connector repositories use the Gerrit workflow.
 * {url-git-elastic}[Elasticsearch Connector^]
 * {url-git-kafka}[Kafka Connector^]
 * {url-git-spark}[Spark Connector^]
-* {url-git-talend}[Talend Connector^]
 
 [#dir-structure]
 == Directory Structure and Key Files

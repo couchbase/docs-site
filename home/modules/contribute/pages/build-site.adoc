@@ -33,9 +33,9 @@ And that means you can build the documentation site on your own machine, which t
 
  $ cd path/to/docs-site
 
-. Run Antora, using the `antora` command with the staging playbook:
+. Run Antora, using the `antora` command with xref:test-site.adoc#lightweight-local-playbook[your _local_ playbook]:
 
- docs-site $ antora staging-antora-playbook
+ docs-site $ antora local-antora-playbook
 
 . The cloning progress of each component repository is displayed in the console, followed by any AsciiDoc or Antora warning and error messages.
 The site generation is complete when the command prompt (`$`) reappears in the terminal.

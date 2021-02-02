@@ -1,7 +1,7 @@
 // tag::dl-co[]
 .Optional title
-[source,java] <1> <2>
----- <3>
+[source,java] // <1> <2>
+---- // <3>
 KStreamBuilder builder = new KStreamBuilder();
 
 KStream<String, GenericRecord> source = builder
