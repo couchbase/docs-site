@@ -54,17 +54,17 @@ content:
   - url: https://github.com/couchbase/docs-txn-cxx
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [release/3.1, release/3.0, release/2.7, release/2.6]
+    branches: [release/3.1, release/3.0, release/2.7]
   - url: https://github.com/couchbase/docs-sdk-go
-    branches: [release/2.2, release/2.1, release/2.0, release/1.6, release/1.5, release/1.4]
+    branches: [release/2.2, release/2.1, release/2.0, release/1.6, release/1.5]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.1, release/3.0, release/2.7, release/2.6]
+    branches: [release/3.1, release/3.0, release/2.7]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [release/3.1, release/3.0, release/2.6, release/2.5]
+    branches: [release/3.1, release/3.0, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [release/3.1, release/3.0, release/2.6, release/2.5]
+    branches: [release/3.1, release/3.0, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [release/3.0, release/2.5, release/2.4]
+    branches: [release/3.0, release/2.5]
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [release/3.0]
   - url: https://github.com/couchbase/docs-sdk-scala
