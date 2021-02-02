@@ -1,0 +1,82 @@
+= Couchbase Documentation
+:page-layout: landing-page-core-concept
+:page-role: tiles
+:!sectids:
+
+= Couchbase Documentation
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+Find the documentation, samples, and references to help you use Couchbase and build applications. 
+
+[.column]
+====== {empty}
+[.media-left]
+image::book-reader-icon.svg[]
+
+++++
+</div>
+++++
+
+== Get Started
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Couchbase Cloud
+
+[.content]
+Couchbase Cloud is a fully-managed database as a service designed from the ground up to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
+
+xref:cloud::index.adoc[Get Started with Couchbase Cloud]
+
+[.column]
+.Couchbase Server
+
+[.content]
+Couchbase Server is an open source, distributed, NoSQL document-oriented engagement database. It exposes a fast key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for fast queries and a powerful query engine for executing SQL-like queries.
+
+xref:server:getting-started:start-here.adoc[Get Started with Couchbase Server Enterprise]
+
+[.column]
+.Couchbase Mobile
+
+[.content]
+Couchbase Mobile brings the power of NoSQL to the edge. It comprises two components (Sync Gateway and Couchbase Lite), which combine with Couchbase Server to provde fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+
+xref:couchbase-lite::introduction.adoc[Get Started with Couchbase Lite]
+
+++++
+</div>
+++++
+
+== Quick Links
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Learn More
+* xref:tutorials::index.adoc[Explore the Tutorials]
+* https://docs-archive.couchbase.com[Documentation for previous versions]
+
+
+[.column]
+.Community Users
+* xref:tutorials:getting-started-ce:index.adoc[Get Started with Couchbase Server Community Edition]
+* https://forums.couchbase.com[Engage with us on Couchbase Forums]
+
+[.column]
+.Feedback
+* xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
+* xref:home:contribute:index.adoc[Contribute to the Documentation]
+
+
+++++
+</div>
+++++

@@ -1,0 +1,9 @@
+{
+  "name": "couchbase-docs-sandbox-netlify",
+  "description": "Couchbase Docs Sandbox",
+  "private": true,
+  "dependencies": {
+    "@antora/cli": "~2.3",
+    "@antora/site-generator-default": "~2.3"
+  }
+}
