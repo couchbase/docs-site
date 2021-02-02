@@ -1,0 +1,27 @@
+[build]
+ignore = "false"
+publish = "public"
+
+[build.environment]
+ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+CI = "true"
+NODE_VERSION = "12"
+NPM_FLAGS = "--no-optional"
+PRIMARY_SITE_SUPPORTS_CURRENT_URL="true"
+
+[context.branch-deploy]
+command = """\
+mkdir public && \
+echo -e '<!DOCTYPE html>\\n<meta http-equiv="refresh" content="0; url=https://docs-archive.couchbase.com">\\n<meta name="robots" content="noindex">\\n<title>Redirect Notice</title>\\n<p>Redirecting to <a href="https://docs-archive.couchbase.com">docs-archive.couchbase.com</a>...</p>' > public/index.html\
+"""
+
+[context.deploy-preview]
+command = """\
+if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
+time node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
+"""
+
+[[headers]]
+for = "/_/font/*"
+  [headers.values]
+  Cache-Control = "public,max-age=604800"

@@ -1,0 +1,68 @@
+# $(npm bin)/antora --clean --fetch --generator=@antora/site-generator-ms antora-playbook.yml
+site:
+  title: Couchbase Docs Archive
+  url: https://docs-archive.couchbase.com
+  start_page: home::index.adoc
+  robots: disallow
+git:
+  ensure_git_suffix: false
+content:
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: home
+  - url: https://github.com/couchbase/couchbase-elasticsearch-connector
+    branches: [release/cypress]
+    start_path: docs
+  - url: https://github.com/couchbase/kafka-connect-couchbase
+    branches: [release/3.3]
+    start_path: docs
+  - url: https://github.com/couchbase/couchbase-spark-connector
+    branches: [release/2.2, release/2.1]
+    start_path: docs
+  - url: https://github.com/couchbase/docs-server
+    branches: [release/4.6, release/4.5, release/4.1, release/4.0]
+  - url: https://github.com/couchbase/docs-sdk-common
+    branches: [release/6.0, release/5.5, release/5.1, release/4.6, release/4.5]
+  - url: https://github.com/couchbase/docs-sdk-c
+    branches: [release/2.9, release/2.8, release/2.7, release/2.6, release/2.5]
+  - url: https://github.com/couchbase/docs-sdk-dotnet
+    branches: [release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
+  - url: https://github.com/couchbase/docs-sdk-go
+    branches: [release/1.4, release/1.3, release/1.2, release/1.1, release/1.0]
+  - url: https://github.com/couchbase/docs-sdk-java
+    branches: [release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
+  - url: https://github.com/couchbase/docs-sdk-nodejs
+    branches: [release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
+  - url: https://github.com/couchbase/docs-sdk-php
+    branches: [release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
+  - url: https://github.com/couchbase/docs-sdk-python
+    branches: [release/2.4, release/2.3, release/2.2, release/2.1, release/2.0]
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite
+    branches: [release/1.4, release/1.3]
+  - url: https://github.com/couchbaselabs/docs-sync-gateway
+    branches: [release/1.4, release/1.3]
+asciidoc:
+  attributes:
+    max-include-depth: 10
+    page-partial: false
+    primary-site-url: https://docs.couchbase.com
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    tabs: tabs
+    toc: ~
+    xrefstyle: short
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+  extensions:
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/tabs-block.js
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/archive-1/ui-bundle.zip
+output:
+  dir: ./public
