@@ -12,7 +12,7 @@ NPM_FLAGS = "--no-optional"
 [context.production]
 command = """\
 mkdir public && \
-echo '<!DOCTYPE html>\n<meta http-equiv="refresh" content="0; url=https://docs.couchbase.com">\n<meta name="robots" content="noindex">\n<title>Redirect Notice"</title>\n<p>Redirecting to <a href="https://docs.couchbase.com">docs.couchbase.com</a>...</p>' > public/index.html\n
+echo -e '<!DOCTYPE html>\\n<meta http-equiv="refresh" content="0; url=https://docs.couchbase.com">\\n<meta name="robots" content="noindex">\\n<title>Redirect Notice</title>\\n<p>Redirecting to <a href="https://docs.couchbase.com">docs.couchbase.com</a>...</p>\\n' > public/index.html\
 """
 
 [context.deploy-preview]
