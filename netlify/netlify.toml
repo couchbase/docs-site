@@ -12,12 +12,12 @@ NPM_FLAGS = "--no-optional"
 [context.production]
 command = """\
 mkdir public && \
-echo -e '<!DOCTYPE html>\\n<meta http-equiv="refresh" content="0; url=https://docs.couchbase.com">\\n<meta name="robots" content="noindex">\\n<title>Redirect Notice</title>\\n<p>Redirecting to <a href="https://docs.couchbase.com">docs.couchbase.com</a>...</p>\\n' > public/index.html\
+echo -e '<!DOCTYPE html>\\n<meta http-equiv="refresh" content="0; url=https://docs.couchbase.com">\\n<meta name="robots" content="noindex">\\n<title>Redirect Notice</title>\\n<p>Redirecting to <a href="https://docs.couchbase.com">docs.couchbase.com</a>...</p>' > public/index.html\
 """
 
 [context.deploy-preview]
 command = """\
-if [ -v FONTAWESOME_NPM_TOKEN ]; then echo -e '@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=$''{FONTAWESOME_NPM_TOKEN}\\n' > ../scripts/.npmrc; fi; \
+if [ -v FONTAWESOME_NPM_TOKEN ]; then echo -e '@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=$''{FONTAWESOME_NPM_TOKEN}' > ../scripts/.npmrc; fi; \
 (cd ../scripts; npm --no-package-lock i || true) && \
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node ../scripts/remove-private-content-sources.js ../antora-playbook.yml; fi; \
 time node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
