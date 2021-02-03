@@ -1,0 +1,95 @@
+{
+  "index_name": "prod_docs_couchbase",
+  "start_urls": [
+    {{#each (versioned components)}}
+    {
+      {{#if (eq ./name "home")}}
+      "url": "{{{@root.url}}}/home/contribute/",
+      "selectors_key": "contribute",
+      "page_rank": -1
+      {{else}}
+      "url": "{{{@root.url}}}/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
+          "{{{./name}}}"
+        ],
+        "version": [
+          {{#each versions}}
+          {{#if (eq ./version ../latest)}}
+          "current"{{#unless @last}},{{/unless}}
+          {{else}}
+          "{{{./version}}}"{{#unless @last}},{{/unless}}
+          {{/if}}
+          {{/each}}
+        ]
+      }
+      {{/if}}
+    },
+    {{/each}}
+    {
+      "url": "{{{@root.url}}}/(?P<component>.*?)/",
+      "variables": {
+        "component": [
+          {{#each (versionless components)}}
+          "{{{./name}}}"{{#unless @last}},{{/unless}}
+          {{/each}}
+        ]
+      }
+    }
+  ],
+  "sitemap_urls": [
+    "{{{url}}}/sitemap.xml"
+  ],
+  "scrape_start_urls": false,
+  "stop_urls": [],
+  "selectors": {
+    "default": {
+      "lvl0": {
+        "global": true,
+        "selector": ".component-frame h4.title > span, .component-frame .component"
+      },
+      "lvl1": ".doc > .page-heading-title > h1.page",
+      "lvl2": ".doc .sect1 > h2:first-child",
+      "lvl3": ".doc .sect2 > h3:first-child",
+      "lvl4": ".doc .sect3 > h4:first-child",
+      "text": ".doc p, .doc dt"
+    },
+    "contribute": {
+      "lvl0": {
+        "default_value": "Contributing Guide",
+        "global": true,
+        "selector": ".navbar .component"
+      },
+      "lvl1": ".doc > .page-heading-title > h1.page",
+      "lvl2": ".doc .sect1 > h2:first-child",
+      "lvl3": ".doc .sect2 > h3:first-child",
+      "lvl4": ".doc .sect3 > h4:first-child",
+      "text": ".doc p, .doc dt"
+    }
+  },
+  "selectors_exclude": [
+    ".doc .admonitionblock",
+    ".doc table.tableblock"
+  ],
+  "min_indexed_level": 1,
+  "custom_settings": {
+    "attributesForFaceting": [
+      "component",
+      "version"
+    ],
+    "attributesToRetrieve": [
+      "anchor",
+      "content",
+      "hierarchy",
+      "url",
+      "component",
+      "version"
+    ],
+    "customRanking": [
+      "desc(weight.page_rank)",
+      "desc(version)",
+      "desc(weight.level)",
+      "asc(weight.position)"
+    ]
+  }
+}
