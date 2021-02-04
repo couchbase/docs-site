@@ -1,0 +1,77 @@
+{
+  "index_name": "archive_docs_couchbase",
+  "start_urls": [
+    {{#each (versioned components)}}
+    {
+      "url": "{{{@root.url}}}/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
+          "{{{./name}}}"
+        ],
+        "version": [
+          {{#each versions}}
+          "{{{./version}}}"{{#unless @last}},{{/unless}}
+          {{/each}}
+        ]
+      }
+    }{{#unless @last}},{{/unless}}
+    {{/each}}
+    {{!--
+    NOTE currently there are no versionless components in the archive site
+    ,
+    {
+      "url": "{{{@root.url}}}/(?P<component>.*?)/",
+      "variables": {
+        "component": [
+          {{#each (versionless components)}}
+          "{{{./name}}}"{{#unless @last}},{{/unless}}
+          {{/each}}
+        ]
+      }
+    }
+    --}}
+  ],
+  "sitemap_urls": [
+    "{{{url}}}/sitemap.xml"
+  ],
+  "scrape_start_urls": false,
+  "stop_urls": [],
+  "selectors": {
+    "default": {
+      "lvl0": {
+        "global": true,
+        "selector": ".navbar .component"
+      },
+      "lvl1": ".doc > h1.page",
+      "lvl2": ".doc .sect1 > h2:first-child",
+      "lvl3": ".doc .sect2 > h3:first-child",
+      "lvl4": ".doc .sect3 > h4:first-child",
+      "text": ".doc p, .doc dt"
+    }
+  },
+  "selectors_exclude": [
+    ".doc .admonitionblock",
+    ".doc table.tableblock"
+  ],
+  "min_indexed_level": 1,
+  "custom_settings": {
+    "attributesForFaceting": [
+      "component",
+      "version"
+    ],
+    "attributesToRetrieve": [
+      "anchor",
+      "content",
+      "hierarchy",
+      "url",
+      "component",
+      "version"
+    ],
+    "customRanking": [
+      "desc(weight.page_rank)",
+      "desc(version)",
+      "desc(weight.level)",
+      "asc(weight.position)"
+    ]
+  }
+}
