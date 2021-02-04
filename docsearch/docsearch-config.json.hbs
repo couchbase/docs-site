@@ -1,13 +1,17 @@
 {
   "index_name": "prod_docs_couchbase",
   "start_urls": [
-    {{#each (versioned components)}}
+    {{#each components}}
+    {{#if (eq ./name "home")}}
     {
-      {{#if (eq ./name "home")}}
       "url": "{{{@root.url}}}/home/contribute/",
       "selectors_key": "contribute",
       "page_rank": -1
-      {{else}}
+    },
+    {{/if}}
+    {{/each}}
+    {{#each (versioned components)}}
+    {
       "url": "{{{@root.url}}}/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
@@ -23,7 +27,6 @@
           {{/each}}
         ]
       }
-      {{/if}}
     },
     {{/each}}
     {
