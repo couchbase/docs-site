@@ -83,7 +83,7 @@ The Couchbase C SDK (`libcouchbase`) enables C and C++ programs to access a Couc
 The C SDK is also commonly used as a core dependency of SDKs written in other language to provide a common implementation and high performance.
 Libcouchbase also contains the `cbc` suite of command line tools.
 []
-xref:3.0@c-sdk:hello-world:overview.adoc[C SDK 3.0]
+xref:3.1@c-sdk:hello-world:overview.adoc[C SDK 3.1]
 
 
 [.column]
