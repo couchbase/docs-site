@@ -34,13 +34,18 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh '(cd /docsearch && pipenv install)'
+        sh '(cd $HOME && pipenv install)'
+      }
+    }
+    stage('Generate Config') {
+      steps {
+        sh '(curl -sL https://docs-staging.couchbase.com/site-manifest.json | npx -p hbs-cli hbs -H "$PWD/docsearch/hbs-helpers/*.js" -i -s $CONFIG.hbs > $CONFIG)'
       }
     }
     stage('Run') {
       steps {
         configFileProvider([configFile(fileId: 'algolia-application-credentials', targetLocation: '.env')]) {
-          sh '(mv .env /docsearch/ && cd /docsearch && pipenv run python -m src.index)'
+          sh '(mv .env $HOME/ && cd $HOME && pipenv run python -m src.index)'
         }
       }
     }
