@@ -22,96 +22,96 @@ content:
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [master, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
-  #- url: https://github.com/couchbase/couchbase-elasticsearch-connector
-  #  branches: [master, release/4.1, release/4.0]
-  #  start_path: docs
-  #- url: https://github.com/couchbase/kafka-connect-couchbase
-  #  branches: [master, release/3.4]
-  #  start_path: docs
-  #- url: https://github.com/couchbase/couchbase-spark-connector
-  #  branches: [master, release/2.3]
-  #  start_path: docs
-  #- url: https://git@github.com/couchbase/docs-connectors-talend
-  #- url: https://git@github.com/couchbase/docs-analytics
-  #  branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5]
-  #- url: https://github.com/couchbase/couchbase-cli
-  #  branches: [master, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.1]
-  #  start_path: docs
-  #- url: https://git@github.com/couchbase/backup
-  #  branches: [master, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.x]
-  #  start_path: docs
-  #- url: https://github.com/couchbaselabs/cb-swagger
-  #  branches: [release/7.0, release/6.6, release/6.5, release/6.0]
-  #  start_path: docs
-  ## NOTE docs-server is currently after other server repos so nav key wins
-  #- url: https://github.com/couchbase/docs-server
-  #  branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
-  #- url: https://github.com/couchbase/docs-sdk-common
-  #  branches: [release/6.6, release/6.5, release/6.0, release/5.5]
-  #- url: https://github.com/couchbase/docs-sdk-c
-  #  branches: [release/3.1, release/3.0, release/2.10]
-  #- url: https://github.com/couchbase/docs-txn-cxx
-  #  branches: [release/1.0]
-  #- url: https://github.com/couchbase/docs-sdk-dotnet
-  #  branches: [release/3.1, release/3.0, release/2.7]
-  #- url: https://github.com/couchbase/docs-sdk-go
-  #  branches: [release/2.2, release/2.1, release/2.0, release/1.6, release/1.5]
-  #- url: https://github.com/couchbase/docs-sdk-java
-  #  branches: [release/3.2, release/3.1, release/3.0, release/2.7]
-  #- url: https://github.com/couchbase/docs-sdk-nodejs
-  #  branches: [release/3.1, release/3.0, release/2.6]
-  #- url: https://github.com/couchbase/docs-sdk-php
-  #  branches: [release/3.1, release/3.0, release/2.6]
-  #- url: https://github.com/couchbase/docs-sdk-python
-  #  branches: [release/3.1, release/3.0, release/2.5]
-  #- url: https://github.com/couchbase/docs-sdk-ruby
-  #  branches: [release/3.1, release/3.0]
-  #- url: https://github.com/couchbase/docs-sdk-scala
-  #  branches: [release/1.1, release/1.0]
-  #  # Begin::Mobile content                                                                     Mobile Content
-  #- url: https://github.com/couchbase/docs-mobile
-  #  branches: [release/3.0,release/2.8]
-  #- url: https://github.com/couchbaselabs/docs-couchbase-lite
-  #  branches: [release/3.0,release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
-  #- url: https://github.com/couchbaselabs/docs-sync-gateway
-  #  branches: [release/3.0,release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
-  #  # End::Mobile content                                                                       Mobile Content
-  #- url: https://github.com/couchbase/docs-service-broker.git
-  #  branches: [master]
-  #- url: https://github.com/couchbase/docs-cloud-native.git
-  #  branches: [cndp-nav]
-  #- url: https://git@github.com/couchbase/docs-ngdm
-  ## Tutorial repositories
-  #- url: https://github.com/couchbase/tutorials
-  #  branches: [azure-prereq]
-  #- url: https://github.com/couchbase/developer-content
-  #- url: https://github.com/couchbaselabs/tutorial-template
-  #- url: https://github.com/amarantha-k/mobile-travel-sample
-  #  branches: [fix-tabs]
-  #  start_path: content
-  #- url: https://github.com/couchbaselabs/hotel-finder-react-native
-  #- url: https://github.com/couchbaselabs/hotel-lister-cordova
-  #- url: https://github.com/couchbaselabs/tutorials-contrib
-  #  branches: [azure-prereqs]
-  #- url: https://github.com/couchbaselabs/mobile-training-todo
-  #  branches: tutorials
-  #  start_path: content
-  #- url: https://github.com/couchbaselabs/UniversityLister-Android
-  #  start_path: content
-  #- url: https://github.com/couchbaselabs/userprofile-couchbase-mobile
-  #  branches: [standalone, query, sync, backgroundfetch]
-  #  start_path: content
-  #- url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
-  #  branches: [standalone, query, sync]
-  #- url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
-  #- url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
-  #  branches: [standalone, query, sync]
-  #- url: https://github.com/amarantha-k/OpenID_connect_tutorial
-  #  branches: [tutorial]
-  #  start_path: content
-  #- url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
-  #  branches: [master]
-  #  start_path: content
+  - url: https://github.com/couchbase/couchbase-elasticsearch-connector
+    branches: [master, release/4.1, release/4.0]
+    start_path: docs
+  - url: https://github.com/couchbase/kafka-connect-couchbase
+    branches: [master, release/3.4]
+    start_path: docs
+  - url: https://github.com/couchbase/couchbase-spark-connector
+    branches: [master, release/2.3]
+    start_path: docs
+  - url: https://git@github.com/couchbase/docs-connectors-talend
+  - url: https://git@github.com/couchbase/docs-analytics
+    branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5]
+  - url: https://github.com/couchbase/couchbase-cli
+    branches: [master, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.1]
+    start_path: docs
+  - url: https://git@github.com/couchbase/backup
+    branches: [master, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.x]
+    start_path: docs
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [release/7.0, release/6.6, release/6.5, release/6.0]
+    start_path: docs
+  # NOTE docs-server is currently after other server repos so nav key wins
+  - url: https://github.com/couchbase/docs-server
+    branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
+  - url: https://github.com/couchbase/docs-sdk-common
+    branches: [release/6.6, release/6.5, release/6.0, release/5.5]
+  - url: https://github.com/couchbase/docs-sdk-c
+    branches: [release/3.1, release/3.0, release/2.10]
+  - url: https://github.com/couchbase/docs-txn-cxx
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-sdk-dotnet
+    branches: [release/3.1, release/3.0, release/2.7]
+  - url: https://github.com/couchbase/docs-sdk-go
+    branches: [release/2.2, release/2.1, release/2.0, release/1.6, release/1.5]
+  - url: https://github.com/couchbase/docs-sdk-java
+    branches: [release/3.2, release/3.1, release/3.0, release/2.7]
+  - url: https://github.com/couchbase/docs-sdk-nodejs
+    branches: [release/3.1, release/3.0, release/2.6]
+  - url: https://github.com/couchbase/docs-sdk-php
+    branches: [release/3.1, release/3.0, release/2.6]
+  - url: https://github.com/couchbase/docs-sdk-python
+    branches: [release/3.1, release/3.0, release/2.5]
+  - url: https://github.com/couchbase/docs-sdk-ruby
+    branches: [release/3.1, release/3.0]
+  - url: https://github.com/couchbase/docs-sdk-scala
+    branches: [release/1.1, release/1.0]
+    # Begin::Mobile content                                                                     Mobile Content
+  - url: https://github.com/couchbase/docs-mobile
+    branches: [release/3.0,release/2.8]
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite
+    branches: [release/3.0,release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
+  - url: https://github.com/couchbaselabs/docs-sync-gateway
+    branches: [release/3.0,release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
+    # End::Mobile content                                                                       Mobile Content
+  - url: https://github.com/couchbase/docs-service-broker.git
+    branches: [master]
+  - url: https://github.com/couchbase/docs-cloud-native.git
+    branches: [cndp-nav]
+  - url: https://git@github.com/couchbase/docs-ngdm
+  # Tutorial repositories
+  - url: https://github.com/couchbase/tutorials
+    branches: [azure-prereq]
+  - url: https://github.com/couchbase/developer-content
+  - url: https://github.com/couchbaselabs/tutorial-template
+  - url: https://github.com/amarantha-k/mobile-travel-sample
+    branches: [fix-tabs]
+    start_path: content
+  - url: https://github.com/couchbaselabs/hotel-finder-react-native
+  - url: https://github.com/couchbaselabs/hotel-lister-cordova
+  - url: https://github.com/couchbaselabs/tutorials-contrib
+    branches: [azure-prereqs]
+  - url: https://github.com/couchbaselabs/mobile-training-todo
+    branches: tutorials
+    start_path: content
+  - url: https://github.com/couchbaselabs/UniversityLister-Android
+    start_path: content
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile
+    branches: [standalone, query, sync, backgroundfetch]
+    start_path: content
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
+    branches: [standalone, query, sync]
+  - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
+    branches: [standalone, query, sync]
+  - url: https://github.com/amarantha-k/OpenID_connect_tutorial
+    branches: [tutorial]
+    start_path: content
+  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
+    branches: [master]
+    start_path: content
 asciidoc:
   attributes:
     max-include-depth: 10
