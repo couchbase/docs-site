@@ -6,6 +6,9 @@ site:
   robots: disallow
 git:
   ensure_git_suffix: false
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
 content:
   branches: master
   # NOTE the git@ segment in the URL indicates which repositories are private
@@ -130,6 +133,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-88/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-93/ui-bundle.zip
 output:
   dir: ./public
