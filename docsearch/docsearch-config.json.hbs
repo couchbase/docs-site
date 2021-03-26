@@ -4,7 +4,12 @@
     {{#each components}}
     {{#if (eq ./name "home")}}
     {
-      "url": "{{{@root.url}}}/home/contribute/",
+      "url": "{{{@root.url}}}/(?P<component>.*?)/contribute/",
+      "variables": {
+        "component": [
+          "{{{./name}}}"
+        ],
+      },
       "selectors_key": "contribute",
       "page_rank": -1
     },
@@ -95,6 +100,8 @@
       "desc(version)",
       "desc(weight.level)",
       "asc(weight.position)"
-    ]
+    ],
+    "hitsPerPage": 20,
+    "paginationLimitedTo": 500
   }
 }
