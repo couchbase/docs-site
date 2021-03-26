@@ -12,12 +12,12 @@
     {{/each}}
     {{#each (versioned components)}}
     {
-      "url": "{{{@root.url}}}/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "{{{@root.url}}}/(?P<component>.*?)/(?P<version_url_segment>.*?)/",
       "variables": {
         "component": [
           "{{{./name}}}"
         ],
-        "version": [
+        "version_url_segment": [
           {{#each versions}}
           {{#if (eq ./version ../latest)}}
           "current"{{#unless @last}},{{/unless}}
@@ -43,7 +43,7 @@
   "sitemap_urls": [
     "{{{url}}}/sitemap.xml"
   ],
-  "scrape_start_urls": false,
+  "scrape_start_urls": true,
   "stop_urls": [],
   "selectors": {
     "default": {
@@ -76,17 +76,19 @@
   ],
   "min_indexed_level": 1,
   "custom_settings": {
+    "advancedSyntax": true,
     "attributesForFaceting": [
       "component",
-      "version"
+      "component_version"
     ],
     "attributesToRetrieve": [
       "anchor",
+      "component_title",
+      "component_version",
+      "display_version",
       "content",
       "hierarchy",
       "url",
-      "component",
-      "version"
     ],
     "customRanking": [
       "desc(weight.page_rank)",

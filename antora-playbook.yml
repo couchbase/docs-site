@@ -68,20 +68,17 @@ content:
     branches: [release/3.1, release/3.0]
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/1.1, release/1.0]
-    # Begin::Mobile content                                                                     Mobile Content
   - url: https://github.com/couchbase/docs-mobile
-    branches: [release/3.0,release/2.8]
+    branches: [release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/3.0,release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
+    branches: [release/3.0, release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/3.0,release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
-    # End::Mobile content                                                                       Mobile Content
+    branches: [release/3.0, release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
   - url: https://github.com/couchbase/docs-service-broker.git
     branches: [master]
   - url: https://github.com/couchbase/docs-cloud-native.git
     branches: [cndp-nav]
   - url: https://git@github.com/couchbase/docs-ngdm
-  # Tutorial repositories
   - url: https://github.com/couchbase/tutorials
     branches: [azure-prereq]
   - url: https://github.com/couchbase/developer-content
@@ -133,6 +130,8 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-95/ui-bundle.zip
+    #url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-95/ui-bundle.zip
+    url: https://deploy-preview-99--cb-docs-ui-sandbox.netlify.app/dist/ui-bundle.zip
+    snapshot: true
 output:
   dir: ./public
