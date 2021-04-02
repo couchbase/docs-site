@@ -4,46 +4,49 @@
     {{#each components}}
     {{#if (eq ./name "home")}}
     {
-      "url": "{{{@root.url}}}/(?P<component>.*?)/contribute/",
-      "variables": {
-        "component": [
-          "{{{./name}}}"
-        ]
+      "url": "{{{@root.url}}}/{{{./name}}}/contribute/",
+      "extra_attributes": {
+        "component_title": "{{{./title}}}",
+        "component_version": ["{{{./name}}}", "{{{./name}}}"],
+        "component": "{{{./name}}}",
+        "version_rank": 1
       },
       "selectors_key": "contribute",
       "page_rank": -1
-    },
+    }{{#if (gt ../components.length 2)}},{{/if}}
     {{/if}}
     {{/each}}
     {{#each (versioned components)}}
+    {{#each versions}}
     {
-      "url": "{{{@root.url}}}/(?P<component>.*?)/(?P<version_url_segment>.*?)/",
-      "variables": {
-        "component": [
-          "{{{./name}}}"
-        ],
-        "version_url_segment": [
-          {{#each versions}}
-          {{#if (eq ./version ../latest)}}
-          "current"{{#unless @last}},{{/unless}}
-          {{else}}
-          "{{{./version}}}"{{#unless @last}},{{/unless}}
-          {{/if}}
-          {{/each}}
-        ]
+      "url": "{{{@root.url}}}/{{{../name}}}/{{#if (eq ./version ../latest)}}current{{else}}{{{./version}}}{{/if}}/",
+      "extra_attributes": {
+        "component_title": "{{{../title}}}",
+        "component_version": ["{{{../name}}}@{{{./version}}}"{{#if (eq ./version ../latest)}}, "{{{../name}}}"{{/if}}],
+        "component": "{{{../name}}}",
+        "version": "{{{./version}}}",
+        {{#with ./displayVersion}}
+        "display_version": "{{{this}}}",
+        {{/with}}
+        "version_rank": {{{rank ../versions this ../latest}}}
       }
+    {{#unless @last}}
     },
+    {{/unless}}
     {{/each}}
+    }{{#if @last}}{{#if (lookup (versionless ../components) "length")}},{{/if}}{{else}},{{/if}}
+    {{/each}}
+    {{#each (versionless components)}}
     {
-      "url": "{{{@root.url}}}/(?P<component>.*?)/",
-      "variables": {
-        "component": [
-          {{#each (versionless components)}}
-          "{{{./name}}}"{{#unless @last}},{{/unless}}
-          {{/each}}
-        ]
+      "url": "{{{@root.url}}}/{{{./name}}}/",
+      "extra_attributes": {
+        "component_title": "{{{./title}}}",
+        "component_version": ["{{{./name}}}", "{{{./name}}}"],
+        "component": "{{{./name}}}",
+        "version_rank": 1
       }
-    }
+    }{{#unless @last}},{{/unless}}
+    {{/each}}
   ],
   "sitemap_urls": [
     "{{{url}}}/sitemap.xml"
