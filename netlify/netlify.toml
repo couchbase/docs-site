@@ -8,6 +8,11 @@ CI = "true"
 NODE_VERSION = "10"
 NODE_OPTIONS = "--max-old-space-size=4096"
 NPM_FLAGS = "--no-optional"
+ALGOLIA_APP_ID = "NI1G57N08Q"
+ALGOLIA_API_KEY = "d3eff3e8bcc0860b8ceae87360a47d54"
+ALGOLIA_INDEX_NAME = "prod_docs_couchbase_replica"
+OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js"
+SHOW_FEEDBACK_BUTTON = "true"
 
 [context.production]
 command = """\
