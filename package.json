@@ -10,7 +10,7 @@
     "@antora/xref-validator": "git+https://gitlab.com/antora/xref-validator#v1.0.0-alpha.13",
     "gulp": "~4.0",
     "gulp-connect": "~5.7",
-    "js-yaml": "~3.13"
+    "js-yaml": "~4.1"
   },
   "repository": {
     "type": "git",
