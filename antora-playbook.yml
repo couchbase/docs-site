@@ -6,6 +6,13 @@ site:
   robots: allow
   keys:
     google_analytics: GTM-MVPNN2
+    nav_groups: |
+      [
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "*-connector"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["shared-mobile", "couchbase-lite", "sync-gateway"] },
+        { "title": "Cloud", "startPage": "home::cloud.adoc", "components": ["cloud", "cloud-native-database", "operator", "service-broker"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns"] }
+      ]
 git:
   ensure_git_suffix: false
 urls:
@@ -110,6 +117,7 @@ content:
     start_path: content
 asciidoc:
   attributes:
+    export-site-navigation-data: ''
     max-include-depth: 10
     page-partial: false
     experimental: ''
@@ -129,6 +137,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-103/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-104/ui-bundle.zip
 output:
   dir: ./public
