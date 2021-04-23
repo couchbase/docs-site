@@ -115,7 +115,7 @@ The Python SDK allows Python applications to access a Couchbase Server cluster.
 The Python SDK offers a traditional synchronous API as well as integration with twisted, gevent, and asyncio.
 It depends on the C SDK (`libcouchbase`) and utilizes it for performance and reliability.
 []
-xref:3.0@python-sdk:hello-world:overview.adoc[Python SDK 3.0]
+xref:3.1@python-sdk:hello-world:overview.adoc[Python SDK 3.1]
 
 [.column]
 ====== {empty}
