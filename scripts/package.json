@@ -8,7 +8,7 @@
     "@fortawesome/free-solid-svg-icons": "~5.13",
     "@fortawesome/free-regular-svg-icons": "~5.13",
     "vinyl-fs": "~3.0",
-    "js-yaml": "~3.14"
+    "js-yaml": "~4.1"
   },
   "optionalDependencies": {
     "@fortawesome/pro-solid-svg-icons": "~5.13",
