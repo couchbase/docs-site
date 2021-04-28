@@ -1,0 +1,391 @@
+= AsciiDoc Basics
+:url-docs-antora: https://docs.antora.org/antora/2.0
+:url-docs-adoc: https://asciidoctor.org/docs/user-manual
+:url-pages: {url-docs-antora}/page/
+:url-tables: {url-docs-adoc}/#tables
+:url-table-width: {url-docs-adoc}/#table-width
+
+== Bold, Italic, and Code Styles
+
+[source,asciidoc]
+----
+include::example$inline-styles.adoc[]
+----
+
+Renders as:
+
+include::example$inline-styles.adoc[]
+
+You can add multiple inline styles to text as long as the syntax is placed in the correct order.
+
+* Monospace syntax (`++`++`) is always the outermost formatting set.
+* Bold syntax (`*`) must be outside the italic formatting set.
+* Italic syntax (`_`) is always the innermost formatting set.
+
+To mark up code blocks, include example files, and add callouts, see xref:code-blocks.adoc[Code Blocks and Callouts].
+
+[#ui-macros]
+== Button, Keyboard, and Menu UI Macros
+
+[source,asciidoc]
+----
+include::example$ui-macros.adoc[]
+----
+
+Renders as:
+
+include::example$ui-macros.adoc[]
+
+== URLs
+
+URLs that begin with one of the common schemes (`http`, `https`, `ftp`, `irc`, `mailto`, or any email address) are turned into links automatically.
+You can specify the link text in square brackets immediately after the URL.
+Avoid using the `link:` macro -- you'll only need it in rare circumstances, such as for links with unusual schemes.
+
+Links to external websites should all open in a new tab, so that readers don't leave our documentation.
+To specify this, end the link text with a caret `^`.
+
+*Don't use URLs or system paths to link between docs.couchbase.com documents.*
+Document-to-document links are created with xref:cross-references.adoc[cross references] to ensure domain, component, and version portability.
+
+[source,asciidoc]
+----
+File bugs at https://issues.couchbase.com.
+
+Join the https://gitter.im/antora/users[Antora chat room^] to meet and get help from the community.
+----
+
+Renders as:
+
+File bugs at https://issues.couchbase.com.
+
+Join the https://gitter.im/antora/users[Antora chat room^] to meet and get help from the community.
+
+=== Escaping URLs
+
+When a URL should be inactive, you can escape it by placing a backslash (`\`) directly in front of it.
+To style and escape a URL, use the `+` passthrough inside any inline style markup.
+
+[source,asciidoc]
+----
+If it is not specified, the default URL \http://localhost:8091 is used.
+
+If it is not specified, the default URL `+http://localhost:8091+` is used.
+----
+
+Renders as:
+
+If it is not specified, the default URL \http://localhost:8091 is used.
+
+If it is not specified, the default URL `+http://localhost:8091+` is used.
+
+=== URL Best Practices
+
+* Always use the secure `https://` scheme for external webpage links.
+* Escape `+http://localhost+` URLs in regular text so they don't become links.
+* Create attributes for long URLs to improve the source readability for other contributors.
+* Create attributes for URLs that contain sets of symbols, such as multiple underscores (`_`) and backticks (`++`++`), that could be misinterpreted as inline markup.
+* Create attributes for URLs used several times on the same page.
+* Don't use URLs for linking between documentation pages or to in-page anchors.
+
+== Checklists
+
+[source,asciidoc]
+----
+include::example$lists.adoc[tag=check]
+----
+
+Renders as:
+
+include::example$lists.adoc[tag=check]
+
+== Description Lists
+
+[source,asciidoc]
+----
+include::example$description-lists.adoc[tag=basic]
+----
+
+Renders as:
+
+include::example$description-lists.adoc[tag=basic]
+
+.Description list with compound content
+[source,asciidoc]
+----
+include::example$description-lists.adoc[tag=compound]
+----
+
+Renders as:
+
+include::example$description-lists.adoc[tag=compound]
+
+== Ordered Lists
+
+.Ordered list with nested levels
+[source,asciidoc]
+----
+include::example$lists.adoc[tag=ordered]
+----
+
+Renders as:
+
+include::example$lists.adoc[tag=ordered]
+
+== Unordered Lists
+
+.Unordered list with nested levels
+[source,asciidoc]
+----
+include::example$lists.adoc[tag=unordered]
+----
+
+Renders as:
+
+include::example$lists.adoc[tag=unordered]
+
+xref:update-nav.adoc[Navigation files] also use the unordered list syntax.
+
+[#images]
+== Images
+
+The block image macro (`image::[]`) and the inline image macro (`image:[]`) accept SVG, PNG, JPG/JPEG, and GIF file formats.
+
+Block images, indicated by two colons (`::`), are entered on their own line and displayed on their own line.
+Optional attributes and values are entered inside the macro's attribute list (`[]`).
+In the <<block,block image example>>, the first positional value is empty, so the opening square bracket (`[`) is directly followed by a comma (`,`).
+The second positional value, `280`, indicates the maximum width of the image.
+The next attribute, `align`, and its assigned value `left`, places the image against the left page margin.
+
+If the macro's attribute list is empty (e.g., `image::filename.jpg[]`), the image is displayed at its original size and centered on the page.
+
+[#block]
+.Block image
+[source,asciidoc]
+----
+image::console-login.png[,280,align=left]
+----
+
+Renders as:
+
+image::console-login.png[,280,align=left]
+
+The inline image macro, indicated by a single colon (`:`), is used for displaying small images and icons directly in the flow of a sentence.
+
+.Inline image
+[source,asciidoc]
+----
+Click the image:edit.svg[,16] icon.
+----
+
+Renders as:
+
+Click the image:edit.svg[,16] icon.
+
+== Admonitions
+
+There are five built-in admonition labels.
+
+* NOTE
+* TIP
+* IMPORTANT
+* CAUTION
+* WARNING
+
+.Basic admonitions
+[source,asciidoc]
+----
+include::example$admonitions.adoc[tag=basic]
+----
+
+Renders as:
+
+include::example$admonitions.adoc[tag=basic]
+
+.Compound admonition
+[source,asciidoc]
+----
+include::example$admonitions.adoc[tag=compound]
+----
+
+Renders as:
+
+include::example$admonitions.adoc[tag=compound]
+
+A compound admonition is any admonition block that contains more than one paragraph or contains a block other than a paragraph.
+The contents of the block must be wrapped in the example block delimiters and the admonition type must be assigned as the block style.
+
+== Footnotes
+
+To avoid disrupting the flow of the text to include addendum information, you can tuck the information away in a footnote.
+You make footnotes using the footnote macro.
+
+[source,asciidoc]
+----
+include::example$footnotes.adoc[]
+----
+
+Renders as:
+
+include::example$footnotes.adoc[]
+
+TIP: The ID, which is specified using the target slot of the macro, is optional.
+By assigning an ID (e.g., fn-1), you can reuse the footnote multiple times in the document, as show in the above example.
+You only have to specify the footnote text on the first occurrence.
+The text can be filled in using an attribute reference.
+
+== Tables
+
+Tables are delimited by `|===` (a vertical bar followed by three equals signs).
+The number of columns in a table is determined by the number of cells found in the first non-blank line after the table delimiter (`|===`) or by the values assigned to the `cols` attribute.
+A new cell is created each time the processor encounters a vertical bar (`|`).
+Cells are grouped into rows.
+Each row must share the same number of cells, taking into account any column or row spans.
+
+.Table with implicit column value and header row
+[source,asciidoc]
+----
+|=== <1>
+|Name of Column 1 |Name of Column 2 <2> <3>
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1 <4>
+
+|Cell in column 1, row 2 |Cell in column 2, row 2 <5>
+|===
+----
+<1> A table is delimited by `|===`.
+<2> When a cell, marked by a vertical bar (`|`), is placed on the line directly below the delimiter, it is interpreted as a header row.
+<3> The number of cells found in the header row indicates the number of columns (sets `cols` implicitly).
+<4> The cells in a row can be entered on separate lines.
+<5> The cells in a row can be entered on the same line.
+
+Renders as:
+
+|===
+|Name of Column 1 |Name of Column 2
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2 |Cell in column 2, row 2
+|===
+
+Since tables are AsciiDoc block elements they can have titles, roles, xref:ids.adoc[IDs], as well as table-specific attributes.
+
+.Table with title, ID, `cols`, and `options="header"`
+[source,asciidoc]
+----
+.Optional title
+[#optional-id,cols="1,1,2",options="header"] <1> <2> <3> <4>
+|===
+
+|Name of Column 1
+|Name of Column 2
+|Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+----
+<1> If assigned, an ID must be set first in the table's attribute list.
+<2> The number of values assigned to `cols` indicates the number of columns, in this case, the table has three columns.
+<3> The proportion of each value assigned to `cols` relative to its other values indicates the width of each column.
+In this example, column 1 and column 2 will be half the width of column 3.
+<4> To make the first row a header row, assign `header` to the `options` attribute.
+
+Renders as:
+
+.Optional title
+[#optional-id,cols="1,1,2",options="header"]
+|===
+
+|Name of Column 1
+|Name of Column 2
+|Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+
+Here's an example of a table with a title, implicit header row, and the proportional width of the two columns set.
+
+[source,asciidoc]
+----
+include::example$tables.adoc[tag=two-col]
+----
+
+Renders as:
+
+include::example$tables.adoc[tag=two-col]
+
+=== Block Elements in Tables
+
+Any block-level elements, such as code blocks, lists, admonitions, etc., can be entered into a cell.
+However, the specifier `a` (which stands for AsciiDoc) must be placed on the cell, row, or column in order for them to be processed as AsciiDoc blocks.
+In the following example, the `a` specifier is placed on the cells containing block elements.
+
+[source,asciidoc]
+....
+include::example$tables.adoc[tag=adoc]
+....
+
+Renders as:
+
+include::example$tables.adoc[tag=adoc]
+
+=== Column and Row Spans
+
+The span factor is the number of columns or rows, including the starting row or column, the cell should span.
+
+* To have a cell span multiple columns, place the span factor and `+` operator directly before the `|` of the starting cell.
+* To span multiple rows, place a dot (`.`) directly before the span factor and `+` operator.
+
+[source,asciidoc]
+----
+include::example$tables.adoc[tag=spans]
+----
+
+Renders as:
+
+include::example$tables.adoc[tag=spans]
+
+=== Table Widths
+
+The default width for a table is set to 100%. There are three ways to override this default:
+
+* Set the width explicitly (in percentage) using the width attribute (e.g., width=50%)
+* Set the autowidth option so that table only expands to accommodate the contents (e.g., %autowidth)
+* Assign a role to the table to allow the width to be controlled by CSS using presets (e.g., .narrow)
+
+For more information, see the {url-table-width}[Asciidoctor table width documentation^].
+
+=== Table Attributes and Options
+
+There are a lot of AsciiDoc table attributes, options, and specifiers.
+For more examples and information, see the {url-tables}[Asciidoctor table documentation^].
+
+== Learn More
+
+* xref:cross-references.adoc[Document-to-document cross references]
+* xref:ids.adoc[Element IDs]
+* xref:code-blocks.adoc[Code blocks]
+* xref:code-blocks.adoc#callouts[Callout numbers]
+* xref:tabs.adoc[Tabs sets]
+* xref:includes.adoc[Example and partial file includes]
+* xref:attributes-and-roles.adoc#using-roles[Page role]
+* xref:attributes-and-roles.adoc[Attributes]
+
+== Additional Resources
+
+You can find more AsciiDoc examples in the {url-pages}[Pages category of the Antora documentation^].

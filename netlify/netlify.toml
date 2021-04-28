@@ -1,19 +1,25 @@
 [build]
-publish = "public"
 ignore = "false"
+publish = "public"
 
 [build.environment]
-CI = "true"
-NODE_VERSION = "12"
-NPM_FLAGS = "--no-optional"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+CI = "true"
+NODE_VERSION = "10"
+NODE_OPTIONS = "--max-old-space-size=4096"
+NPM_FLAGS = "--no-optional"
+ALGOLIA_APP_ID = "NI1G57N08Q"
+ALGOLIA_API_KEY = "d3eff3e8bcc0860b8ceae87360a47d54"
+ALGOLIA_INDEX_NAME = "prod_docs_couchbase_replica"
+OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js"
+SHOW_FEEDBACK_BUTTON = "true"
 
 [context.production]
 command = """\
 if [ -v FONTAWESOME_NPM_TOKEN ]; then echo -e '@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=$''{FONTAWESOME_NPM_TOKEN}' > ../scripts/.npmrc; fi; \
 (cd ../scripts; npm --no-package-lock i || true) && \
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
-node_modules/.bin/antora --fetch --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml && \
+node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public ../antora-playbook.yml && \
 node ../scripts/populate-icon-defs.js public\
 """
 
@@ -22,7 +28,7 @@ command = """\
 if [ -v FONTAWESOME_NPM_TOKEN ]; then echo -e '@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=$''{FONTAWESOME_NPM_TOKEN}' > ../scripts/.npmrc; fi; \
 (cd ../scripts; npm --no-package-lock i || true) && \
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node ../scripts/remove-private-content-sources.js ../antora-playbook.yml; fi; \
-node_modules/.bin/antora --fetch --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml && \
+node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml && \
 node ../scripts/populate-icon-defs.js public\
 """
 

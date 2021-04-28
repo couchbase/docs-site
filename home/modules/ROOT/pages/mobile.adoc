@@ -1,9 +1,9 @@
 = Couchbase Mobile - Embedded Database on the Edge
-:page-layout: landing-page-core-concept
+:page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :!sectids:
 
-= Couchbase Mobile
+= Couchbase for Mobile/Edge
 ++++
 <div class="card-row">
 ++++
@@ -11,12 +11,12 @@
 [.column]
 ====== {empty}
 [.content]
-Couchbase Mobile brings the power of NoSQL to the edge. It comprises two components (Sync Gateway and Couchbase Lite), which combine with Couchbase Server to provde fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud. 
+Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combined with Couchbase Server, it provides fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
 
 [.column]
 ====== {empty}
 [.media-left]
-image::mobile-feature-top.png[]
+image::secure-manage-and-develop-with-ease.svg[,275]
 
 ++++
 </div>
@@ -32,7 +32,7 @@ image::mobile-feature-top.png[]
 
 [.content]
 Couchbase Lite is an embedded, NoSQL JSON Document Style database for your mobile apps. It natively supports all major operating systems and platforms. Its NoSQL client database provides CRUD, full-text search and query capabilities that runs locally on the device.
-[]
+{empty}
 xref:couchbase-lite::introduction.adoc[Go to Couchbase Lite Docs]
 
 [.column]
@@ -40,15 +40,15 @@ xref:couchbase-lite::introduction.adoc[Go to Couchbase Lite Docs]
 
 [.content]
 Sync Gatway is an internet-facing synchronization mechanism designed to provide data synchronization for large-scale interactive web, mobile, and IoT applications.
-[]
+{empty}
 xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
 
 [.column]
 .Tutorials
 
 [.content]
-Explore reference tutorials to help you build applications on the edge.
-[]
+Sample tutorials to build applications on the edge.
+{empty}
 xref:tutorials::index.adoc[Tutorials]
 
 ++++

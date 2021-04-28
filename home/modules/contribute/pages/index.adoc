@@ -1,0 +1,49 @@
+= Contributing to the Couchbase Documentation
+// Settings
+:hide-uri-scheme:
+// URLs
+:url-issues: https://issues.couchbase.com
+:url-issues-doc: {url-issues}/browse/DOC
+
+Thank you for taking the time and effort to improve the Couchbase documentation.
+
+== Reporting Bugs and Requesting Enhancements
+
+All bugs and enhancements for the Couchbase documentation are tracked using the {url-issues-doc}[DOC project issue board^].
+If you find an error, or see room for improvement on a page, please don't keep it to yourself.
+Even if you don't plan to make the change yourself, we would still like to know what it is!
+Raise a DOC bug and someone on the team will look at it.
+
+You can also raise a DOC issue by clicking the btn:[Feedback?] button in the bottom-right corner of any page on this site.
+
+=== How Do I Submit a Good DOC Issue?
+
+*Use a clear and descriptive title*.
+For example, "`Instructions for disabling THP on RHEL/CentOS 7 and later do not work.`"
+
+*Describe the problem or enhancement in full*.
+For any problem, describe it in detail, including any expected results and how they differ from the real results.
+Remember, the documentation team are not experts in every aspect of Couchbase.
+For that reason, be as descriptive as possible, providing the correct text or command.
+This drastically reduces the time it takes to resolve the issue.
+{url-issues-doc}-2056[DOC-2056^] is an example of a well-written DOC bug which allowed the assigned writer to make the necessary changes quickly.
+
+== Contributing Changes
+
+If you want to contribute the changes to resolve an issue yourself, then this is greatly encouraged!
+
+You can submit simple changes, such as typo fixes and minor clarifications, using the <<simple>> workflow.
+For more extensive content additions and updates, or if you prefer to work locally, see the xref:workflow-overview.adoc[Contributing Workflow].
+
+[#simple]
+== Simple Online Edits
+
+For simple changes, like fixing a typo or reworking a sentence, you can edit the content directly on GitHub by clicking the image:edit.svg[,16,role=icon] edit icon found on many of the documentation pages.
+
+Once you've made your edits, replace the default commit message with a short description of your change, and click btn:[Commit Changes].
+Then follow the on-screen instructions to open a pull request.
+
+== Next Steps
+
+. xref:install-git-and-editor.adoc[Install Git and an AsciiDoc editor].
+. xref:set-up-repository.adoc[Set up your local repository].

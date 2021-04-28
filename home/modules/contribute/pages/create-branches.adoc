@@ -1,0 +1,95 @@
+= Create a Working Branch
+
+Always make a new working branch for your work, no matter how small the change.
+You can create a working branch in Atom or from the command line.
+
+[#base-branch]
+== Choose the Right Base Branch
+
+A base branch contains the original source documentation.
+You create working branches from a base branch and send pull requests to a base branch for integration.
+A working branch isolates changes that solve a single issue.
+A pull request submitted from a working branch that only contains closely related changes is easier to test, review, and merge.
+
+The Couchbase documentation repositories maintain two types of base branches: master and release.
+
+For Couchbase Server, SDKs, and Mobile docs, the default branch will be the latest release -- e.g. release/6.6.
+For other docs repos it will be master, which contains the documentation for the next, unreleased product version.
+New documentation for the next product version, its features, and non-bug related improvements should be based off of the master branch where it exists.
+For the others, look for a development branch with an incremented release number.
+This, and the current release branch, are the ones that you will most often base your working branch off of and submit pull requests to.
+
+Release branches (`release/$.$`) contain the documentation specific to a stable product release.
+Fixes related to product bugs and documentation errors in stable releases are based off of a release branch *only* if that bug or error is *only* present in that release.
+For example, if a broken code snippet is discovered in the Server 5.1 documentation, but it isn't present in the 5.5 and master branch documentation, then you'd base your working branch on the `release/5.1` branch.
+
+If you're unsure which branch to create your working branch from, check the associated issue's *Affects versions* field, or, in its comment section, ask the Docs team for more information.
+Also note that some of the repositories use custom branch names, see xref:repositories.adoc#repo-special[Repositories that Require Special Handling] for more information.
+
+[#work-branch-atom]
+== Create a Working Branch in Atom
+
+These instructions assume you've xref:install-git-and-editor.adoc#install-atom[installed Atom] and xref:set-up-repository.adoc[forked, cloned, and configured the upstream and origin remotes] of a documentation repository.
+
+. Start Atom.
+. If this is the first time you've worked on a repository, it may not appear in Atom's *Project* panel.
+Go to menu:File[Add Project Folder] and add the folder containing your local repository.
+. Select the image:repo.svg[,16,role=icon] repository directory that contains the files you want to edit.
++
+image::project-panel.png[,300,align=left]
+
+. <<base-branch,Choose the right branch>> to base your changes on.
+Click the image:git-branch.svg[,16,role=icon] branch icon at the bottom of the editor.
+In the modal window, select the desired base branch from the dropdown menu.
++
+image::select-base-branch.png[,380,align=left]
+
+. Pull the latest changes from the upstream repository.
+Click the image:arrow-small-down.svg[,16,role=icon]image:arrow-small-up.svg[,16,role=icon] arrow icons at the bottom of the editor, then press btn:[Pull].
++
+image::pull-base-branch.png[,380,align=left]
+
+. Create a new working branch from the base branch.
+Click the image:git-branch.svg[,16,role=icon] branch icon.
+In the modal window, click btn:[New Branch], and enter the name of the new working branch in the form field.
++
+--
+image::new-branch.png[,380,align=left]
+
+The name of a working branch should pair it with the issue it resolves.
+For example, if you're resolving DOC issue #6500, you'd name the working branch `DOC-6500`.
+--
+
+Now you're ready to <<next-steps,write or edit documentation>>.
+
+[#work-branch-cli]
+== Create a Working Branch from the Command Line
+
+These instructions assume you've xref:set-up-repository.adoc[forked, cloned, and configured the upstream and origin remotes] of a documentation repository.
+
+. Open a terminal and change into the repository directory that contains the files you want to edit.
+
+ $ cd path/to/repository-folder
+
+. <<base-branch,Choose the right branch>> to base your changes on and check it out.
+
+ $ git checkout name-of-base-branch
+
+. Download the latest changes from the upstream repository.
+
+ $ git pull upstream name-of-base-branch
+
+. Create a working branch from the base branch and checkout the working branch.
++
+--
+ $ git checkout -b DOC-$$$$
+
+The name of a working branch should pair it with the issue it resolves.
+For example, if you're resolving DOC issue #6500, you'd name the working branch `DOC-6500`.
+--
+
+== Next Steps
+
+* xref:edit-pages.adoc[Edit existing documentation using Atom].
+* xref:edit-pages.adoc#edit-server[Step through editing a page in the Server Component].
+* xref:add-pages.adoc[Add new documentation pages].

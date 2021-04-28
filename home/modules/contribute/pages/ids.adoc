@@ -1,0 +1,113 @@
+= Element IDs and Same-Page Cross References
+
+An ID is a unique name for an element.
+That name can only be used once in a document.
+Typically, an ID is used to create a cross reference and link anchor for an element.
+//It can also reference a style or script used by the output processor.
+
+[#assign-id]
+== Assigning an Element ID
+
+An ID can be assigned to a block or inline element.
+The ID name is prefixed with a hash (`#`) and, in most cases, placed in the first position of an attribute list.
+
+.Add an ID to Section
+----
+[#logging-in]
+=== Logging in to Your Couchbase Cluster
+
+You can log in to the Couchbase cluster and explore the items created.
+----
+
+.Add an ID to a Table
+----
+.Distance Units
+[#geospatial-distance-units,cols="1,2"]
+|===
+|Units |Specify with
+
+|inches
+|`in` or `inch`
+|===
+----
+
+.Add an ID to a List
+----
+[#add-node]
+. Select menu:Couchbase Web Console[Servers > Add Server].
+. Enter the following information and click btn:[Add Server].
+----
+
+.Add an ID to Inline Styled Text
+----
+Sample buckets must be accessed according to the requirements of Couchbase [#control]_Role-Based Access Control_.
+----
+
+.Add an ID to a Code Block
+[#code-block-id]
+....
+[source#verify,console]
+----
+$ curl localhost:8092
+
+{"couchdb":"Welcome","version":"v4.5.1-60-g3cf258d","couchbase":"5.0.2-5506-community"}
+----
+....
+
+When a block has a style, like the above code block (`source`) example, the ID is attached to the end of the style.
+
+== Regular Text and List Item IDs
+
+You can assign IDs to regular text and list items, but the syntax is slightly different.
+
+* The ID *isn't* prefixed.
+* The ID is placed inside a double set of square brackets (`[[ ]]`).
+
+----
+. Fist step
+. [[step2]]Second step
+. Third step
+----
+
+Make sure to place the ID after ordered and unordered list markers.
+
+Description list items can also be assigned IDs.
+Place the ID directly in front of the term.
+
+----
+[[def-priority]]Bucket Priority::
+The priority to be assigned to the current bucket's background tasks.
+----
+
+== Creating a Link to an Element in the Same Page
+
+Links between two elements on the same page are created with the same-page cross reference (also referred to as a same-page xref).
+Before you can reference a destination element from a same-page xref, you must <<assign-id,assign it an ID>>.
+The link in the previous sentence was created using a same-page xref.
+
+.Same-page xref with link text to section
+----
+Before you can reference a destination element from an in-page xref, you must <<assign-id,assign it an ID>>. <1> <2> <3>
+----
+<1> Same-page xrefs are defined by a double set of angle brackets (`<< >>`).
+<2> The ID of the destination element is entered first and followed by a comma (`,`) if the xref also contains link text.
+<3> Optional link text directly follows the comma (`,`).
+
+When link text isn't supplied, the title of the destination block element is displayed.
+If the element doesn't have a title, or is a list item, table cell, or inline element, the ID will be used as the link text.
+
+Using the previous example, if you didn't add link text, the section title would be displayed.
+
+.Same-page xref to section
+----
+Before you can reference a destination element from an in-page xref, you must <<assign-id>>.
+----
+
+This example renders as:
+
+Before you can reference a destination element from a same-page xref, you must <<assign-id>>.
+
+== Learn More
+
+IDs are also used by the cross reference macro (`xref:[]`) to link from one page to an element in another page.
+See xref:cross-references.adoc#link-to-element[Cross References] for an example and more information.

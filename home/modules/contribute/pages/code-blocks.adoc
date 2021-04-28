@@ -1,0 +1,153 @@
+= Code Blocks and Callouts
+:url-docs-antora: https://docs.antora.org/antora/2.0
+:url-docs-adoc: https://asciidoctor.org/docs/user-manual
+:url-examplesdir: {url-docs-antora}/modules/#examples-dir
+:url-resource: {url-docs-antora}/page/resource-id/
+:url-include-example: {url-docs-antora}/asciidoc/include-example/
+:url-tags: {url-docs-adoc}/#by-tagged-regions
+:url-indent: {url-docs-adoc}/#normalize-block-indentation
+
+== Code Blocks
+
+Source code examples are entered into AsciiDoc listing blocks.
+Listing block content is displayed exactly as entered, and any indents and endlines are preserved.
+If the `source` style and a language are assigned to the block, the code is syntax highlighted on the site.
+
+[source,asciidoc]
+.Delimited code block with title
+....
+include::example$code-blocks.adoc[tag=dl-co]
+....
+<1> Assign the block style `source` to the first position in the attribute list.
+<2> Assign a source language to the second position.
+<3> Code the contains blank lines must be entered into a delimited listing block (`----`).
+
+Rendered as:
+
+include::example$code-blocks.adoc[tag=dl]
+
+Commands executed in a CLI are assigned the language `console` and lines are preceded by the command prompt (`$`).
+
+[source,asciidoc]
+....
+include::example$code-blocks.adoc[tag=console]
+....
+
+Rendered as:
+
+include::example$code-blocks.adoc[tag=console]
+
+Note, using `[source,console]` ensures that the `$` prompt is not copied when the user clicks the clipboard icon that appears upon mouseover above the code block.
+
+Short code snippets don't need delimiters as long as they don't contain blank lines or callouts.
+
+[source,asciidoc]
+....
+include::example$code-blocks.adoc[tag=single]
+....
+
+Rendered as:
+
+include::example$code-blocks.adoc[tag=single]
+
+Code blocks can be grouped in a parent block element.
+
+[source,asciidoc]
+....
+include::example$code-blocks.adoc[tag=group-code-blocks]
+....
+
+Rendered as:
+
+include::example$code-blocks.adoc[tag=group-code-blocks]
+
+[#callouts]
+== Callout Numbers
+
+Callouts add annotations to lines in code blocks.
+The first callout number must be placed after the final character on a code line.
+The responding callout is listed below the block and followed by the annotation text.
+Multiple callout numbers can be used on a single line.
+
+[source,asciidoc,subs=-callouts]
+....
+include::example$code-blocks.adoc[tag=callouts]
+....
+
+Rendered as:
+
+include::example$code-blocks.adoc[tag=callouts]
+
+TIP: To make callouts copy-and-paste friendly, put them behind the line comment syntax of the code snippet's language.
+For example, callouts in a YAML example are placed behind the hash symbol (`#`).
+
+The callout list does not have to follow immediately after the code block containing the callouts.
+For example, you can include an introductory sentence or paragraph between the code block and the callout list.
+
+Instead of marking up each callout with its own number, such as `<1>`, `<2>`, `<3>`, you can use `<.>` for each callout.
+When you use this method, the callouts are numbered automatically.
+
+[#include-code]
+== Inserting Examples with the Include Directive
+
+The include directive inserts an entire file or tagged region from a file stored in the _examples_ directory of a module into a code block.
+Just specify the xref:includes.adoc[resource ID of the example file in the directive].
+
+[source,asciidoc]
+....
+.Query result
+[source,json]
+----
+\include::example$contact.json[]
+----
+....
+
+You will find most of the SDK code samples included in `$examples` directories alongside the `pages` parent to the `.adoc` file that is calling them. 
+Else you will find thim in a special `devguide/examples` module in each SDK docs repo.
+Using `include::` adds a _Git hub_ link on mouseover, which leads to the code file on the repo.
+
+For a tagged region of a source file, set the tags around the code sample using the comment character appropriate to the source language, such as `//` or `#`:
+
+[source,asciidoc]
+....
+[source,ruby]
+----
+# tag::read-only[]
+options = Cluster::QueryOptions.new
+options.readonly = true
+cluster.query(
+    'SELECT COUNT(*) AS airport_count FROM `travel-sample` WHERE type = "airport"',
+    options)
+# end::read-only[]
+----
+....
+
+And add the appropriate `[tag=]` to the `include::`.
+
+[source,asciidoc]
+....
+.Read-only Query
+[source,json]
+----
+\include::example$query.rb[tag=read-only]
+----
+....
+
+Note that we aim to keep all code files in the examples directory runnable -- or at least compilable -- so if you are adding a snippet of code to an existing file, please test it.
+
+
+== Learn More
+
+* xref:ids.adoc#code-block-id[Assign an ID to a code block].
+* xref:tabs.adoc[Create a tabs set].
+* xref:includes.adoc[Include examples].
+* xref:includes.adoc#tag-region[Tag regions of an example file].
+
+== Additional Resources
+
+The Antora and Asciidoctor documentation provide more information about including code examples.
+
+* {url-resource}[Antora resource ID structure^]
+* {url-include-example}[Insert code snippets and files with the include directive^]
+* {url-tags}[Select code regions with the tag macro^]
+* {url-indent}[Normalize block indentation with the indent attribute^]

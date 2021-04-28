@@ -1,35 +1,21 @@
 = Couchbase on Containers, Kubernetes, and Cloud
-:page-layout: landing-page-core-concept
+:page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :!sectids:
 
-= Couchbase Cloud
-++++
-<div class="card-row">
-++++
+= Couchbase on Containers, Kubernetes, and Cloud
 
-[.column]
-====== {empty}
-[.content]
-Couchbase Server is designed to run in the most popular cloud and container environments. Deploy Couchbase in the cloud for its unique data model flexibility, elastic scalability, high performance, and 24x365 availability.
+Couchbase Server is designed to run in the most popular cloud and container environments. Deploy Couchbase in the cloud for its unique data model flexibility, elastic scalability, high performance, and 24x365 availability. 
+[]
 
-[.column]
-====== {empty}
-[.media-left]
-video::https://www.youtube.com/embed/Al9iWZl8uz0[Couchbase Cloud Demo]
-
-++++
-</div>
-++++
-
-== {empty}
+== Couchbase Cloud (Database-as-a-Service)
 ++++
 <div class="card-row two-column-row">
 ++++
 
 [.column]
 ====== {empty}
-.Couchbase Cloud
+.{empty}
 
 [.content]
 Couchbase Cloud is a fully-managed database as a service designed from the ground up to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
@@ -38,11 +24,58 @@ xref:cloud::index.adoc[Go to Couchbase Cloud Docs]
 
 [.column]
 ====== {empty}
+[.media-left]
+video::bNOq6OeMCr4[youtube]
+
+++++
+</div>
+++++
+
+== Couchbase Cloud-Native Database
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+====== {empty}
+.{empty}
+
+[.content]
+Couchbase Cloud-Native Database is the culmination of Couchbase Server and native integration with cloud-native open source technologies such as Kubernetes, Prometheus, Helm, CNI, CoreDNS, Operator Framework, Ceph, Gluster, Istio Service Mesh, Open Service Broker API, and Open Telemetry.
+[]
+xref:cloud-native-database::index.adoc[Go to Couchbase Cloud-Native Database]
+
+[.column]
+====== {empty}
+[.media-left]
+image::kubernetes_2.svg[,500]
+
+// ++++
+// </div>
+// ++++
+
+// === Cloud-Native Technologies
+// ++++
+// <div class="card-row two-column-row">
+// ++++
+
+[.column]
+====== {empty}
 .Couchbase Autonomous Operator
+
 [.content]
 The Couchbase Autonomous Operator provides native integration of Couchbase Server with open source Kubernetes and Red Hat OpenShift. It enables you to automate the management of common Couchbase tasks such as the configuration, creation, scaling, and recovery of Couchbase clusters. By reducing the complexity of running a Couchbase cluster, it lets you focus on the desired configuration and not worry about the details of manual deployment and life-cycle management.
 []
 xref:operator::overview.adoc[Go to Couchbase Autonomous Operator]
+
+[.column]
+====== {empty}
+.Couchbase Service Broker
+
+[.content]
+The Service Broker implements the https://www.openservicebrokerapi.org/[Open Service Broker API^]. It is a simple web-service that creates Kubernetes resources on demand as requested by the API.
+[]
+xref:service-broker::index.adoc[Go to Couchbase Service Broker]
 
 ++++
 </div>

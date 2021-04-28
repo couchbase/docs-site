@@ -1,0 +1,124 @@
+= Update a Navigation File
+
+When you want visitors to locate a page using the xref:nav-menus-and-files.adoc#component-menu[component menu], you must add a cross reference (`\xref:page-id.adoc[link content]`) to that page in the appropriate navigation file.
+
+== Creating a Navigation List
+
+A navigation file contains one or more unordered AsciiDoc lists.
+Navigation lists must be separated by at least one blank line.
+
+Each navigation list in the Couchbase documentation starts with a category title.
+A category is represented by a block title (`.Title of Category`).
+
+On the line directly after the category title is a level 1 list item.
+A level 1 list item is marked by a single (`+*+`).
+Each level 1 item can have as many nested items as you need.
+The deepest nested level allowed is level five (`+*****+`).
+
+[source,asciidoc]
+----
+.Title of Category
+* Level 1 list item
+** Level 2 list item    <1>
+*** Level 3 list item
+**** Level 4 list item
+***** Level 5 list item
+                        <2>
+.Another Category
+* Level 1 list item
+ ** Level 2 list item   <3>
+* Level 1 list item
+----
+<1> Regardless of level, list items can start flush against the left margin.
+<2> Separate lists with one blank line.
+<3> Or, you can indent list items, but this has no impact on how they're displayed in the component menu.
+
+== Adding, Editing, and Removing List Items
+
+Navigation list items can be xrefs, regular text, inline image macros, or links to external URLs.
+
+[source,asciidoc]
+----
+.Category Title
+* xref:name-of-file.adoc[Link Text] <1>
+** Settings <2>
+*** xref:another-file.adoc[Link Text]
+** https://support.couchbase.com[Link Text] <3>
+----
+<1> Xref list item.
+<2> Regular text list item.
+<3> External URL list item.
+
+When adding and editing list items, remember the following:
+
+* Enter each list item on its own line.
+* List items must be in a list with a category title.
+* To adjust the nesting level of a list item, use the desired number of asterisks.
+* Write <<nav-text,category, regular, and link text>> according to their style guidelines.
+* The link text of any parent list items is displayed in the breadcrumbs at the top of a page.
+* List items that contain a lot of text and/or are deeply nested will wrap in the component menu.
+* To open the nav link in a new tab, use the `window=_blank` attribute.
++
+[source,asciidoc]
+----
+** https://support.couchbase.com[Link Text, window=_blank]
+----
+NOTE: The shorthand syntax (`[Link Text^]`) is not supported for nav links.
+
+When removing a list item, remember the following:
+
+* If the item had child items, adjust their nesting level as needed.
+* Pages that aren't linked to from a navigation file are still published to the site; they are still indexed by the site search and search engines and can be referenced by any page.
+
+=== Xrefs
+
+Xrefs in a navigation file follow the same rules and structure as xref:cross-references.adoc[xrefs in a page].
+If a page and a navigation file are in the same module, then only specify the page coordinate.
+
+.Same-module navigation xrefs
+----
+.Category
+* xref:a-page-in-this-module.adoc[Same-module Page]
+** xref:topic/page.adoc[Same-module Page in a Topic Folder]
+** xref:another-page.adoc#and-fragment[Same-module Page Deep Link]
+----
+
+If the page is in the same component but a different module, enter the module and page coordinates.
+
+----
+* xref:module:page.adoc[Page in a Different Module, Same Component]
+----
+
+Enter the component, module, and page coordinates for a page located in another component.
+
+----
+* xref:component:module:page.adoc[Page in a Different Component]
+----
+
+[#nav-text]
+=== Category, Regular, and Link Text Styles
+
+Use title case for category titles.
+For example, *Tuning & Performance* or *Integrations*.
+Write "`and`" as an ampersand (*&*).
+
+Use title case for the link and regular text in list items.
+Write "`and`" as *and*.
+
+.Navigation category, regular, and link text examples
+----
+.Hello World!
+* xref:rbac-for-admins-and-apps.adoc[Creating and Managing Users with the UI]
+** Query Performance
+*** xref:n1ql/hints.adoc[INDEX]
+**** xref:views:count.adoc[Built-in _count Function]
+** xref:x509certsintro.adoc[X.509 for TLS]
+
+.API References
+* xref:rest-api.adoc[Public REST API]
+
+.Settings, Error Handling & Diagnostics
+* xref:tracing-from-the-sdk.adoc[Tracing from the SDK]
+* Getting Help
+** https://support.couchbase.com[Contact Support]
+----

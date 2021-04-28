@@ -1,0 +1,390 @@
+= Couchbase for Developers
+:page-layout: home
+:description: Access the documentation, tutorials, and resources you need for building apps on Couchbase, a modern multicloud to edge document NoSQL SQL++ JSON document database with agility, performance, scale, and resilience.
+:!sectids:
+
+ifdef::basebackend-html[]
+++++
+<style type="text/css">
+body header .navbar {
+  position: relative;
+}
+div.body.container {
+  margin-top: 2rem;
+}
+div.body main.home a {
+  color: #4287d6;
+}
+div.body main.home a::before {
+  transition-duration: 0s;
+  transition-property: none;
+}
+div.body main.home h1.page {
+  margin-top: 0.5em;
+}
+div.body main.home #preamble {
+  margin-top: 0;
+}
+div.body main.home #preamble img {
+  margin: 0 20px 0 20px;
+  border: 1px solid #d8d8d8;
+}
+div.body main.home div.logos {
+  margin-top: -20px;
+  background-color: #4287d6;
+  padding: 1px 20px 1px 20px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: white;
+}
+div.body main.home div.logos div.paragraph {
+  margin: 4px 0 4px 0;
+}
+div.body main.home div.logos div.paragraph p {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: hidden;
+}
+div.body main.home div.logos div.paragraph p * {
+  flex: 1;
+}
+div.body main.home div.logos div.paragraph p img {
+  margin: 2px 5px 2px 5px;
+  padding: 1px 20px 1px 20px;
+  box-sizing: content-box;
+}
+div.body main.home div.logos div.paragraph p a {
+  color: white;
+}
+div.body main.home div.tiles.code-samples {
+  margin-top: 45px;
+}
+div.body main.home div.tiles.code-samples h2 {
+  display: none;
+}
+div.body main.home div.tiles.code-samples .tile {
+  text-align: center;
+}
+div.body main.home div.tiles.code-samples .tile table {
+  width: 100%;
+  table-layout: fixed;
+  text-align: left;
+}
+div.body main.home div.tiles.code-samples .tile table td {
+  width: 50%;
+  padding: 0 10px 0 10px;
+  vertical-align: top;
+}
+div.body main.home h2::after {
+  display: none;
+}
+div.body main.home div.tiles .tile p {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  font-size: 15px;
+}
+div.body main.home div.tiles.centered-tiles h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0px;
+}
+div.body main.home div.tiles.centered-tiles .tile .paragraph p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+div.body main.home div.tiles.centered-tiles.new-to-couchbase {
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  background-color: white;
+  padding-bottom: 15px;
+}
+div.body main.home div.tiles.more-info .tile {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+div.body main.home div.tiles.more-info .tile.shots img {
+  border: 1px solid #d8d8d8;
+}
+div.body main.home .banner h2 {
+  margin-top: 50px;
+  background-color: aliceblue;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+div.body main.home .banner.cta h2 {
+  padding: 40px 0 40px 0;
+  font-weight: normal
+}
+div.body main.home .banner.cta h2 a {
+  margin: 8px 10px 8px 10px;
+  background-color: #4287d6;
+  padding: 8px 20px 8px 20px;
+  color: white;
+}
+div.body main.home .tiles.centered-tiles.community-more h2 {
+  font-size: 2rem;
+}
+div.body main.home a.github {
+  padding: 10px 50px 10px 10px;
+  color: #fff;
+  background: url(_images/github-blacktocat.png) #4287d6 no-repeat 95% 50%;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 2px;
+}
+div.body main.home a.github:hover {
+  text-decoration: underline #fff;
+}
+</style>
+++++
+endif::[]
+
+[.subtitle.shots]
+Couchbase, a modern multicloud to edge database for building applications with agility, performance, scale, and resilience.
+
+image:server:manage:manage-ui/documentsScreenWithDocuments.png[,180]
+image:server:tools:query-monitor.png[,180]
+image:server:manage:manage-ui/indexInQueryWorkbench.png[,180]
+
+[.logos]
+== {empty}
+
+image:white-logos/linkedin.svg[,100]
+image:white-logos/united.svg[,100]
+image:white-logos/tesco.svg[,100]
+image:white-logos/sky.svg[,100]
+image:white-logos/amadeus.svg[,100]
+image:white-logos/marriott-international.svg[,100]
+image:white-logos/bd.svg[,100]
+image:white-logos/paypal.svg[,100]
+image:white-logos/verizon.svg[,100]
+image:white-logos/ebay.svg[,100]
+image:white-logos/cisco.svg[,100]
+image:white-logos/pge.svg[,100]
+image:white-logos/wells-fargo.svg[,100]
+image:white-logos/comcast.svg[,100]
+image:white-logos/tommy-hilfiger.svg[,100]
+image:white-logos/directv.svg[,100]
+https://www.couchbase.com/customers[and{nbsp}many{nbsp}more{nbsp}users...]
+
+[.tiles.code-samples]
+== {empty}
+
+[.tile]
+=== {empty}
+
+[.layout,cols="1,1"]
+|===
+h| High-performance JSON database ops
+h| SQL++ to easily query and access JSON
+
+a|
+[source,python]
+----
+ conn.mutate_in('user-1234',
+   op.remove('addrs.billing'),
+   op.replace('email', 'doug11@hotmail.com'))
+----
+
+a|
+[source,python]
+----
+ results = conn.query(
+   "SELECT * FROM users WHERE addrs.work.state=$s",
+   s="California")
+----
+|===
+
+[.tiles.centered-tiles.new-to-couchbase]
+== New to Couchbase?
+
+[.tile]
+=== {empty}
+
+xref:server:getting-started:start-here.adoc[Getting Started]
+
+[.tile]
+=== {empty}
+
+xref:server:introduction:intro.adoc[Why Couchbase]
+
+[.tile]
+=== {empty}
+
+xref:server:learn:data/n1ql-versus-sql.adoc[NoSQL with SQL{pp}?]
+
+[.banner]
+== Couchbase Documentation, Tutorials, and More
+
+[.tiles.more-info]
+== Couchbase Server
+
+[.tile]
+=== Learn Couchbase Server
+
+* xref:server:learn:architecture-overview.adoc[What is Couchbase Server?]
+* xref:server:getting-started:start-here.adoc[Get started] with a step-by-step tutorial
+* xref:server:sdk:development-intro.adoc[Developer's introduction]
+
+//-
+
+* *xref:home::index.adoc[Documentation]*
+
+==== N1QL and SQL++
+
+*N1QL* is Couchbase's implementation of SQL++ for querying data.
+
+* xref:server:getting-started:try-a-query.adoc[N1QL getting started]
+* xref:server:n1ql:n1ql-intro/index.adoc[N1QL queries and results]
+* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL language reference]
+* xref:server:tools:query-workbench.adoc[Query workbench] for N1QL
+
+[.tile]
+=== Try Couchbase Server
+
+* *https://query-tutorial.couchbase.com/[Online playground]* for test driving and learning N1QL
+
+==== Installation
+
+* xref:server:install:plan-for-production.adoc[System requirements]
+* https://www.couchbase.com/downloads[Download] installers for *OSX*, *Linux*, *Windows*
+* xref:server:install:get-started.adoc[More deployment options] for VMs, containers, Docker, Kubernetes, and the public clouds
+* xref:operator::overview.adoc[Kubernetes image:kubernetes-logo.svg[,18] Autonomous Operator] for Couchbase, enabling automated provisioning and management when using Kubernetes
+* Community and Enterprise xref:server:introduction:editions.adoc[Editions] are available to launch fast and grow faster, with long-term support available for business-critical applications
+
+[.tiles.more-info]
+== {empty}
+
+[.tile]
+=== SDKs and Connectors
+
+* SDK for xref:java-sdk:hello-world:start-using-sdk.adoc[Java] and xref:scala-sdk:hello-world:start-using-sdk.adoc[Scala]
+* SDK for xref:dotnet-sdk:hello-world:start-using-sdk.adoc[C# / .NET]
+* SDK for xref:nodejs-sdk:hello-world:start-using-sdk.adoc[Node.js]
+* SDK for xref:python-sdk:hello-world:start-using-sdk.adoc[Python]
+* SDK for xref:php-sdk:hello-world:start-using-sdk.adoc[PHP]
+* SDK for xref:c-sdk:hello-world:start-using-sdk.adoc[C / C++]
+* SDK for xref:go-sdk:hello-world:start-using-sdk.adoc[Go]
+* ...and xref:server:sdk:overview.adoc[more]
+* xref:server:connectors:intro.adoc[Connectors] for Kafka, Spark, Hadoop, ODBC/JDBC, and more
+
+[.tile]
+=== {empty}
+
+[source,java]
+----
+// upsert JSON document
+MutationResult upsertResult = db.upsert(
+    "user-1234",
+    JsonObject.create().put("name", "mike")
+);
+
+// fetch JSON document
+GetResult getResult = db.get("user-1234");
+System.out.println(getResult);
+----
+
+[.tiles.more-info]
+== {empty}
+
+[.tile]
+=== Advanced Operations
+
+* xref:java-sdk:howtos:subdocument-operations.adoc[Sub-document operations] for efficient JSON manipulation
+* xref:java-sdk:howtos:concurrent-async-apis.adoc[Async and reactive APIs] for higher concurrency
+* xref:server:learn:data/transactions.adoc[Distributed transactions] for multi-document ACID mutations
+* xref:server:learn:services-and-indexes/indexes/indexes.adoc[Indexing] to improve query and search performance
+* xref:server:fts:full-text-intro.adoc[Full-text search] to power up language-aware, relevant searches and more
+* xref:server:analytics:introduction.adoc[Analytics] for complex queries and data analysis
+* xref:server:eventing:eventing-overview.adoc[Eventing] for asynchronous triggers on data changes
+
+[.tile.shots]
+=== {empty}
+
+image::server:manage:manage-ui/indexScreenWithIndexes.png[,380]
+
+[.tiles.more-info]
+== {empty}
+
+[.tile]
+=== Production Scale
+
+* xref:server:learn:clusters-and-availability/clusters-and-availability.adoc[Clustering] of Couchbase server nodes for share-nothing, scale-out performance and availability
+* xref:server:learn:buckets-memory-and-storage/vbuckets.adoc[Auto-sharding] and automatic placement of shard replicas
+* xref:server:manage:manage-xdcr/xdcr-management-overview.adoc[Replication between remote datacenters] for geographic distribution
+* xref:server:learn:security/security-overview.adoc[Advanced security] with authentication, authorization, role-based access control, encryption, and auditing
+
+[.tile.shots]
+=== {empty}
+
+image::server:manage:manage-nodes/rebalanceProgressBarFollowingRemoval.png[,380]
+
+[.tiles.more-info]
+== {empty}
+
+[.tile]
+=== Management Tools
+
+* xref:server:manage:manage-ui/manage-ui.adoc[Web management UI] and admin REST API
+* xref:server:manage:manage-nodes/add-node-and-rebalance.adoc[Dynamic cluster membership] and automated data shard rebalancing
+* xref:server:tools:cbimport.adoc[Bulk data loading]
+* xref:server:backup-restore:cbbackupmgr.adoc[Backup / restore]
+* xref:server:install:install-production-deployment.adoc[Deployment guidelines] with security and sizing considerations
+
+[.tile.shots]
+=== {empty}
+
+image::server:manage:manage-groups/groupsScreenWithOpenGroup.png[,380]
+
+{nbsp}
+
+{nbsp}
+
+{nbsp}
+
+[.tiles.more-info]
+== Couchbase Mobile and Edge
+
+[.tile]
+=== Couchbase Lite
+
+* xref:couchbase-lite::introduction.adoc[Couchbase Lite] is an embedded NoSQL JSON database for mobile and edge apps, and is available for Java, Android, Swift, Objective-C, C#, and JavaScript
+
+[.tile]
+=== Sync Gateway
+
+* xref:sync-gateway::introduction.adoc[Sync Gateway] is an internet-facing server that securely transfers data between mobile and edge Couchbase Lite instances and Couchbase Server
+
+[.tile]
+=== Go Deeper
+
+* xref:sync-gateway::shared-bucket-access.adoc[Data synchronization] with Sync Gateway
+* xref:sync-gateway::kubernetes/deploy-cluster.adoc[Kubernetes image:kubernetes-logo.svg[,18] option] for deploying Sync Gateway
+
+{nbsp}
+
+{nbsp}
+
+[.tiles.centered-tiles.community-more]
+== Community Resources
+
+[.tile]
+=== {empty}
+
+https://www.couchbase.com/community[Community links]
+{nbsp}{nbsp}{nbsp}
+https://forums.couchbase.com/[Forums]
+{nbsp}{nbsp}{nbsp}
+https://developer.couchbase.com/open-source-projects[Open source projects]
+{nbsp}
+link:https://github.com/couchbase[GitHub,role=github]
+
+{nbsp}
+
+{nbsp}
+
+[.banner.cta]
+== *xref:server:getting-started:start-here.adoc[Get Started]* https://query-tutorial.couchbase.com/[Try the Online N1QL Tutorial]

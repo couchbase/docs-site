@@ -1,0 +1,160 @@
+= Edit Existing Documentation
+
+The following sections describe the document editing process using the Atom editor; however, you can write AsciiDoc in the plain text editor or integrated development environment (IDE) of your choice.
+
+== General Editing Steps Using Atom
+
+. Make sure you've added the repository directory to the *Project* panel, xref:create-branches.adoc[created a working branch], and switched to it.
+The name of your working branch is displayed next to the image:git-branch.svg[,16,role=icon] branch icon at the bottom of the editor.
+. In the project panel, expand the repository to view its folders and files.
+Locate the page, partial, or example file you want to edit and double click on it to open it in an editor pane.
+.. If you're not familiar with the structure of a documentation component, see xref:repositories.adoc#dir-structure[Directory Structure and Key Files].
+. Edit the content.
+The <<edit-server,next section>> steps through an editing scenario.
+.. For AsciiDoc tips and help, see xref:basics.adoc[AsciiDoc Basics].
+. If you installed the xref:install-git-and-editor.adoc#adoc-packages[AsciiDoc Preview package], go to menu:Packages[AsciiDoc Preview > Toggle Preview].
+A basic preview of the rendered document is displayed in an adjacent pane.
+. Press kbd:[Ctrl,S] to save the file.
+
+When your edits are complete, you're ready to xref:test-site.adoc[configure a local playbook] to use your changes and build the site on your device.
+
+[#edit-server]
+== Editing a Page in the Server Component
+
+Let's step through editing a Server component page using Atom.
+Now that the documentation has been converted from DITA, you can use all of the features of AsciiDoc to enhance the content and structure of the pages.
+The syntax changes described in this section represent some of the improvements you can make.
+
+=== 1. Open the File
+
+In the project panel, in the image:repo.svg[,16,role=icon] docs-server repository, go to menu:modules[backup-restore > pages].
+Double click on _backup-restore.adoc_ to open the AsciiDoc file in the editor pane.
+
+image::edit-page-in-atom.png[]
+
+=== 2. Set and Reference an Attribute
+
+The built-in AsciiDoc `abstract` style is the _Summary_ displayed on the published pages.
+The Docs team wants to use this text in the page's HTML description meta tag.
+
+image::add-description.png[]
+
+Set the `description` attribute in the xref:pages.adoc#doc-title[header of the document].
+
+[source,asciidoc]
+----
+= Backup and Restore
+:description:
+
+[abstract]
+In a production environment, as part of an overall Disaster Recovery plan, you must [...]
+----
+
+Cut ( kbd:[Ctrl,X] ) the paragraph under `+[abstract]+` and paste ( kbd:[Ctrl,V] ) it into the value of `description`.
+
+[source,asciidoc]
+----
+= Backup and Restore
+:description: In a production environment, as part of an overall Disaster Recovery plan, you must plan to back up your entire cluster periodically.
+This helps ensure that you do not lose information in the event of a serious failure and minimizes data inconsistency when a restore is required.
+
+[abstract]
+
+Couchbase provides multiple [...]
+----
+
+To keep the paragraph as xref:pages.adoc#ventilate[ventilated prose (aka sentence per line)] and not break the header, enter a space after the end of the first sentence, then a `\`.
+
+[source,asciidoc]
+----
+= Backup and Restore
+:description: In a production environment, as part of an overall Disaster Recovery plan, you must plan to back up your entire cluster periodically. \
+This helps ensure that you do not lose information in the event of a serious failure and minimizes data inconsistency when a restore is required.
+----
+
+To display the description text in the _Summary_, reference the `description` attribute.
+An attribute is referenced when its name is enclosed by a set of curly brackets (`+{}+`).
+
+[source,asciidoc]
+----
+= Backup and Restore
+:description: In a production environment, as part of an overall Disaster Recovery plan, you must plan to back up your entire cluster periodically. \
+This helps ensure that you do not lose information in the event of a serious failure and minimizes data inconsistency when a restore is required.
+
+[abstract]
+{description}
+
+Couchbase provides multiple means to facilitate backup and restore.
+----
+
+=== 3. Replace List Items with Section Headings and Paragraphs
+
+This page doesn't have any section headings, and therefore no *On This Page* sidebar.
+It does have two multi-paragraph bulleted list items that look like good candidates for section headings and section paragraphs.
+
+image::bulleted-list-items.png[]
+
+Remove each list marker (`+*+`) and replace it with two equals signs (`==`).
+This turns the content on those lines into xref:pages.adoc#document-sections[heading 2 section titles].
+
+[source,asciidoc]
+----
+== Using [.cmd]`cbbackupmgr` Tool
++
+Couchbase Backup Manager is an enterprise-grade backup and restore utility that is [...]
+
+== Using [.cmd]`cbbackup` and [.cmd]`cbrestore` Tools
++
+The [.cmd]`cbbackup` and [.cmd]`cbrestore` tools provide simple yet effective backup and restore capabilities to Couchbase Server.
++
+The cbbackup tool enables you to backup a single node [...]
+----
+
+Since the content is no longer structured as a list, remove the list continuation (`+`) markup between the paragraphs.
+
+[source,asciidoc]
+----
+== Using [.cmd]`cbbackupmgr` Tool
+
+Couchbase Backup Manager is an enterprise-grade backup and restore utility that is [...]
+
+== Using [.cmd]`cbbackup` and [.cmd]`cbrestore` Tools
+
+The [.cmd]`cbbackup` and [.cmd]`cbrestore` tools provide simple yet effective backup and restore capabilities to Couchbase Server.
+
+The cbbackup tool enables you to backup a single node [...]
+----
+
+=== 4. Find and Replace the `cmd` Role
+
+In the original DITA files, there were lots of inline roles (`cmd`, `ui`, `param`, etc.).
+Some of these roles were mapped to built-in AsciiDoc syntax.
+For instance, when `ui` was assigned to dropdown menu text, it was replaced with the xref:basics.adoc#ui-macros[menu UI macro].
+Other roles were simply carried forward, like `cmd`, but weren't associated with any custom styles in the final UI.
+You can clean up the document by deleting the unused roles.
+
+Press kbd:[Ctrl,F] to open the Find and Replace panel.
+Enter `+[.cmd]+` in the *Find* field and leave the *Replace* field empty.
+
+image::find-and-replace.png[]
+
+Click btn:[Replace All] to delete all of the instances of `+[.cmd]+`.
+
+=== 5. Preview and Save the File
+
+If you installed the  xref:install-git-and-editor.adoc#adoc-packages[AsciiDoc Preview package], go to menu:Packages[AsciiDoc Preview > Toggle Preview].
+A basic preview of the rendered document is displayed in an adjacent pane.
+
+image::preview.png[]
+
+Press kbd:[Ctrl,S] to save the file.
+In the project panel, the file name will change color, indicating it's unstaged.
+
+image::unstaged.png[]
+
+Before staging your edits, you need to xref:test-site.adoc[configure a local playbook] to use your changes and build the site on your device.
+
+== Next Steps
+
+. xref:test-site.adoc[Create a local playbook and build the site using your changes].
+. xref:send-pr.adoc[Stage and commit your changes].

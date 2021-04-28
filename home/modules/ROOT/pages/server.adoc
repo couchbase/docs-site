@@ -1,5 +1,5 @@
 = Couchbase Server
-:page-layout: landing-page-core-concept
+:page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :!sectids:
 
@@ -11,12 +11,14 @@
 [.column]
 ====== {empty}
 [.content]
-Couchbase Server is an open source, distributed, NoSQL document-oriented engagement database. It exposes a fast key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for fast queries and a powerful query engine for executing SQL-like queries.
+Couchbase Server is an open source, distributed, JSON document database.
+It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries and a powerful query engine for executing SQL-like queries.
+For mobile and Internet of Things environments Couchbase also runs natively on-device and manages synchronization to the server.
 
 [.column]
 ====== {empty}
 [.media-left]
-image::database-icon.svg[]
+image::n1ql-ansi-join-example.png[,450]
 
 ++++
 </div>
@@ -135,19 +137,85 @@ image::database-icon.svg[]
 
 === SDKs
 ++++
-<div class="card-row two-column-row">
+<div class="card-row three-column-row">
 ++++
 
 [.column]
-.SDK Documentation
-* xref:server:sdk:overview.adoc[SDKs]
-* Server and SDK Compatibility: xref:java-sdk:project-docs:compatibility.adoc[Java] | xref:nodejs-sdk:project-docs:compatibility.adoc[Node.js] | xref:dotnet-sdk:project-docs:compatibility.adoc[.NET] | xref:python-sdk:project-docs:compatibility.adoc[Python] | xref:c-sdk:project-docs:compatibility.adoc[C] | xref:scala-sdk:project-docs:compatibility.adoc [Scala] | xref:php-sdk:project-docs:compatibility.adoc[PHP] | xref:go-sdk:project-docs:compatibility.adoc[Go]
+.Java SDK
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:java-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:java-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:java-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:java-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-java-client/[API Reference] 
 
 [.column]
-.SDK API References
+.Scala SDK
+* xref:scala-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:scala-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:scala-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:scala-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:scala-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference]
 
-[.content]
-https://docs.couchbase.com/sdk-api/couchbase-java-client/[Java] | https://docs.couchbase.com/sdk-api/couchbase-node-client/[Node.js] | https://docs.couchbase.com/sdk-api/couchbase-net-client/[.NET] | https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[PHP] | https://docs.couchbase.com/sdk-api/couchbase-python-client/[Python] | https://docs.couchbase.com/sdk-api/couchbase-c-client/[C (libcouchbase)] | https://pkg.go.dev/github.com/couchbase/gocb/v2?tab=doc[Go] | https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[Scala] 
+[.column]
+.C SDK
+* xref:c-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:c-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:c-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:c-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* https://docs.couchbase.com/sdk-api/couchbase-c-client/[API Reference]
+
+[.column]
+.Node.js SDK
+* xref:nodejs-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:nodejs-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:nodejs-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:nodejs-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-node-client/[API Reference]
+
+[.column]
+.NET SDK
+* xref:dotnet-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:dotnet-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:dotnet-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:dotnet-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-net-client/[API Reference]
+
+[.column]
+.PHP SDK
+* xref:php-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:php-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:php-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:php-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[API Reference]
+
+[.column]
+.Python SDK
+* xref:python-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:python-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:python-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:python-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:python-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-python-client/[API Reference]
+
+[.column]
+.Go SDK
+* xref:go-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:go-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:go-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:go-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:go-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://pkg.go.dev/github.com/couchbase/gocb/v2?tab=doc[API Reference]
+
+[.column]
+.Ruby SDK
+* xref:ruby-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
+* xref:ruby-sdk:howtos:managing-connections.adoc[Managing Connections]
+* xref:ruby-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
+* xref:ruby-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
+* xref:ruby-sdk:howtos:collecting-information-and-logging.adoc[Logging]
+* https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[API Reference]
 
 ++++
 </div>
@@ -174,17 +242,17 @@ https://docs.couchbase.com/sdk-api/couchbase-java-client/[Java] | https://docs.c
 * xref:server:manage:troubleshoot/troubleshoot.adoc[Troubleshoot]
 
 [.column]
-.REST API and Tools 
+.REST API and Tools
 * xref:server:tools:cbimport.adoc[cbimport]
 * xref:server:tools:cbexport.adoc[cbexport]
 * xref:server:cli:cli-intro.adoc[Couchbase CLI]
-& xref:server:rest-api:rest-intro.adoc[REST API Reference]
+* xref:server:rest-api:rest-intro.adoc[REST API Reference]
 
 ++++
 </div>
 ++++
 
-== Key Tenets For Data Protection
+== {empty}
 ++++
 <div class="card-row three-column-row">
 ++++
@@ -202,7 +270,7 @@ https://docs.couchbase.com/sdk-api/couchbase-java-client/[Java] | https://docs.c
 .Replication
 * xref:server:learn:clusters-and-availability/replication-architecture.adoc[Cross Data Center Replication(XDCR) Architecture]
 * xref:server:learn:clusters-and-availability/xdcr-filtering.adoc[XDCR Advanced Filtering]
-* xxref:server:learn:clusters-and-availability/xdcr-cloud-deployment.adoc[XDCR Cloud Deployment]
+* xref:server:learn:clusters-and-availability/xdcr-cloud-deployment.adoc[XDCR Cloud Deployment]
 * xref:server:manage:manage-xdcr/xdcr-management-overview.adoc[Manage XDCR]
 
 

@@ -1,0 +1,88 @@
+= Send Your Changes for Review
+
+After you complete your changes and fixed any warnings and errors reported by Antora, it's time to commit and push your working branch to your remote repository.
+
+[#commit]
+== Commit, Rebase, and Push
+
+. Add the new and changed files.
+
+ $ git add file-path-and-name
+
+. Commit your changes.
+
+ $ git commit -m "fix magic bucket example"
+
+. Fetch any upstream base branch changes.
+
+ $ git fetch upstream name-of-base-branch
+
+. If the upstream base branch has changed, rebase your working branch against it.
+
+ $ git rebase upstream/name-of-base-branch
+
+. Push your working branch to your remote fork on GitHub.
+
+ $ git push origin DOC-$$$$
+
+[#pr]
+== Submit a Pull Request
+
+After you push your working branch to your remote repository on GitHub, you can submit a pull request to the upstream repository for review.
+
+. Go to your repository on GitHub, and click btn:[Compare & pull request].
+. On the Open a Pull Request screen, update the PR title if it needs clarification, and then click btn:[Create Pull Request].
+
+Your pull request will be reviewed by a member of the Documentation team.
+Feedback and suggestions for improvements to the pull request are a standard part of the process, to ensure consistency across the documentation.
+Response will normally be within a couple of working days, but can sometimes take longer -- please bear with us, we really do appreciate contributions from the community.
+
+== Submit a Review
+
+To review an existing pull request, use GitHub's Pull Request Review features:
+
+. https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request#starting-a-review[Starting a Review^]
+. https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request#marking-a-file-as-viewed[Marking a File as Viewed^]
+. https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request#submitting-your-review[Submitting your Review^]
+
+== Incorporate Feedback from a Review
+
+To incorporate feedback from a review of an existing pull request, use GitHub's https://help.github.com/en/articles/incorporating-feedback-in-your-pull-request#applying-suggested-changes[Applying Suggested Changes^] instruction page.
+
+== Next Step
+
+Learn how AsciiDoc xref:asciidoc-overview.adoc[is used for Couchbase documentation].
+
+
+
+
+
+// Can the below be deleted now?
+
+////
+== Submit a Pull Request
+
+Once your changes are in a branch on GitHub it is time to submit them to the main couchbase repository.
+
+This is done using pull requests, you can read more about pull requests in general at https://help.github.com/articles/creating-a-pull-request/.
+
+== Pull Request Testing and Review
+
+This section will focus on what happens once you have created your pull request from your fork's branch onto the master branch.
+
+1. As soon as your pull request has been submitted, the continuous integration will trigger, this can be seen as the check 'PR-Build'.
+This builds the entire documentation set including your changes to ensure that it builds successfully (thus preventing malformed dita from breaking master).
+Once it has done this it will report back whether or not it was successful, along with a link to a preview of any pages which have been updated in the PR.
+You can use these links to see what your changes will look like (and whether or not you think you need further changes).
+Every time the content of the PR is updated, this will retrigger.
+
+2. A member of the documentation team will review your pull request and let you know if any changes are required.
+Usually you will be asked to make any necessary changes yourself.
+Don't worry if you're asked to make changes, this is normal!
+
+3. Once the reviewer is happy with the changes, they will backport them to any necessary branches (please let them know if you think it needs backporting to certain releases) and merge your changes.
+
+== Publishing
+
+Accepted changes are pushed to docs.couchbase.com twice a week, so you may need to wait a few days to see your changes go live.
+////

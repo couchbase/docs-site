@@ -1,0 +1,110 @@
+= Cross References
+:url-docs-antora: https://docs.antora.org/antora/2.0
+:url-docs-adoc: https://asciidoctor.org/docs/user-manual
+:url-pageid: {url-docs-antora}/page/page-id/#important
+:url-xref: {url-docs-antora}/asciidoc/page-to-page-xref/
+
+To link between documentation pages, use the cross reference macro (commonly called an xref) and a page ID.
+The number of page ID coordinates you need to specify in the xref depends on the location of the current page in relation to the location of the destination page (i.e., the page you want to link to).
+The closer the two files are, the shorter the page ID.
+
+== Link to a Page in the Same Module
+
+To link to a page in the same module as the current page, all you need to know is the file name of the document.
+
+[source,asciidoc]
+xref:name-of-file.adoc[link text]
+
+For example, to link to the AsciiDoc Basics page, a document that is in the same module as this page, Cross References, you write:
+
+[source,asciidoc]
+xref:basics.adoc[This links to the AsciiDoc Basics page].
+
+And this is the result:
+
+xref:basics.adoc[This links to the AsciiDoc Basics page].
+
+.Link to a page in a topic folder
+[source,asciidoc]
+xref:concept/index.adoc[Key Concepts]
+
+.Link to a page in the same module but in a different version
+[source,asciidoc]
+xref:3.3@error-handling.adoc#message-list[error messages]
+
+== Link to a Page in the Same Component
+
+To link to a page in the same component as the current page, but in a different module, you need to know the file name of the document and the module name.
+The module name is the name of the top-level folder in the modules directory the document is stored in.
+
+[source,asciidoc]
+xref:module-name:name-of-file.adoc[link text]
+
+For example, to link to the document _index.adoc_, which is in the same component as this page but stored in the ROOT module, you write:
+
+[source,asciidoc]
+Let's go to the xref:ROOT:index.adoc[documentation home page].
+
+This renders as:
+
+Let's go to the xref:ROOT:index.adoc[documentation home page].
+
+[#component-coordinate]
+== Link to a Page in a Different Component
+
+To link to a page in a different component, you need to know the destination component's name, module name, and file name.
+
+[source,asciidoc]
+xref:component-name:module-name:name-of-file.adoc[link text]
+
+The component's name is located in the xref:component-configuration.adoc#config[component descriptor file, _antora.yml_], which is found in the destination component's repository.
+
+.antora.yml in docs-server repository
+[source,yaml]
+----
+name: server # <1>
+title: Couchbase Server
+version: '5.5'
+start_page: introduction:intro.adoc
+nav:
+- modules/ROOT/nav.adoc
+----
+<1> Component name that you use in xrefs.
+
+To link from this page, to the What's New? page in the server component, you write:
+
+[source,asciidoc]
+xref:server:introduction:whats-new.adoc[What's new] in Couchbase Server?
+
+This renders as:
+
+xref:server:introduction:whats-new.adoc[What's new] in Couchbase Server?
+
+[#link-to-element]
+== Link to an Element in a Page
+
+To link to a specific element in another page, you need to know the element's ID.
+Add a hash (`#`) directly after the file name, followed by the ID of the element.
+For example, to link from this page to the Images section on the AsciiDoc Basics page, you write:
+
+[source,asciidoc]
+See xref:basics.adoc#images[Images].
+
+This renders as:
+
+See xref:basics.adoc#images[Images].
+
+== Cross Reference Best Practices
+
+* Create attributes for long page ID coordinates to improve the source readability for other contributors.
+* Create attributes for page ID coordinates used several times on the same page.
+
+== Learn More
+
+* Refer to xref:ids.adoc[Element IDs and Same-Page Cross References] to learn how to create element IDs.
+* Refer to xref:attributes-and-roles.adoc[Attributes] to learn how to create document attributes.
+
+== Additional Resources
+
+* {url-pageid}[Why is the page ID important?^]
+* {url-xref}[More xref usage examples^]

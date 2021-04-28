@@ -1,0 +1,55 @@
+= Build the Documentation Site Locally
+:experimental:
+
+[#configure-git-credentials]
+== Configure Your git Credentials
+
+Since some of the repositories listed in the playbook file are private, you'll need to configure credentials in git so Antora can connect to those repositories.
+
+First, make sure you can visit the private repositories hosted on GitHub in your browser.
+If you cannot, you'll need to request access.
+Once you have access, you may proceed to the next step.
+
+Next, generate a personal access token for your account on GitHub.
+The token must have the `repo` scope.
+See https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line[creating a personal access token for the command line^] for detailed instructions.
+Keep the token handy to complete the next step.
+
+Finally, run the following command to add your token to your git configuration:
+
+ $ git config --global credential.helper store && \
+   git ls-remote -h https://github.com/couchbase/couchbase-operator > /dev/null && \
+   git config --global --remove-section credential
+
+Enter the personal access token in the first prompt, then press kbd:[Enter] twice.
+You no longer need to keep the personal access token on hand since it's stored in the file [.path]_$HOME/.git-credentials_.
+
+If you've completed all the steps above, you should now be able to use Antora to connect to private repositories on GitHub.
+And that means you can build the documentation site on your own machine, which the next section covers.
+
+== Run Antora
+
+. Open a terminal and switch into the _docs-site_ folder.
+
+ $ cd path/to/docs-site
+
+. Run Antora, using the `antora` command with xref:test-site.adoc#lightweight-local-playbook[your _local_ playbook]:
+
+ docs-site $ antora local-antora-playbook
+
+. The cloning progress of each component repository is displayed in the console, followed by any AsciiDoc or Antora warning and error messages.
+The site generation is complete when the command prompt (`$`) reappears in the terminal.
+. Antora generated the site into a directory named _public_.
+Switch to it.
+
+ docs-site $ cd public
+
+. On some operating systems, you can open the site directly from the command line by typing `open` and the name of an HTML file.
++
+--
+ public $ open index.html
+
+Or, you can navigate to and open _index.html_ using your file explorer or browser.
+--
+
+Now that you're set up to build the full site on your own machine, you'll also be able to use a xref:test-site.adoc[personal playbook] to test your local documentation changes.
