@@ -2,7 +2,7 @@
 :page-aliases: sdks:intro.adoc
 :page-role: tiles
 :!sectids:
-// :page-layout: landing-page-top-level-sdk
+:page-layout: landing-page-top-level-sdk
 
 
 = SDKs & Connectors
