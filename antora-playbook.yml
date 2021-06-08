@@ -76,9 +76,9 @@ content:
     branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
-  - url: https://github.com/couchbase/docs-service-broker.git
+  - url: https://github.com/couchbase/docs-service-broker
     branches: [1.0.x]
-  - url: https://github.com/couchbase/docs-cloud-native.git
+  - url: https://github.com/couchbase/docs-cloud-native
     branches: [master]
   - url: https://github.com/couchbaselabs/tutorials
   - url: https://github.com/couchbase/developer-content
