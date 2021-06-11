@@ -1,4 +1,6 @@
 # $(npm bin)/antora --clean --fetch antora-playbook.yml
+# or
+# $(npm bin)/antora --clean --generator=@antora/site-generator-ms --attribute=export-site-navigation-data --fetch antora-playbook.yml
 site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
@@ -6,6 +8,14 @@ site:
   robots: allow
   keys:
     google_analytics: GTM-MVPNN2
+    nav_groups: |
+      [
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "elasticsearch-connector", "kafka-connector", "spark-connector"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Cloud", "startPage": "home::cloud.adoc", "components": ["cloud", "cloud-native-database", "operator", "service-broker"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns"] },
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
+      ]
 git:
   ensure_git_suffix: false
 urls:
@@ -129,6 +139,8 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-107/ui-bundle.zip
+    #url: https://github.com/couchbase/docs-ui/releases/download/prod-107/ui-bundle.zip
+    url: https://deploy-preview-95--cb-docs-ui.netlify.app/dist/ui-bundle.zip
+    snapshot: true
 output:
   dir: ./public
