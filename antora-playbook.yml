@@ -9,7 +9,8 @@ site:
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "elasticsearch-connector", "kafka-connector", "spark-connector"] },
         { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
-        { "title": "Cloud", "startPage": "home::cloud.adoc", "components": ["cloud", "cloud-native-database", "operator", "service-broker"] },
+        { "title": "Cloud", "startPage": "home::cloud.adoc", "components": ["cloud"] },
+        { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database", "operator", "service-broker"] },
         { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
       ]
