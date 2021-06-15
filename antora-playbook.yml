@@ -60,7 +60,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.1, release/3.0, release/2.10]
   - url: https://github.com/couchbase/docs-txn-cxx
-    branches: [release/1.0]    
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
   - url: https://github.com/couchbase/docs-sdk-dotnet
@@ -85,9 +85,9 @@ content:
     branches: [release/3.0, release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.0, release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
-  - url: https://github.com/couchbase/docs-service-broker.git
+  - url: https://github.com/couchbase/docs-service-broker
     branches: [1.1.x, 1.0.x]
-  - url: https://git@github.com/couchbase/docs-cloud-native.git
+  - url: https://git@github.com/couchbase/docs-cloud-native
     branches: [cloud-native-2.2]
   - url: https://git@github.com/couchbase/docs-ngdm
   - url: https://github.com/couchbase/tutorials
