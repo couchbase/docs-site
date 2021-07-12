@@ -79,7 +79,7 @@ content:
   - url: https://github.com/couchbase/docs-service-broker
     branches: [1.1.x, 1.0.x]
   - url: https://git@github.com/couchbase/docs-cloud-native
-    branches: [master]
+    branches: [cloud-native-2.2]
   - url: https://github.com/couchbaselabs/tutorials
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
