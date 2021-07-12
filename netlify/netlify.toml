@@ -4,7 +4,7 @@ publish = "public"
 
 [build.environment]
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
-MAX_CACHE_SIZE = 10000000
+MAX_CACHE_SIZE = "10000000"
 CI = "true"
 NODE_VERSION = "10"
 NODE_OPTIONS = "--max-old-space-size=4096"
