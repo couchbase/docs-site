@@ -26,7 +26,6 @@ content:
     branches: HEAD
     start_path: home
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
-  # For Cloud 2.0 / Hosted DBaaS docs
     branches: [docs-rogers-dev-test]
     start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
