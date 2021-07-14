@@ -16,7 +16,7 @@ Couchbase Connectors enable you to exchange data with a number of other platform
 [.column]
 ====== {empty}
 [.media-left]
-image::bigdata-elasticsearch-comp.png[,300]
+image::cb-connectors-logo.gif[,300]
 
 ++++
 </div>
