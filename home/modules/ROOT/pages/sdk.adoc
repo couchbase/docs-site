@@ -135,7 +135,7 @@ xref:3.1@ruby-sdk:hello-world:overview.adoc[Ruby SDK 3.1]
 The Couchbase Go SDK allows you to connect to a Couchbase Server cluster from Go.
 The Go SDK is a native Go library and uses the high-performance gocbcore to handle communicating to the cluster over Couchbase's binary protocols.
 []
-xref:2.2@go-sdk:hello-world:overview.adoc[Go SDK 2.2]
+xref:2.3@go-sdk:hello-world:overview.adoc[Go SDK 2.3]
 
 ++++
 </div>
