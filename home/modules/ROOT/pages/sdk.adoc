@@ -142,6 +142,48 @@ xref:2.2@go-sdk:hello-world:overview.adoc[Go SDK 2.2]
 </div>
 ++++
 
+=== SDK Extension Libraries
+[]
+Shipped as separate libraries.
+
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+====== {empty}
+.Distributed ACID Transactions
+
+[.content]
+Distributed ACID Transactions are operations that ensure that when multiple documents need to be modified such that only the successful modification of all justifies the modification of any, either all the modifications do occur successfully; or none of them occurs. 
+[]
+xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transactions]
+
+[.column]
+====== {empty}
+.Field Level Encryption
+
+[.content]
+Fields within a JSON document can be securely encrypted by the SDK to support FIPS 140-2 compliance.
+This is a client-side implementation, with encryption and decryption handled by the Couchbase client SDK.
+[]
+xref:sdk-extensions::field-level-encryption.adoc[Field Level Encryption]
+
+[.column]
+====== {empty}
+.Response Time Observability
+
+[.content]
+Health indicators can tell you a lot about the performance of an application. Monitoring them is vital both during its development and production lifecycle.
+For a database, performance is best encapsulated via per-request performance.
+[]
+xref:sdk-extensions::response-time-observability.adoc[Response Time Observability]
+
++++
+</div>
++++
+
 === SDK doctor
 []
 SDK doctor is a tool to diagnose application-server-side connectivity issues with your Couchbase Cluster.
