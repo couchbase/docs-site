@@ -40,10 +40,9 @@ The Couchbase SDKs allows applications to access a Couchbase cluster.
 They offer traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
 
 .Docs and API References 
+[#table_sdk,cols="25,66,66"]
 |===
-| SDK
-| 
-| 
+| SDK | Documentation | API Reference
 
 | Java SDK
 | xref:3.1@java-sdk:hello-world:overview.adoc[Docs]
@@ -144,7 +143,10 @@ xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 == Distributed ACID Transactions Libraries
 
 .Docs and API References 
+[#table_txn_library,cols="25,66,66"]
 |===
+| Transaction Library | Documentation | API Reference
+
 | Java
 | xref:3.1@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-transactions-java/index.html[API Reference]
