@@ -15,11 +15,11 @@ content:
   - url: ~/Couchbase/docs/docs-server/
     branches: [release/6.5, release/6.6, release/7.0]
   - url: ~/Couchbase/docs/docs-sdk-common/
-    branches: [release/6.0, release/6.5, release/6.6]
+    branches: [release/6.0, release/6.5, release/6.6, release/7.0]
   - url: ~/Couchbase/docs/docs-sdk-java/
-    branches: [release/2.7, release/3.0, release/3.1]
+    branches: [release/2.7, release/3.0, release/3.1, release/3.2]
   - url: ~/Couchbase/docs/docs-sdk-c/
-    branches: [release/2.10, release/3.0, release/3.1]
+    branches: [release/2.10, release/3.0, release/3.1, release/3.2]
   - url: ~/Couchbase/docs/docs-sdk-dotnet/
     branches: [release/2.7, release/3.0, release/3.1]
   - url: ~/Couchbase/docs/docs-sdk-go/
@@ -33,7 +33,7 @@ content:
   - url: ~/Couchbase/docs/docs-sdk-ruby/
     branches: [release/3.0, release/3.1]
   - url: ~/Couchbase/docs/docs-sdk-scala/
-    branches: [release/1.0, release/1.1]
+    branches: [release/1.0, release/1.1, release/1.2]
 
 asciidoc:
   attributes:

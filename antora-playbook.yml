@@ -51,7 +51,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/docs-sdk-c
-    branches: [release/3.1, release/3.0, release/2.10]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.10]
   - url: https://github.com/couchbase/docs-txn-cxx
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
@@ -59,7 +59,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-go
     branches: [release/2.3, release/2.2, release/2.1, release/2.0, release/1.6, release/1.5]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.1, release/3.0, release/2.7]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.7]
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [release/3.1, release/3.0, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-php
@@ -69,7 +69,9 @@ content:
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [release/3.1, release/3.0]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/1.1, release/1.0]
+    branches: [release/1.2, release/1.1, release/1.0]
+  - url: https://github.com/couchbase/docs-sdk-extensions
+    branches: [main]
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite

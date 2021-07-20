@@ -52,7 +52,7 @@ The Java SDK forms the cornerstone of our JVM clients.
 It allows Java applications to access a Couchbase Server cluster.
 The Java SDK offers traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
 []
-xref:3.1@java-sdk:hello-world:overview.adoc[Java SDK 3.1]
+xref:3.2@java-sdk:hello-world:overview.adoc[Java SDK 3.1]
 
 [.column]
 ====== {empty}
@@ -62,7 +62,7 @@ xref:3.1@java-sdk:hello-world:overview.adoc[Java SDK 3.1]
 Our new Scala SDK allows Scala applications to access a Couchbase Server cluster.
 It offers synchronous, asynchronous, and reactive APIs for flexibility and maximum performance.
 []
-xref:1.1@scala-sdk:hello-world:overview.adoc[Scala SDK 1.1]
+xref:1.2@scala-sdk:hello-world:overview.adoc[Scala SDK 1.1]
 
 [.column]
 ====== {empty}
@@ -83,7 +83,7 @@ The Couchbase C SDK (`libcouchbase`) enables C and C++ programs to access a Couc
 The C SDK is also commonly used as a core dependency of SDKs written in other language to provide a common implementation and high performance.
 Libcouchbase also contains the `cbc` suite of command line tools.
 []
-xref:3.1@c-sdk:hello-world:overview.adoc[C SDK 3.1]
+xref:3.2@c-sdk:hello-world:overview.adoc[C SDK 3.1]
 
 
 [.column]
@@ -140,6 +140,50 @@ xref:2.3@go-sdk:hello-world:overview.adoc[Go SDK 2.3]
 ++++
 </div>
 ++++
+
+
+=== SDK Extension Libraries
+[]
+Shipped as separate libraries.
+
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+====== {empty}
+.Distributed ACID Transactions
+
+[.content]
+Distributed ACID Transactions are operations that ensure that when multiple documents need to be modified such that only the successful modification of all justifies the modification of any, either all the modifications do occur successfully; or none of them occurs. 
+[]
+xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transactions]
+
+[.column]
+====== {empty}
+.Field Level Encryption
+
+[.content]
+Fields within a JSON document can be securely encrypted by the SDK to support FIPS 140-2 compliance.
+This is a client-side implementation, with encryption and decryption handled by the Couchbase client SDK.
+[]
+xref:sdk-extensions::field-level-encryption.adoc[Field Level Encryption]
+
+[.column]
+====== {empty}
+.Response Time Observability
+
+[.content]
+Health indicators can tell you a lot about the performance of an application. Monitoring them is vital both during its development and production lifecycle.
+For a database, performance is best encapsulated via per-request performance.
+[]
+xref:sdk-extensions::response-time-observability.adoc[Response Time Observability]
+
++++
+</div>
++++
+
 
 === SDK doctor
 []
