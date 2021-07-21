@@ -73,7 +73,7 @@ xref:couchbase-lite::introduction.adoc[Learn more]
 
 [.content]
 Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
-
++
 xref:home:sdk.adoc[Learn more]
 
 [.column]
@@ -81,7 +81,7 @@ xref:home:sdk.adoc[Learn more]
 
 [.content]
 Use the command-line interface (CLI) tools and REST API to manage and monitor your Couchbase deployment. 
-
++
 xref:server:cli:cli-intro.adoc[Couchbase CLI]
 xref:server:rest-api:rest-intro.adoc[REST API Reference]
 
@@ -90,7 +90,7 @@ xref:server:rest-api:rest-intro.adoc[REST API Reference]
 
 [.content]
 A modern shell to interact with Couchbase Server and Cloud. 
-
++
 https://couchbase.sh[Learn more]
 
 ++++
@@ -103,17 +103,14 @@ https://couchbase.sh[Learn more]
 ++++
 
 [.column]
-.Developer Portal
-https://developer.couchbase.com[Developer Portal]
+.https://developer.couchbase.com[Developer Portal]
 
 
 [.column]
-.Academy
-https://learn.couchbase.com/store[Academy]
+.https://learn.couchbase.com/store[Academy]
 
 [.column]
-.Community
-https://forums.couchbase.com/[Community]
+.https://forums.couchbase.com/[Community]
 
 ++++
 </div>
