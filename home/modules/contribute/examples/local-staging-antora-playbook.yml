@@ -34,6 +34,8 @@ content:
     branches: [release/3.0, release/3.1]
   - url: ~/Couchbase/docs/docs-sdk-scala/
     branches: [release/1.0, release/1.1, release/1.2]
+  - url: ~/Couchbase/docs/docs-sdk-kotlin/
+    branches: [1.0dp1]
 
 asciidoc:
   attributes:
