@@ -37,18 +37,18 @@ image::get-the-agility-of-sql-and-the-flexibility-of-json.svg[,300]
 .Couchbase Cloud (DBaaS)
 
 [.content]
-A fully-managed database as a service designed to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
+Take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. Store, query, and analyze any amount of data, on a cloud service provider of your choice, all in a few clicks. Explore Couchbase Cloud, our fully-managed database as a service offering.
 
-xref:cloud::index.adoc[Learn more]
+xref:cloud::index.adoc[Couchbase Cloud]
 
 [.column]
 ====== {empty}
 .Couchbase Server
 
 [.content]
-An open source, distributed, JSON document database. It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
+Explore Couchbase Server, a modern, distributed document database with all the desired capabilities of a relational database and more. It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
 
-xref:server:getting-started:start-here.adoc[Learn more]
+xref:server:getting-started:start-here.adoc[Couchbase Server]
 
 [.column]
 ====== {empty}
@@ -57,7 +57,7 @@ xref:server:getting-started:start-here.adoc[Learn more]
 [.content]
 Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combined with Couchbase Server, it provides fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
 
-xref:couchbase-lite::introduction.adoc[Learn more]
+xref:couchbase-lite::introduction.adoc[Couchbase Lite]
 
 ++++
 </div>
@@ -75,7 +75,7 @@ xref:couchbase-lite::introduction.adoc[Learn more]
 [.content]
 Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
 
-xref:home:sdk.adoc[Learn more]
+xref:home:sdk.adoc[Developer Docs]
 
 [.column]
 ====== {empty}
@@ -91,10 +91,10 @@ xref:server:cli:cli-intro.adoc[Couchbase CLI] | xref:server:rest-api:rest-intro.
 .Couchbase Shell
 
 [.content]
-A modern shell to interact with Couchbase Server and Cloud. 
-Explore Couchbase Shell, now in Beta.
+A modern shell to interact with Couchbase Server and Cloud, now available. 
+Couchbase Shell public Beta is now available.
 
-https://couchbase.sh[Learn more]
+https://couchbase.sh[Explore Couchbase Shell]
 
 ++++
 </div>
@@ -157,33 +157,33 @@ https://forums.couchbase.com/[Community]
 ====== {empty}
 [.content]
 
-Couchbase SDK and Connectors
-* Java SDK
-* Scala SDK
-* .NET SDK
-* C SDK
-* Node.js SDK
-* PHP SDK
-* Python SDK
-* Ruby SDK
-* Go SDK
-* Elasticsearch Connector
-* Kafka Connector
-* Spark Connector
+* Couchbase SDK and Connectors
+** Java SDK
+** Scala SDK
+** .NET SDK
+** C SDK
+** Node.js SDK
+** PHP SDK
+** Python SDK
+** Ruby SDK
+** Go SDK
+** Elasticsearch Connector
+** Kafka Connector
+** Spark Connector
 
 [.column]
 ====== {empty}
 [.content]
 
-Couchbase for Mobile and Edge
-* Couchbase Lite
-** Java Android
-** Java
-** Swift
-** JavaScript
-** C#
-** Objective-C
-* Couchbase Sync Gateway
+*Couchbase for Mobile and Edge
+** Couchbase Lite
+*** Java Android
+*** Java
+*** Swift
+*** JavaScript
+*** C#
+*** Objective-C
+** Couchbase Sync Gateway
 
 ++++
 </div>
