@@ -141,6 +141,9 @@ xref:2.3@go-sdk:hello-world:overview.adoc[Go SDK 2.3]
 </div>
 ++++
 
+Try the new xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK Developer Previow].
+
+
 
 === SDK Extension Libraries
 []
