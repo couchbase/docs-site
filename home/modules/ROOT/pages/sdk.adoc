@@ -144,7 +144,6 @@ xref:2.3@go-sdk:hello-world:overview.adoc[Go SDK 2.3]
 Try the new xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK Developer Previow].
 
 
-
 === SDK Extension Libraries
 []
 Shipped as separate libraries.
@@ -211,7 +210,7 @@ xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 [.content]
 Atomicity against multiple document transactions with the Java SDK.
 []
-xref:3.1@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
+xref:3.2@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
 
 
 [.column]
@@ -221,7 +220,7 @@ xref:3.1@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Di
 [.content]
 Atomicity against multiple document transactions with the .NET SDK.
 []
-xref:3.1@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
+xref:3.2@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
 
 
 [.column]
