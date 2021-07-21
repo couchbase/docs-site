@@ -73,7 +73,7 @@ xref:couchbase-lite::introduction.adoc[Learn more]
 
 [.content]
 Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
-+
+
 xref:home:sdk.adoc[Learn more]
 
 [.column]
@@ -81,16 +81,15 @@ xref:home:sdk.adoc[Learn more]
 
 [.content]
 Use the command-line interface (CLI) tools and REST API to manage and monitor your Couchbase deployment. 
-+
-xref:server:cli:cli-intro.adoc[Couchbase CLI]
-xref:server:rest-api:rest-intro.adoc[REST API Reference]
+
+xref:server:cli:cli-intro.adoc[Couchbase CLI] | xref:server:rest-api:rest-intro.adoc[REST API]
 
 [.column]
 .Couchbase Shell[Beta]
 
 [.content]
 A modern shell to interact with Couchbase Server and Cloud. 
-+
+
 https://couchbase.sh[Learn more]
 
 ++++
@@ -103,14 +102,29 @@ https://couchbase.sh[Learn more]
 ++++
 
 [.column]
-.https://developer.couchbase.com[Developer Portal]
+. Developer Portal
+
+[.content]
+Explore a variety of resources - sample apps, videos, blogs, and more, to build applications using Couchbase.
+
+https://developer.couchbase.com[Developer Portal]
 
 
 [.column]
-.https://learn.couchbase.com/store[Academy]
+.Academy
+
+[.content]
+Explore extensive hands-on learning experiences through free, online courses or under the guidance of an in-person instructor.
+
+https://learn.couchbase.com/store[Academy]
 
 [.column]
-.https://forums.couchbase.com/[Community]
+.Community
+
+[.content]
+With open source roots, Couchbase has a rich history of collaboration and community. Connect with our developer community and get involved.
+
+https://forums.couchbase.com/[Community]
 
 ++++
 </div>
@@ -118,44 +132,71 @@ https://couchbase.sh[Learn more]
 
 == Explore Products and Services
 
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+
 * Couchbase Cloud
+
+[.column]
+====== {empty}
+[.content]
 
 * Couchbase Server
 
-[%collapsible]
-.Couchbase SDK
-* Java
-* Scala
-* .NET
-* C
-* Node.js
-* PHP
-* Python
-* Ruby
-* Go
+[.column]
+====== {empty}
+[.content]
 
-[%collapsible]
-.Couchbase Connectors
-* Elasticsearch
-* Kafka
-* Spark
-
-[%collapsible]
-.Cloud-Native Database
-* Couchbase Autonomous Operator
-* Couchbase Service Broker
-
-[%collapsible]
-.Couchbase for Mobile and Edge
-* Couchbase Lite
-** Java Android
+* Couchbase SDK
 ** Java
-** Swift
-** JavaScript
-** C#
-** Objective-C
-* Couchbase Sync Gateway
+** Scala
+** .NET
+** C
+** Node.js
+** PHP
+** Python
+** Ruby
+** Go
 
+[.column]
+====== {empty}
+[.content]
+
+* Couchbase Connectors
+** Elasticsearch
+** Kafka
+** Spark
+
+[.column]
+====== {empty}
+[.content]
+
+* Cloud-Native Database
+** Couchbase Autonomous Operator
+** Couchbase Service Broker
+
+[.column]
+====== {empty}
+[.content]
+
+* Couchbase for Mobile and Edge
+** Couchbase Lite
+*** Java Android
+*** Java
+*** Swift
+*** JavaScript
+*** C#
+*** Objective-C
+** Couchbase Sync Gateway
+
+++++
+</div>
+++++
 
 == Feedback and Contributions
 ++++
@@ -164,15 +205,18 @@ https://couchbase.sh[Learn more]
 
 [.column]
 .Provide Feedback
+
 xref:server:introduction:contact-couchbase.adoc[Provide Feedback]
 
 
 [.column]
 .Contact Support
+
 xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
 
 [.column]
 .Contribute
+
 xref:home:contribute:index.adoc[Contribute to the Documentation]
 
 ++++
