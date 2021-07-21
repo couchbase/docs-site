@@ -69,6 +69,7 @@ xref:couchbase-lite::introduction.adoc[Learn more]
 ++++
 
 [.column]
+====== {empty}
 .SDK and Connectors
 
 [.content]
@@ -77,6 +78,7 @@ Couchbase SDKs allow applications to access a Couchbase cluster and the big data
 xref:home:sdk.adoc[Learn more]
 
 [.column]
+====== {empty}
 .CLI and REST APIs
 
 [.content]
@@ -85,10 +87,12 @@ Use the command-line interface (CLI) tools and REST API to manage and monitor yo
 xref:server:cli:cli-intro.adoc[Couchbase CLI] | xref:server:rest-api:rest-intro.adoc[REST API]
 
 [.column]
-.Couchbase Shell[Beta]
+====== {empty}
+.Couchbase Shell
 
 [.content]
 A modern shell to interact with Couchbase Server and Cloud. 
+Explore Couchbase Shell, now in Beta.
 
 https://couchbase.sh[Learn more]
 
@@ -102,7 +106,8 @@ https://couchbase.sh[Learn more]
 ++++
 
 [.column]
-. Developer Portal
+====== {empty}
+.Developer Portal
 
 [.content]
 Explore a variety of resources - sample apps, videos, blogs, and more, to build applications using Couchbase.
@@ -111,6 +116,7 @@ https://developer.couchbase.com[Developer Portal]
 
 
 [.column]
+====== {empty}
 .Academy
 
 [.content]
@@ -119,6 +125,7 @@ Explore extensive hands-on learning experiences through free, online courses or 
 https://learn.couchbase.com/store[Academy]
 
 [.column]
+====== {empty}
 .Community
 
 [.content]
@@ -141,41 +148,7 @@ https://forums.couchbase.com/[Community]
 [.content]
 
 * Couchbase Cloud
-
-[.column]
-====== {empty}
-[.content]
-
 * Couchbase Server
-
-[.column]
-====== {empty}
-[.content]
-
-* Couchbase SDK
-** Java
-** Scala
-** .NET
-** C
-** Node.js
-** PHP
-** Python
-** Ruby
-** Go
-
-[.column]
-====== {empty}
-[.content]
-
-* Couchbase Connectors
-** Elasticsearch
-** Kafka
-** Spark
-
-[.column]
-====== {empty}
-[.content]
-
 * Cloud-Native Database
 ** Couchbase Autonomous Operator
 ** Couchbase Service Broker
@@ -184,15 +157,33 @@ https://forums.couchbase.com/[Community]
 ====== {empty}
 [.content]
 
-* Couchbase for Mobile and Edge
-** Couchbase Lite
-*** Java Android
-*** Java
-*** Swift
-*** JavaScript
-*** C#
-*** Objective-C
-** Couchbase Sync Gateway
+Couchbase SDK and Connectors
+* Java SDK
+* Scala SDK
+* .NET SDK
+* C SDK
+* Node.js SDK
+* PHP SDK
+* Python SDK
+* Ruby SDK
+* Go SDK
+* Elasticsearch Connector
+* Kafka Connector
+* Spark Connector
+
+[.column]
+====== {empty}
+[.content]
+
+Couchbase for Mobile and Edge
+* Couchbase Lite
+** Java Android
+** Java
+** Swift
+** JavaScript
+** C#
+** Objective-C
+* Couchbase Sync Gateway
 
 ++++
 </div>
