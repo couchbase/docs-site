@@ -52,7 +52,7 @@ The Java SDK forms the cornerstone of our JVM clients.
 It allows Java applications to access a Couchbase Server cluster.
 The Java SDK offers traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
 []
-xref:3.2@java-sdk:hello-world:overview.adoc[Java SDK 3.1]
+xref:3.2@java-sdk:hello-world:overview.adoc[Java SDK 3.2]
 
 [.column]
 ====== {empty}
@@ -62,7 +62,7 @@ xref:3.2@java-sdk:hello-world:overview.adoc[Java SDK 3.1]
 Our new Scala SDK allows Scala applications to access a Couchbase Server cluster.
 It offers synchronous, asynchronous, and reactive APIs for flexibility and maximum performance.
 []
-xref:1.2@scala-sdk:hello-world:overview.adoc[Scala SDK 1.1]
+xref:1.2@scala-sdk:hello-world:overview.adoc[Scala SDK 1.2]
 
 [.column]
 ====== {empty}
@@ -83,7 +83,7 @@ The Couchbase C SDK (`libcouchbase`) enables C and C++ programs to access a Couc
 The C SDK is also commonly used as a core dependency of SDKs written in other language to provide a common implementation and high performance.
 Libcouchbase also contains the `cbc` suite of command line tools.
 []
-xref:3.2@c-sdk:hello-world:overview.adoc[C SDK 3.1]
+xref:3.2@c-sdk:hello-world:overview.adoc[C SDK 3.2]
 
 
 [.column]
@@ -140,6 +140,8 @@ xref:2.3@go-sdk:hello-world:overview.adoc[Go SDK 2.3]
 ++++
 </div>
 ++++
+
+Try the new xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK Developer Previow].
 
 
 === SDK Extension Libraries
@@ -208,7 +210,7 @@ xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 [.content]
 Atomicity against multiple document transactions with the Java SDK.
 []
-xref:3.1@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
+xref:3.2@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
 
 
 [.column]
@@ -218,7 +220,7 @@ xref:3.1@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Di
 [.content]
 Atomicity against multiple document transactions with the .NET SDK.
 []
-xref:3.1@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
+xref:3.2@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
 
 
 [.column]
