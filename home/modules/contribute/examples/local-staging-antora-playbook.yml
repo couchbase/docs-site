@@ -16,14 +16,16 @@ content:
     branches: [release/6.5, release/6.6, release/7.0]
   - url: ~/Couchbase/docs/docs-sdk-common/
     branches: [release/6.0, release/6.5, release/6.6, release/7.0]
-  - url: ~/Couchbase/docs/docs-sdk-java/
-    branches: [release/2.7, release/3.0, release/3.1, release/3.2]
   - url: ~/Couchbase/docs/docs-sdk-c/
     branches: [release/2.10, release/3.0, release/3.1, release/3.2]
   - url: ~/Couchbase/docs/docs-sdk-dotnet/
     branches: [release/2.7, release/3.0, release/3.1]
   - url: ~/Couchbase/docs/docs-sdk-go/
     branches: [release/1.6, release/2.0, release/2.1, release/2.2, release/2.3]
+  - url: ~/Couchbase/docs/docs-sdk-java/
+    branches: [release/2.7, release/3.0, release/3.1, release/3.2]
+  - url: ~/Couchbase/docs/docs-sdk-kotlin/
+    branches: [1.0dp1]
   - url: ~/Couchbase/docs/docs-sdk-nodejs/
     branches: [release/2.6, release/3.0, release/3.1]
   - url: ~/Couchbase/docs/docs-sdk-php/
@@ -34,7 +36,7 @@ content:
     branches: [release/3.0, release/3.1]
   - url: ~/Couchbase/docs/docs-sdk-scala/
     branches: [release/1.0, release/1.1, release/1.2]
-
+    
 asciidoc:
   attributes:
     experimental: ''
