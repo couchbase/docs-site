@@ -63,7 +63,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-kotlin
     branches: [1.0dp1]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [release/3.1, release/3.0, release/2.6]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-php
     branches: [release/3.1, release/3.0, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-python
