@@ -94,7 +94,7 @@ xref:3.2@c-sdk:hello-world:overview.adoc[C SDK 3.2]
 The Node.js SDK allows you to connect to a Couchbase Server cluster from Node.js.
 The Node.js SDK is a native Node.js module using the very fast `libcouchbase` library to handle communicating with the cluster over the Couchbase binary protocol.
 []
-xref:3.1@nodejs-sdk:hello-world:overview.adoc[Node.js SDK 3.1]
+xref:3.2@nodejs-sdk:hello-world:overview.adoc[Node.js SDK 3.2]
 
 [.column]
 ====== {empty}
