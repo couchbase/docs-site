@@ -2,32 +2,162 @@
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :!sectids:
+:tabs:
 
 = Couchbase Server
 ++++
-<div class="card-row">
+<div class="card-row two-column-row">
 ++++
 
 [.column]
 ====== {empty}
 [.content]
+Couchbase is the modern database for enterprise applications.
+
 Couchbase Server is an open source, distributed, JSON document database.
-It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries and a powerful query engine for executing SQL-like queries.
+It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
 For mobile and Internet of Things environments Couchbase also runs natively on-device and manages synchronization to the server.
 
 [.column]
 ====== {empty}
-[.media-left]
-image::n1ql-ansi-join-example.png[,450]
+[.content]
+
+[source,n1ql]
+----
+SELECT *
+FROM `travel-sample`.inventory.route
+JOIN `travel-sample`.inventory.airline
+ON route.airlineid = META(airline).id
+WHERE airline.country = "France";
+----
 
 ++++
 </div>
 ++++
 
 == Get Started
+
+New to Couchbase? Use the following guidelines to create and connect to the database and run your first query.
+
+The Getting Started guide provides a detailed walk-through and provides additional information.
+
+[{tabs}] 
+==== 
+cbq:: 
++ 
+--
+Step 1 Get Couchbase:: For simplicity and ease of getting Couchbase Server up and running quickly, we recommend using the pre-configured Docker image. Run the following command on a terminal:
+[source, bash]
+----
+docker run -t --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase/server:enterprise-7.0.0-sandbox
+----
+
+NOTE: The Docker container image that is used here sets up a 'sandbox' version of Couchbase Server. It’s based on the Enterprise Edition and contains scripts that automatically configure several Couchbase components during installation. Although this particular image works great for a demo, it is not meant for production. For information about using containers to run Couchbase Server in production, see the Cloud and Container Deployment Overview.
+
+Step 2 Connect to the database::
+You can connect to the database through the interactive query shell. 
+. To run the interactive query shell, cbq, open a console window on your computer and enter the following:
+[source,bash]
+----
+bash -c "clear && docker exec -it db sh"
+----
+
+. Navigate to the Couchbase bin directory and start cbq:
+[source,bash]
+----
+cd /opt/couchbase/bin
+./cbq -u Administrator -p password -engine=http://127.0.0.1:8091/
+----
+
+Step 3 CRUD:: Run the following query to look for the names of (at a maximum) ten hotels that accept pets, in the city of Medway:
+[source,cbq]
+----
+SELECT h.name 
+FROM default:`travel-sample`.inventory.hotel h 
+WHERE h.city="Medway" AND h.pets_ok=true 
+LIMIT 10;
+----
+--
+
+Query Workbench::
++
+--
+Step 1 Get Couchbase:: For simplicity and ease of getting Couchbase Server up and running quickly, we recommend using the pre-configured Docker image. Run the following command on a terminal:
+[source, bash]
+----
+docker run -t --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase/server:enterprise-7.0.0-sandbox
+----
+
+NOTE: The Docker container image that is used here sets up a 'sandbox' version of Couchbase Server. It’s based on the Enterprise Edition and contains scripts that automatically configure several Couchbase components during installation. Although this particular image works great for a demo, it is not meant for production. For information about using containers to run Couchbase Server in production, see the Cloud and Container Deployment Overview.
+
+Step 2 Connect to the database:: The Query Workbench is an interactive tool that lets you compose and execute queries. To use the Query Workbench, log into the Couchbase Server Web Console, and then click *Query*.
+
+Step 3 CRUD:: Before running a query, set the query_context to reference a collection with its relative path. On the Query Workbench, set the query_context by selecting the bucket and scope from the drop-down.
+
+Enter the following N1QL query in the Query Editor that looks for the names of (at a maximum) ten hotels that accept pets, in the city of Medway:
+[source,n1ql]
+----
+SELECT h.name 
+FROM default:`travel-sample`.inventory.hotel h 
+WHERE h.city="Medway" AND h.pets_ok=true 
+LIMIT 10;
+----
+--
+
+Java SDK::
++
+--
+Step 1 Get Couchbase:: 
+. For simplicity and ease of getting Couchbase Server up and running quickly, we recommend using the pre-configured Docker image. Run the following command on a terminal:
+[source, bash]
+----
+docker run -t --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase/server:enterprise-7.0.0-sandbox
+----
+
+NOTE: The Docker container image that is used here sets up a 'sandbox' version of Couchbase Server. It’s based on the Enterprise Edition and contains scripts that automatically configure several Couchbase components during installation. Although this particular image works great for a demo, it is not meant for production. For information about using containers to run Couchbase Server in production, see the Cloud and Container Deployment Overview.
+
+. Install the Couchbase Java SDK using Maven or Gradle. 
++
+[source,java]
+----
+// Maven: Use your favorite dependency management tool to install the SDK 
+<dependencies>
+    <dependency>
+        <groupId>com.couchbase.client</groupId>
+        <artifactId>java-client</artifactId>
+        <version>3.2.0</version>
+    </dependency>
+</dependencies>
+----
++
+[source,java]
+----
+// Gradle: Use your favorite dependency management tool to install the SDK
+implementation 'com.couchbase.client:java-client:3.2.0'
+----
+
+Step 2 Connect to the database::
+When developing client code on the same VM or machine as the Couchbase Server, simply use `localhost` as your connection string:
+[source,java]
+----
+Cluster cluster = Cluster.connect(localhost, username, password);
+----
+
+Step 3 CRUD::
+
+[source,java]
+----
+include::java-sdk:howtos:example$Queries.java[tag=simple,indent=0]
+}
+--
+====
+
+
+== Develop Using Couchbase
 ++++
 <div class="card-row three-column-row">
 ++++
+
 
 [.column]
 .Concepts
