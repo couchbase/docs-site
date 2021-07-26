@@ -24,7 +24,7 @@ For mobile and Internet of Things environments Couchbase also runs natively on-d
 
 [source,java]
 ----
-include::java-sdk:howtos:example$StartUsing.java[tag=connect_local,indent=0]
+include::java-sdk:example$StartUsing.java[tag=connect_local,indent=0]
 ----
 
 ++++
@@ -41,6 +41,10 @@ If you are an existing Couchbase user looking for information to upgrade to Couc
 
 Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[tutorials] show how to build and operate apps using Couchbase. 
 
+++++
+</div>
+++++
+
 == Develop Using Couchbase
 
 ++++
@@ -49,16 +53,10 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 
 [.column]
 .Build your first sample app
-
 * xref:server:sdk:development-intro.adoc[Developer's Intro] 
+* xref:server:learn:data/document-data-model.adoc[Data Model]
 * xref:java-sdk:hello-world:start-using-sdk.adoc[Hello World Using SDKs]
 * xref:java-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-
-[.column]
-.Data modeling
-
-[.content]
-* xref:server:learn:data/document-data-model.adoc[Data Model]
 
 [.column]
 .Data Service
@@ -68,9 +66,8 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 * xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
 
 
- [.column]
+[.column]
 .Querying Data
-
 * xref:server:n1ql:query.adoc[Query Service]
 * xref:server:learn:services-and-indexes/indexes/indexes.adoc[Using Indexes for Query Performance]
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
@@ -92,13 +89,11 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 * xref:server:learn:services-and-indexes/indexes/index_pushdowns.adoc[Index Pushdowns]
 * xref:server:learn:services-and-indexes/indexes/storage-modes.adoc[Index Storage Settings]
 
-
 [.column]
 .Distributed ACID Transactions
 * xref:server:learn:data/transactions.adoc[Transactions]
 * xref:server:learn:data/durability.adoc[Durability]
  
-
 [.column]
 .Analytics
 * xref:server:learn:services-and-indexes/services/analytics-service.adoc[Analytics Service]
@@ -121,8 +116,9 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 
 [.column]
 .Backup and Restore
+* xref:server:learn:services-and-indexes/services/backup-service.adoc[Backup Service]
 * xref:server:backup-restore:backup-restore.adoc[Manage Backup and Restore]
-* xref:server:backup-restore:cbbackupmgr-tutorial.adoc[cbbackupmgr Tutorial]
+* xref:server:rest-api:backup-rest-api.adoc[Backup Service REST API]
 
 ++++
 </div>
@@ -167,8 +163,14 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 [.column]
 .Migrating data to scopes and collections
 
+[.content]
+After xref:server:install:upgrade.adoc[Upgrading Couchbase Server] to v7.0, you can choose to migrate your data to leverage the benefits offered by scopes and collections. See _Migrating data to scopes and collections_ for details.
+
 [.column]
 .Migrating from other (relational or document) database to Couchbase
+
+[.content]
+You can migrating from any relational or document database to Couchbase. While the exact steps are dependent on your application needs, the following examples provide a guidance on migrating from a different database to Couchbase.  
 
 ++++
 </div>
@@ -183,14 +185,27 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 [.column]
 .Couchbase CLI
 * xref:server:cli:cli-intro.adoc[Couchbase CLI]
-[.column]
-.Query Workbench
 
 [.column]
-.Query Command Line (cbq)
+.Query Workbench
+* xref:server:tools:query-workbench.adoc[Query Workbench]
+
+[.column]
+.Command Line Shell for N1QL
+* xref:server:tools:cbq-shell.adoc[cbq]
+
+[.column]
+.Backup Manager Tool
+* xref:server:backup-restore:enterprise-backup-restore.adoc[cbbackupmgr]
+
+[.column]
+.Data Import and Export
+* xref:server:tools:cbimport.adoc[cbimport]
+* xref:server:tools:cbexport.adoc[cbexport]
 
 [.column]
 .Couchbase Shell (in Beta)
+* https://couchbase.sh[Couchbase Shell]
 
 ++++
 </div>
@@ -211,6 +226,7 @@ xref:server:rest-api:rest-intro.adoc[REST API Reference]
 
 [.column]
 .Server Metrics Reference
+xref:server:metrics-reference:metrics-reference.adoc[Metrics Reference]
 
 ++++
 </div>
@@ -224,21 +240,14 @@ xref:server:rest-api:rest-intro.adoc[REST API Reference]
 
 [.column]
 .Release Notes
-
-[.content]
 * xref:server:release-notes:relnotes.adoc[Release Notes]
 
 [.column]
 .What's new
-
 * xref:server:introduction:whats-new.adoc[What's new]
-
-[.content]
 
 [.column]
 .Editions
-
-[.content]
 * xref:server:introduction:editions.adoc[Couchbase Server Editions]
 
 ++++
