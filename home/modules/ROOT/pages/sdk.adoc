@@ -72,7 +72,7 @@ xref:1.2@scala-sdk:hello-world:overview.adoc[Scala SDK 1.2]
 The .NET SDK enables you to interact with a Couchbase Server cluster from the .NET Framework using any Common Language Runtime (CLR) language, including C#, F#, and VB.NET. 
 It offers both a traditional synchronous API and an asynchronous API based on the Task-based Asynchronous Pattern (TAP).
 []
-xref:3.1@dotnet-sdk:hello-world:overview.adoc[.NET SDK 3.1]
+xref:3.2@dotnet-sdk:hello-world:overview.adoc[.NET SDK 3.2]
 
 [.column]
 ====== {empty}
@@ -104,7 +104,7 @@ xref:3.2@nodejs-sdk:hello-world:overview.adoc[Node.js SDK 3.2]
 The PHP SDK allows you to connect to a Couchbase Server cluster from PHP.
 The PHP SDK is a native PHP extension and uses the Couchbase high-performance C library `libcouchbase` to handle communicating to the cluster over Couchbase binary protocols.
 []
-xref:3.1@php-sdk:hello-world:overview.adoc[PHP SDK 3.1]
+xref:3.2@php-sdk:hello-world:overview.adoc[PHP SDK 3.2]
 
 [.column]
 ====== {empty}
@@ -115,7 +115,7 @@ The Python SDK allows Python applications to access a Couchbase Server cluster.
 The Python SDK offers a traditional synchronous API as well as integration with twisted, gevent, and asyncio.
 It depends on the C SDK (`libcouchbase`) and utilizes it for performance and reliability.
 []
-xref:3.1@python-sdk:hello-world:overview.adoc[Python SDK 3.1]
+xref:3.2@python-sdk:hello-world:overview.adoc[Python SDK 3.2]
 
 [.column]
 ====== {empty}
@@ -143,6 +143,9 @@ xref:2.3@go-sdk:hello-world:overview.adoc[Go SDK 2.3]
 
 Try the new xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK Developer Previow].
 
+
+[.column]
+====== {empty}
 
 === SDK Extension Libraries
 []
