@@ -22,13 +22,9 @@ For mobile and Internet of Things environments Couchbase also runs natively on-d
 ====== {empty}
 [.content]
 
-[source,n1ql]
+[source,java]
 ----
-SELECT *
-FROM `travel-sample`.inventory.route
-JOIN `travel-sample`.inventory.airline
-ON route.airlineid = META(airline).id
-WHERE airline.country = "France";
+include::java-sdk:howtos:example$StartUsing.java[tag=connect_local,indent=0]
 ----
 
 ++++
@@ -37,186 +33,32 @@ WHERE airline.country = "France";
 
 == Get Started
 
-New to Couchbase? Use the following guidelines to create and connect to the database and run your first query.
+New to Couchbase? Read the xref:server:getting-started:start-here.adoc[Getting Started] guide for step-by-step instructions to create and connect to the database and run your first query. 
 
-The Getting Started guide provides a detailed walk-through and provides additional information.
+If you are migrating from a different database to Couchbase, see _Migrating from other (relational or document) database to Couchbase_.
 
-[{tabs}] 
-==== 
-cbq:: 
-+ 
---
-Step 1 Get Couchbase:: For simplicity and ease of getting Couchbase Server up and running quickly, we recommend using the pre-configured Docker image. Run the following command on a terminal:
-[source, bash]
-----
-docker run -t --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase/server:enterprise-7.0.0-sandbox
-----
+If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.0 and use collections and scopes, see the _Upgrading to Server 7.0_ and _Migrating Data to Use Scopes and Collections_.
 
-NOTE: The Docker container image that is used here sets up a 'sandbox' version of Couchbase Server. It’s based on the Enterprise Edition and contains scripts that automatically configure several Couchbase components during installation. Although this particular image works great for a demo, it is not meant for production. For information about using containers to run Couchbase Server in production, see the Cloud and Container Deployment Overview.
-
-Step 2 Connect to the database::
-You can connect to the database through the interactive query shell. 
-. To run the interactive query shell, cbq, open a console window on your computer and enter the following:
-[source,bash]
-----
-bash -c "clear && docker exec -it db sh"
-----
-
-. Navigate to the Couchbase bin directory and start cbq:
-[source,bash]
-----
-cd /opt/couchbase/bin
-./cbq -u Administrator -p password -engine=http://127.0.0.1:8091/
-----
-
-Step 3 CRUD:: Run the following query to look for the names of (at a maximum) ten hotels that accept pets, in the city of Medway:
-[source,cbq]
-----
-SELECT h.name 
-FROM default:`travel-sample`.inventory.hotel h 
-WHERE h.city="Medway" AND h.pets_ok=true 
-LIMIT 10;
-----
---
-
-Query Workbench::
-+
---
-Step 1 Get Couchbase:: For simplicity and ease of getting Couchbase Server up and running quickly, we recommend using the pre-configured Docker image. Run the following command on a terminal:
-[source, bash]
-----
-docker run -t --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase/server:enterprise-7.0.0-sandbox
-----
-
-NOTE: The Docker container image that is used here sets up a 'sandbox' version of Couchbase Server. It’s based on the Enterprise Edition and contains scripts that automatically configure several Couchbase components during installation. Although this particular image works great for a demo, it is not meant for production. For information about using containers to run Couchbase Server in production, see the Cloud and Container Deployment Overview.
-
-Step 2 Connect to the database:: The Query Workbench is an interactive tool that lets you compose and execute queries. To use the Query Workbench, log into the Couchbase Server Web Console, and then click *Query*.
-
-Step 3 CRUD:: Before running a query, set the query_context to reference a collection with its relative path. On the Query Workbench, set the query_context by selecting the bucket and scope from the drop-down.
-
-Enter the following N1QL query in the Query Editor that looks for the names of (at a maximum) ten hotels that accept pets, in the city of Medway:
-[source,n1ql]
-----
-SELECT h.name 
-FROM default:`travel-sample`.inventory.hotel h 
-WHERE h.city="Medway" AND h.pets_ok=true 
-LIMIT 10;
-----
---
-
-Java SDK::
-+
---
-Step 1 Get Couchbase:: 
-. For simplicity and ease of getting Couchbase Server up and running quickly, we recommend using the pre-configured Docker image. Run the following command on a terminal:
-[source, bash]
-----
-docker run -t --name db -p 8091-8094:8091-8094 -p 11210:11210 couchbase/server:enterprise-7.0.0-sandbox
-----
-
-NOTE: The Docker container image that is used here sets up a 'sandbox' version of Couchbase Server. It’s based on the Enterprise Edition and contains scripts that automatically configure several Couchbase components during installation. Although this particular image works great for a demo, it is not meant for production. For information about using containers to run Couchbase Server in production, see the Cloud and Container Deployment Overview.
-
-. Install the Couchbase Java SDK using Maven or Gradle. 
-+
-[source,java]
-----
-// Maven: Use your favorite dependency management tool to install the SDK 
-<dependencies>
-    <dependency>
-        <groupId>com.couchbase.client</groupId>
-        <artifactId>java-client</artifactId>
-        <version>3.2.0</version>
-    </dependency>
-</dependencies>
-----
-+
-[source,java]
-----
-// Gradle: Use your favorite dependency management tool to install the SDK
-implementation 'com.couchbase.client:java-client:3.2.0'
-----
-
-Step 2 Connect to the database::
-When developing client code on the same VM or machine as the Couchbase Server, simply use `localhost` as your connection string:
-[source,java]
-----
-Cluster cluster = Cluster.connect(localhost, username, password);
-----
-
-Step 3 CRUD::
-
-[source,java]
-----
-include::java-sdk:howtos:example$Queries.java[tag=simple,indent=0]
-}
---
-====
-
+Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[tutorials] show how to build and operate apps using Couchbase. 
 
 == Develop Using Couchbase
+
 ++++
-<div class="card-row three-column-row">
+<div class="card-row two-column-row">
 ++++
 
-
 [.column]
-.Concepts
-* xref:server:introduction:why-couchbase.adoc[Why Couchbase?]
-* xref:server:learn:data/n1ql-versus-sql.adoc[N1QL versus SQL]
-* xref:server:learn:architecture-overview.adoc[Overview of Couchbase Server]
-* xref:server:learn:data/data.adoc[Data & Transactions]
-* xref:server:learn:buckets-memory-and-storage/buckets-memory-and-storage.adoc[Database Clustering: Buckets, Memory, and Storage]
-* xref:server:learn:clusters-and-availability/clusters-and-availability.adoc[Clusters and Availability]
-* xref:server:learn:services-and-indexes/services-and-indexes.adoc[Services]
+.Build your first sample app
 
-[.column]
-.Installation
-* xref:server:install:get-started.adoc[Deployment Options]
-* xref:server:install:install-production-deployment.adoc[Deployment Guidelines]
-* xref:server:install:install-intro.adoc[Installation]
-*  xref:server:install:upgrade.adoc[Upgrading Couchbase Server]
-* xref:server:install:install-uninstalling.adoc[Uninstall]
-
-[.column]
-.Tutorials
-* xref:server:getting-started:start-here.adoc[Get Started]
-* xref:tutorials:quick-start:quickstart-docker-image-manual-cb65.adoc[Developer Bootstrap Exercises]
-* xref:server:getting-started:starter-kits.adoc[Starter Kits]
+* xref:server:sdk:development-intro.adoc[Developer's Intro] 
 * xref:java-sdk:hello-world:start-using-sdk.adoc[Hello World Using SDKs]
-
-++++
-</div>
-++++
-
-== Develop
-++++
-<div class="card-row three-column-row">
-++++
-
-[.column]
-.CRUD Operations
-* xref:server:sdk:development-intro.adoc[Developer's Intro]
-* xref:server:sdk:overview.adoc[SDKs]
 * xref:java-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
 
 [.column]
-.Transactions & Durability
-* xref:server:learn:data/transactions.adoc[Transactions]
-* xref:server:learn:data/durability.adoc[Durability]
+.Data modeling
 
-
-[.column]
-.Data Modeling
+[.content]
 * xref:server:learn:data/document-data-model.adoc[Data Model]
-
-++++
-</div>
-++++
-
-=== Services
-++++
-<div class="card-row three-column-row">
-++++
 
 [.column]
 .Data Service
@@ -225,8 +67,24 @@ include::java-sdk:howtos:example$Queries.java[tag=simple,indent=0]
 * xref:server:learn:buckets-memory-and-storage/expiration.adoc[Bucket Time to Live and Document Expiry]
 * xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
 
+
+ [.column]
+.Querying Data
+
+* xref:server:n1ql:query.adoc[Query Service]
+* xref:server:learn:services-and-indexes/indexes/indexes.adoc[Using Indexes for Query Performance]
+* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
+* xref:java-sdk:howtos:n1ql-queries-with-sdk.adoc[N1QL Query Using SDKs]
+
 [.column]
-.Index Service
+.Full-text Search
+* xref:server:fts:full-text-intro.adoc[Search Service]
+* xref:server:fts:fts-troubleshooting.adoc[Troubleshooting and FAQs]
+* xref:java-sdk:howtos:full-text-searching-with-sdk.adoc[Full Text Search Using SDKs]
+
+
+[.column]
+.Choosing the right index
 * xref:server:learn:services-and-indexes/services/index-service.adoc[Index Service]
 * xref:server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc[Global Secondary Indexes]
 * xref:server:learn:services-and-indexes/indexes/index-replication.adoc[Availability and Performance]
@@ -234,127 +92,46 @@ include::java-sdk:howtos:example$Queries.java[tag=simple,indent=0]
 * xref:server:learn:services-and-indexes/indexes/index_pushdowns.adoc[Index Pushdowns]
 * xref:server:learn:services-and-indexes/indexes/storage-modes.adoc[Index Storage Settings]
 
-[.column]
-.Query Service
-* xref:server:n1ql:query.adoc[Query Service]
-* xref:server:learn:services-and-indexes/indexes/indexes.adoc[Using Indexes for Query Performance]
-* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
-* xref:java-sdk:howtos:n1ql-queries-with-sdk.adoc[N1QL Query Using SDKs]
 
 [.column]
-.Search Service
-* xref:server:fts:full-text-intro.adoc[Search Service]
-* xref:server:fts:fts-troubleshooting.adoc[Troubleshooting and FAQs]
-* xref:java-sdk:howtos:full-text-searching-with-sdk.adoc[Full Text Search Using SDKs]
-
+.Distributed ACID Transactions
+* xref:server:learn:data/transactions.adoc[Transactions]
+* xref:server:learn:data/durability.adoc[Durability]
+ 
 
 [.column]
-.Analytics Service
+.Analytics
 * xref:server:learn:services-and-indexes/services/analytics-service.adoc[Analytics Service]
 * xref:server:analytics:1_intro.adoc[N1QL for Analytics]
 * xref:server:analytics:primer-beer.adoc[Tutorial]
 * xref:java-sdk:howtos:analytics-using-sdk.adoc[Analytics Using SDKs]
 
 [.column]
-.Eventing Service
+.Eventing
 * xref:server:eventing:eventing-overview.adoc[Eventing Service]
 * xref:server:eventing:eventing-language-constructs.adoc[Language Constructs]
 * xref:server:eventing:eventing-examples.adoc[Examples: Using the Eventing Service]
 
-++++
-</div>
-++++
-
-=== SDKs
-++++
-<div class="card-row three-column-row">
-++++
+[.column]
+.Replication
+* xref:server:learn:clusters-and-availability/replication-architecture.adoc[Cross Data Center Replication(XDCR) Architecture]
+* xref:server:learn:clusters-and-availability/xdcr-filtering.adoc[XDCR Advanced Filtering]
+* xref:server:learn:clusters-and-availability/xdcr-cloud-deployment.adoc[XDCR Cloud Deployment]
+* xref:server:manage:manage-xdcr/xdcr-management-overview.adoc[Manage XDCR]
 
 [.column]
-.Java SDK
-* xref:java-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
-* xref:java-sdk:howtos:managing-connections.adoc[Managing Connections]
-* xref:java-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-* xref:java-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
-* xref:java-sdk:howtos:collecting-information-and-logging.adoc[Logging]
-* https://docs.couchbase.com/sdk-api/couchbase-java-client/[API Reference] 
-
-[.column]
-.Scala SDK
-* xref:scala-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
-* xref:scala-sdk:howtos:managing-connections.adoc[Managing Connections]
-* xref:scala-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-* xref:scala-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
-* xref:scala-sdk:howtos:collecting-information-and-logging.adoc[Logging]
-* https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference]
-
-[.column]
-.C SDK
-* xref:c-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
-* xref:c-sdk:howtos:managing-connections.adoc[Managing Connections]
-* xref:c-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-* xref:c-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
-* https://docs.couchbase.com/sdk-api/couchbase-c-client/[API Reference]
-
-[.column]
-.Node.js SDK
-* xref:nodejs-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
-* xref:nodejs-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-* xref:nodejs-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
-* xref:nodejs-sdk:howtos:collecting-information-and-logging.adoc[Logging]
-* https://docs.couchbase.com/sdk-api/couchbase-node-client/[API Reference]
-
-[.column]
-.NET SDK
-* xref:dotnet-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
-* xref:dotnet-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-* xref:dotnet-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
-* xref:dotnet-sdk:howtos:collecting-information-and-logging.adoc[Logging]
-* https://docs.couchbase.com/sdk-api/couchbase-net-client/[API Reference]
-
-[.column]
-.PHP SDK
-* xref:php-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
-* xref:php-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-* xref:php-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
-* xref:php-sdk:howtos:collecting-information-and-logging.adoc[Logging]
-* https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[API Reference]
-
-[.column]
-.Python SDK
-* xref:python-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
-* xref:python-sdk:howtos:managing-connections.adoc[Managing Connections]
-* xref:python-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-* xref:python-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
-* xref:python-sdk:howtos:collecting-information-and-logging.adoc[Logging]
-* https://docs.couchbase.com/sdk-api/couchbase-python-client/[API Reference]
-
-[.column]
-.Go SDK
-* xref:go-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
-* xref:go-sdk:howtos:managing-connections.adoc[Managing Connections]
-* xref:go-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-* xref:go-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
-* xref:go-sdk:howtos:collecting-information-and-logging.adoc[Logging]
-* https://pkg.go.dev/github.com/couchbase/gocb/v2?tab=doc[API Reference]
-
-[.column]
-.Ruby SDK
-* xref:ruby-sdk:hello-world:start-using-sdk.adoc[Start Using the SDK]
-* xref:ruby-sdk:howtos:managing-connections.adoc[Managing Connections]
-* xref:ruby-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-* xref:ruby-sdk:howtos:concurrent-document-mutations.adoc[Concurrent Document Mutations]
-* xref:ruby-sdk:howtos:collecting-information-and-logging.adoc[Logging]
-* https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[API Reference]
+.Backup and Restore
+* xref:server:backup-restore:backup-restore.adoc[Manage Backup and Restore]
+* xref:server:backup-restore:cbbackupmgr-tutorial.adoc[cbbackupmgr Tutorial]
 
 ++++
 </div>
 ++++
 
+== Administration
 
-== Administration and Tools
 ++++
-<div class="card-row three-column-row">
+<div class="card-row two-column-row">
 ++++
 
 [.column]
@@ -362,30 +139,6 @@ include::java-sdk:howtos:example$Queries.java[tag=simple,indent=0]
 * xref:server:manage:management-overview.adoc[Overview]
 * xref:server:manage:manage-nodes/node-management-overview.adoc[Manage Nodes and Clusters]
 * xref:server:manage:manage-buckets/bucket-management-overview.adoc[Manage Buckets]
-
-
-[.column]
-.Monitoring and Logging
-* xref:server:manage:monitor/monitor-intro.adoc[Monitoring]
-* xref:server:manage:manage-logging/manage-logging.adoc[Logging]
-* xref:server:manage:manage-settings/manage-settings.adoc[Settings]
-* xref:server:manage:troubleshoot/troubleshoot.adoc[Troubleshoot]
-
-[.column]
-.REST API and Tools
-* xref:server:tools:cbimport.adoc[cbimport]
-* xref:server:tools:cbexport.adoc[cbexport]
-* xref:server:cli:cli-intro.adoc[Couchbase CLI]
-* xref:server:rest-api:rest-intro.adoc[REST API Reference]
-
-++++
-</div>
-++++
-
-== {empty}
-++++
-<div class="card-row three-column-row">
-++++
 
 [.column]
 .Security
@@ -397,37 +150,96 @@ include::java-sdk:howtos:example$Queries.java[tag=simple,indent=0]
 
 
 [.column]
-.Replication
-* xref:server:learn:clusters-and-availability/replication-architecture.adoc[Cross Data Center Replication(XDCR) Architecture]
-* xref:server:learn:clusters-and-availability/xdcr-filtering.adoc[XDCR Advanced Filtering]
-* xref:server:learn:clusters-and-availability/xdcr-cloud-deployment.adoc[XDCR Cloud Deployment]
-* xref:server:manage:manage-xdcr/xdcr-management-overview.adoc[Manage XDCR]
-
+.Monitoring and Logging
+* xref:server:manage:monitor/monitor-intro.adoc[Monitoring]
+* xref:server:manage:manage-logging/manage-logging.adoc[Logging]
+* xref:server:manage:manage-settings/manage-settings.adoc[Settings]
+* xref:server:manage:troubleshoot/troubleshoot.adoc[Troubleshoot]
 
 [.column]
-.Backup and Restore
-* xref:server:backup-restore:backup-restore.adoc[Manage Backup and Restore]
-* xref:server:backup-restore:cbbackupmgr-tutorial.adoc[cbbackupmgr Tutorial]
+.Installation
+* xref:server:install:get-started.adoc[Deployment Options]
+* xref:server:install:install-production-deployment.adoc[Deployment Guidelines]
+* xref:server:install:install-intro.adoc[Installation]
+*  xref:server:install:upgrade.adoc[Upgrading Couchbase Server]
+* xref:server:install:install-uninstalling.adoc[Uninstall]
+
+[.column]
+.Migrating data to scopes and collections
+
+[.column]
+.Migrating from other (relational or document) database to Couchbase
 
 ++++
 </div>
 ++++
 
-== Quick Links
+== Couchbase Server Tools
+
 ++++
 <div class="card-row two-column-row">
 ++++
 
 [.column]
-.Project Docs
-* xref:server:release-notes:relnotes.adoc[Release Notes]
-* xref:server:introduction:editions.adoc[Couchbase Server Editions]
+.Couchbase CLI
+* xref:server:cli:cli-intro.adoc[Couchbase CLI]
+[.column]
+.Query Workbench
 
 [.column]
-.Feedback
-* xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
-* xref:home:contribute:index.adoc[Contribute to the Documentation]
+.Query Command Line (cbq)
 
+[.column]
+.Couchbase Shell (in Beta)
+
+++++
+</div>
+++++
+
+== References
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.N1QL Language Reference
+
+[.column]
+.REST API Reference
+xref:server:rest-api:rest-intro.adoc[REST API Reference]
+
+[.column]
+.Server Metrics Reference
+
+++++
+</div>
+++++
+
+== Product Docs
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Release Notes
+
+[.content]
+* xref:server:release-notes:relnotes.adoc[Release Notes]
+
+[.column]
+.What's new
+
+* xref:server:introduction:whats-new.adoc[What's new]
+
+[.content]
+
+[.column]
+.Editions
+
+[.content]
+* xref:server:introduction:editions.adoc[Couchbase Server Editions]
 
 ++++
 </div>
