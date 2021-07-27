@@ -146,6 +146,7 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-120/ui-bundle.zip
+    url: https://deploy-preview-115--cb-docs-ui.netlify.app/dist/ui-bundle.zip
+    snapshot: true
 output:
   dir: ./public
