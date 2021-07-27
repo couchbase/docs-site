@@ -105,7 +105,7 @@ pipeline {
               }
             }
             // NOTE we don't use --fetch here since it was already done when running the xref validator
-            sh "antora --cache-dir=./.cache/antora --clean --generator=@antora/site-generator-ms --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
+            sh "antora --cache-dir=./.cache/antora --clean --generator=@antora/site-generator-ms --attribute=export-site-navigation-data --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
         sh 'node scripts/populate-icon-defs.js public'
