@@ -1,6 +1,6 @@
 # $(npm bin)/antora --clean --fetch antora-playbook.yml
 # or
-# $(npm bin)/antora --clean --generator=@antora/site-generator-ms --attribute=export-site-navigation-data --fetch antora-playbook.yml
+# $(npm bin)/antora --clean --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --fetch antora-playbook.yml
 site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
