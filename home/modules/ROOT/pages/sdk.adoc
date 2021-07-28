@@ -38,8 +38,7 @@ collection.reactive.upsert("document-key", json)
 
 The Couchbase SDKs allows applications to access a Couchbase cluster. 
 They offer traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
-
-.Docs and API References 
+ 
 [#table_sdk,cols="25,66,66"]
 |===
 | SDK | Documentation | API Reference
@@ -87,7 +86,7 @@ Try the new xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK Developer P
 [.column]
 ====== {empty}
 
-=== SDK Extension Libraries
+== SDK Extension Libraries
 []
 Shipped as separate libraries.
 
@@ -129,20 +128,8 @@ xref:sdk-extensions::response-time-observability.adoc[Response Time Observabilit
 </div>
 +++
 
-
-=== SDK doctor
-[]
-SDK doctor is a tool to diagnose application-server-side connectivity issues with your Couchbase Cluster.
-xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
-
-
-[.column]
-====== {empty}
-
-
 == Distributed ACID Transactions Libraries
 
-.Docs and API References 
 [#table_txn_library,cols="25,66,66"]
 |===
 | Transaction Library | Documentation | API Reference
@@ -160,54 +147,26 @@ xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 | https://docs.couchbase.com/sdk-api/couchbase-transactions-cxx-1.0.0/index.html[API Reference]
 |===
 
-++++
-<div class="card-row three-column-row">
-++++
 
 [.column]
 ====== {empty}
-.Java Transactions
 
-[.content]
-Atomicity against multiple document transactions with the Java SDK.
-[]
-xref:3.2@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Distributed Transactions]
+
+== SDK doctor
+
+SDK doctor is a tool to diagnose application-server-side connectivity issues with your Couchbase Cluster.
+xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 
 
 [.column]
 ====== {empty}
-.C# Transactions
 
-[.content]
-Atomicity against multiple document transactions with the .NET SDK.
-[]
-xref:3.2@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[C# Distributed Transactions]
-
-
-[.column]
-====== {empty}
-.C++ Transactions
-
-[.content]
-Atomicity against multiple document transactions with the {cpp} API.
-[]
-xref:1.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[C++ Distributed Transactions]
-
-++++
-</div>
-++++
-
-
-[.column]
-====== {empty}
 
 == Mobile SDKs
 
 ++++
 <div class="card-row three-column-row">
 ++++
-
-
 
 [.column]
 ====== {empty}
@@ -216,7 +175,7 @@ xref:1.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[C++ Distribut
 [.content]
 You to use Couchbase Lite as an embedded database within your app with various JavaScript frameworks' APIs.
 []
-xref:2.8@couchbase-lite::javascript.adoc[Couchbase Lite JavaScript 2.8]
+xref:couchbase-lite::javascript.adoc[Couchbase Lite JavaScript]
 
 
 [.column]
@@ -226,7 +185,7 @@ xref:2.8@couchbase-lite::javascript.adoc[Couchbase Lite JavaScript 2.8]
 [.content]
 Create your mobile app in C#, using .NET Standard 2.0.
 []
-xref:2.8@couchbase-lite:csharp:quickstart.adoc[Couchbase Lite C# 2.8]
+xref:couchbase-lite:csharp:quickstart.adoc[Couchbase Lite C#]
 
 
 [.column]
@@ -236,7 +195,7 @@ xref:2.8@couchbase-lite:csharp:quickstart.adoc[Couchbase Lite C# 2.8]
 [.content]
 Develop and deploy your Couchbase Lite applications to a JVM environment. 
 []
-xref:2.8@couchbase-lite:java:quickstart.adoc[Couchbase Lite Java 2.8]
+xref:couchbase-lite:java:quickstart.adoc[Couchbase Lite Java]
 
 [.column]
 ====== {empty}
@@ -245,7 +204,7 @@ xref:2.8@couchbase-lite:java:quickstart.adoc[Couchbase Lite Java 2.8]
 [.content]
 Create an Android app, using Couchbase Lite as an embedded database.
 []
-xref:2.8@couchbase-lite:android:quickstart.adoc[Couchbase Lite Java Android 2.8]
+xref:couchbase-lite:android:quickstart.adoc[Couchbase Lite Java Android]
 
 
 [.column]
@@ -255,7 +214,7 @@ xref:2.8@couchbase-lite:android:quickstart.adoc[Couchbase Lite Java Android 2.8]
 [.content]
 Create an iOS app in Swift, using Couchbase Lite as an embedded database.
 []
-xref:2.8@couchbase-lite:swift:quickstart.adoc[Couchbase Lite Swift 2.8]
+xref:couchbase-lite:swift:quickstart.adoc[Couchbase Lite Swift]
 
 [.column]
 ====== {empty}
@@ -264,9 +223,7 @@ xref:2.8@couchbase-lite:swift:quickstart.adoc[Couchbase Lite Swift 2.8]
 [.content]
 Create an iOS app in Objective-C, using Couchbase Lite as an embedded database.
 []
-xref:2.8@couchbase-lite:objc:quickstart.adoc[Couchbase Lite Objective-C 2.8]
-
-
+xref:couchbase-lite:objc:quickstart.adoc[Couchbase Lite Objective-C]
 
 ++++
 </div>
