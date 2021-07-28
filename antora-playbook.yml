@@ -138,6 +138,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
   extensions:
+  - ./lib/asciidoctor-performance-patch.js
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
