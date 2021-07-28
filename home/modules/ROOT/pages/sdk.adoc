@@ -45,31 +45,31 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | SDK | Documentation | API Reference
 
 | Java SDK
-| xref:3.1@java-sdk:hello-world:overview.adoc[Docs]
+| xref:3.2@java-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-java-client[API Reference]
 
 | Scala SDK
-| xref:1.1@scala-sdk:hello-world:overview.adoc[Docs]
+| xref:1.2@scala-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference]
 
 | .NET SDK
-| xref:3.1@dotnet-sdk:hello-world:overview.adoc[Docs]
+| xref:3.2@dotnet-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-net-client[API Reference]
 
 | C SDK
-| xref:3.1@c-sdk:hello-world:overview.adoc[Docs]
+| xref:3.2@c-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[API Reference]
 
 | Node.js SDK
-| xref:3.1@nodejs-sdk:hello-world:overview.adoc[Docs]
+| xref:3.2@nodejs-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-node-client[API Reference]
 
 | PHP SDK
-| xref:3.1@php-sdk:hello-world:overview.adoc[Docs]
+| xref:3.2@php-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[API Reference]
 
 | Python SDK
-| xref:3.1@python-sdk:hello-world:overview.adoc[Docs]
+| xref:3.2@python-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-python-client/[API Reference]
 
 | Ruby SDK
