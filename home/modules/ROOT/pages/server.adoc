@@ -22,9 +22,19 @@ For mobile and Internet of Things environments Couchbase also runs natively on-d
 ====== {empty}
 [.content]
 
-[source,java]
 ----
-include::java-sdk:example$StartUsing.java[tag=connect_local,indent=0]
+try {
+  final QueryResult result = cluster.query("SELECT * FROM `travel-sample`.inventory.airline LIMIT 100",
+      queryOptions().metrics(true));
+
+  for (JsonObject row : result.rowsAsObject()) {
+    System.out.println("Found row: " + row);
+  }
+
+  System.out.println("Reported execution time: " + result.metaData().metrics().get().executionTime());
+} catch (CouchbaseException ex) {
+  ex.printStackTrace();
+}
 ----
 
 ++++
@@ -33,17 +43,37 @@ include::java-sdk:example$StartUsing.java[tag=connect_local,indent=0]
 
 == Get Started
 
-New to Couchbase? Read the xref:server:getting-started:start-here.adoc[Getting Started] guide for step-by-step instructions to create and connect to the database and run your first query. 
+++++
+<div class="card-row three-column-row">
+++++
 
+[.column]
+.New to Couchbase?
+
+[.content]
+Read the Getting Started guide for step-by-step instructions to create and connect to the database and run your first query.
+{empty}
+xref:server:getting-started:start-here.adoc[Get Started]
+
+[.column]
+.Upgrading to v7.0?
+
+[.content]
+If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.0 and use collections and scopes, see xref:server:install:migrating-application-data.adoc[Upgrade and migrate your data to v7.0].
+
+[.column]
+.Migrating to Couchbase?
+
+[.content]
 If you are migrating from a different database to Couchbase, see _Migrating from other (relational or document) database to Couchbase_.
-
-If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.0 and use collections and scopes, see the _Upgrading to Server 7.0_ and _Migrating Data to Use Scopes and Collections_.
-
-Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[tutorials] show how to build and operate apps using Couchbase. 
 
 ++++
 </div>
 ++++
+
+=== Tutorials
+
+Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to learn how to build and operate apps using Couchbase. 
 
 == Develop Using Couchbase
 
@@ -61,56 +91,57 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 [.column]
 .Data Service
 * xref:server:learn:services-and-indexes/services/data-service.adoc[Data Service]
-* xref:server:learn:buckets-memory-and-storage/vbuckets.adoc[Database Sharding Using vBuckets]
-* xref:server:learn:buckets-memory-and-storage/expiration.adoc[Bucket Time to Live and Document Expiry]
-* xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
+* xref:server:learn:data/scopes-and-collections.adoc[Scopes and Collections]
+* xref:server:learn:data/extended-attributes-fundamentals.adoc[Extended Attributes (XATTRs)]
+* xref:java-sdk:howtos:kv-operations.adoc[CRUD using Java SDK]
 
 
 [.column]
 .Querying Data
 * xref:server:n1ql:query.adoc[Query Service]
-* xref:server:learn:services-and-indexes/indexes/indexes.adoc[Using Indexes for Query Performance]
+* xref:server:learn:services-and-indexes/indexes/indexing-and-query-perf.adoc[Indexes and Query Performance]
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
-* xref:java-sdk:howtos:n1ql-queries-with-sdk.adoc[N1QL Query Using SDKs]
+* xref:java-sdk:howtos:n1ql-queries-with-sdk.adoc[Query Using Java SDK]
 
 [.column]
 .Full-text Search
 * xref:server:fts:full-text-intro.adoc[Search Service]
-* xref:server:fts:fts-troubleshooting.adoc[Troubleshooting and FAQs]
-* xref:java-sdk:howtos:full-text-searching-with-sdk.adoc[Full Text Search Using SDKs]
-
+* xref:server:fts:fts-analyzers.adoc[Understanding Analyzers]
+* xref:server:fts:fts.adoc[Creating Full Text Indexes]
+* xref:java-sdk:howtos:full-text-searching-with-sdk.adoc[Search Using Java SDK]
 
 [.column]
 .Choosing the right index
 * xref:server:learn:services-and-indexes/services/index-service.adoc[Index Service]
-* xref:server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc[Global Secondary Indexes]
-* xref:server:learn:services-and-indexes/indexes/index-replication.adoc[Availability and Performance]
-* xref:server:learn:services-and-indexes/indexes/index-scans.adoc[Index Scans]
-* xref:server:learn:services-and-indexes/indexes/index_pushdowns.adoc[Index Pushdowns]
-* xref:server:learn:services-and-indexes/indexes/storage-modes.adoc[Index Storage Settings]
-
-[.column]
-.Distributed ACID Transactions
-* xref:server:learn:data/transactions.adoc[Transactions]
-* xref:server:learn:data/durability.adoc[Durability]
+* xref:server:learn:services-and-indexes/indexes/index-lifecycle.adoc[Index Lifecyle]
+* xref:server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc[Using Indexes]
+* xref:rest-api:rest-index-service.adoc[Index Service REST API]
  
 [.column]
 .Analytics
 * xref:server:learn:services-and-indexes/services/analytics-service.adoc[Analytics Service]
 * xref:server:analytics:1_intro.adoc[N1QL for Analytics]
 * xref:server:analytics:primer-beer.adoc[Tutorial]
-* xref:java-sdk:howtos:analytics-using-sdk.adoc[Analytics Using SDKs]
+* xref:java-sdk:howtos:analytics-using-sdk.adoc[Analytics Using Java SDK]
 
 [.column]
 .Eventing
 * xref:server:eventing:eventing-overview.adoc[Eventing Service]
 * xref:server:eventing:eventing-language-constructs.adoc[Language Constructs]
 * xref:server:eventing:eventing-examples.adoc[Examples: Using the Eventing Service]
+* xref:server:eventing:eventing-api.adoc[Eventing REST API]
+
+[.column]
+.Transactions
+* xref:server:learn:data/transactions.adoc[Transactions]
+* xref:server:learn:data/durability.adoc[Durability]
+* xref:java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Transaction Library]
+* xref:server:n1ql:n1ql-language-reference/transactions.adoc[N1QL Support for Transactions]
+
 
 [.column]
 .Replication
 * xref:server:learn:clusters-and-availability/replication-architecture.adoc[Cross Data Center Replication(XDCR) Architecture]
-* xref:server:learn:clusters-and-availability/xdcr-filtering.adoc[XDCR Advanced Filtering]
 * xref:server:learn:clusters-and-availability/xdcr-cloud-deployment.adoc[XDCR Cloud Deployment]
 * xref:server:manage:manage-xdcr/xdcr-management-overview.adoc[Manage XDCR]
 
@@ -131,6 +162,13 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 ++++
 
 [.column]
+.Buckets, Memory, and Storage
+* xref:server:learn:buckets-memory-and-storage/vbuckets.adoc[Database Sharding using vBuckets]
+* xref:server:learn:memory-and-storage.adoc[Memory and Storage]
+* xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
+* 
+
+[.column]
 .Cluster Management
 * xref:server:manage:management-overview.adoc[Overview]
 * xref:server:manage:manage-nodes/node-management-overview.adoc[Manage Nodes and Clusters]
@@ -143,7 +181,6 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 * xref:server:manage:manage-security/manage-certificates.adoc[Manage Certificates]
 * xref:server:learn:security/authorization-overview.adoc[Authorization]
 * xref:server:manage:manage-security/manage-users-and-roles.adoc[Manage Users, Groups, and Roles]
-
 
 [.column]
 .Monitoring and Logging
@@ -161,16 +198,9 @@ Additionally, the tutorials at https://developer.couchbase.com/topic/tutorials/[
 * xref:server:install:install-uninstalling.adoc[Uninstall]
 
 [.column]
-.Migrating data to scopes and collections
-
-[.content]
-After xref:server:install:upgrade.adoc[Upgrading Couchbase Server] to v7.0, you can choose to migrate your data to leverage the benefits offered by scopes and collections. See _Migrating data to scopes and collections_ for details.
-
-[.column]
-.Migrating from other (relational or document) database to Couchbase
-
-[.content]
-You can migrating from any relational or document database to Couchbase. While the exact steps are dependent on your application needs, the following examples provide a guidance on migrating from a different database to Couchbase.  
+.Migrating to v7.0
+* xref:server:install:migrating-application-data.adoc[Migrating to a collection-based data model]
+* xref:server:install:migrate.adoc[Migrating to Couchbase]
 
 ++++
 </div>
@@ -219,14 +249,19 @@ You can migrating from any relational or document database to Couchbase. While t
 
 [.column]
 .N1QL Language Reference
+* xref:n1ql:n1ql-language-reference/index.adoc[N1QL for Query]
+* xref:analytics:1_intro.adoc[N1QL for Analytics]
 
 [.column]
 .REST API Reference
 xref:server:rest-api:rest-intro.adoc[REST API Reference]
 
 [.column]
-.Server Metrics Reference
-xref:server:metrics-reference:metrics-reference.adoc[Metrics Reference]
+.More References
+* xref:server:metrics-reference:metrics-reference.adoc[Metrics Reference]
+* xref:xdcr-reference:xdcr-reference-intro.adoc[XDCR Reference]
+* xref:audit-event-reference:audit-event-reference.adoc[Audit Events Reference]
+* xref:rebalance-reference:rebalance-reference.adoc[Rebalance Reference]
 
 ++++
 </div>
