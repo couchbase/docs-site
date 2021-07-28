@@ -139,6 +139,60 @@ https://forums.couchbase.com/[Community]
 
 == Explore Products and Services
 
+.Products and Services 
+[#table_products-services]
+|===
+| Cloud | Server | SDK and Connectors | Mobile
+
+| Couchbase Cloud
+a| Couchbase Server
+
+Couchbase Autonomous Operator
+
+Couchbase Service Broker
+
+a| xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
+
+xref:scala-sdk:hello-world:overview.adoc[Couchbase Scala SDK]
+
+xref:dotnet-sdk:hello-world:overview.adoc[Couchbase .NET SDK]
+
+xref:c-sdk:hello-world:overview.adoc[Couchbase C SDK]
+
+xref:nodejs-sdk:hello-world:overview.adoc[Couchbase Node.js SDK]
+
+xref:php-sdk:hello-world:overview.adoc[Couchbase PHP SDK]
+
+xref:python-sdk:hello-world:overview.adoc[Couchbase Python SDK]
+
+xref:ruby-sdk:hello-world:overview.adoc[Couchbase Ruby SDK]
+
+xref:go-sdk:hello-world:overview.adoc[Couchbase Go SDK]
+
+xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK Developer Preview]
+
+xref:elasticsearch-connector::getting-started.adoc[Couchbase Elasticsearch Connector]
+
+xref:kafka-connector::quickstart.adoc[Couchbase Kafka Connector]
+
+xref:spark-connector::getting-started.adoc[Couchbase Spark Connector]
+
+a| xref:couchbase-lite::javascript.adoc[Couchbase Lite JavaScript]
+
+xref:couchbase-lite:csharp:quickstart.adoc[Couchbase Lite C#]
+
+xref:couchbase-lite:java:quickstart.adoc[Couchbase Lite Java]
+
+xref:couchbase-lite:android:quickstart.adoc[Couchbase Lite Java Android]
+
+xref:couchbase-lite:swift:quickstart.adoc[Couchbase Lite Swift]
+
+xref:couchbase-lite:objc:quickstart.adoc[Couchbase Lite Objective-C]
+
+xref:sync-gateway:index.adoc[Couchbase Sync Gateway]
+|===
+
+////
 ++++
 <div class="card-row">
 ++++
@@ -188,6 +242,7 @@ https://forums.couchbase.com/[Community]
 ++++
 </div>
 ++++
+////
 
 == Feedback and Contributions
 ++++
