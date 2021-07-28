@@ -8,9 +8,8 @@
 //
 //  $ node populate-icon-defs.js ../public
 //
-const fs = require('fs')
+const { promises: fsp } = require('fs')
 const ospath = require('path')
-const { promisify } = require('util')
 const iconPacks = {
   fas: (() => {
     try {
@@ -39,7 +38,7 @@ const ICON_RX = /<i class="fa[brs]? fa-[^" ]+/g
 const REQUIRED_ICON_NAMES_RX = /\biconNames: *(\[.*?\])/
 
 function runOnHtmlFiles (dir, fn) {
-  return promisify(fs.readdir)(dir, { withFileTypes: true }).then((dirents) => {
+  return fsp.readdir(dir, { withFileTypes: true }).then((dirents) => {
     return dirents.reduce(async (accum, dirent) => {
       const entries = dirent.isDirectory()
         ? await runOnHtmlFiles(ospath.join(dir, dirent.name), fn)
@@ -55,7 +54,7 @@ function camelCase (str) {
 
 function scanForIconNames (dir) {
   return runOnHtmlFiles(dir, (path) =>
-    promisify(fs.readFile)(path).then((contents) =>
+    fsp.readFile(path).then((contents) =>
       contents.includes(ICON_SIGNATURE_CS)
         ? contents.toString().match(ICON_RX).map((it) => it.substr(10))
         : undefined
@@ -67,7 +66,7 @@ function scanForIconNames (dir) {
   const siteDir = process.argv[2] || 'public'
   const iconDefsFile = ospath.join(siteDir, '_/js/vendor/fontawesome-icon-defs.js')
   const iconDefs = await scanForIconNames(siteDir).then((iconNames) =>
-    promisify(fs.readFile)(iconDefsFile, 'utf8').then((contents) => {
+    fsp.readFile(iconDefsFile, 'utf8').then((contents) => {
       try {
         const requiredIconNames = JSON.parse(contents.match(REQUIRED_ICON_NAMES_RX)[1].replace(/'/g, '"'))
         iconNames = [...new Set(iconNames.concat(requiredIconNames))]
@@ -92,9 +91,5 @@ function scanForIconNames (dir) {
       }, new Map())
     )
   )
-  await promisify(fs.writeFile)(
-    iconDefsFile,
-    `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`,
-    'utf8'
-  )
+  await fsp.writeFile(iconDefsFile, `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`, 'utf8')
 })()
