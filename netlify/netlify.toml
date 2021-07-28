@@ -3,7 +3,7 @@ ignore = "false"
 publish = "public"
 
 [build.environment]
-ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+ANTORA_CACHE_DIR = "~+/node_modules/.cache/antora"
 CI = "true"
 NODE_VERSION = "10"
 NODE_OPTIONS = "--max-old-space-size=4096"
