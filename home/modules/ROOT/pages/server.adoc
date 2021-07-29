@@ -5,22 +5,14 @@
 :tabs:
 
 = Couchbase Server
-++++
-<div class="card-row two-column-row">
-++++
 
-[.column]
-====== {empty}
-[.content]
+== {empty}
+
 Couchbase is the modern database for enterprise applications.
 
 Couchbase Server is an open source, distributed, JSON document database.
 It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
 For mobile and Internet of Things environments Couchbase also runs natively on-device and manages synchronization to the server.
-
-[.column]
-====== {empty}
-[.content]
 
 ----
 try {
@@ -37,41 +29,26 @@ try {
 }
 ----
 
-++++
-</div>
-++++
-
 == Get Started
 
-++++
-<div class="card-row three-column-row">
-++++
 
-[.column]
-.New to Couchbase?
+=== New to Couchbase?
 
-[.content]
 Read the Getting Started guide for step-by-step instructions to create and connect to the database and run your first query.
 {empty}
 xref:server:getting-started:start-here.adoc[Get Started]
 
-[.column]
-.Upgrading to v7.0?
+=== Upgrading to v7.0?
 
-[.content]
 If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.0 and use collections and scopes, see xref:server:install:migrating-application-data.adoc[Upgrade and migrate your data to v7.0].
 
-[.column]
-.Migrating to Couchbase?
 
-[.content]
+=== Migrating to Couchbase?
+
 If you are migrating from a different database to Couchbase, see _Migrating from other (relational or document) database to Couchbase_.
 
-++++
-</div>
-++++
 
-=== Tutorials
+=== Explore Couchbase Tutorials
 
 Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to learn how to build and operate apps using Couchbase. 
 
@@ -166,7 +143,6 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 * xref:server:learn:buckets-memory-and-storage/vbuckets.adoc[Database Sharding using vBuckets]
 * xref:server:learn:memory-and-storage.adoc[Memory and Storage]
 * xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
-* 
 
 [.column]
 .Cluster Management
@@ -202,40 +178,14 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 * xref:server:install:migrating-application-data.adoc[Migrating to a collection-based data model]
 * xref:server:install:migrate.adoc[Migrating to Couchbase]
 
-++++
-</div>
-++++
-
-== Couchbase Server Tools
-
-++++
-<div class="card-row two-column-row">
-++++
-
 [.column]
-.Couchbase CLI
+.Couchbase Server Tools
 * xref:server:cli:cli-intro.adoc[Couchbase CLI]
-
-[.column]
-.Query Workbench
 * xref:server:tools:query-workbench.adoc[Query Workbench]
-
-[.column]
-.Command Line Shell for N1QL
-* xref:server:tools:cbq-shell.adoc[cbq]
-
-[.column]
-.Backup Manager Tool
-* xref:server:backup-restore:enterprise-backup-restore.adoc[cbbackupmgr]
-
-[.column]
-.Data Import and Export
-* xref:server:tools:cbimport.adoc[cbimport]
-* xref:server:tools:cbexport.adoc[cbexport]
-
-[.column]
-.Couchbase Shell (in Beta)
-* https://couchbase.sh[Couchbase Shell]
+* xref:server:tools:cbq-shell.adoc[cbq - the command line shell for N1QL]
+* xref:server:backup-restore:enterprise-backup-restore.adoc[Backups using `cbbackupmgr`]
+* xref:server:tools:cbimport.adoc[Data Import using cbimport]
+* https://couchbase.sh[Couchbase Shell (Beta)]
 
 ++++
 </div>
@@ -275,14 +225,26 @@ xref:server:rest-api:rest-intro.adoc[REST API Reference]
 
 [.column]
 .Release Notes
+
+[.content]
+Find information about platform support changes, deprecation notifications, notable improvements, and fixed and known issues in a release.
+[]
 * xref:server:release-notes:relnotes.adoc[Release Notes]
 
 [.column]
-.What's new
+.What's New
+
+[.content]
+Find information about new features and enhancements in a release.
+[]
 * xref:server:introduction:whats-new.adoc[What's new]
 
 [.column]
 .Editions
+
+[.content]
+Couchbase Server comes in two editions: Enterprise Edition and Community Edition. Find information on the differences between the two editions here.
+[]
 * xref:server:introduction:editions.adoc[Couchbase Server Editions]
 
 ++++
