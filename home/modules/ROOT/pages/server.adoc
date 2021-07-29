@@ -37,7 +37,7 @@ try {
 
 [.column]
 ====== {empty}
-New to Couchbase
+.New to Couchbase
 
 [.content]
 Read the Getting Started guide for step-by-step instructions to create and connect to the database and run your first query.
@@ -46,21 +46,21 @@ xref:server:getting-started:start-here.adoc[Get Started]
 
 [.column]
 ====== {empty}
-Upgrading to v7.0
+.Upgrading to v7.0
 
 [.content]
 If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.0 and use collections and scopes, see xref:server:install:migrating-application-data.adoc[Upgrade and migrate your data to v7.0].
 
 [.column]
 ====== {empty}
-Migrating to Couchbase
+.Migrating to Couchbase
 
 [.content]
 Find guidance and considerations when migrating from a different database to Couchbase through this https://blog.couchbase.com/moving-from-sql-server-to-couchbase-part-1-data-modeling/[blog series]. 
 
 [.column]
 ====== {empty}
-Explore Tutorials
+.Explore Tutorials
 
 [.content]
 Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to learn how to build and operate apps using Couchbase. 
