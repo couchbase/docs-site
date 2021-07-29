@@ -29,9 +29,6 @@ try {
 }
 ----
 
-[.column]
-====== {empty}
-
 == Get Started
 
 ++++
@@ -40,7 +37,7 @@ try {
 
 [.column]
 ====== {empty}
-New to Couchbase?
+.New to Couchbase
 
 [.content]
 Read the Getting Started guide for step-by-step instructions to create and connect to the database and run your first query.
@@ -49,21 +46,21 @@ xref:server:getting-started:start-here.adoc[Get Started]
 
 [.column]
 ====== {empty}
-Upgrading to v7.0?
+.Upgrading to v7.0
 
 [.content]
 If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.0 and use collections and scopes, see xref:server:install:migrating-application-data.adoc[Upgrade and migrate your data to v7.0].
 
 [.column]
 ====== {empty}
-Migrating to Couchbase?
+.Migrating to Couchbase
 
 [.content]
-If you are migrating from a different database to Couchbase, see _Migrating from other (relational or document) database to Couchbase_.
+Find guidance and considerations when migrating from a different database to Couchbase through this https://blog.couchbase.com/moving-from-sql-server-to-couchbase-part-1-data-modeling/[blog series]. 
 
 [.column]
 ====== {empty}
-Tutorials
+.Explore Tutorials
 
 [.content]
 Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to learn how to build and operate apps using Couchbase. 
@@ -115,7 +112,7 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 * xref:server:learn:services-and-indexes/services/index-service.adoc[Index Service]
 * xref:server:learn:services-and-indexes/indexes/index-lifecycle.adoc[Index Lifecyle]
 * xref:server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc[Using Indexes]
-* xref:rest-api:rest-index-service.adoc[Index Service REST API]
+* xref:server:rest-api:rest-index-service.adoc[Index Service REST API]
  
 [.column]
 .Analytics
@@ -167,7 +164,7 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 [.column]
 .Buckets, Memory, and Storage
 * xref:server:learn:buckets-memory-and-storage/vbuckets.adoc[Database Sharding using vBuckets]
-* xref:server:learn:memory-and-storage.adoc[Memory and Storage]
+* xref:server:learn:buckets-memory-and-storage/memory-and-storage.adoc[Memory and Storage]
 * xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
 
 [.column]
@@ -202,7 +199,7 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 [.column]
 .Migrating to v7.0
 * xref:server:install:migrating-application-data.adoc[Migrating to a collection-based data model]
-* xref:server:install:migrate.adoc[Migrating to Couchbase]
+* https://blog.couchbase.com/moving-from-sql-server-to-couchbase-part-1-data-modeling/[Migrating to Couchbase]
 
 [.column]
 .Couchbase Server Tools
@@ -221,13 +218,6 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 * xref:xdcr-reference:xdcr-reference-intro.adoc[XDCR Reference]
 * xref:audit-event-reference:audit-event-reference.adoc[Audit Events Reference]
 * xref:rebalance-reference:rebalance-reference.adoc[Rebalance Reference]
-
-++++
-</div>
-++++
-
-[.column]
-====== {empty}
 
 ++++
 </div>
