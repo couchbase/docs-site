@@ -1,7 +1,6 @@
 = Couchbase Documentation
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
-:page-aliases: server:introduction:intro.adoc
 :!sectids:
 :collapsible:
 
