@@ -94,7 +94,7 @@ xref:couchbase-lite::introduction.adoc[Couchbase Lite]
 [.content]
 Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
 
-xref:sdk.adoc[Developer Docs]
+xref:home:ROOT:sdk.adoc[Developer Docs]
 
 [.column]
 ====== {empty}
