@@ -2,8 +2,10 @@
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :!sectids:
+:collapsible:
 
 = Couchbase Documentation
+
 ++++
 <div class="card-row">
 ++++
@@ -11,81 +13,244 @@
 [.column]
 ====== {empty}
 [.content]
-Find the documentation, samples, and references to help you use Couchbase and build applications. 
+_Couchbase is the modern database for enterprise applications._
+
+Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
+
+Find the documentation, samples, and references to help you use Couchbase and build applications.
 
 [.column]
 ====== {empty}
-[.media-left]
-image::get-the-agility-of-sql-and-the-flexibility-of-json.svg[,300]
+[.content]
+----
+// List the schedule of flights from Boston 
+// to San Francisco on JETBLUE
+
+SELECT DISTINCT airline.name, route.schedule
+FROM `travel-sample`.inventory.route
+  JOIN `travel-sample`.inventory.airline
+  ON KEYS route.airlineid
+WHERE route.sourceairport = "BOS"
+AND route.destinationairport = "SFO"
+AND airline.callsign = "JETBLUE";
+----
 
 ++++
 </div>
 ++++
+
+[.column]
+====== {empty}
 
 == Get Started
-++++
-<div class="card-row two-column-row">
-++++
-
-[.column]
-.Couchbase Cloud
-
-[.content]
-A fully-managed database as a service designed to take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. With just a few clicks, you can store, query, and analyze any amount of data, all on the cloud service provider of your choice.
-{empty}
-* xref:cloud::index.adoc[Get Started with Couchbase Cloud]
-
-
-[.column]
-.Couchbase Autonomous Operator (Kubernetes)
-
-[.content]
-Native integration of Couchbase Server with open source Kubernetes and Red Hat OpenShift to automate the management of common Couchbase tasks such as the configuration, creation, scaling, and recovery of Couchbase clusters.
-{empty}
-* xref:operator::overview.adoc[Get Started with Autonomous Operator]
-
-[.column]
-.Couchbase Server
-
-[.content]
-An open source, distributed, JSON document database. It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
-{empty}
-xref:server:getting-started:start-here.adoc[Get Started: Couchbase Server Enterprise]
-
-[.column]
-.Couchbase for Mobile/Edge
-
-[.content]
-Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combined with Couchbase Server, it provides fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
-{empty}
-* xref:couchbase-lite::introduction.adoc[Get Started with Couchbase Lite]
-* xref:sync-gateway::index.adoc[Get Started with Sync Gateway]
-
-++++
-</div>
-++++
-
-== Quick Links
 ++++
 <div class="card-row three-column-row">
 ++++
 
 [.column]
-.Learn More
-* xref:tutorials::index.adoc[Explore the Tutorials]
-* https://docs-archive.couchbase.com[Documentation for Previous Versions]
+====== {empty}
+.Couchbase Cloud (DBaaS)
+
+[.content]
+Take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. Store, query, and analyze any amount of data, on a cloud service provider of your choice, all in a few clicks. Explore Couchbase Cloud, our fully-managed database as a service offering.
+
+xref:cloud::index.adoc[Couchbase Cloud]
+
+[.column]
+====== {empty}
+.Couchbase Server
+
+[.content]
+Explore Couchbase Server, a modern, distributed document database with all the desired capabilities of a relational database and more. It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
+
+xref:server.adoc[Couchbase Server]
+
+[.column]
+====== {empty}
+.Couchbase Lite
+
+[.content]
+Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combined with Couchbase Server, it provides fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+
+xref:couchbase-lite::introduction.adoc[Couchbase Lite]
+
+++++
+</div>
+++++
+
+[.column]
+====== {empty}
+
+== Developer Tools
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+====== {empty}
+.SDK and Connectors
+
+[.content]
+Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
+
+xref:home:ROOT:sdk.adoc[Developer Docs]
+
+[.column]
+====== {empty}
+.CLI and REST APIs
+
+[.content]
+Use the command-line interface (CLI) tools and REST API to manage and monitor your Couchbase deployment. 
+
+xref:server:cli:cli-intro.adoc[Couchbase CLI] | xref:server:rest-api:rest-intro.adoc[REST API]
+
+[.column]
+====== {empty}
+.Couchbase Shell
+
+[.content]
+A modern shell to interact with Couchbase Server and Cloud, now available. 
+Couchbase Shell public Beta is now available.
+
+https://couchbase.sh[Explore Couchbase Shell]
+
+++++
+</div>
+++++
+
+[.column]
+====== {empty}
+
+== More Developer Resources
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+====== {empty}
+.Developer Portal
+
+[.content]
+Explore a variety of resources - sample apps, videos, blogs, and more, to build applications using Couchbase.
+
+https://developer.couchbase.com[Developer Portal]
 
 
 [.column]
-.Community Users
-* xref:tutorials:getting-started-ce:index.adoc[Get Started: Couchbase Community Edition]
-* https://forums.couchbase.com[Engage with us on Couchbase Forums]
+====== {empty}
+.Academy
+
+[.content]
+Explore extensive hands-on learning experiences through free, online courses or under the guidance of an in-person instructor.
+
+https://learn.couchbase.com/store[Academy]
 
 [.column]
-.Feedback
-* xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
-* xref:home:contribute:index.adoc[Contribute to the Documentation]
+====== {empty}
+.Community
 
+[.content]
+With open source roots, Couchbase has a rich history of collaboration and community. Connect with our developer community and get involved.
+
+https://forums.couchbase.com/[Community]
+
+++++
+</div>
+++++
+
+[.column]
+====== {empty}
+
+== Explore Products and Services
+
+[#table_products-services,cols="25,25,25,25"]
+|===
+| Cloud | Server | SDK and Connectors | Mobile
+
+| xref:cloud::index.adoc[Couchbase Cloud]
+a| xref:server.adoc[Couchbase Server]
+
+xref:operator::overview.adoc[Couchbase Autonomous Operator]
+
+xref:service-broker::index.adoc[Couchbase Service Broker]
+
+a| xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
+
+xref:scala-sdk:hello-world:overview.adoc[Couchbase Scala SDK]
+
+xref:dotnet-sdk:hello-world:overview.adoc[Couchbase .NET SDK]
+
+xref:c-sdk:hello-world:overview.adoc[Couchbase C SDK]
+
+xref:nodejs-sdk:hello-world:overview.adoc[Couchbase Node.js SDK]
+
+xref:php-sdk:hello-world:overview.adoc[Couchbase PHP SDK]
+
+xref:python-sdk:hello-world:overview.adoc[Couchbase Python SDK]
+
+xref:ruby-sdk:hello-world:overview.adoc[Couchbase Ruby SDK]
+
+xref:go-sdk:hello-world:overview.adoc[Couchbase Go SDK]
+
+xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK Developer Preview]
+
+xref:elasticsearch-connector::getting-started.adoc[Couchbase Elasticsearch Connector]
+
+xref:kafka-connector::quickstart.adoc[Couchbase Kafka Connector]
+
+xref:spark-connector::getting-started.adoc[Couchbase Spark Connector]
+
+a| xref:couchbase-lite::javascript.adoc[Couchbase Lite JavaScript]
+
+xref:couchbase-lite:csharp:quickstart.adoc[Couchbase Lite C#]
+
+xref:couchbase-lite:java:quickstart.adoc[Couchbase Lite Java]
+
+xref:couchbase-lite:android:quickstart.adoc[Couchbase Lite Java Android]
+
+xref:couchbase-lite:swift:quickstart.adoc[Couchbase Lite Swift]
+
+xref:couchbase-lite:objc:quickstart.adoc[Couchbase Lite Objective-C]
+
+xref:sync-gateway::index.adoc[Couchbase Sync Gateway]
+|===
+
+[.column]
+====== {empty}
+
+== Feedback and Contributions
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+====== {empty}
+.Provide Feedback
+
+[.content]
+Provide feedback, and get help with any problem you may encounter.
+
+xref:server:introduction:contact-couchbase.adoc[Provide Feedback]
+
+
+[.column]
+====== {empty}
+.Contact Support
+
+[.content]
+Couchbase Support provides online support for customers of Enterprise Edition who have a support contract.
+
+xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
+
+[.column]
+====== {empty}
+.Contribute
+
+[.content]
+You can submit simple changes, such as typo fixes and minor clarifications directly on GitHub. Contributions are greatly encouraged.
+
+xref:home:contribute:index.adoc[Contribute to the Documentation]
 
 ++++
 </div>
