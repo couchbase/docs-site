@@ -156,29 +156,29 @@ xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 |===
 | SDK | Documentation | API Reference
 
-| Couchbase Lite JavaScript
-| xref:couchbase-lite::javascript.adoc[Docs]
-| 
+| Couchbase Lite Java Android
+| xref:couchbase-lite:android:quickstart.adoc[Docs]
+| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-android/[API Reference]
 
 | Couchbase Lite C#
 | xref:couchbase-lite:csharp:quickstart.adoc[Docs]
-|
+| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-net[API Reference]
 
 | Couchbase Lite Java
 | xref:couchbase-lite:java:quickstart.adoc[Docs]
-|
-
-| Couchbase Lite Java Android
-| xref:couchbase-lite:android:quickstart.adoc[Docs]
-|
-
-| Couchbase Lite Swift
-| xref:couchbase-lite:swift:quickstart.adoc[Docs]
-|
+| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-java/index.html?[API Reference]
 
 | Couchbase Lite Objective-C
 | xref:couchbase-lite:objc:quickstart.adoc[Docs]
-|
+| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-objc[API Reference]
+
+| Couchbase Lite Swift
+| xref:couchbase-lite:swift:quickstart.adoc[Docs]
+| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-swift[API Reference]
+
+| Couchbase Lite JavaScript
+| xref:couchbase-lite::javascript.adoc[Docs]
+| 
 |===
 
 [.column]
