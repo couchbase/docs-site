@@ -7,19 +7,11 @@
 
 = SDKs & Connectors
   
-++++
-<div class="card-row two-column-row">
-++++
+== {empty}
 
-[.column]
-====== {empty}
-[.content]
 Couchbase provides several SDKs to allow applications to access a Couchbase cluster, as well as Mobile SDKs to carry your application to the edge. 
 To exchange data with other platforms, we offer various Big Data Connectors.
 
-[.column]
-====== {empty}
-[.content]
 [source,scala]
 ----
 val json = JsonObject("foo" -> "bar", "baz" -> "qux")
@@ -29,10 +21,6 @@ collection.reactive.upsert("document-key", json)
     .doOnNext(_     => println("Success"))
     .subscribe()
 ----
-
-++++
-</div>
-++++
 
 == Server SDKs
 
@@ -164,70 +152,34 @@ xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
 
 == Mobile SDKs
 
-++++
-<div class="card-row three-column-row">
-++++
+[#table_sdk,cols="25,66,66"]
+|===
+| SDK | Documentation | API Reference
 
-[.column]
-====== {empty}
-.JavaScript
+| Couchbase Lite JavaScript
+| xref:couchbase-lite::javascript.adoc[Docs]
+| 
 
-[.content]
-You to use Couchbase Lite as an embedded database within your app with various JavaScript frameworks' APIs.
-[]
-xref:couchbase-lite::javascript.adoc[Couchbase Lite JavaScript]
+| Couchbase Lite C#
+| xref:couchbase-lite:csharp:quickstart.adoc[Docs]
+|
 
+| Couchbase Lite Java
+| xref:couchbase-lite:java:quickstart.adoc[Docs]
+|
 
-[.column]
-====== {empty}
-.C# SDK
+| Couchbase Lite Java Android
+| xref:couchbase-lite:android:quickstart.adoc[Docs]
+|
 
-[.content]
-Create your mobile app in C#, using .NET Standard 2.0.
-[]
-xref:couchbase-lite:csharp:quickstart.adoc[Couchbase Lite C#]
+| Couchbase Lite Swift
+| xref:couchbase-lite:swift:quickstart.adoc[Docs]
+|
 
-
-[.column]
-====== {empty}
-.Java SDK
-
-[.content]
-Develop and deploy your Couchbase Lite applications to a JVM environment. 
-[]
-xref:couchbase-lite:java:quickstart.adoc[Couchbase Lite Java]
-
-[.column]
-====== {empty}
-.Java Android SDK
-
-[.content]
-Create an Android app, using Couchbase Lite as an embedded database.
-[]
-xref:couchbase-lite:android:quickstart.adoc[Couchbase Lite Java Android]
-
-
-[.column]
-====== {empty}
-.Swift SDK
-
-[.content]
-Create an iOS app in Swift, using Couchbase Lite as an embedded database.
-[]
-xref:couchbase-lite:swift:quickstart.adoc[Couchbase Lite Swift]
-
-[.column]
-====== {empty}
-.Objective-C SDK
-
-[.content]
-Create an iOS app in Objective-C, using Couchbase Lite as an embedded database.
-[]
-xref:couchbase-lite:objc:quickstart.adoc[Couchbase Lite Objective-C]
-
-++++
-</div>
-++++
+| Couchbase Lite Objective-C
+| xref:couchbase-lite:objc:quickstart.adoc[Docs]
+|
+|===
 
 [.column]
 ====== {empty}
