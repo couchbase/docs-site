@@ -83,7 +83,7 @@ pipeline {
         }
         withCredentials([fontawesomeNpmTokenCredentials]) {
           writeFile file: 'scripts/.npmrc', text: '@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_TOKEN}\n'
-          sh '(cd scripts && npm --no-package-lock i)'
+          sh '(cd scripts && npm --no-package-lock i >/dev/null || true)'
         }
       }
     }
@@ -94,18 +94,18 @@ pipeline {
             script {
               // NOTE to enforce this validation, remove this try-catch block
               try {
-                sh "antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace antora-playbook.yml > xref-validator.log 2>&1"
+                sh "time antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace antora-playbook.yml >xref-validator.log 2>&1"
               } catch (err) {
                 def report = readFile('xref-validator.log')
                 if (!report.contains('antora: xref validation failed')) {
                   echo 'xref validator failed to run; see next invocation for reason'
                 } else {
-                  echo report
+                  //echo report
                 }
               }
             }
             // NOTE we don't use --fetch here since it was already done when running the xref validator
-            sh "antora --cache-dir=./.cache/antora --clean --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
+            sh "time antora --cache-dir=./.cache/antora --clean --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml >antora.log 2>&1"
           }
         }
         sh 'node scripts/populate-icon-defs.js public'
