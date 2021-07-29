@@ -1,6 +1,7 @@
 = Couchbase Documentation
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
+:page-aliases: server:introduction:intro.adoc
 :!sectids:
 :collapsible:
 
@@ -93,7 +94,7 @@ xref:couchbase-lite::introduction.adoc[Couchbase Lite]
 [.content]
 Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
 
-xref:home:sdk.adoc[Developer Docs]
+xref:sdk.adoc[Developer Docs]
 
 [.column]
 ====== {empty}
@@ -167,12 +168,12 @@ https://forums.couchbase.com/[Community]
 |===
 | Cloud | Server | SDK and Connectors | Mobile
 
-| xref:cloud:index.adoc[Couchbase Cloud]
-a| xref:home:server.adoc[Couchbase Server]
+| xref:cloud::index.adoc[Couchbase Cloud]
+a| xref:server.adoc[Couchbase Server]
 
-xref:operator:overview.adoc[Couchbase Autonomous Operator]
+xref:operator::overview.adoc[Couchbase Autonomous Operator]
 
-xref:service-broker:index.adoc[Couchbase Service Broker]
+xref:service-broker::index.adoc[Couchbase Service Broker]
 
 a| xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
 
@@ -212,7 +213,7 @@ xref:couchbase-lite:swift:quickstart.adoc[Couchbase Lite Swift]
 
 xref:couchbase-lite:objc:quickstart.adoc[Couchbase Lite Objective-C]
 
-xref:sync-gateway:index.adoc[Couchbase Sync Gateway]
+xref:sync-gateway::index.adoc[Couchbase Sync Gateway]
 |===
 
 [.column]
