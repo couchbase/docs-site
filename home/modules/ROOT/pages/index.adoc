@@ -6,15 +6,6 @@
 
 = Couchbase Documentation
 
-== {empty}
-
-Couchbase is the modern database for enterprise applications.
-
-Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
-
-Find the documentation, samples, and references to help you use Couchbase and build applications.
-
-== {empty}
 ++++
 <div class="card-row">
 ++++
@@ -22,33 +13,28 @@ Find the documentation, samples, and references to help you use Couchbase and bu
 [.column]
 ====== {empty}
 [.content]
-----
-Cluster cluster = Cluster.connect(connectionString, username, password);
+Couchbase is the modern database for enterprise applications.
 
-// get a bucket reference
-Bucket bucket = cluster.bucket(bucketName);
+Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
 
-// get a user defined collection reference
-Scope scope = bucket.scope("tenant_agent_00");
-Collection collection = scope.collection("users");
-
-MutationResult upsertResult = collection.upsert(
-        "my-document",
-        JsonObject.create().put("name", "mike")
-);
-
-GetResult getResult = collection.get("my-document");
-String name = getResult.contentAsObject().getString("name");
-System.out.println(name); // name == "mike"
-QueryResult result = cluster.query("select \"Hello World\" as greeting");
-System.out.println(result.rowsAsObject());
-----
+Find the documentation, samples, and references to help you use Couchbase and build applications.
  
 
 [.column]
 ====== {empty}
-[.media-left]
-image::get-the-agility-of-sql-and-the-flexibility-of-json.svg[,400]
+[.content]
+----
+// List the schedule of flights from Boston 
+// to San Francisco on JETBLUE in the route keyspace
+
+SELECT DISTINCT airline.name, route.schedule
+FROM `travel-sample`.inventory.route
+  JOIN `travel-sample`.inventory.airline
+  ON KEYS route.airlineid
+WHERE route.sourceairport = "BOS"
+AND route.destinationairport = "SFO"
+AND airline.callsign = "JETBLUE";
+----
 
 ++++
 </div>
@@ -178,8 +164,7 @@ https://forums.couchbase.com/[Community]
 
 == Explore Products and Services
 
-.Products and Services 
-[#table_products-services]
+[#table_products-services,cols="25,30,25,25"]
 |===
 | Cloud | Server | SDK and Connectors | Mobile
 
@@ -245,16 +230,23 @@ xref:sync-gateway:index.adoc[Couchbase Sync Gateway]
 
 [.content]
 Provide feedback, and get help with any problem you may encounter.
+
 xref:server:introduction:contact-couchbase.adoc[Provide Feedback]
 
 
 [.column]
 .Contact Support
 
+[.content]
+Couchbase Support provides online support for customers of Enterprise Edition who have a support contract.
+
 xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
 
 [.column]
 .Contribute
+
+[.content]
+You can submit simple changes, such as typo fixes and minor clarifications directly on GitHub. Contributions are greatly encouraged.
 
 xref:home:contribute:index.adoc[Contribute to the Documentation]
 
