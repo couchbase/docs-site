@@ -112,7 +112,7 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 * xref:server:learn:services-and-indexes/services/index-service.adoc[Index Service]
 * xref:server:learn:services-and-indexes/indexes/index-lifecycle.adoc[Index Lifecyle]
 * xref:server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc[Using Indexes]
-* xref:rest-api:rest-index-service.adoc[Index Service REST API]
+* xref:server:rest-api:rest-index-service.adoc[Index Service REST API]
  
 [.column]
 .Analytics
@@ -164,7 +164,7 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 [.column]
 .Buckets, Memory, and Storage
 * xref:server:learn:buckets-memory-and-storage/vbuckets.adoc[Database Sharding using vBuckets]
-* xref:server:learn:memory-and-storage.adoc[Memory and Storage]
+* xref:server:learn:buckets-memory-and-storage/memory-and-storage.adoc[Memory and Storage]
 * xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
 
 [.column]
@@ -199,7 +199,7 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 [.column]
 .Migrating to v7.0
 * xref:server:install:migrating-application-data.adoc[Migrating to a collection-based data model]
-* xref:server:install:migrate.adoc[Migrating to Couchbase]
+* https://blog.couchbase.com/moving-from-sql-server-to-couchbase-part-1-data-modeling/[Migrating to Couchbase]
 
 [.column]
 .Couchbase Server Tools
