@@ -36,6 +36,7 @@ try {
 ++++
 
 [.column]
+====== {empty}
 New to Couchbase
 
 [.content]
@@ -44,18 +45,21 @@ Read the Getting Started guide for step-by-step instructions to create and conne
 xref:server:getting-started:start-here.adoc[Get Started]
 
 [.column]
+====== {empty}
 Upgrading to v7.0
 
 [.content]
 If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.0 and use collections and scopes, see xref:server:install:migrating-application-data.adoc[Upgrade and migrate your data to v7.0].
 
 [.column]
+====== {empty}
 Migrating to Couchbase
 
 [.content]
 Find guidance and considerations when migrating from a different database to Couchbase through this https://blog.couchbase.com/moving-from-sql-server-to-couchbase-part-1-data-modeling/[blog series]. 
 
 [.column]
+====== {empty}
 Explore Tutorials
 
 [.content]
@@ -229,6 +233,7 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 ++++
 
 [.column]
+====== {empty}
 .Release Notes
 
 [.content]
@@ -237,6 +242,7 @@ Find information about platform support changes, deprecation notifications, nota
 xref:server:release-notes:relnotes.adoc[Release Notes]
 
 [.column]
+====== {empty}
 .What's New
 
 [.content]
@@ -245,6 +251,7 @@ Find information about new features and enhancements in a release.
 xref:server:introduction:whats-new.adoc[What's new]
 
 [.column]
+====== {empty}
 .Editions
 
 [.content]
