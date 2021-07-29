@@ -34,26 +34,39 @@ try {
 
 == Get Started
 
+++++
+<div class="card-row two-column-row">
+++++
 
-=== New to Couchbase?
+[.column]
+New to Couchbase?
 
+[.content]
 Read the Getting Started guide for step-by-step instructions to create and connect to the database and run your first query.
-{empty}
+
 xref:server:getting-started:start-here.adoc[Get Started]
 
-=== Upgrading to v7.0?
+[.column]
+Upgrading to v7.0?
 
+[.content]
 If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.0 and use collections and scopes, see xref:server:install:migrating-application-data.adoc[Upgrade and migrate your data to v7.0].
 
+[.column]
+Migrating to Couchbase?
 
-=== Migrating to Couchbase?
-
+[.content]
 If you are migrating from a different database to Couchbase, see _Migrating from other (relational or document) database to Couchbase_.
 
+[.column]
+Tutorials
 
-=== Explore Couchbase Tutorials
-
+[.content]
 Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to learn how to build and operate apps using Couchbase. 
+
+++++
+</div>
+++++
 
 [.column]
 ====== {empty}
@@ -196,6 +209,15 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 * xref:server:tools:cbimport.adoc[Data Import using cbimport]
 * https://couchbase.sh[Couchbase Shell (Beta)]
 
+
+[.column]
+.References
+* xref:server:rest-api:rest-intro.adoc[REST API Reference]
+* xref:server:metrics-reference:metrics-reference.adoc[Metrics Reference]
+* xref:xdcr-reference:xdcr-reference-intro.adoc[XDCR Reference]
+* xref:audit-event-reference:audit-event-reference.adoc[Audit Events Reference]
+* xref:rebalance-reference:rebalance-reference.adoc[Rebalance Reference]
+
 ++++
 </div>
 ++++
@@ -211,19 +233,15 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 
 [.column]
 .N1QL
-* xref:n1ql:n1ql-language-reference/index.adoc[N1QL for Query]
-* xref:analytics:1_intro.adoc[N1QL for Analytics]
+
 
 [.column]
 .REST API
-xref:server:rest-api:rest-intro.adoc[REST API Reference]
+
 
 [.column]
 .More
-* xref:server:metrics-reference:metrics-reference.adoc[Metrics Reference]
-* xref:xdcr-reference:xdcr-reference-intro.adoc[XDCR Reference]
-* xref:audit-event-reference:audit-event-reference.adoc[Audit Events Reference]
-* xref:rebalance-reference:rebalance-reference.adoc[Rebalance Reference]
+
 
 ++++
 </div>
@@ -244,7 +262,7 @@ xref:server:rest-api:rest-intro.adoc[REST API Reference]
 [.content]
 Find information about platform support changes, deprecation notifications, notable improvements, and fixed and known issues in a release.
 
-* xref:server:release-notes:relnotes.adoc[Release Notes]
+xref:server:release-notes:relnotes.adoc[Release Notes]
 
 [.column]
 .What's New
@@ -252,7 +270,7 @@ Find information about platform support changes, deprecation notifications, nota
 [.content]
 Find information about new features and enhancements in a release.
 
-* xref:server:introduction:whats-new.adoc[What's new]
+xref:server:introduction:whats-new.adoc[What's new]
 
 [.column]
 .Editions
@@ -260,7 +278,7 @@ Find information about new features and enhancements in a release.
 [.content]
 Couchbase Server comes in two editions: Enterprise Edition and Community Edition. Find information on the differences between the two editions here.
 
-* xref:server:introduction:editions.adoc[Couchbase Server Editions]
+xref:server:introduction:editions.adoc[Couchbase Server Editions]
 
 ++++
 </div>
