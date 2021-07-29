@@ -229,7 +229,7 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 == Product Docs
 
 ++++
-<div class="card-row three-column-row">
+</div>
 ++++
 
 [.column]
