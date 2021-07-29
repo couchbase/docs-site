@@ -63,7 +63,7 @@ xref:cloud::index.adoc[Couchbase Cloud]
 [.content]
 Explore Couchbase Server, a modern, distributed document database with all the desired capabilities of a relational database and more. It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
 
-xref:home:server.adoc[Couchbase Server]
+xref:server.adoc[Couchbase Server]
 
 [.column]
 ====== {empty}
