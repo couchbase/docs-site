@@ -13,19 +13,18 @@
 [.column]
 ====== {empty}
 [.content]
-Couchbase is the modern database for enterprise applications.
+_Couchbase is the modern database for enterprise applications._
 
 Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
 
 Find the documentation, samples, and references to help you use Couchbase and build applications.
- 
 
 [.column]
 ====== {empty}
 [.content]
 ----
 // List the schedule of flights from Boston 
-// to San Francisco on JETBLUE in the route keyspace
+// to San Francisco on JETBLUE
 
 SELECT DISTINCT airline.name, route.schedule
 FROM `travel-sample`.inventory.route
@@ -164,7 +163,7 @@ https://forums.couchbase.com/[Community]
 
 == Explore Products and Services
 
-[#table_products-services,cols="25,30,25,25"]
+[#table_products-services,cols="25,25,25,25"]
 |===
 | Cloud | Server | SDK and Connectors | Mobile
 
@@ -226,6 +225,7 @@ xref:sync-gateway:index.adoc[Couchbase Sync Gateway]
 ++++
 
 [.column]
+====== {empty}
 .Provide Feedback
 
 [.content]
@@ -235,6 +235,7 @@ xref:server:introduction:contact-couchbase.adoc[Provide Feedback]
 
 
 [.column]
+====== {empty}
 .Contact Support
 
 [.content]
@@ -243,6 +244,7 @@ Couchbase Support provides online support for customers of Enterprise Edition wh
 xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
 
 [.column]
+====== {empty}
 .Contribute
 
 [.content]
