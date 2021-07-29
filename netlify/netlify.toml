@@ -2,17 +2,18 @@
 command = """\
 [[ $(du -s $ANTORA_CACHE_DIR 2>/dev/null | cut -f1 || echo 0) -gt 10000000 ]] && rm -rf $ANTORA_CACHE_DIR; \
 if [ -v FONTAWESOME_NPM_TOKEN ]; then echo -e '@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=$''{FONTAWESOME_NPM_TOKEN}' > ../scripts/.npmrc; fi; \
-(cd ../scripts; npm --no-package-lock i || true) && \
+(cd ../scripts; npm --no-package-lock i >/dev/null || true); \
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node ../scripts/remove-private-content-sources.js ../antora-playbook.yml; fi; \
-time node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --attribute export-site-navigation-data --redirect-facility=netlify --to-dir=public --url $(if [[ $CONTEXT == 'production' ]]; then echo -n $URL; else echo -n $DEPLOY_PRIME_URL; fi) ../antora-playbook.yml && \
-node ../scripts/populate-icon-defs.js public\
+time node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --redirect-facility=netlify --to-dir=public --url $(if [[ $CONTEXT == 'production' ]]; then echo -n $URL; else echo -n $DEPLOY_PRIME_URL; fi) ../antora-playbook.yml >antora.log 2>&1 && \
+node ../scripts/populate-icon-defs.js public && \
+mv antora.log public/\
 """
 #time node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml || true; \
 ignore = "false"
 publish = "public"
 
 [build.environment]
-ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+ANTORA_CACHE_DIR = "~+/node_modules/.cache/antora"
 CI = "true"
 NODE_VERSION = "10"
 NODE_OPTIONS = "--max-old-space-size=4096"

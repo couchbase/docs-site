@@ -1,4 +1,6 @@
 # $(npm bin)/antora --clean --fetch antora-playbook.yml
+# or
+# $(npm bin)/antora --clean --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --fetch antora-playbook.yml
 site:
   title: Couchbase Docs Staging
   url: https://docs-staging.couchbase.com
@@ -64,8 +66,6 @@ content:
     branches: [release/3.2, release/3.1, release/3.0, release/2.10]
   - url: https://github.com/couchbase/docs-txn-cxx
     branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-sdk-extensions
-    branches: [main]
   - url: https://github.com/couchbase/docs-sdk-dotnet
     branches: [release/3.2, release/3.1, release/3.0, release/2.7]
   - url: https://github.com/couchbase/docs-sdk-go
@@ -84,6 +84,8 @@ content:
     branches: [release/3.2, release/3.1, release/3.0]
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/1.2, release/1.1, release/1.0]
+  - url: https://github.com/couchbase/docs-sdk-extensions
+    branches: [main]
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
@@ -138,6 +140,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
   extensions:
+  - ./lib/asciidoctor-performance-patch.js
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
@@ -146,6 +149,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-117/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-121/ui-bundle.zip
 output:
   dir: ./public
