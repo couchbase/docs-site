@@ -29,9 +29,6 @@ try {
 }
 ----
 
-[.column]
-====== {empty}
-
 == Get Started
 
 ++++
@@ -217,13 +214,6 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 * xref:xdcr-reference:xdcr-reference-intro.adoc[XDCR Reference]
 * xref:audit-event-reference:audit-event-reference.adoc[Audit Events Reference]
 * xref:rebalance-reference:rebalance-reference.adoc[Rebalance Reference]
-
-++++
-</div>
-++++
-
-[.column]
-====== {empty}
 
 ++++
 </div>
