@@ -44,7 +44,7 @@ content:
     branches: [master, release/4.0, release/3.4]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-spark-connector
-    branches: [release/2.4, release/2.3]
+    branches: [master, release/3.0, release/2.4, release/2.3]
     start_path: docs
   - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://git@github.com/couchbase/docs-analytics
