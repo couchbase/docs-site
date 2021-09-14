@@ -135,6 +135,79 @@ And add the appropriate `[tag=]` to the `include::`.
 
 Note that we aim to keep all code files in the examples directory runnable -- or at least compilable -- so if you are adding a snippet of code to an existing file, please test it.
 
+== Try It Now
+
+The Couchbase documentation integrates with https://couchbase.live to offer an interactive code console called "`Try It Now`".
+This feature can be enabled per code block.
+
+To add a "`Try It Now`" mode to a code block, you need two things:
+
+. A standalone code sample that can be executing on couchbase.live
+. The `try-it` role on the block to indicate that the code is compatible with couchbase.live
+
+When the "`Try It Now`" mode is enabled, a btn:[Run Code] button will appear in the toolbar above the code block.
+When the user clicks on this button, it will split the page into two panes, with the documentation on the left and the output console on the right.
+It will also make the code block editable.
+The reader can either reexecute the code using the refresh button above the output console or by clicking the btn:[Run Code] button again.
+Clicking the btn:[Run Code] button submits the updated code, whereas the refresh button reexecutes the previous code.
+
+Here's an example of a code block with the "`Try It Now`" mode enabled:
+
+[source,asciidoc]
+....
+[source.try-it,js]
+----
+const couchbase = require('couchbase')
+
+const cluster = new couchbase.Cluster('couchbase://127.0.0.1', {
+  username: 'username', password: 'password'
+})
+
+const bucket = cluster.bucket('travel-sample')
+const collection = bucket.defaultCollection()
+
+const getDocument = async (key) => {
+  try {
+    const result = await collection.get(key)
+    console.log(result)
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+getDocument('airline_10')
+  .then(() => process.exit(0))
+----
+....
+
+Here's how it appears when rendered:
+
+[source.try-it,js]
+----
+const couchbase = require('couchbase')
+
+const cluster = new couchbase.Cluster('couchbase://127.0.0.1', {
+  username: 'username', password: 'password'
+})
+
+const bucket = cluster.bucket('travel-sample')
+const collection = bucket.defaultCollection()
+
+const getDocument = async (key) => {
+  try {
+    const result = await collection.get(key)
+    console.log(result)
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+getDocument('airline_10').then(() => process.exit(0))
+----
+
+The code sample has to be compatible with couchbase.live.
+The one exception is for Java.
+You can use a public class with any class name and the supporting script will rewrite the class name as `Program`.
 
 == Learn More
 
