@@ -98,7 +98,7 @@ content:
     branches: [cloud-native-2.2]
   - url: https://git@github.com/couchbase/docs-ngdm
   - url: https://github.com/couchbase/tutorials
-    branches: [azure-prereq]
+    branches: [master]
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
   - url: https://github.com/amarantha-k/mobile-travel-sample
