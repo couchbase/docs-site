@@ -34,7 +34,7 @@ content:
     branches: [main]
     start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
-    branches: [master, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
+    branches: [master, 2.3.0-beta, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
     branches: [release/4.2, release/4.1, release/4.0]
