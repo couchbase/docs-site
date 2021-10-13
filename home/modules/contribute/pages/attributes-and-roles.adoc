@@ -113,6 +113,22 @@ Only requires for AsciiDoc files in the pages directory (not the partials direct
 
 page-aliases:: A comma-separated list of alternate page IDs that should redirect to this page.
 When you move a page, you might want to list the old page ID in this attribute so that the web server will redirect visitors from the old page to the new location.
++
+These can be given as just the `.adoc` filename, for a page in the same module:
++
+[source,asciidoc]
+----
+:page-aliases: search-query.adoc
+----
++
+Through another module -- `ROOT:search-query.adoc` -- to redirecting to a page in another repo:
++
+[source,asciidoc]
+----
+:page-aliases: 7.0@server:developer-guide:expiry.adoc
+----
++
+Note that here the version number must be used to specify which particular page version in the other repo is redirecting to this one.
 
 Antora also assigns several page attributes on each page to provide information about which component, version, and module in which the page is located.
 You can find a list of these attributes in the https://docs.antora.org/antora/2.0/page/page-and-site-attributes/[Antora documentation^].
