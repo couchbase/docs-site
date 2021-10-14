@@ -113,7 +113,7 @@ Only requires for AsciiDoc files in the pages directory (not the partials direct
 
 page-aliases:: A comma-separated list of alternate page IDs that should redirect to this page.
 We recommend that, as far as possible, you avoid renaming or moving pages when editing the documentation.
-If you do need to move or rename a page, you might want to list the old page ID in this attribute so that the web server will redirect visitors from the old page to the new location.
+If you do need to move or rename a page, you will need to list the old page ID in this attribute so that the web server will redirect visitors from the old page to the new location.
 +
 These can be given as just the `.adoc` filename, for a page in the same module:
 +
