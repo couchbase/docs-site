@@ -49,10 +49,10 @@ AND airline.callsign = "JETBLUE";
 
 [.column]
 ====== {empty}
-.Couchbase Cloud (DBaaS)
+.Couchbase Capella (DBaaS)
 
 [.content]
-Take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. Store, query, and analyze any amount of data, on a cloud service provider of your choice, all in a few clicks. Explore Couchbase Cloud, our fully-managed database as a service offering.
+Take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. Store, query, and analyze any amount of data, on a cloud service provider of your choice -- or in Couchbase's cloud account, to let us handle more of the administration -- all in a few clicks. Explore Couchbase Cloud, our fully-managed database as a service offering.
 
 xref:cloud::index.adoc[Couchbase Cloud]
 
