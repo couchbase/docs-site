@@ -9,7 +9,7 @@ site:
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "*-connector"] },
-        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["shared-mobile", "couchbase-lite", "sync-gateway"] },
+        { "title": "Mobile Sandbox", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
         { "title": "Cloud", "startPage": "home::cloud.adoc", "components": ["cloud", "cloud-native-database", "operator", "service-broker"] },
         { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns"] }
       ]
@@ -78,11 +78,11 @@ content:
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-mobile
-    branches: [release/2.8]
+    branches: [sandbox/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
+    branches: [sandbox/3.0, sandbox/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
+    branches: [sandbox/3.0, sandbox/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
   - url: https://github.com/couchbase/docs-service-broker.git
     branches: [master]
   - url: https://github.com/couchbase/docs-cloud-native.git
