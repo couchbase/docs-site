@@ -59,7 +59,7 @@ content:
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
+    branches: [dev-reorg, release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/docs-sdk-c
@@ -149,7 +149,7 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-131/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-134/ui-bundle.zip
     #url: https://deploy-preview-xxx--cb-docs-ui.netlify.app/dist/ui-bundle.zip
     #snapshot: true
 output:
