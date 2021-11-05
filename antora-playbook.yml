@@ -147,6 +147,7 @@ asciidoc:
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
+  - '@djencks/asciidoctor-mathjax'
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-142/ui-bundle.zip
