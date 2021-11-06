@@ -8,7 +8,6 @@
     "@antora/site-generator-default": "3.0.0-alpha.5",
     "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#v3.0.0-alpha.3",
     "@antora/xref-validator": "git+https://gitlab.com/antora/xref-validator#v1.0.0-alpha.14",
-    "@djencks/asciidoctor-mathjax": "^0.0.7",
     "gulp": "~4.0",
     "gulp-connect": "~5.7",
     "js-yaml": "~4.1"
