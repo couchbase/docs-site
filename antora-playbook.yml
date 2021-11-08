@@ -134,6 +134,7 @@ asciidoc:
     idseparator: '-@'
     tabs: tabs
     toc: ~
+    page-toclevels: 1@
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
