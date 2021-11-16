@@ -134,6 +134,7 @@ asciidoc:
     idseparator: '-@'
     tabs: tabs
     toc: ~
+    page-toclevels: 1@
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
@@ -147,6 +148,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-133/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-135/ui-bundle.zip
 output:
   dir: ./public
