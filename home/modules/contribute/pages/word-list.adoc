@@ -110,6 +110,8 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | `ConfigProviderBase` |
 | Couchbase | is the _company_ name, _Couchbase Server_, or _Couchbase Foo_, the product name
 | Couchbase Autonomous Operator | CAO
+| Couchbase Monitoring and Observability Stack | CMOS 
+| Couchbase Capella | formerly known as "Couchbase Cloud" or "Couchbase Managed Cloud"
 | (the) Couchbase Data Platform | data platform if not preceded by _Couchbase_
 | Couchbase Eventing Service |
 | Couchbase Functions |

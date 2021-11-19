@@ -77,6 +77,15 @@ The Service Broker implements the https://www.openservicebrokerapi.org/[Open Ser
 []
 xref:service-broker::index.adoc[Go to Couchbase Service Broker]
 
+[.column]
+====== {empty}
+.Couchbase Monitoring and Observability Stack
+
+[.content]
+The Couchbase Monitoring and Observability Stack (CMOS) is a simple, out-of-the-box solution based on industry standard tooling to observe the state of your Couchbase cluster.
+[]
+xref:cmos::index.adoc[Go to Couchbase Monitoring and Observability Stack]
+
 ++++
 </div>
 ++++
