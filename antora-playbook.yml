@@ -21,7 +21,7 @@ content:
     branches: [release/2.2, release/2.1]
     start_path: docs
   - url: https://github.com/couchbase/docs-server
-    branches: [release/4.6, release/4.5, release/4.1, release/4.0]
+    branches: [release/5.5, release/5.1, release/5.0, release/4.6, release/4.5, release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/6.0, release/5.5, release/5.1, release/4.6, release/4.5]
   - url: https://github.com/couchbase/docs-sdk-c
