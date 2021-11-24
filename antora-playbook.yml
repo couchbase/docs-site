@@ -133,6 +133,7 @@ content:
     start_path: content
 asciidoc:
   attributes:
+    enable-cmos: ''
     max-include-depth: 10
     page-partial: false
     experimental: ''
