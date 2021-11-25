@@ -94,30 +94,30 @@ content:
   - url: https://github.com/couchbaselabs/tutorials
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
-#  - url: https://github.com/couchbaselabs/mobile-travel-sample
-#    start_path: content
-#  - url: https://github.com/couchbaselabs/hotel-finder-react-native
-#  - url: https://github.com/couchbaselabs/hotel-lister-cordova
-#  - url: https://github.com/couchbaselabs/tutorials-contrib
-#  - url: https://github.com/couchbaselabs/mobile-training-todo
-#    branches: tutorials
-#    start_path: content
-#  - url: https://github.com/couchbaselabs/UniversityLister-Android
-#    start_path: content
-#  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile
-#    branches: [standalone, query, sync, backgroundfetch]
-#    start_path: content
-#  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
-#    branches: [standalone, query, sync]
-#  - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
-#  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
-#    branches: [standalone, query, sync]
-#  - url: https://github.com/amarantha-k/OpenID_connect_tutorial
-#    branches: [tutorial]
-#    start_path: content
-#  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
-#    branches: [master]
-#    start_path: content
+  - url: https://github.com/couchbaselabs/mobile-travel-sample
+    start_path: content
+  - url: https://github.com/couchbaselabs/hotel-finder-react-native
+  - url: https://github.com/couchbaselabs/hotel-lister-cordova
+  - url: https://github.com/couchbaselabs/tutorials-contrib
+  - url: https://github.com/couchbaselabs/mobile-training-todo
+    branches: tutorials
+    start_path: content
+  - url: https://github.com/couchbaselabs/UniversityLister-Android
+    start_path: content
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile
+    branches: [standalone, query, sync, backgroundfetch]
+    start_path: content
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
+    branches: [standalone, query, sync]
+  - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
+  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
+    branches: [standalone, query, sync]
+  - url: https://github.com/amarantha-k/OpenID_connect_tutorial
+    branches: [tutorial]
+    start_path: content
+  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
+    branches: [master]
+    start_path: content
 asciidoc:
   attributes:
     export-site-navigation-data: ''
