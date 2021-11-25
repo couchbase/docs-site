@@ -29,12 +29,12 @@ content:
     - url: .
       branches: HEAD
       start_path: home
-    # - url: https://git@github.com/couchbasecloud/couchbase-cloud
-    # branches: [AV-22069_Capella-GA-Docs]
-    # start_path: docs/public
-    # - url: https://git@github.com/couchbase/couchbase-operator
-    # branches: [2.3.0-beta, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
-    # start_path: docs/user
+    - url: https://git@github.com/couchbasecloud/couchbase-cloud
+      branches: [AV-22069_Capella-GA-Docs]
+      start_path: docs/public
+    - url: https://git@github.com/couchbase/couchbase-operator
+      branches: [2.3.0-beta, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
+      start_path: docs/user
     - url: https://github.com/couchbase/couchbase-elasticsearch-connector
       branches: [master, release/4.2, release/4.1, release/4.0]
       start_path: docs
@@ -44,15 +44,15 @@ content:
     - url: https://github.com/couchbase/couchbase-spark-connector
       branches: [master, release/3.0, release/2.4, release/2.3]
       start_path: docs
-    #  - url: https://git@github.com/couchbase/docs-connectors-talend
-    # - url: https://git@github.com/couchbase/docs-analytics
-    # branches: [release/7.0, release/6.6, release/6.5, release/6.0]
+    - url: https://git@github.com/couchbase/docs-connectors-talend
+    - url: https://git@github.com/couchbase/docs-analytics
+      branches: [release/7.0, release/6.6, release/6.5, release/6.0]
     - url: https://github.com/couchbase/couchbase-cli
       branches: [cheshire-cat, mad-hatter, 6.5.x-docs, alice]
       start_path: docs
-    # - url: https://git@github.com/couchbase/backup
-    # branches: [cheshire-cat, mad-hatter, 6.5.x-docs, alice]
-    # start_path: docs
+    - url: https://git@github.com/couchbase/backup
+      branches: [cheshire-cat, mad-hatter, 6.5.x-docs, alice]
+      start_path: docs
     - url: https://github.com/couchbaselabs/cb-swagger
       branches: [release/7.0, release/6.6, release/6.5, release/6.0]
       start_path: docs
@@ -68,7 +68,8 @@ content:
     - url: https://github.com/couchbase/docs-sdk-dotnet
       branches: [release/3.2, release/3.1, release/3.0, release/2.7]
     - url: https://github.com/couchbase/docs-sdk-go
-      branches: [release/2.3, release/2.2, release/2.1, release/2.0, release/1.6]
+      branches:
+        [release/2.3, release/2.2, release/2.1, release/2.0, release/1.6]
     - url: https://github.com/couchbase/docs-sdk-java
       branches: [release/3.2, release/3.1, release/3.0, release/2.7]
     - url: https://github.com/couchbase/docs-sdk-nodejs
@@ -83,16 +84,16 @@ content:
       branches: [release/1.2, release/1.1, release/1.0]
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches: [main]
-    #  - url: https://github.com/couchbase/docs-mobile
-    #    branches: [sandbox/2.8]
-    #  - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    #    branches: [sandbox/3.0, sandbox/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
-    #  - url: https://github.com/couchbaselabs/docs-sync-gateway
-    #    branches: [sandbox/3.0, sandbox/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
-    # - url: https://github.com/couchbase/docs-service-broker.git
-    # branches: [master]
-    # - url: https://github.com/couchbase/docs-cloud-native.git
-    # branches: [cloud-native-2.2]
+    - url: https://github.com/couchbase/docs-mobile
+      branches: [sandbox/2.8]
+    - url: https://github.com/couchbaselabs/docs-couchbase-lite
+      branches: [sandbox/3.0, sandbox/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0]
+    - url: https://github.com/couchbaselabs/docs-sync-gateway
+      branches: [sandbox/3.0, sandbox/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
+    - url: https://github.com/couchbase/docs-service-broker.git
+      branches: [master]
+    - url: https://github.com/couchbase/docs-cloud-native.git
+      branches: [cloud-native-2.2]
     - url: https://github.com/couchbaselabs/tutorials
     - url: https://github.com/couchbase/developer-content
     - url: https://github.com/couchbaselabs/tutorial-template
@@ -135,6 +136,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
   extensions:
+    - ./lib/asciidoctor-performance-patch.js
     - ./lib/source-url-include-processor.js
     - ./lib/json-config-ui-block-macro.js
     - ./lib/inline-man-macro.js
@@ -144,6 +146,5 @@ asciidoc:
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-136/ui-bundle.zip
-    # url: https://github.com/couchbase/docs-ui/releases/download/sandbox-8/ui-bundle.zip
 output:
   dir: ./public
