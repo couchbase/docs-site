@@ -60,7 +60,7 @@ content:
     - url: https://github.com/couchbase/docs-server
       branches: [release/7.0, release/6.6, release/6.5, release/6.0]
     - url: https://github.com/couchbase/docs-sdk-common
-      branches: [release/6.6, release/6.5, release/6.0]
+      branches: [release/7.0, release/6.6, release/6.5, release/6.0]
     - url: https://github.com/couchbase/docs-sdk-c
       branches: [release/3.2, release/3.1, release/3.0, release/2.10]
     - url: https://github.com/couchbase/docs-txn-cxx
