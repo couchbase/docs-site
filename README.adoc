@@ -1,0 +1,138 @@
+= Couchbase Documentation Site
+:idprefix:
+:idseparator: -
+// Settings:
+:hide-uri-scheme:
+// URLs:
+:url-docs: https://docs.couchbase.com
+:url-contribute: {url-docs}/home/contribute/
+:url-org: https://github.com/couchbase
+:url-ui: {url-org}/docs-ui
+
+This is the Antora playbook project (aka site build) for the Couchbase documentation site published at {url-docs}.
+
+== Playbook
+
+The playbook, defined in the playbook file [.path]_antora-playbook.yml_, configures the build for this site.
+The playbook specifies the content sources (repository and branches), site URL, UI bundle URL, global AsciiDoc attributes, and Asciidoctor extensions.
+
+The production site is built for each change to the master branch.
+A deploy preview of the site is also published for each pull request, though without any of the private content sources (unless the pull request comes from a trusted source).
+The configuration for the deploy preview build is located in the [.path]_netlify_ folder.
+
+If you're building a local version of the Couchbase docs for testing, and want a reduced-scope playbook that just builds Server docs with the components that you are editing locally, https://github.com/couchbase/docs-site/blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[here is an SDK-based playbook file] -- use it as a basis for your own local playbook.
+
+== Home Docs Component
+
+The [.path]_home/_ directory in this repository contains the source for the Home documentation component.
+All other content is sourced from separate repositories and branches.
+
+== Custom Asciidoctor Extensions
+
+The custom extensions in the [.path]_lib/_ directory process the manpage macro (Couchbase CLI and Backup components), Swagger UI macro, and multi-row table headers.
+
+== File Watcher and LiveReload
+
+This repository contains a script that watches `.adoc` and `antora.yml` files in the author workspace (as defined by local-antora-playbook.yml) and triggers a new Antora build when it detects changes to those files.
+The script also starts a web server and can use LiveReload to reload the browser tab after the Antora build completes.
+To use the script, run the following.
+
+. Install dependencies.
+
+ $ npm i -g gulp-cli
+ $ npm i --no-optional
+
+. If you're using Chrome, install the LiveReload https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[chrome extension].
+Firefox has built-in support for LiveReload.
+. Start the build.
++
+--
+ $ LIVERELOAD=true gulp
+
+The build first generates the site using Antora, analgous to the `antora local-antora-playbook.yml` command.
+It then serves the files in the output directory using a local web server.
+
+The web server's host URL is printed to the console after the `watch` task completes.
+
+....
+[17:43:27] Starting server...
+[17:43:27] Documentation Site Preview started http://localhost:5000
+[17:43:27] LiveReload started on port 35729
+[17:43:27] Running server
+....
+
+TIP: To skip the initial build, use `gulp serve` as the Gulp command.
+--
+
+. The console output will print status information every time a change is detected.
++
+....
+[17:33:59] Starting 'generate'...
+[17:34:02] Finished 'generate' after 3.35 s
+....
+
+. Make changes to your AsciiDoc files locally.
+The browser tab should automatically reload after a short while.
+. Use Ctrl+C to stop the process.
+
+== Xref Validation
+
+This project uses the @antora/xref-validator package to validate xrefs.
+The validation is currently handled using a separate invocation of Antora.
+
+For the production build, the validator is installed into the Docker container (see Dockerfile.jenkins).
+For local builds, the validator is installed as a project depnedency (see package.json).
+
+The validator runs on every build to check for broken xrefs (i.e., broken links between pages).
+Currently, the validator does not enforce these checks.
+
+=== Reading the Report
+
+If there are xref violations (i.e., broken xrefs), a report of those violations will be printed to the CI build log.
+Here's an excerpt from that report:
+
+....
+repo: https://github.com/couchbase/couchbase-operator.git | branch: 1.2.x | component: operator | version: 1.2
+  path: docs/user/modules/ROOT/pages/cluster-status-guide.adoc | xref: admin-console-access.adoc
+  path: docs/user/modules/ROOT/pages/helm-cluster-config.adoc | xref: install-openshift.html.adoc
+  path: docs/user/modules/ROOT/pages/persistent-volumes-guide.adoc | xref: persistent-volume-setup.adoc
+repo: https://github.com/couchbase/docs-server.git | branch: release/6.0 | component: server | version: 6.0
+  path: modules/install/pages/upgrade-strategy-for-features.adoc | xref: manage:manage-xdcr:create-xdcr-reference.adoc
+  path: modules/install/pages/upgrade-strategy-for-features.adoc | xref: manage:monitor:ui-monitoring-statistics.adoc
+....
+
+Each broken xref is grouped by origin (the repository and branch where the file can be found), then path (the file in the repository that contains the broken xref).
+So, for example, you will see an origin like this:
+
+....
+repo: https://github.com/couchbase/couchbase-operator.git | branch: 1.2.x | component: operator | version: 1.2
+....
+
+In this case, the broken xref was found in the 1.2 version of operator, and the page is coming from the 1.2.x branch of the \https://github.com/couchbase/couchbase-operator.git repository.
+
+Under an origin, you'll see an entry like this:
+
+....
+path: docs/user/modules/ROOT/pages/cluster-status-guide.adoc | xref: admin-console-access.adoc
+....
+
+Looking in the origin from above, find the path docs/user/modules/ROOT/pages/cluster-status-guide.adoc and look for an xref to admin-console-access.adoc.
+That's the xref that needs to be fixed (if it's still broken).
+
+=== Generating the Report
+
+To run the report on your local machine, first switch to the playbook repository (i.e., docs-site).
+Next, install the dependencies (which you may have already done):
+
+ $ npm i --no-optional
+
+Then, run the xref validator as follows:
+
+ $ ./node_modules/.bin/antora --fetch --generator=@antora/xref-validator antora-playbook.yml > xref-validator.log 2>&1
+
+Finally, view the report.
+You can find the report in the [.path]_xref-validator.log_ file.
+
+== Contributing
+
+To learn how to use the playbook and generate the docs site locally, see our {url-contribute}[contributing guide].
