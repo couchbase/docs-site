@@ -122,7 +122,6 @@ content:
       start_path: content
 asciidoc:
   attributes:
-    export-site-navigation-data: ""
     max-include-depth: 10
     page-partial: false
     experimental: ""
