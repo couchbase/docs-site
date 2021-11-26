@@ -22,8 +22,11 @@ mkdir -p $ANTORA_CACHE_DIR; \
 if [ -v FONTAWESOME_NPM_TOKEN ]; then echo -e '@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=$''{FONTAWESOME_NPM_TOKEN}' > ../scripts/.npmrc; fi; \
 (cd ../scripts; npm --no-package-lock i || true) && \
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
-node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public ../antora-playbook.yml && \
-node ../scripts/populate-icon-defs.js public\
+touch antora.log; \
+time node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public ../antora-playbook.yml >antora.log 2>&1 || tail antora.log && \
+node ../scripts/populate-icon-defs.js public && \
+mv antora.log public/ || \
+tail antora.log
 """
 
 [context.deploy-preview]
@@ -33,8 +36,11 @@ mkdir -p $ANTORA_CACHE_DIR; \
 if [ -v FONTAWESOME_NPM_TOKEN ]; then echo -e '@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=$''{FONTAWESOME_NPM_TOKEN}' > ../scripts/.npmrc; fi; \
 (cd ../scripts; npm --no-package-lock i || true) && \
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node ../scripts/remove-private-content-sources.js ../antora-playbook.yml; fi; \
-node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml && \
-node ../scripts/populate-icon-defs.js public\
+touch antora.log; \
+time node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml >antora.log 2>&1 || tail antora.log && \
+node ../scripts/populate-icon-defs.js public && \
+mv antora.log public/ || \
+tail antora.log
 """
 
 [[headers]]
