@@ -49,7 +49,7 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 
 | Node.js SDK
 | xref:3.2@nodejs-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-node-client[API Reference]
+| https://docs.couchbase.com/sdk-api/couchbase-node-client/modules.html[API Reference]
 
 | PHP SDK
 | xref:3.2@php-sdk:hello-world:overview.adoc[Docs]
