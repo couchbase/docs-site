@@ -58,7 +58,7 @@ content:
       start_path: docs
     # NOTE docs-server is currently after other server repos so nav key wins
     - url: https://github.com/couchbase/docs-server
-      branches: [release/7.0, dev-reorg]
+      branches: [release/7.0-reorg]
     - url: https://github.com/couchbase/docs-sdk-common
       branches: [release/7.0]
     - url: https://github.com/couchbase/docs-sdk-c
