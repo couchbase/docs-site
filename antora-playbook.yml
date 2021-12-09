@@ -157,7 +157,7 @@ asciidoc:
   - asciidoctor-kroki
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-135/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-136/ui-bundle.zip
     #url: https://deploy-preview-xxx--cb-docs-ui.netlify.app/dist/ui-bundle.zip
     #snapshot: true
 output:
