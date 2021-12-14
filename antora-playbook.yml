@@ -37,7 +37,8 @@ content:
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [master, 2.3.0-beta, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
-  - url: https://github.com/couchbaselabs/observability
+#   - url: https://github.com/couchbaselabs/observability
+  - url: https://github.com/maria-robobug/observability.git
     branches: [main]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
