@@ -177,6 +177,8 @@ xref:operator::overview.adoc[Couchbase Autonomous Operator]
 
 xref:service-broker::index.adoc[Couchbase Service Broker]
 
+xref:cmos::index.adoc[Couchbase Monitoring and Observability Stack]
+
 a| xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
 
 xref:scala-sdk:hello-world:overview.adoc[Couchbase Scala SDK]
