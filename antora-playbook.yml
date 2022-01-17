@@ -44,13 +44,13 @@ content:
     branches: [master, release/4.0, release/3.4]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-spark-connector
-    branches: [master, release/3.0, release/2.4, release/2.3]
+    branches: [master, release/3.1, release/3.0, release/2.4]
     start_path: docs
   - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://git@github.com/couchbase/docs-analytics
     branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [cheshire-cat, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.1]
+    branches: [cheshire-cat, mad-hatter, 6.5.x-docs, alice]
     start_path: docs
   - url: https://git@github.com/couchbase/backup
     branches: [cheshire-cat, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.x]
@@ -60,7 +60,7 @@ content:
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0]
+    branches: [release/7.0, release/6.6, release/6.5, release/6.0]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5]
   - url: https://github.com/couchbase/docs-sdk-c
@@ -74,7 +74,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-java
     branches: [release/3.2, release/3.1, release/3.0, release/2.7]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [1.0dp1]
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [release/3.2, release/3.1, release/3.0, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-php
@@ -148,6 +148,6 @@ asciidoc:
   - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-136/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-140/ui-bundle.zip
 output:
   dir: ./public
