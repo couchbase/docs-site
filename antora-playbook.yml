@@ -119,6 +119,7 @@ content:
   - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
     branches: [standalone, query, sync]
+    start_path: content
   - url: https://github.com/amarantha-k/OpenID_connect_tutorial
     branches: [tutorial]
     start_path: content
