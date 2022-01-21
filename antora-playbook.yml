@@ -132,7 +132,7 @@ asciidoc:
     page-partial: false
     experimental: ''
     idprefix: '@'
-    idseparator: 1
+    idseparator: '-@'
     tabs: tabs
     toc: ~
     page-toclevels: 1@
