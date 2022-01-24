@@ -18,7 +18,7 @@ echo -e '<!DOCTYPE html>\\n<meta http-equiv="refresh" content="0; url=https://do
 [context.deploy-preview]
 command = """\
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
-time node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
+time node_modules/.bin/antora --stacktrace --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
 """
 
 [[headers]]
