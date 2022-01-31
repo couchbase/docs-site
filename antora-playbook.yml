@@ -66,7 +66,7 @@ content:
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/quickdraft/docs-server
-    branches: [release/7.1, quickdraft-proj4-PR3]
+    branches: [quickdraft-proj4-PR3]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
   - url: https://github.com/couchbase/docs-sdk-c
