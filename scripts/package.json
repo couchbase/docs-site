@@ -7,9 +7,6 @@
     "@fortawesome/free-brands-svg-icons": "~5.15",
     "@fortawesome/free-regular-svg-icons": "~5.15",
     "@fortawesome/free-solid-svg-icons": "~5.15",
-    "@antora/cli": "3.0.0-alpha.5",
-    "@antora/site-generator-default": "3.0.0-alpha.5",
-    "asciidoctor-kroki": "^0.15.4",
     "js-yaml": "~4.1",
     "vinyl-fs": "~3.0"
   },
