@@ -5,7 +5,7 @@ if [ -v FONTAWESOME_NPM_TOKEN ]; then echo -e '@fortawesome:registry=https://npm
 (cd ../scripts; npm --no-package-lock i >/dev/null || true); \
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; else node ../scripts/remove-private-content-sources.js ../antora-playbook.yml; fi; \
 touch antora.log; \
-time node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --redirect-facility=netlify --to-dir=public --url $(if [[ $CONTEXT == 'production' ]]; then echo -n $URL; else echo -n $DEPLOY_PRIME_URL; fi) ../antora-playbook.yml >antora.log 2>&1 || tail antora.log && \
+time node_modules/.bin/antora --stacktrace --fetch --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --redirect-facility=netlify --to-dir=public --url $(if [[ $CONTEXT == 'production' ]]; then echo -n $URL; else echo -n $DEPLOY_PRIME_URL; fi) ../antora-playbook.yml >antora.log 2>&1 || tail antora.log && \
 node ../scripts/populate-icon-defs.js public && \
 mv antora.log public/ || \
 tail antora.log
