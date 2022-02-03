@@ -94,6 +94,7 @@ pipeline {
             script {
               // NOTE to enforce this validation, remove this try-catch block
               try {
+                sh "npm install asciidoctor-kroki" 
                 sh "time antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace antora-playbook.yml >xref-validator.log 2>&1"
               } catch (err) {
                 def report = readFile('xref-validator.log')

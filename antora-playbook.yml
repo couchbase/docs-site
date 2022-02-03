@@ -116,6 +116,7 @@ content:
     start_path: content
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
     branches: [standalone, query, sync]
+    start_path: content
   - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
     branches: [standalone, query, sync]
@@ -139,6 +140,8 @@ asciidoc:
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    kroki-server-url: http://3.91.133.254:9500
+    kroki-fetch-diagram: true
   extensions:
   - ./lib/asciidoctor-performance-patch.js
   - ./lib/source-url-include-processor.js
@@ -147,6 +150,7 @@ asciidoc:
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
+  - asciidoctor-kroki
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-142/ui-bundle.zip
