@@ -40,9 +40,9 @@ content:
   - url: https://github.com/couchbaselabs/observability
     branches: [main]
     start_path: docs
-  - url: https://github.com/couchbaselabs/cbmultimanager
-    branches: [master]
-    start_path: docs
+  # - url: https://github.com/couchbaselabs/cbmultimanager
+  #   branches: [master]
+  #   start_path: docs
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
     branches: [release/4.2, release/4.1, release/4.0]
     start_path: docs
