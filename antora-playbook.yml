@@ -139,7 +139,6 @@ content:
     branches: [master]
     start_path: content
   - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
-
 asciidoc:
   attributes:
     enable-cmos: ''
