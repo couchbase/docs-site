@@ -128,7 +128,7 @@ xref:sdk-extensions::response-time-observability.adoc[Response Time Observabilit
 
 | C# Transactions
 | xref:3.1@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-transactions-dotnet-1.0.0/[API Reference]
+| https://docs.couchbase.com/sdk-api/couchbase-transactions-dotnet/index.html[API Reference]
 
 | C++ Transactions
 | xref:1.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[Docs]
