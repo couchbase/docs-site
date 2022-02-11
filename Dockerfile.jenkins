@@ -1,13 +1,12 @@
 # This image extends the official Antora image to add bash, ca-certificates, and the aws command. It's used by the CI job.
-FROM antora/antora:3.0.0-alpha.5
+FROM antora/antora:3.0.1
 
 ARG GROUP_ID=1000
 ARG USER_ID=1000
 RUN addgroup -g $GROUP_ID jenkins && \
     adduser -D -u $USER_ID -G jenkins jenkins && \
     apk add --no-cache --quiet bash ca-certificates git openssh-client python && \
-    yarn global add --ignore-optional --silent git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#v3.0.0-alpha.3 && \
-    yarn global add --ignore-optional --silent git+https://gitlab.com/antora/xref-validator#v1.0.0-alpha.14 && \
+    yarn global add --ignore-optional --silent git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension && \
     yarn global add --ignore-optional --silent asciidoctor-kroki && \
     apk add --no-cache --quiet --virtual .build-deps py2-pip && \
     pip install --no-cache-dir --quiet --disable-pip-version-check awscli && \
