@@ -23,7 +23,7 @@ Find the documentation, samples, and references to help you use Couchbase and bu
 ====== {empty}
 [.content]
 ----
-// List the schedule of flights from Boston 
+// List the schedule of flights from Boston
 // to San Francisco on JETBLUE
 
 SELECT DISTINCT airline.name, route.schedule
@@ -67,12 +67,15 @@ xref:server.adoc[Couchbase Server]
 
 [.column]
 ====== {empty}
-.Couchbase Lite
+.Couchbase Mobile
 
 [.content]
-Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combined with Couchbase Server, it provides fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+_Couchbase Mobile_ brings the power of NoSQL to the edge.
+The combination of _Sync Gateway_ and _Couchbase Lite_ coupled with the power of _Couchbase Server_ provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
+Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
 
-xref:couchbase-lite::introduction.adoc[Couchbase Lite]
+xref:couchbase-lite::introduction.adoc[Couchbase Lite] |
+xref:sync-gateway::introduction.adoc[Sync Gateway]
 
 ++++
 </div>
@@ -100,7 +103,7 @@ xref:home:ROOT:sdk.adoc[Developer Docs]
 .CLI and REST APIs
 
 [.content]
-Use the command-line interface (CLI) tools and REST API to manage and monitor your Couchbase deployment. 
+Use the command-line interface (CLI) tools and REST API to manage and monitor your Couchbase deployment.
 
 xref:server:cli:cli-intro.adoc[Couchbase CLI] | xref:server:rest-api:rest-intro.adoc[REST API]
 
@@ -109,7 +112,7 @@ xref:server:cli:cli-intro.adoc[Couchbase CLI] | xref:server:rest-api:rest-intro.
 .Couchbase Shell
 
 [.content]
-A modern shell to interact with Couchbase Server and Cloud, now available. 
+A modern shell to interact with Couchbase Server and Cloud, now available.
 Couchbase Shell public Beta is now available.
 
 https://couchbase.sh[Explore Couchbase Shell]
