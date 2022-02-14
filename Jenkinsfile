@@ -91,21 +91,7 @@ pipeline {
       steps {
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com"]) {
-            script {
-              // NOTE to enforce this validation, remove this try-catch block
-              try {
-                sh "time antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace antora-playbook.yml >xref-validator.log 2>&1"
-              } catch (err) {
-                def report = readFile('xref-validator.log')
-                if (!report.contains('antora: xref validation failed')) {
-                  echo 'xref validator failed to run; see next invocation for reason'
-                } else {
-                  //echo report
-                }
-              }
-            }
-            // NOTE we don't use --fetch here since it was already done when running the xref validator
-            sh "time antora --cache-dir=./.cache/antora --clean --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
+            sh "time antora --cache-dir=./.cache/antora --fetch --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
         sh 'node scripts/populate-icon-defs.js public'

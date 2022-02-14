@@ -1,6 +1,9 @@
-# $(npm bin)/antora --clean --fetch antora-playbook.yml
+# npx antora --clean --fetch antora-playbook.yml
 # or
-# $(npm bin)/antora --clean --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --fetch antora-playbook.yml
+# npx antora antora-playbook.yml
+antora:
+  extensions:
+  - '@antora/site-generator-ms'
 site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
@@ -21,6 +24,7 @@ site:
       ]
 git:
   ensure_git_suffix: false
+  fetch_concurrency: 10
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
@@ -129,6 +133,7 @@ content:
     start_path: content
 asciidoc:
   attributes:
+    site-navigation-data-path: _/js/site-navigation-data.js
     max-include-depth: 10
     page-partial: false
     experimental: ''
