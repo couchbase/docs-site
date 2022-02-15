@@ -140,6 +140,7 @@ asciidoc:
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    sqlpp: SQL++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
   extensions:
