@@ -1,6 +1,9 @@
-# $(npm bin)/antora --clean --fetch antora-playbook.yml
+# npx antora --clean --fetch antora-playbook.yml
 # or
-# $(npm bin)/antora --clean --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --fetch antora-playbook.yml
+# npx antora antora-playbook.yml
+antora:
+  extensions:
+  - '@antora/site-generator-ms'
 site:
   title: Couchbase Docs Staging
   url: https://docs-staging.couchbase.com
@@ -21,6 +24,7 @@ site:
       ]
 git:
   ensure_git_suffix: false
+  fetch_concurrency: 10
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
@@ -141,6 +145,7 @@ content:
   - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
 asciidoc:
   attributes:
+    site-navigation-data-path: _/js/site-navigation-data.js
     enable-cmos: ''
     max-include-depth: 10
     page-partial: false
@@ -152,17 +157,16 @@ asciidoc:
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
-    kroki-server-url: http://3.91.133.254:9500/
+    kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
   extensions:
-  - ./lib/asciidoctor-performance-patch.js
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
-  - asciidoctor-kroki 
+  - asciidoctor-kroki
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-143/ui-bundle.zip
