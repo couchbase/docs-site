@@ -133,7 +133,6 @@ pipeline {
           build job: '/Antora/docs-search-indexer/master', wait: false
         }
       }
-      deleteDir()
       githubNotify credentialsId: githubApiCredentialsId, account: githubAccount, repo: githubRepo, sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build succeeded', status: 'SUCCESS'
     }
     failure {
