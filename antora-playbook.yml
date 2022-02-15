@@ -148,7 +148,6 @@ asciidoc:
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
   extensions:
-  - ./lib/asciidoctor-performance-patch.js
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
