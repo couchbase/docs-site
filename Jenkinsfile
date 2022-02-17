@@ -90,7 +90,7 @@ pipeline {
       steps {
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com"]) {
-            sh "time antora --cache-dir=~+/.cache/antora --fetch --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook-testing.yml"
+            sh "time antora --cache-dir=~+/.cache/antora --fetch --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
         sh 'node scripts/populate-icon-defs.js public'
