@@ -99,7 +99,7 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        sh 'node scripts/print-site-stats.js'
+        //sh 'node scripts/print-site-stats.js'
         withCredentials([awsCredentials]) {
           sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '.etc/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
           // NOTE copy fonts again to fix content-type header and set max-age
