@@ -91,7 +91,7 @@ pipeline {
       steps {
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com"]) {
-            sh "time antora --cache-dir=./.cache/antora --fetch --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
+            sh "time antora --cache-dir=./.cache/antora --clean --extension=./site-stats-extension.js --fetch --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
         sh 'node scripts/populate-icon-defs.js public'
@@ -100,7 +100,6 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        sh 'node scripts/print-site-stats.js'
         withCredentials([awsCredentials]) {
           script {
             def includeFilter = sh(script: 'find public -mindepth 1 -maxdepth 1 -type d -name [a-z_]\\* -printf %f\\\\0', returnStdout: true).trim().split('\0').sort().collect { "--include '$it/*'" }.join(' ')
