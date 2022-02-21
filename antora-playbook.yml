@@ -103,9 +103,9 @@ content:
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [feature/3.0-GA, release/2.8, release/2.7, release/2.6]
+    branches: [feature/3.0-GA, release/2.8]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [feature/3.0-GA, release/2.8, release/2.7, release/2.6]
+    branches: [feature/3.0-GA, release/2.8]
   - url: https://github.com/couchbase/docs-service-broker
     branches: [1.1.x, 1.0.x]
   - url: https://git@github.com/couchbase/docs-cloud-native
@@ -118,8 +118,8 @@ content:
   - url: https://github.com/amarantha-k/mobile-travel-sample
     branches: [fix-tabs]
     start_path: content
-  - url: https://github.com/couchbaselabs/hotel-finder-react-native
-  - url: https://github.com/couchbaselabs/hotel-lister-cordova
+  # - url: https://github.com/couchbaselabs/hotel-finder-react-native
+  # - url: https://github.com/couchbaselabs/hotel-lister-cordova
   - url: https://github.com/couchbaselabs/tutorials-contrib
     # branches: [azure-prereq]
   - url: https://github.com/couchbaselabs/mobile-training-todo
@@ -142,7 +142,7 @@ content:
   - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
     branches: [master]
     start_path: content
-  - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
+  # - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
