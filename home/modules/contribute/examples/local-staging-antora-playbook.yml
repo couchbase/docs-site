@@ -15,7 +15,7 @@ content:
   - url: ~/Couchbase/docs/docs-server/
     branches: [release/6.5, release/6.6, release/7.0]
   - url: ~/Couchbase/docs/docs-server/
-    branches: [release/7.1, release/7.0]
+    branches: [release/7.0]
   - url: ~/Couchbase/docs/docs-sdk-common/
     branches: [release/7.1, release/7.0]
   - url: ~/Couchbase/docs/docs-sdk-c/
