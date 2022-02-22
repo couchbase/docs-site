@@ -100,12 +100,14 @@ content:
     branches: [release/1.2, release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
+    # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
     branches: [feature/3.0-GA, release/2.8]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [feature/3.0-GA, release/2.8]
+    #
   - url: https://github.com/couchbase/docs-service-broker
     branches: [1.1.x, 1.0.x]
   - url: https://git@github.com/couchbase/docs-cloud-native
@@ -115,8 +117,9 @@ content:
     # branches: [azure-prereq]
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
-  - url: https://github.com/amarantha-k/mobile-travel-sample
-    branches: [fix-tabs]
+  # - url: https://github.com/amarantha-k/mobile-travel-sample ??
+  - url: https://github.com/couchbaselabs/mobile-travel-sample
+    branches: [master]
     start_path: content
   # - url: https://github.com/couchbaselabs/hotel-finder-react-native
   # - url: https://github.com/couchbaselabs/hotel-lister-cordova
