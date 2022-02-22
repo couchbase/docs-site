@@ -91,6 +91,7 @@ content:
     branches: [release/1.2, release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
+    # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
@@ -105,7 +106,7 @@ content:
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
   - url: https://github.com/couchbaselabs/mobile-travel-sample
-    # branches: [fix-tabs]
+    branches: [master]
     start_path: content
   - url: https://github.com/couchbaselabs/hotel-finder-react-native
   - url: https://github.com/couchbaselabs/hotel-lister-cordova
