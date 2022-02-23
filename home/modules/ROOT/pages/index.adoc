@@ -67,7 +67,7 @@ xref:server.adoc[Couchbase Server]
 
 [.column]
 ====== {empty}
-.Couchbase Mobile 3
+.Couchbase Mobile
 
 [.content]
 _Couchbase Mobile_ brings the power of NoSQL to the edge.
