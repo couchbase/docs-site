@@ -48,7 +48,7 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[API Reference]
 
 | Node.js SDK
-| xref:3.2@nodejs-sdk:hello-world:overview.adoc[Docs]
+| xref:4.0@nodejs-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-node-client/modules.html[API Reference]
 
 | PHP SDK
@@ -64,7 +64,7 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[API Reference]
 
 | Go SDK
-| xref:2.3@go-sdk:hello-world:overview.adoc[Docs]
+| xref:2.4@go-sdk:hello-world:overview.adoc[Docs]
 | https://pkg.go.dev/github.com/couchbase/gocb/v2[API Reference]
 |===
 
@@ -128,7 +128,7 @@ xref:sdk-extensions::response-time-observability.adoc[Response Time Observabilit
 
 | C# Transactions
 | xref:3.1@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-transactions-dotnet-1.0.0/[API Reference]
+| https://docs.couchbase.com/sdk-api/couchbase-transactions-dotnet/index.html[API Reference]
 
 | C++ Transactions
 | xref:1.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[Docs]

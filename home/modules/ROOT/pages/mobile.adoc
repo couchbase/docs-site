@@ -3,7 +3,7 @@
 :page-role: tiles
 :!sectids:
 
-= Couchbase for Mobile/Edge
+= Couchbase Mobile
 ++++
 <div class="card-row">
 ++++
@@ -11,7 +11,9 @@
 [.column]
 ====== {empty}
 [.content]
-Bring the power of NoSQL to the edge with Sync Gateway and Couchbase Lite. Combined with Couchbase Server, it provides fast, efficient bidirectional synchronization of data between the edge and the cloud. Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+_Couchbase Mobile_ brings the power of NoSQL to the edge.
+The combination of _Sync Gateway_ and _Couchbase Lite_ coupled with the power of _Couchbase Server_ provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
+Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
 
 [.column]
 ====== {empty}
@@ -31,25 +33,24 @@ image::secure-manage-and-develop-with-ease.svg[,275]
 .Couchbase Lite
 
 [.content]
-Couchbase Lite is an embedded, NoSQL JSON Document Style database for your mobile apps. It natively supports all major operating systems and platforms. Its NoSQL client database provides CRUD, full-text search and query capabilities that runs locally on the device.
-{empty}
+Couchbase Lite is an embedded, NoSQL JSON Document Style database for your mobile apps.
+It natively supports all major operating systems and platforms.
+Its NoSQL client database provides CRUD, full-text search and query capabilities that runs locally on the device. +
 xref:couchbase-lite::introduction.adoc[Go to Couchbase Lite Docs]
 
 [.column]
 .Sync Gateway
 
 [.content]
-Sync Gatway is an internet-facing synchronization mechanism designed to provide data synchronization for large-scale interactive web, mobile, and IoT applications.
-{empty}
+Sync Gateway is an internet-facing synchronization mechanism designed to provide data synchronization for large-scale interactive web, mobile, and IoT applications. +
 xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
 
 [.column]
 .Tutorials
 
 [.content]
-Sample tutorials to build applications on the edge.
-{empty}
-xref:tutorials::index.adoc[Tutorials]
+Sample tutorials to build Mobile applications on the edge. +
+xref:tutorials::index.adoc[Couchbase Mobile Tutorials]
 
 ++++
 </div>

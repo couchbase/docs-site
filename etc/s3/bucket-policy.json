@@ -1,0 +1,47 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1488222338812",
+    "Statement": [
+        {
+            "Sid": "Stmt1488222337054",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::627824391786:user/matt.carabine@couchbase.com"
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::docs.couchbase.com"
+        },
+        {
+            "Sid": "Stmt1532387574773",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": [
+                "arn:aws:s3:::docs.couchbase.com/index.html",
+                "arn:aws:s3:::docs.couchbase.com/sitemap*.xml",
+                "arn:aws:s3:::docs.couchbase.com/site-manifest.json",
+                "arn:aws:s3:::docs.couchbase.com/_/*",
+                "arn:aws:s3:::docs.couchbase.com/*-sdk/*",
+                "arn:aws:s3:::docs.couchbase.com/*-connector/*",
+                "arn:aws:s3:::docs.couchbase.com/cloud/*",
+                "arn:aws:s3:::docs.couchbase.com/cloud-native-database/*",
+                "arn:aws:s3:::docs.couchbase.com/couchbase-lite/*",
+                "arn:aws:s3:::docs.couchbase.com/cxx-txns/*",
+                "arn:aws:s3:::docs.couchbase.com/home/*",
+                "arn:aws:s3:::docs.couchbase.com/operator/*",
+                "arn:aws:s3:::docs.couchbase.com/sdk/*",
+                "arn:aws:s3:::docs.couchbase.com/sdk-api/*",
+                "arn:aws:s3:::docs.couchbase.com/sdk-common/*",
+                "arn:aws:s3:::docs.couchbase.com/sdk-extensions/*",
+                "arn:aws:s3:::docs.couchbase.com/server/*",
+                "arn:aws:s3:::docs.couchbase.com/service-broker/*",
+                "arn:aws:s3:::docs.couchbase.com/shared-mobile/*",
+                "arn:aws:s3:::docs.couchbase.com/sync-gateway/*",
+                "arn:aws:s3:::docs.couchbase.com/tutorials/*",
+                "arn:aws:s3:::docs.couchbase.com/userprofile-couchbase-mobile/*"
+            ]
+        }
+    ]
+}
