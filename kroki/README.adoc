@@ -1,0 +1,11 @@
+= Kroki Support
+
+The Couchbase site supports diagrams defined as text, which will allow us to create diagrams that can be created without the need for any artistic talent, and can also be version controlled.
+
+We use a service called https://kroki.io[Kroki^] to convert the text definitions (which can be embedded directly in an Asciidoc document), which runs on our own server at: http://3.91.133.254:9500/.
+
+NOTE: You have to be logged on to `vpn-public.couchbase.com` to see it.
+
+The service runs under Docker, and was created using the compose script you'll find here.
+
+If you want to run your own version of Kroki locally, then just setup your own Docker instance using the same file.
