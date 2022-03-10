@@ -18,6 +18,7 @@ site:
         { "title": "Cloud", "startPage": "cloud::index.adoc", "components": ["cloud"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
+        { "title": "CMOS", "components": ["cmos"] },
         { "title": "Service Broker", "components": ["service-broker"] },
         { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "sdk-extensions"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
@@ -41,6 +42,12 @@ content:
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [2.3.0-beta, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
+  - url: https://github.com/couchbaselabs/observability
+    branches: [0.2.x]
+    start_path: docs
+  - url: https://github.com/couchbaselabs/cbmultimanager
+    branches: [0.2.x]
+    start_path: docs
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
     branches: [master, release/4.2, release/4.1, release/4.0]
     start_path: docs
@@ -135,6 +142,7 @@ content:
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
+    enable-cmos: ''
     max-include-depth: 10
     page-partial: false
     experimental: ''

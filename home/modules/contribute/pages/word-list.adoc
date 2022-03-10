@@ -114,6 +114,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | (the) Couchbase Data Platform | data platform if not preceded by _Couchbase_
 | Couchbase Eventing Service |
 | Couchbase Functions |
+| Couchbase Monitoring and Observability Stack | CMOS 
 | Couchbase Server 7.0 | first instance; abbreviate to Server 7.0 in subsequent instances. When referencing general (both) okay to use Couchbase Server alone, no article
 | Couchstore |
 | cross datacenter replication (XDCR) |
