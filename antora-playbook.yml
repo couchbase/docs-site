@@ -104,7 +104,7 @@ content:
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/3.0, release/2.8]
+    branches: [feature/release-3-0-1, release/2.8]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.0, release/2.8]
     #
