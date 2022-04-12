@@ -115,8 +115,8 @@ content:
   - url: https://github.com/couchbaselabs/mobile-travel-sample
     branches: [master]
     start_path: content
-  - url: https://github.com/couchbaselabs/hotel-finder-react-native
-  - url: https://github.com/couchbaselabs/hotel-lister-cordova
+  # - url: https://github.com/couchbaselabs/hotel-finder-react-native
+  # - url: https://github.com/couchbaselabs/hotel-lister-cordova
   - url: https://github.com/couchbaselabs/tutorials-contrib
   - url: https://github.com/couchbaselabs/mobile-training-todo
     branches: tutorials
@@ -129,13 +129,13 @@ content:
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
     branches: [standalone, query, sync]
     start_path: content
-  - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
+  # - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
     branches: [standalone, query, sync]
     start_path: content
-  - url: https://github.com/amarantha-k/OpenID_connect_tutorial
-    branches: [tutorial]
-    start_path: content
+  # - url: https://github.com/amarantha-k/OpenID_connect_tutorial
+  #   branches: [tutorial]
+  #   start_path: content
   - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
     branches: [master]
     start_path: content
