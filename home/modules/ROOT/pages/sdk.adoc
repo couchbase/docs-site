@@ -32,11 +32,11 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | SDK | Documentation | API Reference
 
 | Java SDK
-| xref:3.2@java-sdk:hello-world:overview.adoc[Docs]
+| xref:3.3@java-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-java-client[API Reference]
 
 | Scala SDK
-| xref:1.2@scala-sdk:hello-world:overview.adoc[Docs]
+| xref:1.3@scala-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference]
 
 | .NET SDK
@@ -48,7 +48,7 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[API Reference]
 
 | Node.js SDK
-| xref:3.2@nodejs-sdk:hello-world:overview.adoc[Docs]
+| xref:4.0@nodejs-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-node-client[API Reference]
 
 | PHP SDK
@@ -123,11 +123,11 @@ xref:sdk-extensions::response-time-observability.adoc[Response Time Observabilit
 | Transaction Library | Documentation | API Reference
 
 | Java
-| xref:3.1@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
+| xref:3.3@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-transactions-java/index.html[API Reference]
 
 | C# Transactions
-| xref:3.1@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
+| xref:3.2@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-transactions-dotnet-1.0.0/[API Reference]
 
 | C++ Transactions
