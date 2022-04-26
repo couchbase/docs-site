@@ -69,6 +69,9 @@ endif::[]
 
 [.tile]
 .Java SDK
+* xref:3.3@java-sdk:hello-world:start-using-sdk.adoc[Version 3.3]
+* xref:3.2@java-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
+* xref:3.1@java-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@java-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
 * xref:2.7@java-sdk::start-using-sdk.adoc[Version 2.7]
 * xref:2.6@java-sdk::start-using-sdk.adoc[Version 2.6]
@@ -80,6 +83,9 @@ endif::[]
 
 [.tile]
 .Node.js SDK
+* xref:4.0@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.0]
+* xref:3.2@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
+* xref:3.1@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
 * xref:2.6@nodejs-sdk::start-using-sdk.adoc[Version 2.6]
 * xref:2.5@nodejs-sdk::start-using-sdk.adoc[Version 2.5]
@@ -90,6 +96,8 @@ endif::[]
 
 [.tile]
 ..NET SDK
+* xref:3.2@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
+* xref:3.1@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
 * xref:2.7@dotnet-sdk::start-using-sdk.adoc[Version 2.7]
 * xref:2.6@dotnet-sdk::start-using-sdk.adoc[Version 2.6]
@@ -101,6 +109,8 @@ endif::[]
 
 [.tile]
 .Python SDK
+* xref:3.2@python-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
+* xref:3.1@python-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@python-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
 * xref:2.5@python-sdk::start-using-sdk.adoc[Version 2.5]
 * xref:2.4@python-sdk::start-using-sdk.adoc[Version 2.4]
@@ -111,16 +121,24 @@ endif::[]
 
 [.tile]
 .Ruby SDK
+* xref:3.2@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
+* xref:3.1@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
+* xref:3.0@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
 * https://docs.couchbase.com/couchbase-sdk-ruby-1.3/[Version 1.3]
 * https://docs.couchbase.com/couchbase-sdk-ruby-1.2/[Version 1.2]
 * https://docs.couchbase.com/couchbase-sdk-ruby-1.1/[Version 1.1]
 
 [.tile]
 .Scala SDK
+* xref:1.3@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.3]
+* xref:1.2@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.2]
+* xref:1.1@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.1]
 * xref:1.0@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
 [.tile]
 .PHP SDK
+* xref:3.2@php-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
+* xref:3.1@php-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@php-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
 * xref:2.6@php-sdk::start-using-sdk.adoc[Version 2.6]
 * xref:2.5@php-sdk::start-using-sdk.adoc[Version 2.5]
@@ -131,6 +149,9 @@ endif::[]
 
 [.tile]
 .Go SDK
+* xref:2.4@go-sdk:hello-world:start-using-sdk.adoc[Version 2.4]
+* xref:2.3@go-sdk:hello-world:start-using-sdk.adoc[Version 2.3]
+* xref:2.2@go-sdk:hello-world:start-using-sdk.adoc[Version 2.2]
 * xref:2.1@go-sdk:hello-world:start-using-sdk.adoc[Version 2.1]
 * xref:2.0@go-sdk:hello-world:start-using-sdk.adoc[Version 2.0]
 * xref:1.6@go-sdk::start-using-sdk.adoc[Version 1.6]
@@ -143,6 +164,8 @@ endif::[]
 
 [.tile]
 .C SDK
+* xref:3.2@c-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
+* xref:3.1@c-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@c-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
 * xref:2.10@c-sdk::start-using-sdk.adoc[Version 2.10]
 * xref:2.9@c-sdk::start-using-sdk.adoc[Version 2.9]
