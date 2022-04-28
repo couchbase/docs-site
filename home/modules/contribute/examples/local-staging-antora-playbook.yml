@@ -21,7 +21,7 @@ content:
   - url: ~/Couchbase/docs/docs-sdk-c/
     branches: [release/3.2, release/3.1]
   - url: ~/Couchbase/docs/docs-sdk-dotnet/
-    branches: [release/3.2, release/3.1]
+    branches: [release/3.3, release/3.2]
   - url: ~/Couchbase/docs/docs-sdk-go/
     branches: [release/2.4, release/2.3]
   - url: ~/Couchbase/docs/docs-sdk-java/
