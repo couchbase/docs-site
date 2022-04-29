@@ -48,7 +48,7 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[API Reference]
 
 | Node.js SDK
-| xref:4.0@nodejs-sdk:hello-world:overview.adoc[Docs]
+| xref:4.1@nodejs-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-node-client/modules.html[API Reference]
 
 | PHP SDK
