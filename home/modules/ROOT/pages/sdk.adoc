@@ -60,7 +60,7 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[API Reference]
 
 | Python SDK
-| xref:3.2@python-sdk:hello-world:overview.adoc[Docs]
+| xref:4.0@python-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-python-client/[API Reference]
 
 | Ruby SDK
