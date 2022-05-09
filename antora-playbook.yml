@@ -4,6 +4,11 @@
 antora:
   extensions:
   - '@antora/site-generator-ms'
+  - require: './lib/wrap-asciidoc-extension.js'
+    extension: '../lib/inline-jira-macro.js'
+    data:
+      "https://issues.couchbase.com/browse/": ["JSCBC", "default"]
+      "https://couchbasecloud.atlassian.net/browse/": ["AV"]
 site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
@@ -164,7 +169,6 @@ asciidoc:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
-  - ./lib/inline-jira-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js

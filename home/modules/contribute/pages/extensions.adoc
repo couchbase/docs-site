@@ -19,22 +19,29 @@ Test and document your Asciidoctor.js or Antora extensions here.
 [source,yml]
 .antora-playbook.yml
 ----
+# naive configuration
 asciidoc:
     extensions:
         - ./lib/inline-jira-macro.js
 ----
 
-Edit the `inline-jira-macro.js` file directly to configure
-the JIRA URLs for each sigil. Use the special sigil `default` to avoid having to specify every single project.
+To avoid having to tweak the `inline-jira-macro.js` file directly to configure the JIRA URLs for each sigil,
+we can use a wrapper:
 
-[source,javascript]
-.inline-jira-macro.js
+[source,yml]
+.antora-playbook.yml
 ----
-const jira = {
-    "https://issues.couchbase.com/browse/": ["JSCBC", "default"],
-    "https://couchbasecloud.atlassian.net/browse/": ["AV"]
-}
+# better configuration
+antora:
+    extensions:
+    -   require: './lib/wrap-asciidoc-extension.js'
+        extension: '../lib/inline-jira-macro.js'
+        data:
+            "https://issues.couchbase.com/browse/": ["JSCBC", "default"]
+            "https://couchbasecloud.atlassian.net/browse/": ["AV"]
 ----
+
+NB: Use the special sigil `default` to avoid having to specify every single project.
 
 === Output
 
