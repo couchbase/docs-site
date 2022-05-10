@@ -49,7 +49,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | APAC |
 | API |
 | App / Application | _apps_ as restricted & reduced in functionality. Can be used in Mobile component, for example. _Application_ is the preferred term for client software generally. Note, refer to Couchbase (Server & other software) itself as an _application_. For avoiding app/application, use _Client_
-| as of | Use only when referring to dates or time. If talking about a software version, use a phrase such as _beginning with Couchbase Server 7.0_
+| as of | Use only when referring to dates or time. If talking about a software version, use a phrase such as _beginning with Couchbase Server n.n_
 | ASCII | uppercase!
 | autocomplete |  (noun) auto-complete (verb)
 | Auto-failover | noun. Phrasal verb is _automatically fails over_ or _fails over automatically_. Don’t use as one word -- _AutoFailover_ -- except as command name part
@@ -116,7 +116,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | Couchbase Eventing Service |
 | Couchbase Functions |
 | Couchbase Managed Cloud |
-| Couchbase Server 7.0 | first instance; abbreviate to Server 7.0 in subsequent instances. When referencing general (both) okay to use Couchbase Server alone, no article
+| Couchbase Server n.n | first instance; abbreviate to Server n.n in subsequent instances. When referencing general (both) okay to use Couchbase Server alone, no article
 | Couchstore |
 | cross datacenter replication (XDCR) |
 | cURL | is the name of Daniel Stenberg's data transfer tool (_Client URL_). `curl` is the verb, and its use on the command line
