@@ -112,7 +112,7 @@ content:
     branches: [1.1.x, 1.0.x]
   - url: https://git@github.com/couchbase/docs-cloud-native
     branches: [cloud-native-2.2]
-  - url: https://git@github.com/couchbase/docs-ngdm
+#  - url: https://git@github.com/couchbase/docs-ngdm
   - url: https://github.com/couchbase/tutorials
     # branches: [azure-prereq]
   - url: https://github.com/couchbase/developer-content
