@@ -56,9 +56,9 @@ content:
   - url: https://github.com/couchbase/couchbase-spark-connector
     branches: [master, release/3.1, release/3.0, release/2.4]
     start_path: docs
-  - url: https://github.com/couchbase/couchbase-tableau-connector
-    branches: [master]
-    start_path: docs
+#  - url: https://github.com/couchbase/couchbase-tableau-connector
+#    branches: [master]
+#    start_path: docs
 #  - url: https://git@github.com/couchbase/docs-connectors-talend
 #  - url: https://git@github.com/couchbase/docs-analytics
 #    branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
