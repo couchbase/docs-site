@@ -35,18 +35,18 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-#  - url: https://git@github.com/couchbasecloud/couchbase-cloud
-#    branches: [main]
-#    start_path: docs/public
-#  - url: https://git@github.com/couchbase/couchbase-operator
-#    branches: [master, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
-#    start_path: docs/user
+  - url: https://git@github.com/couchbasecloud/couchbase-cloud
+    branches: [main]
+    start_path: docs/public
+  - url: https://git@github.com/couchbase/couchbase-operator
+    branches: [master, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
+    start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
     branches: [main]
     start_path: docs
-  #- url: https://github.com/couchbaselabs/cbmultimanager
-  #  branches: [master]
-  #  start_path: docs
+  - url: https://github.com/couchbaselabs/cbmultimanager
+    branches: [master]
+    start_path: docs
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
     branches: [release/4.2, release/4.1, release/4.0]
     start_path: docs
@@ -56,18 +56,18 @@ content:
   - url: https://github.com/couchbase/couchbase-spark-connector
     branches: [master, release/3.1, release/3.0, release/2.4]
     start_path: docs
-#  - url: https://github.com/couchbase/couchbase-tableau-connector
-#    branches: [master]
-#    start_path: docs
-#  - url: https://git@github.com/couchbase/docs-connectors-talend
-#  - url: https://git@github.com/couchbase/docs-analytics
-#    branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
+  - url: https://github.com/couchbase/couchbase-tableau-connector
+    branches: [master]
+    start_path: docs
+  - url: https://git@github.com/couchbase/docs-connectors-talend
+  - url: https://git@github.com/couchbase/docs-analytics
+    branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
   - url: https://github.com/couchbase/couchbase-cli
     branches: [master, cheshire-cat, mad-hatter, 6.5.x-docs, alice]
     start_path: docs
-#  - url: https://git@github.com/couchbase/backup
-#    branches: [master, cheshire-cat, mad-hatter, 6.5.x-docs, alice]
-#    start_path: docs
+  - url: https://git@github.com/couchbase/backup
+    branches: [master, cheshire-cat, mad-hatter, 6.5.x-docs, alice]
+    start_path: docs
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
     start_path: docs
@@ -110,9 +110,9 @@ content:
     #
   - url: https://github.com/couchbase/docs-service-broker
     branches: [1.1.x, 1.0.x]
-#  - url: https://git@github.com/couchbase/docs-cloud-native
-#    branches: [cloud-native-2.2]
-#  - url: https://git@github.com/couchbase/docs-ngdm
+  - url: https://git@github.com/couchbase/docs-cloud-native
+    branches: [cloud-native-2.2]
+  - url: https://git@github.com/couchbase/docs-ngdm
   - url: https://github.com/couchbase/tutorials
     # branches: [azure-prereq]
   - url: https://github.com/couchbase/developer-content
