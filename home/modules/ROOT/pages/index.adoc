@@ -16,6 +16,8 @@ endif::[]
 
 [.tile]
 .Server
+* xref:7.1@server:introduction:whats-new.adoc[Version 7.1]
+* xref:7.0@server:introduction:whats-new.adoc[Version 7.0]
 * xref:6.6@server:introduction:whats-new.adoc[Version 6.6]
 * xref:6.5@server:introduction:whats-new.adoc[Version 6.5]
 * xref:6.0@server:introduction:whats-new.adoc[Version 6.0]
@@ -35,6 +37,9 @@ endif::[]
 
 [.tile]
 .Couchbase Autonomous Operator (Kubernetes)
+* xref:2.3@operator::whats-new.adoc[Version 2.3]
+* xref:2.2@operator::whats-new.adoc[Version 2.2]
+* xref:2.1@operator::whats-new.adoc[Version 2.1]
 * xref:2.0@operator::whats-new.adoc[Version 2.0]
 * xref:1.2@operator::whats-new.adoc[Version 1.2]
 * xref:1.1@operator::whats-new.adoc[Version 1.1]
@@ -45,6 +50,8 @@ endif::[]
 
 [.tile]
 .Couchbase Lite
+* xref:3.0@couchbase-lite::index.adoc[Version 3.0]
+* xref:2.8@couchbase-lite::index.adoc[Version 2.8]
 * xref:2.7@couchbase-lite::index.adoc[Version 2.7]
 * xref:2.6@couchbase-lite::index.adoc[Version 2.6]
 * xref:2.5@couchbase-lite::index.adoc[Version 2.5]
@@ -55,6 +62,8 @@ endif::[]
 
 [.tile]
 .Couchbase Sync Gateway
+* xref:3.0@sync-gateway::index.adoc[Version 3.0]
+* xref:2.8@sync-gateway::index.adoc[Version 2.8]
 * xref:2.7@sync-gateway::index.adoc[Version 2.7]
 * xref:2.6@sync-gateway::index.adoc[Version 2.6]
 * xref:2.5@sync-gateway::index.adoc[Version 2.5]
@@ -83,6 +92,7 @@ endif::[]
 
 [.tile]
 .Node.js SDK
+* xref:4.1@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.1]
 * xref:4.0@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.0]
 * xref:3.2@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
 * xref:3.1@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
@@ -96,6 +106,7 @@ endif::[]
 
 [.tile]
 ..NET SDK
+* xref:3.3@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.3]
 * xref:3.2@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
 * xref:3.1@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
@@ -109,6 +120,7 @@ endif::[]
 
 [.tile]
 .Python SDK
+* xref:4.0@python-sdk:hello-world:start-using-sdk.adoc[Version 4.0]
 * xref:3.2@python-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
 * xref:3.1@python-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@python-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
@@ -121,6 +133,7 @@ endif::[]
 
 [.tile]
 .Ruby SDK
+* xref:3.3@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.3]
 * xref:3.2@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
 * xref:3.1@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
@@ -136,7 +149,12 @@ endif::[]
 * xref:1.0@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
 [.tile]
+.Kotlin SDK
+* xref:1.0@kotlin-sdk:hello-world:overview.adoc[Version 1.0]
+
+[.tile]
 .PHP SDK
+* xref:4.0@php-sdk:hello-world:start-using-sdk.adoc[Version 4.0]
 * xref:3.2@php-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
 * xref:3.1@php-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@php-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
@@ -149,6 +167,7 @@ endif::[]
 
 [.tile]
 .Go SDK
+* xref:2.5@go-sdk:hello-world:start-using-sdk.adoc[Version 2.5]
 * xref:2.4@go-sdk:hello-world:start-using-sdk.adoc[Version 2.4]
 * xref:2.3@go-sdk:hello-world:start-using-sdk.adoc[Version 2.3]
 * xref:2.2@go-sdk:hello-world:start-using-sdk.adoc[Version 2.2]
@@ -164,6 +183,7 @@ endif::[]
 
 [.tile]
 .C SDK
+* xref:3.3@c-sdk:hello-world:start-using-sdk.adoc[Version 3.3]
 * xref:3.2@c-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
 * xref:3.1@c-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@c-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
@@ -179,6 +199,7 @@ endif::[]
 
 [.tile]
 .Elasticsearch Plug-in
+* xref:4.3@elasticsearch-connector::index.adoc[Version 4.3]
 * xref:4.2@elasticsearch-connector::index.adoc[Version 4.2]
 * xref:4.1@elasticsearch-connector::index.adoc[Version 4.1]
 * xref:4.0@elasticsearch-connector::index.adoc[Version 4.0]
@@ -186,6 +207,7 @@ endif::[]
 
 [.tile]
 .Kafka Connector
+* xref:4.0@kafka-connector::index.adoc[Version 4.1]
 * xref:4.0@kafka-connector::index.adoc[Version 4.0]
 * xref:3.4@kafka-connector::index.adoc[Version 3.4]
 * xref:3.3@kafka-connector::index.adoc[Version 3.3]
@@ -197,6 +219,9 @@ endif::[]
 
 [.tile]
 .Spark Connector
+* xref:3.2@spark-connector::index.adoc[Version 3.2]
+* xref:3.1@spark-connector::index.adoc[Version 3.1]
+* xref:3.0@spark-connector::index.adoc[Version 3.0]
 * xref:2.4@spark-connector::index.adoc[Version 2.4]
 * xref:2.3@spark-connector::index.adoc[Version 2.3]
 * xref:2.2@spark-connector::index.adoc[Version 2.2]
