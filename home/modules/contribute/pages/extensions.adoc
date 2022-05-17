@@ -1,4 +1,3 @@
-
 = Site Extensions
 
 Test and document your Asciidoctor.js or Antora extensions here.
@@ -11,42 +10,30 @@ Test and document your Asciidoctor.js or Antora extensions here.
 ----
 == Fixed issues:
 
- * jira:JSCBC-1234[]: reversed the polarity of the neutron flow
- * jira:AV-2345[]: frobnicated the gostaks
- * jira:DOC-999[The dreaded DOC-999 ticket...]: implemented jira macro
+* jira:JSCBC-1234[]: reversed the polarity of the neutron flow
+* jira:AV-2345[]: frobnicated the gostaks
+* jira:DOC-999[The dreaded DOC-999 ticket...]: implemented jira macro
 ----
 
-[source,yml]
+[,yml]
 .antora-playbook.yml
 ----
-# naive configuration
 asciidoc:
-    extensions:
-        - ./lib/inline-jira-macro.js
+  attributes:
+    # ...
+    url-issues: https://issues.couchbase.com/browse
+    url-issues-jscbc: https://issues.couchbase.com/browse
+    url-issues-av: https://couchbasecloud.atlassian.net/browse
+  extensions:
+  # ...
+  - ./lib/inline-jira-macro.js
 ----
-
-To avoid having to tweak the `inline-jira-macro.js` file directly to configure the JIRA URLs for each sigil,
-we can use a wrapper:
-
-[source,yml]
-.antora-playbook.yml
-----
-# better configuration
-antora:
-    extensions:
-    -   require: './lib/wrap-asciidoc-extension.js'
-        extension: '../lib/inline-jira-macro.js'
-        data:
-            "https://issues.couchbase.com/browse/": ["JSCBC", "default"]
-            "https://couchbasecloud.atlassian.net/browse/": ["AV"]
-----
-
-NB: Use the special sigil `default` to avoid having to specify every single project.
 
 === Output
 
 ==== Fixed issues:
 
- * jira:JSCBC-1234[]: reversed the polarity of the neutron flow
- * jira:AV-2345[]: frobnicated the gostaks
- * jira:DOC-999[The dreaded DOC-999 ticket...]: implemented jira macro
+* jira:1234[]: reversed the polarity of the neutron flow
+* jira:JSCBC-1234[]: reversed the polarity of the neutron flow
+* jira:AV-2345[]: frobnicated the gostaks
+* jira:DOC-999[The dreaded DOC-999 ticket...]: implemented jira macro
