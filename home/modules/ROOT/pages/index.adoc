@@ -199,7 +199,7 @@ xref:ruby-sdk:hello-world:overview.adoc[Couchbase Ruby SDK]
 
 xref:go-sdk:hello-world:overview.adoc[Couchbase Go SDK]
 
-xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK Developer Preview]
+xref:kotlin-sdk:hello-world:overview.adoc[Couchbase Kotlin SDK]
 
 xref:elasticsearch-connector::getting-started.adoc[Couchbase Elasticsearch Connector]
 
