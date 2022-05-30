@@ -74,8 +74,6 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | https://pkg.go.dev/github.com/couchbase/gocb/v2[API Reference]
 |===
 
-Also, try the new xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK] which is in Developer Preview.
-
 
 [.column]
 ====== {empty}
