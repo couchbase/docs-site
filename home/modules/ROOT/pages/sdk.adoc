@@ -22,6 +22,8 @@ collection.reactive.upsert("document-key", json)
     .subscribe()
 ----
 
+====== {empty}
+
 == Server SDKs
 
 The Couchbase SDKs allows applications to access a Couchbase cluster. 
@@ -32,39 +34,43 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | SDK | Documentation | API Reference
 
 | Java SDK
-| xref:3.3@java-sdk:hello-world:overview.adoc[Docs]
+| xref:java-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-java-client[API Reference]
 
+| Kotlin SDK
+| xref:kotlin-sdk:hello-world:overview.adoc[Docs]
+| https://docs.couchbase.com/sdk-api/couchbase-kotlin-client[API Reference]
+
 | Scala SDK
-| xref:1.3@scala-sdk:hello-world:overview.adoc[Docs]
+| xref:scala-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference]
 
 | .NET SDK
-| xref:3.2@dotnet-sdk:hello-world:overview.adoc[Docs]
+| xref:dotnet-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-net-client[API Reference]
 
 | C SDK
-| xref:3.2@c-sdk:hello-world:overview.adoc[Docs]
+| xref:c-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[API Reference]
 
 | Node.js SDK
-| xref:4.0@nodejs-sdk:hello-world:overview.adoc[Docs]
+| xref:nodejs-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-node-client[API Reference]
 
 | PHP SDK
-| xref:3.2@php-sdk:hello-world:overview.adoc[Docs]
+| xref:php-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[API Reference]
 
 | Python SDK
-| xref:3.2@python-sdk:hello-world:overview.adoc[Docs]
+| xref:python-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-python-client/[API Reference]
 
 | Ruby SDK
-| xref:3.1@ruby-sdk:hello-world:overview.adoc[Docs]
+| xref:ruby-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[API Reference]
 
 | Go SDK
-| xref:2.3@go-sdk:hello-world:overview.adoc[Docs]
+| xref:go-sdk:hello-world:overview.adoc[Docs]
 | https://pkg.go.dev/github.com/couchbase/gocb/v2[API Reference]
 |===
 
