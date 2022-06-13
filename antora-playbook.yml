@@ -171,6 +171,7 @@ asciidoc:
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
+  - ./lib/markdown-block.js
   - asciidoctor-kroki
 ui:
   bundle:
