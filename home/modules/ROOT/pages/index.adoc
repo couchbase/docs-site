@@ -52,7 +52,9 @@ AND airline.callsign = "JETBLUE";
 .Couchbase Capella (DBaaS)
 
 [.content]
-Take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. Store, query, and analyze any amount of data, on a cloud service provider of your choice -- or in Couchbase's cloud account, to let us handle more of the administration -- all in a few clicks. Explore https://docs.couchbase.com/cloud/index.html[Couchbase Capella], our fully-managed database as a service offering.
+Explore Couchbase Capella, our fully-managed database as a service offering.
+Take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud. 
+Store, query, and analyze any amount of data -- and let us handle more of the administration -- all in a few clicks. 
 
 xref:cloud::index.adoc[Couchbase Capella]
 
@@ -177,6 +179,8 @@ xref:operator::overview.adoc[Couchbase Autonomous Operator]
 
 xref:service-broker::index.adoc[Couchbase Service Broker]
 
+xref:cmos::index.adoc[Couchbase Monitoring and Observability Stack]
+
 a| xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
 
 xref:scala-sdk:hello-world:overview.adoc[Couchbase Scala SDK]
@@ -195,7 +199,7 @@ xref:ruby-sdk:hello-world:overview.adoc[Couchbase Ruby SDK]
 
 xref:go-sdk:hello-world:overview.adoc[Couchbase Go SDK]
 
-xref:1.0@kotlin-sdk:hello-world:overview.adoc[Kotlin SDK Developer Preview]
+xref:kotlin-sdk:hello-world:overview.adoc[Couchbase Kotlin SDK]
 
 xref:elasticsearch-connector::getting-started.adoc[Couchbase Elasticsearch Connector]
 

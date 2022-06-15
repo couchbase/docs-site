@@ -18,6 +18,7 @@
 :url-git-sdk-common: {url-git-cb}/docs-sdk-common
 :url-git-home: {url-git-cb}/docs-site
 :url-git-operator: {url-git-cb}/couchbase-operator
+:url-git-cmos: {url-git-labs}/observability
 :url-git-asterix: {url-git-labs}/asterix-opt
 :url-git-elastic: {url-git-labs}/couchbase-elasticsearch-connector
 :url-git-kafka: {url-git-cb}/kafka-connect-couchbase

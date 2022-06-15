@@ -19,25 +19,25 @@ content:
   - url: ~/Couchbase/docs/docs-sdk-common/
     branches: [release/7.0]
   - url: ~/Couchbase/docs/docs-sdk-c/
-    branches: [release/3.2, release/3.1]
+    branches: [release/3.3, release/3.2]
   - url: ~/Couchbase/docs/docs-sdk-dotnet/
-    branches: [release/3.2, release/3.1]
+    branches: [release/3.3, release/3.2]
   - url: ~/Couchbase/docs/docs-sdk-go/
-    branches: [release/2.4, release/2.3]
+    branches: [release/2.5, release/2.4]
   - url: ~/Couchbase/docs/docs-sdk-java/
-    branches: [release/3.2, release/3.1]    
+    branches: [release/3.3, release/3.2]    
   - url: ~/Couchbase/docs/docs-sdk-kotlin/
     branches: [release/1.0]    
   - url: ~/Couchbase/docs/docs-sdk-nodejs/
-    branches: [release/4.0, release/3.2]
+    branches: [release/4.1, release/4.0]
   - url: ~/Couchbase/docs/docs-sdk-php/
     branches: [release/3.2, release/3.1]
   - url: ~/Couchbase/docs/docs-sdk-python/
-    branches: [release/3.2, release/3.1]
+    branches: [release/4.0, release/3.2]
   - url: ~/Couchbase/docs/docs-sdk-ruby/
-    branches: [release/3.2, release/3.1]
+    branches: [release/3.3, release/3.2]
   - url: ~/Couchbase/docs/docs-sdk-scala/
-    branches: [release/1.2, release/1.1]    
+    branches: [release/1.3, release/1.2]    
         
 asciidoc:
   attributes:
