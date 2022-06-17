@@ -169,6 +169,7 @@ asciidoc:
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
   - asciidoctor-kroki
+  - asciidoctor-external-callout
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-148/ui-bundle.zip
