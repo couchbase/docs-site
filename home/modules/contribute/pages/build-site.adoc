@@ -17,9 +17,13 @@ Keep the token handy to complete the next step.
 
 Finally, run the following command to add your token to your git configuration:
 
- $ git config --global credential.helper store && \
-   git ls-remote -h https://github.com/couchbase/couchbase-operator > /dev/null && \
-   git config --global --remove-section credential
+[source, console]
+----
+git config --global credential.helper store && \
+git ls-remote -h https://github.com/couchbase/couchbase-operator > /dev/null && \
+git config --global --remove-section credential
+----
+
 
 Enter the personal access token in the first prompt, then press kbd:[Enter] twice.
 You no longer need to keep the personal access token on hand since it's stored in the file [.path]_$HOME/.git-credentials_.
@@ -30,26 +34,43 @@ And that means you can build the documentation site on your own machine, which t
 == Run Antora
 
 . Open a terminal and switch into the _docs-site_ folder.
++
+[source. console]
+----
+cd path/to/docs-site
+----
 
- $ cd path/to/docs-site
-
-. Run Antora, using the `antora` command with xref:test-site.adoc#lightweight-local-playbook[your _local_ playbook]:
-
- docs-site $ antora local-antora-playbook
+. Run Antora, using the `antora` command with xref:playbook.adoc#lightweight-local-playbook[your _local_ playbook]:
++
+[source, console]
+----
+antora local-antora-playbook
+----
 
 . The cloning progress of each component repository is displayed in the console, followed by any AsciiDoc or Antora warning and error messages.
 The site generation is complete when the command prompt (`$`) reappears in the terminal.
 . Antora generated the site into a directory named _public_.
 Switch to it.
-
- docs-site $ cd public
++
+[source, console]
+----
+cd public
+----
 
 . On some operating systems, you can open the site directly from the command line by typing `open` and the name of an HTML file.
 +
---
- public $ open index.html
-
+[source, console]
+----
+open index.html
+----
++
 Or, you can navigate to and open _index.html_ using your file explorer or browser.
---
 
-Now that you're set up to build the full site on your own machine, you'll also be able to use a xref:test-site.adoc[personal playbook] to test your local documentation changes.
+
+Now that you're set up to build the full site on your own machine, you'll also be able to use a xref:playbook.adoc#lightweight-local-playbook[personal playbook] to test your local documentation changes.
+
+[TIP] 
+====
+If you notice that some of the diagrams are not being displayed, then it is possible that you have not set up the https://kroki.io[Kroki server] correctly.
+You'll find instructions on the Kroki setup in xref:playbook.adoc#setup-kroki-server[here].
+====
