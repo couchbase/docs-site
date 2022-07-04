@@ -48,4 +48,4 @@ The `asciidoc-preview` package renders a preview an AsciiDoc document in Atom.
 
 == Next Step
 
-xref:set-up-repository.adoc[Set up your local repository].
+xref:install-antora.adoc[Install Antora].
