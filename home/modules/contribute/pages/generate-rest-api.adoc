@@ -179,7 +179,7 @@ which is included by all the travel-sample app docs, for example https://docs.co
 
 == Swagger2Markup
 
-=== Couchbase Analytics
+=== Couchbase Server REST APIs
 
 NOTE: TODO
 
