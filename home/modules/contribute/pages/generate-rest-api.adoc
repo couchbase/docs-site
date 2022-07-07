@@ -181,7 +181,15 @@ which is included by all the travel-sample app docs, for example https://docs.co
 
 === Couchbase Server REST APIs
 
-NOTE: TODO
+Documentation for the Analytics Service REST APIs, Query Service REST APIs, and some Index Service REST APIs is pulled in from AsciiDoc partials which are stored in the `docs` subdirectory of the https://github.com/couchbaselabs/cb-swagger[cb-swagger] repository.
+
+The documentation in that repository is generated automatically, using the swagger2markup gradle plugin, from swagger specification files which are stored in the `src` subdirectory of the same repository.
+The swagger2markup gradle plugin also takes additional content from the `src` subdirectory, including examples.
+
+The AsciiDoc partials are built automatically by GitHub Workflows every time a pull request is merged into the https://github.com/couchbaselabs/cb-swagger[cb-swagger] repository.
+For further details, refer to the https://github.com/couchbaselabs/cb-swagger#readme[README] in that repository.
+
+Note that documentation for the other Couchbase Server REST APIs is still written by hand.
 
 === Sync Gateway
 
