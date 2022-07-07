@@ -1,0 +1,249 @@
+= Generate REST API Documentation
+:page-status: under development
+:page-toclevels: 2
+
+NOTE: this information is targeted at Couchbase Docs team,
+but may be of interest to others if you want to change the
+generated REST API docs.
+
+The following known tooling is used to generate the API docs from OpenAPI specs:
+
+* openapi-generator: (Capella)
+* SwaggerUI: (Mobile, travel-sample, ...)
+* swagger2markup: (Mobile, Server, ...)
+
+
+== openapi-generator
+
+
+This toolset is used throughout the Capella project.
+
+=== Core Capella
+
+The dev team use an OpenAPI document to generate various scaffolding for their APIs.
+To ensure consistency, the same files generate the API documentation included in the
+docs, and are built every time the code is built.
+
+The versions in `internal` are canonical, and the `copy.sh` script copies the generated
+output to the docs tree.
+
+----
+internal/rest/
+├── generate.sh
+├── copy.sh
+├── examples/
+├── specs/
+│   └── openapi.yml
+├── generated/
+│   └── asciidoc/
+│       └── index.adoc
+└── api/
+    └── openapi.yaml
+
+docs/public/modules/reference/
+├── partials/
+│   ├── examples/
+│   └── index.adoc
+└── assets/attachments/
+    └── openapi.yaml
+----
+
+
+=== Capella App Services (Mobile sync-gateway)
+
+The mobile development team have some OpenAPI specs used for testing, but which are not currently canonical for documentation.
+
+The docs team created and maintained a non-canonical Swagger spec for Sync Gateway at:
+https://github.com/couchbase/docs-sync-gateway/tree/release/3.0/modules/ROOT/assets/attachments
+
+When porting the reference docs to Capella, we noticed that the Swagger2Markup toolchain was non-functional,
+and instead used:
+
+* modified, local copies of the yaml specs
+* a modified, local copy of the Core Capella openapi-generator toolchain
+* a custom `[markdown]` tag to parse the content of OpenAPI descriptions.
+
+==== Specs sources
+
+We copied the files from https://github.com/couchbase/docs-sync-gateway/tree/release/3.0/modules/ROOT/assets/attachments
+but had to make local changes.
+The files are copied to `docs/public/modules/app-services/pages/references/assets/rest/specs/`.
+
+Ideally we would have one set of source files shared between SGW and Capella App Services, but we had to account for the following differences:
+
+. Wording "Sync Gateway" vs "App Services".
+We attempted to handle this by parametrizing `{SGW}` as the openapi-generator toolchain doesn't expand these variables and simply passes them through. This is handled on the Capella side and defined in `partial$tokens.adoc`.
+
+. Remove references to versions.
+As these aren't to be exposed for Capella, we placed these behind an undefined ifdef, e.g. `ifdef::expose-versions[(CBS 7.0.2 Developer Preview)]`.
+
+. Select subset of endpoints
+For Preview, and then GA, and then ongoing, the set of exposed functionality for App Services will be more constrained than for SGW.
+The ideal solution would be to generate a defined subset of a spec, using either functionality built into openapi-generator, or a 3rd party pre-processing step.
+(I believe the `adoc_yaml_parser` used in SGW swagger2markup toolchain does something similar?)
+However, given time constraints, we've simply *deleted* or commented out sections manually.
+This has the obvious disadvantage that *reintroducing* endpoints as features are introduced from GA
+will now require extra manual splicing.
+
+==== Toolchain
+
+The `references/assets/rest/` directory currently contains the specs, template files, and generated output.
+
+----
+docs/public/modules/app-services/pages/references/assets/rest/
+├── generate.sh <1>
+├── generated <2>
+│   ├── rest-api-admin
+│   │   └── index.adoc
+│   ├── rest-api-metrics
+│   │   └── index.adoc
+│   └── rest-api-public
+│       └── index.adoc
+├── override <3>
+│   └── asciidoc
+│       ├── index.mustache
+│       ├── model.mustache
+│       ├── param.mustache
+│       ├── params.mustache
+│       └── stubs
+│           └── empty.adoc
+└── specs <4>
+    ├── rest-api-admin.yaml
+    ├── rest-api-metrics.yaml
+    └── rest-api-public.yaml
+----
+
+<1> builds the contents of `generated/`
+<2> contains partials for inclusion by Antora
+<3> contains mustache templates copied from Capella Core above, but with tweaks detailed below.
+<4> contains the 3 specs for the APIs (Public, Admin, and Metrics)
+
+The Generate script uses Docker to run openapi-generator - 
+this is convenient as you don't have to worry about installing the toolchain, but is a bit slower.
+
+[NOTE]
+--
+
+Some of the mustache files are changed in the following ways:
+
+. Change from e.g. `{{message}}` to `{{{message}}}` to prevent HTML escaping
+. surround in `[markdown]` block (see below)
+. where in a table, this requires prefixing the cell declaration as `a|`
+. replace e.g. `{{{notes}}}` with `{{{unescapedNotes}}}`
+. this unlovable workaround for lack of an `if` statement:
++
+[source,mustache]
+----
+{{#unescapedDescription?}}
+{{{unescapedDescription}}}
+{{/unescapedDescription?}}
+{{^unescapedDescription?}}
+{{{description}}}
+{{/unescapedDescription?}}
+----
+. Other minor edits
+--
+
+OpenAPI content can include Markdown, however openapi-generator 
+https://github.com/OpenAPITools/openapi-generator/issues/7765[does not convert Markdown]
+so we modify the mustache files above to wrap their output in a `[markdown]` block macro.
+
+This is defined in https://github.com/couchbase/docs-site/blob/HEAD/lib/markdown-block.js
+and should be included in your antora-playbook.yml to preview locally.
+
+
+
+
+==== Publishing the REST API
+
+Running the generate script above adds some partials to the source tree.
+You still need to publish the site in Antora.
+
+`docs/public/modules/app-services/pages/references/` contains three .adoc files for the API pages:
+
+. `rest_api_admin_static.adoc`
+. `rest_api_metrics_static.adoc`
+. `rest_api_public_static.adoc`
+
+These contain a bare skeleton and include the partials generated above.
+They declare some variables and `:page-role: openapi` which improves the formatting of the openapi tables, preventing excessive wrapping and hyphenation.
+(This requires docs-ui 149 or later).
+
+
+== Swagger UI
+
+You can include a Swagger UI block using the `swagger_ui::` block macro.
+See for example https://github.com/couchbase/docs-sdk-common/blob/release/7.1/modules/shared/partials/sample-application.adoc
+which is included by all the travel-sample app docs, for example https://docs.couchbase.com/java-sdk/current/hello-world/sample-application.html#rest-api
+
+
+== Swagger2Markup
+
+=== Couchbase Server REST APIs
+
+Documentation for the Analytics Service REST APIs, Query Service REST APIs, and some Index Service REST APIs is pulled in from AsciiDoc partials which are stored in the `docs` subdirectory of the https://github.com/couchbaselabs/cb-swagger[cb-swagger] repository.
+
+The documentation in that repository is generated automatically, using the swagger2markup gradle plugin, from swagger specification files which are stored in the `src` subdirectory of the same repository.
+The swagger2markup gradle plugin also takes additional content from the `src` subdirectory, including examples.
+
+The AsciiDoc partials are built automatically by GitHub Workflows every time a pull request is merged into the https://github.com/couchbaselabs/cb-swagger[cb-swagger] repository.
+For further details, refer to the https://github.com/couchbaselabs/cb-swagger#readme[README] in that repository.
+
+Note that documentation for the other Couchbase Server REST APIs is still written by hand.
+
+=== Sync Gateway
+
+WARNING: the following comprises our historical understanding of generation process,
+but is unverified, due to Swagger2Markup repositories in jfrog/bintray changing,
+and may need verification or replacement.
+
+Each of the API is defined in its own yaml file in:
+`/modules/ROOT/assets/attachments`
+
+* rest-api-admin.yaml
+* rest-api-public.yaml
+* rest-api-metrics.yaml
+
+ALL API changes should be made in one or more of these files. In addition to providing input to the generated SwaggerUI interface, they also drive static API content, as input to swagger2markup –
+see: Generate static API content – and `sg-<object>_model.yaml` data models.
+
+Note, that the metrics endpoints, for example, are described in both the metrics and admin API files at the moment; this probably ought to be addressed.
+
+The other contents comprise:
+
+* The `sg-<object>_model.yaml` files
+These are extracted from `rest-api-admin.yaml` and via JSON-CONFIG_UI, provide content in `configuration-schema-<object>.adoc` pages.
+Do not edit content here – edit it in the rest-api-admin.aml file and reextract – see: Generate Data Models.
+* The configuration-properties-legacy.yaml file. 
+This is essentially the 2.8 configuration file, it is used to generate a click-thru schema on configuration-properties-legacy.adoc
+
+==== Generate Data Models
+
+To present JSON click-thru data models we extract definitions from the rest-api-admin.yaml file using a compiled Python script adoc-yaml-parser, which generates a set of `sg-<object>_model.yaml` files.
+These `sg-` are processed by the antora macro JSON-CONFIG-UI in the `configuration-schema-<object>.adoc` pages.
+
+cd into the modules\ROOT\assets\attachments folder
+If required edit preset parameters in config.yaml
+Run adoc_yaml_parser
+
+NOTE: the sources for this compiled script are in:
+https://github.com/couchbaselabs/cbm_scripts/blob/master/adoc_yaml_parser/adoc_yaml_parser.py
+
+==== Generate static API content
+
+We use Swagger2Markup to generate static API content from the  `assets/attachments/rest-api-<type>.yaml` files.
+
+The standard swagger2markup-generated content (paths.adoc and definitions.adoc) is supplemented by asciidoc/antora tags that allow it to be included piecemeal in the appropriate places.
+This customization of swagger2markup is done within the folder:
+`modules/ROOT/assets/s2adoc`.
+
+The pom.xml file within that folder defines the overall configuration.
+The tags inserts for the generated pages are driven by files in:
+modules/ROOT/assets/s2adoc/src/docs/asciidoc/extensions/definitions
+assets/s2adoc/src/docs/asciidoc/extensions/paths
+
+To run this:
+
+cd into the modules\ROOT\assets\attachements\s2adoc folder
+
+Run the extract scripts using: maven generate-sources

@@ -35,5 +35,10 @@
  ** xref:component-configuration.adoc[Component Structure and Configuration]
  ** xref:nav-menus-and-files.adoc[Navigation Menus and Files]
  ** xref:style-and-voice.adoc[Content Style and Voice]
+ 
+* Technical details
+ ** xref:generate-rest-api.adoc[]
+ ** xref:extensions.adoc[]
+
 
 //* Additional Resources (Pending)
