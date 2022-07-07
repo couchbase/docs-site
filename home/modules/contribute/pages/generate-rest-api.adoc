@@ -1,4 +1,4 @@
-= Generate REST API from Swagger/OpenAPI
+= Generate REST API Documentation
 :page-status: under development
 :page-toclevels: 2
 
