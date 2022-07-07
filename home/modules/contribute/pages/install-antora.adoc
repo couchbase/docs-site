@@ -10,7 +10,7 @@
 == Install System Prerequisites
 
 Antora runs on all Linux distributions, macOS, and Windows.
-If you've never used Antora, you may first need to instal Node using nvm.
+If you've never used Antora, you may first need to install Node using nvm.
 Follow the instructions below that correspond to your operating system:
 
 * {url-linux}[Linux: Install Node^]
