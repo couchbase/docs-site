@@ -59,9 +59,9 @@ https://github.com/couchbase/docs-sync-gateway/tree/release/3.0/modules/ROOT/ass
 When porting the reference docs to Capella, we noticed that the Swagger2Markup toolchain was non-functional,
 and instead used:
 
-. modified, local copies of the yaml specs
-. a modified, local copy of the Core Capella openapi-generator toolchain
-. a custom `[markdown]` tag to parse the content of OpenAPI descriptions.
+* modified, local copies of the yaml specs
+* a modified, local copy of the Core Capella openapi-generator toolchain
+* a custom `[markdown]` tag to parse the content of OpenAPI descriptions.
 
 ==== Specs sources
 
@@ -181,12 +181,13 @@ which is included by all the travel-sample app docs, for example https://docs.co
 
 === Couchbase Analytics
 
-NOTE: TODO, for SimonD
+NOTE: TODO
 
 === Sync Gateway
 
-NOTE: Ian provided the following, which we couldn't get working, as the Swagger2Markup repositories
-in jfrog/bintray have changed, and it's hard to find compatible versions of the libraries needed.
+WARNING: the following comprises our historical understanding of generation process,
+but is unverified, due to Swagger2Markup repositories in jfrog/bintray changing,
+and may need verification or replacement.
 
 Each of the API is defined in its own yaml file in:
 `/modules/ROOT/assets/attachments`
@@ -207,8 +208,6 @@ These are extracted from `rest-api-admin.yaml` and via JSON-CONFIG_UI, provide c
 Do not edit content here – edit it in the rest-api-admin.aml file and reextract – see: Generate Data Models.
 * The configuration-properties-legacy.yaml file. 
 This is essentially the 2.8 configuration file, it is used to generate a click-thru schema on configuration-properties-legacy.adoc
-
-See also: VS Code Extensions
 
 ==== Generate Data Models
 
