@@ -1,5 +1,7 @@
 = Install Antora
-:url-docs-antora: https://docs.antora.org/antora/2.0
+
+:antora-version: 3.0.0
+:url-docs-antora: https://docs.antora.org/antora/latest
 :url-linux: {url-docs-antora}/install/linux-requirements/
 :url-macos: {url-docs-antora}/install/macos-requirements/
 :url-windows: {url-docs-antora}/install/windows-requirements/
@@ -8,7 +10,7 @@
 == Install System Prerequisites
 
 Antora runs on all Linux distributions, macOS, and Windows.
-If you've never used Antora, you may first need to instal Node using nvm.
+If you've never used Antora, you may first need to install Node using nvm.
 Follow the instructions below that correspond to your operating system:
 
 * {url-linux}[Linux: Install Node^]
@@ -20,8 +22,11 @@ Follow the instructions below that correspond to your operating system:
 To generate the Couchbase documentation, you need the Antora command line interface (CLI) and the Antora site generator.
 
 . Open a terminal and install the Antora CLI:
-
- $ npm i -g @antora/cli
++
+[source, console, subs=+attributes]
+----
+npm i -g @antora/cli@{antora-version} @antora/site-generator@{antora-version}
+----
 
 . Verify the `antora` command is available on your PATH:
 +
@@ -30,9 +35,7 @@ To generate the Couchbase documentation, you need the Antora command line interf
 
 If installation was successful, you should see the Antora version number displayed in the console.
 --
-. Install the Antora site generator:
 
- $ npm i -g @antora/site-generator-default
 
 == Next Step
 

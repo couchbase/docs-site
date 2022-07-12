@@ -2,33 +2,6 @@
 
 If you've never built the site on your device, complete the xref:install-antora.adoc[Install Antora] and xref:playbook.adoc[Get the Site Playbook Project] steps first.
 
-== Configuring the Playbook
-
-To preview your changes on the site locally, you need to configure the playbook to use your local repository.
-
-. Copy the Antora playbook, _antora-playbook.yml_, and save it in the _docs-site_ repository.
-. Rename it _local-antora-playbook.yml_.
-. Open _local-antora-playbook.yml_ in Atom or your editor.
-. Under `sources`, find the `url` key that matches the upstream repository you plan to submit your changes to.
-Replace the repository URL with either the relative system path from the playbook project to your local repository or the absolute path.
-For example, if you're making changes to files in the _docs-server_ repository, you'd enter:
-+
-[source,yaml]
-- url: ./docs-server
-
-. If there isn't a `branches` key on the line directly below the `url` key, add it and assign it the list of version branch names, except for the version branch your working branch is based on.
-In place of the remote version branch, use the value of `HEAD`.
-`HEAD` tells Antora to use your working branch.
-For example, if your working branch is based off of the docs-server release/5.5 branch, you'd assign the following values to `branches`:
-+
-[source,yaml]
-- url: ./docs-server
-  branches: [release/4.*, release/5.0, release/5.1, HEAD]
-
-. If there is a `branches` key on the line directly below the `url` key, replace the version branch name you based your working branch on with `HEAD`.
-
-. Save the playbook.
-
 == Generating the Site
 
 . Open a terminal and switch (`cd`) to the _docs-site_ folder.
@@ -63,17 +36,6 @@ When you're satisfied with your work and fixed any reported errors, it's time to
 IMPORTANT: Since some of the respositories listed in the playbook are private, Antora will look for git credentials to use to connect to those repositories.
 If Antora fails because it can't connect to the private repositories, you're git credentials likely aren't configured.
 See xref:build-site.adoc#configure-git-credentials[git credentials] to learn how to configure the git credentials for Antora to use.
-
-
-== Lightweight Local Playbook
-
-You may have to iterate over amending the Antora playbook file a number of times, commenting out repos to which you do not have access.
-An easier approach could be starting with an intentionally minimalist playbook, and only adding the repos that you're planning to work on.
-This will have to include the `docs-server` repo which, amongst other things, contains the site navigation.
-
-For example, to work on local copies of our nine SDK docs repos, and the Server docs, and also include couchbase-cli in your local docs build, take a look at our 
-https://github.com/couchbase/docs-site/blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[example local-staging-antora-playbook.yml file^].
-
 
 == Next Step
 
