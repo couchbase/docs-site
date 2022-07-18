@@ -173,6 +173,7 @@ asciidoc:
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
   - ./lib/markdown-block.js
+  - ./lib/asciidoctor-callout-list-block.js
   - asciidoctor-kroki
   - asciidoctor-external-callout
 ui:

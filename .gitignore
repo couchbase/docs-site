@@ -6,3 +6,10 @@
 /scripts/node_modules/
 local-antora-playbook.yml
 xref-validator.log
+.asciidoctorconfig
+**/.idea
+**/*.iml
+**/.npmrc
+**/package-lock.json
+**/lab.sh
+
