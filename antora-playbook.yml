@@ -36,7 +36,8 @@ content:
     branches: HEAD
     start_path: home
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
-    branches: [main]
+    # branches: [main]
+    branches: [AV-39681-Ongoing-work-gcp-ga-docs]
     start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [master, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
