@@ -12,4 +12,6 @@ xref-validator.log
 **/.npmrc
 **/package-lock.json
 **/lab.sh
+**/.DS_Store
+
 
