@@ -49,7 +49,7 @@ content:
     branches: [0.2.x]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
-    branches: [master, release/4.2, release/4.1, release/4.0]
+    branches: [master, release/4.3, release/4.2, release/4.1, release/4.0]
     start_path: docs
   - url: https://github.com/couchbase/kafka-connect-couchbase
     branches: [master, release/4.0, release/3.4]
