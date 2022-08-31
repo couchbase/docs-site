@@ -85,7 +85,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-go
     branches: [release/2.5, release/2.4, release/2.3, release/2.2, release/2.1, release/2.0]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [AV-35207--transactions-reorg, release/3.2, release/3.1, release/3.0]
+    branches: [release/3.3, release/3.2, release/3.1, release/3.0]
   - url: https://github.com/couchbase/docs-sdk-kotlin
     branches: [release/1.1]
   - url: https://github.com/couchbase/docs-sdk-nodejs
