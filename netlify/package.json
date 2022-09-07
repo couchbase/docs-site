@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@antora/cli": "~3.0",
-    "@antora/site-generator-default": "~3.0",
+    "@antora/site-generator": "~3.0",
     "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension",
     "asciidoctor-kroki": "^0.15.4"
   }
