@@ -11,7 +11,7 @@
     "gulp": "~4.0",
     "gulp-connect": "~5.7",
     "js-yaml": "~4.1",
-    "asciidoctor-external-callout": "~1.1.1"
+    "asciidoctor-external-callout": "~1.2.0"
   },
   "repository": {
     "type": "git",
