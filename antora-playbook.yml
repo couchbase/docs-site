@@ -39,8 +39,8 @@ content:
     branches: [main]
 #    branches: [TEMP-DOCS-nux-changes]
     start_path: docs/public
-  - url: https://git@github.com/couchbase/couchbase-operator
-    branches: [master, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
+  - url: https://github.com/RayOffiah/couchbase-operator
+    branches: [DOC-10357-CAO-Update-SG-docs-to-use-bootstrap-config]
     start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
     branches: [main]
