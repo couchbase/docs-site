@@ -163,6 +163,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     sqlpp: SQL++
+    sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
