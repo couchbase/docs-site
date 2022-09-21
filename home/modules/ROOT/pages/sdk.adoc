@@ -6,7 +6,7 @@
 
 
 = SDKs & Connectors
-  
+
 == {empty}
 
 Couchbase provides several SDKs to allow applications to access a Couchbase cluster, as well as Mobile SDKs to carry your application to the edge. 
@@ -22,7 +22,7 @@ collection.reactive.upsert("document-key", json)
     .subscribe()
 ----
 
-====== {empty}
+{empty} +
 
 == Server SDKs
 
@@ -55,7 +55,7 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 
 | Node.js SDK
 | xref:nodejs-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-node-client[API Reference]
+| https://docs.couchbase.com/sdk-api/couchbase-node-client/modules.html[API Reference]
 
 | PHP SDK
 | xref:php-sdk:hello-world:overview.adoc[Docs]
@@ -127,15 +127,15 @@ xref:sdk-extensions::response-time-observability.adoc[Response Time Observabilit
 | Transaction Library | Documentation | API Reference
 
 | Java
-| xref:3.3@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
+| xref:java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-transactions-java/index.html[API Reference]
 
 | C# Transactions
-| xref:3.2@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-transactions-dotnet-1.0.0/[API Reference]
+| xref:dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
+| https://docs.couchbase.com/sdk-api/couchbase-transactions-dotnet/index.html[API Reference]
 
 | C++ Transactions
-| xref:1.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[Docs]
+| xref:cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-transactions-cxx-1.0.0/index.html[API Reference]
 |===
 
@@ -147,7 +147,7 @@ xref:sdk-extensions::response-time-observability.adoc[Response Time Observabilit
 == SDK doctor
 
 SDK doctor is a tool to diagnose application-server-side connectivity issues with your Couchbase Cluster.
-xref:6.6@server:sdk:sdk-doctor.adoc[SDK doctor]
+xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 
 
 [.column]
@@ -240,14 +240,14 @@ xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
 .Community Help
 
 [.content]
-In addition to the Couchbase https://www.couchbase.com/support-policy[Support Team], help can be found from the community in our https://forums.couchbase.com/[forums], and on our https://gitter.im/couchbase/discuss[Gitter page].
+In addition to the Couchbase https://www.couchbase.com/support-policy[Support Team], help can be found from the community in our https://forums.couchbase.com/[forums], and on our official https://discord.com/invite/K7NPMPGrPk?utm_source=forums&utm_medium=post&utm_campaign=discord[Couchbase Discord server].
 
 [.column]
 ====== {empty}
 .Integrations
 
 [.content]
-Information on some 3rd-party SDK integrations, such as xref:3.1@java-sdk:project-docs:compatibility.adoc#spring-compat[Spring Data], can be found in the SDK docs.
+Information on some 3rd-party SDK integrations, such as xref:java-sdk:project-docs:compatibility.adoc#spring-compat[Spring Data], can be found in the SDK docs.
 
 [.column]
 ====== {empty}
