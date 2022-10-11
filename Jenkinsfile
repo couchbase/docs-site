@@ -82,7 +82,7 @@ pipeline {
           }
         }
         withCredentials([fontawesomeNpmTokenCredentials]) {
-          writeFile file: 'scripts/.npmrc', text: '@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_TOKEN}\n'
+          writeFile file: 'scripts/.npmrc', text: '@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_AUTH_TOKEN}\n'
           sh '(cd scripts && npm --no-package-lock i >/dev/null || true)'
         }
       }
@@ -94,7 +94,7 @@ pipeline {
             sh "time antora --cache-dir=./.cache/antora --clean --extension=./lib/site-stats-extension.js --fetch --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
-        //sh 'node scripts/populate-icon-defs.js public'
+        sh 'node scripts/populate-icon-defs.js public'
         sh 'cat etc/nginx/snippets/rewrites.conf public/.etc/nginx/rewrite.conf | awk -F \' +\\\\{ +\' \'{ if ($1 && a[$1]++) { print sprintf("Duplicate location found on line %s: %s", NR, $0) > "/dev/stderr" } else { print $0 } }\' > public/.etc/nginx/combined-rewrites.conf'
       }
     }
