@@ -81,7 +81,7 @@ pipeline {
           }
         }
         withCredentials([fontawesomeNpmTokenCredentials]) {
-          writeFile file: 'scripts/.npmrc', text: '@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_AUTH_TOKEN}\n'
+          writeFile file: 'scripts/.npmrc', text: '@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_TOKEN}\n'
           sh '(cd scripts && npm --no-package-lock i >/dev/null || true)'
         }
       }
