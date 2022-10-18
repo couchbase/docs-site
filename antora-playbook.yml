@@ -36,7 +36,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-42348-Query-UDF-functions-support]
+    branches: [AV-46170---Oct-30th-Docs-release-branch]
 #    branches: [TEMP-DOCS-nux-changes]
     start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
