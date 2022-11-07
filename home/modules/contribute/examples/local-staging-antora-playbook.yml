@@ -29,7 +29,7 @@ content:
   - url: ~/Couchbase/docs/docs-sdk-kotlin/
     branches: [release/1.0]    
   - url: ~/Couchbase/docs/docs-sdk-nodejs/
-    branches: [release/4.1, release/4.0]
+    branches: [release/4.2, release/4.1]
   - url: ~/Couchbase/docs/docs-sdk-php/
     branches: [release/3.2, release/3.1]
   - url: ~/Couchbase/docs/docs-sdk-python/
