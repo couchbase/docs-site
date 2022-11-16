@@ -29,6 +29,8 @@ try {
 }
 ----
 
+====== {empty}
+
 == Get Started
 
 ++++
@@ -46,10 +48,10 @@ xref:server:getting-started:start-here.adoc[Get Started]
 
 [.column]
 ====== {empty}
-.Upgrading to v7.0
+.Upgrading to v7.x
 
 [.content]
-If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.0 and use collections and scopes, see xref:server:install:migrating-application-data.adoc[Upgrade and migrate your data to v7.0].
+If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.x and use collections and scopes, see xref:server:install:migrating-application-data.adoc[Upgrade and migrate your data to v7.x].
 
 [.column]
 ====== {empty}
@@ -197,7 +199,7 @@ Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to
 * xref:server:install:install-uninstalling.adoc[Uninstall]
 
 [.column]
-.Migrating to v7.0
+.Migrating to v7.x
 * xref:server:install:migrating-application-data.adoc[Migrating to a collection-based data model]
 * https://blog.couchbase.com/moving-from-sql-server-to-couchbase-part-1-data-modeling/[Migrating to Couchbase]
 
