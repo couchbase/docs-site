@@ -2,6 +2,41 @@
 
 Test and document your Asciidoctor.js or Antora extensions here.
 
+== Inline JIRA macro
+
+=== Usage
+
+[source,asciidoc]
+----
+== Fixed issues:
+
+* jira:JSCBC-1234[]: reversed the polarity of the neutron flow
+* jira:AV-2345[]: frobnicated the gostaks
+* jira:DOC-999[The dreaded DOC-999 ticket...]: implemented jira macro
+----
+
+[source,yml]
+.antora-playbook.yml
+----
+asciidoc:
+  attributes:
+    # ...
+    url-issues: https://issues.couchbase.com/browse
+    url-issues-JSCBC: https://issues.couchbase.com/browse
+    url-issues-AV: https://couchbasecloud.atlassian.net/browse
+  extensions:
+  # ...
+  - ./lib/inline-jira-macro.js
+----
+
+=== Output
+
+==== Fixed issues:
+
+* jira:JSCBC-1234[]: reversed the polarity of the neutron flow
+* jira:AV-2345[]: frobnicated the gostaks
+* jira:DOC-999[The dreaded DOC-999 ticket...]: implemented jira macro
+
 == Markdown Block
 
 [source,asciidoc]
