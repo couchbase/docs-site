@@ -2,7 +2,7 @@
 
 Test and document your Asciidoctor.js or Antora extensions here.
 
-== inline JIRA macro
+== Inline JIRA macro
 
 === Usage
 
