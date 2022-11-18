@@ -22,6 +22,8 @@ collection.reactive.upsert("document-key", json)
     .subscribe()
 ----
 
+{empty} +
+
 == Server SDKs
 
 The Couchbase SDKs allows applications to access a Couchbase cluster. 
@@ -32,43 +34,43 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | SDK | Documentation | API Reference
 
 | Java SDK
-| xref:3.3@java-sdk:hello-world:overview.adoc[Docs]
+| xref:java-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-java-client[API Reference]
 
 | Kotlin SDK
-| xref:1.0@kotlin-sdk:hello-world:overview.adoc[Docs]
+| xref:kotlin-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-kotlin-client[API Reference]
 
 | Scala SDK
-| xref:1.3@scala-sdk:hello-world:overview.adoc[Docs]
+| xref:scala-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference]
 
 | .NET SDK
-| xref:3.3@dotnet-sdk:hello-world:overview.adoc[Docs]
+| xref:dotnet-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-net-client[API Reference]
 
 | C SDK
-| xref:3.2@c-sdk:hello-world:overview.adoc[Docs]
+| xref:c-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[API Reference]
 
 | Node.js SDK
-| xref:4.1@nodejs-sdk:hello-world:overview.adoc[Docs]
+| xref:nodejs-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-node-client/modules.html[API Reference]
 
 | PHP SDK
-| xref:3.2@php-sdk:hello-world:overview.adoc[Docs]
+| xref:php-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[API Reference]
 
 | Python SDK
-| xref:3.2@python-sdk:hello-world:overview.adoc[Docs]
+| xref:python-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-python-client/[API Reference]
 
 | Ruby SDK
-| xref:3.2@ruby-sdk:hello-world:overview.adoc[Docs]
+| xref:ruby-sdk:hello-world:overview.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[API Reference]
 
 | Go SDK
-| xref:2.5@go-sdk:hello-world:overview.adoc[Docs]
+| xref:go-sdk:hello-world:overview.adoc[Docs]
 | https://pkg.go.dev/github.com/couchbase/gocb/v2[API Reference]
 |===
 
@@ -125,15 +127,15 @@ xref:sdk-extensions::response-time-observability.adoc[Response Time Observabilit
 | Transaction Library | Documentation | API Reference
 
 | Java
-| xref:3.3@java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
+| xref:java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-transactions-java/index.html[API Reference]
 
 | C# Transactions
-| xref:3.3@dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
+| xref:dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-transactions-dotnet/index.html[API Reference]
 
 | C++ Transactions
-| xref:1.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[Docs]
+| xref:cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[Docs]
 | https://docs.couchbase.com/sdk-api/couchbase-transactions-cxx-1.0.0/index.html[API Reference]
 |===
 
@@ -145,7 +147,7 @@ xref:sdk-extensions::response-time-observability.adoc[Response Time Observabilit
 == SDK doctor
 
 SDK doctor is a tool to diagnose application-server-side connectivity issues with your Couchbase Cluster.
-xref:7.0@server:sdk:sdk-doctor.adoc[SDK doctor]
+xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 
 
 [.column]
@@ -238,14 +240,14 @@ xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC and JDBC Drivers]
 .Community Help
 
 [.content]
-In addition to the Couchbase https://www.couchbase.com/support-policy[Support Team], help can be found from the community in our https://forums.couchbase.com/[forums], and on our https://gitter.im/couchbase/discuss[Gitter page].
+In addition to the Couchbase https://www.couchbase.com/support-policy[Support Team], help can be found from the community in our https://forums.couchbase.com/[forums], and on our official https://discord.com/invite/K7NPMPGrPk?utm_source=forums&utm_medium=post&utm_campaign=discord[Couchbase Discord server].
 
 [.column]
 ====== {empty}
 .Integrations
 
 [.content]
-Information on some 3rd-party SDK integrations, such as xref:3.1@java-sdk:project-docs:compatibility.adoc#spring-compat[Spring Data], can be found in the SDK docs.
+Information on some 3rd-party SDK integrations, such as xref:java-sdk:project-docs:compatibility.adoc#spring-compat[Spring Data], can be found in the SDK docs.
 
 [.column]
 ====== {empty}
