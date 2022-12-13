@@ -63,7 +63,7 @@ Find guidance and considerations when migrating from a different database to Cou
 .Explore Tutorials
 
 [.content]
-Explore Couchbase https://developer.couchbase.com/topic/tutorials/[Tutorials] to learn how to build and operate apps using Couchbase. 
+Explore Couchbase https://developer.couchbase.com/tutorials/[Tutorials] to learn how to build and operate apps using Couchbase. 
 
 ++++
 </div>
