@@ -4,8 +4,7 @@
   "homepage": "https://docs.couchbase.com",
   "private": true,
   "dependencies": {
-    "@antora/cli": "~3.0",
-    "@antora/site-generator-default": "~3.0",
+    "antora": "~3.1",
     "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension",
     "asciidoctor-kroki": "0.15.4",
     "gulp": "~4.0",
