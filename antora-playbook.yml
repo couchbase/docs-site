@@ -36,7 +36,8 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.2, capella]
+    branches: [release/7.2]
+    # branches: [release/7.2, capella]
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
     branches: [main]
 #    branches: [TEMP-DOCS-nux-changes]
