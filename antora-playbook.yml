@@ -36,6 +36,8 @@ content:
   - url: .
     branches: HEAD
     start_path: home
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches: [search-server,search-capella]
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_path: docs/public
