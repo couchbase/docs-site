@@ -1,0 +1,41 @@
+= Demo about the Feature Flag
+
+See https://github.com/couchbaselabs/docs-tooling/tree/main/flags for installation and more details.
+
+ifdef::flag-kitten[]
+NOTE: `DEBUG: flag-kitten`
+endif::flag-kitten[]
+
+ifdef::flag-cloud[]
+NOTE: `DEBUG: flag-cloud`
+endif::flag-cloud[]
+
+== How Couchbase Works
+
+Couchbase works very well.
+
+ifdef::flag-cloud[]
+Couchbase now LIVES IN THE CLOUD!
+endif::flag-cloud[]
+
+ifdef::flag-kitten[]
+Couchbase is powered by KITTENS!
+endif::flag-kitten[]
+
+ifdef::flag-cloud[]
+ifdef::flag-kitten[]
+The KITTENS are playing in the CLOUD!
+endif::flag-kitten[]
+endif::flag-cloud[]
+
+== Limitations
+
+* Blah blah
+
+ifndef::flag-kitten[]
+* Couchbase does not have a fluffy tummy.
+endif::flag-kitten[]
+
+ifndef::flag-cloud[]
+* Couchbase is not provisioned on demand in the cloud.
+endif::flag-cloud[]

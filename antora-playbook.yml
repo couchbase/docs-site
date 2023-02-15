@@ -4,6 +4,8 @@
 antora:
   extensions:
   - '@antora/site-generator-ms'
+  - ./lib/embargo.js
+
 site:
   title: Couchbase Docs Staging
   url: https://docs-staging.couchbase.com
