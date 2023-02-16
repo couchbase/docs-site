@@ -1,0 +1,8 @@
+ifdef::flag-test-embargo[]
+:page-embargo: EMBARGOED
+endif::flag-test-embargo[]
+
+= This page should not be embargoed!
+
+This page should be output, because the embargo attribute is controlled by an `ifdef::flag-test-embargo[]`
+See `lib/embargo.js` and AV-50499
