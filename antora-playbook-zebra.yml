@@ -1,0 +1,84 @@
+# This playbook is copied and modified from the following source:
+# https://github.com/couchbase/docs-site/blob/master/antora-playbook.yml
+# This playbook needs to be run from a cloned version of https://github.com/couchbase/docs-site
+antora:
+  extensions:
+    - '@antora/site-generator-ms'
+site:
+  title: Couchbase Capella Staging Docs
+  url: https://docs.stage.nonprod-project-avengers.com
+  # This is the page ID for Couchbase Capella component start page. It replaces
+  # the regular Couchbase Docs homepage and takes the user right to the
+  # Couchbase Capella component.
+  start_page: cloud:ROOT:index.adoc
+  keys:
+    google_analytics: GTM-MVPNN2
+    nav_groups: |
+      [
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
+        { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
+        { "title": "Autonomous Operator", "components": ["operator"] },
+        { "title": "CMOS", "components": ["cmos"] },
+        { "title": "Service Broker", "components": ["service-broker"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector"] },
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
+      ]
+git:
+  ensure_git_suffix: false
+content:
+  branches: master
+  # NOTE the git@ segment in the URL indicates which repositories are private
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: home
+    #- url: ../docs-sync-gateway
+    #branches: HEAD
+    # - url:      https://github.com/couchbaselabs/docs-devex
+  - url:      ../docs-devex/docs-devex/
+    worktrees: true
+    branches: [release/7.2, capella, elixir]
+  - url: ../docs-server
+    branches: HEAD
+      # - url: ../docs-couchbase-lite
+      # branches: HEAD
+  - url: ../couchbase-cloud
+    branches: [HEAD]
+    # start_path: docs/public
+    start_paths: [ docs/public/capella, docs/public/elixir ]
+  # - url:      ../docs-devex/docs-devex
+  #   worktrees: true
+
+asciidoc:
+  attributes:
+    azure-app-services: ''
+    sqlpp: SQL++
+    max-include-depth: 10
+    page-partial: false
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    tabs: tabs
+    toc: ~
+    xrefstyle: short
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    site-navigation-data-path: _/js/site-navigation-data.js
+    local-build: HAKIM
+  extensions:
+  - ./lib/source-url-include-processor.js
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/markdown-block.js
+  - ./lib/tabs-block.js
+    # - asciidoctor-kroki
+ui:
+  bundle:
+    # url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-146/ui-bundle.zip
+    url: ../docs-ui/build/ui-bundle.zip
+output:
+  dir: ./public
