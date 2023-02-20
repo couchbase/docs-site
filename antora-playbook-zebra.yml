@@ -39,7 +39,7 @@ content:
     # - url:      https://github.com/couchbaselabs/docs-devex
   - url:      ../docs-devex/docs-devex/
     worktrees: true
-    branches: [release/7.2, capella, elixir]
+    branches: [release/7.2, capella-zebra, elixir]
   - url: ../docs-server
     branches: HEAD
       # - url: ../docs-couchbase-lite
