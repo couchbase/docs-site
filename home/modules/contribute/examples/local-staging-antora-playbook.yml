@@ -33,7 +33,7 @@ content:
   - url: ~/Couchbase/docs/docs-sdk-python/
     branches: [release/4.1, release/4.0]
   - url: ~/Couchbase/docs/docs-sdk-ruby/
-    branches: [release/3.4 release/33]
+    branches: [release/3.4 release/3.3]
   - url: ~/Couchbase/docs/docs-sdk-scala/
     branches: [release/1.4, release/1.3]    
         
