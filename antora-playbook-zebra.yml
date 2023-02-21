@@ -34,22 +34,17 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-    #- url: ../docs-sync-gateway
-    #branches: HEAD
-    # - url:      https://github.com/couchbaselabs/docs-devex
+
   - url:      ../docs-devex/docs-devex/
     worktrees: true
     branches: [release/7.2, capella-zebra, elixir]
+
   - url: ../docs-server
     branches: HEAD
-      # - url: ../docs-couchbase-lite
-      # branches: HEAD
+
   - url: ../couchbase-cloud
     branches: [HEAD]
-    # start_path: docs/public
     start_paths: [ docs/public/capella, docs/public/elixir ]
-  # - url:      ../docs-devex/docs-devex
-  #   worktrees: true
 
 asciidoc:
   attributes:
