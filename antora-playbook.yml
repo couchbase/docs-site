@@ -43,7 +43,7 @@ content:
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
     # branches: [main]
     branches: [AV-52509-mockup-doc-striping-in-single-branch]
-    start_path: docs/public/provisioned
+    start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [master, 2.4.x, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
