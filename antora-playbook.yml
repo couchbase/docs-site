@@ -40,7 +40,7 @@ content:
     start_path: home
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
     branches: [main]
-    start_path: docs/public
+    start_path: docs/public/provisioned
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [2.4.x, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
