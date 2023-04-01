@@ -41,7 +41,7 @@ content:
     branches: [release/7.2]
     # branches: [release/7.2, capella]
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
-    branches: [main]
+    branches: [AV-52509-test]
     start_paths: [docs/public, docs/serverless]
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [master, 2.4.x, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
