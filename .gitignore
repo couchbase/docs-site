@@ -13,5 +13,6 @@ xref-validator.log
 **/package-lock.json
 **/lab.sh
 **/.DS_Store
+/workspace
 
 
