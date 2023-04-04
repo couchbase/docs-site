@@ -107,11 +107,11 @@ content:
     branches: [main]
     # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-mobile
-    branches: [release/3.0, release/2.8]
+    branches: [release/3.1, release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/3.0, release/2.8]
+    branches: [release/3.1, release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/3.0, release/2.8]
+    branches: [release/3.1, release/3.0, release/2.8]
     #
   - url: https://github.com/couchbase/docs-service-broker
     branches: [1.1.x, 1.0.x]
