@@ -39,6 +39,9 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [release/7.2, capella, elixir]
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5, capella, elixir]
+    start_path: docs
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_paths: [docs/public, docs/serverless]
