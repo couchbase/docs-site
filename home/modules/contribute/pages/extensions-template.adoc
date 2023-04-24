@@ -1,0 +1,44 @@
+= Demo of template extension
+:page-role: openapi
+
+== Metrics example
+
+A (partial) listing of `kv-metrics.json`.
+Relating to https://issues.couchbase.com/browse/DOC-10720[DOC-10720]
+
+[template,example$kv-metrics.json]
+--
+[cols="3,1,1",.json]
+|===
+
+|Metric
+|Type
+|Unit
+
+{{#each this}}
+|`{{@key}}`
+
+{{help}}
+|{{type}}
+|{{unit}}
+{{/each}}
+
+|===
+--
+
+== Included template
+
+[template,example$kv-metrics.json]
+--
+include::partial$templates/test.hbs[]
+--
+
+== Datafile not found
+
+The following should give an error
+
+[template,example$this-file-does-not-exist.json]
+--
+Some template
+--
+
