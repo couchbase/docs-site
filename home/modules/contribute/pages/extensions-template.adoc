@@ -26,6 +26,13 @@ Relating to https://issues.couchbase.com/browse/DOC-10720[DOC-10720]
 |===
 --
 
+== YAML support
+
+[template,example$test.yaml]
+--
+Try: {{foo.bar.baz}}
+--
+
 == Included template
 
 [template,example$kv-metrics.json]
