@@ -49,3 +49,11 @@ The following should give an error
 Some template
 --
 
+== Helpers and Partials
+
+[template, example$test.yaml, helpers="example$helpers/foo.js", partials="partial$templates/partial.hbs"]
+--
+{{foo}}
+
+{{> partial}}
+--
