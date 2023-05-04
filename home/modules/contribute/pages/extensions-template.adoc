@@ -57,3 +57,20 @@ Some template
 
 {{> partial}}
 --
+
+
+== each-openapi
+
+
+
+[template,example$bundled-admin.yaml, helpers="example$helpers/each-openapi.js"]
+--
++++<pre>+++
+{{#each-openapi components.schemas.Database}}
+{{@indent}}     {{#if @key}}{{@key}}:{{/if}} {{@type}}{{#unless @isobject}}{{#if @last}}
+{{@indent}} },{{else}},{{/if}}{{/unless}}
+{{/each-openapi}}
++++</pre>+++
+
+--
+
