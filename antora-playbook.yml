@@ -39,13 +39,13 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.2, capella, elixir]
+    branches: [release/7.2]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5, release/6.0, capella, elixir]
+    branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
     start_path: docs
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
     branches: [main]
-    start_paths: [docs/public, docs/serverless]
+    start_path: docs/public
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [2.4.x, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
