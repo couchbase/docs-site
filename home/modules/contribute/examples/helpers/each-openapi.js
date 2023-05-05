@@ -1,63 +1,78 @@
 // iterate openapi property definitions
 
 
-module.exports = function(context, options) {
-    var ret = ""
-    
-    // data frame to add @variables for template
-    var data = options.data ? global.handlebars.createFrame(options.data) : {}
-    options.data = data
-
-    console.dir(data, {depth:0})
+module.exports = function(context, options) {    
+    const indent = "   "
     
     const types = 
     {
-        object: '{',
-        integer: '0',
-        number: '0.0',
-        string: 'string',
-        boolean: 'true'
-    }
-    function format_type (node) {
-        if (node.type == 'object') return '{'
-                                            
-        const type = Object.hasOwn(node, 'default') ?
-            node.default
-            : types[node.type] || node.type
-    
-        if (node.type == 'string') {
-            return `"${type}"`
-        }
-        else {
-            return type
-        }
+        integer: { fallback: '0', format: parseInt },
+        number: { fallback: '0.0', format: parseFloat },
+        string: { fallback: 'string', format: (val => `"${val}"`) },
+        boolean: { fallback: 'true' },
+        array: { fallback: '', format: (val => `[${val}]`) },
     }
     
-    function process (node, path, first, last) {
-        data.path = path.join('.')
-        data.key = path[path.length -1]
-        data.indent = '   '.repeat(path.length)
-        data.isobject = (node.type == 'object')
-        data.last = last
-        data.type = format_type(node)
-        
-        ret = ret + options.fn(node, { data: data });
+    // We try to display the parameter as the best possible value,
+    // e.g.
+    //     example -> default -> fallback for the type
+    //
+    // Then, whether we used a fallback like "string" or an example like "Bob",
+    // we format it depending on its type (e.g. surrounding it in quotes etc.)
 
-        // TODO handle additionalProperties
-        if (node.properties) {
-            const children = Object.keys(node.properties).sort()
-            
-            const first = children[0]
-            const last = children[children.length -1]
-            
-            for (var key of children) {
-                const child = node.properties[key]        
-                process(child, [...path, key], key == first, key == last)
+    function format_type (node) {
+        if (node.type == 'object') return
+
+        const type = 
+            node.example ??
+            node.default ??
+            types[node.type]?.fallback ??
+            node.type ??
+            '(unknown)'
+    
+        const format = types[node.type]?.format ?? (val => val)
+        return format(type) 
+    }
+    
+    // recursive function to walk the Table of Contents
+    function process_toc (node, path) {
+        
+        const path_id = path.join('.')
+        const left = path.length ? 
+            `<a href="#${path_id}">${path[path.length-1]}</a>: ` 
+            : ''
+        const level = indent.repeat(path.length)
+        
+        if (node.type == 'object') {
+            if (node.properties) {
+                const children = 
+                    Object.entries(node.properties)
+                        .sort()
+                        .map(
+                            ([child_key,child]) => process_toc(child, [...path, child_key]))
+                        
+                return `${level}${left}{\n` +
+                        children.join(',\n') +
+                    `\n${level}}`               
+            }
+            else {
+                // TODO handle additionalProperties
+                return `${level}(TODO additionalProperties)`
             }
         }
+        else {
+            const right = format_type(node)
+            return `${level}${left}${right}`
+        }
     }
     
-    process(context, [], false)
+    const table_of_contents = [
+        '++++',
+        '<pre>',
+        process_toc(context, []),
+        '</pre>',
+    ].join('\n')
 
-    return ret;
+    console.log(table_of_contents)
+    return new global.handlebars.SafeString(table_of_contents)
 }
