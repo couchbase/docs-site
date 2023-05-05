@@ -38,9 +38,14 @@ content:
   - url: .
     branches: HEAD
     start_path: home
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches: [release/7.2, capella, elixir]
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5, release/6.0, capella, elixir]
+    start_path: docs
   - url: https://git@github.com/couchbasecloud/couchbase-cloud
     branches: [main]
-    start_path: docs/public
+    start_paths: [docs/public, docs/serverless]
   - url: https://git@github.com/couchbase/couchbase-operator
     branches: [2.4.x, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
@@ -64,19 +69,16 @@ content:
     start_path: docs
   - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://git@github.com/couchbase/docs-analytics
-    branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
+    branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [7.1.x-docs, cheshire-cat, mad-hatter, 6.5.x-docs, alice]
+    branches: [neo, 7.1.x-docs, cheshire-cat, mad-hatter, 6.5.x-docs, alice]
     start_path: docs
   - url: https://git@github.com/couchbase/backup
-    branches: [7.1.x-docs, cheshire-cat, mad-hatter, 6.5.x-docs, alice]
-    start_path: docs
-  - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
+    branches: [neo, 7.1.x-docs, cheshire-cat, mad-hatter, 6.5.x-docs, alice]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
+    branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
   - url: https://github.com/couchbase/docs-sdk-c
