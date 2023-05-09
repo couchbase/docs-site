@@ -67,9 +67,24 @@ Some template
 --
 
 
-{{{each-openapi components.schemas.Database}}}
-</pre>
-++++
+{{#each-openapi components.schemas.Database}}
+
+{{#if node.description}}
+[discrete#{{@path_id_href}}]
+=== `{{@path_id}}`
+
+Type::  {{{node.type}}}
+
+Description::
++
+[markdown]
+----
+{{{node.description}}}
+----
+
+{{/if}}
+{{/each-openapi}}
+
 
 --
 
