@@ -59,11 +59,29 @@ Some template
 --
 
 
-== each-openapi
+== each-openapi helper.
 
+This handlebars Block Helper should work with both YAML and JSON.
 
+This requires output collated into a single file, for example using:
 
-[template,example$bundled-admin.yaml, helpers="example$helpers/each-openapi.js"]
+[source,shell]
+----
+redocly bundle \
+    ~/couchbase/sync_gateway/docs/api/admin.yaml \
+    --dereferenced \
+    --ext json \
+    --output bundled-admin.json
+----
+
+Pass in a schema node, in this example `components.schemas.Database`.
+The macro descends into each `properties` object and generates a table of contents.
+
+In addition, we pass the contents of each node in turn to the Handlebars template contained in the `{{#each-openapi}}` block.
+
+WARNING: handling `additionalProperties` is not yet implemented.
+
+[template,example$bundled-admin.json, helpers="example$helpers/each-openapi.js"]
 --
 
 {{#each-openapi components.schemas.Database}}
