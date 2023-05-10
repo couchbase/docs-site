@@ -63,6 +63,7 @@ module.exports = function(context, options) {
             if (node.properties) {
                 const children = 
                     Object.entries(node.properties)
+                        .filter(([_,child]) => ! child.deprecated)
                         .sort()
                         .map(
                             ([child_key,child]) => process_toc(child, [...path, child_key]))
@@ -84,12 +85,15 @@ module.exports = function(context, options) {
     }
 
     // recursive function to flatten the tree into a flat list like [root, a, a.a1, a.a1.a2, a.b1, a.b1.b2, ...]
+    // TODO refactor (the iteration is identical to above, but this version *flattens* the result into a list)
+    // Looks like we just need to parametrize `leaf` and `internal` functions.
     function get_items ({node, path}) {
         if (node.type == 'object') {
             if (node.properties) {
                 const children = 
                     Object.entries(node.properties)
-                        .sort()
+                    .filter(([_,child]) => ! child.deprecated)
+                    .sort()
                         .map(
                             ([child_key,child]) => get_items(
                                 {node: child, path: [...path, child_key]}))

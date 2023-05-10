@@ -66,7 +66,6 @@ Some template
 [template,example$bundled-admin.yaml, helpers="example$helpers/each-openapi.js"]
 --
 
-
 {{#each-openapi components.schemas.Database}}
 
 {{#if node.description}}
@@ -84,7 +83,6 @@ Description::
 
 {{/if}}
 {{/each-openapi}}
-
 
 --
 
