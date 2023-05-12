@@ -140,6 +140,7 @@ https://couchbase.sh[Explore Couchbase Shell]
 Explore a variety of resources - sample apps, videos, blogs, and more, to build applications using Couchbase.
 
 https://developer.couchbase.com[Developer Portal]
+https://developer.couchbase.com/tutorials[Developer Tutorials]
 
 
 [.column]
