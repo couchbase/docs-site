@@ -1,0 +1,77 @@
+site:
+  title: Couchbase Docs
+  url: https://docs123.couchbase.com
+  start_page: home::index.adoc
+  robots: allow
+  keys:
+    google_analytics: GTM-MVPNN2
+    nav_groups: |
+      [
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Cloud", "startPage": "cloud::index.adoc", "components": ["cloud"] },
+        { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
+        { "title": "Autonomous Operator", "components": ["operator"] },
+        { "title": "Service Broker", "components": ["service-broker"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector"] },
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
+      ]
+git:
+  ensure_git_suffix: false
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
+content:
+  branches: release/*
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: home
+#  - url: https://github.com/couchbase/couchbase-cli.git
+#    branches: [master]
+#    start_path: docs
+#  - url: ../docs-sdk-python/
+#    branches: [HEAD]
+#  - url: ../docs-sdk-dotnet/
+#    branches: [HEAD]
+#  - url: ../docs-sdk-java/
+#    branches: [HEAD]
+#  - url: ../docs-server/
+#    branches: [HEAD]
+  - url: https://github.com/couchbase/docs-sdk-python
+    branches: [release/4.1, release/4.0]
+  - url: https://github.com/couchbase/docs-sdk-dotnet
+    branches: [release/3.4, release/3.3]
+  - url: https://github.com/couchbase/docs-sdk-ruby
+    branches: [release/3.4, release/3.3]
+asciidoc:
+  attributes:
+    max-include-depth: 10
+    page-partial: false
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    sqlpp: SQL++
+    tabs: tabs
+    toc: ~
+    page-toclevels: 1@
+    xrefstyle: short
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    kroki-fetch-diagram: true
+    kroki-server-url: http://3.91.133.254:9500
+  extensions:
+  - ./lib/source-url-include-processor.js
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/tabs-block.js
+  - ./lib/markdown-block.js
+  - ./lib/inline-jira-macro.js
+  - asciidoctor-kroki
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-166/ui-bundle.zip
+output:
+  dir: ./public
