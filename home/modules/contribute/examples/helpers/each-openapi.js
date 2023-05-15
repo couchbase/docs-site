@@ -30,7 +30,7 @@ module.exports = function(context, ...schemas) {
     // we format it depending on its type (e.g. surrounding it in quotes etc.)
 
     function format_type (node) {
-        if (node.type == 'object') return
+        if (node.type === 'object') return
 
         const type = 
             node.example ??
@@ -84,7 +84,7 @@ module.exports = function(context, ...schemas) {
                 Object.entries(node.properties) : []
         
         function format_additionalProperties (ap) {
-            if (typeof(ap) == 'boolean') ap = {}
+            if (typeof(ap) === 'boolean') ap = {}
             return { ...{type: "object"}, ...ap }                                       
         }
         
@@ -104,7 +104,7 @@ module.exports = function(context, ...schemas) {
     function iterate_properties (node, leaf, internal) {
         
         function recurse(node, path) {
-            if (node.type == 'object') {
+            if (node.type === 'object') {
 
                 const children = 
                     child_entries(node)
