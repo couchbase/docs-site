@@ -1,60 +1,40 @@
 = Couchbase Mobile - Embedded Database on the Edge
-:page-layout: landing-page-top-level-sdk
-:page-role: tiles
 :!sectids:
 
 include::partial$info-banner.adoc[]
+include::partial$temporary-landing-styles.adoc[]
 
-= Couchbase Mobile
+[.switcher]
+--
+* xref:cloud.adoc[Cloud]
+* xref:server.adoc[Server]
+* [.selected]##Build Mobile/App Services##
+--
 
-++++
-<div class="card-row">
-++++
-
-[.column]
-====== {empty}
-[.content]
+****
 _Couchbase Mobile_ brings the power of NoSQL to the edge.
 The combination of _Sync Gateway_ and _Couchbase Lite_ coupled with the power of _Couchbase Server_ provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
 Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+****
 
-[.column]
-====== {empty}
-[.media-left]
-image::secure-manage-and-develop-with-ease.svg[,275]
+[.tiles]
+--
+.Reference (these titles are hidden by default, but mark a new row)
+* xref:cloud:reference:rest-endpoints-all.adoc[API reference]
+** xref:cloud:reference:command-line-tools.adoc[CLI tools]
+* xref:n1ql:n1ql-language-reference/index.adoc[{sqlpp} Reference]
+// TODO, check SQL++ ref link etc.
 
-++++
-</div>
-++++
+.Tasks
+* xref:cloud:get-started:create-account.adoc[Set up Your Account]
+* xref:cloud:clusters:data-service/import-data-documents.adoc[Load Your Data]
+* Connect to Your Database
+** xref:sdk.adoc[SDKs and Connectors]
+** xref:cloud:reference:rest-endpoints-all.adoc[API]
+* xref:cloud:clusters:query-service/query-service.adoc[Run {sqlpp} Queries]
+* xref:cloud:clusters:analytics-service/analytics-service.adoc[Analyze your Docs]
+--
 
-== Embedded Database on the Edge
-++++
-<div class="card-row three-column-row">
-++++
-
-[.column]
-.Couchbase Lite
-
-[.content]
-Couchbase Lite is an embedded, NoSQL JSON Document Style database for your mobile apps.
-It natively supports all major operating systems and platforms.
-Its NoSQL client database provides CRUD, full-text search and query capabilities that runs locally on the device. +
-xref:couchbase-lite::introduction.adoc[Go to Couchbase Lite Docs]
-
-[.column]
-.Sync Gateway
-
-[.content]
-Sync Gateway is an internet-facing synchronization mechanism designed to provide data synchronization for large-scale interactive web, mobile, and IoT applications. +
-xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
-
-[.column]
-.Tutorials
-
-[.content]
-Sample tutorials to build Mobile applications on the edge. +
-https://developer.couchbase.com/tutorials[Couchbase Mobile Tutorials]
-
-++++
-</div>
-++++
+****
+xref:index.adoc[All Couchbase docs]
+****

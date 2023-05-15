@@ -1,0 +1,73 @@
+// This pages is TEMPORARY
+// will be moved to docs-ui once we've done Proof of Concept
+
+++++
+<style>
+
+div.switcher .content > .ulist > ul {
+    display: flex;
+    flex-direction: row;
+    align: center;
+    justify-content: center;
+    background: #ddd;
+    justify-items: stretch;
+    flex-wrap: wrap;
+}
+
+div.switcher .content > .ulist > ul > li {
+    margin: 0px;
+    margin-left: 1em;
+    margin-right: 1em;
+    display: inline-block;
+    padding: 1em;
+}
+
+div.switcher .ulist li:has(.selected) {
+
+    font-weight: bold;
+    background: black;
+    color: white;
+}
+
+
+div.tiles ul {
+    display: flex;
+    flex-direction: row;
+    align: center;
+    justify-content: center;
+}
+
+div.tiles .ulist {
+    padding: 0;
+}
+
+div.tiles li {
+    border: solid 1px #ccc;
+}
+
+div.tiles > .content > .ulist > ul > li {
+    display: inline-block;
+    margin: 0.5em;
+}
+
+div.tiles li p {
+    margin: 1em;
+}
+
+div.tiles > .content > .ulist > ul ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+div.tiles > .content > .ulist > ul ul li {
+    display: inline-block;
+    margin: 0;
+}
+
+div.tiles .title {
+    display: none;
+}
+
+</style>
+++++

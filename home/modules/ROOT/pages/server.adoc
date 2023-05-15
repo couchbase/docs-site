@@ -1,266 +1,43 @@
 = Couchbase Server
-:page-layout: landing-page-top-level-sdk
-:page-role: tiles
 :!sectids:
-:tabs:
 
 include::partial$info-banner.adoc[]
+include::partial$temporary-landing-styles.adoc[]
 
-= Couchbase Server
+[.switcher]
+--
+* xref:cloud.adoc[Cloud]
+* [.selected]##Server##
+* xref:mobile.adoc[Build Mobile/App Services]
+--
 
-== {empty}
-
+****
 Couchbase is the modern database for enterprise applications.
 
 Couchbase Server is an open source, distributed, JSON document database.
 It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
 For mobile and Internet of Things environments Couchbase also runs natively on-device and manages synchronization to the server.
+****
 
-----
-try {
-  final QueryResult result = cluster.query("SELECT * FROM `travel-sample`.inventory.airline LIMIT 100",
-      queryOptions().metrics(true));
+[.tiles]
+--
+.Reference (these titles are hidden by default, but mark a new row)
+* xref:cloud:reference:rest-endpoints-all.adoc[API reference]
+** xref:cloud:reference:command-line-tools.adoc[CLI tools]
+* xref:n1ql:n1ql-language-reference/index.adoc[{sqlpp} Reference]
+// TODO, check SQL++ ref link etc.
 
-  for (JsonObject row : result.rowsAsObject()) {
-    System.out.println("Found row: " + row);
-  }
+.Tasks
+* xref:cloud:get-started:create-account.adoc[Set up Your Account]
+* xref:cloud:clusters:data-service/import-data-documents.adoc[Load Your Data]
+* Connect to Your Database
+** xref:sdk.adoc[SDKs and Connectors]
+** xref:cloud:reference:rest-endpoints-all.adoc[API]
+* xref:cloud:clusters:query-service/query-service.adoc[Run {sqlpp} Queries]
+* xref:cloud:clusters:analytics-service/analytics-service.adoc[Analyze your Docs]
+--
 
-  System.out.println("Reported execution time: " + result.metaData().metrics().get().executionTime());
-} catch (CouchbaseException ex) {
-  ex.printStackTrace();
-}
-----
+****
+xref:index.adoc[All Couchbase docs]
+****
 
-== Get Started
-
-++++
-<div class="card-row two-column-row">
-++++
-
-[.column]
-====== {empty}
-.New to Couchbase
-
-[.content]
-Read the Getting Started guide for step-by-step instructions to create and connect to the database and run your first query.
-
-xref:server:getting-started:start-here.adoc[Get Started]
-
-[.column]
-====== {empty}
-.Upgrading to v7.x
-
-[.content]
-If you are an existing Couchbase user looking for information to upgrade to Couchbase Server 7.x and use collections and scopes, see xref:server:install:migrating-application-data.adoc[Upgrade and migrate your data to v7.x].
-
-[.column]
-====== {empty}
-.Migrating to Couchbase
-
-[.content]
-Find guidance and considerations when migrating from a different database to Couchbase through this https://blog.couchbase.com/moving-from-sql-server-to-couchbase-part-1-data-modeling/[blog series]. 
-
-[.column]
-====== {empty}
-.Explore Tutorials
-
-[.content]
-Explore Couchbase https://developer.couchbase.com/tutorials/[Tutorials] to learn how to build and operate apps using Couchbase. 
-
-++++
-</div>
-++++
-
-[.column]
-====== {empty}
-
-== Develop Using Couchbase
-
-++++
-<div class="card-row two-column-row">
-++++
-
-[.column]
-.Build your first sample app
-* xref:server:sdk:development-intro.adoc[Developer's Intro] 
-* xref:server:learn:data/document-data-model.adoc[Data Model]
-* xref:java-sdk:hello-world:start-using-sdk.adoc[Hello World Using SDKs]
-* xref:java-sdk:howtos:kv-operations.adoc[CRUD Using SDKs]
-
-[.column]
-.Data Service
-* xref:server:learn:services-and-indexes/services/data-service.adoc[Data Service]
-* xref:server:learn:data/scopes-and-collections.adoc[Scopes and Collections]
-* xref:server:learn:data/extended-attributes-fundamentals.adoc[Extended Attributes (XATTRs)]
-* xref:java-sdk:howtos:kv-operations.adoc[CRUD using Java SDK]
-
-
-[.column]
-.Querying Data
-* xref:server:n1ql:query.adoc[Query Service]
-* xref:server:learn:services-and-indexes/indexes/indexing-and-query-perf.adoc[Indexes and Query Performance]
-* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
-* xref:java-sdk:howtos:n1ql-queries-with-sdk.adoc[Query Using Java SDK]
-
-[.column]
-.Full-text Search
-* xref:server:fts:full-text-intro.adoc[Search Service]
-* xref:server:fts:fts-analyzers.adoc[Understanding Analyzers]
-* xref:server:fts:fts.adoc[Creating Full Text Indexes]
-* xref:java-sdk:howtos:full-text-searching-with-sdk.adoc[Search Using Java SDK]
-
-[.column]
-.Choosing the right index
-* xref:server:learn:services-and-indexes/services/index-service.adoc[Index Service]
-* xref:server:learn:services-and-indexes/indexes/index-lifecycle.adoc[Index Lifecyle]
-* xref:server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc[Using Indexes]
-* xref:server:rest-api:rest-index-service.adoc[Index Service REST API]
- 
-[.column]
-.Analytics
-* xref:server:learn:services-and-indexes/services/analytics-service.adoc[Analytics Service]
-* xref:server:analytics:1_intro.adoc[N1QL for Analytics]
-* xref:server:analytics:primer-beer.adoc[Tutorial]
-* xref:java-sdk:howtos:analytics-using-sdk.adoc[Analytics Using Java SDK]
-
-[.column]
-.Eventing
-* xref:server:eventing:eventing-overview.adoc[Eventing Service]
-* xref:server:eventing:eventing-language-constructs.adoc[Language Constructs]
-* xref:server:eventing:eventing-examples.adoc[Examples: Using the Eventing Service]
-* xref:server:eventing:eventing-api.adoc[Eventing REST API]
-
-[.column]
-.Transactions
-* xref:server:learn:data/transactions.adoc[Transactions]
-* xref:server:learn:data/durability.adoc[Durability]
-* xref:java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Java Transaction Library]
-* xref:server:n1ql:n1ql-language-reference/transactions.adoc[N1QL Support for Transactions]
-
-
-[.column]
-.Replication
-* xref:server:learn:clusters-and-availability/replication-architecture.adoc[Cross Data Center Replication(XDCR) Architecture]
-* xref:server:learn:clusters-and-availability/xdcr-cloud-deployment.adoc[XDCR Cloud Deployment]
-* xref:server:manage:manage-xdcr/xdcr-management-overview.adoc[Manage XDCR]
-
-[.column]
-.Backup and Restore
-* xref:server:learn:services-and-indexes/services/backup-service.adoc[Backup Service]
-* xref:server:backup-restore:backup-restore.adoc[Manage Backup and Restore]
-* xref:server:rest-api:backup-rest-api.adoc[Backup Service REST API]
-
-++++
-</div>
-++++
-
-[.column]
-====== {empty}
-
-== Administration
-
-++++
-<div class="card-row two-column-row">
-++++
-
-[.column]
-.Buckets, Memory, and Storage
-* xref:server:learn:buckets-memory-and-storage/vbuckets.adoc[Database Sharding using vBuckets]
-* xref:server:learn:buckets-memory-and-storage/memory-and-storage.adoc[Memory and Storage]
-* xref:server:learn:buckets-memory-and-storage/compression.adoc[Compression]
-
-[.column]
-.Cluster Management
-* xref:server:manage:management-overview.adoc[Overview]
-* xref:server:manage:manage-nodes/node-management-overview.adoc[Manage Nodes and Clusters]
-* xref:server:manage:manage-buckets/bucket-management-overview.adoc[Manage Buckets]
-
-[.column]
-.Security
-* xref:server:learn:security/security-overview.adoc[Security Overview]
-* xref:server:learn:security/authentication.adoc[Authentication]
-* xref:server:manage:manage-security/manage-certificates.adoc[Manage Certificates]
-* xref:server:learn:security/authorization-overview.adoc[Authorization]
-* xref:server:manage:manage-security/manage-users-and-roles.adoc[Manage Users, Groups, and Roles]
-
-[.column]
-.Monitoring and Logging
-* xref:server:manage:monitor/monitor-intro.adoc[Monitoring]
-* xref:server:manage:manage-logging/manage-logging.adoc[Logging]
-* xref:server:manage:manage-settings/manage-settings.adoc[Settings]
-* xref:server:manage:troubleshoot/troubleshoot.adoc[Troubleshoot]
-
-[.column]
-.Installation
-* xref:server:install:get-started.adoc[Deployment Options]
-* xref:server:install:install-production-deployment.adoc[Deployment Guidelines]
-* xref:server:install:install-intro.adoc[Installation]
-*  xref:server:install:upgrade.adoc[Upgrading Couchbase Server]
-* xref:server:install:install-uninstalling.adoc[Uninstall]
-
-[.column]
-.Migrating to v7.x
-* xref:server:install:migrating-application-data.adoc[Migrating to a collection-based data model]
-* https://blog.couchbase.com/moving-from-sql-server-to-couchbase-part-1-data-modeling/[Migrating to Couchbase]
-
-[.column]
-.Couchbase Server Tools
-* xref:server:cli:cli-intro.adoc[Couchbase CLI]
-* xref:server:tools:query-workbench.adoc[Query Workbench]
-* xref:server:tools:cbq-shell.adoc[cbq - the command line shell for N1QL]
-* xref:server:backup-restore:enterprise-backup-restore.adoc[Backups using `cbbackupmgr`]
-* xref:server:tools:cbimport.adoc[Data Import using cbimport]
-* https://couchbase.sh[Couchbase Shell (Beta)]
-
-
-[.column]
-.References
-* xref:server:rest-api:rest-intro.adoc[REST API Reference]
-* xref:server:metrics-reference:metrics-reference.adoc[Metrics Reference]
-* xref:xdcr-reference:xdcr-reference-intro.adoc[XDCR Reference]
-* xref:audit-event-reference:audit-event-reference.adoc[Audit Events Reference]
-* xref:rebalance-reference:rebalance-reference.adoc[Rebalance Reference]
-
-++++
-</div>
-++++
-
-[.column]
-====== {empty}
-
-== Product Docs
-
-++++
-<div class="card-row three-column-row">
-++++
-
-[.column]
-====== {empty}
-.Release Notes
-
-[.content]
-Find information about platform support changes, deprecation notifications, notable improvements, and fixed and known issues in a release.
-
-xref:server:release-notes:relnotes.adoc[Release Notes]
-
-[.column]
-====== {empty}
-.What's New
-
-[.content]
-Find information about new features and enhancements in a release.
-
-xref:server:introduction:whats-new.adoc[What's new]
-
-[.column]
-====== {empty}
-.Editions
-
-[.content]
-Couchbase Server comes in two editions: Enterprise Edition and Community Edition. Find information on the differences between the two editions here.
-
-xref:server:introduction:editions.adoc[Couchbase Server Editions]
-
-++++
-</div>
-++++
