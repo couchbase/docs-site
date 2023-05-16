@@ -98,9 +98,11 @@ module.exports = function(context, ...schemas) {
         return [...via_properties, ...via_additionalProperties]
     }
 
-    // recursive function to flatten the tree into a flat list like [root, a, a.a1, a.a1.a2, a.b1, a.b1.b2, ...]
-    // TODO refactor (the iteration is identical to above, but this version *flattens* the result into a list)
-    // Looks like we just need to parametrize `leaf` and `internal` functions.
+    // recursive function to walk the tree, and call the supplied leaf and internal
+    // callbacks on each node in turn.
+    // this can be used to:
+    //    * generate a tree (as per process_toc)
+    //    * flatten the tree into a list (as per get_items)
     function iterate_properties (node, leaf, internal) {
         
         function recurse(node, path) {
