@@ -65,7 +65,7 @@ div.tiles > .content > .ulist > ul ul li {
     margin: 0;
 }
 
-div.tiles .title {
+div.tiles .title, div.switcher .title {
     display: none;
 }
 

@@ -8,7 +8,9 @@ include::partial$temporary-landing-styles.adoc[]
 --
 * xref:cloud.adoc[Cloud]
 * [.selected]##Server##
-* xref:mobile.adoc[Build Mobile/App Services]
+
+.Mobile
+* xref:mobile.adoc[Build Mobile Services]
 --
 
 ****
@@ -38,6 +40,6 @@ For mobile and Internet of Things environments Couchbase also runs natively on-d
 --
 
 ****
-xref:index.adoc[All Couchbase docs]
+xref:server:develop:intro.adoc[All Server docs]
 ****
 
