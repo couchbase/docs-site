@@ -4,7 +4,7 @@
     {{#each components}}
     {{#if (eq ./name "home")}}
     {
-      "url": "{{#if env.STAGING_AUTH}}{{env.STAGING_AUTH}}{{/if}}{{{@root.url}}}/{{{./name}}}/contribute/",
+      "url": "{{{@root.url}}}/{{{./name}}}/contribute/",
       "extra_attributes": {
         "component_title": "{{{./title}}}",
         "component_version": ["{{{./name}}}", "{{{./name}}}"],
@@ -19,7 +19,7 @@
     {{#each (versioned components)}}
     {{#each versions}}
     {
-      "url": "{{{@root.url}}}/{{{../name}}}/{{#if (eq ./version ../latest)}}current{{else}}{{{./version}}}{{/if}}/",
+      "url": "{{#if env.STAGING_AUTH}}{{env.STAGING_AUTH}}{{/if}}{{{@root.url}}}/{{{../name}}}/{{#if (eq ./version ../latest)}}current{{else}}{{{./version}}}{{/if}}/",
       "extra_attributes": {
         "component_title": "{{{../title}}}",
         "component_version": ["{{{../name}}}@{{{./version}}}"{{#if (eq ./version ../latest)}}, "{{{../name}}}"{{/if}}],
