@@ -4,7 +4,7 @@
     {{#each components}}
     {{#if (eq ./name "home")}}
     {
-      "url": "{{{@root.url}}}/{{{./name}}}/contribute/",
+      "url": "{{#if env.STAGING_AUTH}}{{env.STAGING_AUTH}}{{/if}}{{{@root.url}}}/{{{./name}}}/contribute/",
       "extra_attributes": {
         "component_title": "{{{./title}}}",
         "component_version": ["{{{./name}}}", "{{{./name}}}"],

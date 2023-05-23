@@ -39,13 +39,18 @@ pipeline {
     }
     stage('Generate Config') {
       steps {
-        sh '(curl -sL https://docs-staging.couchbase.com/site-manifest.json | npx -p hbs-cli -p glob@8 hbs -H "$PWD/docsearch/hbs-helpers/*.js" -i -s $CONFIG.hbs > $CONFIG)'
+        withCredentials([usernameColonPassword(credentialsId: "Staging-docs-login", variable: "STAGING_AUTH")]) {
+        sh '(curl -u $STAGING_AUTH -sL https://docs-staging.couchbase.com/site-manifest.json | npx -p hbs-cli -p glob@8 hbs -H "$PWD/docsearch/hbs-helpers/*.js" -i -s $CONFIG.hbs > $CONFIG)'
+        }
       }
     }
     stage('Run') {
       steps {
+
+        withCredentials([usernameColonPassword(credentialsId: "Staging-docs-login", variable: "STAGING_AUTH")]) {
         configFileProvider([configFile(fileId: 'algolia-application-credentials', targetLocation: '.env')]) {
           sh '(mv .env $HOME/ && cd $HOME && pipenv run python -m src.index)'
+        }
         }
       }
     }
