@@ -39,7 +39,7 @@ pipeline {
     }
     stage('Generate Config') {
       steps {
-        sh '(curl -sL https://docs-staging.couchbase.com/site-manifest.json | npx -p hbs-cli hbs -H "$PWD/docsearch/hbs-helpers/*.js" -i -s $CONFIG.hbs > $CONFIG)'
+        sh '(curl -sL https://docs-staging.couchbase.com/site-manifest.json | npx -p hbs-cli -p glob@8 hbs -H "$PWD/docsearch/hbs-helpers/*.js" -i -s $CONFIG.hbs > $CONFIG)'
       }
     }
     stage('Run') {
