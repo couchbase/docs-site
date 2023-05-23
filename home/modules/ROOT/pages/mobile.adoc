@@ -1,3 +1,4 @@
+:page-for-component: mobile
 = Couchbase Mobile - Embedded Database on the Edge
 :!sectids:
 
