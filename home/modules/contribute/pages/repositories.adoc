@@ -1,5 +1,5 @@
 = Repository Organization
-:url-git-cb:  https://github.com/couchbase
+:url-git-cb: https://github.com/couchbase
 :url-git-labs: https://github.com/couchbaselabs
 :url-git-server: {url-git-cb}/docs-server
 :url-git-cli: {url-git-cb}/couchbase-cli
@@ -19,8 +19,11 @@
 :url-git-home: {url-git-cb}/docs-site
 :url-git-operator: {url-git-cb}/couchbase-operator
 :url-git-cmos: {url-git-labs}/observability
-:url-git-asterix: {url-git-labs}/asterix-opt
+:url-git-asterix: {url-git-cb}/asterixdb
+:url-git-analytics: {url-git-cb}/cbas-core
 :url-git-elastic: {url-git-labs}/couchbase-elasticsearch-connector
+:url-git-devex: {url-git-labs}/docs-devex
+:url-git-swagger: {url-git-labs}/cb-swagger
 :url-git-kafka: {url-git-cb}/kafka-connect-couchbase
 :url-git-spark: {url-git-cb}/couchbase-spark-connector
 //Couchbase uses Antora to manage and build docs.couchbase.com.
@@ -33,8 +36,10 @@ The Couchbase documentation is stored in multiple repositories that are organize
 The Couchbase documentation is stored several organizations and multiple repositories on GitHub.
 The following repositories accept contributions via the regular workflow and use a standard branch pattern.
 
-* {url-git-server}[Server^]
-* {url-git-lite}[Lite^]
+* {url-git-server}[Couchbase Server^]
+* {url-git-devex}[Developer Docs^]
+* {url-git-swagger}[REST APIs^]
+* {url-git-lite}[Couchbase Lite^]
 * {url-git-sync}[Sync Gateway^]
 * {url-git-sdk-c}[C SDK^]
 * {url-git-sdk-go}[Go SDK^]
@@ -54,29 +59,18 @@ The following repositories accept contributions via the regular workflow and use
 Some Couchbase repositories only accept contributions via Gerrit, use custom branch patterns, and have additional content and AsciiDoc requirements.
 Review the project's README for the latest contributing requirements, and contact the project lead before working on documentation stored in these repositories.
 
-==== CLI and Backup
+==== CLI
 
-The CLI and Backup repositories use the Gerrit workflow and custom branch patterns.
-Additionally, the AsciiDoc files in these repositories are used to create two sets of documentation: 1. the CLI and Backup pages incorporated in the Couchbase Server component and, 2., standalone man pages that are bundled with the Server software.
+The CLI repository uses the Gerrit workflow and custom branch patterns.
+Additionally, the AsciiDoc files in this repository are used to create two sets of documentation:
+
+1. The CLI pages incorporated in the Couchbase Server component.
+2. Standalone man pages that are bundled with the Server software.
+
 When editing these files, use the man page section structure and formatting.
 //make note to special xref link text formatting
 
 * {url-git-cli}[CLI^]
-* {url-git-backup}[Backup^]
-
-==== Autonomous Operator
-
-The Autonomous Operator repository uses the Gerrit workflow and custom branch patterns.
-The documentation is stored in _docs/user_.
-
-* {url-git-operator}[Autonomous Operator^]
-
-==== Analytics
-
-The Analytics service documentation is maintained in collaboration with the AsterixDB project.
-See its {url-git-asterix}/blob/master/README.md[README] for contributing instructions.
-
-* {url-git-asterix}[Analytics^]
 
 ==== Connectors
 
@@ -85,6 +79,26 @@ The connector repositories use the Gerrit workflow.
 * {url-git-elastic}[Elasticsearch Connector^]
 * {url-git-kafka}[Kafka Connector^]
 * {url-git-spark}[Spark Connector^]
+
+[#repo-private]
+=== Private Repositories
+
+Some Couchbase repositories are private.
+Only Couchbase employees can contribute to the documentation in these components.
+
+==== Backup
+
+The Backup repository uses the Gerrit workflow and custom branch patterns.
+Like the CLI repository, this repository is used to create the Backup pages in the Couchbase documentation, and standalone man pages.
+
+==== Autonomous Operator
+
+The Autonomous Operator repository uses the Gerrit workflow and custom branch patterns.
+
+==== Analytics
+
+The Analytics service documentation uses the Gerrit workflow.
+It is maintained in collaboration with the {url-git-asterix}[AsterixDB] project.
 
 [#dir-structure]
 == Directory Structure and Key Files
