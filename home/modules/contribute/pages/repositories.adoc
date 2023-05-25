@@ -48,7 +48,7 @@ The following repositories accept contributions via the regular workflow and use
 * {url-git-sdk-dotnet}[.NET SDK^]
 * {url-git-sdk-go}[Go SDK^]
 * {url-git-sdk-java}[Java SDK^]
-* {url-git-sdk-kotlin}Kotlin SDK^]
+* {url-git-sdk-kotlin}[Kotlin SDK^]
 * {url-git-sdk-nodejs}[Node.js SDK^]
 * {url-git-sdk-php}[PHP SDK^]
 * {url-git-sdk-python}[Python SDK^]
