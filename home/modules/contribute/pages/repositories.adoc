@@ -7,9 +7,11 @@
 :url-git-lite: {url-git-labs}/docs-couchbase-lite
 :url-git-sync: {url-git-labs}/docs-sync-gateway
 :url-git-sdk-c: {url-git-cb}/docs-sdk-c
+:url-git-sdk-cxx: {url-git-cb}/docs-sdk-cxx
+:url-git-sdk-dotnet: {url-git-cb}/docs-sdk-dotnet
 :url-git-sdk-go: {url-git-cb}/docs-sdk-go
 :url-git-sdk-java: {url-git-cb}/docs-sdk-java
-:url-git-sdk-dotnet: {url-git-cb}/docs-sdk-dotnet
+:url-git-sdk-kotlin: {url-git-cb}/docs-sdk-kotlin
 :url-git-sdk-nodejs: {url-git-cb}/docs-sdk-nodejs
 :url-git-sdk-php: {url-git-cb}/docs-sdk-php
 :url-git-sdk-python: {url-git-cb}/docs-sdk-python
@@ -42,9 +44,11 @@ The following repositories accept contributions via the regular workflow and use
 * {url-git-lite}[Couchbase Lite^]
 * {url-git-sync}[Sync Gateway^]
 * {url-git-sdk-c}[C SDK^]
+// * {url-git-sdk-cxx}[{cpp} SDK^]
+* {url-git-sdk-dotnet}[.NET SDK^]
 * {url-git-sdk-go}[Go SDK^]
 * {url-git-sdk-java}[Java SDK^]
-* {url-git-sdk-dotnet}[.NET SDK^]
+* {url-git-sdk-kotlin}Kotlin SDK^]
 * {url-git-sdk-nodejs}[Node.js SDK^]
 * {url-git-sdk-php}[PHP SDK^]
 * {url-git-sdk-python}[Python SDK^]
