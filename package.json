@@ -7,12 +7,17 @@
     "antora": "~3.1",
     "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension",
     "@asciidoctor/tabs": "1.0.0-beta.5",
+    "array.prototype.groupby": "^1.1.0",
     "asciidoctor-external-callout": "~1.2.0",
     "asciidoctor-kroki": "0.15.4",
+    "deep-equal": "^2.2.1",
     "gulp": "~4.0",
     "gulp-connect": "~5.7",
     "js-yaml": "~4.1",
+    "jsonlines": "^0.1.1",
     "markdown-it": "^13.0.1",
+    "ora": "^6.3.1",
+    "rimraf": "^5.0.1",
     "yaml": "^2.2.2"
   },
   "repository": {
