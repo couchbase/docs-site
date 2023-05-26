@@ -4,6 +4,7 @@
 :page-role: tiles
 :!sectids:
 
+include::partial$info-banner.adoc[]
 
 = SDKs & Connectors
 
