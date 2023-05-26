@@ -4,6 +4,8 @@
 :!sectids:
 :tabs:
 
+include::partial$info-banner.adoc[]
+
 = Couchbase Server
 
 == {empty}

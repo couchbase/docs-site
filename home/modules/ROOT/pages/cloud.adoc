@@ -3,6 +3,8 @@
 :page-role: tiles
 :!sectids:
 
+include::partial$info-banner.adoc[]
+
 = Couchbase on Containers, Kubernetes, and Cloud
 
 Couchbase Server is designed to run in the most popular cloud and container environments. Deploy Couchbase in the cloud for its unique data model flexibility, elastic scalability, high performance, and 24x365 availability. 

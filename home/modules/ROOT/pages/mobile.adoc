@@ -3,7 +3,10 @@
 :page-role: tiles
 :!sectids:
 
+include::partial$info-banner.adoc[]
+
 = Couchbase Mobile
+
 ++++
 <div class="card-row">
 ++++

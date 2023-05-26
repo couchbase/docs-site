@@ -3,6 +3,8 @@
 :page-role: tiles
 :!sectids:
 
+include::partial$info-banner.adoc[]
+
 = Couchbase Connectors
 ++++
 <div class="card-row">

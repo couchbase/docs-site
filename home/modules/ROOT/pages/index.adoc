@@ -4,6 +4,8 @@
 :!sectids:
 :collapsible:
 
+include::partial$info-banner.adoc[]
+
 = Couchbase Documentation
 
 ++++
