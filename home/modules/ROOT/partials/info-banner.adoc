@@ -43,6 +43,6 @@
 // NOTE: comment the paragraph below to hide the banner.
 [.info-banner]
 The Capella Spring release is here!
-Introducing developer integrations Netlify and VSCode plus more.
+Introducing developer integrations for Netlify and VSCode, and more.
 https://www.couchbase.com/blog/couchbase-capella-spring-release-72[Check it out]
 
