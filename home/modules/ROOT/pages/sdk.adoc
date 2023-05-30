@@ -29,49 +29,59 @@ collection.reactive.upsert("document-key", json)
 The Couchbase SDKs allow applications to access a Couchbase cluster. 
 They offer traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
  
-[#table_sdk,cols="25,66,66"]
+ [#table_sdk,cols="38,40,60,50"]
 |===
-| SDK | Documentation | API Reference
-
-| Java SDK
-| xref:java-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-java-client[API Reference]
-
-| Kotlin SDK
-| xref:kotlin-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-kotlin-client[API Reference]
-
-| Scala SDK
-| xref:scala-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference]
-
-| .NET SDK
-| xref:dotnet-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-net-client[API Reference]
+| SDK | Documentation | Hello World Example | API Reference
 
 | C SDK
 | xref:c-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[API Reference]
+| xref:c-sdk:hello-world:start-using-sdk.adoc[C Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[C API Reference]
 
-| Node.js SDK
-| xref:nodejs-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-node-client/modules.html[API Reference]
-
-| PHP SDK
-| xref:php-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[API Reference]
-
-| Python SDK
-| xref:python-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-python-client/[API Reference]
-
-| Ruby SDK
-| xref:ruby-sdk:hello-world:overview.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[API Reference]
+| .NET SDK
+| xref:dotnet-sdk:hello-world:overview.adoc[Docs]
+| xref:dotnet-sdk:hello-world:start-using-sdk.adoc[.NET Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-net-client[.NET API Reference]
 
 | Go SDK
 | xref:go-sdk:hello-world:overview.adoc[Docs]
-| https://pkg.go.dev/github.com/couchbase/gocb/v2[API Reference]
+| xref:go-sdk:hello-world:start-using-sdk.adoc[Go Getting Started]
+| https://pkg.go.dev/github.com/couchbase/gocb/v2[Go API Reference]
+
+| Java SDK
+| xref:java-sdk:hello-world:overview.adoc[Docs]
+| xref:java-sdk:hello-world:start-using-sdk.adoc[Java Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-java-client[Java API Reference]
+
+| Kotlin SDK
+| xref:kotlin-sdk:hello-world:overview.adoc[Docs]
+| xref:kotlin-sdk:hello-world:start-using-sdk.adoc[Kotlin Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-kotlin-client[Kotlin API Reference]
+
+| Node.js SDK
+| xref:nodejs-sdk:hello-world:overview.adoc[Docs]
+| xref:nodejs-sdk:hello-world:start-using-sdk.adoc[Node.js Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-node-client/modules.html[Node.js API Reference]
+
+| PHP SDK
+| xref:php-sdk:hello-world:overview.adoc[Docs]
+| xref:php-sdk:hello-world:start-using-sdk.adoc[PHP Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[PHP API Reference]
+
+| Python SDK
+| xref:python-sdk:hello-world:overview.adoc[Docs]
+| xref:python-sdk:hello-world:start-using-sdk.adoc[Python Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-python-client/[Python API Reference]
+
+| Ruby SDK
+| xref:ruby-sdk:hello-world:overview.adoc[Docs]
+| xref:ruby-sdk:hello-world:start-using-sdk.adoc[Ruby Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[Ruby API Reference]
+
+| Scala SDK
+| xref:scala-sdk:hello-world:overview.adoc[Docs]
+| xref:scala-sdk:hello-world:start-using-sdk.adoc[Scala Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[Scala API Reference]
 |===
 
 
