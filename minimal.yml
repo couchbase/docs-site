@@ -1,0 +1,50 @@
+antora:
+  extensions:
+  - '@antora/site-generator-ms'
+site:
+  title: Couchbase Capella Staging Docs
+  url: https://docs.stage.nonprod-project-avengers.com
+  start_page: cloud:ROOT:index.adoc
+  keys:
+    google_analytics: GTM-MVPNN2
+git:
+  ensure_git_suffix: false
+content:
+  branches: master
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: home
+  - url: ../docs-sync-gateway
+    branches: [HEAD]
+asciidoc:
+  attributes:
+    max-include-depth: 10
+    page-partial: false
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    tabs: tabs
+    toc: ~
+    sqlpp: SQL++
+    xrefstyle: short
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    site-navigation-data-path: _/js/site-navigation-data.js
+    kroki-server-url: ~
+    kroki-fetch-diagram: true
+  extensions:
+  - ./lib/source-url-include-processor.js
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/tabs-block.js
+  - ./lib/markdown-block.js
+  - ./lib/template-block.js
+  - asciidoctor-kroki
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui-sandbox/releases/download/prod-166/ui-bundle.zip
+output:
+  dir: ./public
