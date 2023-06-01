@@ -5,6 +5,7 @@ import ora from 'ora'
 const jsonlines = require('jsonlines')
 const equal = require('deep-equal')
 import { rimrafSync } from 'rimraf'
+const groupBy = require('array.prototype.groupby')
 
 const promise_ok = async (promise) => {
     try {
@@ -282,12 +283,29 @@ try {
         // }
     }
 
+    const byPath = l => l?.file?.path
+    const logsByFile = 
+        Object.entries(
+            groupBy(
+                logs.all.filter(byPath),
+                byPath
+            )
+        ).sort(([_ka,a], [_kb,b]) => b.length - a.length)
+    
     console.log("\nCategorized log messages:", Object.entries(logs).map(([k,v]) => [k, v.length]))
     if (logs.other) {
         console.log(
             "Uncategorized log messages:",
             logs.other.slice(0,3).map(m => m.msg),
             "...")
+    }
+    
+    if (logsByFile.length) {
+        console.log(
+            "Files with most errors",
+            Object.fromEntries(
+                logsByFile.slice(0,3).map(([k,v]) => [k, v.length])))
+        logs.byFile = logsByFile
     }
 
     if (vars.output_dir) {
@@ -297,7 +315,7 @@ try {
             text: `See ${chalk.white(`file://${absolute}/andora.html`)} to browse output`
         })
     }
-
+    
 
 }
 catch (e) {
