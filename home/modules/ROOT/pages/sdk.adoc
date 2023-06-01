@@ -30,7 +30,7 @@ collection.reactive.upsert("document-key", json)
 The Couchbase SDKs allow applications to access a Couchbase cluster. 
 They offer traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance.
  
- [#table_sdk,cols="38,40,60,50"]
+[#table_sdk,cols="38,40,60,50"]
 |===
 | SDK | Documentation | Hello World Example | API Reference
 
