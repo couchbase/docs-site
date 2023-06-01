@@ -1,7 +1,7 @@
 #!/usr/bin/env zx
 'use strict'
 
-import ora from 'ora'
+import { Spinner } from './lib/andora-spinner.mjs'
 const jsonlines = require('jsonlines')
 const equal = require('deep-equal')
 import { rimrafSync } from 'rimraf'
@@ -146,8 +146,6 @@ function getParser(spinner) {
     const parser = jsonlines.parse({ emitInvalidLines: true })
 
     parser.on('data', function (data) {
-        spinner.text = ''
-        spinner.prefixText = ''
         if (data.name === "andora") {
             const log = {type: 'andora', ...data}
             logs.andora.push(log)
@@ -156,22 +154,19 @@ function getParser(spinner) {
             switch(data.level) {
                 case 'fatal':
                     vars[fatal] = true
-                    spinner.stopAndPersist({
-                        symbol: '💀',
-                        text: data.msg
-                    }).start()
+                    spinner.output(data.msg, '💀')
                 case 'error':
-                    spinner.fail(data.msg).start()
+                    spinner.fail(data.msg)
                     break;
                 case 'warn':
-                    spinner.warn(data.msg).start()
+                    spinner.warn(data.msg)
                     break;
                 case 'debug':
-                    spinner.info(data.msg).start()
+                    spinner.info(data.msg)
                     break;
                 case 'info':
                 default:
-                    spinner.succeed(data.msg).start()
+                    spinner.succeed(data.msg)
             }
             if (data.vars) {
                 for (const [k,v] of Object.entries(data.vars)) {
@@ -181,14 +176,14 @@ function getParser(spinner) {
                             expected
                             : (got) => [equal(expected, got), `expected: ${expected}`]
                             
-                        spinner.info(`${k}: ${JSON.stringify(v)}`).start()
+                        spinner.info(`${k}: ${JSON.stringify(v)}`)
                         const [ok, msg] = fn(v)
                         if (!ok) {
-                            spinner.fail(chalk.red(`  ${msg}`)).start()
+                            spinner.fail(`  ${msg}`)
                         }
                     }
                     else {
-                        spinner.info(`${k}: ${JSON.stringify(v)}`).start()
+                        spinner.info(`${k}: ${JSON.stringify(v)}`)
                     }
                 }
                 vars = { ...vars, ...data.vars }
@@ -198,28 +193,15 @@ function getParser(spinner) {
             for (const p of log_parsers) {
                 const result = p.regex.exec(data.msg)
                 if (result) {
-                    spinner.text = data.msg
-                    spinner.prefixText = data.source ? path.basename(data.source.url, '.git') : ''
+                    spinner.flash(data.msg, data.source ? path.basename(data.source.url, '.git') : '')
                     const log = {type: p.type, ...result.groups, ...data}
                     logs[p.type] = logs[p.type] ?? []
                     logs[p.type].push(log)
                     logs.all.push(log)
                     
-                    switch(data.level) {
-                        case 'fatal':
-                            vars[fatal] = true
-                            spinner.stopAndPersist({
-                                symbol: '💀',
-                                text: data.msg
-                            })
-                        case 'error':
-                            spinner.color = 'red'
-                            break;
-                        case 'warn':
-                            spinner.color = 'yellow'
-                            break;
-                        default:
-                            spinner.color = 'cyan'
+                    if (data.level == 'fatal') {
+                        vars[fatal] = true
+                        spinner.fatal(data.msg)
                     }
                     break
                 }
@@ -228,9 +210,7 @@ function getParser(spinner) {
     })
 
     parser.on('invalid-line', function (err) {
-        spinner.text = ''
-        spinner.prefixText = ''
-        spinner.warn(err.source).start()
+        spinner.warn(err.source)
     })
     return parser
 }
@@ -238,39 +218,35 @@ function getParser(spinner) {
 // Variables to store Andora state
 var vars = {}
 var logs = { all: [], andora: [] }
-const spinner = ora('Hoppity Hop!').start()
+const spinner = new Spinner()
 const parser = getParser(spinner)
 
 try {
     console.time('andora')
     
-    spinner.stopAndPersist({
-        symbol: '🐇', 
-        text: chalk.magenta.bold('Hello, I am Andora, the docs build rabbit!')
-    }).start()
+    spinner.output(
+        'Hello, I am Andora, the docs build rabbit!',
+        '🐇', chalk.magenta.bold)
 
     {
-        spinner.prefixText = 'doc-site'
-        spinner.info('Checking your git worktree is up to date').start()
+        spinner.info('(docs-site) Checking your git worktree is up to date')
 
         const upstream = (
             await $`git ls-remote git@github.com:couchbase/docs-site.git master`
             ).toString().split(/\s+/)[0]
 
         if (await promise_ok($`git merge-base --is-ancestor ${upstream} HEAD`)) {
-            spinner.succeed('Git checkout is up to date!')
+            spinner.succeed('(docs-site) Git checkout is up to date!')
         }
         else if (await promise_ok($`git merge-base --is-ancestor HEAD ${upstream}`)) {
-            spinner.info(`Git checkout can be updated with ${chalk.bold('git pull --ff-only')}`)
+            spinner.info(`(docs-site) Git checkout can be updated with ${chalk.bold('git pull --ff-only')}`)
         }
         else if (await promise_ok($`git merge-base HEAD ${upstream}`)) {
-            spinner.warn(`Looks like you have branched master. Remember to update with ${chalk.bold('git pull --rebase')}`)
+            spinner.warn(`(docs-site) Looks like you have branched master. Remember to update with ${chalk.bold('git pull --rebase')}`)
         }
         else {
             spinner.fail(chalk.red('Careful! It looks like you are not related to master branch'))
         }  
-        spinner.prefixText = ''
-        spinner.start()
     }
 
     const antora = $`antora --stacktrace --log-level=debug --extension=lib/doctor.js ${process.argv.slice(3)}`.quiet()
@@ -310,10 +286,9 @@ try {
 
     if (vars.output_dir) {
         const absolute = path.resolve(vars.output_dir)
-        spinner.stopAndPersist({
-            symbol: '🐇', 
-            text: `See ${chalk.white(`file://${absolute}/andora.html`)} to browse output`
-        })
+        spinner.output(
+            `See ${chalk.white(`file://${absolute}/andora.html`)} to browse output`,           
+            '🐇')
     }
     
 
@@ -335,7 +310,7 @@ finally {
     
     if (vars.output_dir) {
         try {
-            spinner.info("Writing Logs").start()
+            spinner.info("Writing Logs")
             const log_path = `${vars.output_dir}/logs`
             
             // delete and recreate logs, so we don't get confused by old ones
