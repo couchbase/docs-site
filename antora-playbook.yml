@@ -33,6 +33,8 @@ urls:
 content:
   branches: master
   # NOTE the git@ segment in the URL indicates which repositories are private
+  ## The above has a bug when upgrading to Antora 3.1. Original sources commented
+  ## out and replaced with a non git@ prefix. To revert if it causes issues
   sources:
   - url: .
     branches: HEAD
@@ -42,10 +44,12 @@ content:
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5, capella, elixir]
     start_path: docs
-  - url: https://git@github.com/couchbasecloud/couchbase-cloud
+  #- url: https://git@github.com/couchbasecloud/couchbase-cloud
+  - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_paths: [docs/public, docs/serverless]
-  - url: https://git@github.com/couchbase/couchbase-operator
+  # - url: https://git@github.com/couchbase/couchbase-operator
+  - url: https://github.com/couchbase/couchbase-operator
     branches: [master, 2.4.x, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
@@ -66,13 +70,16 @@ content:
   - url: https://github.com/couchbase/couchbase-tableau-connector
     branches: [master]
     start_path: docs
-  - url: https://git@github.com/couchbase/docs-connectors-talend
-  - url: https://git@github.com/couchbase/docs-analytics
+  # - url: https://git@github.com/couchbase/docs-connectors-talend
+  - url: https://github.com/couchbase/docs-connectors-talend
+  # - url: https://git@github.com/couchbase/docs-analytics
+  - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/couchbase-cli
     branches: [neo, 7.1.x-docs, cheshire-cat, mad-hatter, 6.5.x-docs]
     start_path: docs
-  - url: https://git@github.com/couchbase/backup
+  # - url: https://git@github.com/couchbase/backup
+  - url: https://github.com/couchbase/backup
     branches: [neo, 7.1.x-docs, cheshire-cat, mad-hatter, 6.5.x-docs]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
@@ -115,9 +122,11 @@ content:
     #
   - url: https://github.com/couchbase/docs-service-broker
     branches: [1.1.x, 1.0.x]
-  - url: https://git@github.com/couchbase/docs-cloud-native
+  # - url: https://git@github.com/couchbase/docs-cloud-native
+  - url: https://github.com/couchbase/docs-cloud-native
     branches: [cloud-native-2.2]
-  - url: https://git@github.com/couchbase/docs-ngdm
+  # - url: https://git@github.com/couchbase/docs-ngdm
+  - url: https://github.com/couchbase/docs-ngdm
   - url: https://github.com/couchbase/tutorials
     # branches: [azure-prereq]
   - url: https://github.com/couchbase/developer-content
