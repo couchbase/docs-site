@@ -153,7 +153,7 @@ function getParser(spinner) {
 
             switch(data.level) {
                 case 'fatal':
-                    vars[fatal] = true
+                    vars.fatal = true
                     spinner.output(data.msg, '💀')
                 case 'error':
                     spinner.fail(data.msg)
@@ -200,7 +200,7 @@ function getParser(spinner) {
                     logs.all.push(log)
                     
                     if (data.level == 'fatal') {
-                        vars[fatal] = true
+                        vars.fatal = true
                         spinner.fatal(data.msg)
                     }
                     break
@@ -249,7 +249,7 @@ try {
         }  
     }
 
-    const antora = $`antora --stacktrace --log-level=debug --extension=lib/doctor.js ${process.argv.slice(3)}`.quiet()
+    const antora = $`npx antora --stacktrace --log-level=debug --extension=lib/doctor.js ${process.argv.slice(3)}`.quiet()
 
     for await (const chunk of antora.stdout) {
         const ok = parser.write(chunk)
@@ -302,7 +302,7 @@ catch (e) {
     else {
         console.log(e)
     }
-    vars[fatal] = true
+    vars.fatal = true
 }
 finally {
     parser.end()
