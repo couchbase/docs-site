@@ -192,7 +192,7 @@ asciidoc:
   - ./lib/template-block.js
   - asciidoctor-kroki
   - asciidoctor-external-callout
-  - @asciidoctor/tabs
+  - '@asciidoctor/tabs'
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-167/ui-bundle.zip
