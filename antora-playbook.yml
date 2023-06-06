@@ -171,6 +171,7 @@ asciidoc:
     idprefix: '@'
     idseparator: '-@'
     tabs: tabs
+    tabs-sync-option: true
     toc: ~
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
@@ -191,10 +192,9 @@ asciidoc:
   - ./lib/template-block.js
   - asciidoctor-kroki
   - asciidoctor-external-callout
+  - @asciidoctor/tabs
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-165/ui-bundle.zip
-    #url: https://deploy-preview-xxx--cb-docs-ui.netlify.app/dist/ui-bundle.zip
-    #snapshot: true
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-167/ui-bundle.zip
 output:
   dir: ./public
