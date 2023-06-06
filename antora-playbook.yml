@@ -164,6 +164,7 @@ asciidoc:
     idprefix: '@'
     idseparator: '-@'
     tabs: tabs
+    tabs-sync-option: true
     toc: ~
     page-toclevels: 1@
     xrefstyle: short
@@ -190,6 +191,7 @@ asciidoc:
   - ./lib/template-block.js
   - asciidoctor-kroki
   - asciidoctor-external-callout
+  - '@asciidoctor/tabs'
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-166/ui-bundle.zip
