@@ -2,7 +2,7 @@
 
 const connect = require('gulp-connect')
 const fs = require('fs')
-const generator = require('@antora/site-generator-default')
+const generator = require('@antora/site-generator')
 const { reload: livereload } = process.env.LIVERELOAD === 'true' ? require('gulp-connect') : {}
 const { series, src, watch } = require('gulp')
 const yaml = require('js-yaml')
