@@ -1,12 +1,16 @@
-# This image extends the official Antora image to add bash, ca-certificates, and the aws command. It's used by the CI job.
-FROM antora/antora:2.3.3
+FROM antora/antora:3.1.2
 
 ARG GROUP_ID=1000
 ARG USER_ID=1000
 RUN addgroup -g $GROUP_ID jenkins && \
     adduser -D -u $USER_ID -G jenkins jenkins && \
-    apk add --no-cache --quiet bash ca-certificates git openssh-client python && \
-    yarn global add --ignore-optional --silent git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#v2.3.2+cb && \
-    apk add --no-cache --quiet --virtual .build-deps py2-pip && \
+    apk add --no-cache --quiet bash ca-certificates git openssh-client python3 && \
+    yarn global add --ignore-optional --silent git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension && \
+    yarn global add --ignore-optional --silent asciidoctor-kroki && \
+    yarn global add --ignore-optional --silent asciidoctor-external-callout && \
+    yarn global add --ignore-optional --silent markdown-it && \
+    yarn global add --ignore-optional --silent yaml && \
+    apk add --no-cache --quiet --virtual .build-deps py3-pip && \
     pip install --no-cache-dir --quiet --disable-pip-version-check awscli && \
-    apk del --no-cache --quiet --purge .build-deps
+    apk del --no-cache --quiet --purge .build-deps && \
+    apk add --no-cache --quiet py3-colorama py3-six py3-urllib3
