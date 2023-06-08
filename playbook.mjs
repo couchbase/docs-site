@@ -6,7 +6,7 @@ $.verbose = false
 const playbookFile = argv.playbook ?? argv._.shift() ?? 'antora-playbook.yml'
 const patchFile = argv.patch ?? argv._.shift() ?? 'patch.yml'
 
-console.info(`Composing ${playbookFile} with ${patchFile}`)
+console.error(`Composing ${playbookFile} with ${patchFile}`)
 
 var playbook = YAML.parse(fs.readFileSync(playbookFile).toString())
 const patch = YAML.parse(fs.readFileSync(patchFile).toString())
@@ -33,6 +33,21 @@ function cmp (a, b) {
     else {
         return a === b
     }
+}
+
+
+/**
+  * @param {Array.<>} node - any array node in playbook
+  * @param {Object} filters - object of key/values to filter for (using `cmp` function)
+  *                           All provided filters must match.
+  */
+function $filter  (orig, param) {
+    if (! Array.isArray(orig)) {
+        throw new Error(`$filter run on something that isn't an array! ${JSON.stringify(param)}`)
+    }
+    return orig.filter(item =>
+        Object.entries(param)
+            .every(([k,v]) => cmp(item[k], v)))
 }
 
 /**
@@ -104,9 +119,7 @@ function $prune (sources, limit) {
 }
 
 const matchRepo = (url, source) => {
-    console.log(`Trying to match ${url} with ${source}`)
     if (url === '.') {
-        console.log(`Ooooo, ${source === 'docs-site'}`)
         return source === 'docs-site'
     }
     return path.basename(url, '.git') === source
@@ -132,18 +145,14 @@ async function $override (sources, overrides) {
 }
 
 /**
-  * @param {Array.<>} node - any array node in playbook
-  * @param {Object} filters - object of key/values to filter for (using `cmp` function)
-  *                           All provided filters must match.
+  * @param {Object[]} sources - expects to be called only on `content.sources` from playbook
+  * @param {Array.<string>} only - just the names of repos to keep
   */
-function $filter  (orig, param) {
-    if (! Array.isArray(orig)) {
-        throw new Error(`$filter run on something that isn't an array! ${JSON.stringify(param)}`)
-    }
-    return orig.filter(item =>
-        Object.entries(param)
-            .every(([k,v]) => cmp(item[k], v)))
+async function $only (sources, only) {   
+    return sources.filter(({url, tags}) => 
+        tags === 'ALL' || only.some(source => matchRepo(url, source)))
 }
+
 
 const functions = {
     // explicit override
@@ -161,7 +170,8 @@ const functions = {
     // Special functions on content.sources
     $prune,
     $local,
-    $override
+    $override,
+    $only
 }
 
 async function apply_patch(node, patch) {

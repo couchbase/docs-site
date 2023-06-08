@@ -11,12 +11,16 @@ asciidoc:
 content:
   sources:
     $prune: 2 # just keep X branches
-    $local:   # only the ones we have checked out in ../
+    $local:   # only the ones we have checked out locally in ../
       paths: ..
       only: true
       
     $filter:  # restrict to certain tags
       tags: mobile
+      
+    $only: # alternatively just restrict to specific repos
+      - docs-sync-gateway
+      - docs-couchbase-lite
       
     # Modify individual source declarations
     $override:
