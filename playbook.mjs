@@ -103,6 +103,34 @@ function $prune (sources, limit) {
             : source)
 }
 
+const matchRepo = (url, source) => {
+    console.log(`Trying to match ${url} with ${source}`)
+    if (url === '.') {
+        console.log(`Ooooo, ${source === 'docs-site'}`)
+        return source === 'docs-site'
+    }
+    return path.basename(url, '.git') === source
+}
+
+/**
+  * @param {Object[]} sources - expects to be called only on `content.sources` from playbook
+  * @param {Object} overrides - name/Object pairs to override
+  * @param {Object} overrides."some-repo" - the patch description to apply to the matching source with.
+  */
+async function $override (sources, overrides) {
+    for (const [source, override] of Object.entries(overrides)) {
+        const idx = sources.findIndex(({url}) => matchRepo(url, source))
+        if (idx >= 0) {
+            await apply_patch(sources[idx], override)
+        }
+        else {
+            throw new Error(`Source ${source} not found to $override`)
+        }
+    }
+
+    return sources
+}
+
 /**
   * @param {Array.<>} node - any array node in playbook
   * @param {Object} filters - object of key/values to filter for (using `cmp` function)
@@ -132,7 +160,8 @@ const functions = {
     
     // Special functions on content.sources
     $prune,
-    $local
+    $local,
+    $override
 }
 
 async function apply_patch(node, patch) {
