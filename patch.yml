@@ -1,0 +1,18 @@
+antora:
+  extensions:
+    - '@antora/site-generator-ms'
+    
+asciidoc:
+  attributes:
+    kroki-server-url:  ~
+  extensions:
+    $without: asciidoctor-external-callout
+
+content:
+  sources:
+    $prune: 2
+    $local:
+      paths: ..
+      only: true
+    $filter:
+      tags: mobile
