@@ -1,18 +1,26 @@
-antora:
-  extensions:
-    - '@antora/site-generator-ms'
-    
+
 asciidoc:
   attributes:
+    # use the public kroki server instead of the one behind our VPN
     kroki-server-url:  ~
+    
   extensions:
+    # disable an extension
     $without: asciidoctor-external-callout
 
 content:
   sources:
-    $prune: 2
-    $local:
+    $prune: 2 # just keep X branches
+    $local:   # only the ones we have checked out in ../
       paths: ..
       only: true
-    $filter:
+      
+    $filter:  # restrict to certain tags
       tags: mobile
+      
+    # Modify individual source declarations
+    $override:
+      docs-sync-gateway:
+        branches:
+          $prepend:
+            - my-test-branch
