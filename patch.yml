@@ -14,6 +14,7 @@ content:
     $local:   # only the ones we have checked out locally in ../
       paths: ..
       only: true
+      head: true # only use [HEAD] branch
       
     $filter:  # restrict to certain tags
       tags: mobile

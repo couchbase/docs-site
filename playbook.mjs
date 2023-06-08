@@ -55,10 +55,14 @@ function $filter  (orig, param) {
   * @param {Object}         config
   * @param {Array.<string>} config.paths - array of local filesystem paths to check for the git repo
   * @param {boolean}        config.only - if true, filter out all non-local sources
+  * @param {boolean}        config.head - if true, only use HEAD
   *
-  * We try to play nice with Author-mode by substituting HEAD if it matches a branch, or prepending it otherwise.
+  * We try to play nice with Author-mode by substituting HEAD if it matches a 
+  * branch, or prepending it otherwise.
+  * BUT this doesn't work great with feature-branches (really, we should check the antora.yml version)
+  * In the meantime, use config.head as workaround
   */
-async function $local (orig, {paths, only}) {
+async function $local (orig, {paths, only, head}) {
     const repoPaths = toArray(paths ?? ['..'])
     const withLocal = await Promise.all(
         orig.map(async item => {
@@ -74,21 +78,27 @@ async function $local (orig, {paths, only}) {
                 try {
                     fs.accessSync(newPath, fs.constants.R_OK)
                     
-                    const HEAD = (await $`git -C ${newPath} rev-parse HEAD`).stdout.trim()
-                    
-                    const b1 = await Promise.all(branches.map(async b => {
-                        try {
-                            const ref = (await $`git -C ${newPath} rev-parse ${b}`).stdout.trim()
-                            return (ref === HEAD) ? 'HEAD' : b
-                        }
-                        catch (e) {
-                            // filter this one out as presumably it doesn't exist locally
-                            return 
-                        }
-                    }))
-                    const b2 = b1.filter(a=>a !== undefined)
-                    const b3 = b2.includes('HEAD') ? b2 : ['HEAD', ...b2]
-                    return {...item, url: newPath, branches: b3, local: true}
+                    if (head) {
+                        return {...item, url: newPath, branches: ['HEAD'], local: true}
+                    }
+                    else {
+                        // cleverness to try to match branches to HEAD
+                        const HEAD = (await $`git -C ${newPath} rev-parse HEAD`).stdout.trim()
+                        
+                        const b1 = await Promise.all(branches.map(async b => {
+                            try {
+                                const ref = (await $`git -C ${newPath} rev-parse ${b}`).stdout.trim()
+                                return (ref === HEAD) ? 'HEAD' : b
+                            }
+                            catch (e) {
+                                // filter this one out as presumably it doesn't exist locally
+                                return 
+                            }
+                        }))
+                        const b2 = b1.filter(a=>a !== undefined)
+                        const b3 = b2.includes('HEAD') ? b2 : ['HEAD', ...b2]
+                        return {...item, url: newPath, branches: b3, local: true}
+                    }
                 }
                 catch(e) {
                     continue
