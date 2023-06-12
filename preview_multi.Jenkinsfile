@@ -1,10 +1,35 @@
 #!/bin/env groovy
 
+def envToAccountMap = [
+  'preview': 'dev',
+  'staging': 'dev', // Current staging is in prod, but new staging(2) is in dev for testing
+  'production': 'prod',
+  'archive': ''
+]
+
 // Currently we use 2 different accounts. These have different secrets.
 // The correct secret is selected later on once the pipeline knows which
 // environment it is working on
+def awsCredentialsIdMap = [
+  'dev': 'couchbase-dev-aws',
+  'prod': 'couchbase-prod-aws'
+]
 def awsCredentialsIdDev = 'couchbase-dev-aws'
 def awsCredentialsIdProd = 'couchbase-prod-aws'
+
+def infraS3BucketMap = [
+  'dev': '393559178215-terraform-backend',
+  'prod': 'docs.couchbase.com-terraform-backend' 
+]
+def infraS3BucketDev = '393559178215-terraform-backend'
+def infraS3BucketProd = 'docs.couchbase.com-terraform-backend'
+
+
+def sshPrivKeyCredentialsMap = [
+  'dev': 'terraform-ssh-key-dev',
+  'prod': 'terraform-ssh-key'
+]
+
 
 def fontawesomeNpmTokenCredentialsId = 'fontawesome-npm-token'
 def githubApiCredentialsId = 'docs-robot-github-token'
@@ -12,14 +37,26 @@ def githubApiCredentialsId = 'docs-robot-github-token'
 def sshPrivKeyCredentialsDev = 'terraform-ssh-key-dev'
 def sshPrivKeyCredentialsProd = 'terraform-ssh-key'
 
-def siteS3BucketDev = 'preview-docs.couchbase.com'
+def siteS3BucketMap = [
+  'preview': 'preview.docs-test.couchbase.com',
+  'staging': 'staging.docs-test.couchbase.com',
+  'production': 'docs.couchbase.com',
+  'archive': ''
+]
+def siteS3BucketDev = 'preview.docs-test.couchbase.com'
+def siteS3BucketStaging = 'preview.docs-test.couchbase.com'
 def siteS3BucketProd = 'docs.couchbase.com'
 
+def infraProfileMap = [
+  'preview': 'preview',
+  'staging': 'staging',
+  'production': 'prod',
+  'archive': ''
+]
 def infraProfileDev = 'preview'
+def infraProfileStaging = 'staging'
 def infraProfileProd = 'prod'
 
-def infraS3BucketDev = '393559178215-terraform-backend'
-def infraS3BucketProd = 'docs.couchbase.com-terraform-backend'
 
 def githubAccount = 'couchbase'
 def githubRepo = 'docs-site'
@@ -45,8 +82,8 @@ pipeline {
     FORCE_HTTPS='false' // CloudFront is configured to force http -> https
     NODE_OPTIONS='--max-old-space-size=4096'
     //// Disable cookie stuff until we resolve domain issue
-    // OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
-    // OPTANON_SCRIPT_DATA_DOMAIN_SCRIPT = "748511ff-10bf-44bf-88b8-36382e5b5fd9"
+    OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+    OPTANON_SCRIPT_DATA_DOMAIN_SCRIPT = "748511ff-10bf-44bf-88b8-36382e5b5fd9"
     NODE_PATH='/usr/local/share/.config/yarn/global/node_modules'
     SHOW_FEEDBACK_BUTTON='true'
   }
@@ -63,7 +100,7 @@ pipeline {
   parameters {
     //// Eventually use a single pipeline for both accounts, but for now only allow preview for testing
     //choice(name: 'environment', choices: "preview\narchive\nprod\nstaging", description: 'Environment to deploy to.')
-    choice(name: 'environment', choices: "preview", description: 'Environment to deploy to.')
+    choice(name: 'environment', choices: "preview\nstaging", description: 'Environment to deploy to.')
     string(name: 'branch', defaultValue: 'master', description: 'Git branch to use (tag or git sha accepted here too)')
     string(name: 'playbook', defaultValue: 'antora-playbook.yml', description: 'Antora playbook to apply')
     string(name: 'stage', defaultValue: '', description: '(Optional) Prefix/sub-directory to deploy docs to')
@@ -96,11 +133,18 @@ pipeline {
 
         // Set account specific variables based on environment to deploy to
         script {
-          env.awsCredentialsId="${params.environment == 'preview' ? awsCredentialsIdDev : awsCredentialsIdProd}"
-          env.sshPrivKeyCredentialsId="${params.environment == 'preview' ? sshPrivKeyCredentialsDev : sshPrivKeyCredentialsProd}"
-          env.siteS3Bucket="${params.environment == 'preview' ? siteS3BucketDev : siteS3BucketProd}"
-          env.infraProfile="${params.environment == 'preview' ? infraProfileDev : infraProfileProd}"
-          env.infraS3Bucket="${params.environment == 'preview' ? infraS3BucketDev : infraS3BucketProd}"
+          // Account level
+          // env.awsCredentialsId="${params.environment == 'preview' ? awsCredentialsIdDev : awsCredentialsIdProd}"
+          env.awsCredentialsId=awsCredentialsIdMap[envToAccountMap[params.environment]]
+          // env.sshPrivKeyCredentialsId="${params.environment == 'preview' ? sshPrivKeyCredentialsDev : sshPrivKeyCredentialsProd}"
+          env.sshPrivKeyCredentialsId=sshPrivKeyCredentialsMap[envToAccountMap[params.environment]]
+          // env.infraS3Bucket="${params.environment == 'preview' ? infraS3BucketDev : infraS3BucketProd}"
+          env.infraS3Bucket=infraS3BucketMap[envToAccountMap[params.environment]]
+
+          // Env level
+          env.siteS3Bucket=siteS3BucketMap[params.environment]
+          // env.infraProfile="${params.environment == 'preview' ? infraProfileDev : infraProfileProd}"
+          env.infraProfile=infraProfileMap[params.environment]
 
           // If a stage is passed, add trailing slash
           env.prefixDir="${params.stage == '' ? '' : params.stage+'/'}"
@@ -177,11 +221,11 @@ pipeline {
   }
   post {
     success {
-      script {
-        if (triggerEventType == 'cron') {
-          build job: '/Antora/docs-search-indexer/master', wait: false
-        }
-      }
+      // script {
+      //   if (triggerEventType == 'cron') {
+      //     build job: '/Antora/docs-search-indexer/master', wait: false
+      //   }
+      // }
       githubNotify credentialsId: githubApiCredentialsId, account: githubAccount, repo: githubRepo, sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build succeeded', status: 'SUCCESS'
     }
     failure {

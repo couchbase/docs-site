@@ -44,6 +44,8 @@ content:
     branches: [release/3.4, release/3.3]
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [release/3.4, release/3.3]
+  - url: https://github.com/couchbase/docs-sdk-php
+    branches: [release/4.1, release/4.0]
 asciidoc:
   attributes:
     max-include-depth: 10
