@@ -3,18 +3,129 @@
 
 $.verbose = false
 
+/** Usage:
+ *   ./playbook.mjs [--playbook <playbook-file>] [--patch <patch-file>] [<playbook-file>] [<patch-file>]
+ *
+ *   e.g.:
+ *
+ *      ./playbook.mjs --playbook antora-playbook.yml --patch patch.yml
+ *   or
+ *      ./playbook.mjs antora-playbook.yml patch.yml > new-playbook.yml
+ *
+ * playbook-file: a standard Antora playbook
+ *
+ * patch-file: a yml file with just the keys that you wish to *change*.
+ * see the `patch.yml` and `patch-staging.yml` files for examples.
+ *
+ ** Operators
+ *
+ * The following operators are provided:
+ *
+ * $add: add an item to the end of a list
+ * $prepend: add an item to the beginning of list
+ * e.g:
+        asciidoc:
+          extensions:
+            $add: 
+              - '@asciidoctor/tabs'
+
+ * $without: remove an item from a list
+ * e.g:
+        asciidoc:
+          extensions:
+            $without: asciidoctor-external-callout
+
+
+ * $filter: restrict a list of objects, where the given fields match
+ * e.g:
+ * In this example, only those sources which have `tags: mobile` will be selected.
+ * You can provide multiple key/values that must all match.
+ *
+        content:
+          sources:
+            $filter:
+              tags: mobile
+
+ * $prune: Keep only X branches
+ * This operator is specialised for content.sources
+ * e.g.
+ * Here we only keep the first 2 branches (for example ([release/7.2, release/7.1]`)
+        content:
+          sources:
+            $prune: 2
+
+ * $local: resolve sources to the ones you have checked out locally
+ * e.g.
+ * We work through all of the sources like `https://github.com/couchbasecloud/couchbase-cloud`
+ * and look in each of the `paths` provided to see if there is a local directory matching.
+ *
+ * As many writers keep all their code in a single directory like ~/code, they might have:
+
+    ~/
+        code/
+            couchbase-cloud
+            docs-site
+
+ * Therefore the default of `paths` is .. the parent directory.
+ * We will then check if ../couchbase-cloud (e.g. ~/code/couchbase-cloud)
+ * exists, and update the record if so.
+ * If the `only` parameter is true, then we will remove all the remote sources.
+ * If `head` is supplied, then use the HEAD branch (e.g. the version you have checked out)
+
+        content:
+          sources:
+            $local:
+              paths: ..
+              only: true
+              head:
+      
+ * $only: as an alternative to $filter, restrict the sources to specific repos
+ * e.g:
+ * (note how you can use the short name of the source)
+        content:
+          sources:
+            $only:
+              - docs-sync-gateway
+              - docs-couchbase-lite
+      
+ * $override: update a specific source (using the short name) to apply any other operators.
+ * e.g.:
+ * Add `my-test-branch` as the *first* branch of `docs-sync-gateway`
+ *
+        content:
+          sources:
+            $override:
+              docs-sync-gateway:
+                branches:
+                  $prepend:
+                    - my-test-branch
+ * 
+ * See patch.yml and patch-staging.yml for full examples.
+ * Notice how these operators can be used with each other.
+ *
+ */
+
 const playbookFile = argv.playbook ?? argv._.shift() ?? 'antora-playbook.yml'
 const patchFile = argv.patch ?? argv._.shift() ?? 'patch.yml'
 
+// Confirm which files we are composing
 console.error(`Composing ${playbookFile} with ${patchFile}`)
 
 var playbook = YAML.parse(fs.readFileSync(playbookFile).toString())
 const patch = YAML.parse(fs.readFileSync(patchFile).toString())
 
-// HELPER FUNCTIONS
+/** Helper function to wrap a single item in an array if required */
 const toArray = (thing) => Array.isArray(thing) ? thing : [thing]
 
-// slightly permissive comparison
+/** Helper function to do permissive comparison.
+ * In particular:
+ *
+ * [1,2,3] == 2      (includes)
+ * [1,2,3] == [1,2]  (includes all items)
+ * 1 == true         (truthy value)
+ * ALL == ??         (always true. Used to make sure docs-site matches `tags: ALL`
+ * Everything else falls back to the === comparison operator 
+ */
 function cmp (a, b) {
     if (Array.isArray(a)) {
         if (Array.isArray(b)) {
@@ -164,6 +275,7 @@ async function $only (sources, only) {
 }
 
 
+// Catalog of functions
 const functions = {
     // explicit override
     $replace: (_orig, param) => param,
@@ -184,19 +296,29 @@ const functions = {
     $only
 }
 
+/**
+ * Recursive function to apply the patch, by descending both the original
+ * playbook and the patch at the same time, applying operators as required.
+ */
 async function apply_patch(node, patch) {
+
     for (const [k,v] of Object.entries(patch)) {
+
+        // If the patch file contains an object, then... 
         if (v !== null && typeof v === 'object' && ! Array.isArray(v)) {
             for (const [kk, vv] of Object.entries(v)) {
+                // EITHER: apply the $operator, if it's found in the functions catalog
                 if (kk in functions) {
                     const ret = await functions[kk](node[k], vv)
                     node[k] = ret
                 }
+                // OR descend both sides of the tree and recurse
                 else {
                     await apply_patch(node[k], patch[k])
                 }
             }
         }
+        // Otherwise (e.g. a plain value or an array) then we just assume this is a replacement value.
         else {
             node[k] = v
         }
@@ -205,5 +327,6 @@ async function apply_patch(node, patch) {
 
 await apply_patch(playbook, patch)
 
+// emit the updated playbook
 console.log(YAML.stringify(playbook))
 
