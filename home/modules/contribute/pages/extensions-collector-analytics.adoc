@@ -1,0 +1,11 @@
+= Collector extension
+
+See https://gitlab.com/antora/antora-collector-extension
+
+Here's an include from the AsterixDB project which uses collector to put the
+content in a place that Antora understands it.
+
+[markdown]
+--
+include::analytics:asterixdb:partial$sqlpp/arrayindex.md[]
+--
