@@ -1,5 +1,6 @@
 = Couchbase in the Cloud
 :!sectids:
+:page-layout: landing-page-top-level-sdk
 
 include::partial$info-banner.adoc[]
 include::partial$temporary-landing-styles.adoc[]
@@ -8,7 +9,10 @@ include::partial$temporary-landing-styles.adoc[]
 --
 * [.selected]##Capella##
 * xref:server.adoc[Server]
+--
 
+[.switcher]
+--
 .Mobile
 * xref:cloud:app-services:index.adoc[Build Mobile App Services]
 --

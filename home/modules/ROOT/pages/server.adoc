@@ -1,5 +1,6 @@
 = Couchbase Server
 :!sectids:
+:page-layout: landing-page-top-level-sdk
 
 include::partial$info-banner.adoc[]
 include::partial$temporary-landing-styles.adoc[]
@@ -8,7 +9,10 @@ include::partial$temporary-landing-styles.adoc[]
 --
 * xref:cloud.adoc[Cloud]
 * [.selected]##Server##
+--
 
+[.switcher]
+--
 .Mobile
 * xref:mobile.adoc[Build Mobile Services]
 --

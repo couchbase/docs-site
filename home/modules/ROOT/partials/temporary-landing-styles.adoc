@@ -23,10 +23,12 @@ div.switcher .content > .ulist > ul > li {
 }
 
 div.switcher .ulist li:has(.selected) {
-
     font-weight: bold;
     background: black;
-    color: white;
+}
+
+div.switcher .ulist li:has(.selected) p {
+    color: white!important; /* vs .doc.landing-page-doc p */
 }
 
 

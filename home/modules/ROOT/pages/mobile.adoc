@@ -1,4 +1,5 @@
 :page-for-component: mobile
+:page-layout: landing-page-top-level-sdk
 = Couchbase Mobile - Embedded Database on the Edge
 :!sectids:
 
