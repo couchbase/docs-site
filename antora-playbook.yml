@@ -73,9 +73,14 @@ content:
     start_path: docs
   # - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://github.com/couchbase/docs-connectors-talend
+
   # - url: https://git@github.com/couchbase/docs-analytics
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
+  - url: https://github.com/couchbase/asterixdb
+    branches: [master]
+    start_path: asterixdb/asterix-doc/
+
   - url: https://github.com/couchbase/couchbase-cli
     branches: [neo, 7.1.x-docs, cheshire-cat, mad-hatter, 6.5.x-docs, alice]
     start_path: docs
