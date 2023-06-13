@@ -1,0 +1,37 @@
+site:
+  title: Couchbase Docs Staging
+  url: https://docs-staging.couchbase.com
+  robots: disallow
+  keys:
+    google_analytics: ~
+
+asciidoc:
+  attributes:
+    tabs-sync-option: ''
+
+  extensions:
+    $add: 
+      - '@asciidoctor/tabs'
+
+content:
+  sources:
+    $prune: 2 // keep X most recent versions
+    $override:
+      docs-devex:
+        branches: [release/7.2, capella, elixir]
+      couchbase-cloud:
+        start_path: ~
+        start_paths: [docs/public, docs/serverless]
+      couchbase-operator:
+        branches:
+          $prepend:
+            - master
+      observability:
+        branches:
+          - main
+      cbmultimanager:
+        branches:
+          - main
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-167/ui-bundle.zip
