@@ -13,6 +13,7 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/6.5, release/6.0]
+    start_path: docs
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
     branches: [release/4.2, release/4.1, release/4.0, release/cypress]
     start_path: docs
