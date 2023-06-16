@@ -6,6 +6,7 @@
   "dependencies": {
     "antora": "~3.1",
     "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension",
+    "@asciidoctor/tabs": "1.0.0-beta.5",
     "asciidoctor-external-callout": "~1.2.0",
     "asciidoctor-kroki": "0.15.4",
     "gulp": "~4.0",
