@@ -41,7 +41,8 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.2]
+    # branches: [release/7.2, capella, elixir]
+    branches: [release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.2, release/7.1, release/7.0, release/6.6]
     start_path: docs
