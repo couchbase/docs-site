@@ -1,0 +1,11 @@
+// This banner partial can be edited to link
+// to marketing or new Docs content as appropriate.
+//
+// This is linked from each of the Landing pages.
+// To *disable* it, simply comment out the text BELOW.
+
+// NOTE: comment the paragraph below to hide the banner.
+
+// [.info-banner]
+// Some exciting stuff is happening!
+// https://www.couchbase.com/example/link[Check it out]

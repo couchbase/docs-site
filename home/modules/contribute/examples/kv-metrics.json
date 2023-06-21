@@ -1,0 +1,32 @@
+{
+    "kv_bg_batch_size": {
+        "help": "Batch size for background fetches",
+        "type": "gauge",
+        "unit": "count"
+    },
+    "kv_bg_load_seconds": {
+        "help": "bg fetches waiting for disk",
+        "type": "gauge",
+        "unit": "seconds"
+    },
+    "kv_bg_wait_seconds": {
+        "help": "bg fetches waiting in the dispatcher queue",
+        "type": "gauge",
+        "unit": "seconds"
+    },
+    "kv_cmd_duration_seconds": {
+        "help": "",
+        "type": "gauge",
+        "unit": "seconds"
+    },
+    "kv_cmd_lookup": {
+        "help": "",
+        "type": "gauge",
+        "unit": "count"
+    },
+    "kv_cmd_lookup_10s_count": {
+        "help": "The number of lookup operations performed within the last 10 seconds",
+        "type": "gauge",
+        "unit": "count"
+    }
+}

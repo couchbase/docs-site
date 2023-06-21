@@ -3,7 +3,10 @@
 :page-role: tiles
 :!sectids:
 
+include::partial$info-banner.adoc[]
+
 = Couchbase Mobile
+
 ++++
 <div class="card-row">
 ++++
@@ -50,7 +53,7 @@ xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
 
 [.content]
 Sample tutorials to build Mobile applications on the edge. +
-xref:tutorials::index.adoc[Couchbase Mobile Tutorials]
+https://developer.couchbase.com/tutorials[Couchbase Mobile Tutorials]
 
 ++++
 </div>

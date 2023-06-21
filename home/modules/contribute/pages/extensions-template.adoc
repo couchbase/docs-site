@@ -1,0 +1,106 @@
+= Demo of template extension
+:page-role: openapi
+
+== Metrics example
+
+A (partial) listing of `kv-metrics.json`.
+Relating to https://issues.couchbase.com/browse/DOC-10720[DOC-10720]
+
+[template,example$kv-metrics.json]
+--
+[cols="3,1,1",.json]
+|===
+
+|Metric
+|Type
+|Unit
+
+{{#each this}}
+|`{{@key}}`
+
+{{help}}
+|{{type}}
+|{{unit}}
+{{/each}}
+
+|===
+--
+
+== YAML support
+
+[template,example$test.yaml]
+--
+Try: {{foo.bar.baz}}
+--
+
+== Included template
+
+[template,example$kv-metrics.json]
+--
+include::partial$templates/test.hbs[]
+--
+
+== Datafile not found
+
+The following should give an error
+
+[template,example$this-file-does-not-exist.json]
+--
+Some template
+--
+
+== Helpers and Partials
+
+[template, example$test.yaml, helpers="example$helpers/foo.js", partials="partial$templates/partial.hbs"]
+--
+{{foo}}
+
+{{> partial}}
+--
+
+
+== each-openapi helper.
+
+This handlebars Block Helper should work with both YAML and JSON.
+
+This requires output collated into a single file, for example using:
+
+[source,shell]
+----
+redocly bundle \
+    ~/couchbase/sync_gateway/docs/api/admin.yaml \
+    --dereferenced \
+    --ext json \
+    --output bundled-admin.json
+----
+
+Pass in a schema node, in this example `components.schemas.Database`.
+The macro descends into each `properties` object and generates a table of contents.
+
+In addition, we pass the contents of each node in turn to the Handlebars template contained in the `{{#each-openapi}}` block.
+
+WARNING: handling `additionalProperties` is not yet implemented.
+
+[template,example$bundled-admin.json, helpers="example$helpers/each-openapi.js"]
+--
+
+{{#each-openapi components.schemas.Database}}
+
+{{#if node.description}}
+[discrete#{{@path_id_href}}]
+=== `{{@path_id}}`
+
+Type::  {{{node.type}}}
+
+Description::
++
+[markdown]
+----
+{{{node.description}}}
+----
+
+{{/if}}
+{{/each-openapi}}
+
+--
+
