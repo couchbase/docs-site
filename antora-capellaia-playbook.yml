@@ -37,7 +37,7 @@ content:
       branches: [release/7.2, cappella, elixir]
       start_path: docs
     - url: https://github.com/couchbaselabs/docs-devex
-      branches: [capella]
+      branches: [capella, release/7.2-search-ia]
     # - url: ../docs-devex
     #   branches: HEAD
     - url: .
@@ -80,8 +80,8 @@ content:
     #   branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
     #   start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
-    # - url: ../docs-server-2
-    #   branches: HEAD
+    - url: https://github.com/couchbase/docs-server
+      branches: [release/7.2-search-ia]
   # - url: https://github.com/couchbase/docs-sdk-common
   #   branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
   # - url: https://github.com/couchbase/docs-sdk-c
