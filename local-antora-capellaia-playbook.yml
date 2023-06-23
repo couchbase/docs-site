@@ -38,13 +38,13 @@ content:
       start_path: docs
     - url: https://github.com/couchbaselabs/docs-devex
       branches: [capella]
-    # - url: ../docs-devex
-    #   branches: HEAD
+    - url: ../docs-devex
+      branches: HEAD
     - url: .
       branches: HEAD
       start_path: home
-    - url: https://github.com/couchbasecloud/couchbase-cloud
-      branches: [InfoArchitecture-Query]
+    - url: ../couchbase-cloud
+      branches: HEAD
       start_paths: [docs/public, docs/serverless]
   # - url: https://git@github.com/couchbase/couchbase-operator
   #   branches: [2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
@@ -80,8 +80,8 @@ content:
     #   branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
     #   start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
-    # - url: ../docs-server-2
-    #   branches: HEAD
+    - url: ../docs-server-2
+      branches: HEAD
   # - url: https://github.com/couchbase/docs-sdk-common
   #   branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
   # - url: https://github.com/couchbase/docs-sdk-c
