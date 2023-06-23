@@ -4,7 +4,8 @@ def envToAccountMap = [
   'preview': 'dev',
   'staging': 'dev', // Current staging is in prod, but new staging(2) is in dev for testing
   'production': 'prod',
-  'archive': ''
+  'archive': '',
+  'ia': 'dev'
 ]
 
 // Currently we use 2 different accounts. These have different secrets.
@@ -41,7 +42,8 @@ def siteS3BucketMap = [
   'preview': 'preview.docs-test.couchbase.com',
   'staging': 'staging.docs-test.couchbase.com',
   'production': 'docs.couchbase.com',
-  'archive': ''
+  'archive': '',
+  'ia': 'ia.docs-test.couchbase.com',
 ]
 def siteS3BucketDev = 'preview.docs-test.couchbase.com'
 def siteS3BucketStaging = 'preview.docs-test.couchbase.com'
@@ -51,7 +53,8 @@ def infraProfileMap = [
   'preview': 'preview',
   'staging': 'staging',
   'production': 'prod',
-  'archive': ''
+  'archive': '',
+  'ia': 'ia',
 ]
 def infraProfileDev = 'preview'
 def infraProfileStaging = 'staging'
@@ -100,7 +103,7 @@ pipeline {
   parameters {
     //// Eventually use a single pipeline for both accounts, but for now only allow preview for testing
     //choice(name: 'environment', choices: "preview\narchive\nprod\nstaging", description: 'Environment to deploy to.')
-    choice(name: 'environment', choices: "preview\nstaging", description: 'Environment to deploy to.')
+    choice(name: 'environment', choices: "preview\nstaging\nia", description: 'Environment to deploy to.')
     string(name: 'branch', defaultValue: 'master', description: 'Git branch to use (tag or git sha accepted here too)')
     string(name: 'playbook', defaultValue: 'antora-playbook.yml', description: 'Antora playbook to apply')
     string(name: 'stage', defaultValue: '', description: '(Optional) Prefix/sub-directory to deploy docs to')
