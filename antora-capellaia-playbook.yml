@@ -80,8 +80,8 @@ content:
     #   branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
     #   start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
-    # - url: ../docs-server-2
-    #   branches: HEAD
+    - url: ../docs-server-2
+      branches: HEAD
   # - url: https://github.com/couchbase/docs-sdk-common
   #   branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
   # - url: https://github.com/couchbase/docs-sdk-c
@@ -171,13 +171,16 @@ asciidoc:
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-jira-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
   - ./lib/markdown-block.js
+  - ./lib/template-block.js
   - asciidoctor-kroki
   - asciidoctor-external-callout
+  - '@asciidoctor/tabs'
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-165/ui-bundle.zip
