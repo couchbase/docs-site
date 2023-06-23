@@ -129,6 +129,7 @@ pipeline {
     }
     stage('Build') {
       steps {
+        sh 'npm i'
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com"]) {
             sh "time antora --log-level=error --cache-dir=./.cache/antora --clean --extension=./lib/site-stats-extension.js --fetch --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL ${params.playbook}"
