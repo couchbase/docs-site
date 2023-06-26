@@ -115,7 +115,8 @@ pipeline {
         script {
           // Sets a nice UI friendly build description on the left nav in jenkins
           currentBuild.description = "Env: ${params.environment}\nBranch: ${params.branch}\n Playbook: ${params.playbook}\nStage: ${params.stage}"
-          sh("git checkout ${params.branch}")
+          sh("git checkout -t ${params.branch}")
+          sh("git pull")
         }
 
       }
