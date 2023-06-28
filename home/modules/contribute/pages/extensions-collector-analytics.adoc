@@ -7,5 +7,5 @@ content in a place that Antora understands it.
 
 [markdown]
 --
-include::analytics:asterixdb:partial$sqlpp/arrayindex.md[]
+include::analytics:asterixdb:partial$builtins/14_window.md[]
 --
