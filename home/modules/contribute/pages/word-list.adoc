@@ -143,6 +143,7 @@ New Yorker, in particular, presents some interesting alternatives, and we may be
 | Data Service | _aka_ KV Service -- _use title case_
 | data store |
 | data structure | not datastructure
+| Date format | For best https://en.wikipedia.org/wiki/Date_format_by_country[international understanding] use https://en.wikipedia.org/wiki/ISO_8601[ISO 8601]. E.g. *1969-07-20*.
 | DCP | Database Change Protocol
 | decrypter | not decryptor (see encrypter)
 | deduplicate |
