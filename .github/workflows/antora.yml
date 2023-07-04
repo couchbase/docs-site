@@ -1,0 +1,103 @@
+name: Antora Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      environmment:
+        type: choice
+        description: Profile
+        options: 
+        - preview
+        - ia
+        - staging2
+      branch:
+        type: string
+        description: Git branch to use (tag or git sha accepted here too)
+        default: master
+      playbook:
+        type: string
+        description: Antora playbook to apply
+        default: antora-playbook.yml
+concurrency: antora
+jobs:
+  deploy:
+    name: Antora
+    runs-on: ubuntu-latest
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
+    concurrency: antora
+
+    defaults:
+      run:
+        shell: bash
+
+    env:
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ inputs.branch }}
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: arn:aws:iam::393559178215:role/GithubActions_docssite
+        aws-region: us-west-1
+
+
+    - run: echo Do '${{ inputs.tfaction }}' in ${{ inputs.profile }}.
+      shell: bash
+    - name: Test permissions 
+      run: |
+        aws s3 ls
+
+  # get secrets+config
+    - name: Configure
+      run: |
+        git log -1
+
+        # Get SSM secrets.
+        ## The following exists, but source is obsfused
+        ## marvinpinto/action-inject-ssm-secrets@latest
+
+        SSM=$(aws ssm get-parameter --name "/nginx/ssh/private" --region us-west-1 --with-decryption --output text --query "Parameter.Value")
+        echo "::add-mask::${SSM}" # Makes Github masks this secret with *****
+        echo "SSM_PRIVKEY=${SSM}" >> $GITHUB_ENV
+
+        SSM=$(aws ssm get-parameter --name "/infra/terraform_s3" --region us-west-1 --output text --query "Parameter.Value")
+        echo "SSM_TERRAFORM_S3=${SSM}" >> $GITHUB_ENV
+
+        # Grab config (needed now?)
+        aws s3 cp s3://${SSM}/${{ inputs.profile }}/infra.conf -
+
+        cat infra.conf
+
+        SSM=$(aws ssm get-parameter --name "/env/${{ inputs.profile }}/site_s3" --region us-west-1 --output text --query "Parameter.Value")
+        echo "SSM_SITE_S3=${SSM}" >> $GITHUB_ENV
+
+    - name: Configure fonts
+      working-directory: ./scripts/
+      run: |
+        echo "@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_TOKEN}\n" >> .npmrc
+        npm --no-package-lock i >/dev/null || true
+
+    - name: Build
+      run: |
+        echo "Run antora here"
+
+    - name: Publish
+      run: |
+        env
+        echo "some file" > tmpfile
+        aws s3 cp tmpfile s3://${SSM_SITE_S3}/andrewprefix/
+
+
+  # set fornawesome npm
+
+  # run antora
+
+  # publish
+
+  # invalidate cache
