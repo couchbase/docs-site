@@ -14,6 +14,15 @@ content:
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/6.5, release/6.0]
     start_path: docs
+  - url: https://github.com/couchbase/couchbase-operator
+    branches: [2.0.x, 1.2.x, 1.1.x, 1.0.x]
+    start_path: docs/user
+#  - url: https://github.com/couchbaselabs/observability
+#    branches: [0.2.x]
+#    start_path: docs
+#  - url: https://github.com/couchbaselabs/cbmultimanager
+#    branches: [0.2.x]
+#    start_path: docs
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
     branches: [release/4.2, release/4.1, release/4.0, release/cypress]
     start_path: docs
