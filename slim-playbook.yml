@@ -44,6 +44,8 @@ content:
     branches: [release/3.4, release/3.3]
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [release/3.4, release/3.3]
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite
+    branches: [release/3.1]
 asciidoc:
   attributes:
     max-include-depth: 10
@@ -59,7 +61,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     kroki-fetch-diagram: true
-    kroki-server-url: http://3.91.133.254:9500
+    kroki-server-url: http://localhost:8000
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
