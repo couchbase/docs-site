@@ -1,5 +1,5 @@
 = SDKs & Connectors
-:page-aliases: sdks:intro.adoc,7.1@server:sdk:overview.adoc,7.2@server:sdk:overview.adoc
+:page-aliases: sdks:intro.adoc,7.0@server:sdk:overview.adoc,7.1@server:sdk:overview.adoc,7.2@server:sdk:overview.adoc,6.6@server:install:install-client-server.adoc,7.0@server:install:install-client-server.adoc,7.1@server:install:install-client-server.adoc,7.2@server:install:install-client-server.adoc
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :!sectids:
