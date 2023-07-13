@@ -123,7 +123,7 @@ content:
     # branches: [release/3.1, release/3.0, release/2.8]
     #
   - url: https://github.com/couchbase/docs-service-broker
-    branches: [1.1.x, 1.0.x]
+    branches: [1.1.x, 1.2.x]
   # - url: https://git@github.com/couchbase/docs-cloud-native
   - url: https://github.com/couchbase/docs-cloud-native
     branches: [cloud-native-2.2]
