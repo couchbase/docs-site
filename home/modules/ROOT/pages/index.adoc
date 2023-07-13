@@ -48,7 +48,6 @@ endif::[]
 * xref:1.1@operator::whats-new.adoc[Version 1.1]
 * xref:1.0@operator::whats-new.adoc[Version 1.0]
 
-[.tile]
 .Couchbase Service Broker for Kubernetes
 * xref:1.2@service-broker::index.adoc[Version 1.2]
 * xref:1.1@service-broker::index.adoc[Version 1.1]
