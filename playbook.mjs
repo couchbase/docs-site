@@ -1,25 +1,33 @@
 #!/usr/bin/env zx
 'use strict'
+import _ from "lodash"
 
 $.verbose = false
 
 /** Usage:
- *   ./playbook.mjs [--playbook <playbook-file>] [--patch <patch-file>] [<playbook-file>] [<patch-file>]
+ *   ./playbook.mjs [--update] [--truncate] [--patch <patch-file>] [--playbook <playbook-file>] [<patch-file>] [<playbook-file>]
  *
  *   e.g.:
  *
  *      ./playbook.mjs --playbook antora-playbook.yml --patch patch.yml
  *   or
- *      ./playbook.mjs antora-playbook.yml patch.yml > new-playbook.yml
+ *      ./playbook.mjs patch.yml --update            # update the patchfile in place
+ *      ./playbook.mjs patch.yml --truncate          # truncat the patchfile to { $from: ..., $patch: ... }
+ *      ./playbook.mjs patch.yml > new-playbook.yml
  *
  * playbook-file: a standard Antora playbook
  *
  * patch-file: a yml file with just the keys that you wish to *change*.
  * see the `patch.yml` and `patch-staging.yml` files for examples.
  *
+ *
  ** Operators
  *
  * The following operators are provided:
+ *
+ * $from: identify the playbook to generate
+ * $patch: contains the tree to change
+ * $meta: replaced with metadata
  *
  * $add: add an item to the end of a list
  * $prepend: add an item to the beginning of list
@@ -104,15 +112,15 @@ $.verbose = false
  * Notice how these operators can be used with each other.
  *
  */
-
-const playbookFile = argv.playbook ?? argv._.shift() ?? 'antora-playbook.yml'
 const patchFile = argv.patch ?? argv._.shift() ?? 'patch.yml'
-
-// Confirm which files we are composing
-console.error(`Composing ${playbookFile} with ${patchFile}`)
-
-var playbook = YAML.parse(fs.readFileSync(playbookFile).toString())
 const patch = YAML.parse(fs.readFileSync(patchFile).toString())
+const $patch = patch.$patch
+
+if (! $patch) {
+  throw new Error("Patch file is missing $patch tree")
+}
+
+
 
 /** Helper function to wrap a single item in an array if required */
 const toArray = (thing) => Array.isArray(thing) ? thing : [thing]
@@ -277,8 +285,8 @@ async function $only (sources, only) {
 
 // Catalog of functions
 const functions = {
-    // explicit override
-    $replace: (_orig, param) => param,
+    // explicit replace
+    $replace: (_orig, param) => _.cloneDeep(param), // avoid YAML aliasing
     
     // append or prepend the data to an ARRAY
     $append:  (orig, param) => [...orig, ...param],
@@ -320,13 +328,46 @@ async function apply_patch(node, patch) {
         }
         // Otherwise (e.g. a plain value or an array) then we just assume this is a replacement value.
         else {
-            node[k] = v
+            node[k] = _.cloneDeep(v) // avoid YAML aliasing
         }
     }
 }
 
-await apply_patch(playbook, patch)
+var update = argv.update
+const playbookFile = patch.$from ?? argv.playbook ?? argv._.shift() ?? 'antora-playbook.yml'
+var playbook
 
-// emit the updated playbook
-console.log(YAML.stringify(playbook))
+if (argv.truncate) {
+  update = true
+  playbook = { $from: playbookFile, $patch }
+}
+else {
+  playbook = YAML.parse(fs.readFileSync(playbookFile).toString())
+
+  // Confirm which files we are composing
+  console.error(`Composing ${playbookFile} with ${patchFile}`)
+
+
+  await apply_patch(playbook, $patch)
+
+  const $meta = {
+    date: Date()
+  }
+
+  playbook = { $from: playbookFile, $meta, $patch, ...playbook }
+}
+
+const output = YAML.stringify(playbook)
+if (update) {
+  try {
+    fs.copySync(patchFile, `${patchFile}~`)
+    fs.writeFileSync(patchFile, output)
+  }
+  catch (err) {
+    console.error(err)
+  }
+}
+else {
+  console.log(output)
+}
 
