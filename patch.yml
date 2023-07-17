@@ -7,21 +7,22 @@ $patch:
       $without: asciidoctor-external-callout
   content:
     sources:
-      $prune: 2
-      $local:
-        paths: ..
-        only: true
-        head: true
-      $filter:
-        tags: mobile
-      $only:
-        - docs-sync-gateway
-        - docs-couchbase-lite
-      $override:
-        docs-sync-gateway:
-          branches:
-            $prepend:
-              - my-test-branch
+      $seq:
+        - $prune: 2
+        - $local:
+            paths: ..
+            only: true
+            head: true
+        - $filter:
+            tags: mobile
+        - $only:
+            - docs-sync-gateway
+            - docs-couchbase-lite
+        - $override:
+            docs-sync-gateway:
+              branches:
+                $prepend:
+                  - my-test-branch
   ui:
     bundle:
       url: ../docs-ui/build/ui-bundle.zip

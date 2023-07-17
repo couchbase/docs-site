@@ -6,33 +6,24 @@ $patch:
     robots: disallow
     keys:
       google_analytics: null
-  asciidoc:
-    attributes:
-      tabs-sync-option: ""
-    extensions:
-      $add:
-        - "@asciidoctor/tabs"
   content:
     sources:
-      $prune: 1
-      $override:
-        docs-devex:
-          branches:
-            - release/7.2
-            - capella
-            - elixir
-        couchbase-cloud:
-          start_path: null
-          start_paths:
-            - docs/public
-            - docs/serverless
-        couchbase-operator:
-          branches:
-            $prepend:
-              - master
-        observability:
-          branches:
-            - main
-        cbmultimanager:
-          branches:
-            - main
+      $seq:
+        - $prune: 1
+        - $override:
+            docs-devex:
+              branches:
+                - release/7.2
+                - capella
+                - elixir
+            couchbase-cloud:
+              start_path: ~
+              start_paths:
+                - docs/public
+                - docs/serverless
+            observability:
+              branches:
+                - main
+            cbmultimanager:
+              branches:
+                - main
