@@ -29,14 +29,14 @@ $.verbose = false
  * $patch: contains the tree to change
  * $meta: replaced with metadata
  *
- ** $add: add an item to the end of a list
+ ** $append: add an item to the end of a list
  * $prepend: add an item to the beginning of list
  * e.g:
 
       $patch:
         asciidoc:
           extensions:
-            $add: 
+            $append: 
               - '@asciidoctor/tabs'
 
  ** $without: remove an item from a list
@@ -361,21 +361,22 @@ else {
     date: Date()
   }
 
-  playbook = { $from: playbookFile, $meta, $patch, ...patched }
+  // playbook = { $from: playbookFile, $meta, $patch, ...patched }
+  playbook = patched
 }
 
 const output = YAML.stringify(playbook)
 
-if (update) {
-  try {
-    fs.copySync(patchFile, `${patchFile}~`)
-    fs.writeFileSync(patchFile, output)
-  }
-  catch (err) {
-    console.error(err)
-  }
-}
-else {
+// if (update) {
+//   try {
+//     fs.copySync(patchFile, `${patchFile}~`)
+//     fs.writeFileSync(patchFile, output)
+//   }
+//   catch (err) {
+//     console.error(err)
+//   }
+// }
+// else {
   console.log(output)
-}
+// }
 
