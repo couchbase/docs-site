@@ -4,7 +4,7 @@ site:
   start_page: home::index.adoc
   robots: allow
   keys:
-    google_analytics: GTM-MVPNN2
+    #google_analytics: GTM-MVPNN2
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
