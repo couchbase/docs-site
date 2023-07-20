@@ -1,0 +1,5 @@
+:page-layout: rest-api
+
+++++
+include::cloud:rest-api:partial$capella-management-openapi.html[]
+++++
