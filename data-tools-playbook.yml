@@ -162,6 +162,7 @@ asciidoc:
     idprefix: '@'
     idseparator: '-@'
     tabs: tabs
+    tabs-sync-option: ''
     toc: ~
     page-toclevels: 1@
     xrefstyle: short
