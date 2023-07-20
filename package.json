@@ -4,6 +4,7 @@
   "homepage": "https://docs.couchbase.com",
   "private": true,
   "dependencies": {
+    "@antora/collector-extension": "^1.0.0-alpha.3",
     "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension",
     "antora": "~3.1",
     "asciidoctor-external-callout": "~1.2.0",
