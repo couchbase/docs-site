@@ -37,7 +37,7 @@ content:
       start_path: home
       tags: ALL
       local: true
-    - url: ../couchbase-cloud
+    - url: https://git@github.com/couchbasecloud/couchbase-cloud
       branches:
         - HEAD
       start_path: null
