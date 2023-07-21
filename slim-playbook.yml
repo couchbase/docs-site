@@ -2,9 +2,8 @@ site:
   title: Couchbase Docs
   url: https://docs123.couchbase.com
   start_page: home::index.adoc
-  robots: allow
+  robots: disallow
   keys:
-    #google_analytics: GTM-MVPNN2
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
@@ -27,25 +26,8 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-#  - url: https://github.com/couchbase/couchbase-cli.git
-#    branches: [master]
-#    start_path: docs
-#  - url: ../docs-sdk-python/
-#    branches: [HEAD]
-#  - url: ../docs-sdk-dotnet/
-#    branches: [HEAD]
-#  - url: ../docs-sdk-java/
-#    branches: [HEAD]
-#  - url: ../docs-server/
-#    branches: [HEAD]
   - url: https://github.com/couchbase/docs-sdk-python
     branches: [release/4.1, release/4.0]
-  - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [release/3.4, release/3.3]
-  - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [release/3.4, release/3.3]
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/3.1]
 asciidoc:
   attributes:
     max-include-depth: 10
