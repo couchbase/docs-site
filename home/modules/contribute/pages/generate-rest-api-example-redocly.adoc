@@ -1,4 +1,5 @@
 :page-layout: rest-api
+:page-title: Capella Management API 
 
 ++++
 include::cloud:rest-api:partial$capella-management-openapi.html[]
