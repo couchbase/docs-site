@@ -70,7 +70,9 @@ asciidoc:
     url-issues: https://issues.couchbase.com/browse
     url-issues-jscbc: https://issues.couchbase.com/browse
     url-issues-av: https://couchbasecloud.atlassian.net/browse
-    page-jira-component-id: 17512
+    page-jira-component-id: 17512 # for-hakim
+    page-dev-slug: "hakim rest-playbook.yml Tue 25 Jul 2023 10:51:11 BST"
+    page-dev-url: https://github.com/couchbase/docs-infra/actions
   extensions:
     - ./lib/source-url-include-processor.js
     - ./lib/json-config-ui-block-macro.js
@@ -85,7 +87,7 @@ asciidoc:
     - asciidoctor-external-callout
 ui:
   bundle:
-    url:  https://github.com/couchbase/docs-ui/releases/download/sandbox-16/ui-bundle.zip
+    url:  https://github.com/couchbase/docs-ui/releases/download/sandbox-17/ui-bundle.zip
 output:
   dir: ./public
 
