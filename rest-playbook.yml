@@ -44,7 +44,6 @@ content:
       private: true
       tags:
         - cloud
-      local: true
       start_paths:
         - cmd/cp-open-api
 asciidoc:
