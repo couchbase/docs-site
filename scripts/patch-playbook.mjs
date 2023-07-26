@@ -5,15 +5,11 @@ import _ from "lodash"
 $.verbose = false
 
 /** Usage:
- *   ./playbook.mjs [--update] [--truncate] [--patch <patch-file>] [--playbook <playbook-file>] [<patch-file>] [<playbook-file>]
+ *   ./playbook.mjs [--patch <patch-file>] [--playbook <playbook-file>] [<patch-file>] [<playbook-file>]
  *
  *   e.g.:
  *
  *      ./playbook.mjs --playbook antora-playbook.yml --patch patch.yml
- *   or
- *      ./playbook.mjs patch.yml --update            # update the patchfile in place
- *      ./playbook.mjs patch.yml --truncate          # truncat the patchfile to { $from: ..., $patch: ... }
- *      ./playbook.mjs patch.yml > new-playbook.yml
  *
  * playbook-file: a standard Antora playbook
  *
@@ -24,10 +20,6 @@ $.verbose = false
  ** Operators
  *
  * The following operators are provided:
- *
- * $from: identify the playbook to generate
- * $patch: contains the tree to change
- * $meta: replaced with metadata
  *
  ** $append: add an item to the end of a list
  * $prepend: add an item to the beginning of list
@@ -135,11 +127,6 @@ $.verbose = false
  */
 const patchFile = argv.patch ?? argv._.shift() ?? 'patch.yml'
 const patch = YAML.parse(fs.readFileSync(patchFile).toString())
-const $patch = patch.$patch
-
-if (! $patch) {
-  throw new Error("Patch file is missing $patch tree")
-}
 
 /** Helper function to wrap a single item in an array if required */
 const toArray = (thing) => Array.isArray(thing) ? thing : [thing]
@@ -341,42 +328,15 @@ function apply_patch(node, patch) {
 }
 
 
-var update = argv.update
-const playbookFile = patch.$from ?? argv.playbook ?? argv._.shift() ?? 'antora-playbook.yml'
-var playbook
+const playbookFile = argv.playbook ?? argv._.shift() ?? 'antora-playbook.yml'
 
-if (argv.truncate) {
-  update = true
-  playbook = { $from: playbookFile, $patch }
-}
-else {
-  const original = YAML.parse(fs.readFileSync(playbookFile).toString())
+const original = YAML.parse(fs.readFileSync(playbookFile).toString())
 
-  // Confirm which files we are composing
-  console.error(`Composing ${playbookFile} with ${patchFile}`)
+// Confirm which files we are composing
+console.warn(`Composing ${playbookFile} with ${patchFile}`)
 
-  const patched = apply_patch(original, $patch)
+const patched = apply_patch(original, patch)
 
-  const $meta = {
-    date: Date()
-  }
+const output = YAML.stringify(patched)
 
-  // playbook = { $from: playbookFile, $meta, $patch, ...patched }
-  playbook = patched
-}
-
-const output = YAML.stringify(playbook)
-
-// if (update) {
-//   try {
-//     fs.copySync(patchFile, `${patchFile}~`)
-//     fs.writeFileSync(patchFile, output)
-//   }
-//   catch (err) {
-//     console.error(err)
-//   }
-// }
-// else {
   console.log(output)
-// }
-

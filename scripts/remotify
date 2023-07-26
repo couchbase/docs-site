@@ -1,0 +1,9 @@
+#!/bin/bash
+
+SCRIPTS=$(dirname $0)
+ORIG=$1
+BASE=${ORIG%.*}
+
+$SCRIPTS/patch-remote.mjs $ORIG > $BASE.remote.patch.yml
+$SCRIPTS/patch-playbook.mjs $BASE.remote.patch.yml antora-playbook.yml > $BASE.remote.yml \
+    && echo Written $BASE.remote.yml 
