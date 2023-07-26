@@ -50,7 +50,7 @@ content:
     start_paths: [docs/public, docs/serverless]
   # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
-    branches: [master, 2.4.x, 2.3.x, 2.2.x, 2.1.x]
+    branches: [master, 2.5.x, 2.4.x, 2.3.x, 2.2.x, 2.1.x]
     start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
     branches: [main]
