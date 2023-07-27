@@ -1,9 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env zx
+'use strict'
 
-SCRIPTS=$(dirname $0)
-ORIG=$1
-BASE=${ORIG%.*}
+const orig = argv._.shift()
+const base = path.basename  (orig, '.yml')
 
-$SCRIPTS/patch-remote.mjs $ORIG > $BASE.remote.patch.yml
-$SCRIPTS/patch-playbook.mjs $BASE.remote.patch.yml antora-playbook.yml > $BASE.remote.yml \
-    && echo Written $BASE.remote.yml 
+await $`${__dirname}/patch-remote.mjs ${orig} > ${base}.remote.patch.yml`
+
+const parts = base.split(/[-_.]/).filter(part => ! part.match(/^(|antora|playbook|remote|local|patch)$/))
+const remotebase = parts.length ? parts.join('-') : $.env.USER
+console.log(remotebase)
+
+await $`mkdir -p playbooks`
+
+await $`${__dirname}/patch-playbook.mjs ${base}.remote.patch.yml antora-playbook.yml > playbooks/${remotebase}.yml`
+console.log(`Written playbooks/${remotebase}.yml`)
+
