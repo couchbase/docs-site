@@ -51,6 +51,21 @@ Some template
 
 == Helpers and Partials
 
+=== Automatically included helpers
+
+Handlebars in docs-site lib/helpers/*.js are automatically included
+
+[template, example$test.yaml]
+--
+{{#if (eq foo.bar.baz "A successful test")}}
+    Matched expected content
+{{else}}
+    ERROR: got {{foo.bar.baz}}
+{{/if}}
+--
+
+=== Adding custom helpers by resourceId
+
 [template, example$test.yaml, helpers="example$helpers/foo.js", partials="partial$templates/partial.hbs"]
 --
 {{foo}}
