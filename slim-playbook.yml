@@ -72,6 +72,6 @@ asciidoc:
   - asciidoctor-kroki
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-166/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/suites/14921850021/artifacts/850456177
 output:
   dir: ./public
