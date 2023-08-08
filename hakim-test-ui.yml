@@ -84,6 +84,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/sandbox-18/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/sandbox-19/ui-bundle.zip
 output:
   dir: ./public
