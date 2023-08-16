@@ -52,7 +52,7 @@ content:
     start_path: docs/public
   # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
-    branches: [2.4.x, 2.3.x, 2.2.x]
+    branches: [2.5.x, 2.4.x, 2.3.x, 2.2.x]
     start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
     branches: [0.2.x]
