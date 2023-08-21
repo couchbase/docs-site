@@ -1,3 +1,7 @@
+antora:
+  extensions:
+  - '@antora/site-generator-ms'
+
 site:
   title: Couchbase Docs
   url: https://docs123.couchbase.com
