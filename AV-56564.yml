@@ -37,7 +37,7 @@ content:
       tags: ALL
       local: true
     - url: https://github.com/couchbasecloud/couchbase-cloud.git
-      branches: [AV-56564-redocly-rest-api]
+      branches: [AV-55044-management-api-redocly]
       start_paths:
         - docs/public/
         - cmd/cp-open-api/
