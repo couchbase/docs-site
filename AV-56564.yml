@@ -2,6 +2,7 @@ antora:
   extensions:
     - "@antora/site-generator-ms"
     - ./lib/embargo.js
+    - "@antora/collector-extension"
 site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
