@@ -37,7 +37,8 @@ content:
       start_path: home
       tags: ALL
       local: true
-    - url: https://github.com/couchbasecloud/couchbase-cloud.git
+      #- url: https://github.com/couchbasecloud/couchbase-cloud.git
+    - url: ../couchbase-cloud/
       branches: [AV-55044-management-api-redocly]
       start_paths:
         - docs/public/
@@ -81,7 +82,7 @@ asciidoc:
     - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/sandbox-17/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/sandbox-19/ui-bundle.zip
 output:
   dir: ./public
 
