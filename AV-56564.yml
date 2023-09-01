@@ -42,7 +42,6 @@ content:
       branches: [AV-55044-management-api-redocly]
       start_paths:
         - docs/public/
-        - cmd/cp-open-api/
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
