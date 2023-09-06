@@ -1,5 +1,6 @@
 = Demo of template extension
 :page-role: openapi
+:page-toclevels: 2
 
 == Metrics example
 
@@ -102,7 +103,7 @@ WARNING: handling `additionalProperties` is not yet implemented.
 {{#each-openapi components.schemas.Database}}
 
 {{#if node.description}}
-[discrete#{{@path_id_href}}]
+[#{{@path_id_href}}]
 === `{{@path_id}}`
 
 Type::  {{{node.type}}}
