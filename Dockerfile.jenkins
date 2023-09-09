@@ -10,6 +10,7 @@ RUN addgroup -g $GROUP_ID jenkins && \
     yarn global add --ignore-optional --silent asciidoctor-kroki && \
     yarn global add --ignore-optional --silent asciidoctor-external-callout && \
     yarn global add --ignore-optional --silent @asciidoctor/tabs && \
+    yarn global add --ignore-optional --silent @asciidoctor/collector-extension && \
     yarn global add --ignore-optional --silent markdown-it && \
     yarn global add --ignore-optional --silent yaml && \
     apk add --no-cache --quiet --virtual .build-deps py3-pip && \
