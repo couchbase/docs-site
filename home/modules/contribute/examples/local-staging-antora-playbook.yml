@@ -2,6 +2,15 @@ site:
   title: Couchbase Docs (Staging)
   url: https://docs-staging.couchbase.com
   start_page: home::index.adoc
+  robots: allow
+  keys:
+    google_analytics: GTM-MVPNN2
+    nav_groups: |
+      [
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
+        { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
+      ]
 content:
   branches: release/*
   sources:
@@ -13,7 +22,7 @@ content:
     start_path: docs
   # NOTE server-docs is currently after other server repos so nav key wins
   - url: ~/Couchbase/docs/docs-server/
-    branches: [release/7.1 release/7.0]
+    branches: [release/7.1 release/7.2]
   - url: ~/Couchbase/docs/docs-sdk-common/
     branches: [release/7.1.2, release/7.1]
   - url: ~/Couchbase/docs/docs-sdk-c/
@@ -56,7 +65,7 @@ asciidoc:
   - asciidoctor-kroki
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-143/ui-bundle.zip   
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-175/ui-bundle.zip   
   supplemental_files:
   - path: robots.txt
     contents: |
