@@ -142,11 +142,6 @@ pipeline {
   }
   post {
     success {
-      script {
-        if (triggerEventType == 'cron') {
-          build job: '/Antora/docs-search-indexer/master', wait: false
-        }
-      }
       githubNotify credentialsId: githubApiCredentialsId, account: githubAccount, repo: githubRepo, sha: env.GIT_COMMIT, context: 'continuous-integration/jenkins/push', description: 'The Jenkins CI build succeeded', status: 'SUCCESS'
     }
     failure {
