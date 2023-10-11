@@ -200,7 +200,7 @@ endif::[]
 
 [.tile]
 .C SDK
-* xref:3.4@c-sdk:hello-world:start-using-sdk.adoc[Version 3.3]
+* xref:3.3@c-sdk:hello-world:start-using-sdk.adoc[Version 3.3]
 * xref:3.2@c-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
 * xref:3.1@c-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
 * xref:3.0@c-sdk:hello-world:start-using-sdk.adoc[Version 3.0]
