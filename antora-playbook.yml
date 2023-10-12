@@ -90,7 +90,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/docs-sdk-c
-    branches: [release/3.3, release/3.2, release/3.1]
+    branches: [release/3.3, release/3.2]
   - url: https://github.com/couchbase/docs-txn-cxx
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
@@ -108,7 +108,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-python
     branches: [release/4.1, release/4.0, release/3.2, release/3.1]
   - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [release/3.4, release/3.3, release/3.2, release/3.1]
+    branches: [release/3.4, release/3.3, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/1.4, release/1.3, release/1.2]
   - url: https://github.com/couchbase/docs-sdk-extensions
