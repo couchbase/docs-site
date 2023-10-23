@@ -89,7 +89,7 @@ content:
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.2, release/7.1, release/7.0, release/6.6]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [test/7.5, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [test/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3, release/3.2, release/3.1]
   - url: https://github.com/couchbase/docs-sdk-cxx
