@@ -99,7 +99,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-go
     branches: [release/2.6, release/2.7]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.4, release/3.5]
+    branches: [release/3.4]
   - url: https://github.com/couchbase/docs-sdk-kotlin
     branches: [release/1.1]
   - url: https://github.com/couchbase/docs-sdk-nodejs
