@@ -41,8 +41,27 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [temp--ia--sketches--pt1]
-    start_path: docs/public
+    branches: [AV-66449-info-arch-hakim]
+    start_paths: [docs/public, docs/serverless]
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches: [DOC-11050]
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [release/7.2, capella, elixir]
+    start_path: docs
+  - url: https://github.com/couchbase/couchbase-tableau-connector
+    branches: master
+    start_path: docs
+      #- url: https://github.com/couchbaselabs/asterix-opt
+      #branches: master
+      #start_path: cbas/doc/build/docs
+  - url: https://github.com/couchbase/couchbase-cli
+    branches: master
+    start_path: docs
+  - url: https://github.com/couchbase/backup
+    branches: master
+    start_path: docs
+  - url: https://github.com/couchbase/docs-server
+    branches: release/7.2
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
@@ -63,7 +82,7 @@ asciidoc:
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
-    kroki-fetch-diagram: true
+    kroki-fetch-diagram: false
     # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
     url-issues: https://issues.couchbase.com/browse
     url-issues-jscbc: https://issues.couchbase.com/browse
