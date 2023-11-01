@@ -21,7 +21,6 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Service Broker", "components": ["service-broker"] },
         { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
       ]
@@ -76,17 +75,17 @@ content:
   - url: https://github.com/couchbase/docs-connectors-talend
   # - url: https://git@github.com/couchbase/docs-analytics
   - url: https://github.com/couchbase/docs-analytics
-    branches: [release/7.2, release/7.1, release/7.0, release/6.6]
+    branches: [release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [neo, 7.1.x-docs, cheshire-cat, mad-hatter]
+    branches: [neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
   # - url: https://git@github.com/couchbase/backup
   - url: https://github.com/couchbase/backup
-    branches: [neo, 7.1.x-docs, cheshire-cat, mad-hatter]
+    branches: [neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.2, release/7.1, release/7.0, release/6.6]
+    branches: [release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/docs-sdk-c
@@ -106,7 +105,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-php
     branches: [release/4.1, release/4.0, release/3.2, release/3.1]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [release/4.1, release/4.0, release/3.2, release/3.1]
+    branches: [release/4.1, release/4.0, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [release/3.4, release/3.3, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-scala
@@ -120,8 +119,6 @@ content:
     branches: [release/3.1, release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.1, release/3.0, release/2.8]
-  - url: https://github.com/couchbase/docs-service-broker
-    branches: [1.2.x, 1.1.x]
   # - url: https://git@github.com/couchbase/docs-cloud-native
   - url: https://github.com/couchbase/docs-cloud-native
     branches: [cloud-native-2.2]
