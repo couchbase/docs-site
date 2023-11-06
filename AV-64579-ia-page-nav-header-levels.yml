@@ -87,6 +87,7 @@ asciidoc:
     url-issues: https://issues.couchbase.com/browse
     url-issues-jscbc: https://issues.couchbase.com/browse
     url-issues-av: https://couchbasecloud.atlassian.net/browse
+    flag-devex-escape-hatch: '@'
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
