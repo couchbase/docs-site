@@ -85,9 +85,9 @@ content:
     #start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.2, release/7.1, release/7.0]
-  #- url: https://github.com/couchbase/docs-sdk-common
-    #branches: [release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [release/7.2]
+  - url: https://github.com/couchbase/docs-sdk-common
+    branches: [release/7.1.2]
   #- url: https://github.com/couchbase/docs-sdk-c
     #branches: [release/3.3, release/3.2]
   #- url: https://github.com/couchbase/docs-txn-cxx
@@ -96,8 +96,8 @@ content:
     #branches: [release/3.4, release/3.3, release/3.2]
   #- url: https://github.com/couchbase/docs-sdk-go
     #branches: [release/2.6, release/2.5, release/2.4, release/2.3]
-  #- url: https://github.com/couchbase/docs-sdk-java
-    #branches: [release/3.4, release/3.3, release/3.2]
+  - url: https://github.com/couchbase/docs-sdk-java
+    branches: [release/3.4]
  # - url: https://github.com/couchbase/docs-sdk-kotlin
     #branches: [release/1.1, release/1.0]
   #- url: https://github.com/couchbase/docs-sdk-nodejs
@@ -114,11 +114,11 @@ content:
     #branches: [main]
     # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-mobile
-    branches: [release/3.1, release/2.8]
+    branches: [release/3.1]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/3.1, release/3.0, release/2.8]
+    branches: [release/3.1]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/3.1, release/3.0, release/2.8]
+    branches: [release/3.1]
   # - url: https://git@github.com/couchbase/docs-cloud-native
   #- url: https://github.com/couchbase/docs-cloud-native
     #branches: [cloud-native-2.2]
