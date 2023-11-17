@@ -48,6 +48,8 @@ content:
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_paths: [docs/public, docs/serverless]
+  - url: https://github.com/couchbaselabs/docs-columnar.git
+    branches: [AV-66313-update-sqlpp-ref]
   # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
     branches: [master, 2.5.x, 2.4.x, 2.3.x, 2.2.x, 2.1.x]
