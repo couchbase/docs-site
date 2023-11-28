@@ -39,8 +39,8 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.2, capella]
+  #- url: https://github.com/couchbaselabs/docs-devex
+  #  branches: [release/7.2, capella]
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [AV-59313_create-new-alert-ref-docs-pg]
     start_path: docs/public
