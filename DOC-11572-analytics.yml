@@ -46,6 +46,8 @@ content:
     start_path: docs
   - url: https://github.com/couchbase/docs-analytics
     branches: [DOC-11568]
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches: [release/7.2]
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.2]
 asciidoc:
