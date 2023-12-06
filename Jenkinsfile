@@ -92,13 +92,10 @@ pipeline {
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com"]) {
             sh "ls -ltr"
-            writeFile file: '.git-credentials', text: "$env.GIT_CREDENTIALS"
-            sh 'mv .git-credentials ~'
             sh "mkdir -p ~/.ssh"
             sh "cp github.hostkey ~/.ssh/known_hosts"
-            sh "ls -a ~"
             sh "rm -rf ./couchbase-cloud"
-            sh "time git clone -v --depth 1 git@github.com:couchbasecloud/couchbase-cloud.git"
+            sh "time git clone -v --depth 1 https://$env.GITHUB_TOKEN:@github.com/couchbasecloud/couchbase-cloud.git"
             sh "time antora --cache-dir=./.cache/antora --clean --extension=./lib/site-stats-extension.js --fetch --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
