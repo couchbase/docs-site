@@ -92,7 +92,7 @@ pipeline {
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com"]) {
             sh "ls -ltr"
-            sh "echo $GIT_CREDENTIALS > ~/.git-credentials"
+            writeFile file: '/home/jenkins/.git-credentials', text: env.GIT_CREDENTIALS
             sh "mkdir -p ~/.ssh"
             sh "cp github.hostkey ~/.ssh/known_hosts"
             sh "rm -rf ./couchbase-cloud"
