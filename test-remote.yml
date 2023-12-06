@@ -35,9 +35,9 @@ content:
       start_path: home
       tags: ALL
       local: true
-    - url: https://github.com/malarky/docs-server
+    - url: https://github.com/couchbase/docs-server
       branches:
-        - DOC-10720-7.2
+        - release/7.2
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
