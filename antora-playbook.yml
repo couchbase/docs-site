@@ -46,8 +46,8 @@ content:
     branches: [release/7.2, release/7.1, release/7.0]
     start_path: docs
   # - url: https://git@github.com/couchbasecloud/couchbase-cloud
-  - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [main]
+  - url: ./couchbase-cloud
+    branches: [HEAD]
     start_path: docs/public
   # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
