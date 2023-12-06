@@ -45,9 +45,9 @@ content:
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.2, release/7.1, release/7.0]
     start_path: docs
-  - url: https://git@github.com/couchbasecloud/couchbase-cloud
-    branches: [main]
-    start_path: docs/public
+      # - url: https://git@github.com/couchbasecloud/couchbase-cloud
+      # branches: [main]
+      # start_path: docs/public
   # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
     branches: [2.5.x, 2.4.x, 2.3.x, 2.2.x]
