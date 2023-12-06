@@ -96,7 +96,7 @@ pipeline {
             sh "cp github.hostkey ~/.ssh/known_hosts"
             sh "rm -rf ./couchbase-cloud"
             sh "time git clone -v --depth 1 https://$env.GITHUB_TOKEN:@github.com/couchbasecloud/couchbase-cloud.git"
-            sh "time antora --cache-dir=./.cache/antora --clean --extension=./lib/site-stats-extension.js --fetch --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
+            sh "time antora --log-level=all --cache-dir=./.cache/antora --clean --extension=./lib/site-stats-extension.js --fetch --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
         sh 'node scripts/populate-icon-defs.js public'
