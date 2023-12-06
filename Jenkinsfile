@@ -92,6 +92,7 @@ pipeline {
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com"]) {
             sh "pwd"
+            sh "ls ~/.ssh"
             sh "cat ~/.ssh/known_hosts"
             sh "rm -rf ./couchbase-cloud"
             sh "time git clone -v --depth 1 git@github.com:couchbasecloud/couchbase-cloud.git"
