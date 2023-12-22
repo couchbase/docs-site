@@ -1,11 +1,233 @@
-= SDKs & Connectors
-:page-aliases: sdks:intro.adoc,7.0@server:sdk:overview.adoc,7.1@server:sdk:overview.adoc,7.2@server:sdk:overview.adoc,7.0@server:install:install-client-server.adoc,7.1@server:install:install-client-server.adoc,7.2@server:install:install-client-server.adoc
+= Develop with Couchbase
+:page-aliases: sdks:intro.adoc,7.0@server:sdk:overview.adoc,7.1@server:sdk:overview.adoc,7.2@server:sdk:overview.adoc,7.6@server:sdk:overview.adoc,7.0@server:install:install-client-server.adoc,7.1@server:install:install-client-server.adoc,7.2@server:install:install-client-server.adoc,7.6@server:install:install-client-server.adoc
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :!sectids:
 
+
+= Develop with Couchbase
+
 include::partial$info-banner.adoc[]
 
+What's the point of a fast and scalable database if it's not easy to develop for?
+Couchbase gives you the SDK APIs to work with Capella, our managed solution, or self-managed options in your private Cloud or datacenter.
+
+Couchbase is a large platform -- covering many services -- and Couchbase SDKs are not thin wrappers generated around a REST API, but well thought out interfaces to the platform that make it easier to design and maintain your client code,
+and work with Couchbase in more natural ways for your platform.
+
+Explore our SDK documentation for your chosen platform:
+
+[{tabs}] 
+==== 
+Java::
++
+--
+
+== icon:database[] Using Your Database
+
+How-to guides to help you start your development journey with Couchbase and the {name-sdk}.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Easy to Connect & Get Started
+* xref:hello-world:start-using-sdk.adoc[Quickstart Guide]
+* xref:hello-world:sample-application.adoc[]
+* xref:howtos:managing-connections.adoc[]
+* xref:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial]
+
+[.column]
+.Search, Query, Analyze
+* xref:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
+* xref:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
+* xref:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
+* xref:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
+
+[.column]
+.Lightning Fast Data Service
+* xref:howtos:kv-operations.adoc[]
+* xref:howtos:subdocument-operations.adoc[]
+* xref:howtos:encrypting-using-sdk.adoc[]
+* xref:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
+
+[.column]
+.Observability & Error Handling
+* xref:howtos:error-handling.adoc[]
+* xref:howtos:collecting-information-and-logging.adoc[]
+* xref:howtos:slow-operations-logging.adoc[]
+* xref:howtos:health-check.adoc[]
+
+++++
+</div>
+++++
+
+////
+== icon:graduation-cap[] Learn
+
+Take a deep-dive into the SDK concept material and learn more about Couchbase.
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Data Concepts
+* xref:concept-docs:data-model.adoc[]
+* xref:concept-docs:data-services.adoc[Service Selection]
+* xref:concept-docs:encryption.adoc[Field Level Encryption]
+
+[.column]
+.Errors & Diagnostics Concepts
+* xref:concept-docs:errors.adoc[]
+* xref:concept-docs:response-time-observability.adoc[]
+* xref:concept-docs:durability-replication-failure-considerations.adoc[]
+
+++++
+</div>
+++++
+////
+
+{empty} +
+
+== icon:book[] Resources
+
+Useful resources to help support your development experience with Couchbase and the Scala SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Reference
+* https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference^]
+* xref:ref:client-settings.adoc[]
+* xref:ref:error-codes.adoc[]
+* xref:ref:glossary.adoc[Glossary]
+// * xref:ref:travel-app-data-model.adoc[]
+
+[.column]
+.Deployment
+* xref:project-docs:sdk-release-notes.adoc[]
+* xref:project-docs:compatibility.adoc[Compatibility]
+// * https://docs-archive.couchbase.com/home/index.html[Older Versions Archive]
+// * xref:project-docs:migrating-sdk-code-to-3.n.adoc[]
+* xref:project-docs:third-party-integrations.adoc[]
+* xref:project-docs:sdk-full-installation.adoc[]
+
+++++
+</div>
+++++
+
+--
+
+Scala::
++
+--
+== icon:database[] Using Your Database
+
+How-to guides to help you start your development journey with Couchbase and the {name-sdk}.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Easy to Connect & Get Started
+* xref:hello-world:start-using-sdk.adoc[Quickstart Guide]
+* xref:hello-world:sample-application.adoc[]
+* xref:howtos:managing-connections.adoc[]
+* xref:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial]
+
+[.column]
+.Search, Query, Analyze
+* xref:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
+* xref:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
+* xref:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
+* xref:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
+
+[.column]
+.Lightning Fast Data Service
+* xref:howtos:kv-operations.adoc[]
+* xref:howtos:subdocument-operations.adoc[]
+* xref:howtos:encrypting-using-sdk.adoc[]
+* xref:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
+
+[.column]
+.Observability & Error Handling
+* xref:howtos:error-handling.adoc[]
+* xref:howtos:collecting-information-and-logging.adoc[]
+* xref:howtos:slow-operations-logging.adoc[]
+* xref:howtos:health-check.adoc[]
+
+++++
+</div>
+++++
+
+////
+== icon:graduation-cap[] Learn
+
+Take a deep-dive into the SDK concept material and learn more about Couchbase.
+
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Data Concepts
+* xref:concept-docs:data-model.adoc[]
+* xref:concept-docs:data-services.adoc[Service Selection]
+* xref:concept-docs:encryption.adoc[Field Level Encryption]
+
+[.column]
+.Errors & Diagnostics Concepts
+* xref:concept-docs:errors.adoc[]
+* xref:concept-docs:response-time-observability.adoc[]
+* xref:concept-docs:durability-replication-failure-considerations.adoc[]
+
+++++
+</div>
+++++
+////
+
+{empty} +
+
+== icon:book[] Resources
+
+Useful resources to help support your development experience with Couchbase and the Scala SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Reference
+* https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference^]
+* xref:ref:client-settings.adoc[]
+* xref:ref:error-codes.adoc[]
+* xref:ref:glossary.adoc[Glossary]
+// * xref:ref:travel-app-data-model.adoc[]
+
+[.column]
+.Deployment
+* xref:project-docs:sdk-release-notes.adoc[]
+* xref:project-docs:compatibility.adoc[Compatibility]
+// * https://docs-archive.couchbase.com/home/index.html[Older Versions Archive]
+// * xref:project-docs:migrating-sdk-code-to-3.n.adoc[]
+* xref:project-docs:third-party-integrations.adoc[]
+* xref:project-docs:sdk-full-installation.adoc[]
+
+++++
+</div>
+++++
+--
+====
+
+
+
+
+////
 = SDKs & Connectors
 
 == {empty}
@@ -270,3 +492,4 @@ The https://docs.couchbase.com/tutorials/quick-start/quickstart-java3-native-int
 ++++
 </div>
 ++++
+////
