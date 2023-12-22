@@ -23,9 +23,10 @@ Java::
 +
 --
 
-== icon:database[] Using Your Database
+icon:database[] 
+.Using Your Database
 
-How-to guides to help you start your development journey with Couchbase and the {name-sdk}.
+How-to guides to help you start your development journey with Couchbase and the Java SDK.
 
 ++++
 <div class="card-row two-column-row">
@@ -63,37 +64,12 @@ How-to guides to help you start your development journey with Couchbase and the 
 </div>
 ++++
 
-////
-== icon:graduation-cap[] Learn
-
-Take a deep-dive into the SDK concept material and learn more about Couchbase.
-
-++++
-<div class="card-row three-column-row">
-++++
-
-[.column]
-.Data Concepts
-* xref:concept-docs:data-model.adoc[]
-* xref:concept-docs:data-services.adoc[Service Selection]
-* xref:concept-docs:encryption.adoc[Field Level Encryption]
-
-[.column]
-.Errors & Diagnostics Concepts
-* xref:concept-docs:errors.adoc[]
-* xref:concept-docs:response-time-observability.adoc[]
-* xref:concept-docs:durability-replication-failure-considerations.adoc[]
-
-++++
-</div>
-++++
-////
 
 {empty} +
 
 == icon:book[] Resources
 
-Useful resources to help support your development experience with Couchbase and the Scala SDK.
+Useful resources to help support your development experience with Couchbase and the Java SDK.
 
 ++++
 <div class="card-row two-column-row">
@@ -127,7 +103,7 @@ Scala::
 --
 == icon:database[] Using Your Database
 
-How-to guides to help you start your development journey with Couchbase and the {name-sdk}.
+How-to guides to help you start your development journey with Couchbase and the Scala SDK.
 
 ++++
 <div class="card-row two-column-row">
@@ -165,31 +141,6 @@ How-to guides to help you start your development journey with Couchbase and the 
 </div>
 ++++
 
-////
-== icon:graduation-cap[] Learn
-
-Take a deep-dive into the SDK concept material and learn more about Couchbase.
-
-++++
-<div class="card-row three-column-row">
-++++
-
-[.column]
-.Data Concepts
-* xref:concept-docs:data-model.adoc[]
-* xref:concept-docs:data-services.adoc[Service Selection]
-* xref:concept-docs:encryption.adoc[Field Level Encryption]
-
-[.column]
-.Errors & Diagnostics Concepts
-* xref:concept-docs:errors.adoc[]
-* xref:concept-docs:response-time-observability.adoc[]
-* xref:concept-docs:durability-replication-failure-considerations.adoc[]
-
-++++
-</div>
-++++
-////
 
 {empty} +
 
