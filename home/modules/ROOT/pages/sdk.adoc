@@ -23,10 +23,10 @@ Java::
 +
 --
 
-icon:database[] 
 .Using Your Database
 
 How-to guides to help you start your development journey with Couchbase and the Java SDK.
+icon:database[] 
 
 ++++
 <div class="card-row two-column-row">
@@ -67,9 +67,10 @@ How-to guides to help you start your development journey with Couchbase and the 
 
 {empty} +
 
-== icon:book[] Resources
+.Resources
 
 Useful resources to help support your development experience with Couchbase and the Java SDK.
+icon:book[] 
 
 ++++
 <div class="card-row two-column-row">
