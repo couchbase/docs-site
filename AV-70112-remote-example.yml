@@ -44,7 +44,7 @@ content:
     # branches: [release/7.2, capella, elixir]
     branches: [release/7.2, capella]
   - url: https://github.com/couchbaselabs/docs-columnar.git
-    branches: AV-69634-collapsible-blocks
+    branches: AV-70112-remote-example
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
