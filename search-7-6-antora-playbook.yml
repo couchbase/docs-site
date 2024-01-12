@@ -41,7 +41,7 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
     # branches: [release/7.2, capella, elixir]
-    branches: [DOC-11666-7-6-search, AV-68976-search-quick-editor]
+    branches: [DOC-11666-7-6-search, AV-68571-vector-search-7-6-master]
   #- url: https://github.com/couchbaselabs/cb-swagger
     #branches: [release/7.2, release/7.1, release/7.0]
     #start_path: docs
