@@ -64,7 +64,7 @@ content:
     branches: [master]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-spark-connector
-    branches: [master, release/3.1, release/3.0]
+    branches: [master, release/3.2, release/3.1]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-tableau-connector
     branches: [master]
