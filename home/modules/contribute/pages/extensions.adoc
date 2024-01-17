@@ -2,6 +2,23 @@
 
 Test and document your Asciidoctor.js or Antora extensions here.
 
+== Term Macro
+
+[source,asciidoc]
+----
+The term:[frobnitzer] reverses the polarity of the neutron flow.
+
+Remember to term:[frobnitzer,frobnitz] regularly, to keep data usage and costs down.
+----
+
+Produces:
+
+--
+The term:[frobnitzer] reverses the polarity of the neutron flow.
+
+Remember to term:[frobnitzer,frobnitz] regularly, to keep data usage and costs down.
+--
+
 == Inline JIRA macro
 
 === Usage

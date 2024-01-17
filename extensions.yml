@@ -28,7 +28,7 @@ urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
 content:
-  branches: master
+  branches: hakim
   sources:
     - url: .
       branches:
