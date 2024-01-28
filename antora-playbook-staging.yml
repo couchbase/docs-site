@@ -61,7 +61,7 @@ content:
     branches: [master, release/4.3]
     start_path: docs
   - url: https://github.com/couchbase/kafka-connect-couchbase
-    branches: [master]
+    branches: [master, release/4.1]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-spark-connector
     branches: [master, release/3.2, release/3.1]
