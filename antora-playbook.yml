@@ -24,7 +24,7 @@ content:
 #    branches: [0.2.x]
 #    start_path: docs
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
-    branches: [release/4.2, release/4.1, release/4.0, release/cypress]
+    branches: [release/4.3, release/4.2, release/4.1, release/4.0, release/cypress]
     start_path: docs
   - url: https://github.com/couchbase/kafka-connect-couchbase
     branches: [release/4.0, release/3.4, release/3.3]
@@ -37,23 +37,23 @@ content:
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/4.6, release/4.5]
   - url: https://github.com/couchbase/docs-sdk-c
-    branches: release/3.1, [release/3.0, release/2.10, release/2.9, release/2.8, release/2.7, release/2.6, release/2.5]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.10, release/2.9, release/2.8, release/2.7, release/2.6, release/2.5]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [release/3.1, release/3.0, release/2.7, release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.7, release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
   - url: https://github.com/couchbase/docs-sdk-go
-    branches: [release/2.2, release/2.1, release/2.0, release/1.6, release/1.5, release/1.4, release/1.3, release/1.2, release/1.1, release/1.0]
+    branches: [release/2.3, release/2.2, release/2.1, release/2.0, release/1.6, release/1.5, release/1.4, release/1.3, release/1.2, release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.1, release/3.0, release/2.7, release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.7, release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [release/3.1, release/3.0, release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [release/3.0, release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [release/3.1, release/3.0, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1, release/2.0]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1, release/2.0]
   - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [release/3.1, release/3.0]
+    branches: [release/3.2, release/3.1, release/3.0]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/1.1, release/1.0]
+    branches: [release/1.2, release/1.1, release/1.0]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
     branches: [release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.4, release/1.3]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
