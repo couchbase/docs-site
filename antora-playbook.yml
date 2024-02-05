@@ -6,6 +6,7 @@ site:
   robots: disallow
 git:
   ensure_git_suffix: false
+  fetch_concurrency: 1
 content:
   sources:
   - url: .
