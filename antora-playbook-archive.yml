@@ -1,4 +1,6 @@
-# $(npm bin)/antora --clean --fetch --generator=@antora/site-generator-ms antora-playbook.yml
+antora:
+  extensions:
+  - '@antora/site-generator-ms'
 site:
   title: Couchbase Docs Archive
   url: https://docs-archive.couchbase.com
@@ -82,12 +84,23 @@ asciidoc:
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    sqlpp: SQL++
+    sqlpp_url: https://www.couchbase.com/products/n1ql
+    cbpp: Couchbase++
+    kroki-server-url: http://3.91.133.254:9500
+    kroki-fetch-diagram: true
+    # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
   extensions:
+  - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
-  - ./lib/tabs-block.js
+  - ./lib/markdown-block.js
+  - ./lib/template-block.js
+  - asciidoctor-kroki
+  - asciidoctor-external-callout
+  - '@asciidoctor/tabs'
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/archive-1/ui-bundle.zip
