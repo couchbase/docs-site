@@ -12,7 +12,7 @@ git:
 content:
   sources:
   - url: .
-    branches: HEAD
+    branches: archive
     start_path: home
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/6.6, release/6.5, release/6.0]
