@@ -4,6 +4,9 @@ site:
   url: https://docs-archive.couchbase.com
   start_page: home::index.adoc
   robots: disallow
+antora:
+  extensions:
+  - '@antora/atlas-extension'
 git:
   ensure_git_suffix: false
   fetch_concurrency: 1
