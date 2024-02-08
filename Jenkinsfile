@@ -86,21 +86,7 @@ pipeline {
       steps {
         withCredentials([githubApiCredentials]) {
           withEnv(["GIT_CREDENTIALS=https://$env.GITHUB_TOKEN:@github.com"]) {
-            //script {
-            //  // NOTE to enforce this validation, remove this try-catch block
-            //  try {
-            //    sh "antora --cache-dir=./.cache/antora --fetch --generator=@antora/xref-validator --stacktrace antora-playbook.yml > xref-validator.log 2>&1"
-            //  } catch (err) {
-            //    def report = readFile('xref-validator.log')
-            //    if (!report.contains('antora: xref validation failed')) {
-            //      echo 'xref validator failed to run; see next invocation for reason'
-            //    } else {
-            //      echo report
-            //    }
-            //  }
-            //}
-            // NOTE remove --fetch here if the xref validator is enabled
-            sh "antora --cache-dir=./.cache/antora --fetch --clean --generator=@antora/site-generator-ms --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
+            sh "antora --cache-dir=./.cache/antora --fetch --clean --redirect-facility=nginx --stacktrace --url=$env.WEB_PUBLIC_URL antora-playbook.yml"
           }
         }
         sh 'cat etc/nginx/snippets/rewrites.conf public/.etc/nginx/rewrite.conf | awk -F \' +\\\\{ +\' \'{ if ($1 && a[$1]++) { print sprintf("Duplicate location found on line %s: %s", NR, $0) > "/dev/stderr" } else { print $0 } }\' > public/.etc/nginx/combined-rewrites.conf'

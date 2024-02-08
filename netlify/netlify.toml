@@ -5,8 +5,8 @@ publish = "public"
 [build.environment]
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 CI = "true"
-NODE_VERSION = "12"
-NPM_FLAGS = "--no-optional"
+NODE_VERSION = "16"
+NPM_FLAGS = "--max-old-space-size=4096"
 PRIMARY_SITE_SUPPORTS_CURRENT_URL="true"
 
 [context.branch-deploy]
@@ -18,7 +18,8 @@ echo -e '<!DOCTYPE html>\\n<meta http-equiv="refresh" content="0; url=https://do
 [context.deploy-preview]
 command = """\
 if [ -v GITHUB_TOKEN ]; then export GIT_CREDENTIALS=https://$GITHUB_TOKEN:@github.com; fi; \
-time node_modules/.bin/antora --fetch --generator=@antora/site-generator-ms --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
+mkdir public;
+time npx antora --extension=./lib/exclude-private-content-sources-extension.js --fetch --log-file=~+/public/antora.log --redirect-facility=netlify --to-dir=~+/public --url $DEPLOY_PRIME_URL ../antora-playbook.yml || tail public/antora.log
 """
 
 [[headers]]

@@ -1,4 +1,7 @@
-# $(npm bin)/antora --clean --fetch --generator=@antora/site-generator-ms antora-playbook.yml
+# npx antora --clean --fetch antora-playbook.yml
+antora:
+  extensions:
+  - '@antora/site-generator-ms'
 site:
   title: Couchbase Docs Archive
   url: https://docs-archive.couchbase.com
@@ -7,6 +10,7 @@ site:
 git:
   ensure_git_suffix: false
 content:
+  # NOTE the git@ segment in the URL flags which repositories are private
   sources:
   - url: .
     branches: HEAD
@@ -14,7 +18,7 @@ content:
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/6.6, release/6.5, release/6.0]
     start_path: docs
-  - url: https://github.com/couchbase/couchbase-operator
+  - url: https://git@github.com/couchbase/couchbase-operator
     branches: [2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
 #  - url: https://github.com/couchbaselabs/observability
