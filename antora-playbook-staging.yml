@@ -10,7 +10,12 @@ site:
   title: Couchbase Docs Staging
   url: https://docs-staging.couchbase.com
   start_page: home::index.adoc
-  robots: disallow
+  robots: |
+    User-agent: *
+    Disallow: /
+
+    User-agent: Algolia Crawler
+    Allow: /
   keys:
     nav_groups: |
       [
