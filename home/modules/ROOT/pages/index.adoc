@@ -39,6 +39,7 @@ endif::[]
 
 [.tile]
 .Couchbase Autonomous Operator (Kubernetes)
+* xref:2.6@operator::whats-new.adoc[Version 2.6]
 * xref:2.5@operator::whats-new.adoc[Version 2.5]
 * xref:2.4@operator::whats-new.adoc[Version 2.4]
 * xref:2.3@operator::whats-new.adoc[Version 2.3]
@@ -260,3 +261,5 @@ endif::[]
 .Others
 * xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC/JDBC Drivers]
 * xref:4.6@server:connectors:hadoop-1.2/hadoop.adoc[Hadoop Connector 1.2]
+* xref:power-bi-connector:ROOT:index.adoc[Power BI Connector]
+* xref:tableau-connector:ROOT:index.adoc[Tableau Connector]
