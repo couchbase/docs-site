@@ -31,6 +31,7 @@ content:
   sources:
     - url: .
       branches: HEAD
+      start_path: home
     - url: https://github.com/couchbase/docs-sync-gateway
       branches:
         - redocly_x_internal_config
