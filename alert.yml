@@ -45,8 +45,6 @@ content:
   #   branches: [release/7.2, capella]
   - url: ../couchbase-cloud
     branches: HEAD
-  - url: ../docs-server
-    branches: HEAD
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
