@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Test Your Changes Locally
+
+NOTE: {out-of-date}
 
 If you've never built the site on your device, complete the xref:install-antora.adoc[Install Antora] and xref:playbook.adoc[Get the Site Playbook Project] steps first.
 

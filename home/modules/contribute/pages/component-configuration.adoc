@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Component Structure and Configuration
+
+NOTE: {out-of-date}
 
 == Terminology and Structure
 

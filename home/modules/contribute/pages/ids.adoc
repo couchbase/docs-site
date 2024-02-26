@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Element IDs and Same-Page Cross References
+
+NOTE: {out-of-date}
 
 An ID is a unique name for an element.
 That name can only be used once in a document.

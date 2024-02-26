@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Add a New Documentation Page
+
+NOTE: {out-of-date}
 
 == Create a New AsciiDoc File
 

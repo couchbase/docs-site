@@ -1,5 +1,5 @@
 = Generate REST API Documentation
-:page-status: under development
+:page-status: UNDER DEVELOPMENT
 :page-toclevels: 2
 
 NOTE: this information is targeted at Couchbase Docs team,
@@ -11,6 +11,7 @@ The following known tooling is used to generate the API docs from OpenAPI specs:
 * openapi-generator: (Capella)
 * SwaggerUI: (Mobile, travel-sample, ...)
 * swagger2markup: (Mobile, Server, ...)
+* Redocly (Capella Management API)
 
 
 == openapi-generator

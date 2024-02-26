@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Send Your Changes for Review
+
+NOTE: {out-of-date}
 
 After you complete your changes and fixed any warnings and errors reported by Antora, it's time to commit and push your working branch to your remote repository.
 

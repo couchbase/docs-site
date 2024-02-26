@@ -1,5 +1,9 @@
+:page-status: OUT OF DATE
+
 = Get the Site Playbook Project
 :url-git-playbook: https://github.com/couchbase/docs-site
+
+NOTE: {out-of-date}
 
 The Docs Site playbook project contains the:
 

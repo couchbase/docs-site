@@ -1,3 +1,5 @@
+:page-status: OUT OF DATE
+
 = Include Examples and Partials
 :url-docs-antora: https://docs.antora.org/antora/2.0
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
@@ -8,6 +10,8 @@
 :url-tags: {url-docs-adoc}/#by-tagged-regions
 :url-indent: {url-docs-adoc}/#normalize-block-indentation
 :url-leveloffset: {url-docs-adoc}/#include-partitioning
+
+NOTE: {out-of-date}
 
 == Example Files
 

@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Workflow Overview
+
+NOTE: {out-of-date}
 
 This workflow is for frequent contributors and Couchbase Docs team members who make major changes, add documents, examples, and images, and plan to work on the same set of changes over several days before requesting sign-off.
 
