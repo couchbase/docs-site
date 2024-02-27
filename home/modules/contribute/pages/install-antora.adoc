@@ -1,3 +1,5 @@
+:page-status: OUT OF DATE
+
 = Install Antora
 
 :antora-version: 3.0.0
@@ -6,6 +8,8 @@
 :url-macos: {url-docs-antora}/install/macos-requirements/
 :url-windows: {url-docs-antora}/install/windows-requirements/
 :url-install: {url-docs-antora}/install/install-antora/
+
+NOTE: {out-of-date}
 
 == Install System Prerequisites
 

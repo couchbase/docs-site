@@ -4,8 +4,12 @@
 :url-pages: {url-docs-antora}/page/
 :url-tables: {url-docs-adoc}/#tables
 :url-table-width: {url-docs-adoc}/#table-width
+:page-status: OUT OF DATE
 
 == Bold, Italic, and Code Styles
+
+NOTE: {out-of-date}
+
 
 [source,asciidoc]
 ----

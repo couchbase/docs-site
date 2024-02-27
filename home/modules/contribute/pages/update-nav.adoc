@@ -1,4 +1,8 @@
+:page-status:
+
 = Update a Navigation File
+
+NOTE: {out-of-date}
 
 When you want visitors to locate a page using the xref:nav-menus-and-files.adoc#component-menu[component menu], you must add a cross reference (`\xref:page-id.adoc[link content]`) to that page in the appropriate navigation file.
 
