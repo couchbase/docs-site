@@ -1,4 +1,10 @@
+:page-status: OUT OF DATE
+
 = Edit Existing Documentation
+
+NOTE: {out-of-date}
+
+NOTE: we currently recommend to install VS Code
 
 The following sections describe the document editing process using the Atom editor; however, you can write AsciiDoc in the plain text editor or integrated development environment (IDE) of your choice.
 

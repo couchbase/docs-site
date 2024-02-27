@@ -1,5 +1,9 @@
+:page-status: OUT OF DATE
+
 = Navigation Menus and Files
 :url-git-ui: https://github.com/couchbase/docs-ui
+
+NOTE: {out-of-date}
 
 == Component Selector Menu
 

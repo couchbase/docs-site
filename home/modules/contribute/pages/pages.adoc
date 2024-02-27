@@ -1,4 +1,8 @@
+:page-status:
+
 = Standard Document Structure
+
+NOTE: {out-of-date}
 
 A standard AsciiDoc document is stored in the _pages_ directory of a module.
 They have a header, which includes the document title, and a body, which includes the remainder of the document's content.

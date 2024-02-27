@@ -1,3 +1,5 @@
+:page-status: OUT OF DATE
+
 = Code Blocks and Callouts
 :url-docs-antora: https://docs.antora.org/antora/2.0
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
@@ -6,6 +8,8 @@
 :url-include-example: {url-docs-antora}/asciidoc/include-example/
 :url-tags: {url-docs-adoc}/#by-tagged-regions
 :url-indent: {url-docs-adoc}/#normalize-block-indentation
+
+NOTE: {out-of-date}
 
 == Code Blocks
 
