@@ -250,7 +250,7 @@ try {
         }  
     }
 
-    const antora = $`npx antora --stacktrace --log-level=debug --extension=lib/doctor.js ${process.argv.slice(3)}`.quiet()
+    const antora = $`npx antora --stacktrace --log-level=debug --extension=./lib/doctor.js ${process.argv.slice(3)}`.quiet()
 
     for await (const chunk of antora.stdout) {
         const ok = parser.write(chunk)
