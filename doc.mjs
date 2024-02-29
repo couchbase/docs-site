@@ -250,6 +250,7 @@ try {
         }  
     }
 
+    console.log("Running Antora", process.argv.slice(3))
     const antora = $`npx antora --stacktrace --log-level=debug --extension=./lib/doctor.js ${process.argv.slice(3)}`.quiet()
 
     for await (const chunk of antora.stdout) {
