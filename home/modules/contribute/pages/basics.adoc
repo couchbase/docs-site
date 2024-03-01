@@ -6,7 +6,7 @@
 :url-table-width: {url-docs-adoc}/#table-width
 :page-status: OUT OF DATE
 
-== Bold, Italic, and Code Styles
+== Bold and Code Styles
 
 NOTE: {out-of-date}
 
@@ -24,7 +24,6 @@ You can add multiple inline styles to text as long as the syntax is placed in th
 
 * Monospace syntax (`++`++`) is always the outermost formatting set.
 * Bold syntax (`*`) must be outside the italic formatting set.
-* Italic syntax (`_`) is always the innermost formatting set.
 
 To mark up code blocks, include example files, and add callouts, see xref:code-blocks.adoc[Code Blocks and Callouts].
 
