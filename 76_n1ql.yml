@@ -41,7 +41,7 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
     # branches: [release/7.2, capella, elixir]
-    branches: [DOC-10666-delete-offset, capella]
+    branches: [DOC-10667-group-as, capella]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
