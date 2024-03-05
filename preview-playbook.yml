@@ -54,8 +54,8 @@ content:
     branches: [trinity]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
-  - url: https://github.com/couchbase/docs-server
-    branches: [release/7.6]
+  - url: https://github.com/simon-dew/docs-server
+    branches: [DOC-11044]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.2]
   - url: https://github.com/couchbase/docs-sdk-dotnet
