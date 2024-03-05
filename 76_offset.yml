@@ -39,9 +39,9 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbaselabs/docs-devex
+  - url: ../docs-devex
     # branches: [release/7.2, capella, elixir]
-    branches: [DOC-10666-delete-offset, capella]
+    branches: [HEAD, capella]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
@@ -61,8 +61,8 @@ asciidoc:
     sqlpp: SQL++
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
-    kroki-server-url: http://3.91.133.254:9500
-    kroki-fetch-diagram: true
+    # kroki-server-url: http://3.91.133.254:9500
+    # kroki-fetch-diagram: true
     # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
     url-issues: https://issues.couchbase.com/browse
     url-issues-jscbc: https://issues.couchbase.com/browse

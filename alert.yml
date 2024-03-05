@@ -1,18 +1,12 @@
-# npx antora --clean --fetch antora-playbook.yml
+# $(npm bin)/antora --clean --fetch antora-playbook.yml
 # or
-# npx antora antora-playbook.yml
-antora:
-  extensions:
-  - '@antora/site-generator-ms'
-  - ./lib/embargo.js
-  - "@antora/collector-extension"
+# $(npm bin)/antora --clean --generator=@antora/site-generator-ms --attribute=site-navigation-data-path=_/js/site-navigation-data.js --fetch antora-playbook.yml
 site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
+# url: https://dgnicholson.github.io/AV-36621
   start_page: home::index.adoc
-  robots: allow
   keys:
-    google_analytics: GTM-MVPNN2
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
@@ -20,71 +14,68 @@ site:
         { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
-        { "title": "CMOS", "components": ["cmos"] },
         { "title": "Service Broker", "components": ["service-broker"] },
-        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
       ]
 git:
   ensure_git_suffix: false
-  fetch_concurrency: 10
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
 content:
   branches: master
   # NOTE the git@ segment in the URL indicates which repositories are private
-  ## The above has a bug when upgrading to Antora 3.1. Original sources commented
-  ## out and replaced with a non git@ prefix. To revert if it causes issues
   sources:
   - url: .
     branches: HEAD
     start_path: home
-  # - url: https://github.com/couchbaselabs/docs-devex
-  #   # branches: [release/7.2, capella, elixir]
-  #   branches: [release/7.2, capella]
   - url: ../couchbase-cloud
-    branches: HEAD
+    branches: AV-67499-alert-integration-doc
+  #  branches: SURF-1194_update-mon-alert-docs-elixir
+  #  branches: main
+  #  branches: AV-43889_elixir-docs-create-serverless-db
+    start_path: docs/public
+  - url: ../docs-devex
+    branches: capella
+  #- url: ~/repos/docs-columnar
+  #  branches: AV-62757-copy-to-external
+  # NOTE docs-server is currently after other server repos so nav key wins
+  #- url: ~/repos/docs-server/
+  #  branches: [release/7.1, release/7.2]
+  #- url: ~/repos/docs-service-broker
+  #  branches: [1.2.x, 1.1.x, 1.0.x]
+  #- url: ~/repos/docs-sync-gateway/
+  #  branches: [release/3.0, release/2.8, release/2.7, release/2.6, release/2.5, release/2.1, release/2.0, release/1.5]
+
+
 asciidoc:
   attributes:
-    site-navigation-data-path: _/js/site-navigation-data.js
-    enable-cmos: ''
+    azure-app-services: true
+    embargo-xxx: false
+    local-build: true
     max-include-depth: 10
     page-partial: false
     experimental: ''
     idprefix: '@'
     idseparator: '-@'
     tabs: tabs
-    tabs-sync-option: ''
     toc: ~
-    page-toclevels: 1@
     xrefstyle: short
+    sqlpp: SQL++
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
-    sqlpp: SQL++
-    sqlpp_url: https://www.couchbase.com/products/n1ql
-    cbpp: Couchbase++
-    std: Columnar-specific
-    # kroki-server-url: http://3.91.133.254:9500
-    kroki-fetch-diagram: false
-    # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
-    url-issues: https://issues.couchbase.com/browse
-    url-issues-jscbc: https://issues.couchbase.com/browse
-    url-issues-av: https://couchbasecloud.atlassian.net/browse
   extensions:
+ # - ./lib/asciidoctor-performance-patch.js
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
-  - ./lib/inline-jira-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
-  - ./lib/markdown-block.js
-  - ./lib/template-block.js
-  - asciidoctor-kroki
-  - asciidoctor-external-callout
-  - '@asciidoctor/tabs'
+  - ./lib/tabs-block.js
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-179/ui-bundle.zip
+#    url: /Users/danielnicholson/repos/docs-ui/build/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-166/ui-bundle.zip
 output:
   dir: ./public
