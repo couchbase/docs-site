@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Writing Documentation Overview
+
+NOTE: {out-of-date}
 
 == AsciiDoc and Asciidoctor
 

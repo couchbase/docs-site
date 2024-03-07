@@ -1,8 +1,12 @@
+:page-status: OUT OF DATE
+
 = Install Git and an AsciiDoc Editor
 :url-atom-docs: https://flight-manual.atom.io/getting-started/sections/installing-atom
 :url-linux: {url-atom-docs}/#platform-linux
 :url-mac: {url-atom-docs}/#platform-mac
 :url-windows: {url-atom-docs}/#platform-windows
+
+NOTE: {out-of-date}
 
 == Create a GitHub Account
 
@@ -14,6 +18,8 @@ To clone and work with Git repositories on your device, i.e., local repositories
 Alternatively, you can download it from the https://git-scm.com/downloads[Git project^].
 
 == Install an AsciiDoc Editor
+
+NOTE: we currently recommend to install VS Code
 
 AsciiDoc is the markup language Couchbase uses for writing documentation.
 You can write an AsciiDoc document using a plain text editor or integrated development environment (IDE).

@@ -1,5 +1,9 @@
+:page-status: OUT OF DATE
+
 = Build the Documentation Site Locally
 :experimental:
+
+NOTE: {out-of-date}
 
 [#configure-git-credentials]
 == Configure Your git Credentials

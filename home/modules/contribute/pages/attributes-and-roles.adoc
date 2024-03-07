@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Attributes and Roles
+
+NOTE: {out-of-date}
 
 == Setting and Referencing Document Attributes
 
