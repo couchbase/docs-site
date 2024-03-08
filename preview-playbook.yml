@@ -40,7 +40,7 @@ content:
   - url: https://github.com/simon-dew/docs-devex
     branches: [DOC-11686, capella]
   - url: https://github.com/simon-dew/cb-swagger
-    branches: [rDOC-11686, capella]
+    branches: [DOC-11686, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
