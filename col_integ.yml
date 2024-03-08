@@ -43,7 +43,7 @@ content:
   # - url: https://github.com/couchbaselabs/docs-devex
   #   # branches: [release/7.2, capella, elixir]
   #   branches: [release/7.2, capella]
-  - url: ../docs-columnar
+  - url: https://github.com/couchbaselabs/docs-columnar.git
     branches: HEAD
 asciidoc:
   attributes:
