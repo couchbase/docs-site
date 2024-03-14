@@ -107,11 +107,11 @@ content:
   - url: https://github.com/couchbase/docs-sdk-kotlin
     branches: [release/1.2, release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [release/4.2, release/4.1, release/4.0]
+    branches: [temp/4.3, release/4.2, release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-php
     branches: [release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [release/4.1, release/4.0]
+    branches: [temp/4.2, release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [release/3.4, release/3.3]
   - url: https://github.com/couchbase/docs-sdk-scala
