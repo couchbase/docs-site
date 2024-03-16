@@ -41,7 +41,7 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
     # branches: [release/7.2, capella, elixir]
-    branches: [DOC-11974_IncorporateFeedback, release/7.2, capella]
+    branches: [DOC-11930_EventingNavBar, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.2, release/7.1, release/7.0]
     start_path: docs
