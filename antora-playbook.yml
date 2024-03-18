@@ -41,7 +41,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.2, capella]
+    branches: [release/7.2, AV-68571-vector-search-7-6-capella]
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [AV-74508_7-6-docs-feature-branch]
     start_path: docs/public
