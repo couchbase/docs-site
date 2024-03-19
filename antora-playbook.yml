@@ -1,4 +1,4 @@
-# npx antora --clean --fetch antora-playbook.yml
+ npx antora --clean --fetch antora-playbook.yml
 # or
 # npx antora antora-playbook.yml
 antora:
@@ -109,7 +109,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [temp/4.3, release/4.2, release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [release/4.1, release/4.0]
+    branches: [temp/4.2, release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-python
     branches: [temp/4.2, release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-ruby
