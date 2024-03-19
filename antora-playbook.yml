@@ -1,4 +1,4 @@
- npx antora --clean --fetch antora-playbook.yml
+# npx antora --clean --fetch antora-playbook.yml
 # or
 # npx antora antora-playbook.yml
 antora:
