@@ -38,9 +38,9 @@ content:
   sources:
   - url: .
     branches: HEAD
-    start_path: home
-  - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, release/7.2, capella, elixir]
+  #   start_path: home
+  # - url: https://github.com/couchbaselabs/docs-devex
+  #   branches: [release/7.6, release/7.2, capella, elixir]
   # - url: https://github.com/couchbaselabs/cb-swagger
   #   branches: [release/7.2, release/7.1, release/7.0]
   #   start_path: docs
