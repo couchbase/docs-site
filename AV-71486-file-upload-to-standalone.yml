@@ -21,7 +21,6 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Service Broker", "components": ["service-broker"] },
         { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
       ]
@@ -43,8 +42,12 @@ content:
   - url: https://github.com/couchbaselabs/docs-devex
     # branches: [release/7.2, capella, elixir]
     branches: [release/7.2, capella]
-  - url: https://github.com/couchbaselabs/docs-columnar.git
-    branches: AV-71486-file-upload-to-standalone
+  - url: https://github.com/couchbasecloud/couchbase-cloud
+    branches: [main]
+    start_path: docs/public
+  - url: https://github.com/couchbaselabs/docs-columnar
+    branches: [AV-71486-file-upload-to-standalone]
+    start_path: docs/public  
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
@@ -84,6 +87,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-179/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-178/ui-bundle.zip
 output:
   dir: ./public
