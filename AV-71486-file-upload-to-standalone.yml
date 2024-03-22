@@ -47,7 +47,6 @@ content:
     start_path: docs/public
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [AV-71486-file-upload-to-standalone]
-    start_path: home
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
