@@ -193,6 +193,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/staging-4/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/staging-5/ui-bundle.zip
 output:
   dir: ./public
