@@ -15,7 +15,7 @@ site:
     Allow: /
     Disallow: /sdk-api/
     Allow: /sdk-api/*-client/
-    Allow: /sdk-api/*-core-api/
+    Allow: /sdk-api/couchbase-core-io/
     Allow: /sdk-api/couchbase-transactions-java/
     Allow: /sdk-api/couchbase-transactions-cxx/
     Allow: /sdk-api/couchbase-transactions-dotnet/
