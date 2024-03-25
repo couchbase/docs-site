@@ -10,7 +10,15 @@ site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
   start_page: home::index.adoc
-  robots: allow
+  robots: |
+    User-agent: *
+    Allow: /
+    Disallow: /sdk-api/
+    Allow: /sdk-api/*-client/
+    Allow: /sdk-api/*-core-api/
+    Allow: /sdk-api/couchbase-transactions-java/
+    Allow: /sdk-api/couchbase-transactions-cxx/
+    Allow: /sdk-api/couchbase-transactions-dotnet/
   keys:
     google_analytics: GTM-MVPNN2
     nav_groups: |
