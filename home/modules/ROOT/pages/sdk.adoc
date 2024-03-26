@@ -23,10 +23,10 @@ Java::
 +
 --
 
-.Using Your Database
+[discrete]
+== Using Your Database icon:database[] 
 
 How-to guides to help you start your development journey with Couchbase and the Java SDK.
-icon:database[] 
 
 ++++
 <div class="card-row two-column-row">
@@ -67,10 +67,10 @@ icon:database[]
 
 {empty} +
 
-.Resources
+[discrete]
+== Resources icon:book[] 
 
 Useful resources to help support your development experience with Couchbase and the Java SDK.
-icon:book[] 
 
 ++++
 <div class="card-row two-column-row">
@@ -102,7 +102,8 @@ icon:book[]
 Scala::
 +
 --
-== icon:database[] Using Your Database
+[discrete]
+== Using Your Database  icon:database[]
 
 How-to guides to help you start your development journey with Couchbase and the Scala SDK.
 
@@ -145,7 +146,8 @@ How-to guides to help you start your development journey with Couchbase and the 
 
 {empty} +
 
-== icon:book[] Resources
+[discrete]
+== Resources   icon:book[]
 
 Useful resources to help support your development experience with Couchbase and the Scala SDK.
 
