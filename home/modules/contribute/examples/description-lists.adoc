@@ -1,26 +1,17 @@
-// tag::basic[]
-Bucket:: A drop-down menu that displays the name of the bucket whose documents are currently being viewed.
-You can use the drop-down menu to select other available buckets.
-Limit:: The maximum number of rows (documents) to retrieve and display at once.
-Document ID:: Accepts the ID of a specific document.
-Leave this field blank to retrieve documents based on *Limit* and *Offset*.
-// end::basic[]
-
-// tag::compound[]
-term 1::
-This description needs two paragraphs.
-To attach them both to term 1, use a list continuation (`+`) on the line separating the paragraphs.
+Bucket:: The top-level data storage container for data in a Capella database. 
+A database can have multiple buckets, but must contain at least 1 bucket before it can store any data.
 +
-This is the second paragraph for term 1.
+For more information about buckets, see Buckets, Scopes, and Collections.
+These sentences appear as a new line for the definition of *Bucket*.
 
-term 2::
-This description includes an admonition block.
-Like additional paragraphs, blocks also need to be connected with a `+`.
+Scope:: A data storage container inside a Capella database. 
+Add scopes to a bucket to organize and group related collections in a Capella database.
 +
-NOTE: An admonition block that is part of term 2's description.
+NOTE: A bucket can only contain a maximum of 1000 scopes.
+This admonition is part of the definition for *Scope*.  
 
-term 3::
-* unordered list item
-.. ordered list item
-... another ordered list item
-// end::compound[]
+Collection::
+* Collections exist inside scopes.
+.. Create a new collection to store your documents.
+.. This is the final list item. 
+
