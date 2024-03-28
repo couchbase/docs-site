@@ -11,22 +11,40 @@ TIP: If you enabled the *Open with Code* shortcut when you xref:install-git-and-
 +
 The folder structure for a documentation repository could look like the following: 
 +
-* <component-name>
-** modules
-*** <module-name>
-**** assets
-**** examples
-**** pages
-**** partials
-. Right-click on the *pages* folder and click *New File*. 
+----
+- <component-name>
+    -- modules
+        --- <module-name>
+            ---- assets
+            ---- examples
+            ---- pages
+            ---- partials
+----
++
+Specifically, the folder structure for this component, the `home` component of the Couchbase docs, looks like: 
++
+----
+- home
+    -- modules
+        --- contribute
+            ---- assets
+            ---- examples
+            ---- pages
+            ---- partials
+        --- ROOT
+            ---- assets
+            ---- pages
+            ---- partials
+----
+. Right-click the *pages* folder and click *New File*. 
 . Enter a name for your new AsciiDoc file.
 This filename will appear in the page's URL when it's published to our documentation site. 
 +
 Make sure your filename: 
 +
-** Uses lowercase letters. 
-** Separates words with hyphens. 
-** Does not use symbols or special characters.
+** Uses lowercase letters (a-z). 
+** Separates words with hyphens (`-`). 
+** Does not use symbols or special characters, such as `!`, `@`, `#`, or others.
 . End the filename with the AsciiDoc file extension, `.adoc`, and press kbd:[Enter].
 +
 VS Code automatically opens the new file. 
