@@ -40,8 +40,8 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, capella]
+  # - url: https://github.com/couchbaselabs/docs-devex
+  #   branches: [release/7.6, capella]
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [AV-73909_update-rep-self-prov-docs]
     start_path: docs/public
