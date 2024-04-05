@@ -43,6 +43,9 @@ content:
   - url: .
     branches: HEAD
     start_path: home
+  - url: https://github.com/couchbaselabs/docs-style-guide
+    branches: main
+    start_paths: [styleguide, ui-ux, pendo]
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [release/7.6, release/7.2, capella, elixir]
   - url: https://github.com/couchbaselabs/cb-swagger
