@@ -46,7 +46,7 @@ content:
     #start_path: docs
   #- url: https://git@github.com/couchbasecloud/couchbase-cloud
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-60749-cloud-snapshots-docs]
+    branches: [AV-60739-day-0-docs]
     start_path: docs/public
   # - url: https://git@github.com/couchbase/couchbase-operator
   #- url: https://github.com/couchbase/couchbase-operator
@@ -73,8 +73,8 @@ content:
   # - url: https://git@github.com/couchbase/docs-connectors-talend
   #- url: https://github.com/couchbase/docs-connectors-talend
   # - url: https://git@github.com/couchbase/docs-analytics
-  #- url: https://github.com/couchbase/docs-analytics
-    #branches: [release/7.2, release/7.1, release/7.0]
+  - url: https://github.com/couchbase/docs-analytics
+    branches: [release/7.6]
   #- url: https://github.com/couchbase/couchbase-cli
     #branches: [neo, 7.1.x-docs, cheshire-cat]
     #start_path: docs
@@ -83,8 +83,8 @@ content:
     #branches: [neo, 7.1.x-docs, cheshire-cat]
     #start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
-  #- url: https://github.com/couchbase/docs-server
-    #branches: [DOC-11985-unite-the-searches]
+  - url: https://github.com/couchbase/docs-server
+    branches: [release/7.6]
   #- url: https://github.com/couchbase/docs-sdk-common
     #branches: [release/7.1.2]
   #- url: https://github.com/couchbase/docs-sdk-c
