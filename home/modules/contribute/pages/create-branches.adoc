@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Create a Working Branch
+
+NOTE: {out-of-date}
 
 Always make a new working branch for your work, no matter how small the change.
 You can create a working branch in Atom or from the command line.
