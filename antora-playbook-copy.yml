@@ -41,7 +41,7 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
     # branches: [release/7.2, capella, elixir]
-    branches: [DOC-12151_WithRecursiveExample, release/7.2, capella]
+    branches: [DOC-12145_MissingQueriesWithRecursive, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.2, release/7.1, release/7.0]
     start_path: docs
