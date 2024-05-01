@@ -41,13 +41,13 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
     # branches: [release/7.2, capella, elixir]
-    branches: [release/7.6, release/7.2, capella]
+    branches: [DOC-12145_MissingQueriesWithRecursive, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.2, release/7.1, release/7.0]
     start_path: docs
   # - url: https://git@github.com/couchbasecloud/couchbase-cloud
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [main]
+    branches: [DOC-12145_MissingQueriesWithRecursiveCapella]
     start_path: docs/public
   # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
@@ -87,7 +87,7 @@ content:
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [DOC-12157_SDKIncompatibilityReleaseNotes, release/7.2, release/7.1, release/7.0]
+    branches: [release/7.6, release/7.2, release/7.1, release/7.0]
   # - url: https://github.com/couchbase/docs-sdk-common
   #   branches: [release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   # - url: https://github.com/couchbase/docs-sdk-c
