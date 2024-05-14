@@ -1,39 +1,112 @@
-:page-status:
-
 = Standard Document Structure
+:basics-link: xref:basics.adoc
 
-NOTE: {out-of-date}
+All standard AsciiDoc documents exist in the *pages* directory of a module.
 
-A standard AsciiDoc document is stored in the _pages_ directory of a module.
-They have a header, which includes the document title, and a body, which includes the remainder of the document's content.
+== Filenames
+
+AsciiDoc documents should be saved as `.adoc` files, with the following filename restrictions: 
+
+* All lowercase letters.
+* Words separated by hyphens (`-`). 
+* No symbols or special characters.
+
+WARNING: The file's name is used to create its page URL.
+Changing a file's name will break xref:cross-references.adoc[cross references (xrefs)] and incoming links to the page from external websites.
+
+== Internal File Structure
+
+A Couchbase AsciiDoc document file should contain the following components: 
+
+A Header:: 
+Contains the document title and document attributes.
+Some attributes are required.
+See <<doc-title,>>. 
+
+A Body::
+Contains the written content, other than the title, that displays when a user visits the page on our documentation site.
+See <<doc-body,>>. 
 
 [#doc-title]
-== Document Title and Header
+=== Document Title and Header
 
-The title of a document is placed on the first line of the file.
-It is specified by one equals sign (`=`), followed by one blank space, and then the text of the title.
-*All AsciiDoc documents stored in a _pages_ directory must have a document title*.
+Put the title of your AsciiDoc document on the first line of the file. 
+Mark the title with one equals sign (`=`), followed by a blank space, and then the title text. 
 
-On the line directly below the title and subsequent contiguous lines, you can add xref:attributes-and-roles.adoc[document attributes].
-Each attribute must be entered on its own line.
-Document attributes are optional.
+NOTE: Every AsciiDoc file stored in a *pages* directory must have a document title.
+
+On the second line and any following lines, you can add xref:attributes-and-roles.adoc[document attributes].
+Each attribute must be entered on its own line, as shown:
 
 ----
 = The Title of My Document
-:page-type: concept
+:page-topic-type: concept
+:description: This is the description of my page! It's short and sweet.
 :url-query-tut: https://query-tutorial.couchbase.com/tutorial/#1
+
+[abstract]
+{description}
 
 This is the body of my document.
 Let's get started with N1QL!
 ----
 
+You must include the following document attributes for every AsciiDoc file stored in a *pages* directory: 
+
+include::partial$available-attributes.adoc[tag=required]
+
 A single blank line signals the end of the header.
-The document body starts on next line that has text.
+The <<doc-body,document body>> starts on the next line that has text.
 
-== Document Sections
+You can include your own custom document attributes, or make use of some of these other useful attributes, based on your page's content: 
 
-A document is divided into sections by heading titles.
-Heading 2 section titles, indicated by two equals signs (`==`), are displayed in the xref:nav-menus-and-files.adoc[On This Page sidebar].
+include::partial$available-attributes.adoc[tag=optional]
+
+[#doc-body]
+=== Document Body
+
+Write your document body using appropriate xref:basics.adoc[AsciiDoc syntax]. 
+
+Consider making use of: 
+
+* {basics-link}#bold-and-code-styles[Bold and Code Styles]
+* {basics-link}#ui-macros[Button, Keyboard, and Menu UI Macros]
+* {basics-link}#urls[URLs]
+* {basics-link}#description-lists[Description Lists]
+* {basics-link}#ordered-lists[Ordered Lists]
+* {basics-link}#unordered-lists[Unordered Lists]
+* {basics-link}#images[Images]
+* {basics-link}#admonitions[Admonitions]
+* {basics-link}#tables[Tables]
+
+[#ventilate]
+==== Ventilated Prose
+
+Write in ventilated prose, putting a single sentence on a single line in your AsciiDoc file. 
+Insert paragraph breaks by adding an empty line between sentences: 
+
+----
+This is Sentence 1.
+This sentence will display as part of the same paragraph as Sentence 1.
+This is proper ventilated prose. 
+
+This sentence will start a new paragraph. 
+----
+
+Ventilated prose makes reviewing pull request and changes easier for reviewers and maintainers. 
+
+==== Headings 
+
+Break up your text into sections using headings.
+Good heading structure makes scanning your documentation easier for readers. 
+
+The number of equals signs (`=`) equals the depth of the heading. 
+
+Heading 2 titles (indicated by 2 equals signs (`==`)) display in the xref:nav-menus-and-files.adoc[On This Page sidebar] on a page.
+You can change the depth of headings displayed on the On This Page sidebar with the <<page-toclevels,:page-toclevels: attribute>>. 
+
+You must nest section headings in order. 
+Do not put an Heading 4 section inside a Heading 2 section, without a Heading 3 section in between: 
 
 ----
 == Heading 2 Section Title (H2)
@@ -43,33 +116,9 @@ Heading 2 section titles, indicated by two equals signs (`==`), are displayed in
 ==== Heading 4 Section Title (H4)
 ----
 
-*Don't nest sections out of order*.
-For example, a heading 4 section can't be directly inside a heading 2 section; it must be nested inside a heading 3 section.
+Vale will flag headings that are not properly ordered inside your document. 
 
-*Don't apply bold formatting to headings*.
-
-[#ventilate]
-== Ventilated Prose (aka Sentence Per Line)
-
-Sentences that are part of paragraphs, lists, and tables should be entered on individual lines.
-This best practice makes reviewing pull requests and comparing versions of the same file much easier for maintainers.
-
-----
-== Establishing Demonstration Indexes
-
-The Java SDK code-example provided in xref:java-sdk::full-text-searching-with-sdk.adoc[Searching with the SDK] contains multiple demonstration calls -- each featuring a different query-combination -- and makes use of three different index-definitions, related to the `travel-sample` bucket: for the code example to run successfully, the three indexes must be appropriately pre-established.
-The definitions are provided in xref:fts-demonstration-indexes.adoc[Demonstration Indexes].
-----
-
-== File Format and Name
-
-* Use all lowercase letters.
-* Separate words with hyphens.
-* Save AsciiDoc files with the _.adoc_ extension.
-* Don't use symbols or special characters.
-
-The file's name is used to create its page URL.
-*Changing a file's name will break cross references (xrefs) and incoming links to the page from external websites*.
+You also cannot apply any xref:basics.adoc#bold-italic-and-code-styles[inline formatting] to headings. 
 
 == Learn More
 
