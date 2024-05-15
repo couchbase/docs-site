@@ -179,6 +179,7 @@ asciidoc:
     tabs-sync-option: ''
     toc: ~
     page-toclevels: 1@
+    page-rank: 50@
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
@@ -206,6 +207,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-186/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-189/ui-bundle.zip
 output:
   dir: ./public
