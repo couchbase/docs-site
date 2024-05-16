@@ -11,8 +11,9 @@ include::partial$info-banner.adoc[]
 
 == {empty}
 
-Couchbase provides several SDKs to allow applications to access a Couchbase cluster, as well as Mobile SDKs to carry your application to the edge. 
-To exchange data with other platforms, we offer various Big Data Connectors.
+Couchbase provides <<s#erver-sdks,several SDKs>> to allow applications to access a Couchbase cluster, 
+as well as <<#mobile-development-with-couchbase-lite,Couchbase Lite>> -- an embedded, NoSQL JSON Document Style database for your mobile apps.
+To exchange data with other platforms, we offer various <<#big-data-connectors,Big Data Connectors>>.
 
 [source,scala]
 ----
@@ -166,7 +167,7 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 ====== {empty}
 
 
-== Mobile SDKs
+== Mobile Development with Couchbase Lite
 
 [#table_sdk,cols="25,66,66"]
 |===
