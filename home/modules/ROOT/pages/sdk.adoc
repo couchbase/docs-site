@@ -11,7 +11,7 @@ include::partial$info-banner.adoc[]
 
 == {empty}
 
-Couchbase provides <<s#erver-sdks,several SDKs>> to allow applications to access a Couchbase cluster, 
+Couchbase provides <<#server-sdks,several SDKs>> to allow applications to access a Couchbase cluster, 
 as well as <<#mobile-development-with-couchbase-lite,Couchbase Lite>> -- an embedded, NoSQL JSON Document Style database for your mobile apps.
 To exchange data with other platforms, we offer various <<#big-data-connectors,Big Data Connectors>>.
 
