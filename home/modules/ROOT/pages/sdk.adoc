@@ -166,7 +166,7 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 [.column]
 ====== {empty}
 
-
+[[#mobile-development-with-couchbase-lite]]
 == Mobile Development with Couchbase Lite
 
 [#table_sdk,cols="25,66,66"]
