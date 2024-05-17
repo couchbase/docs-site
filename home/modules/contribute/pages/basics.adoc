@@ -132,16 +132,6 @@ If you do not specify a URL, the default URL \http://localhost:8091 is used.
 If you do not specify a URL, the default URL `+http://localhost:8091+` is used.
 ****
 
-// == Checklists
-
-// [source,asciidoc]
-// ----
-// include::example$lists.adoc[tag=check]
-// ----
-
-// Renders as:
-
-// include::example$lists.adoc[tag=check]
 
 == Description Lists
 

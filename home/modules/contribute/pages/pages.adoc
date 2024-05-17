@@ -124,4 +124,4 @@ You also cannot apply any xref:basics.adoc#bold-italic-and-code-styles[inline fo
 
 * xref:basics.adoc[AsciiDoc basics].
 * xref:attributes-and-roles.adoc[Attributes and roles].
-* xref:edit-pages.adoc#edit-server[Edit a page in the Server component].
+* xref:edit-pages.adoc#[Edit a page].
