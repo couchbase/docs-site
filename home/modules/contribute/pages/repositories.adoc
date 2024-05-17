@@ -1,3 +1,5 @@
+:page-status: OUT OF DATE
+
 = Repository Organization
 :url-git-cb: https://github.com/couchbase
 :url-git-labs: https://github.com/couchbaselabs
@@ -29,6 +31,8 @@
 :url-git-kafka: {url-git-cb}/kafka-connect-couchbase
 :url-git-spark: {url-git-cb}/couchbase-spark-connector
 //Couchbase uses Antora to manage and build docs.couchbase.com.
+
+NOTE: {out-of-date}
 
 The Couchbase documentation is stored in multiple repositories that are organized in a standard directory structure.
 

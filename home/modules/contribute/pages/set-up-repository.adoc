@@ -1,4 +1,8 @@
+:page-status: OUT OF DATE
+
 = Set Up Your Local Repository
+
+NOTE: {out-of-date}
 
 You only need to do these steps the first time you contribute to a repository.
 

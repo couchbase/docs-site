@@ -1,5 +1,9 @@
+:page-status: OUT OF DATE
+
 = Tabs Sets
 :tabs:
+
+NOTE: {out-of-date}
 
 == Set and Create Tabs
 

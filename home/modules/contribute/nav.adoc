@@ -1,4 +1,3 @@
-.Contributing to the Documentation
 * xref:index.adoc[Overview]
 
 * Setting Up Your Workspace
