@@ -24,6 +24,14 @@ Couchbase does not provide you with a GitHub account.
 To clone and work with Git repositories on your device, or what's known as local repositories, install Git using your operating system's package manager.
 Alternatively, you can download it from the https://git-scm.com/downloads[Git project^].
 
+=== Install GitHub Desktop
+
+If you're more comfortable working with a visual interface for interacting with Git, instead of using the command line and a terminal, consider installing https://desktop.github.com/[GitHub Desktop^].
+
+GitHub Desktop makes it easier to interact with Git and provides a fast way to xref:set-up-repository.adoc#clone-the-repository[clone new repositories] onto your computer. 
+
+You can also just use <<install-vs-code,VS Code>> and its integrated interface for Git. 
+
 [#install-editor]
 == Install an AsciiDoc Editor
 

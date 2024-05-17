@@ -58,4 +58,4 @@ Any AsciiDoc file saved to a *pages* directory in an Antora documentation compon
 == Next Steps
 
 * xref:update-nav.adoc[Add a page to a component navigation menu].
-* xref:build-site.adoc[Build the docs site locally to test and preview your changes].
+* xref:test-site.adoc[Build the docs site locally to test and preview your changes].
