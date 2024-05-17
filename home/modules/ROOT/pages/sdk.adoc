@@ -11,9 +11,9 @@ include::partial$info-banner.adoc[]
 
 == {empty}
 
-Couchbase provides <<#server-sdks,several SDKs>> to allow applications to access a Couchbase cluster, 
-as well as <<#mobile-development-with-couchbase-lite,Couchbase Lite>> -- an embedded, NoSQL JSON Document Style database for your mobile apps.
-To exchange data with other platforms, we offer various <<#big-data-connectors,Big Data Connectors>>.
+Couchbase provides several SDKs to allow applications to access a Couchbase cluster (Capella or self-managed), 
+as well as xref:mobile.adoc[Couchbase Lite] -- an embedded, NoSQL JSON Document Style database for your mobile apps.
+To exchange data with other platforms, we offer various Big Data Connectors.
 
 [source,scala]
 ----
@@ -166,12 +166,12 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 [.column]
 ====== {empty}
 
-[[#mobile-development-with-couchbase-lite]]
+
 == Mobile Development with Couchbase Lite
 
 [#table_sdk,cols="25,66,66"]
 |===
-| SDK | Documentation | API Reference
+| Mobile Platform | Documentation | API Reference
 
 | Couchbase Lite Java Android
 | xref:couchbase-lite:android:quickstart.adoc[Docs]
