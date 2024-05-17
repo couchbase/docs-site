@@ -44,8 +44,10 @@ content:
     branches: [release/7.2, capella]
   # - url: https://git@github.com/couchbasecloud/couchbase-cloud
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-45846-app-services-scopes-collections-docs]
+    branches: [main]
     start_path: docs/public
+  - url: https://github.com/couchbase/docs-capella
+    branches: [AV-45846-app-services-scopes-collections-docs]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.1]
 asciidoc:
