@@ -32,6 +32,20 @@ git config --global --remove-section credential
 +
 This stores your PAT in the `$HOME/.git-credentials` file on your computer. 
 
+[TIP]
+====
+If you run into issues with a private repository when trying to run another build later, run the following command through Git Bash: 
+
+[source,console]
+----
+git config --global credential.helper store && 
+echo -n 'Repository URL: ' && read REPLY 
+&& git ls-remote -h $REPLY > /dev/null
+----
+
+Enter the URL of the repository that's causing your build to fail when prompted. 
+====
+
 == Generate a Local Build with Antora 
 
 To generate a local build of the documentation site, as configured by your local playbook file: 
