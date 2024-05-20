@@ -8,7 +8,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/AV-72283
+  url: https://preview.docs-test.couchbase.com/AV-78303
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -38,20 +38,28 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.2, capella]
+    branches: [release/7.6, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.2, capella]
+    branches: [release/7.6, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-72283-buckets-scopes-collections]
+    branches: [AV-78303-remove-put-username]
     start_path: docs/public
+  - url: https://github.com/couchbase/docs-capella
+    branches: [AV-78303-remove-put-username]
   - url: https://github.com/couchbase/docs-analytics
-    branches: [release/7.2]
+    branches: [release/7.6]
+  - url: https://github.com/couchbase/couchbase-cli
+    branches: [neo]
+    start_path: docs
+  - url: https://github.com/couchbase/backup
+    branches: [neo]
+    start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.2]
+    branches: [release/7.6]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [release/7.2]
+    branches: [temp/7.5]
   - url: https://github.com/couchbase/docs-sdk-dotnet
     branches: [release/3.5]
   - url: https://github.com/couchbase/docs-sdk-java
@@ -83,7 +91,7 @@ asciidoc:
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
-    flag-devex-escape-hatch: '@'
+    # flag-devex-escape-hatch: '@'
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
@@ -97,6 +105,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-179/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-189/ui-bundle.zip
 output:
   dir: ./public
