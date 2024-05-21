@@ -1,6 +1,7 @@
 = Couchbase Server
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
+:page-rank: 75
 :!sectids:
 :tabs:
 

@@ -1,112 +1,169 @@
-:page-status: OUT OF DATE
-
 = Cross References
-:url-docs-antora: https://docs.antora.org/antora/2.0
+:url-docs-antora: https://docs.antora.org/antora/latest/
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
-:url-pageid: {url-docs-antora}/page/page-id/#important
+:url-pageid: {url-docs-antora}/page/xref/
 :url-xref: {url-docs-antora}/asciidoc/page-to-page-xref/
+:url-resource-id: {url-docs-antora}page/resource-id-coordinates/
 
-NOTE: {out-of-date}
+To create links between pages inside the Couchbase Documentation, you must use the cross reference (xref) macro. 
 
-To link between documentation pages, use the cross reference macro (commonly called an xref) and a page ID.
-The number of page ID coordinates you need to specify in the xref depends on the location of the current page in relation to the location of the destination page (i.e., the page you want to link to).
-The closer the two files are, the shorter the page ID.
+You need the resource ID of the page you want to link to before you can create an xref. 
+The number of attributes you need to specify in the resource ID depends on where the page you want to link to is located in relation to your current page. 
+Closer pages need fewer attributes. 
+
+For a good overview about resource IDs, see {url-resource-id}[the Antora documentation^].
+
+To understand some of the key terms associated with resource IDs and creating xrefs, see xref:repositories.adoc#dir-structure[About Couchbase Documentation Repositories].
 
 == Link to a Page in the Same Module
 
-To link to a page in the same module as the current page, all you need to know is the file name of the document.
+A page is in the same module as another page if they're in the same `<module-name>/pages` folder. 
+
+To link to a page in the same module as the current page, all you need to know is the page's filename.
+
+Start with the `xref:` macro, and add the full filename, including the extension.
+End with a set of square brackets (`[]`).
+Put text inside the square brackets to add link text, or leave it blank to use the title of the file. 
+
+For example: 
 
 [source,asciidoc]
 xref:name-of-file.adoc[link text]
 
-For example, to link to the AsciiDoc Basics page, a document that is in the same module as this page, Cross References, you write:
+To use an example from this Writer's Guide, to link to the `basics.adoc` file, which is in the same module as this page on cross references, you would write:
 
 [source,asciidoc]
 xref:basics.adoc[This links to the AsciiDoc Basics page].
 
-And this is the result:
+It would render in the finished documentation as: 
 
+****
 xref:basics.adoc[This links to the AsciiDoc Basics page].
+****
 
-.Link to a page in a topic folder
+=== Link to a Page in the Same Module But in a Topic Folder 
+
+If you want to link to a page that's inside a topic folder, or a subfolder of the `<module-name>/pages` folder, you just need to add the folder name, followed by a backslash (`/`) in front of the file name.
+
+For example: 
+
 [source,asciidoc]
 xref:concept/index.adoc[Key Concepts]
 
-.Link to a page in the same module but in a different version
+=== Link to a Page in the Same Module But in a Different Version 
+
+If you want to link to a page that's inside the same `<module-name>/pages` folder but in a different version of the documentation, add the version number, followed by an `@`, in front of the filename.
+
+For example: 
+
 [source,asciidoc]
 xref:3.3@error-handling.adoc#message-list[error messages]
 
-== Link to a Page in the Same Component
+== Link to a Page in a Different Module But the Same Component
 
-To link to a page in the same component as the current page, but in a different module, you need to know the file name of the document and the module name.
-The module name is the name of the top-level folder in the modules directory the document is stored in.
+To link to a page in the same component as the current page, but in a different module, you need to know the filename of the page and the module name.
+
+Add the module name (folder name), followed by a colon (`:`), in front of the filename. 
+
+For example: 
 
 [source,asciidoc]
 xref:module-name:name-of-file.adoc[link text]
 
-For example, to link to the document _index.adoc_, which is in the same component as this page but stored in the ROOT module, you write:
+To use an example from this Writer's Guide, to link to the `index.adoc` file in the `ROOT` module, you would write:
 
 [source,asciidoc]
 Let's go to the xref:ROOT:index.adoc[documentation home page].
 
-This renders as:
+It would render in the finished documentation as: 
 
+****
 Let's go to the xref:ROOT:index.adoc[documentation home page].
+****
 
 [#component-coordinate]
 == Link to a Page in a Different Component
 
-To link to a page in a different component, you need to know the destination component's name, module name, and file name.
+To link to a page in a different component, you need to know the page's component name, module name, and filename: 
+
+* Start with the component name, followed by a colon (`:`).
+* Add the module name, followed by a colon (`:`).
+* Add the filename, including the file extension. 
+
+For example: 
 
 [source,asciidoc]
 xref:component-name:module-name:name-of-file.adoc[link text]
 
-The component's name is located in the xref:component-configuration.adoc#config[component descriptor file, _antora.yml_], which is found in the destination component's repository.
+If you're not sure of the component name for your xref, you can check the `antora.yml` file inside the Documentation repository that holds that file. 
 
-.antora.yml in docs-server repository
+The `antora.yml` should always be found in the top-most level of the repository's files. 
+Look for the `name` attribute inside the `antora.yml` file. 
+
+The following is an example `antora.yml` file for version 5.5 of the Couchbase Server documentation: 
+
 [source,yaml]
 ----
-name: server # <1>
+name: server
 title: Couchbase Server
 version: '5.5'
 start_page: introduction:intro.adoc
 nav:
 - modules/ROOT/nav.adoc
 ----
-<1> Component name that you use in xrefs.
 
-To link from this page, to the What's New? page in the server component, you write:
+The `name` attribute is `server`. 
+
+To link from this page in the Writer's Guide to the What's New? page in the `server` component, you would write:
 
 [source,asciidoc]
 xref:server:introduction:whats-new.adoc[What's new] in Couchbase Server?
 
-This renders as:
+It would render in the finished documentation as: 
 
+****
 xref:server:introduction:whats-new.adoc[What's new] in Couchbase Server?
+****
 
 [#link-to-element]
 == Link to an Element in a Page
 
-To link to a specific element in another page, you need to know the element's ID.
-Add a hash (`#`) directly after the file name, followed by the ID of the element.
-For example, to link from this page to the Images section on the AsciiDoc Basics page, you write:
+You can link to a specific element, such as a heading, table entry, and more, by assigning or knowing that element's ID and adding it to your xref. 
+
+This is known as an xref:styleguide:anchor-links.adoc[anchor link].
+
+After the filename and extension, add a hash (`#`), then the element ID. 
+
+For example, you can link from this page to the *Images* heading in the AsciiDoc Basics page by writing: 
 
 [source,asciidoc]
 See xref:basics.adoc#images[Images].
 
-This renders as:
+The heading in the AsciiDoc Basics page looks like this in the source AsciiDoc file: 
 
+[source,asciidoc]
+[#images]
+== Images
+
+The xref would render in the finished documentation as: 
+
+****
 See xref:basics.adoc#images[Images].
+****
 
 == Cross Reference Best Practices
 
-* Create attributes for long page ID coordinates to improve the source readability for other contributors.
-* Create attributes for page ID coordinates used several times on the same page.
+* xref:attributes-and-roles.adoc[Create attributes] for long page ID coordinates to improve the source readability for other contributors.
+* xref:attributes-and-roles.adoc[Create attributes] for page ID coordinates used several times on the same page.
+* Make sure to always assign link text to xrefs when linking to an element on a page with an anchor link.
+Try to write xref:styleguide:links.adoc[good link text]. 
+* Leave the link text blank when you're not linking with an anchor link.
+This keeps link text up-to-date and accurate if a page title changes. 
 
 == Learn More
 
-* Refer to xref:ids.adoc[Element IDs and Same-Page Cross References] to learn how to create element IDs.
-* Refer to xref:attributes-and-roles.adoc[Attributes] to learn how to create document attributes.
+* For more information about how to assign IDs to elements on a page, see xref:ids.adoc[].
+* For more information about how to create and work with attributes in the documentation, see xref:attributes-and-roles.adoc[Attributes].
 
 == Additional Resources
 

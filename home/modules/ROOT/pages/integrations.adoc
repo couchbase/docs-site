@@ -1,6 +1,7 @@
 = Big Data Integration Using Couchbase Connectors
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
+:page-rank: 75
 :!sectids:
 
 include::partial$info-banner.adoc[]

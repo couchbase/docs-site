@@ -1,6 +1,7 @@
 = Couchbase Mobile - Embedded Database on the Edge
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
+:page-rank: 75
 :!sectids:
 
 include::partial$info-banner.adoc[]
