@@ -5,7 +5,7 @@ antora:
   extensions:
   - '@antora/site-generator-ms'
   - ./lib/embargo.js
-  - ./lib/antora-component-version-rank.js
+  # - ./lib/antora-component-version-rank.js
   - "@antora/collector-extension"
 site:
   title: Couchbase Docs
