@@ -1,12 +1,6 @@
 # npx antora --clean --fetch antora-playbook.yml
 # or
 # npx antora antora-playbook.yml
-antora:
-  extensions:
-  - '@antora/site-generator-ms'
-  - ./lib/embargo.js
-  # - ./lib/antora-component-version-rank.js
-  - "@antora/collector-extension"
 site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
