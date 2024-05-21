@@ -1,56 +1,79 @@
-:page-status: OUT OF DATE
-
 = Install Git and an AsciiDoc Editor
-:url-atom-docs: https://flight-manual.atom.io/getting-started/sections/installing-atom
-:url-linux: {url-atom-docs}/#platform-linux
-:url-mac: {url-atom-docs}/#platform-mac
-:url-windows: {url-atom-docs}/#platform-windows
+:url-vs-docs: https://code.visualstudio.com/docs/setup
+:url-linux: {url-vs-docs}/linux
+:url-mac: {url-vs-docs}/mac
+:url-windows: {url-vs-docs}/windows
 
-NOTE: {out-of-date}
+To get started with authoring Couchbase documentation, you need to: 
 
+. <<gh-account,>>
+. <<install-git,>>
+. <<install-editor,>>
+
+[#gh-account]
 == Create a GitHub Account
 
-The Couchbase documentation is stored on GitHub, so if you don't have a GitHub account, you need to https://github.com/join[create one^].
+The Couchbase documentation is stored on GitHub, so if you do not have a GitHub account, you need to https://github.com/join[create one^].
 
+If you're an official member of the Documentation team, other team members should help add your GitHub to the correct organizations, groups, and repositories on GitHub.
+Couchbase does not provide you with a GitHub account. 
+
+[#install-git]
 == Download and Install Git
 
-To clone and work with Git repositories on your device, i.e., local repositories, install Git using your operating system's package manager.
+To clone and work with Git repositories on your device, or what's known as local repositories, install Git using your operating system's package manager.
 Alternatively, you can download it from the https://git-scm.com/downloads[Git project^].
 
+=== Install GitHub Desktop
+
+If you're more comfortable working with a visual interface for interacting with Git, instead of using the command line and a terminal, consider installing https://desktop.github.com/[GitHub Desktop^].
+
+GitHub Desktop makes it easier to interact with Git and provides a fast way to xref:set-up-repository.adoc#clone-the-repository[clone new repositories] onto your computer. 
+
+You can also just use <<install-vs-code,VS Code>> and its integrated interface for Git. 
+
+[#install-editor]
 == Install an AsciiDoc Editor
 
-NOTE: we currently recommend to install VS Code
+NOTE: The current recommendation is to install VS Code.
 
 AsciiDoc is the markup language Couchbase uses for writing documentation.
 You can write an AsciiDoc document using a plain text editor or integrated development environment (IDE).
-If you don't have a preferred text editor or IDE, install Atom and the listed AsciiDoc packages for an enhanced experience.
+If you do not have a preferred text editor or IDE, install VS Code and the listed AsciiDoc packages for an enhanced experience.
 
-[#install-atom]
-=== Download and Install Atom
+[#install-vs-code]
+=== Download and Install VS Code
 
-Atom is an open source, extensible text editor that works on Linux, macOS, and Windows.
+Visual Studio Code is a free, open-source code editor that runs on all platforms. 
 
-. Go to the https://atom.io/[Atom home page^].
-The Atom home page should detect your operating system automatically and provide the correct download options.
-. Download and install Atom.
+. Go to the https://code.visualstudio.com/[VS Code home page^].
+The VS Code home page should detect your operating system automatically and provide the correct download options.
+. Download and install VS Code.
 Use the links below for additional installation instructions.
-** {url-linux}[Atom for Linux^]
-** {url-mac}[Atom for macOS^]
-** {url-windows}[Atom for Windows^]
+** {url-linux}[VS Code for Linux^]
+** {url-mac}[VS Code for macOS^]
+** {url-windows}[VS Code for Windows^]
 
 [#adoc-packages]
 === Install the AsciiDoc Packages
 
-. Start Atom and go to menu:Atom[Preferences] or press kbd:[Ctrl+,].
-This opens the Settings panel.
-. In the sidebar on the left, click btn:[Install].
-. In the input field labeled *Search packages*, enter each package listed below, and install them.
+After you have installed VS Code: 
 
-language-asciidoc::
-The `language-asciidoc` package provides AsciiDoc syntax highlighting and snippets.
+. Start VS Code and go click btn:[Extensions] beside the file explorer panel, or press kbd:[Ctrl+Shift+X].
+. In the *Search extensions in Marketplace* field, search for and install the following packages: 
 
-asciidoc-preview::
-The `asciidoc-preview` package renders a preview an AsciiDoc document in Atom.
+AsciiDoc::
+The `AsciiDoc` package by `asciidoctor` provides some nice-to-have features for editing AsciiDoc files in VS Code.
+
+Vale VSCode::
+The `Vale VSCode` package by `Chris Chinchilla` powers in-editor text linting, including a spellchecker, that the Documentation team uses on all documentation files.
+
++
+You could also consider installing: 
+
+GitHub Pull Requests::
+This official GitHub extension lets you create GitHub pull requests directly inside VS Code. 
+You will need to create pull requests for any changes you want to add to the documentation.
 
 == Next Step
 

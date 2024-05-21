@@ -1,21 +1,20 @@
 * xref:index.adoc[Overview]
 
 * Setting Up Your Workspace
- ** xref:install-git-and-editor.adoc[Install Git and an AsciiDoc Editor]
- ** xref:install-antora.adoc[Install Antora]
- ** xref:playbook.adoc[Get the Site Playbook Project]
- ** xref:set-up-repository.adoc[Set Up Your Local Repository]
- ** xref:build-site.adoc[Build the Site]
+ ** xref:install-git-and-editor.adoc[]
+ ** xref:install-antora.adoc[]
+ ** xref:set-up-repository.adoc[]
   
 * Contributing Workflow
  ** xref:workflow-overview.adoc[Overview]
- ** xref:repositories.adoc[Repository Organization]
- ** xref:create-branches.adoc[Create a Working Branch]
- ** xref:edit-pages.adoc[Edit Existing Documentation]
- ** xref:add-pages.adoc[Add a New Documentation Page]
- ** xref:update-nav.adoc[Update a Navigation File]
- ** xref:test-site.adoc[Test Changes Locally]
- ** xref:send-pr.adoc[Send Changes for Review]
+ ** xref:repositories.adoc[]
+ ** xref:create-branches.adoc[]
+ ** xref:edit-pages.adoc[]
+ ** xref:add-pages.adoc[]
+ ** xref:update-nav.adoc[]
+ ** xref:playbook.adoc[]
+ ** xref:test-site.adoc[]
+ ** xref:send-pr.adoc[]
 // ** Team Review Process
 // ** Revise Changes
 
@@ -33,7 +32,6 @@
 * Conventions & Styles
  ** xref:component-configuration.adoc[Component Structure and Configuration]
  ** xref:nav-menus-and-files.adoc[Navigation Menus and Files]
- ** xref:style-and-voice.adoc[Content Style and Voice]
  
 * Technical details
  ** xref:generate-rest-api.adoc[]

@@ -1,7 +1,5 @@
-:page-status: OUT OF DATE
-
-= Code Blocks and Callouts
-:url-docs-antora: https://docs.antora.org/antora/2.0
+= Code Blocks for Example Code
+:url-docs-antora: https://docs.antora.org/antora/latest/
 :url-docs-adoc: https://asciidoctor.org/docs/user-manual
 :url-examplesdir: {url-docs-antora}/modules/#examples-dir
 :url-resource: {url-docs-antora}/page/resource-id/
@@ -9,76 +7,70 @@
 :url-tags: {url-docs-adoc}/#by-tagged-regions
 :url-indent: {url-docs-adoc}/#normalize-block-indentation
 
-NOTE: {out-of-date}
+Use code blocks inside a documentation page to add example code. 
 
-== Code Blocks
+Code samples should be stored in the `examples` directory for a module and added to documentation pages with the <<include-code,`include::` directive>>.
+Some SDK examples have been added to the special `devguide` module inside each SDK docs repository.
+Using the `examples` directory and keeping code separate from AsciiDoc pages helps with our goal of automated code sample testing and maintenance. 
 
-Source code examples are entered into AsciiDoc listing blocks.
-Listing block content is displayed exactly as entered, and any indents and endlines are preserved.
-If the `source` style and a language are assigned to the block, the code is syntax highlighted on the site.
+Do not insert example code without testing that your code works. 
 
-[source,asciidoc]
-.Delimited code block with title
+== Code Example Formatting 
+
+Add a source code example by adding a source block to an AsciiDoc page. 
+
+Source blocks display content exactly as entered, preserving indents and line breaks. 
+
+Add the attribute `[source,<language>]` to a source block to add code syntax highlighting in the published documentation.
+
+For example, the following AsciiDoc: 
+
 ....
 include::example$code-blocks.adoc[tag=dl-co]
 ....
-<1> Assign the block style `source` to the first position in the attribute list.
-<2> Assign a source language to the second position.
-<3> Code the contains blank lines must be entered into a delimited listing block (`----`).
 
-Rendered as:
+Renders as: 
 
+****
 include::example$code-blocks.adoc[tag=dl]
+****
 
-Commands executed in a CLI are assigned the language `console` and lines are preceded by the command prompt (`$`).
+If you need to add any commands to documentation that are run in the command line, use `[source,console]` and add a `$` to the start of each command. 
 
-[source,asciidoc]
+For example, the following AsciiDoc:
+
 ....
 include::example$code-blocks.adoc[tag=console]
 ....
 
-Rendered as:
+Renders as: 
 
+****
 include::example$code-blocks.adoc[tag=console]
+****
 
-Note, using `[source,console]` ensures that the `$` prompt is not copied when the user clicks the clipboard icon that appears upon mouseover above the code block.
+TIP: Make sure to use `[source,console]` together with the `$` before each command.
+`[source,console]` makes sure that the user does not copy the `$` character when they copy from a code block. 
 
-Short code snippets don't need delimiters as long as they don't contain blank lines or callouts.
-
-[source,asciidoc]
-....
-include::example$code-blocks.adoc[tag=single]
-....
-
-Rendered as:
-
-include::example$code-blocks.adoc[tag=single]
-
-Code blocks can be grouped in a parent block element.
-
-[source,asciidoc]
-....
-include::example$code-blocks.adoc[tag=group-code-blocks]
-....
-
-Rendered as:
-
-include::example$code-blocks.adoc[tag=group-code-blocks]
 
 [#callouts]
 == Callout Numbers
+
+WARNING: Do not use the built-in callout numbers to add annotations and explanations to your example code. 
+For more information about alternatives, see xref:styleguide:examples.adoc#explaining-code-examples[Explaining Code Examples] in the style guide. 
+The following section has been left for reference on the mechanics of code callouts, for when you encounter them in documentation. 
 
 Callouts add annotations to lines in code blocks.
 The first callout number must be placed after the final character on a code line.
 The responding callout is listed below the block and followed by the annotation text.
 Multiple callout numbers can be used on a single line.
 
-[source,asciidoc,subs=-callouts]
+[subs=-callouts]
 ....
 include::example$code-blocks.adoc[tag=callouts]
 ....
 
-Rendered as:
+Will render as: 
 
 include::example$code-blocks.adoc[tag=callouts]
 
@@ -94,10 +86,13 @@ When you use this method, the callouts are numbered automatically.
 [#include-code]
 == Inserting Examples with the Include Directive
 
-The include directive inserts an entire file or tagged region from a file stored in the _examples_ directory of a module into a code block.
-Just specify the xref:includes.adoc[resource ID of the example file in the directive].
+Use the `include::` directive to insert a sample code file or tagged region from the `examples` directory into a file in the `pages` directory of a module. 
+Using the `include::` directive also adds the btn:[View on GitHub] button to the code sample, so readers can view the source file directly. 
 
-[source,asciidoc]
+You need to know the resource ID of the example file to include it inside a page. 
+
+For example, the following inserts the `contact.json` file into a file in the `pages` directory from the `examples` directory in the same module: 
+
 ....
 .Query result
 [source,json]
@@ -106,16 +101,16 @@ Just specify the xref:includes.adoc[resource ID of the example file in the direc
 ----
 ....
 
-You will find most of the SDK code samples included in `$examples` directories alongside the `pages` parent to the `.adoc` file that is calling them. 
-Else you will find thim in a special `devguide/examples` module in each SDK docs repo.
-Using `include::` adds a _Git hub_ link on mouseover, which leads to the code file on the repo.
+=== Insert Part of an Example 
 
-For a tagged region of a source file, set the tags around the code sample using the comment character appropriate to the source language, such as `//` or `#`:
+If you only want to insert part of an example code file, add tags around the part of the sample you want to include, using the comment character from your source language - such as `//` or `#`.
 
-[source,asciidoc]
+Start a tagged region with `tag::<tag-name>`. 
+End a tagged region with `end::<tag-name>`.
+
+For example, the following Ruby code adds a `read-only` tag: 
+
 ....
-[source,ruby]
-----
 # tag::read-only[]
 options = Cluster::QueryOptions.new
 options.readonly = true
@@ -123,12 +118,10 @@ cluster.query(
     'SELECT COUNT(*) AS airport_count FROM `travel-sample` WHERE type = "airport"',
     options)
 # end::read-only[]
-----
 ....
 
-And add the appropriate `[tag=]` to the `include::`.
+Then, in the square brackets (`[]`) at the end of the `include::` directive, add the tag name: 
 
-[source,asciidoc]
 ....
 .Read-only Query
 [source,json]
@@ -137,8 +130,7 @@ And add the appropriate `[tag=]` to the `include::`.
 ----
 ....
 
-Note that we aim to keep all code files in the examples directory runnable -- or at least compilable -- so if you are adding a snippet of code to an existing file, please test it.
-
+////
 == Try It Now
 
 The Couchbase documentation integrates with https://couchbase.live to offer an interactive code console called "`Try It Now`".
@@ -160,7 +152,7 @@ Here's an example of a code block with the "`Try It Now`" mode enabled:
 [source,asciidoc]
 ....
 [source.try-it,js]
-----
+....
 const couchbase = require('couchbase')
 
 const cluster = new couchbase.Cluster('couchbase://127.0.0.1', {
@@ -181,13 +173,13 @@ const getDocument = async (key) => {
 
 getDocument('airline_10')
   .then(() => process.exit(0))
-----
+....
 ....
 
 Here's how it appears when rendered:
 
 [source.try-it,js]
-----
+....
 const couchbase = require('couchbase')
 
 const cluster = new couchbase.Cluster('couchbase://127.0.0.1', {
@@ -207,11 +199,12 @@ const getDocument = async (key) => {
 }
 
 getDocument('airline_10').then(() => process.exit(0))
-----
+....
 
 The code sample has to be compatible with couchbase.live.
 The one exception is for Java.
 You can use a public class with any class name and the supporting script will rewrite the class name as `Program`.
+////
 
 == Learn More
 
