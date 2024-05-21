@@ -26,7 +26,8 @@ You should have automatically installed Git Bash when you installed Git on your 
 [source, console]
 ----
 git config --global credential.helper store && \
-git ls-remote -h <GITHUB_REPO_URL> > /dev/null && \
+# Set the variable to the appropriate URL for the repository that you want to connect to for your build.
+git ls-remote -h $GITHUB_REPO_URL > /dev/null && \
 git config --global --remove-section credential
 ----
 . Paste your PAT after the first prompt, then hit kbd:[Enter] twice. 
