@@ -1,5 +1,6 @@
 = Demo of template extension
 :page-role: openapi
+:page-toclevels: 2
 
 == Metrics example
 
@@ -51,6 +52,21 @@ Some template
 
 == Helpers and Partials
 
+=== Automatically included helpers
+
+Handlebars in docs-site lib/helpers/*.js are automatically included
+
+[template, example$test.yaml]
+--
+{{#if (eq foo.bar.baz "A successful test")}}
+    Matched expected content
+{{else}}
+    ERROR: got {{foo.bar.baz}}
+{{/if}}
+--
+
+=== Adding custom helpers by resourceId
+
 [template, example$test.yaml, helpers="example$helpers/foo.js", partials="partial$templates/partial.hbs"]
 --
 {{foo}}
@@ -87,7 +103,7 @@ WARNING: handling `additionalProperties` is not yet implemented.
 {{#each-openapi components.schemas.Database}}
 
 {{#if node.description}}
-[discrete#{{@path_id_href}}]
+[#{{@path_id_href}}]
 === `{{@path_id}}`
 
 Type::  {{{node.type}}}

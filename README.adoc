@@ -8,6 +8,7 @@
 :url-contribute: {url-docs}/home/contribute/
 :url-org: https://github.com/couchbase
 :url-ui: {url-org}/docs-ui
+:url-license: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 This is the Antora playbook project (aka site build) for the Couchbase documentation site published at {url-docs}.
 
@@ -108,3 +109,9 @@ Each message shows the repository source, the refname, and the path from the roo
 == Contributing
 
 To learn how to use the playbook and generate the docs site locally, see our {url-contribute}[contributing guide].
+
+== License
+
+Couchbase Server Documentation © 2024 by Couchbase Inc. is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
+
+See the LICENSE file or the {url-license}[Creative Commons CC BY-NC-SA 4.0 license page] for details.

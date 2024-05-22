@@ -1,95 +1,141 @@
-= Create a Working Branch
+= Create a New Working Branch
 
-Always make a new working branch for your work, no matter how small the change.
-You can create a working branch in Atom or from the command line.
+Before you start making any changes to the files in a xref:repositories.adoc[Couchbase Documentation repository], you must create a new branch for your work.
+
+For a quick overview on some terminology and concepts related to GitHub repositories, see https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories[About repositories in the GitHub Documentation^].
+
+You can create branches from: 
+
+* The command line
+* xref:install-git-and-editor.adoc#install-vs-code[VS Code]
+* xref:install-git-and-editor.adoc#install-github-desktop[GitHub Desktop]
+
+First, make sure you choose the right base branch for your work. 
 
 [#base-branch]
 == Choose the Right Base Branch
 
-A base branch contains the original source documentation.
-You create working branches from a base branch and send pull requests to a base branch for integration.
-A working branch isolates changes that solve a single issue.
-A pull request submitted from a working branch that only contains closely related changes is easier to test, review, and merge.
+The branch you choose as your base branch sets the source of truth for your new documentation. 
 
-The Couchbase documentation repositories maintain two types of base branches: master and release.
+Every Couchbase Documentation repository has 1 or more configured base branches that we use to build the documentation. 
+Usually, you should choose one of these configured base branches as your base branch for your working branch. 
 
-For Couchbase Server, SDKs, and Mobile docs, the default branch will be the latest release -- e.g. release/6.6.
-For other docs repos it will be master, which contains the documentation for the next, unreleased product version.
-New documentation for the next product version, its features, and non-bug related improvements should be based off of the master branch where it exists.
-For the others, look for a development branch with an incremented release number.
-This, and the current release branch, are the ones that you will most often base your working branch off of and submit pull requests to.
+For example, the Couchbase Capella documentation has a single base branch, `main`.
+Some other documentation repositories still use `master` as their base branch. 
+Couchbase Server, Couchbase Mobile, and the Couchbase SDKs use `release/x.x` branches to organize the documentation according to the product version it describes.
 
-Release branches (`release/$.$`) contain the documentation specific to a stable product release.
-Fixes related to product bugs and documentation errors in stable releases are based off of a release branch *only* if that bug or error is *only* present in that release.
-For example, if a broken code snippet is discovered in the Server 5.1 documentation, but it isn't present in the 5.5 and master branch documentation, then you'd base your working branch on the `release/5.1` branch.
+The single base branch or `release/x.x` branches for the latest few releases of a product are the only branches that get built into the main Couchbase Documentation site. 
 
-If you're unsure which branch to create your working branch from, check the associated issue's *Affects versions* field, or, in its comment section, ask the Docs team for more information.
-Also note that some of the repositories use custom branch names, see xref:repositories.adoc#repo-special[Repositories that Require Special Handling] for more information.
+We use working branches to keep changes separate and easier to reconcile, especially with multiple people working on the same files. 
+Working branches should try to aim to solve a single issue at a time. 
 
-[#work-branch-atom]
-== Create a Working Branch in Atom
+Typically, you should: 
 
-These instructions assume you've xref:install-git-and-editor.adoc#install-atom[installed Atom] and xref:set-up-repository.adoc[forked, cloned, and configured the upstream and origin remotes] of a documentation repository.
-
-. Start Atom.
-. If this is the first time you've worked on a repository, it may not appear in Atom's *Project* panel.
-Go to menu:File[Add Project Folder] and add the folder containing your local repository.
-. Select the image:repo.svg[,16,role=icon] repository directory that contains the files you want to edit.
+* Choose the `main`, `master`, or appropriate `release/x.x` branch for your changes.
 +
-image::project-panel.png[,300,align=left]
+For example, if an issue or a fix only relates to the 7.0 version of a product, then you should base your working branch on `release/7.0`. 
+* Name your working branch based on the ticket number for the issue. 
+* Create a pull request (PR) for your working branch that targets your original base branch. 
 
-. <<base-branch,Choose the right branch>> to base your changes on.
-Click the image:git-branch.svg[,16,role=icon] branch icon at the bottom of the editor.
-In the modal window, select the desired base branch from the dropdown menu.
+If you're ever unsure about the correct branch to use for an issue: 
+
+* Look for the *Affects versions* field on your assigned ticket
+* Ask another member of the Documentation team 
+* Check that the repository xref:repositories.adoc#repo-special[does not require special handling]
+
+
+[#work-branch-vs-code]
+== Create a Working Branch in VS Code
+
+Before you can create a new working branch in VS Code, make sure you have: 
+
+* xref:install-git-and-editor.adoc#gh-account[Created a GitHub account]
+* xref:install-git-and-editor.adoc#install-git[Installed Git]
+* xref:install-git-and-editor.adoc#install-vs-code[Installed VS Code]
+* xref:set-up-repository.adoc[Set up the correct Documentation repository]
+
+To create a new working branch in VS Code: 
+
+. Start VS Code. 
+. On the *Welcome* tab, click btn:[Open Folder].
+. Select the folder on your computer where you xref:set-up-repository.adoc[cloned the Documentation repository]. 
+. Click btn:[Select Folder].
+. Click image:source-control.png["The Source Control icon from the VS Code editor. It shows a forked line.",20] btn:[Source Control]. 
 +
-image::select-base-branch.png[,380,align=left]
+VS Code might prompt you that the repository has been marked as unsafe:
++ 
+image::unsafe-repo-1.png["The Source Control panel, which displays a warning that the detected Git repository is unsafe.",500,align=left]
 
-. Pull the latest changes from the upstream repository.
-Click the image:arrow-small-down.svg[,16,role=icon]image:arrow-small-up.svg[,16,role=icon] arrow icons at the bottom of the editor, then press btn:[Pull].
+. Click btn:[Manage Unsafe Repositories] and select the repository to continue:
++ 
+image::unsafe-repo-2.png["The Command Palette in VS code, which lets the user select the repository they want to mark as safe.",,align=left]
+. Point to the *Source Control* label and click btn:[...] (*More Actions...*):
 +
-image::pull-base-branch.png[,380,align=left]
-
-. Create a new working branch from the base branch.
-Click the image:git-branch.svg[,16,role=icon] branch icon.
-In the modal window, click btn:[New Branch], and enter the name of the new working branch in the form field.
+image:more-actions.png["The Source Control panel in VS Code. The user has pointed to the top of the panel and brought up the additional context menu, and the More Actions button is highlighted.",,align=left]
+. Click btn:[Checkout to...].
+. <<base-branch,Choose the correct base branch for your new working branch>>.
 +
---
-image::new-branch.png[,380,align=left]
+You can select it from the list of branches or type to search for the correct branch.
+If this is the first time you're choosing your base branch, the branch name must be prefixed with `origin/`.
+. To get the latest copy of any changes on your base branch, click btn:[Sync Changes].
+. Point to the *Source Control* label again and click btn:[...] (*More Actions...*).
+. Go to menu:Branch[Create Branch...].
+. Enter a name for your new working branch.
++
+Start with the name of your ticket, if you have one. 
+Provide a few words, separated by dashes (`-`) to describe the changes on the branch.
+Try to stick to 3-5 words. 
+. Press kbd:[Enter].
+. Click btn:[Publish Branch].
 
-The name of a working branch should pair it with the issue it resolves.
-For example, if you're resolving DOC issue #6500, you'd name the working branch `DOC-6500`.
---
+Now you can <<next-steps,add or edit new pages in your new branch>>.
 
-Now you're ready to <<next-steps,write or edit documentation>>.
 
 [#work-branch-cli]
 == Create a Working Branch from the Command Line
 
-These instructions assume you've xref:set-up-repository.adoc[forked, cloned, and configured the upstream and origin remotes] of a documentation repository.
+Before you can create a new working branch using the command line, make sure you have: 
 
-. Open a terminal and change into the repository directory that contains the files you want to edit.
+* xref:install-git-and-editor.adoc#gh-account[Created a GitHub account]
+* xref:install-git-and-editor.adoc#install-git[Installed Git]
+* xref:set-up-repository.adoc[Set up the correct Documentation repository]
 
- $ cd path/to/repository-folder
+To create a new working branch from the command line: 
 
-. <<base-branch,Choose the right branch>> to base your changes on and check it out.
-
- $ git checkout name-of-base-branch
-
-. Download the latest changes from the upstream repository.
-
- $ git pull upstream name-of-base-branch
-
-. Create a working branch from the base branch and checkout the working branch.
+. Open your terminal.
+. Navigate into the directory on your computer that contains the Documentation repository you want to work with:
 +
---
- $ git checkout -b DOC-$$$$
+[source,console]
+----
+$ cd <path/to/repository>
+----
+. <<base-branch,Choose the correct base branch for your new working branch>>.
+After you know the correct branch name, enter the following command to check out the branch:
++
+[source,console]
+----
+$ git checkout <name-of-base-branch>
+----
+. Run a pull to make sure you have downloaded the latest changes from the branch: 
++
+[source,console]
+----
+$ git pull upstream <name-of-base-branch>
+----
+. Use the same checkout command with the `-b` flag to create a new branch from the base branch and check it out: 
++
+[source,console]
+----
+$ git checkout -b <name-of-new-working-branch>
+----
++
+Start your branch name with the name of your ticket, if you have one. 
+Provide a few words, separated by dashes (`-`) to describe the changes on the branch.
+Try to stick to 3-5 words. 
 
-The name of a working branch should pair it with the issue it resolves.
-For example, if you're resolving DOC issue #6500, you'd name the working branch `DOC-6500`.
---
+Now you can <<next-steps,add or edit new pages in your new branch>>.
 
 == Next Steps
 
-* xref:edit-pages.adoc[Edit existing documentation using Atom].
-* xref:edit-pages.adoc#edit-server[Step through editing a page in the Server Component].
+* xref:edit-pages.adoc[Edit existing documentation using VS Code].
 * xref:add-pages.adoc[Add new documentation pages].

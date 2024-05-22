@@ -3,15 +3,6 @@
     "Id": "Policy1488222338812",
     "Statement": [
         {
-            "Sid": "Stmt1488222337054",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::627824391786:user/matt.carabine@couchbase.com"
-            },
-            "Action": "s3:*",
-            "Resource": "arn:aws:s3:::docs.couchbase.com"
-        },
-        {
             "Sid": "Stmt1532387574773",
             "Effect": "Allow",
             "Principal": {

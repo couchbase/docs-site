@@ -98,13 +98,27 @@ pipeline {
         sh 'cat etc/nginx/snippets/rewrites.conf public/.etc/nginx/rewrite.conf | awk -F \' +\\\\{ +\' \'{ if ($1 && a[$1]++) { print sprintf("Duplicate location found on line %s: %s", NR, $0) > "/dev/stderr" } else { print $0 } }\' > public/.etc/nginx/combined-rewrites.conf'
       }
     }
+
+    stage('Make Global Sitemap') {
+      steps {
+        sh '''
+          SCRIPT_PATH="scripts/make-global-sitemap.sh"
+          if [ -f "${SCRIPT_PATH}" ]; then
+            ${SCRIPT_PATH} || echo "Script failed to run, but continue anyway"
+          else
+            echo "Skipping - script not found"
+          fi
+        '''
+      }
+    }
+
     stage('Publish') {
       steps {
         withCredentials([awsCredentials]) {
           script {
             def includeFilter = sh(script: 'find public -mindepth 1 -maxdepth 1 -type d -name [a-z_]\\* -printf %f\\\\0', returnStdout: true).trim().split('\0').sort().collect { "--include '$it/*'" }.join(' ')
             sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' ${includeFilter} --exclude '_/font/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
-            sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' --include 'sitemap*.xml' --include 'site-manifest.json' --include 'index.html' --include '404.html' --include 'robots.txt' --exclude '*/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
+            sh "aws s3 ${s3Cmd} public/ s3://$siteS3Bucket/ --exclude '*' --include 'global-sitemap.xml' --include 'sitemap*.xml' --include 'site-manifest.json' --include 'index.html' --include '404.html' --include 'robots.txt' --exclude '*/*' --acl public-read --cache-control 'public,max-age=0,must-revalidate' --metadata-directive REPLACE --only-show-errors"
           }
           // NOTE copy fonts again to fix content-type header
           sh "aws s3 cp public/_/font/ s3://$siteS3Bucket/_/font/ --recursive --exclude '*' --include '*.woff' --acl public-read --cache-control 'public,max-age=604800' --content-type 'application/font-woff' --metadata-directive REPLACE --only-show-errors"
@@ -117,6 +131,7 @@ pipeline {
         }
       }
     }
+
     stage('Invalidate Cache') {
       steps {
         withCredentials([awsCredentials]) {

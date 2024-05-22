@@ -1,6 +1,7 @@
 = Couchbase on Containers, Kubernetes, and Cloud
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
+:page-rank: 75
 :!sectids:
 
 include::partial$info-banner.adoc[]

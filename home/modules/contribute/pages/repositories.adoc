@@ -1,4 +1,4 @@
-= Repository Organization
+= About Couchbase Documentation Repositories
 :url-git-cb: https://github.com/couchbase
 :url-git-labs: https://github.com/couchbaselabs
 :url-git-server: {url-git-cb}/docs-server
@@ -28,9 +28,15 @@
 :url-git-swagger: {url-git-labs}/cb-swagger
 :url-git-kafka: {url-git-cb}/kafka-connect-couchbase
 :url-git-spark: {url-git-cb}/couchbase-spark-connector
-//Couchbase uses Antora to manage and build docs.couchbase.com.
 
-The Couchbase documentation is stored in multiple repositories that are organized in a standard directory structure.
+The Couchbase Documentation site is built using multiple GitHub repositories. 
+Each product tends to have its own GitHub repository or repositories.
+Some repositories contain common files for multiple products.
+
+For a quick overview on some terminology and concepts related to GitHub repositories in general, see https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories[About repositories in the GitHub Documentation^].
+
+Each repository follows the standard structure for an Antora component and its modules.
+For more information about our specific Antora repository file structure, see <<dir-structure,>>.
 
 [#repo-urls]
 == Documentation Repository Roster
@@ -57,11 +63,13 @@ The following repositories accept contributions via the regular workflow and use
 * {url-git-sdk-common}[SDK Common^]
 * {url-git-home}[Home and Contribute^]
 
+For a complete list, see the Documentation Repos Master List on the internal Couchbase Confluence. 
+
 [#repo-special]
 === Repositories that Require Special Handling
 
 Some Couchbase repositories only accept contributions via Gerrit, use custom branch patterns, and have additional content and AsciiDoc requirements.
-Review the project's README for the latest contributing requirements, and contact the project lead before working on documentation stored in these repositories.
+Review the project's README for the latest contributing requirements, or ask another Couchbase Documentation team member.
 
 ==== CLI
 
@@ -112,4 +120,4 @@ include::partial$component-terms.adoc[]
 == Next Steps
 
 . xref:create-branches.adoc#base-branch[Choose a base branch].
-. xref:create-branches.adoc#work-branch-atom[Create a working branch in Atom] or xref:create-branches.adoc#work-branch-cli[from the command line].
+. xref:create-branches.adoc[Create a working branch for your changes].
