@@ -23,6 +23,10 @@ site:
     google_analytics: GTM-MVPNN2
     nav_groups: |
       [
+        { "title": "Develop", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
+        { "title": "Administer", "startPage": "cloud::index.adoc", "components": ["cloud"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Reference", "startPage": "home::server.adoc", "components": ["server"] }
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
         { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
         { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
@@ -52,12 +56,11 @@ content:
     branches: main
     start_paths: [styleguide, ui-ux, pendo]
   - url: https://github.com/couchbaselabs/docs-devex
-    # branches: [release/7.2, capella, elixir]
     branches: [release/7.6, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
+    branches: [release/7.2, release/7.1, release/7.0, release/7.6, capella]
     start_path: docs
-  # - url: https://git@github.com/couchbasecloud/couchbase-cloud
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_path: docs/public
@@ -165,9 +168,9 @@ content:
   # - url: https://github.com/amarantha-k/OpenID_connect_tutorial
   #   branches: [tutorial]
   #   start_path: content
-  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
-    branches: [master]
-    start_path: content
+  #- url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
+  #  branches: [master]
+  #  start_path: content
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
