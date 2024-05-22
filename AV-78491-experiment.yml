@@ -48,7 +48,7 @@ content:
   - url: https://github.com/couchbase/docs-capella
     branches: [main]  
   - url: https://github.com/couchbaselabs/docs-columnar
-    branches: [AV-78256-create-kafka]
+    branches: [AV-78491-experiment]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
