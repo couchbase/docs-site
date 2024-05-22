@@ -106,7 +106,7 @@ content:
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.6, release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [release/7.6, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
   - url: https://github.com/couchbase/docs-txn-cxx
@@ -128,7 +128,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [temp/3.5, release/3.4, release/3.3]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [temp/1.6, release/1.5, release/1.4, release/1.3]
+    branches: [release/1.6, release/1.5, release/1.4, release/1.3]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
     # Mobile Docs Pages
