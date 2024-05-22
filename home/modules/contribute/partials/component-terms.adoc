@@ -1,17 +1,22 @@
-The Couchbase repositories that contain documentation use a standard directory structure and nomenclature.
+All Couchbase Documentation repositories use a standard directory structure and some common files and features.
 This ensures that Antora can locate the documentation components, collect the content files, and then build docs.couchbase.com.
 
-Component::
-A documentation component contains AsciiDoc files, their optional assets and examples, one or more optional navigation files, and a component descriptor file per repository.
-All of the files in a component are versioned together.
-+
---
-While it is common to find all of a component's files in a single repository, a component can be distributed across several repositories.
-The Server component is aggregated from the _docs-server_, _couchbase-cli_, _backup_, and _asterix-opt_ repositories.
+Here are some key terms for Couchbase Documentation repositories and files: 
 
-A component isn't recognized by a repository or directory.
-Instead, the presence of a file named _antora.yml_ indicates that the directories and files nested under it are part of a component.
---
+Component::
+A component contains: 
+* AsiiDoc content files
+* Assets, like images 
+* Examples, like code samples
+* Navigation files 
+* A component descriptor file (`antora.yml`).
++
+All of the files in a component are versioned together, based on the `antora.yml`.
++
+Components can sometimes be distributed across several GitHub repositories. 
+For example, the component for the Server documentation is built from `docs-server`, `couchbase-cli`, `backup`, and `asterix-opt`. 
+
+All components are identified by `antora.yml` - not a repository or directory.
 
 Component Descriptor::
 A component must contain a component descriptor file named _antora.yml_.
@@ -19,35 +24,44 @@ When Antora finds _antora.yml_ in a repository, it knows it has located a compon
 The component descriptor tags the files under its hierarchy with the specified component name and version.
 
 Component-Version::
-In these contributing pages, DOCs issues, and the Antora documentation, the term _component-version_ is used when discussing concepts that apply to a version of a component.
-It's important to remember that a component's name and a component's version *may be very different* than the names of the repository and branch where it's stored.
+A component version is a specific version of the documentation stored in a component. 
+Component names and component versions do not always map to a GitHub repository and branch. 
+They can be set and modified independently from the GitHub repository and branch structure. 
 
 Module::
-A module is a discrete bundle of content, including text, images, and other source materials, organized in a hierarchy of folders by content format, then by optional topic if needed.
-A module is stored in a component's _modules_ directory.
-A component can contain one or more modules.
+Modules organize content files, including text, images, and code samples, inside a component. 
+Modules are stored under the `modules` folder in a component. 
+Components can contain multiple modules. 
 
 ROOT Module::
-The ROOT module contains all the content that's directly associated with the component itself.
-When pages in the ROOT module are published, these pages are promoted a level above any other modules' pages in that component's URL.
+The `ROOT` module contains necessary top-level content associated with a component.
+For example, the `ROOT` module contains the navigation files for a component.
+When pages in the `ROOT` module are published, these pages are promoted a level above any other modules' pages in that component's URL.
+
+Navigation Files::
+The `ROOT` module usually contains a navigation file called `nav.adoc`.
+It contains an unordered list of xref:cross-references.adoc[cross references] to documentation pages in specific modules inside the component. 
+Antora uses navigation files to build xref:nav-menus-and-files.adoc[navigation menus] for a component. 
+For more information about working with navigation files, see xref:update-nav.adoc[].
 
 Pages::
-The _pages_ directory contains a module's AsciiDoc files.
-These files are automatically converted to standalone HTML pages.
-See the xref:pages.adoc[Standard Document Structure] to learn how to structure an AsciiDoc file.
+A `pages` directory exists under a specific module in the `modules` directory.
+The `pages` directory specifically contains any AsciiDoc text files for whole pages in the Couchbase Documentation.
+For more information about structuring files in the `pages` directory, see xref:pages.adoc[].
 
 [[partials-dir]]Partials::
-The _partials_ directory contains AsciiDoc files that aren't standalone pages.
-These files are referenced by an xref:includes.adoc[include directive] from a document in the _pages_ directory.
+A `partials` directory exists under a specific module in the `modules` directory.
+The `partials` directory contains AsciiDoc files that can be inserted inside files in the `pages` directory.
+This is helpful for content reuse and single-sourcing information across multiple pages. 
+For more information about partials, see xref:includes.adoc[].
 
 Assets::
-Multimedia and supplemental files, organized by format, are stored in the _assets_ directory.
-Photographs, screenshots, and graphic files in _assets/images_ are inserted into pages using the xref:basics.adoc#images[image macro].
+An `assets` directory exists under a specific module in the `modules` directory.
+The `assets` directory can contain sub-directories, like `images`, that organize images and other multimedia files for the documentation. 
+You can insert files in these directories into files in the `pages` directory.
+For more information about how to insert images into documentation, see xref:basics.adoc#images[].
 
 [[examples-dir]]Examples::
-Non-AsciiDoc files, such as source code, are stored in the _examples_ directory.
-These files are often inserted into xref:code-blocks.adoc[code blocks] using an xref:includes.adoc[include directive].
-
-Navigation::
-A xref:update-nav.adoc[navigation file], often named _nav.adoc_, contains one or more AsciiDoc lists.
-Antora uses these files to build the site's xref:nav-menus-and-files.adoc[component navigation menus].
+An `examples` directory exists under a specific module in the `modules` directory. 
+The `examples` directory contains non-AsiiDoc or image files, usually source code, for inserting as examples into the documentation. 
+For more information about how to work with code examples, see xref:code-blocks.adoc[]. 

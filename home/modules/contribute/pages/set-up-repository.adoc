@@ -1,75 +1,69 @@
-:page-status: OUT OF DATE
+= Set Up Documentation Repositories
 
-= Set Up Your Local Repository
-
-NOTE: {out-of-date}
+To contribute to the Couchbase Documentation, you need to get the repository that contains the documentation files onto your computer. 
+For a quick overview on some terminology and concepts related to GitHub repositories, see https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories[About repositories in the GitHub Documentation^].
 
 You only need to do these steps the first time you contribute to a repository.
 
-== Fork the Repository
+== Find the Correct Repository 
 
-Before you can contribute changes to the Couchbase documentation, you must fork the appropriate repository to your personal GitHub account.
+To start, you need to know which Couchbase Documentation repository contains the files you need to edit. 
 
-. Go to the appropriate repository on GitHub and click btn:[Fork].
-See xref:repositories.adoc#repo-urls[Repository Organization] for the list of active repositories
+TIP: You can quickly find the correct repository for a page by using the image:edit.svg[,16,role=icon] *Edit on GitHub* button at the top of a page on the Couchbase Docs site. 
 
-.How to quickly find the right repository
-****
-To quickly find a page's source file, click on the image:edit.svg[,16,role=icon] edit icon at the top of the page.
-You'll be taken to the page's repository.
-Click btn:[Fork].
+Couchbase Documentation repositories are usually prefixed with `docs-`.
 
-If there isn't an image:edit.svg[,16,role=icon] edit icon on the page, then the repository can't accept changes using the regular workflow.
-See xref:repositories.adoc#repo-special[Repositories that Require Special Handling] for more information or propose fixes and improvements using the btn:[Feedback?] button at the bottom of the page.
-****
-
+[#clone]
 == Clone the Repository
 
-After you fork the repository, clone it to your device.
+NOTE: Contributors from outside Couchbase need to https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo[fork documentation repositories^] to contribute changes.
+If you're a Couchbase employee, DO NOT fork repositories to contribute to Couchbase Documentation.
 
-. Create or select the folder where you want to store the repository on your device.
-. Open a terminal and change into the selected folder.
+After you have found the repository that you want to work in, you need to clone it onto your computer:
 
- $ cd path/to/folder
+. On the GitHub page for the repository, click btn:[Code].
+. In the *Local* tab, do one of the following: 
+.. To copy a command to use in your terminal, click btn:[HTTPS] and then the btn:[Copy] icon.
+Continue to <<clone-with-the-command-line,>>
+.. To clone the repository using xref:install-git-and-editor.adoc#install-github-desktop[GitHub Desktop], click btn:[Open with GitHub Desktop].
+Continue to <<clone-with-github-desktop,>>.
+.. To clone the repository using VS Code, see <<clone-with-vs-code,>>.
 
-. Go to your repository on GitHub, and click btn:[Clone or download].
-. Click the Clipboard icon to copy the repository's Git URL.
-. In your terminal type `git clone`, paste the copied URL, and press kbd:[Enter].
-For example, to clone your fork of the docs-server repository, you'd enter:
+=== Clone with the Command Line
 
- $ git clone git@github.com:this-is-you/docs-server.git
+To continue cloning the repository with the command line: 
 
-. Change into the repository folder created by the clone operation.
-
- $ cd docs-server
-
-== Sync with the Upstream Repository
-
-You need to connect your local repository to the upstream repository so the two repositories can stay in sync.
-
-. Go to the upstream repository on GitHub, and click btn:[Clone or download].
-. Click the Clipboard icon to copy the repository's Git URL.
-. In your terminal type `git remote add upstream`, paste the copied URL, and press kbd:[Enter].
-For example, to connect to the remote upstream docs-server repository, you'd enter:
-
- $ git remote add upstream git@github.com:couchbase/docs-server.git
-
-. View the configured upstream and origin values and confirm the URLs are correct.
+. Do one of the following: 
+.. Create a new folder on your computer where you want to store the files for the new repository.
+Consider giving the folder the same name as the repository. 
+.. Select an existing folder where you want to store the files for the new repository. 
+. Open a new terminal window. 
+. In your terminal, enter the following command, replacing `<path/to/folder>` with the path to your folder from Step 1, and press kbd:[Enter]: 
 +
---
- $ git remote -v
+----
+$ cd <path/to/folder>
+----
+. Type `git clone`, paste the URL you copied from GitHub, and press kbd:[Enter].
+The command should look similar to the following: 
++
+----
+git clone https://github.com/couchbaselabs/docs-devex.git
+----
 
-The origin URLs should point to your personal fork, and the upstream URLs should point to the repository in the Couchbase organization.
---
+Wait for the clone process to finish downloading the main branch of the repository onto your computer. 
 
-. Download upstream changes.
+=== Clone with GitHub Desktop 
 
- $ git fetch upstream
+To continue cloning the repository with GitHub Desktop, follow the instructions in the https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop[GitHub Desktop documentation^].
 
-Now you're ready to start working on the documentation.
+Wait for the clone process to finish downloading the main branch of the repository onto your computer. 
+
+=== Clone with VS Code 
+
+To clone a repository using VS Code, follow the instructions in the https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_open-a-git-repository[VS Code documentation^].
 
 == Next Steps
 
 . xref:workflow-overview.adoc[Get an overview of the entire contributing workflow].
 . xref:create-branches.adoc#base-branch[Choose a base branch].
-. xref:create-branches.adoc#work-branch-atom[Create a working branch in Atom] or xref:create-branches.adoc#work-branch-cli[from the command line].
+. xref:create-branches.adoc#work-branch-vs-code[Create a working branch in VS Code] or xref:create-branches.adoc#work-branch-cli[from the command line].

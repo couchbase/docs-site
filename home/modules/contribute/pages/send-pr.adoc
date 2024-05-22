@@ -1,47 +1,132 @@
-:page-status: OUT OF DATE
-
 = Send Your Changes for Review
 
-NOTE: {out-of-date}
+After you have xref:edit-pages.adoc[edited documentation], xref:add-pages.adoc[added any new pages], and xref:test-site.adoc[tested your changes with a local build], you should:
 
-After you complete your changes and fixed any warnings and errors reported by Antora, it's time to commit and push your working branch to your remote repository.
+* <<commit,Commit and push your changes>>.
+* <<pr,Open a pull request (PR)>> to merge your changes into the live documentation. 
 
 [#commit]
-== Commit, Rebase, and Push
+== Commit and Push Your Changes
 
-. Add the new and changed files.
+Committing your files means that you're ready for those changes to go to the remote version of your branch in the GitHub repository. 
+Commits group related changes together on a branch.
+You can group similar changes together in a commit to make it easier to undo changes.
 
- $ git add file-path-and-name
+Pushing actually sends your changes to the remote version of your branch in the GitHub repository. 
+Pushing ensures that the changes are safely stored on GitHub, and not just your computer. 
 
-. Commit your changes.
+It's a good idea to commit and push regularly to avoid losing your work. 
 
- $ git commit -m "fix magic bucket example"
+You can commit and push using VS Code, GitHub Desktop, or the command line. 
 
-. Fetch any upstream base branch changes.
+=== Commit and Push With VS Code 
 
- $ git fetch upstream name-of-base-branch
+TIP: You can view more details in the https://code.visualstudio.com/docs/sourcecontrol/intro-to-git[VS Code Documentation^].
 
-. If the upstream base branch has changed, rebase your working branch against it.
+To commit changes and push them to your remote branch from VS Code: 
 
- $ git rebase upstream/name-of-base-branch
+. Click image:source-control.png["The Source Control icon from the VS Code editor. It shows a forked line.",20] btn:[Source Control]. 
++
+VS Code should list all of the changes you have made to files in the repository. 
+Click a change entry to view more details. 
+. Do one of the following: 
+.. To prepare to commit a single change, point to the change entry and click btn:[+ (Stage Changes)].
+.. To prepare to commit all of your listed changes, point to the *Changes* heading and click btn:[+ (Stage All Changes)].
++
+TIP: If you want to discard any changes, point to the change and click image:discard-changes.png["The Discard Changes button. It shows an arrow pointing back on itself.",20] btn:[Discard Changes].
+. In the text field, write a descriptive commit message.
+Start your commit message with the ticket number for your changes, surrounded in square brackets.
+For example, `[AV-000001]`.
++
+Try to be descriptive about what you changed so other contributors know what changes were made in your commit.
+For example, `Changed "server" to "Server" in add-pages.adoc`.
+. Click btn:[Commit].
+. Click btn:[Sync Changes].
 
-. Push your working branch to your remote fork on GitHub.
+=== Commit and Push with GitHub Desktop 
 
- $ git push origin DOC-$$$$
+See the documentation on https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop[Committing and reviewing changes to your project in GitHub Desktop^].
+
+When you're writing your commit message, start with the ticket number for your changes, surrounded in square brackets.
+For example, `[AV-000001]`.
+
+Try to be descriptive about what you changed so other contributors know what changes were made in your commit.
+For example, `Changed "server" to "Server" in add-pages.adoc`.
+
+=== Commit and Push with the Command Line 
+
+To commit changes and push them to your remote branch from the command line: 
+
+. Open a terminal window. 
+. Check the changes on your local branch: 
++
+[source,console]
+----
+$ git status
+----
+. For each file you want to add to your commit, run the following command, filling in the filepath and filename: 
++
+[source,console]
+----
+$ git add <file-path>/<file-name>
+----
+. Run the following command to add a commit message and commit your changes, filling in a descriptive commit message:
++
+[source,console]
+----
+$ git commit -m "<Your-commit-message>"
+----
++
+Start your commit message with the ticket number for your changes, surrounded in square brackets.
+For example, `[AV-000001]`.
++
+Try to be descriptive about what you changed so other contributors know what changes were made in your commit.
+For example, `Changed "server" to "Server" in add-pages.adoc`.
+. Push your changes to the remote version of your branch by running the following command: 
++
+[source,console]
+----
+$ git push origin <branch-name>
+----
 
 [#pr]
-== Submit a Pull Request
+== Open a Pull Request for Your Branch
 
-After you push your working branch to your remote repository on GitHub, you can submit a pull request to the upstream repository for review.
+After you have committed and pushed all of the changes you need to make to the documentation files to GitHub, you need to open a pull request (PR). 
 
-. Go to your repository on GitHub, and click btn:[Compare & pull request].
-. On the Open a Pull Request screen, update the PR title if it needs clarification, and then click btn:[Create Pull Request].
+PRs let other writers review your changes before they get added to the live documentation.
+They merge the changes from your working branch into a release branch or the main branch in a Documentation repository. 
 
-Your pull request will be reviewed by a member of the Documentation team.
-Feedback and suggestions for improvements to the pull request are a standard part of the process, to ensure consistency across the documentation.
-Response will normally be within a couple of working days, but can sometimes take longer -- please bear with us, we really do appreciate contributions from the community.
+To open a PR for your working branch: 
 
-== Submit a Review
+. Go to the GitHub page for the repository you were working on. 
+. In the branch list, select your branch:
++
+image::github-branches-list.png["The GitHub branches list on the docs-site repository. It shows a list of the branches in the repository, with a text box where you can find or create a new branch and the option to view all branches."]
+. Go to menu:Contribute[Open Pull Request].
+. In the *base* list, select the branch you selected as your base branch when you xref:create-branches.adoc[created your working branch].
+. In the *Add a title* field, enter a descriptive title for your changes.
++
+Start with the ticket number for your changes, surrounded in square brackets.
+For example, `[AV-000001]`.
+The rest of your title can be similar to the name of your branch. 
+. In the *Add a description* field, enter a more detailed description of the changes you made with your commit or commits.
++
+Make sure to provide enough context that your reviewers know why you made the changes.
+If you're making a substantial enough change, make sure to also include a link to your preview site.
+. In the *Reviewers* section, click the gear icon and add any specific reviewers you need for your PR. 
++
+You might need to know their GitHub username. 
+. If you're ready to send a notification to your chosen reviewers, click btn:[Create Pull Request].
++
+If you still need more time to make additional changes, but just wanted a quick check on the start of a project, expand btn:[Create Pull Request] and click btn:[Create draft pull request], instead.
+
+Your PR should be reviewed by your chosen reviewers or someone else on the Documentation team within a couple of working days.
+We greatly appreciate community contributions and do our best to review them promptly. 
+
+If you're a member of the Documentation team, do not forget to share a link to your PR in our review channel on Slack. 
+
+== Review an Existing Pull Request
 
 To review an existing pull request, use GitHub's Pull Request Review features:
 
@@ -55,38 +140,9 @@ To incorporate feedback from a review of an existing pull request, use GitHub's 
 
 == Next Step
 
-Learn how AsciiDoc xref:asciidoc-overview.adoc[is used for Couchbase documentation].
+After your PR has been reviewed, you can click btn:[Merge pull request] to merge your changes into your chosen branch. 
 
+If you're a member of the Documentation team, you can choose to build the Couchbase Documentation site to get your changes live right away, or wait for the daily build to publish your changes the next day. 
 
-
-
-
-// Can the below be deleted now?
-
-////
-== Submit a Pull Request
-
-Once your changes are in a branch on GitHub it is time to submit them to the main couchbase repository.
-
-This is done using pull requests, you can read more about pull requests in general at https://help.github.com/articles/creating-a-pull-request/.
-
-== Pull Request Testing and Review
-
-This section will focus on what happens once you have created your pull request from your fork's branch onto the master branch.
-
-1. As soon as your pull request has been submitted, the continuous integration will trigger, this can be seen as the check 'PR-Build'.
-This builds the entire documentation set including your changes to ensure that it builds successfully (thus preventing malformed dita from breaking master).
-Once it has done this it will report back whether or not it was successful, along with a link to a preview of any pages which have been updated in the PR.
-You can use these links to see what your changes will look like (and whether or not you think you need further changes).
-Every time the content of the PR is updated, this will retrigger.
-
-2. A member of the documentation team will review your pull request and let you know if any changes are required.
-Usually you will be asked to make any necessary changes yourself.
-Don't worry if you're asked to make changes, this is normal!
-
-3. Once the reviewer is happy with the changes, they will backport them to any necessary branches (please let them know if you think it needs backporting to certain releases) and merge your changes.
-
-== Publishing
-
-Accepted changes are pushed to docs.couchbase.com twice a week, so you may need to wait a few days to see your changes go live.
-////
+NOTE: Make sure you delete your branch after you have merged your pull request.
+This keeps our repositories tidy. 

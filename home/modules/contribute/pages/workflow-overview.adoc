@@ -1,27 +1,26 @@
-:page-status: OUT OF DATE
-
 = Workflow Overview
 
-NOTE: {out-of-date}
+Use the following as a quick reference for the general workflow for contributing to Couchbase Documentation. 
 
-This workflow is for frequent contributors and Couchbase Docs team members who make major changes, add documents, examples, and images, and plan to work on the same set of changes over several days before requesting sign-off.
+NOTE: Contributors from outside Couchbase need to https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo[fork documentation repositories^] to contribute changes.
+If you're a Couchbase employee, DO NOT fork repositories to contribute to Couchbase Documentation.
 
-== Workflow Steps
+To set up to contribute to Couchbase Documentation, you must: 
 
-These steps, described under Setting Up Your Workspace, only need to be done once or the first time you plan to contribute to a repository.
+* [x] Clone a repository onto your computer.
 
-* [x] Fork the repository into your GitHub account.
-* [x] Create a clone of the repository on your device.
-* [x] Connect your local repository with the upstream repository.
-
-Most of the following steps are completed each time you make a contribution to a repository.
+To make a contribution or change to Couchbase Documentation, you must: 
 
 * [x] xref:repositories.adoc[Review each repository's requirements].
-* [x] xref:repositories.adoc#dir-structure[Explore the component directory structure].
 * [x] xref:create-branches.adoc#base-branch[Choose a base branch].
-* [x] xref:create-branches.adoc#work-branch-atom[Create a working branch in Atom] or xref:create-branches.adoc#work-branch-cli[from the command line].
+* [x] xref:create-branches.adoc[Create a working branch for your changes].
 * [x] xref:edit-pages.adoc[Fix existing documentation] or xref:add-pages.adoc[create a new documentation page].
 * [x] xref:test-site.adoc[Build the site locally and test your changes].
-* [x] xref:send-pr.adoc#commit[Commit, rebase, and push your changes].
+* [x] xref:send-pr.adoc#commit[Commit and push your changes].
 * [x] xref:send-pr.adoc#pr[Submit a pull request].
-//* [x] Make revisions to your pull request.
+* [x] Make requested changes to your pull request.
+* [x] Merge your pull request.
+* [x] Delete your working branch. 
+
+IMPORTANT: Always try to delete old, unmerged branches or branches that you have merged with a pull request (PR) when you're done with them.
+This keeps our repositories tidy. 
