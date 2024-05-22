@@ -59,7 +59,6 @@ content:
     branches: [release/7.6, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
-    branches: [release/7.2, release/7.1, release/7.0, release/7.6, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
