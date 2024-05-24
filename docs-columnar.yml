@@ -35,12 +35,12 @@ content:
 #    start_path: docs/public
   - url: ../docs-capella
     branches: [main]
-  - url: ../docs-devex
-    branches: main
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches:  [release/7.6, release/7.2, capella, main]
   - url: ../docs-columnar
-    branches: AV-78556-links-cost
+    branches: AV-78490-kafka-UI
     # AV-78395-UI-terms AV-78490-kafka-UI AV-78491-experiment AV-78395-UI-terms  
-    #  AV-78507-copy-to-rework AV-77748-describe-link AV-78619-run-analyze 
+    # AV-78556-links-cost  AV-77748-describe-link AV-78619-run-analyze AV-78507-copy-to-rework
   # NOTE docs-server is currently after other server repos so nav key wins
   #- url: ~/repos/docs-server/
   #  branches: [release/7.1, release/7.2]
@@ -61,6 +61,7 @@ asciidoc:
     idprefix: '@'
     idseparator: '-@'
     tabs: tabs
+    tabs-sync-option: ''
     toc: ~
     xrefstyle: short
     sqlpp: SQL++
@@ -75,6 +76,7 @@ asciidoc:
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
   - ./lib/tabs-block.js
+  - '@asciidoctor/tabs'
 ui:
   bundle:
 #    url: /Users/danielnicholson/repos/docs-ui/build/ui-bundle.zip
