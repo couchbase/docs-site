@@ -177,7 +177,7 @@ asciidoc:
     tabs: tabs
     tabs-sync-option: ''
     toc: ~
-    page-toclevels: 2@
+    page-toclevels: 1@
     page-rank: 50@
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
