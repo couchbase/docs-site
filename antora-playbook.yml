@@ -189,6 +189,8 @@ asciidoc:
     sqlppc: SQL++ for Capella columnar
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
+    db: cluster
+    cptl-db: Cluster
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
     # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
