@@ -75,8 +75,8 @@ content:
   # - url: https://git@github.com/couchbase/docs-connectors-talend
 #  - url: https://github.com/couchbase/docs-connectors-talend
   # - url: https://git@github.com/couchbase/docs-analytics
-#  - url: https://github.com/couchbase/docs-analytics
-#    branches: [release/7.2, release/7.1, release/7.0, release/6.6]
+  - url: https://github.com/couchbase/docs-analytics
+    branches: [release/7.6,release/7.2, release/7.1, release/7.0, release/6.6]
   - url: https://github.com/couchbase/couchbase-cli
     branches: [trinity, neo, 7.1.x-docs, cheshire-cat, mad-hatter]
     start_path: docs
