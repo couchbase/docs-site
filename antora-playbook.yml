@@ -209,6 +209,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-189/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-190/ui-bundle.zip
 output:
   dir: ./public
