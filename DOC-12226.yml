@@ -47,6 +47,9 @@ content:
     branches: [main]
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [capella]
+  - url: https://github.com/couchbase/couchbase-operator
+    branches: [master]
+    start_path: docs/user
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
