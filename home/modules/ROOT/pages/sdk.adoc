@@ -23,6 +23,10 @@ Explore our SDK documentation for your chosen platform:
 Java::
 +
 --
+xref:java-sdk:hello-world:overview.adoc[Java SDK Docs] |
+xref:java-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] |
+xref:java-sdk:project-docs:sdk-release-notes.adoc[] |
+https://docs.couchbase.com/sdk-api/couchbase-java-client[Java API Reference]
 
 [discrete]
 == Using Your Database icon:database[] 
@@ -103,6 +107,11 @@ Useful resources to help support your development experience with Couchbase and 
 Scala::
 +
 --
+xref:scala-sdk:hello-world:overview.adoc[Scala SDK Docs] |
+xref:scala-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] |
+xref:scala-sdk:project-docs:sdk-release-notes.adoc[] |
+https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[Scala API Reference]
+
 [discrete]
 == Using Your Database  icon:database[]
 
