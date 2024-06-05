@@ -8,7 +8,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/AV-78303
+  url: https://preview.docs-test.couchbase.com/DOC-12086
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -21,9 +21,9 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Service Broker", "components": ["service-broker"] },
         { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
-        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
+        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
 git:
   ensure_git_suffix: false
@@ -37,23 +37,23 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, capella]
-  - url: https://github.com/couchbaselabs/cb-swagger
+  - url: https://github.com/simon-dew/docs-devex
+    branches: [release/7.6, DOC-12086]
+  - url: https://github.com/simon-dew/cb-swagger
     branches: [release/7.6, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-78303-remove-put-username]
+    branches: [main]
     start_path: docs/public
   - url: https://github.com/couchbase/docs-capella
-    branches: [AV-78303-remove-put-username]
+    branches: [main]
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.6]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [neo]
+    branches: [trinity]
     start_path: docs
   - url: https://github.com/couchbase/backup
-    branches: [neo]
+    branches: [trinity]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
@@ -67,7 +67,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [release/4.2]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [release/4.1]
+    branches: [temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
 asciidoc:
@@ -92,9 +92,14 @@ asciidoc:
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
     # flag-devex-escape-hatch: '@'
+    # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
+    url-issues: https://issues.couchbase.com/browse
+    url-issues-jscbc: https://issues.couchbase.com/browse
+    url-issues-av: https://couchbasecloud.atlassian.net/browse
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-jira-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
