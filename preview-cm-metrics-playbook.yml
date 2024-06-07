@@ -86,7 +86,7 @@ content:
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [DOC-12188_new_failover_recovery_metrics]
+    branches: [DOC-12188_new_failover_recovery_metrics_unconflicted]
 #   - url: https://github.com/couchbase/docs-sdk-common
 #     branches: [release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
 #   - url: https://github.com/couchbase/docs-sdk-c
