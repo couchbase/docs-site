@@ -195,12 +195,16 @@ Useful resources to help support your development experience with Couchbase and 
 
 
 
-
+The links above will take you to the latest version of your chosen SDK.
+Should you need to look up something for an older release, you'll discover there a dropdown version selector release for each SDK,
+and links to docs for older, unsupported versions.
 
 
 {empty} +
 
 == The Bigger Picture
+
+More developer documentation is available for:
 
 * Connectors
 * Mobile
