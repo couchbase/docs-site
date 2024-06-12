@@ -77,7 +77,7 @@ content:
     branches: [master, release/3.2, release/3.1]
     start_path: docs
   - url: https://github.com/couchbase/docs-tableau
-    branches: [main]
+    branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-connectors-power-bi
     branches: [main]
   # - url: https://git@github.com/couchbase/docs-connectors-talend
