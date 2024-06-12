@@ -107,9 +107,9 @@ content:
   - url: https://github.com/couchbase/docs-sdk-go
     branches: [temp/2.8, release/2.7, release/2.6, release/2.5, release/2.4, release/2.3]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [temp/3.6, release/3.5, release/3.4, release/3.3, release/3.2]
+    branches: [temp/3.7, temp/3.6, release/3.5, release/3.4, release/3.3, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [temp/1.3, release/1.2, release/1.1, release/1.0]
+    branches: [temp/1.4, temp/1.3, release/1.2, release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [temp/4.3, release/4.2, release/4.1, release/4.0, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-php
@@ -119,7 +119,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [temp/3.5, release/3.4, release/3.3, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [temp/1.6, release/1.5, release/1.4, release/1.3, release/1.2]
+    branches: [release/1.7, temp/1.6, release/1.5, release/1.4, release/1.3, release/1.2]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
     # Mobile Docs Pages
