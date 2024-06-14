@@ -34,6 +34,8 @@ content:
       branches: master
     - url: https://github.com/couchbase/docs-server
       branches: [release/7.6]
+    - url: https://github.com/couchbaselabs/docs-devex
+      branches: [release/7.6]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
