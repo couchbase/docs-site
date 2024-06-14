@@ -36,6 +36,10 @@ content:
       branches: [release/7.6]
     - url: https://github.com/couchbaselabs/docs-devex
       branches: [release/7.6]
+    - url: https://github.com/couchbaselabs/cb-swagger
+      branches: release/7.6
+      start_path: docs
+     
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
