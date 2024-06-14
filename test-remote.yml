@@ -3,7 +3,7 @@ antora:
     - "@antora/site-generator-ms"
 site:
   title: Couchbase Docs
-  url: https://docs.couchbase.com
+  url: https://preview.docs-test.couchbase.com/hakim/
   start_page: home::index.adoc
   robots: allow
   keys:
@@ -30,14 +30,10 @@ content:
   branches: master
   sources:
     - url: https://github.com/couchbase/docs-site/
-      branches:
-        - template-helpers
       start_path: home
-      tags: ALL
-      local: true
+      branches: master
     - url: https://github.com/couchbase/docs-server
-      branches:
-        - release/7.2
+      branches: [release/7.6]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
@@ -78,7 +74,7 @@ asciidoc:
     - asciidoctor-external-callout
 ui:
   bundle:
-    url:  https://github.com/couchbase/docs-ui/releases/download/sandbox-24/ui-bundle.zip
+    url:  https://github.com/couchbase/docs-ui/releases/download/prod-191/ui-bundle.zip
 output:
   dir: ./public
 
