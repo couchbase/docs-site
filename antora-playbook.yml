@@ -25,7 +25,7 @@ site:
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
         { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
-        { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
+        { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud", "columnar"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
@@ -49,10 +49,10 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, release/7.2, capella]
+    branches: [release/7.6, capella]
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
-    start_path: docs/public
+    start_path: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
   - url: https://github.com/couchbaselabs/docs-columnar
