@@ -5,22 +5,14 @@ antora:
   extensions:
   - '@antora/site-generator-ms'
   - ./lib/embargo.js
-  - ./lib/antora-component-version-rank.js
-  - "@antora/collector-extension"
+# - "@antora/collector-extension"
 site:
-  title: Couchbase Docs
-  url: https://docs.couchbase.com
+  title: Couchbase Docs (Preview)
+  url: https://preview.docs-test.couchbase.com/AV-80129
   start_page: home::index.adoc
-  robots: |
-    User-agent: *
-    Allow: /
-    Disallow: /sdk-api/
-    Allow: /sdk-api/*-client/
-    Allow: /sdk-api/couchbase-core-io/
-    Allow: /sdk-api/couchbase-transactions-cxx/
-    Allow: /sdk-api/couchbase-transactions-dotnet/
+  robots: disallow
   keys:
-    google_analytics: GTM-MVPNN2
+
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
@@ -41,21 +33,21 @@ urls:
   latest_version_segment: current
 content:
   branches: master
-  # NOTE the git@ segment in the URL indicates which repositories are private
-  ## The above has a bug when upgrading to Antora 3.1. Original sources commented
-  ## out and replaced with a non git@ prefix. To revert if it causes issues
   sources:
   - url: .
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [release/7.6, capella]
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [release/7.6, capella]
+    start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [AV-80129-columnar-mgmt-api]
-    start_path: [docs/public, docs/columnar]
+    start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
-  - url: https://github.com/couchbaselabs/docs-columnar
+  - url: https://github.com/simon-dew/docs-columnar
     branches: [main]
 asciidoc:
   attributes:
@@ -70,7 +62,6 @@ asciidoc:
     tabs-sync-option: ''
     toc: ~
     page-toclevels: 1@
-    page-rank: 50@
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
@@ -80,6 +71,7 @@ asciidoc:
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
+    # flag-devex-escape-hatch: '@'
     # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
     url-issues: https://issues.couchbase.com/browse
     url-issues-jscbc: https://issues.couchbase.com/browse
@@ -98,6 +90,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-191/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-190/ui-bundle.zip
 output:
   dir: ./public
