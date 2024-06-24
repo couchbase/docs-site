@@ -1,0 +1,144 @@
+// tag::required[]
+[cols="1,2,2"]
+|====
+| Attribute | Description | Allowed Values
+
+| `:page-topic-type:` 
+| The page topic type sets the content type for a page and automatically adds a corresponding badge.
+These badges help users quickly identify the kind of content they're going to find on a page. 
+a| * For concepts: `concept`
+* For tasks: `guide`
+* For references: `reference`
+
+| `:description:` 
+| The page description is used for SEO and provides a brief description of the page, which is displayed using the `[abstract]` attribute on the page. 
+a| Enter a quick description of the content on the page.
+Emphasize what the user would want to know at a glance.
+
+Try to keep it to 1-2 sentences. 
+|====
+// end::required[]
+// tag::optional[]
+[cols="1,2,2"]
+|====
+| Attribute | Description | Allowed Values
+
+| `:imagesdir:`
+a| Use the `imagesdir` attribute to set where Antora should resolve the location of images included in a page. 
+By default, the value of `imagesdir` is empty, and image paths are resolved relative to the current page. 
+
+Set the `imagesdir` to avoid hard-coding image paths when writing an include, as Antora will automatically prefix any path with the set value.
+
+For example, the following would become a valid image include: 
+
+----
+image::name-of-image.png[]
+----
+a| `:imagesdir: ../assets/images`
+
+Try to keep your images inside the `assets/images` folder in a module.
+
+| `:keywords:`
+| Use the `keywords` attribute to add meta keywords to the HTML head for your page. 
+| Any applicable keyword, separated by commas (`,`).
+
+| `:page-aliases:` 
+a| Use the `page-aliases` attribute when you need to delete or rename a page to avoid breaking links.
+Antora will resolve any links to the filename(s) you specify in this attribute to redirect to the current page, instead.
+
+[WARNING]
+====
+You should only use `page-aliases` if it's absolutely necessary.
+It's not designed to be a general-purpose URL router, and it can get noisy and chaotic to maintain a large number of `page-aliases` on a page, or across pages. 
+
+Do your part to keep the AsciiDoc files clean and easy to understand. 
+Try to appropriately name your pages from the start.
+====
+| A xref:cross-references.adoc[valid cross reference] to a page.
+
+For a page in the same module: `:page-aliases: search-query.adoc`
+
+For a page in a different module: `:page-aliases: ROOT:search-query.adoc`
+
+For a page in another repository: `:page-aliases:7.6@server:develop:integrations.adoc`
+
+When linking to a repository that has a version, you must specify which version in that repository redirects to your current page.
+
+| `:page-edition:`
+| If you're writing content that only applies to a specific edition of Couchbase Server, usually the Enterprise Edition, use the `page-edition` attribute to add a badge to the page that indicates the Edition the content applies to.
+| `page-edition: Enterprise Edition`
+
+| `:page-layout:`
+| Sets the UI layout to assign to a page. 
+By default, pages use the `default.hbs` template from the https://github.com/couchbase/docs-ui[docs-ui repository^]. 
+| For the list of all available templates, see https://github.com/couchbase/docs-ui/tree/master/src/layouts[the docs-ui repository].
+
+| `:page-pagination:`
+a| Include the `page-pagination` attribute to add pagination to the bottom of a page.
+
+Set the attribute to `prev` to allow the user to navigate to the previous and next pages surrounding the current page in the module's table of contents. 
+
+Set the attribute to `next` to include only navigation going to the next topic in the table of contents. 
+
+For an example of `page-pagination`, see xref:server:guides:insert.adoc[the Server documentation].
+a| `:page-pagination: prev`
+
+`:page-pagination: next`
+
+| `:page-partial:`
+| Allows this page to be included inside another page as a xref:includes.adoc#partial-files[partial file].
+You only need to set this attribute on a page that you add to the `pages` directory of a module.
+| `:page-partial:`
+
+| `:page-role:` 
+a| Assign a role to a page to change the default CSS or add new CSS styles to the entire page.
+The exact behavior depends on the assigned role. 
+
+The `page-role` attribute can take multiple values, separated by a single space. 
+a| `:page-role: tiles`: Arranges and renders H2 headings as tiles, in 2 columns down the page. 
+
+`:page-role: -toc`: Removes the in-page table of contents from a page.
+Useful for landing pages.
+
+| `:page-status:`
+| If you're writing content that only applies to a beta or specific software version, use the `page-status` attribute to mark the page with a badge. 
+a| Any valid software name and version. 
+
+For example, `:page-status: Couchbase Server 7.2`
+
+| [[page-toclevels]]`:page-toclevels:` 
+| Use the `page-toclevels` attribute to control the depth of headings displayed on the in-page table of contents, at the right of the document contents. 
+By default, the in-page table of contents only displays Heading 2 (H2) headings. 
+Set the attribute to any value greater than or equal to `2` to increase the heading depth displayed.
+a| `page-toclevels: <Any integer greater than 1>`
+
+| `:sectids:`
+a| xref:attributes-and-roles.adoc#unsetting-a-document-attribute[Unset] the `sectids` attribute to stop automatically generating section IDs for headings inside an AsciiDoc file. 
+
+If `sectids` is left set for a document, section IDs for xref:cross-references.adoc[cross references] are generated based on the content of the heading, replacing spaces with dashes. 
+
+You can always override these automatic IDs by assigning your own. 
+a| `:sectids:` (set)
+
+`:!sectids:` (unset)
+
+| `:tabs:`
+a| To add the tabs feature to your page and allow tabbed content blocks, you must set the `tabs` attribute. 
+
+You can find an example of tabbed content in xref:server:guides:deleting-data.adoc#deleting-a-document[the Server documentation].
+
+a| `:tabs:`
+
+`:!tabs:`
+
+| `:xrefstyle:`
+| Controls the generated text for xref:cross-references.adoc[cross references] in a document, when linking to block content that has a caption set. 
+For more information, see https://docs.asciidoctor.org/asciidoc/latest/macros/xref-text-and-style/[the AsiiDoc documentation^].
+a| `:xrefstyle: full`
+
+`:xrefstyle: short`
+
+`:xrefstyle: basic`
+
+|====
+// end::optional[]

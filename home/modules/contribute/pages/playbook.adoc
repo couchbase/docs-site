@@ -1,107 +1,151 @@
-:page-status: OUT OF DATE
-
-= Get the Site Playbook Project
+= Configure Your Antora Playbook
 :url-git-playbook: https://github.com/couchbase/docs-site
 
-NOTE: {out-of-date}
+The `docs-site` repository contains necessary files for building and publishing the Couchbase Documentation site. 
 
-The Docs Site playbook project contains the:
+For example, it contains the: 
 
 * staging playbook
 * production playbook
 * site extensions
-* Home docs component
+* `home` docs component
+
+To generate a local copy of the documentation site on your computer, you need the `antora-playbook.yml` file. 
+This YAML file provides key site configuration information to Antora. 
 
 To generate the documentation site on your device, you need its playbook.
 The playbook provides the site configuration to Antora.
 
-== Fork and Clone the Playbook Project
+== Clone the Playbook Project
 
-TIP: Go to xref:build-site.adoc[Build the Docs Site] if you've previously forked and cloned the {url-git-playbook}[Docs Site repository^].
-You've already completed the steps on this page.
+Just like any other documentation repository, you need to get the `docs-site` repository onto your computer: 
 
-. Go to the {url-git-playbook}[Docs Site repository^] on GitHub and click btn:[Fork].
-. Create or select the local folder where you want to store the repository on your device.
-. Open a terminal and change into the selected folder.
+. Go to the {url-git-playbook}[`docs-site` repository^]. 
+. Follow the instructions in xref:set-up-repository.adoc#clone[Clone the Repository].
 
- $ cd path/to/folder
-
-. Go to your repository on GitHub, and click btn:[Clone or download].
-. Click the Clipboard icon to copy the repository's Git URL.
-. In your terminal type `git clone`, paste the copied URL, and press kbd:[Enter].
-
- $ git clone git@github.com:this-is-you/docs-site.git
-
-. Change into the repository folder created by the clone operation.
-
- $ cd docs-site
+NOTE: Contributors from outside Couchbase need to https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo[fork documentation repositories^] to contribute changes.
+If you're a Couchbase employee, DO NOT fork repositories to contribute to Couchbase Documentation.
  
-== Configuring the Playbook
+== Configure a Local Antora Playbook
 
-To preview your changes on the site locally, you need to configure the playbook to use your local repository.
+To generate a local copy of the documentation site and preview your changes, you need to configure a playbook file to use your local repositories. 
 
-. Copy the Antora playbook, _antora-playbook.yml_, and save it in the _docs-site_ repository.
-. Rename it _local-antora-playbook.yml_.
-. Open _local-antora-playbook.yml_ in Atom or your editor.
-. Under `sources`, find the `url` key that matches the upstream repository you plan to submit your changes to.
-Replace the repository URL with either the relative system path from the playbook project to your local repository or the absolute path.
-For example, if you're making changes to files in the _docs-server_ repository, you'd enter:
+To configure a local playbook file: 
+
+. Create a copy of the `antora-playbook.yml` file inside the top-level folder of the `docs-site` repository on your computer.
+. Rename the copy to `local-antora-playbook.yml`. 
++
+This stops your local playbook from being detected by Git.
+You can safely make changes to the file without worrying about committing those changes to the `docs-site` repository. 
+. Open your new `local-antora-playbook.yml` in VS Code or your preferred editor. 
+. Inside the `local-antora-playbook.yml`, under `antora > extensions`, delete the entry for the `"@antora/collector-extension"`.
+. <<remove,Choose whether to remove any repositories from your local build>>.
+. <<local-repo,Set the playbook to use the local version of the repository where you made your changes>>. 
+. (Optional) <<setup-kroki-server,Set up Kroki to build diagrams>>. 
+. Save the playbook file. 
+
+[#remove]
+=== Remove a Repository's Files from Your Local Build 
+
+To remove the files from a repository from your local build and speed up the build process: 
+
+. Under `sources`, locate the `url` key entry for the repository you want to remove. 
+. Add a hash (`#`) to the start of the line with the `-url` key. 
+. If the `-url` key is followed by a `branches` or `start_path` key, add a hash (`#`) to the start of those lines, too.
++
+For example, to remove the `couchbaselabs/docs-style-guide` files from a local build: 
++
+[source,yaml]
+---
+sources:
+  - url: .
+    branches: HEAD
+    start_path: home
+  #- url: https://github.com/couchbaselabs/docs-style-guide
+    #branches: main
+    #start_paths: [styleguide, ui-ux, pendo]
+---
+
+TIP: You can also delete the entire `-url` key entry for a repository to remove it from your build - but keep in mind that you might need to add it back in later for other documentation work.
+
+[#local-repo]
+=== Use Your Local Repository in a Build 
+
+To use the files from your local repository in a build and preview your changes: 
+
+. Under `sources`, locate the `url` key entry for the repository you modified and want to preview. 
+. Change the `-url` key to either: 
+.. The relative system path from your `docs-site` repository to the local repository. 
+.. The absolute system path to the local repository. 
++
+For example, if you store all of your Documentation repositories in the same parent folder on your computer, and you modified files in the `docs-server` repository: 
 +
 [source,yaml]
 ----
-- url: ./docs-server
+- url: ../docs-server
+    branches: [release/7.6, release/7.2, release/7.1, release/7.0]
+- url: https://github.com/couchbase/docs-sdk-common
+    branches: [temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
 ----
-
-. If there isn't a `branches` key on the line directly below the `url` key, add it and assign it the list of version branch names, except for the version branch your working branch is based on.
-In place of the remote version branch, use the value of `HEAD`.
-`HEAD` tells Antora to use your working branch.
-For example, if your working branch is based off of the docs-server release/5.5 branch, you'd assign the following values to `branches`:
+. On the line following the `-url` key, add a `branches` key, if there is not one already. 
+. In the `branches` key, set the value to `HEAD`.
++
+You can keep additional version branches or set your local repository to the only branch to build. 
+If you do keep multiple branches, do not keep the branch that you used as a base for your local changes.
++
+For example, if your working branch was based off of `docs-server release/7.6` and you wanted to keep the other release branches in your build:
 +
 [source,yaml]
 ----
-- url: ./docs-server
-  branches: [release/7.1, release/7.0, release/6.5, HEAD]
-----  
-
-. If there is a `branches` key on the line directly below the `url` key, replace the version branch name you based your working branch on with `HEAD`.
-
-. [[setup-kroki-server]]The build process makes use of a https://kroki.io[Kroki server] to generate diagrams from structured textual descriptions.
-There is a section for the Kroki setup in the playbook:
-+
-[source, yaml]
-----
-asciidoc:
-  attributes:
-    # other settings
-    kroki-server-url: http://3.91.133.254:9500
-    kroki-fetch-diagram: true  
-      
-  extensions:
-     # other settings
-  - asciidoctor-kroki
+- url: ../docs-server
+    branches: [HEAD, release/7.2, release/7.1, release/7.0]
+- url: https://github.com/couchbase/docs-sdk-common
+    branches: [temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
 ----
 +
-In your own playbook, set the `kroki-server-url` address to the public Kroki server, as shown below:
+To use only your working branch, your YAML should look like the following: 
+[source,yaml]
+----
+- url: ../docs-server
+    branches: HEAD
+- url: https://github.com/couchbase/docs-sdk-common
+    branches: [temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+----
+
+[#setup-kroki-server]
+=== Set Up The Kroki Server to Add Diagrams to Your Local Build
+
+The Couchbase Documentation uses https://kroki.io[Kroki^] to generate diagrams from structured textual descriptions for easier maintenance. 
+
+The `antora-playbook.yml` uses the production Kroki server set up by Couchbase, but using this server will cause failures in your build and greatly extend the build time. 
+
+You can choose to use the public Kroki server, or comment out the Kroki configuration with hashes (`#`) to remove Kroki diagrams from your build. 
+
+To use the public Kroki server: 
+
+. Under `asciidoc > attributes`, find the `kroki-server-url` key. 
+. Set the `kroki-server-url` key to `https://kroki.io`: 
 +
 [source, yaml]
 ----
 kroki-server-url: https://kroki.io
 ----
 
-. Save the playbook.
+If the public Kroki server is down or you just do not want diagrams in your build, add a hash before the following key entries in the playbook: 
+
+* `kroki-server-url` (under `asciidoc > attributes`)
+* `kroki-fetch-diagram` (under `asciidoc > attributes`)
+* `asciidoctor-kroki` (under `asciidoc > extensions`)
+
 
 [#lightweight-local-playbook]
-[sidebar]
-.Lightweight Local Playbook
-****
+== Lightweight Local Playbook Example
 
-You may have to iterate over amending the Antora playbook file a number of times, commenting out repos to which you do not have access.
-An easier approach could be starting with an intentionally minimalist playbook, and only adding the repos that you're planning to work on.
-This will have to include the `docs-server` repo which, amongst other things, contains the site navigation.
+You might have to comment out a number of repositories from the base Antora playbook file before you can successfully run a local build. 
 
-For example, to work on local copies of our ten SDK docs repos, and the Server docs, and also include couchbase-cli in your local docs build, take a look at our 
-https://github.com/couchbase/docs-site/blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[example local-staging-antora-playbook.yml file^].
-****
+You can choose to start with a much more minimalist playbook to make things easier, and only add the repositories that you're planning to work on. 
+
+For an example lightweight local playbook, see the https://github.com/couchbase/docs-site/blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[example local-staging-antora-playbook.yml file^].
 
 == Next Steps
 

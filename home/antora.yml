@@ -1,8 +1,9 @@
 name: home
-title: Writer's Guide
+title: Couchbase Documentation
 version: master
 nav:
 - modules/contribute/nav.adoc
 asciidoc:
   attributes:
     out-of-date: This documentation is out of date
+    page-rank: 0@
