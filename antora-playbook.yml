@@ -53,7 +53,7 @@ content:
     start_paths: [styleguide, ui-ux, pendo]
   - url: https://github.com/couchbaselabs/docs-devex
     # branches: [release/7.2, capella, elixir]
-    branches: [DOC-12049_xattrEventing, release/7.2, capella]
+    branches: [DOC-12049_xattrEventing, release/7.6, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
     start_path: docs
