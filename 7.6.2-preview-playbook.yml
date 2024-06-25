@@ -50,9 +50,11 @@ content:
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_path: docs/public
+  - url: https://github.com/couchbase/docs-capella
+    branches: [main]
   # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
-    branches: [2.6.x,2.5.x,2.4.x, 2.3.x, 2.2.x, 2.1.x]
+    branches: [2.6.x, 2.5.x, 2.4.x, 2.3.x, 2.2.x]
     start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
     branches: [0.2.x]
@@ -61,28 +63,29 @@ content:
     branches: [0.2.x]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-elasticsearch-connector
-    branches: [master, release/4.3]
+    branches: [master]
     start_path: docs
   - url: https://github.com/couchbase/kafka-connect-couchbase
-    branches: [master]
+    branches: [master, release/4.1]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-spark-connector
-    branches: [master, release/3.2, release/3.1, release/3.0]
+    branches: [release/3.3, release/3.2, release/3.1, release/3.0]
     start_path: docs
-  - url: https://github.com/couchbase/couchbase-tableau-connector
-    branches: [master]
-    start_path: docs
-  #- url: https://git@github.com/couchbase/docs-connectors-talend
-  # - url: https://github.com/couchbase/docs-connectors-talend
+  - url: https://github.com/couchbase/docs-tableau
+    branches: [release/1.1, release/1.0]
+  - url: https://github.com/couchbase/docs-connectors-power-bi
+    branches: [main]
+  # - url: https://git@github.com/couchbase/docs-connectors-talend
+  - url: https://github.com/couchbase/docs-connectors-talend
   # - url: https://git@github.com/couchbase/docs-analytics
-#  - url: https://github.com/couchbase/docs-analytics
-#    branches: [release/7.2, release/7.1, release/7.0, release/6.6]
+  - url: https://github.com/couchbase/docs-analytics
+    branches: [release/7.6, release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [trinity, neo, 7.1.x-docs, cheshire-cat, mad-hatter]
+    branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
-#  - url: https://git@github.com/couchbase/backup
+  # - url: https://git@github.com/couchbase/backup
   - url: https://github.com/couchbase/backup
-    branches: [trinity, neo, 7.1.x-docs, cheshire-cat, mad-hatter]
+    branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
