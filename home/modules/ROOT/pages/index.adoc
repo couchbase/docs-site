@@ -205,7 +205,7 @@ endif::[]
 * xref:1.0@go-sdk::introduction.adoc[Version 1.0]
 
 [.tile]
-.C SDK
+.C SDK (LCB -- _libcouchbase_)
 * xref:3.3@c-sdk:hello-world:start-using-sdk.adoc[Version 3.3]
 * xref:3.2@c-sdk:hello-world:start-using-sdk.adoc[Version 3.2]
 * xref:3.1@c-sdk:hello-world:start-using-sdk.adoc[Version 3.1]
