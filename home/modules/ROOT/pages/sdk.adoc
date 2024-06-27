@@ -36,15 +36,20 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 |===
 | SDK | Documentation | Hello World Example | API Reference
 
+| .NET SDK
+| xref:dotnet-sdk:hello-world:overview.adoc[Docs]
+| xref:dotnet-sdk:hello-world:start-using-sdk.adoc[.NET Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-net-client[.NET API Reference]
+
 | C SDK
 | xref:c-sdk:hello-world:overview.adoc[Docs]
 | xref:c-sdk:hello-world:start-using-sdk.adoc[C Getting Started]
 | https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[C API Reference]
 
-| .NET SDK
-| xref:dotnet-sdk:hello-world:overview.adoc[Docs]
-| xref:dotnet-sdk:hello-world:start-using-sdk.adoc[.NET Getting Started]
-| https://docs.couchbase.com/sdk-api/couchbase-net-client[.NET API Reference]
+| {cpp} SDK
+| xref:cxx-sdk:hello-world:overview.adoc[Docs]
+| xref:cxx-sdk:hello-world:start-using-sdk.adoc[{cpp} Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-cxx-client/index.html[{cpp} API Reference]
 
 | Go SDK
 | xref:go-sdk:hello-world:overview.adoc[Docs]
