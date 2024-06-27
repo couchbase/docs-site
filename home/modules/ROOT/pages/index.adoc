@@ -216,6 +216,8 @@ endif::[]
 * xref:2.7@c-sdk::start-using-sdk.adoc[Version 2.7]
 * xref:2.6@c-sdk::start-using-sdk.adoc[Version 2.6]
 * xref:2.5@c-sdk::c-intro.adoc[Version 2.5]
+* xref:1.0@cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[1.0 C++ txns lib for LCB]
+
 
 [.tiles.browse]
 == Couchbase Connectors
