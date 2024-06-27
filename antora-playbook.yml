@@ -42,6 +42,8 @@ content:
     branches: [release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/4.6, release/4.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.2, release/3.1, release/3.0, release/2.10, release/2.9, release/2.8, release/2.7, release/2.6, release/2.5]
+  - url: https://github.com/couchbase/docs-txn-cxx
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
     branches: [release/3.2, release/3.1, release/3.0, release/2.7, release/2.6, release/2.5, release/2.4, release/2.3, release/2.2, release/2.1]
   - url: https://github.com/couchbase/docs-sdk-go
