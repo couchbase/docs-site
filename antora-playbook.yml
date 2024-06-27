@@ -17,7 +17,6 @@ site:
     Disallow: /sdk-api/
     Allow: /sdk-api/*-client/
     Allow: /sdk-api/couchbase-core-io/
-    Allow: /sdk-api/couchbase-transactions-cxx/
     Allow: /sdk-api/couchbase-transactions-dotnet/
   keys:
     google_analytics: GTM-MVPNN2
@@ -105,6 +104,8 @@ content:
     branches: [release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
+  - url: https://github.com/couchbase/docs-sdk-cxx
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
     branches: [release/3.5, release/3.4, release/3.3]
   - url: https://github.com/couchbase/docs-sdk-go
