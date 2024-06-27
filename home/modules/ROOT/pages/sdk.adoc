@@ -140,23 +140,8 @@ xref:sdk-extensions::response-time-observability.adoc[Response Time Observabilit
 
 == Distributed ACID Transactions Libraries
 
-[#table_txn_library,cols="25,66,66"]
-|===
-| Transaction Library | Documentation | API Reference
-
-| Java
-| xref:java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-transactions-java/index.html[API Reference]
-
-| C# Transactions
-| xref:dotnet-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-transactions-dotnet/index.html[API Reference]
-
-| C++ Transactions
-| xref:cxx-txns::distributed-acid-transactions-from-the-sdk.adoc[Docs]
-| https://docs.couchbase.com/sdk-api/couchbase-transactions-cxx-1.0.0/index.html[API Reference]
-|===
-
+Previously, distributed ACID transactions were available as separate libraries for some of the SDKs.
+Please note that now each SDK that has this feature, has it incorporated into the SDK.
 
 [.column]
 ====== {empty}
