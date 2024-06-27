@@ -29,7 +29,7 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
@@ -105,10 +105,6 @@ content:
     branches: [release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
-  - url: https://github.com/couchbase/docs-sdk-cxx
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-txn-cxx
-    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
     branches: [release/3.5, release/3.4, release/3.3]
   - url: https://github.com/couchbase/docs-sdk-go
