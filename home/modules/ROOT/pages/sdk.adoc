@@ -107,15 +107,6 @@ The SDK Extension Libraries are shipped as separate libraries.
 
 [.column]
 ====== {empty}
-.Distributed ACID Transactions
-
-[.content]
-Distributed ACID Transactions are operations that ensure that when multiple documents need to be modified such that only the successful modification of all justifies the modification of any, either all the modifications do occur successfully; or none of them occurs. 
-[]
-xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transactions]
-
-[.column]
-====== {empty}
 .Field Level Encryption
 
 [.content]
@@ -134,17 +125,19 @@ For a database, performance is best encapsulated via per-request performance.
 []
 xref:sdk-extensions::response-time-observability.adoc[Response Time Observability]
 
+[.column]
+====== {empty}
+.Distributed ACID Transactions
+
+[.content]
+Previously, distributed ACID transactions were available as separate libraries for some of the SDKs.
+Please note that this feature, available now in most of the SDKs, is incorporated directly into these SDKs.
+[]
+xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transactions]
+
 +++
 </div>
 +++
-
-== Distributed ACID Transactions Libraries
-
-Previously, distributed ACID transactions were available as separate libraries for some of the SDKs.
-Please note that now each SDK that has this feature, has it incorporated into the SDK.
-
-[.column]
-====== {empty}
 
 
 == SDK doctor
