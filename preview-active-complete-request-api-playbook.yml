@@ -44,7 +44,7 @@ content:
     # branches: [release/7.2, capella, elixir]
     branches: [release/7.6,release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [DOC-12190_active_complete_requests]
+    branches: [prerelease/7.6.2]
     start_path: docs
   # - url: https://git@github.com/couchbasecloud/couchbase-cloud
 #  - url: https://github.com/couchbasecloud/couchbase-cloud
@@ -86,7 +86,7 @@ content:
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.6]
+    branches: [DOC-12190_active_complete_request_api]
 #   - url: https://github.com/couchbase/docs-sdk-common
 #     branches: [release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
 #   - url: https://github.com/couchbase/docs-sdk-c
