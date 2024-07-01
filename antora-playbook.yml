@@ -72,15 +72,12 @@ content:
   - url: https://github.com/couchbaselabs/cbmultimanager
     branches: [0.2.x]
     start_path: docs
-  - url: https://github.com/couchbase/couchbase-elasticsearch-connector
-    branches: [master]
-    start_path: docs
-  - url: https://github.com/couchbase/kafka-connect-couchbase
-    branches: [master, release/4.1]
-    start_path: docs
-  - url: https://github.com/couchbase/couchbase-spark-connector
+  - url: https://github.com/couchbase/docs-elastic-search
+    branches: [main]
+  - url: https://github.com/couchbase/docs-kafka
+    branches: [main, release/4.1]
+  - url: https://github.com/couchbase/docs-spark
     branches: [release/3.3, release/3.2, release/3.1, release/3.0]
-    start_path: docs
   - url: https://github.com/couchbase/docs-tableau
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-connectors-power-bi
