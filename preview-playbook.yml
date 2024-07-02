@@ -47,7 +47,7 @@ content:
     start_path: docs/public
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
-  - url: https://github.com/couchbaselabs/docs-analytics
+  - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.6]
   - url: https://github.com/couchbase/couchbase-cli
     branches: [trinity]
