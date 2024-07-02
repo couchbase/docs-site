@@ -13,12 +13,7 @@ site:
   start_page: home::index.adoc
   robots: |
     User-agent: *
-    Allow: /
-    Disallow: /sdk-api/
-    Allow: /sdk-api/*-client/
-    Allow: /sdk-api/couchbase-core-io/
-    Allow: /sdk-api/couchbase-transactions-cxx/
-    Allow: /sdk-api/couchbase-transactions-dotnet/
+    Disallow: /
   keys:
     google_analytics: GTM-MVPNN2
     nav_groups: |
@@ -30,6 +25,7 @@ site:
         { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "Develop for Columnar", "startPage": "home::sdk.adoc", "components": ["*-columnar-sdk"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
 git:
@@ -124,6 +120,15 @@ content:
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/1.7, release/1.6, release/1.5, release/1.4, release/1.3]
   - url: https://github.com/couchbase/docs-sdk-extensions
+    branches: [main]
+    # Columnar dev
+  - url: https://github.com/couchbase/docs-columnar-sdk-common
+    branches: [main]
+  - url: https://github.com/couchbase/docs-columnar-sdk-java
+    branches: [main]
+  - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
+    branches: [main]
+  - url: https://github.com/couchbase/docs-columnar-sdk-python
     branches: [main]
     # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-mobile
