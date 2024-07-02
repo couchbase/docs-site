@@ -15,7 +15,6 @@ site:
     User-agent: *
     Disallow: /
   keys:
-    google_analytics: GTM-MVPNN2
     nav_groups: |
       [
         { "title": "Develop", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
