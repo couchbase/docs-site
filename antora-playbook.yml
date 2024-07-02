@@ -17,7 +17,7 @@ site:
   keys:
     nav_groups: |
       [
-        { "title": "Develop", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
+        { "title": "Develop", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
         { "title": "Administer", "startPage": "cloud::index.adoc", "components": ["cloud"] },
         { "title": "Reference", "startPage": "home::server.adoc", "components": ["server"] },
         { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
