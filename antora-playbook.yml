@@ -24,7 +24,7 @@ site:
         { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
-        { "title": "Develop for Columnar", "startPage": "home::sdk.adoc", "components": ["*-columnar-sdk"] },
+        { "title": "Develop for Columnar", "startPage": "home::columnar-sdk.adoc", "components": ["*-columnar-sdk"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
 git:
