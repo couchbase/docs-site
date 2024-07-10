@@ -17,9 +17,7 @@ site:
   keys:
     nav_groups: |
       [
-        // { "title": "Develop", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
-        { "title": "Administer", "startPage": "cloud::index.adoc", "components": ["cloud"] },
-        { "title": "Reference", "startPage": "home::server.adoc", "components": ["server"] },
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
         { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
         { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
@@ -91,7 +89,7 @@ content:
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.6, release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [DOC-12058--commoning-new-IA--stage-1, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [DOC-12058--commoning-new-IA--stage-1, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
   - url: https://github.com/couchbase/docs-sdk-cxx
