@@ -115,3 +115,25 @@ To learn how to use the playbook and generate the docs site locally, see our {ur
 Couchbase Server Documentation © 2024 by Couchbase Inc. is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
 
 See the LICENSE file or the {url-license}[Creative Commons CC BY-NC-SA 4.0 license page] for details.
+
+
+
+////
+Note to self
+complete top nav to put back
+
+
+  keys:
+    nav_groups: |
+      [
+        { "title": "Develop", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
+        { "title": "Administer", "startPage": "cloud::index.adoc", "components": ["cloud"] },
+        { "title": "Reference", "startPage": "home::server.adoc", "components": ["server"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
+        { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
+        { "title": "Couchbase SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "Columnar SDKs", "startPage": "home::columnar-sdk.adoc", "components": ["*-columnar-sdk"] },
+        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
+      ]
+////
