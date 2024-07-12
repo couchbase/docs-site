@@ -42,9 +42,9 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
     # branches: [release/7.2, capella, elixir]
-    branches: [prelease/7.6.2, capella]
+    branches: [prerelease/7.6.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [prelease/7.6.2]
+    branches: [prerelease/7.6.2]
     start_path: docs
   # - url: https://git@github.com/couchbasecloud/couchbase-cloud
   - url: https://github.com/couchbasecloud/couchbase-cloud
