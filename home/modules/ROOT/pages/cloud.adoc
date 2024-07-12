@@ -9,11 +9,11 @@ include::home::partial$info-banner.adoc[]
 
 = Welcome to Couchbase Capella
 
-Capella Operational is the easiest way to use our Couchbase NoSQL database.
+Capella operational is the easiest way to use our Couchbase NoSQL database.
 Get access to SQL-like querying, full-text search, powerful eventing, and connect to mobile and IoT devices at the edge.
 
-Capella Columnar is an analytical database (RT-OLAP) for real time apps and operational intelligence.
-Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
+Capella columnar is an analytical database (RT-OLAP) for real time apps and operational intelligence.
+Capella columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
 
 [.centered.card-container]
@@ -35,7 +35,7 @@ Get set up and ready with a free trial.
 [.card-box]
 === icon:rocket[] Get Started With Columnar
 
-Create your account and follow our tutorial on how to load data into your Columnar cluster.
+Create your account and follow our tutorial on how to load data into your columnar cluster.
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
 * xref:columnar:intro:intro.adoc[]
