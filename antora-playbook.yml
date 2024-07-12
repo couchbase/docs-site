@@ -46,7 +46,7 @@ content:
     branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [main]
+    branches: [AV-82073_columnar-ga-fb]
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
   - url: https://github.com/couchbase/docs-tableau
