@@ -21,7 +21,7 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
@@ -97,3 +97,5 @@ ui:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-192/ui-bundle.zip
 output:
   dir: ./public
+runtime:
+  fetch: true
