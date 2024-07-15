@@ -33,7 +33,7 @@ Get set up and ready with a free trial.
 
 
 [.card-box]
-=== icon:rocket[] Get Started With Columnar
+=== icon:rocket[] Get Started With Capella Columnar
 
 Create your account and follow our tutorial on how to load data into your columnar cluster.
 
