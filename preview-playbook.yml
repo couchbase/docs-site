@@ -45,7 +45,7 @@ content:
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_paths: [docs/public, docs/columnar]
-  - url: https://github.com/couchbase/docs-capella
+  - url: https://github.com/simon-dew/docs-capella
     branches: [AV-82275]
   - url: https://github.com/simon-dew/docs-columnar
     branches: [AV-82275]
