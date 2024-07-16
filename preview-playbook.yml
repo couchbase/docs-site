@@ -8,7 +8,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/AV-80129
+  url: https://preview.docs-test.couchbase.com/AV-82275
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -38,17 +38,17 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, capella]
+    branches: [prerelease/7.6.2, capella-762]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.6, capella]
+    branches: [prerelease/7.6.2, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-80129-columnar-mgmt-api]
+    branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [main]
+    branches: [AV-82275]
   - url: https://github.com/simon-dew/docs-columnar
-    branches: [AV-80129]
+    branches: [AV-82275]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
