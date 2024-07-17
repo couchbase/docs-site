@@ -39,7 +39,6 @@ Create your account and follow our tutorial on how to load data into your column
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
 * xref:columnar:intro:intro.adoc[]
-* xref:columnar:intro:create-account.adoc[]
 * xref:columnar:admin:prepare-project.adoc[]
 * xref:columnar:intro:examples.adoc[]
 * xref:columnar:query:workbench.adoc[]
