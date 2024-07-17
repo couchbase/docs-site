@@ -53,6 +53,8 @@ content:
     branches: [release/1.1]
   - url: https://github.com/couchbase/docs-connectors-power-bi
     branches: [main]
+  - url: https://github.com/couchbase/docs-server/
+    branches: [release/7.6]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
