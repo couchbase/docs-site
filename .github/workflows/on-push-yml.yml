@@ -29,13 +29,13 @@ jobs:
                 playbook: ${{ fromJSON(needs.which-file-changed.outputs.all_changed_files) }}
         runs-on: ubuntu-latest
         uses: couchbase/docs-infra/.github/workflows/generic-antora-build.yml@master
-            with:
-                website-title: Couchbase Docs PREVIEW TEST
-                website-url: https://preview.docs-test.couchbase.com
-                environment: preview
-                branch: docs-team
-                playbook: ${{ matrix.playbook }}
-                subdirectory: ${{ matrix.playbook }}
-            secrets: inherit
+        with:
+            website-title: Couchbase Docs PREVIEW TEST
+            website-url: https://preview.docs-test.couchbase.com
+            environment: preview
+            branch: docs-team
+            playbook: ${{ matrix.playbook }}
+            subdirectory: ${{ matrix.playbook }}
+        secrets: inherit
     
 #                 echo 
