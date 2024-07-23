@@ -1,0 +1,87 @@
+# npx antora --clean --fetch antora-playbook.yml
+# or
+# npx antora antora-playbook.yml
+antora:
+  extensions:
+  - '@antora/site-generator-ms'
+  - ./lib/embargo.js
+  - ./lib/antora-component-version-rank.js
+  - "@antora/collector-extension"
+site:
+  title: Couchbase Docs
+  url: https://docs.couchbase.com/wibble/
+  start_page: home::index.adoc
+  robots: allow
+  keys:
+    google_analytics: GTM-MVPNN2
+    nav_groups: |
+      [
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
+        { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
+        { "title": "Autonomous Operator", "components": ["operator"] },
+        { "title": "CMOS", "components": ["cmos"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
+        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
+      ]
+git:
+  ensure_git_suffix: false
+  fetch_concurrency: 1
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
+content:
+  branches: master
+  # NOTE the git@ segment in the URL indicates which repositories are private
+  ## The above has a bug when upgrading to Antora 3.1. Original sources commented
+  ## out and replaced with a non git@ prefix. To revert if it causes issues
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: home
+  - url: https://github.com/couchbase/docs-capella.git
+    branches: HEAD
+asciidoc:
+  attributes:
+    site-navigation-data-path: _/js/site-navigation-data.js
+    enable-cmos: ''
+    max-include-depth: 10
+    page-partial: false
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    tabs: tabs
+    tabs-sync-option: ''
+    toc: ~
+    page-toclevels: 1@
+    page-rank: 50@
+    xrefstyle: short
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    sqlpp: SQL++
+    sqlppc: SQL++ for Capella columnar
+    sqlpp_url: https://www.couchbase.com/products/n1ql
+    cbpp: Couchbase++
+    kroki-fetch-diagram: false
+    # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
+    url-issues: https://issues.couchbase.com/browse
+    url-issues-jscbc: https://issues.couchbase.com/browse
+    url-issues-av: https://couchbasecloud.atlassian.net/browse
+  extensions:
+  - ./lib/source-url-include-processor.js
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/markdown-block.js
+  - ./lib/template-block.js
+  - asciidoctor-external-callout
+  - '@asciidoctor/tabs'
+ui:
+  bundle:
+    # url: https://github.com/couchbase/docs-ui/releases/download/prod-109/ui-bundle.zip
+    url: ../docs-ui/build/ui-bundle.zip
+output:
+  dir: ./public
