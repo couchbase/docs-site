@@ -26,7 +26,7 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
@@ -67,18 +67,14 @@ content:
   - url: https://github.com/couchbaselabs/cbmultimanager
     branches: [master]
     start_path: docs
-  - url: https://github.com/couchbase/couchbase-elasticsearch-connector
-    branches: [master, release/4.3]
-    start_path: docs
-  - url: https://github.com/couchbase/kafka-connect-couchbase
-    branches: [master, release/4.1]
-    start_path: docs
-  - url: https://github.com/couchbase/couchbase-spark-connector
-    branches: [master, release/3.2, release/3.1]
-    start_path: docs
-  - url: https://github.com/couchbase/couchbase-tableau-connector
-    branches: [master]
-    start_path: docs
+  - url: https://github.com/couchbase/docs-elastic-search
+    branches: [main, release/4.3]
+  - url: https://github.com/couchbase/docs-kafka
+    branches: [main, release/4.1]
+  - url: https://github.com/couchbase/docs-spark
+    branches: [main, release/3.2, release/3.1]
+  - url: https://github.com/couchbase/docs-tableau
+    branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-connectors-power-bi
     branches: [main]
   # - url: https://git@github.com/couchbase/docs-connectors-talend
@@ -97,29 +93,29 @@ content:
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, release/6.6]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6]
+    branches: [release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3, release/3.2]
-  - url: https://github.com/couchbase/docs-txn-cxx
+  - url: https://github.com/couchbase/docs-sdk-cxx
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [release/3.5, release/3.4, release/3.3, release/3.2]
-  - url: https://github.com/couchbase/docs-sdk-go
-    branches: [temp/2.8, release/2.7, release/2.6, release/2.5, release/2.4, release/2.3]
-  - url: https://github.com/couchbase/docs-sdk-java
     branches: [temp/3.6, release/3.5, release/3.4, release/3.3, release/3.2]
+  - url: https://github.com/couchbase/docs-sdk-go
+    branches: [temp/2.9, temp/2.8, release/2.7, release/2.6, release/2.5, release/2.4, release/2.3]
+  - url: https://github.com/couchbase/docs-sdk-java
+    branches: [temp/3.7, temp/3.6, release/3.5, release/3.4, release/3.3, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [temp/1.3, release/1.2, release/1.1, release/1.0]
+    branches: [temp/1.4, temp/1.3, release/1.2, release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [temp/4.3, release/4.2, release/4.1, release/4.0, release/3.2]
+    branches: [temp/4.4, temp/4.3, release/4.2, release/4.1, release/4.0, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [temp/4.2, release/4.1, release/4.0, release/3.2, release/3.1]
+    branches: [temp/4.3, temp/4.2, release/4.1, release/4.0, release/3.2, release/3.1]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.2, release/4.1, release/4.0, release/3.2]
+    branches: [temp/4.3, temp/4.2, release/4.1, release/4.0, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [temp/3.5, release/3.4, release/3.3, release/3.2]
+    branches: [temp/3.6, temp/3.5, release/3.4, release/3.3, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [temp/1.6, release/1.5, release/1.4, release/1.3, release/1.2]
+    branches: [release/1.7, temp/1.6, release/1.5, release/1.4, release/1.3, release/1.2]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
     # Mobile Docs Pages
@@ -198,6 +194,9 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/staging-10/ui-bundle.zip
+    # url: https://github.com/couchbase/docs-ui/releases/download/staging-10/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/preserve-hash-on-version-change-1/ui-bundle.zip
 output:
   dir: ./public
+runtime:
+  fetch: true
