@@ -61,7 +61,7 @@ content:
     branches: [main]
     start_path: docs/public
   - url: https://github.com/couchbase/docs-capella
-    branches: [main]
+    branches: [AV-77820_CapellaBilling]
   # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
     branches: [2.6.x, 2.5.x, 2.4.x, 2.3.x, 2.2.x]
