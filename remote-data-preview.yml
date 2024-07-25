@@ -24,6 +24,7 @@ site:
         { "title": "Service Broker", "components": ["service-broker"] },
         { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "sdk-extensions"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] }
+        { "title": "Columnar", "startPage": "columnar::index.adoc", "components": ["columnar"] }
       ]
 git:
   ensure_git_suffix: false
