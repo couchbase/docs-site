@@ -131,7 +131,7 @@ content:
     branches: [master]
     start_path: content
   - url: https://github.com/couchbaselabs/docs-columnar.git
-    branches: byo-kafka-updates
+    branches: AV-82816_kafka_feedback
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
