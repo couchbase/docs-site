@@ -39,7 +39,7 @@ content:
     start_path: home
   - url: https://github.com/simon-dew/docs-devex
     branches: [release/7.6, DOC-12087]
-  - url: https://github.com/simon-dew/cb-swagger
+  - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
