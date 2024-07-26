@@ -8,7 +8,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/DOC-12086
+  url: https://preview.docs-test.couchbase.com/DOC-12087
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -38,8 +38,8 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/simon-dew/docs-devex
-    branches: [release/7.6, DOC-12086]
-  - url: https://github.com/simon-dew/cb-swagger
+    branches: [release/7.6, DOC-12087]
+  - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
@@ -91,7 +91,7 @@ asciidoc:
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
-    # flag-devex-escape-hatch: '@'
+    flag-devex-escape-hatch: '@'
     # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
     url-issues: https://issues.couchbase.com/browse
     url-issues-jscbc: https://issues.couchbase.com/browse
@@ -110,6 +110,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-189/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-190/ui-bundle.zip
 output:
   dir: ./public
