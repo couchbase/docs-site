@@ -44,14 +44,14 @@ content:
   - url: https://github.com/couchbase/docs-mobile
     branches: [HEAD]
   - url: ../docs-couchbase-lite
-    branches: [HEAD, release/3.0, release/2.8]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.8]
   - url: ../docs-sync-gateway
     branches: [DOC-12304-SyncGW-audit-logging, release/3.1, release/3.0, release/2.8]
   - url: ../couchbase-cloud
     branches: [main]
     start_path: docs/public
   - url: ../docs-capella
-    branches: [HEAD]
+    branches: [main]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
