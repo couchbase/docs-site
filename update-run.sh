@@ -10,6 +10,12 @@ cat <<JSON > $RECORD
         "ref": "$(git rev-parse HEAD)",
         "date": "$(date)",
         "run_id": "$GITHUB_RUN_ID"
+    },
+    "__LATEST__": {
+        "actor": "$GITHUB_ACTOR",
+        "ref": "$(git rev-parse HEAD)",
+        "date": "$(date)",
+        "run_id": "$GITHUB_RUN_ID"
     }
 }
 JSON
