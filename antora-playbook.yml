@@ -8,7 +8,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/DOC-12345
+  url: https://preview.docs-test.couchbase.com/DOC-10556
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -38,9 +38,9 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, capella]
+    branches: [DOC-10556-76, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.6, capella]
+    branches: [DOC-10556-76, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
@@ -56,8 +56,8 @@ content:
     branches: [trinity]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
-  - url: https://github.com/simon-dew/docs-server
-    branches: [DOC-12345-76]
+  - url: https://github.com/couchbase/docs-server
+    branches: [release/7.6]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [temp/7.5]
   - url: https://github.com/couchbase/docs-sdk-dotnet
@@ -110,6 +110,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-190/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-197/ui-bundle.zip
 output:
   dir: ./public
