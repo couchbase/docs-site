@@ -4,6 +4,7 @@
 :page-rank: 85
 :!sectids:
 :icons: font
+:page-nav-header-levels: 2
 
 include::home::partial$info-banner.adoc[]
 
