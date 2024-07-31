@@ -22,7 +22,7 @@ site:
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
         { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
-        { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud", "columnar"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
@@ -150,6 +150,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     sqlpp: SQL++
+    sqlppc: SQL++ for Capella columnar
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
