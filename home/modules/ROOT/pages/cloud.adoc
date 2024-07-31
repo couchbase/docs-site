@@ -5,6 +5,7 @@
 :!sectids:
 :icons: font
 :page-nav-header-levels: 2
+:page-disable-chatbot: true
 
 include::home::partial$info-banner.adoc[]
 
