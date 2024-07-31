@@ -8,8 +8,8 @@ antora:
   - "@antora/collector-extension"
   - ./lib/antora-component-version-rank.js
 site:
-  title: Couchbase Docs Staging
-  url: https://docs-staging.couchbase.com
+  title: Couchbase Docs Prerelease
+  url: https://ia.docs-test.couchbase.com
   start_page: home::index.adoc
   robots: |
     User-agent: *
@@ -42,16 +42,16 @@ content:
   ## The above has a bug when upgrading to Antora 3.1. Original sources commented
   ## out and replaced with a non git@ prefix. To revert if it causes issues
   sources:
-  - url: .
+  - url: https://github.com/couchbase/docs-site
     branches: docs-columnar-ga
     start_path: home
   - url: https://github.com/couchbaselabs/docs-style-guide
     branches: main
     start_paths: [styleguide, ui-ux, pendo]
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, release/7.2, capella, elixir]
+    branches: [release/7.6, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.6, release/7.2, capella, elixir]
+    branches: [release/7.6, release/7.2, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
