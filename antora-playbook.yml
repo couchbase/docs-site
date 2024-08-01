@@ -116,13 +116,13 @@ content:
     branches: [main]
     # Columnar dev
   - url: https://github.com/couchbase/docs-columnar-sdk-common
-    branches: [main]
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-java
-    branches: [main]
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
-    branches: [main]
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-python
-    branches: [main]
+    branches: [release/1.0]
     # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.1, release/2.8]
