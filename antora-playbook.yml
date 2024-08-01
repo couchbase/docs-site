@@ -8,7 +8,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/AV-82275
+  url: https://preview.docs-test.couchbase.com/AV-76884
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -38,17 +38,17 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [prerelease/7.6.2, capella-762]
+    branches: [release/7.6, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [prerelease/7.6.2, capella]
+    branches: [release/7.6, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-82275-columnar-mgmt-api]
+    branches: [AV-76884-columnar-mgmt-api]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [AV-82275]
-  - url: https://github.com/simon-dew/docs-columnar
-    branches: [AV-82275]
+    branches: [AV-82073_columnar-ga-fb]
+  - url: https://github.com/couchbaselabs/docs-columnar
+    branches: [main]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
@@ -90,6 +90,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-190/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-197/ui-bundle.zip
 output:
   dir: ./public
