@@ -37,7 +37,7 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbaelabs/docs-devex
+  - url: https://github.com/couchbaselabs/docs-devex
     branches: [DOC-12087-76, capella-762]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, capella]
