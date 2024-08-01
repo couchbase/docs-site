@@ -8,7 +8,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://ia.docs-test.couchbase.com
+  url: https://preview.docs-test.couchbase.com/AV-76884
   start_page: home::index.adoc
   robots: disallow
   keys:
