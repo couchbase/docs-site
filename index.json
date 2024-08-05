@@ -1,14 +1,20 @@
 {
   "__LATEST__": {
     "actor": "osfameron",
-    "ref": "c378157082e8e4af3f21fa6e34a656b448a6477f",
-    "date": "Mon Jul 29 14:19:53 UTC 2024",
-    "run_id": "10145965086"
+    "ref": "59f31ef300354c9837ae3c8431778923302a2370",
+    "date": "Mon Aug  5 11:29:06 UTC 2024",
+    "run_id": "10247768063"
   },
   "DOC-12304-SyncGW-audit-logging.yml": {
     "actor": "osfameron",
     "ref": "c378157082e8e4af3f21fa6e34a656b448a6477f",
     "date": "Mon Jul 29 14:19:53 UTC 2024",
     "run_id": "10145965086"
+  },
+  "AV-45846-openapi.yml": {
+    "actor": "osfameron",
+    "ref": "59f31ef300354c9837ae3c8431778923302a2370",
+    "date": "Mon Aug  5 11:29:06 UTC 2024",
+    "run_id": "10247768063"
   }
 }
