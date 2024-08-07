@@ -28,7 +28,7 @@ xref:java-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] |
 xref:java-sdk:project-docs:sdk-release-notes.adoc[] |
 https://docs.couchbase.com/sdk-api/couchbase-java-client[Java API Reference]
 
-====== {empty}
+{empty} +
 
 [discrete]
 == Using Your Database icon:database[] 
@@ -114,7 +114,7 @@ xref:scala-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] |
 xref:scala-sdk:project-docs:sdk-release-notes.adoc[] |
 https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[Scala API Reference]
 
-====== {empty}
+{empty} +
 
 [discrete]
 == Using Your Database  icon:database[]
