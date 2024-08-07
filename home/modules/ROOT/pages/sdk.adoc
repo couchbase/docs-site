@@ -209,11 +209,11 @@ SDKs are also available for our hosted real-time analytics service,
 xref:columnar:intro:intro.adoc[Capella columnar] --
 see the xref:columnar-sdk.adoc[Capella columnar SDKs pages]:
 
-java-columnar-sdk:hello-world:overview.adoc[Java columnar SDK]
+xref:java-columnar-sdk:hello-world:overview.adoc[Java columnar SDK]
  |
-nodejs-columnar-sdk:hello-world:overview.adoc[Node.js columnar SDK]
+xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js columnar SDK]
  |
-python-columnar-sdk:hello-world:overview.adoc[Python columnar SDK]
+xref:python-columnar-sdk:hello-world:overview.adoc[Python columnar SDK]
  |
 ====
 
