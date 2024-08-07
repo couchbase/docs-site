@@ -6,6 +6,8 @@
 
 = Develop with Capella Columnar 
 
+include::partial$info-banner.adoc[]
+
 SDK APIs to work with Capella Columnar, our managed, real-time analytics solution.
 
 
