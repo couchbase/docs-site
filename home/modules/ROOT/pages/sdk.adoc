@@ -196,23 +196,35 @@ Useful resources to help support your development experience with Couchbase and 
 
 
 The links above will take you to the latest version of your chosen SDK.
-Should you need to look up something for an older release, you'll discover there a dropdown version selector release for each SDK,
-and links to docs for older, unsupported versions.
+Should you need to look up something for an older release, you'll discover there a dropdown version selector (in the left-hand navigation) for each SDK release --
+and links to docs for older, unsupported versions in the https://docs-archive.couchbase.com/home/index.html[dcos archive].
 
 
 {empty} +
 
 == The Bigger Picture
 
+====
+SDKs are also available for our hosted real-time analytics service, 
+xref:columnar:intro:intro.adoc[Capella columnar] --
+see the xref:columnar-sdk.adoc[Capella columnar SDKs pages]:
+
+java-columnar-sdk:hello-world:overview.adoc[Java columnar SDK]
+ |
+nodejs-columnar-sdk:hello-world:overview.adoc[Node.js columnar SDK]
+ |
+python-columnar-sdk:hello-world:overview.adoc[Python columnar SDK]
+ |
+====
+
 More developer documentation is available for:
 
 * Connectors
-* Mobile
-* Real-time analytics with Columnar SDKs
-
-
-
-
+** https://docs.couchbase.com/elasticsearch-connector/current/getting-started.html
+** https://docs.couchbase.com/kafka-connector/current/quickstart.html
+** https://docs.couchbase.com/spark-connector/current/getting-started.html
+** https://docs.couchbase.com/server/current/connectors/odbc-jdbc-drivers.html
+* Mobile -- xref:couchbase-lite::index.adoc[edge development with Couchbase Lite].
 
 
 
