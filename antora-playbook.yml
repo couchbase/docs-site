@@ -8,7 +8,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/AV-76884
+  url: https://preview.docs-test.couchbase.com
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -43,7 +43,7 @@ content:
     branches: [release/7.6, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-76884-columnar-mgmt-api]
+    branches: [main]
     start_path: docs/public
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
