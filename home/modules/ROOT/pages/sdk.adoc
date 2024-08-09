@@ -25,6 +25,14 @@ collection.reactive.upsert("document-key", json)
     .subscribe()
 ----
 
+[TIP]
+.Columnar SDKs
+====
+SDKs for xref:columnar:intro:intro.adoc[Capella columnar] --
+Couchbase's analytical database (RT-OLAP) for real time apps and operational intelligence--
+will be arriving later this year, for the Java, Node.js, and Python platforms.
+====
+
 {empty} +
 
 == Server SDKs
@@ -138,6 +146,40 @@ xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transac
 +++
 </div>
 +++
+
+
+// commented out section, ready for Columnar SDK GA:
+
+////
+{empty} +
+
+== Capella columnar SDKs
+
+xref:columnar:intro:intro.adoc[Capella columnar] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
+Columnar SDKs are tailored to the APIs offered by this service.
+
+[#table_columnar_sdk,cols="42,40,60,50"]
+|===
+| columnar SDK | Documentation | Hello World Example | API Reference
+
+| Java columnar SDK
+| xref:java-columnar-sdk:hello-world:overview.adoc[Docs]
+| xref:java-columnar-sdk:hello-world:overview.adoc[Java Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-columnar-java-client[Java columnar API Reference]
+
+| Node.js columnar SDK
+| xref:nodejs-columnar-sdk:hello-world:overview.adoc[Docs]
+| xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-columnar-nodejs-client/index.html[Node.js columnar API Reference]
+
+| Python columnar SDK
+| xref:python-columnar-sdk:hello-world:overview.adoc[Docs]
+| xref:python-columnar-sdk:hello-world:overview.adoc[Python Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-columnar-python-client/index.html[Python columnar API Reference]
+|===
+////
+
+
 
 
 == SDK doctor
