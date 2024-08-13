@@ -79,7 +79,7 @@ content:
   - url: https://github.com/couchbase/docs-kafka
     branches: [main]
   - url: https://github.com/couchbase/docs-spark
-    branches: [release/3.3]
+    branches: [release/3.5, release/3.3]
   - url: https://github.com/couchbase/docs-tableau
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-connectors-power-bi
