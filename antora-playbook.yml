@@ -21,7 +21,7 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "Columnar SDKs", "startPage": "home::columnar-sdk.adoc", "components": ["*-columnar-sdk"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
@@ -55,6 +55,14 @@ content:
     branches: [main]
   - url: https://github.com/couchbase/docs-server/
     branches: [release/7.6]
+    # Columnar dev
+  - url: https://github.com/couchbase/docs-columnar-sdk-common
+    branches: [main]
+  - url: https://github.com/couchbase/docs-columnar-sdk-java
+    branches: [main]
+  - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
+    branches: [main]
+  - url: https://github.com/couchbase/docs-columnar-sdk-python
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
