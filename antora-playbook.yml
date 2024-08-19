@@ -8,7 +8,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/DOC-10556
+  url: https://preview.docs-test.couchbase.com/DOC-12443
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -38,9 +38,9 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [DOC-10556-76, capella]
+    branches: [DOC-12443, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [DOC-10556-76, capella]
+    branches: [release/7.7, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
@@ -48,16 +48,16 @@ content:
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
   - url: https://github.com/couchbase/docs-analytics
-    branches: [release/7.6]
+    branches: [release/7.7]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [trinity]
+    branches: [cypher]
     start_path: docs
   - url: https://github.com/couchbase/backup
-    branches: [trinity]
+    branches: [cypher]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.6]
+    branches: [DOC-12443]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [temp/7.5]
   - url: https://github.com/couchbase/docs-sdk-dotnet
