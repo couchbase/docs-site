@@ -5,6 +5,7 @@ antora:
   extensions:
   - '@antora/site-generator-ms'
   - ./lib/embargo.js
+  - ./lib/antora-component-version-rank.js
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
@@ -17,11 +18,11 @@ site:
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
         { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
-        { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "cxx-txns", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
@@ -50,24 +51,24 @@ content:
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.7]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [cypher]
+    branches: [trinity]
     start_path: docs
   - url: https://github.com/couchbase/backup
-    branches: [cypher]
+    branches: [trinity]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
     branches: [DOC-12443]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [temp/7.5]
+    branches: [release/7.6]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [release/3.5]
+    branches: [temp/3.6]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.5]
+    branches: [temp/3.7]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [release/4.2]
+    branches: [temp/4.4]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.2]
+    branches: [temp/4.3]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
 asciidoc:
