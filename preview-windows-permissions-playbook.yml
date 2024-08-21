@@ -57,35 +57,35 @@ content:
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
     start_path: docs
   # - url: https://git@github.com/couchbasecloud/couchbase-cloud
-  - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [main]
-    start_paths: [docs/public, docs/columnar]
-  - url: https://github.com/couchbase/docs-capella
-    branches: [main]
-  - url: https://github.com/couchbaselabs/docs-columnar
-    branches: [main]
-  # - url: https://git@github.com/couchbase/couchbase-operator
-  - url: https://github.com/couchbase/couchbase-operator
-    branches: [2.6.x, 2.5.x, 2.4.x, 2.3.x, 2.2.x]
-    start_path: docs/user
-  - url: https://github.com/couchbaselabs/observability
-    branches: [0.2.x]
-    start_path: docs
-  - url: https://github.com/couchbaselabs/cbmultimanager
-    branches: [0.2.x]
-    start_path: docs
-  - url: https://github.com/couchbase/docs-elastic-search
-    branches: [main]
-  - url: https://github.com/couchbase/docs-kafka
-    branches: [main]
-  - url: https://github.com/couchbase/docs-spark
-    branches: [release/3.5, release/3.3]
-  - url: https://github.com/couchbase/docs-tableau
-    branches: [release/1.1, release/1.0]
-  - url: https://github.com/couchbase/docs-connectors-power-bi
-    branches: [main]
-  # - url: https://git@github.com/couchbase/docs-connectors-talend
-  - url: https://github.com/couchbase/docs-connectors-talend
+  # - url: https://github.com/couchbasecloud/couchbase-cloud
+  #   branches: [main]
+  #   start_paths: [docs/public, docs/columnar]
+  # - url: https://github.com/couchbase/docs-capella
+  #   branches: [main]
+  # - url: https://github.com/couchbaselabs/docs-columnar
+  #   branches: [main]
+  # # - url: https://git@github.com/couchbase/couchbase-operator
+  # - url: https://github.com/couchbase/couchbase-operator
+  #   branches: [2.6.x, 2.5.x, 2.4.x, 2.3.x, 2.2.x]
+  #   start_path: docs/user
+  # - url: https://github.com/couchbaselabs/observability
+  #   branches: [0.2.x]
+  #   start_path: docs
+  # - url: https://github.com/couchbaselabs/cbmultimanager
+  #   branches: [0.2.x]
+  #   start_path: docs
+  # - url: https://github.com/couchbase/docs-elastic-search
+  #   branches: [main]
+  # - url: https://github.com/couchbase/docs-kafka
+  #   branches: [main]
+  # - url: https://github.com/couchbase/docs-spark
+  #   branches: [release/3.5, release/3.3]
+  # - url: https://github.com/couchbase/docs-tableau
+  #   branches: [release/1.1, release/1.0]
+  # - url: https://github.com/couchbase/docs-connectors-power-bi
+  #   branches: [main]
+  # # - url: https://git@github.com/couchbase/docs-connectors-talend
+  # - url: https://github.com/couchbase/docs-connectors-talend
   # - url: https://git@github.com/couchbase/docs-analytics
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.6, release/7.2, release/7.1, release/7.0]
@@ -98,7 +98,7 @@ content:
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [DOC-10648_Windows_install_permission]
+    branches: [DOC-10648_Windows_install_permissions]
 #   - url: https://github.com/couchbase/docs-sdk-common
 #     branches: [release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
 #   - url: https://github.com/couchbase/docs-sdk-c
