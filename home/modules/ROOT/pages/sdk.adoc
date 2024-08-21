@@ -28,7 +28,7 @@ collection.reactive.upsert("document-key", json)
 [TIP]
 .Columnar SDKs
 ====
-SDKs for xref:columnar:intro:intro.adoc[Capella columnar] --
+SDKs for xref:columnar:intro:intro.adoc[Capella Columnar] --
 Couchbase's analytical database (RT-OLAP) for real time apps and operational intelligence --
 are in development, and will be arriving first for the Java, Node.js, and Python platforms.
 ====
