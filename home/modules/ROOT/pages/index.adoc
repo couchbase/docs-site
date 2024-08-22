@@ -40,6 +40,7 @@ endif::[]
 
 [.tile]
 .Couchbase Autonomous Operator (Kubernetes)
+* xref:2.7@operator::whats-new.adoc[Version 2.7]
 * xref:2.6@operator::whats-new.adoc[Version 2.6]
 * xref:2.5@operator::whats-new.adoc[Version 2.5]
 * xref:2.4@operator::whats-new.adoc[Version 2.4]
