@@ -27,7 +27,7 @@ site:
       ]
 git:
   ensure_git_suffix: false
-  fetch_concurrency: 10
+  fetch_concurrency: 1
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
