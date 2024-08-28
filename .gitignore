@@ -13,3 +13,6 @@ xref-validator.log
 .idea
 lab.sh
 
+/include-tags.db
+/include-tags.db-shm
+/include-tags.db-wal
