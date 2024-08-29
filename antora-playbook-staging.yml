@@ -59,7 +59,7 @@ content:
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
   - url: https://github.com/couchbase/couchbase-operator
-    branches: [master, 2.6.x, 2.5.x, 2.4.x, 2.3.x, 2.2.x, 2.1.x]
+    branches: [master, 2.7.x, 2.6.x, 2.5.x, 2.4.x, 2.3.x]
     start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
     branches: [main]
@@ -72,7 +72,7 @@ content:
   - url: https://github.com/couchbase/docs-kafka
     branches: [main, release/4.1]
   - url: https://github.com/couchbase/docs-spark
-    branches: [main, release/3.2, release/3.1]
+    branches: [release/3.5, release/3.3]
   - url: https://github.com/couchbase/docs-tableau
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-connectors-power-bi
@@ -194,8 +194,8 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    # url: https://github.com/couchbase/docs-ui/releases/download/staging-10/ui-bundle.zip
-    url: https://github.com/couchbase/docs-ui/releases/download/preserve-hash-on-version-change-1/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/staging-12/ui-bundle.zip
+    # url: https://github.com/couchbase/docs-ui/releases/download/preserve-hash-on-version-change-1/ui-bundle.zip
 output:
   dir: ./public
 runtime:

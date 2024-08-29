@@ -5,21 +5,19 @@ antora:
   extensions:
   - '@antora/site-generator-ms'
   - ./lib/embargo.js
-  - ./lib/antora-component-version-rank.js
   - "@antora/collector-extension"
+  - ./lib/antora-component-version-rank.js
 site:
-  title: Couchbase Docs
-  url: https://docs.couchbase.com
+  title: Couchbase Docs Prerelease
+  url: https://ia.docs-test.couchbase.com
   start_page: home::index.adoc
   robots: |
     User-agent: *
+    Disallow: /
+
+    User-agent: Algolia Crawler
     Allow: /
-    Disallow: /sdk-api/
-    Allow: /sdk-api/*-client/
-    Allow: /sdk-api/couchbase-core-io/
-    Allow: /sdk-api/couchbase-transactions-dotnet/
   keys:
-    google_analytics: GTM-MVPNN2
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
@@ -44,127 +42,96 @@ content:
   ## The above has a bug when upgrading to Antora 3.1. Original sources commented
   ## out and replaced with a non git@ prefix. To revert if it causes issues
   sources:
-  - url: .
-    branches: HEAD
+  - url: https://github.com/couchbase/docs-site
+    branches: docs-columnar-ga
     start_path: home
   - url: https://github.com/couchbaselabs/docs-style-guide
     branches: main
     start_paths: [styleguide, ui-ux, pendo]
   - url: https://github.com/couchbaselabs/docs-devex
-    # branches: [release/7.2, capella, elixir]
     branches: [release/7.6, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
+    branches: [release/7.6, release/7.2, capella]
     start_path: docs
-  # - url: https://git@github.com/couchbasecloud/couchbase-cloud
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [main]
+    branches: [AV-82073_columnar-ga-fb]
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
-  # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
-    branches: [2.7.x, 2.6.x, 2.5.x, 2.4.x, 2.3.x]
+    branches: [master, 2.6.x]
     start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
-    branches: [0.2.x]
+    branches: [main]
     start_path: docs
   - url: https://github.com/couchbaselabs/cbmultimanager
-    branches: [0.2.x]
+    branches: [master]
     start_path: docs
   - url: https://github.com/couchbase/docs-elastic-search
-    branches: [main]
+    branches: [main, release/4.3]
   - url: https://github.com/couchbase/docs-kafka
-    branches: [main]
+    branches: [main, release/4.1]
   - url: https://github.com/couchbase/docs-spark
-    branches: [release/3.5, release/3.3]
+    branches: [main, release/3.2]
   - url: https://github.com/couchbase/docs-tableau
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-connectors-power-bi
-    branches: [main]
+    branches: [DOC-12374-DSN-configuration-parameters-for-ODBC-Driver]
   # - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://github.com/couchbase/docs-connectors-talend
   # - url: https://git@github.com/couchbase/docs-analytics
   - url: https://github.com/couchbase/docs-analytics
-    branches: [release/7.6, release/7.2, release/7.1, release/7.0]
+    branches: [release/7.6, release/7.2]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
+    branches: [trinity, neo]
     start_path: docs
   # - url: https://git@github.com/couchbase/backup
   - url: https://github.com/couchbase/backup
-    branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
+    branches: [trinity, neo]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.6, release/7.2, release/7.1, release/7.0]
+    branches: [release/7.6, release/7.2]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [release/7.6, temp/7.5]
   - url: https://github.com/couchbase/docs-sdk-c
-    branches: [release/3.3]
+    branches: [release/3.3, release/3.2]
   - url: https://github.com/couchbase/docs-sdk-cxx
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [temp/3.6, release/3.5, release/3.4, release/3.3]
+    branches: [temp/3.6, release/3.5]
   - url: https://github.com/couchbase/docs-sdk-go
-    branches: [temp/2.9, temp/2.8, release/2.7, release/2.6, release/2.5, release/2.4]
+    branches: [temp/2.9, temp/2.8]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [temp/3.7, temp/3.6, release/3.5, release/3.4, release/3.3]
+    branches: [temp/3.7, temp/3.6]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [temp/1.4, temp/1.3, release/1.2, release/1.1, release/1.0]
+    branches: [temp/1.4, temp/1.3]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [temp/4.4, temp/4.3, release/4.2, release/4.1, release/4.0]
+    branches: [temp/4.4, temp/4.3]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [temp/4.2, release/4.1, release/4.0]
+    branches: [temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.3, temp/4.2, release/4.1, release/4.0]
+    branches: [temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [temp/3.5, release/3.4, release/3.3]
+    branches: [temp/3.6, temp/3.5]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/1.7, temp/1.6, release/1.5, release/1.4, release/1.3]
+    branches: [release/1.7, temp/1.6]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
     # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.1, release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/3.2, release/3.1, release/3.0, release/2.8]
+    branches: [release/3.2, release/3.1]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/3.1, release/3.0, release/2.8]
+    branches: [release/3.1, release/3.0]
+  - url: https://github.com/couchbase/docs-service-broker
+    branches: [1.1.x, 1.2.x]
   # - url: https://git@github.com/couchbase/docs-cloud-native
   - url: https://github.com/couchbase/docs-cloud-native
     branches: [cloud-native-2.2]
-#  - url: https://github.com/couchbaselabs/tutorials
-  - url: https://github.com/couchbase/developer-content
-  - url: https://github.com/couchbaselabs/tutorial-template
-  - url: https://github.com/couchbaselabs/mobile-travel-sample
-    branches: [master]
-    start_path: content
-  # - url: https://github.com/couchbaselabs/hotel-finder-react-native
-  # - url: https://github.com/couchbaselabs/hotel-lister-cordova
-#  - url: https://github.com/couchbaselabs/tutorials-contrib
-  - url: https://github.com/couchbaselabs/mobile-training-todo
-    branches: tutorials
-    start_path: content
-  - url: https://github.com/couchbaselabs/UniversityLister-Android
-    start_path: content
-  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile
-    branches: [standalone, query, sync, backgroundfetch]
-    start_path: content
-  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
-    branches: [standalone, query, sync]
-    start_path: content
-  # - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
-  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
-    branches: [standalone, query, sync]
-    start_path: content
-  # - url: https://github.com/amarantha-k/OpenID_connect_tutorial
-  #   branches: [tutorial]
-  #   start_path: content
-  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
-    branches: [master]
-    start_path: content
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
@@ -188,14 +155,9 @@ asciidoc:
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
-    # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
-    url-issues: https://issues.couchbase.com/browse
-    url-issues-jscbc: https://issues.couchbase.com/browse
-    url-issues-av: https://couchbasecloud.atlassian.net/browse
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
-  - ./lib/inline-jira-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
@@ -206,7 +168,7 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-200/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-198/ui-bundle.zip
 output:
   dir: ./public
 runtime:

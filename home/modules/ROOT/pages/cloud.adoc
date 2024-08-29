@@ -4,6 +4,9 @@
 :page-rank: 85
 :!sectids:
 :icons: font
+:page-nav-header-levels: 2
+:page-disable-chatbot: true
+:page-aliases: cloud::index.adoc
 
 include::home::partial$info-banner.adoc[]
 
@@ -33,13 +36,12 @@ Get set up and ready with a free trial.
 
 
 [.card-box]
-=== icon:rocket[] Get Started With Columnar
+=== icon:rocket[] Get Started With Capella Columnar
 
 Create your account and follow our tutorial on how to load data into your columnar cluster.
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
 * xref:columnar:intro:intro.adoc[]
-* xref:columnar:intro:create-account.adoc[]
 * xref:columnar:admin:prepare-project.adoc[]
 * xref:columnar:intro:examples.adoc[]
 * xref:columnar:query:workbench.adoc[]
