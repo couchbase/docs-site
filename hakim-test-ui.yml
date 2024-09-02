@@ -40,11 +40,6 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbaselabs/docs-devex
-    # branches: [release/7.2, capella, elixir]
-    branches: [release/7.2, capella]
-  - url: https://github.com/couchbase/docs-server
-    branches: [release/7.2]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
@@ -84,6 +79,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/AV-82442-free-tier-ui-tweaks-1/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/staging-12/ui-bundle.zip
 output:
   dir: ./public
