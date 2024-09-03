@@ -24,7 +24,7 @@ Capella columnar is a standalone, cloud-only offering from Couchbase under the C
 [.card-box]
 === icon:rocket[] Get Started With Capella Operational
 
-Get set up and ready with a free trial.
+Get set up with an account and deploy a free tier operational cluster.
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
 * xref:cloud:get-started:intro.adoc[]
