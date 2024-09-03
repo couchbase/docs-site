@@ -16,3 +16,4 @@ lab.sh
 /include-tags.db
 /include-tags.db-shm
 /include-tags.db-wal
+/tags-report.adoc
