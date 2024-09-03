@@ -5,7 +5,6 @@
 :!sectids:
 :icons: font
 :page-nav-header-levels: 2
-:page-disable-chatbot: true
 :page-aliases: cloud::index.adoc
 
 include::home::partial$info-banner.adoc[]
