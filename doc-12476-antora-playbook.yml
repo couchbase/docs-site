@@ -9,7 +9,6 @@ antora:
     - "@antora/collector-extension"
     - ./lib/use-require.js
     - ./lib/log-code-include-init.js
-    - ./lib/log-code-tags-report.js
 
 site:
   title: Couchbase Docs
