@@ -9,7 +9,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/DOC-12321
+  url: https://preview.docs-test.couchbase.com/DOC-12319
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -39,7 +39,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [DOC-12321, capella]
+    branches: [DOC-12319, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, capella]
     start_path: docs
@@ -60,7 +60,7 @@ content:
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [DOC-12321]
+    branches: [release/7.6]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.6]
   - url: https://github.com/couchbase/docs-sdk-dotnet
