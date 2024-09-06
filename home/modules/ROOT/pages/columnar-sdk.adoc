@@ -12,7 +12,7 @@ xref:columnar:intro:intro.adoc[Capella Columnar] is an analytical database (RT-O
 Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
 
-SDK APIs to work with Capella columnar:
+SDK APIs to work with Capella Columnar:
 
 
 [{tabs}] 
@@ -32,7 +32,7 @@ xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK Docs] |
 Python::
 +
 --
-xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] |
+xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] 
 --
 ====
 
