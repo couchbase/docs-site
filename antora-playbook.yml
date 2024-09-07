@@ -51,7 +51,7 @@ content:
     branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [main]
+    branches: [AV-84837_vpc-bridging]
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
 asciidoc:
