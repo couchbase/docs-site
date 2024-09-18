@@ -5,6 +5,7 @@ antora:
   extensions:
   - '@antora/site-generator-ms'
   - ./lib/embargo.js
+  - ./lib/antora-component-version-rank.js
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
@@ -38,14 +39,16 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, capella]
+    branches: [DOC-12312, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.6, capella]
+    branches: [DOC-12312, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
-    start_path: docs/public
+    start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
+    branches: [main]
+  - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.6]
@@ -59,15 +62,15 @@ content:
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.6]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [temp/7.5]
+    branches: [release/7.6]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [release/3.5]
+    branches: [temp/3.6]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.5]
+    branches: [temp/3.7]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [release/4.2]
+    branches: [temp/4.4]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.2]
+    branches: [temp/4.3]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
 asciidoc:
@@ -110,6 +113,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-189/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-197/ui-bundle.zip
 output:
   dir: ./public
