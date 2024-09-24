@@ -60,6 +60,7 @@ endif::[]
 
 [.tile]
 .Couchbase Lite
+* xref:3.2@couchbase-lite::index.adoc[Version 3.2]
 * xref:3.1@couchbase-lite::index.adoc[Version 3.1]
 * xref:3.0@couchbase-lite::index.adoc[Version 3.0]
 * xref:2.8@couchbase-lite::index.adoc[Version 2.8]
@@ -73,6 +74,7 @@ endif::[]
 
 [.tile]
 .Couchbase Sync Gateway
+* xref:3.2@sync-gateway::index.adoc[Version 3.2]
 * xref:3.1@sync-gateway::index.adoc[Version 3.1]
 * xref:3.0@sync-gateway::index.adoc[Version 3.0]
 * xref:2.8@sync-gateway::index.adoc[Version 2.8]
