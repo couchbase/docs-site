@@ -8,7 +8,7 @@
 
 include::partial$info-banner.adoc[]
 
-xref:columnar:intro:intro.adoc[Capella Columnar] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
+xref:columnar:intro:intro.adoc[Capella Columnar] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
 Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
 
@@ -21,18 +21,24 @@ Java::
 +
 --
 xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs] |
+xref:java-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://docs.couchbase.com/sdk-api/columnar-java-client[API Reference] |
 --
 
 Node.js::
 +
 --
 xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK Docs] |  
+xref:nodejs-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://docs.couchbase.com/sdk-api/columnar-nodejs-client[Node.js API Reference]
 --
 
 Python::
 +
 --
-xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] 
+xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] |
+xref:python-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://docs.couchbase.com/sdk-api/columnar-python-client[Python API Reference]
 --
 ====
 
