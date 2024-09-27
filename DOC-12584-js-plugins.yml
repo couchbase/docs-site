@@ -40,6 +40,9 @@ content:
   - url: .
     branches: HEAD
     start_path: home
+  - url: https://github.com/couchbaselabs/docs-devex
+    # branches: [release/7.2, capella, elixir]
+    branches: [release/7.6, release/7.2, capella]
     # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-couchbase-lite
     branches: [DOC-12584-new-javascript-plugin-doc, release/3.1]
