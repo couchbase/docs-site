@@ -41,8 +41,8 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbase/docs-capella.git
-    branches: HEAD
+  - url: https://github.com/couchbase/docs-couchbase-lite.git
+    branches: antora-assembler-simplification
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
