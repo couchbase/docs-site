@@ -64,7 +64,7 @@ asciidoc:
     sqlppc: SQL++ for Capella columnar
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
-    kroki-fetch-diagram: false
+    kroki-fetch-diagram: true
     # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
     url-issues: https://issues.couchbase.com/browse
     url-issues-jscbc: https://issues.couchbase.com/browse
