@@ -43,12 +43,12 @@ content:
     branches: [release/7.6, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-76884-columnar-mgmt-api]
+    branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [AV-82073_columnar-ga-fb]
-  - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
+  - url: https://github.com/simon-dew/docs-columnar
+    branches: [DOC-99999-dummy-branch]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
