@@ -58,10 +58,11 @@ function writePlaybook({docsSite, sources, previewConfig}) {
     let overridePlaybook = path.resolve(docsSite, 'antora-playbook.preview.local.yml')
     const override = yaml.parse(
         fs.readFileSync(overridePlaybook).toString())
+
     playbook = deepmerge({all: true})(
         playbook,
         override,
-        previewConfig.override)
+        previewConfig.override || {})
     console.dir(playbook, {depth: 4})
 
     // write out the preview playbook
