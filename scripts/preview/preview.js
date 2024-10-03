@@ -13,7 +13,6 @@ const doExec = promisify(child_process.exec);
     await buildAntora(antora)
 }
 
-
 // MAIN FUNCTIONS
 async function getLocalAntora() {
     const antoraPath = await findUp('antora.yml')
@@ -81,6 +80,9 @@ async function buildAntora(antora) {
     await spawn('open', `${output}/index.html`)
 }
 
+//////////
+// HELPER FUNCTIONS
+
 function startPath(from, to) {
     const rel = path.relative(from, to)
     if (rel == '') {
@@ -89,7 +91,6 @@ function startPath(from, to) {
         return { start_path: rel }
     }
 }
-
 
 function make_resolveLocal(baseRepo) {
     const repoPath = ((process.env.REPO_PATH || '..')
@@ -101,7 +102,6 @@ function make_resolveLocal(baseRepo) {
             .map((p) => path.resolve(p, repo))
             .find((p) => fs.existsSync(p))
 }
-
 
 function mapSources_local({ext, repo, repoShort, docsSite, start_path, branch, previewConfig}) {
     const defaultSources = {
@@ -141,8 +141,6 @@ function mapSources_local({ext, repo, repoShort, docsSite, start_path, branch, p
     return Object.values(sources)
 }
 
-
-
 function getLocalDocsSite(repo) {
     let docsSite
     if (docsSite = process.env.DOCS_SITE_PATH) {
@@ -151,7 +149,6 @@ function getLocalDocsSite(repo) {
     const resolveLocal = make_resolveLocal(repo)
     return resolveLocal('docs-site')
 }
-
 
 ///////////
 // GENERIC HELPER functions
