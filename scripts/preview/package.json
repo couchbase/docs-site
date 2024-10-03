@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "find-up": "^7.0.0",
+    "yaml": "^2.5.1"
+  }
+}

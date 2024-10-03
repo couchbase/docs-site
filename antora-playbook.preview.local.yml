@@ -1,0 +1,9 @@
+site:
+  title: Couchbase Docs Local Preview
+output:
+  dir: ./preview
+  clean: true
+asciidoc:
+  attributes:
+    kroki-server-url: null
+
