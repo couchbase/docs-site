@@ -1,19 +1,43 @@
 import path from 'node:path'
 import fs from 'node:fs'
+import os from 'node:os'
 import yaml from 'yaml'
 import {findUp, pathExists} from 'find-up'
 import { promisify } from 'node:util'
 import child_process from 'node:child_process'
 import deepmerge from '@fastify/deepmerge'
 const doExec = promisify(child_process.exec);
+import { parseArgs } from "node:util";
 
 // MAIN block
 {
+    const args = parseArgs({
+        options: {
+            // call with --init to add alias `preview` in .zshrc
+            init: {
+                type: "boolean",
+            }
+        }})
+
     let antora = await getLocalAntora()
-    await buildAntora(antora)
+
+    if (args.values.init) {
+        init(antora)
+    }
+    else {
+        await buildAntora(antora)
+    }
 }
 
 // MAIN FUNCTIONS
+
+function init({docsSite}) {
+    const cmd = `alias preview='node ${docsSite}/scripts/preview/preview.js'`
+    const zshrc = path.join(os.homedir(), '.zshrc')
+    console.log(`Adding this alias to ${zshrc}:\n    ${cmd}`)
+    fs.appendFileSync(zshrc, cmd)
+}
+
 async function getLocalAntora() {
     const antoraPath = await findUp('antora.yml')
     let antora = yaml.parse(
