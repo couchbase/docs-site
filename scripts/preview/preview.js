@@ -14,24 +14,60 @@ import { parseArgs } from "node:util";
     const args = parseArgs({
         options: {
             // call with --init to add alias `preview` in .zshrc
-            init: {
-                type: "boolean",
-            }
-        }})
+            // e.g. `node scripts/preview/preview.js --init`
+            init: { type: "boolean" },
 
-    let antora = await getLocalAntora()
+            // --remote build on github
+            remote: { type: "boolean" },
+            repo: { type: "string" },
+            branch: { type: "string" }
+        }
+    })
 
-    if (args.values.init) {
-        init(antora)
+    // REMOTE builds
+    if (args.values.remote) {
+        const {repo, branch} = args.values
+        // we are called from a Github runner, with `/docs-site` checked out
+        // and assume working directory is the ROOT directory
+        // (e.g. parent of docs-site)
+
+        const docsSite = path.resolve('./docs-site')
+        const repoShort = path.basename(repo, '.git')
+
+        const playbook = readMasterPlaybook({docsSite})
+
+        let antora = {
+            docsSite,
+            playbook,
+            branches: branch,
+            repo: path.resolve(repoShort),
+            repoShort
+        }
+        // spawn('gh', 'repo', 'clone', 
+        //     repo,
+        //     '--',
+        //     '--branch', branch)
+        // TODO reset to --ref if passed
+
+        antora = await getRemoteAntora(antora)
+        await buildAntora_remote(antora)
     }
+
+    // LOCAL builds
     else {
-        await buildAntora(antora)
+        const antora = await getLocalAntora()
+        if (args.values.init) {
+            initLocal(antora)
+        }
+        else {
+            await buildAntora_local(antora)
+        }
     }
 }
 
 // MAIN FUNCTIONS
 
-function init({docsSite}) {
+function initLocal({docsSite}) {
     const cmd = `alias preview='node ${docsSite}/scripts/preview/preview.js'`
     const zshrc = path.join(os.homedir(), '.zshrc')
     console.log(`Adding this alias to ${zshrc}:\n    ${cmd}`)
@@ -40,49 +76,64 @@ function init({docsSite}) {
 
 async function getLocalAntora() {
     const antoraPath = await findUp('antora.yml')
-    let antora = yaml.parse(
-        fs.readFileSync(antoraPath).toString())
+    const branch = await exec('git branch --show-current')
+    if (! antoraPath) {
+        throw new Error("antora.yml not found in this project")
+    }
+    let antora = readAntora(antoraPath, branch)
 
     const dotGit = path.dirname(
         await findUp('.git', {type: "directory"}))
 
-    const branch = await exec('git branch --show-current')
-
     const docsSite = getLocalDocsSite(dotGit)
 
-    const previewConfig = antora.ext?.preview?.[branch] || antora.ext?.preview?.DEFAULT || {}
+    // copy the master playbook
+    let playbook = readMasterPlaybook({docsSite})
 
     antora = {
         ...antora,
         repo: dotGit,
         repoShort: path.basename(dotGit),
         docsSite,
+        playbook,
         branches: branch,
-        previewConfig,
         ...startPath(dotGit, path.dirname(antoraPath)),
     }
 
     const sources = mapSources_local(antora)
+    playbook.content.sources = sources
     return {
         ...antora,
         sources
     }
 }
 
-function writePlaybook({docsSite, sources, previewConfig}) {
-    // copy the master playbook
-    let masterPlaybook = path.resolve(docsSite, 'antora-playbook.yml')
-    let playbook = yaml.parse(
-        fs.readFileSync(masterPlaybook).toString())
+async function getRemoteAntora(antora) {
+    // create the `antora` datastructure from a Github runner, with the content
+    // repo checked out under `repo`
 
-    // add the new sources we've customized
-    playbook.content.sources = sources
+    let {repo} = antora
+    const uniq = (arr) => [... new Set(arr)]
 
-    // do overrides
-    let overridePlaybook = path.resolve(docsSite, 'antora-playbook.preview.local.yml')
-    const override = yaml.parse(
-        fs.readFileSync(overridePlaybook).toString())
+    process.chdir(repo)
+    let changed = await execLines('git diff --name-only HEAD^')
+    changed = uniq(changed.map((p) => path.dirname(p)))
 
+    const antoraPath = await findAntora(changed)
+    antora = {
+        ...antora,
+        ...readAntora(antoraPath, antora.branches),
+        ...startPath(repo, path.dirname(antoraPath))
+    }
+    const sources = mapSources_remote(antora)
+    antora.playbook.content.sources = sources
+    return {
+        ...antora,
+        sources
+    }
+}
+
+function writePlaybook({docsSite, previewConfig, playbook}, override = {}) {
     playbook = deepmerge({all: true})(
         playbook,
         override,
@@ -96,17 +147,50 @@ function writePlaybook({docsSite, sources, previewConfig}) {
     return playbook
 }
 
-async function buildAntora(antora) {
+async function buildAntora_local(antora) {
     const {docsSite} = antora
-    const playbook = writePlaybook(antora)
+    let overridePlaybook = 
+        path.resolve(docsSite, 'antora-playbook.preview.local.yml')
+    const override = yaml.parse(
+        fs.readFileSync(overridePlaybook).toString())
+    const playbook = writePlaybook(antora, override)
     const output = playbook.output?.dir || './public'
     process.chdir(docsSite)
     await spawn('npx', 'antora', 'antora-playbook.preview.generated.yml')
     await spawn('open', `${output}/index.html`)
 }
 
+async function buildAntora_remote(antora) {
+    console.dir({antora}, {depth: 4})
+    const playbook = writePlaybook(antora)
+}
+
 //////////
 // HELPER FUNCTIONS
+
+function readMasterPlaybook({docsSite}) {
+    let masterPlaybook = path.resolve(docsSite, 'antora-playbook.yml')
+    return yaml.parse(
+        fs.readFileSync(masterPlaybook).toString())
+}
+
+function readAntora(antoraPath, branch) {
+    let antora = yaml.parse(
+        fs.readFileSync(antoraPath).toString())
+
+    antora.previewConfig =
+        antora.ext?.preview?.[branch] || 
+        antora.ext?.preview?.DEFAULT || {}
+
+    return antora
+}
+
+async function findAntora(paths) {
+    for (let p of paths) {
+        let a 
+        if (a = findUp('antora.yml', {cwd: path.resolve(p)})) { return a}
+    }
+}
 
 function startPath(from, to) {
     const rel = path.relative(from, to)
@@ -118,6 +202,7 @@ function startPath(from, to) {
 }
 
 function make_resolveLocal(baseRepo) {
+    console.log({baseRepo})
     const repoPath = ((process.env.REPO_PATH || '..')
         .split(':')
         .map((p) => path.resolve(baseRepo, p)))
@@ -128,7 +213,30 @@ function make_resolveLocal(baseRepo) {
             .find((p) => fs.existsSync(p))
 }
 
-function mapSources_local({ext, repo, repoShort, docsSite, start_path, branch, previewConfig}) {
+function make_resolveRemote(sources) {
+    const dict = sources.reduce(
+        (acc, {url}) => {
+            let name = path.basename(url, '.git')
+            return {...acc, [name]: url}
+        },
+        {})
+    
+    return (repo) =>
+        dict[repo]
+}
+
+function mapSources_local(antora) {
+    console.log(antora)
+    const resolver = make_resolveLocal(antora.docsSite)
+    return mapSources({...antora, resolver})
+}
+
+function mapSources_remote(antora) {
+    const resolver = make_resolveRemote(antora.playbook.content.sources)
+    return mapSources({...antora, resolver})
+}
+
+function mapSources({repo, repoShort, start_path, previewConfig, resolver}) {
     const defaultSources = {
         'docs-site': {
             url: '.',
@@ -142,15 +250,13 @@ function mapSources_local({ext, repo, repoShort, docsSite, start_path, branch, p
         }
     }
 
-    const resolveLocal = make_resolveLocal(docsSite)
-
     let sources = []
     if (sources = previewConfig?.sources) {
         sources = flatmapObj(sources,
-            (k, _v) => {
+            (k, v) => {
                 let url
-                if (url = resolveLocal(k)) {
-                    return {url}
+                if (url = resolver(k)) {
+                    return {url, ...v}
                 }
                 else {
                     console.error(`Didn't find ${k} in ${repoPath}`)
@@ -192,17 +298,24 @@ function flatmapObj(obj, fn) {
         }))
 }
 
-async function exec(...args) {
-    const { stdout, stderr } = await doExec.apply(null, args)
+async function exec(cmd) {
+    let { stdout, stderr } = await doExec(cmd)
 
     if (stderr.length) {
         console.error(stderr)
     }
     if (stdout.length) {
-        return stdout.trimRight()
+        return stdout.trimEnd()
     }
 }
 
+async function execLines(cmd) {
+    const ret = await exec(cmd)
+    return ret.split(/\r?\n/g)
+}
+
+// async, so call with `await` (uses Promises)
+// see https://stackoverflow.com/questions/58570325/how-to-turn-child-process-spawns-promise-syntax-to-async-await-syntax
 function spawn(...command) {
     let p = child_process.spawn(command[0], command.slice(1))
     return new Promise((resolve) => {
@@ -216,7 +329,12 @@ function spawn(...command) {
             throw new Error(x.toString())
         })
         p.on("exit", (code) => {
-            resolve(code)
+            if (code) {
+                throw new Error(`Command [${command.join(' ')}] returned ${code}`)
+            }
+            else {
+                resolve(code)
+            }
         })
     })
 }
