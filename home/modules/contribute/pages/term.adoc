@@ -1,0 +1,98 @@
+= TERM macro!
+
+Inspired by the text adventure game language Inform7, and in particular its features for formatting the names of things.
+http://inform7.com/book/WI_5_3.html
+
+Inform7 is based around objects, and finds clever ways within its (English-like) syntax to describe and name them,
+and also express relationships between them.
+
+It seems like something a documentation system might want to do, only instead of "The brass lantern is in the chest"
+we might want to declare that "An Application Service is a kind of Service. It has zero or more Application Endpoints."
+
+Anyway, this macro just looks at the formatting of names for now...
+
+== Example
+
+With the following config:
+
+[source,yml]
+----
+asciidoc:
+    attributes:
+        "term-App Service": Application Service
+        "term-N1QL": "SQL++"
+        "term-N1QL-indefinite": an
+----
+
+We get the following features:
+
+== Passthrough
+
+[source,asciidoc]
+----
+term:[The Frobnitzer] is awesome!
+----
+> term:[The Frobnitzer] is awesome!
+// "The Frobnitzer is awesome!"
+
+Yes, that's right! If we haven't defined any terms, then this is a glorified pass-through macro!
+Still, you could imagine we could potentially format terms differently or something, and it will make it easier to grep for.
+
+== Swap names
+
+[source,asciidoc]
+----
+Deploy term:[an App Service]
+----
+> Deploy term:[an App Service]
+// "Deploy an Application Service"
+
+This is a little more interesting: because we've renamed App Service in the meantime, we get to magically update the name.
+
+== Indefinite articles
+
+[source,asciidoc]
+----
+Let's run term:[a N1QL] query!
+----
+> Let's run term:[a N1QL] query!
+// "Let's run an SQL++ query!"
+
+This corrects the indefinite article.
+(Assuming we pronounce it Ess Queue Ell of course...)
+There is a default handler that will pick the appropriate article based on vowels,
+but where we need fine control, as in this ambiguous case, we can specify it in config.
+
+== Handle capitalization
+
+[source,asciidoc]
+----
+term:[A N1QL] query a day keeps the DBA away.
+----
+> term:[A N1QL] query a day keeps the DBA away.
+// "An SQL++ query a day keeps the DBA away."
+
+If we wanted to use Asciidoc attributes instead, we could simply define `{term-n1ql}` and `{term-a-n1ql}` and substitute those.
+But then we don't handle capitalization...
+
+Annoyingly Asciidoc doesn't distinguish `{term-A-n1ql}` case-sensitive, so we'd have to do `{term-a-n1ql-caps}` or similar, which is rather ugly.
+Just writing the article on the other hand is intuitive and involves less faffing with include:: of tokens files.
+
+== More ideas
+
+This idea might be generally useful as it would allow us to distinguish terms for various purposes.
+Other uses might include:
+
+ * formatting terms differently
+ * linking the first usage of a term on a page to a <abbr> tag or definition
+ * indexing where terms are used
+
+Future enhancements could include
+
+ * Parsing plurals
+
+Simplifications could include:
+
+ * remove the attribute parsing entirely, and simply substitute whole strings.
+    (e.g. we would provide literal terms for "Foo" and "A foo" and "Foos")
+    This would reduce complexity and potential fragility, and make the behaviour more predictable, if slightly more tedious.
