@@ -26,8 +26,8 @@ site:
         { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
-        { "title": "Couchbase SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "superset-connector", "power-bi-connector", "sdk-extensions"] },
-        { "title": "Columnar SDKs", "startPage": "home::columnar-sdk.adoc", "components": ["*-columnar-sdk"] },
+        { "title": "Couchbase SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "sdk-extensions"] },
+        { "title": "Columnar SDKs", "startPage": "home::columnar-sdk.adoc", "components": ["*-columnar-sdk", "tableau-connector", "superset-connector", "power-bi-connector"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
 git:
@@ -124,7 +124,16 @@ content:
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/1.7, temp/1.6, release/1.5, release/1.4, release/1.3]
   - url: https://github.com/couchbase/docs-sdk-extensions
-    branches: [main]
+    branches: [main]    
+    # Columnar dev
+  - url: https://github.com/couchbase/docs-columnar-sdk-common
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-columnar-sdk-java
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-columnar-sdk-python
+    branches: [release/1.0]
     # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.1, release/2.8]
