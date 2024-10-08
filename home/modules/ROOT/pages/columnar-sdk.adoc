@@ -22,7 +22,7 @@ Java::
 --
 xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs] |
 xref:java-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/columnar-java-client[Java API Reference] |
+https://docs.couchbase.com/sdk-api/columnar-java-client[Java API Reference]
 --
 
 Node.js::
