@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbase/docs-couchbase-lite.git
-    branches: antora-assembler-simplification
+    branches: DOC-12631-csharp-replication-page
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
