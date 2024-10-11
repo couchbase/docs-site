@@ -41,11 +41,11 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbase/docs-capella.git
-    branches: HEAD
-  - url: https://github.com/zeba-shireen/docs-columnar.git
-    branches: patch-1
-asciidoc:
+  - url: https://github.com/couchbaselabs/docs-columnar.git
+    branches: AV-86739-Docs-for-Support-Superset-BI-tool-with-Columnar
+  - url: https://github.com/couchbase/docs-connectors-superset.git
+    branches: release/1.0 
+  asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
     enable-cmos: ''
