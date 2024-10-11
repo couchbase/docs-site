@@ -45,7 +45,7 @@ content:
     branches: AV-86739-Docs-for-Support-Superset-BI-tool-with-Columnar
   - url: https://github.com/couchbase/docs-connectors-superset.git
     branches: release/1.0 
-  asciidoc:
+asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
     enable-cmos: ''
