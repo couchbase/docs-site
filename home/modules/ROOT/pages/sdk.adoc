@@ -156,7 +156,7 @@ xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transac
 == Capella columnar SDKs
 
 xref:columnar:intro:intro.adoc[Capella Columnar] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
-Columnar SDKs are tailored to the APIs offered by this service.
+xref:columnar-sdk.adoc[Columnar SDKs] are tailored to the APIs offered by this service.
 
 [#table_columnar_sdk,cols="42,40,60,50"]
 |===
