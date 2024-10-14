@@ -240,6 +240,23 @@ endif::[]
 .{cpp} SDK 
 * xref:1.0@cxx-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
+
+[.tiles.browse]
+== Columnar SDKs
+
+[.tile]
+.Java SDK
+* xref:java-columnar-sdk:hello-world:overview.adoc[Version 1.0]
+
+[.tile]
+.Node.js SDK
+* xref:nodejs-columnar-sdk:hello-world:overview.adoc[Version 1.0]
+
+[.tile]
+.Python SDK
+* xref:python-columnar-sdk:hello-world:overview.adoc[Version 1.0]
+
+
 [.tiles.browse]
 == Couchbase Connectors
 
