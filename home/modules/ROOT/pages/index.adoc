@@ -62,7 +62,6 @@ Store, query, and analyze any amount of data -- and let us handle more of the ad
 
 xref:cloud::index.adoc[Couchbase Capella]
 
-====== {empty}
 .Capella Collumnar (RT-OLAP)
 
 Capella Columnar is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
