@@ -4,6 +4,8 @@
 :page-rank: 85
 :!sectids:
 :icons: font
+:page-nav-header-levels: 2
+:page-aliases: cloud::index.adoc
 
 include::home::partial$info-banner.adoc[]
 
@@ -22,7 +24,7 @@ Capella columnar is a standalone, cloud-only offering from Couchbase under the C
 [.card-box]
 === icon:rocket[] Get Started With Capella Operational
 
-Get set up and ready with a free trial.
+Get set up with an account and deploy a free tier operational cluster.
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
 * xref:cloud:get-started:intro.adoc[]
@@ -33,7 +35,7 @@ Get set up and ready with a free trial.
 
 
 [.card-box]
-=== icon:rocket[] Get Started With Columnar
+=== icon:rocket[] Get Started With Capella Columnar
 
 Create your account and follow our tutorial on how to load data into your columnar cluster.
 
