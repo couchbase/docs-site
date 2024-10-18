@@ -62,6 +62,16 @@ Store, query, and analyze any amount of data -- and let us handle more of the ad
 
 xref:cloud::index.adoc[Couchbase Capella]
 
+{empty} +
+
+.Capella Collumnar (RT-OLAP)
+
+Capella Columnar is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
+Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
+
+xref:columnar:intro:intro.adoc[Capella Columnar]
+
+
 [.column]
 ====== {empty}
 .Couchbase Server
@@ -102,7 +112,8 @@ xref:sync-gateway::introduction.adoc[Sync Gateway]
 [.content]
 Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
 
-xref:home:ROOT:sdk.adoc[Developer Docs]
+xref:home:ROOT:sdk.adoc[Developer Docs] |
+xref:home:ROOT:columnar-sdk.adoc[Columnar SDKs]
 
 [.column]
 ====== {empty}
@@ -118,8 +129,7 @@ xref:server:cli:cli-intro.adoc[Couchbase CLI] | xref:server:rest-api:rest-intro.
 .Couchbase Shell
 
 [.content]
-A modern shell to interact with Couchbase Server and Cloud, now available.
-Couchbase Shell public Beta is now available.
+A modern shell to interact with Couchbase Server and Capella, now available.
 
 https://couchbase.sh[Explore Couchbase Shell]
 
@@ -177,7 +187,10 @@ https://forums.couchbase.com/[Community]
 |===
 | Cloud | Server | SDK and Connectors | Mobile
 
-| xref:cloud::index.adoc[Couchbase Capella]
+a| xref:cloud::index.adoc[Couchbase Capella]
+
+xref:columnar:intro:intro.adoc[Capella Columnar]
+
 a| xref:server.adoc[Couchbase Server]
 
 xref:operator::overview.adoc[Couchbase Autonomous Operator]
@@ -191,6 +204,8 @@ a| xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
 xref:scala-sdk:hello-world:overview.adoc[Couchbase Scala SDK]
 
 xref:dotnet-sdk:hello-world:overview.adoc[Couchbase .NET SDK]
+
+xref:cxx-sdk:hello-world:overview.adoc[Couchbase {cpp} SDK]
 
 xref:c-sdk:hello-world:overview.adoc[Couchbase C SDK]
 
@@ -211,6 +226,12 @@ xref:elasticsearch-connector::getting-started.adoc[Couchbase Elasticsearch Conne
 xref:kafka-connector::quickstart.adoc[Couchbase Kafka Connector]
 
 xref:spark-connector::getting-started.adoc[Couchbase Spark Connector]
+
+xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK]
+
+xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK]
+
+xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK]
 
 a| xref:couchbase-lite:javascript:quickstart.adoc[Couchbase Lite JavaScript]
 
