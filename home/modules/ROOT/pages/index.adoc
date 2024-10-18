@@ -202,6 +202,8 @@ xref:scala-sdk:hello-world:overview.adoc[Couchbase Scala SDK]
 
 xref:dotnet-sdk:hello-world:overview.adoc[Couchbase .NET SDK]
 
+xref:cxx-sdk:hello-world:overview.adoc[Couchbase {cpp} SDK]
+
 xref:c-sdk:hello-world:overview.adoc[Couchbase C SDK]
 
 xref:nodejs-sdk:hello-world:overview.adoc[Couchbase Node.js SDK]
@@ -221,6 +223,12 @@ xref:elasticsearch-connector::getting-started.adoc[Couchbase Elasticsearch Conne
 xref:kafka-connector::quickstart.adoc[Couchbase Kafka Connector]
 
 xref:spark-connector::getting-started.adoc[Couchbase Spark Connector]
+
+xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK]
+
+xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK]
+
+xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK]
 
 a| xref:couchbase-lite:javascript:quickstart.adoc[Couchbase Lite JavaScript]
 
