@@ -64,7 +64,7 @@ xref:cloud::index.adoc[Couchbase Capella]
 
 {empty} +
 
-.Capella Collumnar (RT-OLAP)
+.Capella Columnar (RT-OLAP)
 
 Capella Columnar is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
 Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
