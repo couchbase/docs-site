@@ -55,7 +55,7 @@ content:
     branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [main]
+    branches: [AV-87068_Health-Advisor-Reports]
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
   # - url: https://git@github.com/couchbase/couchbase-operator
