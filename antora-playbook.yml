@@ -52,7 +52,7 @@ content:
     start_paths: [styleguide, ui-ux, pendo]
   - url: https://github.com/couchbaselabs/docs-devex
     # branches: [release/7.2, capella, elixir]
-    branches: [release/7.6, release/7.2, capella]
+    branches: [DOC-12609-Document-the-extension-to-vector-syntax-to-support-pre-filtering-MB-62230, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
     start_path: docs
