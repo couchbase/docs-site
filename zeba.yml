@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-columnar.git
-    branches: AV-867390-Docs-for-Support-Superset-BI-tool-with-Columnar
+    branches: AV-86739-Docs-for-Support-Superset-BI-tool-with-Columnar
   - url: https://github.com/couchbaselabs/docs-columnar.git
     branches: DOC-12620---Doc-update-for-ordered-columns
   - url: https://github.com/couchbase/docs-connectors-superset.git
