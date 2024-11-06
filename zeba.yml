@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-columnar.git
-    branches: DOC-12622---Doc-update-for-Server-RBAC
+    branches: AV-86737-Document-DynamoBD-support-with-Columnar-via-MOLO-17
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
