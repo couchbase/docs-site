@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-columnar.git
-    branches: DOC-12537-Docs-for-support-for-COPY-TO...CSV/TSV-format-for-Columnar
+    branches: DOC-12537-Docs-for-support-for-COPY-TO.CSV/TSV-format-for-Columnar
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
