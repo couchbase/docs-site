@@ -9,7 +9,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/DOC-12319
+  url: https://preview.docs-test.couchbase.com/DOC-12533
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -22,7 +22,8 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["*-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "Couchbase SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "Columnar SDKs", "startPage": "home::columnar-sdk.adoc", "components": ["*-columnar-sdk"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
@@ -39,7 +40,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [DOC-12319, capella]
+    branches: [DOC-12533, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, capella]
     start_path: docs
