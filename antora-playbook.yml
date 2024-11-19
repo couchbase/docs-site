@@ -52,7 +52,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
   - url: https://github.com/couchbase/docs-analytics
-    branches: [release/7.6]
+    branches: [DOC-12228]
   - url: https://github.com/couchbase/couchbase-cli
     branches: [trinity]
     start_path: docs
