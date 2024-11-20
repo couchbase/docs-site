@@ -43,7 +43,7 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/docs-columnar.git
     branches: AV-86739-Docs-for-Support-Superset-BI-tool-with-Columnar
-  - url: https://github.com/couchbase/docs-connectors-superset/tree/release/1.0
+  - url: https://github.com/couchbase/docs-connectors-superset.git
     branches: release/1.0
 asciidoc:
   attributes:
