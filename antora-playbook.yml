@@ -54,9 +54,9 @@ content:
     branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [AV-82475_Capella-iQ-Charts]
+    branches: [DOC-12738_iQInsights-PostGA-Changes]
   - url: https://github.com/couchbaselabs/docs-columnar
-    branches: [AV-82475_Capella-iQ-Charts]
+    branches: [DOC-12738_iQInsights-PostGA-Changes]
   # - url: https://git@github.com/couchbase/couchbase-operator
 asciidoc:
   attributes:
