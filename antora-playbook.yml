@@ -59,7 +59,7 @@ content:
   - url: https://github.com/couchbase/docs-spark
     branches: [release/3.5, release/3.3]
   - url: https://github.com/couchbaselabs/docs-ai
-    branches: [main]
+    branches: [DOC-12765--AI-SDK-private-preview-page]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
