@@ -2,7 +2,7 @@
 // Settings
 :hide-uri-scheme:
 // URLs
-:url-issues: https://issues.couchbase.com
+:url-issues: https://jira.issues.couchbase.com
 :url-issues-doc: {url-issues}/browse/DOC
 
 Thank you for taking the time and effort to improve the Couchbase documentation.
