@@ -47,14 +47,14 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbaselabs/docs-style-guide
-    branches: main
-    start_paths: [styleguide, ui-ux, pendo]
-  - url: https://github.com/couchbaselabs/docs-devex
-    branches: [prerelease/7.6.4]
-  - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.6]
-    start_path: docs
+  #- url: https://github.com/couchbaselabs/docs-style-guide
+  #  branches: main
+  #  start_paths: [styleguide, ui-ux, pendo]
+  #- url: https://github.com/couchbaselabs/docs-devex
+  #  branches: [prerelease/7.6.4]
+  #- url: https://github.com/couchbaselabs/cb-swagger
+  #  branches: [release/7.6]
+  #  start_path: docs
   # - url: https://git@github.com/couchbasecloud/couchbase-cloud
   #- url: https://github.com/couchbasecloud/couchbase-cloud
   #  branches: [main]
