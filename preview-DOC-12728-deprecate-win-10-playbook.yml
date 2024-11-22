@@ -51,7 +51,7 @@ content:
     branches: main
     start_paths: [styleguide, ui-ux, pendo]
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6]
+    branches: [prerelease/7.6.4]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6]
     start_path: docs
