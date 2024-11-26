@@ -41,8 +41,11 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbase/docs-couchbase-lite.git
-    branches: DOC-12631-csharp-replication-page
+  - url: https://github.com/couchbase/docs-server
+    branches: DOC_12539_b2_server_admin_tools
+  - url: https://github.com/couchbase/couchbase-cli
+    branches: [trinity]
+    start_path: docs
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
