@@ -197,14 +197,10 @@ asciidoc:
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
-    # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
-    url-issues: https://issues.couchbase.com/browse
-    url-issues-jscbc: https://issues.couchbase.com/browse
-    url-issues-av: https://couchbasecloud.atlassian.net/browse
+    url-issues: https://jira.issues.couchbase.com/browse
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
-  - ./lib/inline-jira-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
