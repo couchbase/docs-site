@@ -97,7 +97,7 @@ content:
   #  branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
   #  start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
-  - url: ../docs-server
+  - url: https://github.com/couchbase/docs-server.git
   # - url: https://github.com/couchbase/docs-server
     branches: DOC_12539_b2_server_admin_tools
   # - url: https://github.com/couchbase/couchbase-cli
