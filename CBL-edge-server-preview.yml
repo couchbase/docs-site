@@ -15,7 +15,7 @@ site:
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
-        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "coucbase-lite-edge-server"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-lite-edge-server"] },
         { "title": "Capella", "startPage": "cloud::index.adoc", "components": ["cloud"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
