@@ -42,10 +42,10 @@ content:
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [release/7.6, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.6, capella]
+    branches: [DOC-12777, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-86939-redocly-workflow]
+    branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
@@ -91,7 +91,7 @@ asciidoc:
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
-    sqlpp: SQL++
+    sqlpp: SQL+{wj}+
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
@@ -99,12 +99,9 @@ asciidoc:
     # flag-devex-escape-hatch: '@'
     # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
     url-issues: https://jira.issues.couchbase.com/browse
-    url-issues-jscbc: https://jira.issues.couchbase.com/browse
-    url-issues-av: https://couchbasecloud.atlassian.net/browse
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
-  - ./lib/inline-jira-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
