@@ -74,6 +74,9 @@ content:
     branches: [temp/4.3]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
+  # delete me to save time
+  - url: https://github.com/couchbaselabs/docs-sync-gateway
+    branches: [release/3.2, release/3.1, release/3.0, release/2.8]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
