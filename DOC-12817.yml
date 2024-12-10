@@ -41,7 +41,7 @@ content:
     start_path: home
     # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-couchbase-lite
-    branches: [release/4.0, release/3.2]
+    branches: [DOC-12818-support-compat-4-0, release/3.2]
   - url: https://github.com/couchbase/docs-sync-gateway
     branches: [DOC-12817-sgw-4-0-compat, release/3.2]
 asciidoc:
