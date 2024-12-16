@@ -99,7 +99,7 @@ content:
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server.git
   # - url: https://github.com/couchbase/docs-server
-    branches: DOC_12840_file_name_corrections  
+    branches: DOC_12347_update_rolling_back_migration  
   #  branches: DOC_12539_b2_server_admin_tools
   # - url: https://github.com/couchbase/couchbase-cli
   #  branches: [trinity]
