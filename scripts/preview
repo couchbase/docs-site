@@ -59,7 +59,7 @@ export PREVIEW_REPO=$(basename $TOPLEVEL)
 export PREVIEW_BRANCH=$(git branch --show-current)
 export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
 
-if [ "$PREVIEW_OVERRIDE" != "remote" ]; then
+if [ -z "$REMOTE" ]; then
     export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
 fi
 
