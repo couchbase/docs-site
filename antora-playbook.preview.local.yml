@@ -1,9 +1,12 @@
 site:
   title: Couchbase Docs Local Preview
+
 output:
   dir: ./preview
   clean: true
 asciidoc:
   attributes:
     kroki-server-url: null
-
+content:
+  sources:
+    - url: https://github.com/couchbaselabs/docs-kubernetes-operator

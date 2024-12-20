@@ -1,0 +1,83 @@
+#!/bin/bash
+
+echo "🐇 Hello! I'm the Docs Build Rabbit."
+echo
+
+POSITIONAL_ARGS=()
+REMOTE=""
+INIT=""
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -r|--remote)
+      REMOTE="true"
+      shift # past argument
+      ;;
+    --init)
+      INIT=true
+      shift
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+if [ -n "$INIT" ]; then
+    echo "Linking 'preview' command (you may need to enter your password)"
+    set -x
+    sudo ln -sf $0 /usr/local/bin/preview
+    which preview
+    exit 0
+fi
+
+# define utility function
+upfind () {
+    WHAT=$1
+    DEPTH=${2:-1}
+    if [ "$DEPTH" -ge 5 ]; then
+        return
+    fi
+    ls -d $WHAT 2>/dev/null || upfind ../$WHAT $((++DEPTH))
+}
+
+ANTORA=$(upfind antora.yml)
+if [ -z "$ANTORA" ]; then
+    echo Did not find 'antora.yml'.
+    echo Run preview from a content repository under startPath!
+    exit 1
+fi
+ANTORA=$(realpath $(dirname $ANTORA))
+TOPLEVEL=$(git rev-parse --show-toplevel)
+
+export PREVIEW_REPO=$(basename $TOPLEVEL)
+export PREVIEW_BRANCH=$(git branch --show-current)
+export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
+
+if [ "$PREVIEW_OVERRIDE" != "remote" ]; then
+    export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
+fi
+
+DOCS_SITE=$(realpath $0/../..)
+cd $DOCS_SITE
+env | grep ^PREVIEW
+echo
+
+echo "   Let's build this preview!"
+
+if [ -n "$REMOTE" ]; then
+    set -x
+    echo gh workflow run --repo couchbase/docs-infra preview.yml \
+        --field repo=${PREVIEW_REPO} \
+        --field branch=${PREVIEW_BRANCH} \
+        --field start_path=${PREVIEW_START_PATH} \
+        --field override=${PREVIEW_OVERRIDE}
+else
+    set -x
+    npx antora --extension lib/preview.js antora-playbook.yml --stacktrace
+fi

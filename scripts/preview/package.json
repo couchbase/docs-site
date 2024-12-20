@@ -1,8 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "@fastify/deepmerge": "^2.0.0",
-    "find-up": "^7.0.0",
-    "yaml": "^2.5.1"
-  }
-}
