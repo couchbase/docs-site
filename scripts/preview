@@ -72,11 +72,11 @@ echo "   Let's build this preview!"
 
 if [ -n "$REMOTE" ]; then
     set -x
-    echo gh workflow run --repo couchbase/docs-infra preview.yml \
-        --field repo=${PREVIEW_REPO} \
-        --field branch=${PREVIEW_BRANCH} \
-        --field start_path=${PREVIEW_START_PATH} \
-        --field override=${PREVIEW_OVERRIDE}
+    gh workflow run --repo couchbase/docs-infra preview-deploy.yml \
+        --field preview_repo=${PREVIEW_REPO} \
+        --field preview_branch=${PREVIEW_BRANCH} \
+        --field preview_start_path=${PREVIEW_START_PATH} \
+        --field preview_override=${PREVIEW_OVERRIDE}
 else
     set -x
     npx antora --extension lib/preview.js antora-playbook.yml --stacktrace
