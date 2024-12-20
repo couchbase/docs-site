@@ -7,6 +7,7 @@
     "@antora/collector-extension": "^1.0.0-alpha.3",
     "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension",
     "@asciidoctor/tabs": "1.0.0-beta.5",
+    "@fastify/deepmerge": "^2.0.0",
     "antora": "~3.1",
     "asciidoctor-external-callout": "~1.2.0",
     "asciidoctor-kroki": "0.15.4",
