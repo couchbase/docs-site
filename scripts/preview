@@ -71,13 +71,17 @@ echo
 echo "   Let's build this preview!"
 
 if [ -n "$REMOTE" ]; then
-    set -x
     gh workflow run --repo couchbase/docs-infra preview-deploy.yml \
         --field preview_repo=${PREVIEW_REPO} \
         --field preview_branch=${PREVIEW_BRANCH} \
         --field preview_start_path=${PREVIEW_START_PATH} \
         --field preview_override=${PREVIEW_OVERRIDE}
+
+    echo see https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml for spawned job
+    sleep 5
+    gh run list --repo=couchbase/docs-infra \
+        --workflow=preview-deploy.yml \
+        --created $(date '+%Y-%m-%d')
 else
-    set -x
-    npx antora --extension lib/preview.js antora-playbook.yml --stacktrace
+    npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace
 fi
