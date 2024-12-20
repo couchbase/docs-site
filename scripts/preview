@@ -81,7 +81,8 @@ if [ -n "$REMOTE" ]; then
     sleep 5
     gh run list --repo=couchbase/docs-infra \
         --workflow=preview-deploy.yml \
-        --created $(date '+%Y-%m-%d')
+        --created $(date '+%Y-%m-%d') \
+        --limit 3
 else
     npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace
 fi
