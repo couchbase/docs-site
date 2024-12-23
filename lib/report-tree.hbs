@@ -1,0 +1,86 @@
+<style>
+
+body {
+    max-width: 60em;
+    margin: 3em auto;
+}
+
+/* Remove default bullets */
+ul, #tree {
+    list-style-type: none;
+}
+
+/* Remove margins and padding from the parent ul */
+#tree {
+    background-color: #eee;
+    margin: 0;
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.tag {
+    cursor: help;
+}
+
+.tag:hover::after,
+.tag-first::after {
+    content: ' ' attr(data-tag);
+}
+
+/* Style the caret/arrow */
+.caret {
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.doc::before {
+    content: "📄";
+    display: inline-block;
+    margin-right: 6px;   
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+    display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+    display: block;
+}
+</style>
+
+<h1>What's Up, Doc?🐇</h1>
+<h2>Generated at {{date}}</h2>
+
+<ul id="tree">
+{{#each tree.$children}}
+   {{> tree}}
+{{/each}}
+</ul>
+
+<!-- <pre>{{json}}</pre> -->
+
+<script>
+const togglers = document.getElementsByClassName("caret");
+
+for (var toggler of togglers) {
+  toggler.addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
