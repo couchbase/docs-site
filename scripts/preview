@@ -3,12 +3,84 @@
 echo "🐇 Hello! I'm the Docs Build Rabbit."
 echo
 
+help() {
+    cat <<HELP | less
+NAME
+
+    preview - a script to quickly preview docs work
+
+SET UP
+
+Update your docs-site repo, and install the script.
+
+    cd docs-site/
+    git checkout master
+    git pull
+
+    scripts/preview --init
+
+You will also want to install 'gh' and log in.
+
+    brew install gh
+    gh auth login  # follow the instructions
+
+Now, from a content repo (under antora.yml) you can build locally:
+
+    preview
+
+Or remotely:
+
+    preview --remote
+
+The latter will show you the URL to find the workflow:
+
+    https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
+
+CONFIGURATION
+
+You don't need to do any configuration to use this. If your antora.yml contains, e.g:
+
+    name: columnar
+    start_page: intro:intro.adoc
+
+Then the preview will automatically start on the defined page.
+
+In some cases you might want to add additional sources to build along with this content:
+
+    ext:
+        preview:
+            HEAD:
+                sources:
+                    couchbase-cloud:
+                        branches: main
+                        startPaths: docs/columnar/
+
+Note that e.g. 'startPaths' must be camel-cased.
+
+You can also override other playbook details.
+
+                override:
+                    asciidoc:
+                        attributes:
+                            foo: bar
+
+SEE ALSO
+
+https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2660597775/experimental+preview+script
+
+HELP
+}
+
 POSITIONAL_ARGS=()
 REMOTE=""
 INIT=""
 
 while [[ $# -gt 0 ]]; do
   case $1 in
+    -h|--help)
+      help
+      exit 0
+      ;;
     -r|--remote)
       REMOTE="true"
       shift # past argument
