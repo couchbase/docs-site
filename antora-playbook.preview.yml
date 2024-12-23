@@ -3,6 +3,7 @@ antora:
   - '@antora/site-generator-ms'
   - ./lib/embargo.js
   - ./lib/preview.js
+  - ./lib/report-tree.js
   - ./lib/antora-component-version-rank.js
 site:
   title: Couchbase Docs Preview
