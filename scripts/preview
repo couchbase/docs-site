@@ -77,12 +77,13 @@ if [ -n "$REMOTE" ]; then
         --field preview_start_path=${PREVIEW_START_PATH} \
         --field preview_override=${PREVIEW_OVERRIDE}
 
-    echo see https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml for spawned job
     sleep 5
     gh run list --repo=couchbase/docs-infra \
         --workflow=preview-deploy.yml \
         --created $(date '+%Y-%m-%d') \
-        --limit 3
+        --limit 3 \
+        --json url,displayTitle,createdAt \
+         --template '{{range .}}{{tablerow .url .displayTitle (timeago .createdAt)}}{{end}}'
 else
     npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace
 fi
