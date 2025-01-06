@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<h1> Preview builds </h1>
+
+See the <a href="https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/1971224949/Docs+Team+demo+site+passwords">Docs team demo site passwords</a> page for access.
+
+(If you are outside Couchbase, and do not have access to Confluence, please ask your Couchbase contact if you believe you should have access to a private preview.)
+
+<h1>Most recent builds</h1>
+
+{{#each (sortByRecent this)}}
+<h2><a href="/{{subdirectory}}/">{{subdirectory}}</a></h2>
+Last built {{date}} by {{actor}}
+({{builds}} builds since {{firstbuild}})
+(<a href="/{{subdirectory}}/doctor/tree.html">🌲</a>
+<a href="{{url}}">🏗️</a>)
+
+{{/each}}
+</html>
