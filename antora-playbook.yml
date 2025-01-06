@@ -147,9 +147,9 @@ content:
 #  - url: https://github.com/couchbaselabs/tutorials
   - url: https://github.com/couchbase/developer-content
   - url: https://github.com/couchbaselabs/tutorial-template
-  - url: https://github.com/couchbaselabs/mobile-travel-sample
-    branches: [master]
-    start_path: content
+#  - url: https://github.com/couchbaselabs/mobile-travel-sample
+#    branches: [master]
+#    start_path: content
   # - url: https://github.com/couchbaselabs/hotel-finder-react-native
   # - url: https://github.com/couchbaselabs/hotel-lister-cordova
 #  - url: https://github.com/couchbaselabs/tutorials-contrib
