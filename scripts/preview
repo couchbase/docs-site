@@ -156,6 +156,9 @@ if [ -n "$REMOTE" ]; then
         --limit 3 \
         --json url,displayTitle,createdAt \
          --template '{{range .}}{{tablerow .url .displayTitle (timeago .createdAt)}}{{end}}'
+
+    echo
+    echo Visit 'https://preview.docs-test.couchbase.com/builds.html' to see all completed builds
 else
     npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace
 fi
