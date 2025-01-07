@@ -42,7 +42,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [release/7.6, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [DOC-12777, capella]
+    branches: [release/7.6, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
@@ -76,7 +76,7 @@ content:
     branches: [main]
   # delete me to save time
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/3.2, release/3.1, release/3.0, release/2.8]
+    branches: [DOC-12841]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
