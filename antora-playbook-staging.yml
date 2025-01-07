@@ -50,7 +50,7 @@ content:
     branches: main
     start_paths: [styleguide, ui-ux, pendo]
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [prerelease/7.6.4, release/7.2, capella, elixir]
+    branches: [prerelease/7.6.4, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [prerelease/7.6.4, release/7.2, release/7.1, release/7.0, capella]
     start_path: docs
@@ -59,6 +59,9 @@ content:
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
+  - url: https://github.com/couchbaselabs/docs-columnar
+    branches: [main]
+  # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
     branches: [master, 2.7.x, 2.6.x, 2.5.x, 2.4.x, 2.3.x]
     start_path: docs/user
@@ -69,9 +72,9 @@ content:
     branches: [master]
     start_path: docs
   - url: https://github.com/couchbase/docs-elastic-search
-    branches: [main, release/4.3]
+    branches: [main]
   - url: https://github.com/couchbase/docs-kafka
-    branches: [main, release/4.1]
+    branches: [main]
   - url: https://github.com/couchbase/docs-spark
     branches: [release/3.5, release/3.3]
   - url: https://github.com/couchbase/docs-tableau
@@ -100,23 +103,23 @@ content:
   - url: https://github.com/couchbase/docs-sdk-cxx
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [temp/3.6, release/3.5, release/3.4, release/3.3]
+    branches: [temp/3.6, release/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-sdk-go
-    branches: [temp/2.9, temp/2.8, release/2.7, release/2.6, release/2.5]
+    branches: [temp/2.9, temp/2.8, release/2.7, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [temp/3.7, temp/3.6, release/3.5, release/3.4, release/3.3]
+    branches: [temp/3.7, temp/3.6, release/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [temp/1.4, temp/1.3, release/1.2, release/1.1, release/1.0]
+    branches: [temp/1.4, temp/1.3, release/1.2, release/1.1]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [temp/4.4, temp/4.3, release/4.2, release/4.1]
+    branches: [temp/4.4, temp/4.3, release/4.2]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [temp/4.2, release/4.1, release/4.0]
+    branches: [temp/4.2, release/4.1]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.3, temp/4.2, release/4.1, release/4.0]
+    branches: [temp/4.3, temp/4.2, release/4.1]
   - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [temp/3.5, release/3.4, release/3.3]
+    branches: [temp/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/1.7, temp/1.6, release/1.5, release/1.4, release/1.3]
+    branches: [release/1.7, temp/1.6, release/1.5, release/1.4]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
     # Columnar dev
@@ -132,7 +135,7 @@ content:
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.1, release/2.8]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/3.2, release/3.1]
+    branches: [release/3.2, release/3.1, release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.2, release/3.1, release/3.0, release/2.8]
   # - url: https://git@github.com/couchbase/docs-cloud-native
