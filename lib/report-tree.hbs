@@ -66,13 +66,14 @@ ul, #tree {
 <h1>What's Up, Doc? &#x1F407;</h1>
 <h2>Generated at {{date}}</h2>
 
+From this <a href="antora-playbook.json">antora playbook</a>.
+
 <ul id="tree">
 {{#each tree.$children}}
    {{> tree}}
 {{/each}}
 </ul>
 
-<!-- <pre>{{json}}</pre> -->
 
 <script>
 const togglers = document.getElementsByClassName("caret");
