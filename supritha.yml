@@ -43,7 +43,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-columnar.git
-    branches: Updated-message-about-Columnar-SDK-DOC-12657
+    branches: AV-86738-GCP-support-feature
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
