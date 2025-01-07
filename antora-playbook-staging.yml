@@ -7,6 +7,7 @@ antora:
   - ./lib/embargo.js
   - "@antora/collector-extension"
   - ./lib/antora-component-version-rank.js
+  - ./lib/report-tree.js
 site:
   title: Couchbase Docs Staging
   url: https://docs-staging.couchbase.com
