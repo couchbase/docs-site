@@ -19,7 +19,7 @@ if [ $machine == "Mac" ];
 then
     SINCE=`date -v -${PURGE_DAYS}d -I`
 else
-    SINCE=`date -d "{PURGE_DAYS} days ago" -I`
+    SINCE=`date -d "${PURGE_DAYS} days ago" -I`
 fi
 
 
