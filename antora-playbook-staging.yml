@@ -27,7 +27,7 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Couchbase SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "sdk-extensions"] },
+        { "title": "Couchbase SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"] },
         { "title": "Columnar SDKs", "startPage": "home::columnar-sdk.adoc", "components": ["*-columnar-sdk"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
@@ -82,6 +82,8 @@ content:
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-connectors-power-bi
     branches: [main]
+  - url: https://github.com/couchbase/docs-connectors-superset.git
+    branches: [release/1.0]
   # - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://github.com/couchbase/docs-connectors-talend
   # - url: https://git@github.com/couchbase/docs-analytics
