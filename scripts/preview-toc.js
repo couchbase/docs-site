@@ -16,7 +16,7 @@ json[args.subdir] = {
     firstbuild: args.date,
     ...(json[args.subdir] || {}),
     ...args,
-    builds: json[args.subdir].builds + 1,
+    builds: json[args.subdir]?.builds + 1,
     ...record
 }
 
