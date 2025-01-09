@@ -10,10 +10,15 @@ ul, #tree {
     list-style-type: none;
 }
 
+#pagesForReview {
+    list-style-type: disc;
+    font-size: 1.5em;
+}
+
 /* Remove margins and padding from the parent ul */
 #tree {
     background-color: #eee;
-    margin: 0;
+    margin: 0.5em;
     padding: 1em;
     font-size: 1.5em;
 }
@@ -61,17 +66,43 @@ ul, #tree {
 .active {
     display: block;
 }
+
+.prbody {
+    background: cornsilk;
+    margin: 0.5em;    
+    padding: 0.5em;
+    font-size: 1.2em;
+}
 </style>
 
 <h1>What's Up, Doc? &#x1F407;</h1>
 <h2>Generated at {{date}}</h2>
 
+<h3>Featured Pages</h3>
+<ul id="pagesForReview">
+    <li>
+        <a href="../index.html">Start page</a>
+    </li>
+    {{#each pagesForReview}}
+    <li> <a href="../{{$href}}">{{$title}}</a>
+        (<a href="{{$githubUrl}}">&#x2691;</a>)</li>
+    {{/each}}
+</ul>
+
+{{#with pr}}
+<h3> GitHub PR <a href="{{url}}">#{{number}}: {{title}}</a>
+by {{author.name}} ({{state}} {{updatedAt}}) </h3>
+<div class="prbody">
+    {{{body}}}
+</div>
+
+
+{{/with}}
+
+<h3>Detailed Report</h3>
 From this <a href="antora-playbook.json">antora playbook</a>.
 
 <ul id="tree">
-<li>
-    <a href="../index.html">Go to start page</a>
-</li>
 {{#each tree.$children}}
    {{> tree}}
 {{/each}}
