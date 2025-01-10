@@ -155,10 +155,14 @@ if [ -n "$REMOTE" ]; then
         --created $(date '+%Y-%m-%d') \
         --limit 3 \
         --json url,displayTitle,createdAt \
-         --template '{{range .}}{{tablerow .url .displayTitle (timeago .createdAt)}}{{end}}'
+        --template '{{range .}}
+{{.url}}
+{{ .displayTitle}}
+{{ (timeago .createdAt)}}
+{{end}}'
 
     echo
     echo Visit 'https://preview.docs-test.couchbase.com/builds.html' to see all completed builds
 else
-    npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace
+    npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url "$(pwd)/preview"
 fi

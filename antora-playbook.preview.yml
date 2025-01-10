@@ -182,6 +182,8 @@ asciidoc:
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
+    page-show-preview-banner: true
+    page-watermark: preview@
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
@@ -195,7 +197,7 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-203/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-204/ui-bundle.zip
 output:
   dir: ./public
 runtime:
