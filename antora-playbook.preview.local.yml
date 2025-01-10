@@ -10,6 +10,3 @@ asciidoc:
 content:
   sources:
     - url: https://github.com/couchbaselabs/docs-kubernetes-operator
-ui:
-  bundle:
-    url: ../docs-ui/build/ui-bundle.zip
