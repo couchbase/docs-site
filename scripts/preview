@@ -103,7 +103,7 @@ done
 if [ -n "$INIT" ]; then
     echo "Linking 'preview' command (you may need to enter your password)"
     set -x
-    sudo ln -sf $0 /usr/local/bin/preview
+    sudo ln -sf $(realpath $0) /usr/local/bin/preview
     which preview
     exit 0
 fi
