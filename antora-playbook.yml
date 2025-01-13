@@ -80,7 +80,7 @@ content:
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.6, release/7.2]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [DOC-12058--commoning-new-IA--stage-1, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [release/7.6.2, DOC-12058--commoning-new-IA--stage-1, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
   - url: https://github.com/couchbase/docs-sdk-cxx
@@ -90,7 +90,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-go
     branches: [temp/2.9, temp/2.8]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [temp/3.7, temp/3.6]
+    branches: [release/3.7, temp/3.6]
   - url: https://github.com/couchbase/docs-sdk-kotlin
     branches: [temp/1.4, temp/1.3]
   - url: https://github.com/couchbase/docs-sdk-nodejs
