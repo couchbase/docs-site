@@ -51,7 +51,6 @@ content:
     branches: main
     start_paths: [styleguide, ui-ux, pendo]
   - url: https://github.com/couchbaselabs/docs-devex
-    # branches: [release/7.2, capella, elixir]
     branches: [release/7.6, release/7.2, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
@@ -106,23 +105,23 @@ content:
   - url: https://github.com/couchbase/docs-sdk-cxx
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [temp/3.6, release/3.5, release/3.4, release/3.3]
+    branches: [temp/3.6, release/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-sdk-go
-    branches: [temp/2.9, temp/2.8, release/2.7, release/2.6, release/2.5]
+    branches: [temp/2.9, temp/2.8, release/2.7, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [temp/3.7, temp/3.6, release/3.5, release/3.4, release/3.3]
+    branches: [temp/3.7, temp/3.6, release/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [temp/1.4, temp/1.3, release/1.2, release/1.1, release/1.0]
+    branches: [temp/1.4, temp/1.3, release/1.2, release/1.1]
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [temp/4.4, temp/4.3, release/4.2, release/4.1]
+    branches: [temp/4.4, temp/4.3, release/4.2]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [temp/4.2, release/4.1, release/4.0]
+    branches: [temp/4.2, release/4.1]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.3, temp/4.2, release/4.1, release/4.0]
+    branches: [temp/4.3, temp/4.2, release/4.1]
   - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [temp/3.5, release/3.4, release/3.3]
+    branches: [temp/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/1.7, temp/1.6, release/1.5, release/1.4, release/1.3]
+    branches: [release/1.7, temp/1.6, release/1.5, release/1.4]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
     # Columnar dev
@@ -197,14 +196,9 @@ asciidoc:
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
-    # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
-    url-issues: https://issues.couchbase.com/browse
-    url-issues-jscbc: https://issues.couchbase.com/browse
-    url-issues-av: https://couchbasecloud.atlassian.net/browse
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
-  - ./lib/inline-jira-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
