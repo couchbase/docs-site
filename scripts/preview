@@ -135,14 +135,28 @@ if [ -z "$REMOTE" ]; then
     export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
 fi
 
-DOCS_SITE=$(realpath $0/../..)
-cd $DOCS_SITE
-env | grep ^PREVIEW
-echo
-
 echo "   Let's build this preview!"
+env | grep ^PREVIEW
+
+assert() {
+    GOT=$1
+    EXPECTED=$2
+    WARNING=$3
+
+    if [ "$GOT" != "$EXPECTED" ]; then
+        echo
+        echo WARNING $WARNING
+        echo "Your remote build may not match your local preview."
+
+        read -n 1 -s -r -p "Press any key to continue, or Ctrl+C to exit"
+        echo
+    fi
+}
 
 if [ -n "$REMOTE" ]; then
+    assert "$(git status -s -uno)" '' 'You have uncommitted changes.'
+    assert "$(git push --dry-run 2>&1)" 'Everything up-to-date' 'You have unpushed changes.'
+
     gh workflow run --repo couchbase/docs-infra preview-deploy.yml \
         --field preview_repo=${PREVIEW_REPO} \
         --field preview_branch=${PREVIEW_BRANCH} \
@@ -164,5 +178,9 @@ if [ -n "$REMOTE" ]; then
     echo
     echo Visit 'https://preview.docs-test.couchbase.com/builds.html' to see all completed builds
 else
+    DOCS_SITE=$(realpath $0/../..)
+    cd $DOCS_SITE
+    echo
+
     npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url "$(pwd)/preview"
 fi
