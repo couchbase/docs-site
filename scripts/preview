@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -eo pipefail
 echo "🐇 Hello! I'm the Docs Build Rabbit."
 echo
 
@@ -150,6 +151,7 @@ assert() {
 
         read -n 1 -s -r -p "Press any key to continue, or Ctrl+C to exit"
         echo
+        echo
     fi
 }
 
@@ -161,7 +163,12 @@ if [ -n "$REMOTE" ]; then
         --field preview_repo=${PREVIEW_REPO} \
         --field preview_branch=${PREVIEW_BRANCH} \
         --field preview_start_path=${PREVIEW_START_PATH} \
-        --field preview_override=${PREVIEW_OVERRIDE}
+        --field preview_override=${PREVIEW_OVERRIDE} \
+        > /dev/null
+
+    echo Requested the build at Github
+    echo see https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
+    echo
 
     sleep 5
     gh run list --repo=couchbase/docs-infra \
@@ -169,11 +176,14 @@ if [ -n "$REMOTE" ]; then
         --created $(date '+%Y-%m-%d') \
         --limit 3 \
         --json url,displayTitle,createdAt \
-        --template '{{range .}}
+        --template \
+'{{range .}}
 {{.url}}
 {{ .displayTitle}}
 {{ (timeago .createdAt)}}
-{{end}}'
+{{end}}' \
+        | grep --context=1 "${PREVIEW_REPO}-${PREVIEW_BRANCH}"
+
 
     echo
     echo Visit 'https://preview.docs-test.couchbase.com/builds.html' to see all completed builds
