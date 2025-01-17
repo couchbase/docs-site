@@ -184,10 +184,10 @@ if [ -n "$REMOTE" ]; then
 {{end}}' \
         | grep --context=1 "${PREVIEW_REPO}-${PREVIEW_BRANCH}"
 
-
     echo
     echo Visit 'https://preview.docs-test.couchbase.com/builds.html' to see all completed builds
 else
+    export PREVIEW_GITHUB_REMOTE=$(git remote get-url origin 2>/dev/null)
     DOCS_SITE=$(realpath $0/../..)
     cd $DOCS_SITE
     echo
