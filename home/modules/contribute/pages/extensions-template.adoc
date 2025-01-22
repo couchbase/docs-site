@@ -120,3 +120,25 @@ Description::
 
 --
 
+== CSV parsing
+
+NOTE: The CSV function is designed to handle the export from JIRA which handles lists ("Components" etc.) by producing multiple columns each called "Component/s".
+
+[source,handlebars]
+--
+{{#each this}}
+{{this.[Issue key]}}::
+{{#each this.[Component/s]}}* {{.}}
+{{/each}}
+{{/each}}
+--
+
+
+[template,example$example1.csv]
+--
+{{#each this}}
+{{this.[Issue key]}}::
+{{#each this.[Component/s]}}* {{.}}
+{{/each}}
+{{/each}}
+--

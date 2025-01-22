@@ -1,0 +1,12 @@
+Issue Type,Priority,Issue key,Summary,Labels,Component/s,Component/s,Status,Fix Version/s
+Bug,Critical,CBL-4922,Lithium:  Failure in OkHttp authenticator,,Java-Android,Kotlin-Android,Closed,3.0.15
+Bug,Major,CBL-4921,Lithium: Lower the max size on the ClientTask thread pool to 8,,Java-Android,,Closed,3.0.15
+Bug,Major,CBL-4839,Attachments/Blobs got deleted after compaction&re-sync,,,,Closed,3.0.15
+Bug,Major,CBL-4799,Lithium: Database.exists should support the default directory,backport,Java-Android,,Closed,3.0.15
+Bug,Major,CBL-4139,Lithium build error on Linux,,,,Closed,3.0.15
+Bug,Major,CBL-4125,"Port Replicator test helpers, SG, SGTestUser, ReplParams to Lithium",,,,Closed,3.0.15
+Bug,Major,CBL-4111,Allow docs failed with property encryption / decryption to be retried,,,,Closed,3.0.15
+Bug,Major,CBL-3879,Failed test - testDoubleConflictResolutionOnSameConflicts,,,,Closed,3.0.15
+Bug,Major,CBL-3878,testStopContinuousReplicator inconsistent failure,,,,Closed,3.0.15
+Bug,Major,CBL-3877,testDeleteWithActiveReplicatorAndURLEndpointListeners failure,,,,Closed,3.0.15
+Bug,Critical,CBL-3871,QueryParams fails to decode bool,,,,Closed,3.0.15
