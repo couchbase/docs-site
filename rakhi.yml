@@ -41,8 +41,10 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbase/docs-server.git
-    branches: DOC_11366_Spelling_Error_Server_Doc
+  - url: https://github.com/couchbaselabs/docs-devex.git
+    branches: AV-68634-tutorial-introduction
+  - url: https://github.com/couchbase/docs-capella.git
+    branches: AV-68634-dev-tutorial-navigation 
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
