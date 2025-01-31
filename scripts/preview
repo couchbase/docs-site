@@ -1,0 +1,196 @@
+#!/bin/bash
+
+set -eo pipefail
+echo "🐇 Hello! I'm the Docs Build Rabbit."
+echo
+
+help() {
+    cat <<HELP | less
+NAME
+
+    preview - a script to quickly preview docs work
+
+SET UP
+
+Update your docs-site repo, and install the script.
+
+    cd docs-site/
+    git checkout master
+    git pull
+
+    scripts/preview --init
+
+You will also want to install 'gh' and log in.
+
+    brew install gh
+    gh auth login  # follow the instructions
+
+Now, from a content repo (under antora.yml) you can build locally:
+
+    preview
+
+Or remotely:
+
+    preview --remote
+
+The latter will show you the URL to find the workflow:
+
+    https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
+
+CONFIGURATION
+
+You don't need to do any configuration to use this. If your antora.yml contains, e.g:
+
+    name: columnar
+    start_page: intro:intro.adoc
+
+Then the preview will automatically start on the defined page.
+
+In some cases you might want to add additional sources to build along with this content:
+
+    ext:
+        preview:
+            HEAD:
+                sources:
+                    couchbase-cloud:
+                        branches: main
+                        startPaths: docs/columnar/
+
+Note that e.g. 'startPaths' must be camel-cased.
+
+You can also override other playbook details.
+
+                override:
+                    asciidoc:
+                        attributes:
+                            foo: bar
+
+SEE ALSO
+
+https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2660597775/experimental+preview+script
+
+HELP
+}
+
+POSITIONAL_ARGS=()
+REMOTE=""
+INIT=""
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      help
+      exit 0
+      ;;
+    -r|--remote)
+      REMOTE="true"
+      shift # past argument
+      ;;
+    --init)
+      INIT=true
+      shift
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+if [ -n "$INIT" ]; then
+    echo "Linking 'preview' command (you may need to enter your password)"
+    set -x
+    sudo ln -sf $(realpath $0) /usr/local/bin/preview
+    which preview
+    exit 0
+fi
+
+# define utility function
+upfind () {
+    WHAT=$1
+    DEPTH=${2:-1}
+    if [ "$DEPTH" -ge 5 ]; then
+        return
+    fi
+    ls -d $WHAT 2>/dev/null || upfind ../$WHAT $((++DEPTH))
+}
+
+ANTORA=$(upfind antora.yml)
+if [ -z "$ANTORA" ]; then
+    echo Did not find 'antora.yml'.
+    echo Run preview from a content repository under startPath!
+    exit 1
+fi
+ANTORA=$(realpath $(dirname $ANTORA))
+TOPLEVEL=$(git rev-parse --show-toplevel)
+
+export PREVIEW_REPO=$(basename $TOPLEVEL)
+export PREVIEW_BRANCH=$(git branch --show-current)
+export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
+
+if [ -z "$REMOTE" ]; then
+    export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
+fi
+
+echo "   Let's build this preview!"
+env | grep ^PREVIEW
+
+assert() {
+    GOT=$1
+    EXPECTED=$2
+    WARNING=$3
+
+    if [ "$GOT" != "$EXPECTED" ]; then
+        echo
+        echo WARNING $WARNING
+        echo "Your remote build may not match your local preview."
+
+        read -n 1 -s -r -p "Press any key to continue, or Ctrl+C to exit"
+        echo
+        echo
+    fi
+}
+
+if [ -n "$REMOTE" ]; then
+    assert "$(git status -s -uno)" '' 'You have uncommitted changes.'
+    assert "$(git push --dry-run 2>&1)" 'Everything up-to-date' 'You have unpushed changes.'
+
+    gh workflow run --repo couchbase/docs-infra preview-deploy.yml \
+        --field preview_repo=${PREVIEW_REPO} \
+        --field preview_branch=${PREVIEW_BRANCH} \
+        --field preview_start_path=${PREVIEW_START_PATH} \
+        --field preview_override=${PREVIEW_OVERRIDE} \
+        > /dev/null
+
+    echo Requested the build at Github
+    echo see https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
+    echo
+
+    sleep 5
+    gh run list --repo=couchbase/docs-infra \
+        --workflow=preview-deploy.yml \
+        --created $(date '+%Y-%m-%d') \
+        --limit 3 \
+        --json url,displayTitle,createdAt \
+        --template \
+'{{range .}}
+{{.url}}
+{{ .displayTitle}}
+{{ (timeago .createdAt)}}
+{{end}}' \
+        | grep --context=1 "${PREVIEW_REPO}-${PREVIEW_BRANCH}"
+
+    echo
+    echo Visit 'https://preview.docs-test.couchbase.com/builds.html' to see all completed builds
+else
+    export PREVIEW_GITHUB_REMOTE=$(git remote get-url origin 2>/dev/null)
+    DOCS_SITE=$(realpath $0/../..)
+    cd $DOCS_SITE
+    echo
+
+    npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url "$(pwd)/preview"
+fi
