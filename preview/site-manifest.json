@@ -1,0 +1,419 @@
+{
+  "version": 3,
+  "generated": 1737040731469,
+  "url": "/Users/elliothunter/Documents/GitHub/docs-site/preview",
+  "components": [
+    {
+      "name": "couchbase-lite-edge-server",
+      "title": "Couchbase Edge Server",
+      "latest": "1.0",
+      "versions": [
+        {
+          "version": "1.0",
+          "url": "/couchbase-lite-edge-server/current/introduction/intro.html",
+          "pages": [
+            {
+              "module": "administer",
+              "path": "administer-landing.adoc",
+              "url": "/couchbase-lite-edge-server/current/administer/administer-landing.html",
+              "title": "Administer"
+            },
+            {
+              "module": "administer",
+              "path": "audit-logging.adoc",
+              "url": "/couchbase-lite-edge-server/current/administer/audit-logging.html",
+              "title": "Audit Logging"
+            },
+            {
+              "module": "administer",
+              "path": "high-availability.adoc",
+              "url": "/couchbase-lite-edge-server/current/administer/high-availability.html",
+              "title": "High Availability"
+            },
+            {
+              "module": "administer",
+              "path": "operational-logging.adoc",
+              "url": "/couchbase-lite-edge-server/current/administer/operational-logging.html",
+              "title": "Operational Logging"
+            },
+            {
+              "module": "configuration",
+              "path": "configuration-landing.adoc",
+              "url": "/couchbase-lite-edge-server/current/configuration/configuration-landing.html",
+              "title": "Edge Server Configuration"
+            },
+            {
+              "module": "get-started",
+              "path": "get-started-landing.adoc",
+              "url": "/couchbase-lite-edge-server/current/get-started/get-started-landing.html",
+              "title": "Getting Started with Couchbase Edge Server"
+            },
+            {
+              "module": "get-started",
+              "path": "install.adoc",
+              "url": "/couchbase-lite-edge-server/current/get-started/install.html",
+              "title": "Install"
+            },
+            {
+              "module": "get-started",
+              "path": "prereqs.adoc",
+              "url": "/couchbase-lite-edge-server/current/get-started/prereqs.html",
+              "title": "Prerequisites"
+            },
+            {
+              "module": "get-started",
+              "path": "running-edge-server.adoc",
+              "url": "/couchbase-lite-edge-server/current/get-started/running-edge-server.html",
+              "title": "Running Couchbase Edge Server"
+            },
+            {
+              "module": "introduction",
+              "path": "intro.adoc",
+              "url": "/couchbase-lite-edge-server/current/introduction/intro.html",
+              "title": "Introducing Couchbase Edge Server"
+            },
+            {
+              "module": "introduction",
+              "path": "whats-new.adoc",
+              "url": "/couchbase-lite-edge-server/current/introduction/whats-new.html",
+              "title": "New In 1.0"
+            },
+            {
+              "module": "product-notes",
+              "path": "compatibility.adoc",
+              "url": "/couchbase-lite-edge-server/current/product-notes/compatibility.html",
+              "title": "Product Compatibility"
+            },
+            {
+              "module": "product-notes",
+              "path": "product-notes-landing.adoc",
+              "url": "/couchbase-lite-edge-server/current/product-notes/product-notes-landing.html",
+              "title": "Product Notes"
+            },
+            {
+              "module": "product-notes",
+              "path": "release-notes.adoc",
+              "url": "/couchbase-lite-edge-server/current/product-notes/release-notes.html",
+              "title": "Release Notes"
+            },
+            {
+              "module": "product-notes",
+              "path": "supported-platforms.adoc",
+              "url": "/couchbase-lite-edge-server/current/product-notes/supported-platforms.html",
+              "title": "Supported Platforms"
+            },
+            {
+              "module": "rest-based-access",
+              "path": "api-spec.adoc",
+              "url": "/couchbase-lite-edge-server/current/rest-based-access/api-spec.html",
+              "title": "API Reference"
+            },
+            {
+              "module": "rest-based-access",
+              "path": "changes-feed.adoc",
+              "url": "/couchbase-lite-edge-server/current/rest-based-access/changes-feed.html",
+              "title": "Changes Feed API"
+            },
+            {
+              "module": "rest-based-access",
+              "path": "database-operations.adoc",
+              "url": "/couchbase-lite-edge-server/current/rest-based-access/database-operations.html",
+              "title": "Database Operations"
+            },
+            {
+              "module": "rest-based-access",
+              "path": "document-access.adoc",
+              "url": "/couchbase-lite-edge-server/current/rest-based-access/document-access.html",
+              "title": "Document Access"
+            },
+            {
+              "module": "rest-based-access",
+              "path": "queries-api.adoc",
+              "url": "/couchbase-lite-edge-server/current/rest-based-access/queries-api.html",
+              "title": "Query"
+            },
+            {
+              "module": "rest-based-access",
+              "path": "replication.adoc",
+              "url": "/couchbase-lite-edge-server/current/rest-based-access/replication.html",
+              "title": "Replication Management"
+            },
+            {
+              "module": "rest-based-access",
+              "path": "rest-api-landing.adoc",
+              "url": "/couchbase-lite-edge-server/current/rest-based-access/rest-api-landing.html",
+              "title": "REST Based Access"
+            },
+            {
+              "alias": true,
+              "module": "ROOT",
+              "path": "",
+              "url": "/couchbase-lite-edge-server/current"
+            },
+            {
+              "alias": true,
+              "module": "ROOT",
+              "path": "index.adoc",
+              "url": "/couchbase-lite-edge-server/current/introduction/intro.html",
+              "title": "Introducing Couchbase Edge Server"
+            },
+            {
+              "module": "sync",
+              "path": "edge-sync-cbl.adoc",
+              "url": "/couchbase-lite-edge-server/current/sync/edge-sync-cbl.html",
+              "title": "Edge Sync with Couchbase Lite"
+            },
+            {
+              "module": "sync",
+              "path": "edge-to-edge-sync.adoc",
+              "url": "/couchbase-lite-edge-server/current/sync/edge-to-edge-sync.html",
+              "title": "Sync with Edge Server"
+            },
+            {
+              "module": "sync",
+              "path": "remote-sync.adoc",
+              "url": "/couchbase-lite-edge-server/current/sync/remote-sync.html",
+              "title": "Remote Sync with App Services / Sync Gateway"
+            },
+            {
+              "module": "sync",
+              "path": "sync-landing.adoc",
+              "url": "/couchbase-lite-edge-server/current/sync/sync-landing.html",
+              "title": "Sync"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "title": "Couchbase Documentation",
+      "latest": "master",
+      "versions": [
+        {
+          "version": "master",
+          "url": "/home/index.html",
+          "pages": [
+            {
+              "module": "contribute",
+              "path": "add-pages.adoc",
+              "url": "/home/contribute/add-pages.html",
+              "title": "Add a New Documentation Page"
+            },
+            {
+              "module": "contribute",
+              "path": "asciidoc-overview.adoc",
+              "url": "/home/contribute/asciidoc-overview.html",
+              "title": "Writing Documentation Overview"
+            },
+            {
+              "module": "contribute",
+              "path": "attributes-and-roles.adoc",
+              "url": "/home/contribute/attributes-and-roles.html",
+              "title": "Attributes and Roles"
+            },
+            {
+              "module": "contribute",
+              "path": "basics.adoc",
+              "url": "/home/contribute/basics.html",
+              "title": "AsciiDoc Basics"
+            },
+            {
+              "module": "contribute",
+              "path": "code-blocks.adoc",
+              "url": "/home/contribute/code-blocks.html",
+              "title": "Code Blocks for Example Code"
+            },
+            {
+              "module": "contribute",
+              "path": "component-configuration.adoc",
+              "url": "/home/contribute/component-configuration.html",
+              "title": "Component Structure and Configuration"
+            },
+            {
+              "module": "contribute",
+              "path": "create-branches.adoc",
+              "url": "/home/contribute/create-branches.html",
+              "title": "Create a New Working Branch"
+            },
+            {
+              "module": "contribute",
+              "path": "cross-references.adoc",
+              "url": "/home/contribute/cross-references.html",
+              "title": "Cross References"
+            },
+            {
+              "module": "contribute",
+              "path": "edit-pages.adoc",
+              "url": "/home/contribute/edit-pages.html",
+              "title": "Edit Existing Documentation"
+            },
+            {
+              "module": "contribute",
+              "path": "extensions-embargoed-ok.adoc",
+              "url": "/home/contribute/extensions-embargoed-ok.html",
+              "title": "This page should not be embargoed!"
+            },
+            {
+              "module": "contribute",
+              "path": "extensions-flagged.adoc",
+              "url": "/home/contribute/extensions-flagged.html",
+              "title": "Demo about the Feature Flag"
+            },
+            {
+              "module": "contribute",
+              "path": "extensions-template.adoc",
+              "url": "/home/contribute/extensions-template.html",
+              "title": "Demo of template extension"
+            },
+            {
+              "module": "contribute",
+              "path": "extensions.adoc",
+              "url": "/home/contribute/extensions.html",
+              "title": "Site Extensions"
+            },
+            {
+              "module": "contribute",
+              "path": "generate-rest-api.adoc",
+              "url": "/home/contribute/generate-rest-api.html",
+              "title": "Generate REST API Documentation"
+            },
+            {
+              "module": "contribute",
+              "path": "ids.adoc",
+              "url": "/home/contribute/ids.html",
+              "title": "Element IDs and Same-Page Cross References"
+            },
+            {
+              "module": "contribute",
+              "path": "includes.adoc",
+              "url": "/home/contribute/includes.html",
+              "title": "Include Examples and Partials"
+            },
+            {
+              "module": "contribute",
+              "path": "index.adoc",
+              "url": "/home/contribute/index.html",
+              "title": "Contributing to the Couchbase Documentation"
+            },
+            {
+              "module": "contribute",
+              "path": "install-antora.adoc",
+              "url": "/home/contribute/install-antora.html",
+              "title": "Install Antora"
+            },
+            {
+              "module": "contribute",
+              "path": "install-git-and-editor.adoc",
+              "url": "/home/contribute/install-git-and-editor.html",
+              "title": "Install Git and an AsciiDoc Editor"
+            },
+            {
+              "module": "contribute",
+              "path": "nav-menus-and-files.adoc",
+              "url": "/home/contribute/nav-menus-and-files.html",
+              "title": "Navigation Menus and Files"
+            },
+            {
+              "module": "contribute",
+              "path": "pages.adoc",
+              "url": "/home/contribute/pages.html",
+              "title": "Standard Document Structure"
+            },
+            {
+              "module": "contribute",
+              "path": "playbook.adoc",
+              "url": "/home/contribute/playbook.html",
+              "title": "Configure Your Antora Playbook"
+            },
+            {
+              "module": "contribute",
+              "path": "repositories.adoc",
+              "url": "/home/contribute/repositories.html",
+              "title": "About Couchbase Documentation Repositories"
+            },
+            {
+              "module": "contribute",
+              "path": "send-pr.adoc",
+              "url": "/home/contribute/send-pr.html",
+              "title": "Send Your Changes for Review"
+            },
+            {
+              "module": "contribute",
+              "path": "set-up-repository.adoc",
+              "url": "/home/contribute/set-up-repository.html",
+              "title": "Set Up Documentation Repositories"
+            },
+            {
+              "module": "contribute",
+              "path": "tabs.adoc",
+              "url": "/home/contribute/tabs.html",
+              "title": "Tabs Sets"
+            },
+            {
+              "module": "contribute",
+              "path": "test-site.adoc",
+              "url": "/home/contribute/test-site.html",
+              "title": "Test Your Changes Locally"
+            },
+            {
+              "module": "contribute",
+              "path": "update-nav.adoc",
+              "url": "/home/contribute/update-nav.html",
+              "title": "Update a Navigation File"
+            },
+            {
+              "module": "contribute",
+              "path": "workflow-overview.adoc",
+              "url": "/home/contribute/workflow-overview.html",
+              "title": "Workflow Overview"
+            },
+            {
+              "module": "ROOT",
+              "path": "cloud.adoc",
+              "url": "/home/cloud.html",
+              "title": "Welcome to Couchbase Capella"
+            },
+            {
+              "module": "ROOT",
+              "path": "index.adoc",
+              "url": "/home/index.html",
+              "title": "Couchbase Documentation"
+            },
+            {
+              "module": "ROOT",
+              "path": "integrations.adoc",
+              "url": "/home/integrations.html",
+              "title": "Big Data Integration Using Couchbase Connectors"
+            },
+            {
+              "module": "ROOT",
+              "path": "mobile.adoc",
+              "url": "/home/mobile.html",
+              "title": "Couchbase Mobile - Embedded Database on the Edge"
+            },
+            {
+              "module": "ROOT",
+              "path": "sdk.adoc",
+              "url": "/home/sdk.html",
+              "title": "SDKs &amp; Connectors"
+            },
+            {
+              "module": "ROOT",
+              "path": "server.adoc",
+              "url": "/home/server.html",
+              "title": "Couchbase Server"
+            },
+            {
+              "alias": true,
+              "module": "sdks",
+              "path": "intro.adoc",
+              "url": "/home/sdk.html",
+              "title": "SDKs &amp; Connectors"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

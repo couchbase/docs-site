@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv=content-security-policy content="default-src 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https:; img-src 'self' data: https:; connect-src 'self' https:; worker-src blob:;">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://metrics.couchbase.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVPNN2');</script>
+<!-- End Google Tag Manager -->
+<title>Couchbase Documentation | Couchbase Docs Local Preview</title>
+<link rel="stylesheet" href="../_/css/site.css">
+<script src="../_/js/vendor/jquery.js"></script>
+<link rel="schema.dcterms" href="https://purl.org/dc/terms/">
+
+
+<meta name="dcterms.subject" content="home">
+<meta name="dcterms.identifier" content="master">
+<meta name="page-url" content="/home/index.html">
+<meta name="page-nav-header-levels" content="0">
+
+<meta name="docsearch:component" content="home">
+<meta name="docsearch:component_title" content="Couchbase Documentation">
+<meta name="docsearch:cversion" content="master">
+<meta name="docsearch:component_version" content="home@master">
+<meta name="docsearch:module" content="">
+<meta name="docsearch:breadcrumbs" content=" / Couchbase Documentation">
+<meta name="docsearch:topic_type" content="">
+<meta name="docsearch:version_rank" content="1">
+<meta name="docsearch:status" content="">
+<meta name="docsearch:edition" content="">
+<meta name="docsearch:page_rank" content="75">
+
+
+<meta name="zd-site-verification" content="odvin2siwmodz30xrtxq">
+<meta name="generator" content="Antora 3.1.10">
+<link rel="icon" href="../_/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon" sizes="any">
+</head>
+<body class="landing-page">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVPNN2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="header fixed-top">
+  <div class="header-top-row">
+      <div class="container">
+          <nav class="navbar navbar-expand-md flex-nowrap justify-content-between navbar-new-top">
+              <ul class="navbar-brand-list">
+                <li class="brand-logo">
+                  <a class="navbar-brand" href="https://www.couchbase.com">
+                    <img src="../_/img/couchbase-logo.svg" alt="Couchbase" />
+                  </a>
+                </li>
+                <li>
+                  <a class="navbar-brand cb-documentation"
+                      href="/Users/elliothunter/Documents/GitHub/docs-site/preview/couchbase-lite-edge-server/current/introduction/intro.html">
+                    <img src="../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
+                    <img src="../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
+                  </a>
+                </li>
+              </ul>
+              <button class="navbar-burger" data-target="topbar-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+          </nav>
+      </div>
+  </div>
+  <div class="header-bottom-row" id="topbar-menu">
+    <div class="container">
+        <nav  class="navbar navbar-new-bottom ">
+
+              <div class="navbar-collapse collapse" id="navbar2">
+                <ul class="navbar-nav w-100 justify-content-start">
+
+                  <li class="nav-item "">
+                    <a href="/Users/elliothunter/Documents/GitHub/docs-site/preview/couchbase-lite-edge-server/current/introduction/intro.html" class="nav-link">
+                      <i class="fas fa-home"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="server.html">
+                      Server
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="mobile.html">
+                      Mobile
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="cloud.html">
+                      Capella
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="sdk.html">
+                      SDKs
+                      
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="primary-action">
+                <a class="btn btn-primary btn-grey-reverse" onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Download'});" href="https://www.couchbase.com/downloads">
+                  Downloads
+                  <i class="far fa-arrow-to-bottom fa-fw"></i>
+                </a>
+                <a href="https://cloud.couchbase.com/sign-up" class="btn btn-primary" onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Free Trial'});" >
+                  Try Free
+                  <i class="far fa-cloud fa-fw"></i>
+                </a>
+              </div>
+
+        </nav>
+    </div>
+   </div>
+</header>
+<div class="body container">
+<main class="article" data-ceiling="topbar">
+<div id="watermark">2025-01-16 docs-couchbase-lite-edge-server DOC-12851-edge-intro-page</div>
+<div class="article-banner">
+<i class="fas fa-cog"></i>
+<h2><tt>2025-01-16 docs-couchbase-lite-edge-server DOC-12851-edge-intro-page</tt>
+</h2>
+<p>You are viewing a preview version of the documentation.</p>
+<p>Visit the <a href="/Users/elliothunter/Documents/GitHub/docs-site/preview/doctor/tree.html">preview landing page</a> for more details.</p>
+</div>
+<article class="doc landing-page-doc">
+<h1 class="sect0">Couchbase Documentation</h1>
+<div class="card-row">
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<p><em>Couchbase is the modern database for enterprise applications.</em></p>
+</div>
+<div class="paragraph">
+<p>Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud.</p>
+</div>
+<div class="paragraph">
+<p>Find the documentation, samples, and references to help you use Couchbase and build applications.</p>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+<div class="listingblock content">
+<div class="content">
+<pre>// List the schedule of flights from Boston
+// to San Francisco on JETBLUE
+
+SELECT DISTINCT airline.name, route.schedule
+FROM `travel-sample`.inventory.route
+  JOIN `travel-sample`.inventory.airline
+  ON KEYS route.airlineid
+WHERE route.sourceairport = "BOS"
+AND route.destinationairport = "SFO"
+AND airline.callsign = "JETBLUE";</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+
+</div>
+<div class="sect1">
+<h2>Get Started</h2>
+<div class="sectionbody">
+<div class="card-row three-column-row">
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Couchbase Capella (DBaaS)</div>
+<p>Explore Couchbase Capella, our fully-managed database as a service offering.
+Take the complexity out of deploying, managing, scaling, and securing Couchbase in the public cloud.
+Store, query, and analyze any amount of data&#8201;&#8212;&#8201;and let us handle more of the administration&#8201;&#8212;&#8201;all in a few clicks.</p>
+</div>
+<div class="paragraph">
+<p><a href="#cloud::index.adoc" class="xref unresolved">Couchbase Capella</a></p>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Couchbase Server</div>
+<p>Explore Couchbase Server, a modern, distributed document database with all the desired capabilities of a relational database and more. It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.</p>
+</div>
+<div class="paragraph">
+<p><a href="server.html" class="xref page">Couchbase Server</a></p>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Couchbase Mobile</div>
+<p><em>Couchbase Mobile</em> brings the power of NoSQL to the edge.
+The combination of <em>Sync Gateway</em> and <em>Couchbase Lite</em> coupled with the power of <em>Couchbase Server</em> provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
+Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.</p>
+</div>
+<div class="paragraph">
+<p><a href="#couchbase-lite::introduction.adoc" class="xref unresolved">Couchbase Lite</a> |
+<a href="#sync-gateway::introduction.adoc" class="xref unresolved">Sync Gateway</a></p>
+</div>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2>Developer Tools</h2>
+<div class="sectionbody">
+<div class="card-row three-column-row">
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">SDK and Connectors</div>
+<p>Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.</p>
+</div>
+<div class="paragraph">
+<p><a href="sdk.html" class="xref page">Developer Docs</a></p>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">CLI and REST APIs</div>
+<p>Use the command-line interface (CLI) tools and REST API to manage and monitor your Couchbase deployment.</p>
+</div>
+<div class="paragraph">
+<p><a href="#server:cli:cli-intro.adoc" class="xref unresolved">Couchbase CLI</a> | <a href="#server:rest-api:rest-intro.adoc" class="xref unresolved">REST API</a></p>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Couchbase Shell</div>
+<p>A modern shell to interact with Couchbase Server and Cloud, now available.
+Couchbase Shell public Beta is now available.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://couchbase.sh">Explore Couchbase Shell</a></p>
+</div>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2>More Developer Resources</h2>
+<div class="sectionbody">
+<div class="card-row three-column-row">
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Developer Portal</div>
+<p>Explore a variety of resources - sample apps, videos, blogs, and more, to build applications using Couchbase.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://developer.couchbase.com">Developer Portal</a>
+<a href="https://developer.couchbase.com/tutorials">Developer Tutorials</a></p>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Academy</div>
+<p>Explore extensive hands-on learning experiences through free, online courses or under the guidance of an in-person instructor.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://learn.couchbase.com/store">Academy</a></p>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Community</div>
+<p>With open source roots, Couchbase has a rich history of collaboration and community. Connect with our developer community and get involved.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://forums.couchbase.com/">Community</a></p>
+</div>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2>Explore Products and Services</h2>
+<div class="sectionbody">
+<table id="table_products-services" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Cloud</th>
+<th class="tableblock halign-left valign-top">Server</th>
+<th class="tableblock halign-left valign-top">SDK and Connectors</th>
+<th class="tableblock halign-left valign-top">Mobile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#cloud::index.adoc" class="xref unresolved">Couchbase Capella</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="server.html" class="xref page">Couchbase Server</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#operator::overview.adoc" class="xref unresolved">Couchbase Autonomous Operator</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#service-broker::index.adoc" class="xref unresolved">Couchbase Service Broker</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#cmos::index.adoc" class="xref unresolved">Couchbase Monitoring and Observability Stack</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#java-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase Java SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#scala-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase Scala SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#dotnet-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase .NET SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#c-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase C SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#nodejs-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase Node.js SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#php-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase PHP SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#python-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase Python SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#ruby-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase Ruby SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#go-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase Go SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#kotlin-sdk:hello-world:overview.adoc" class="xref unresolved">Couchbase Kotlin SDK</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#elasticsearch-connector::getting-started.adoc" class="xref unresolved">Couchbase Elasticsearch Connector</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#kafka-connector::quickstart.adoc" class="xref unresolved">Couchbase Kafka Connector</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#spark-connector::getting-started.adoc" class="xref unresolved">Couchbase Spark Connector</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#couchbase-lite:javascript:quickstart.adoc" class="xref unresolved">Couchbase Lite JavaScript</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#couchbase-lite:csharp:quickstart.adoc" class="xref unresolved">Couchbase Lite C#</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#couchbase-lite:java:quickstart.adoc" class="xref unresolved">Couchbase Lite Java</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#couchbase-lite:android:quickstart.adoc" class="xref unresolved">Couchbase Lite Java Android</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#couchbase-lite:swift:quickstart.adoc" class="xref unresolved">Couchbase Lite Swift</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#couchbase-lite:objc:quickstart.adoc" class="xref unresolved">Couchbase Lite Objective-C</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#sync-gateway::index.adoc" class="xref unresolved">Couchbase Sync Gateway</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect5 column">
+<h6></h6>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2>Feedback and Contributions</h2>
+<div class="sectionbody">
+<div class="card-row three-column-row">
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Provide Feedback</div>
+<p>Provide feedback, and get help with any problem you may encounter.</p>
+</div>
+<div class="paragraph">
+<p><a href="#server:introduction:contact-couchbase.adoc" class="xref unresolved">Provide Feedback</a></p>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Contact Support</div>
+<p>Couchbase Support provides online support for customers of Enterprise Edition who have a support contract.</p>
+</div>
+<div class="paragraph">
+<p><a href="#server:introduction:contact-couchbase.adoc" class="xref unresolved">Contact Couchbase</a></p>
+</div>
+</div>
+<div class="sect5 column">
+<h6></h6>
+<div class="paragraph content">
+<div class="title">Contribute</div>
+<p>You can submit simple changes, such as typo fixes and minor clarifications directly on GitHub. Contributions are greatly encouraged.</p>
+</div>
+<div class="paragraph">
+<p><a href="contribute/index.html" class="xref page">Contribute to the Documentation</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-links">
+      <div class="col">
+        <div class="footer-logo">
+          <a href="https://www.couchbase.com" class="icon">
+            <img src="../_/img/couchbase-logo.svg" alt="Couchbase">
+          </a>
+        </div>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://docs.couchbase.com" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://forums.couchbase.com" target="_blank" rel="noopener">Forums</a></li>
+          <li><a href="https://support.couchbase.com" target="_blank" rel="noopener">Support</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://developer.couchbase.com" target="_blank" rel="noopener">Developer Portal</a></li>
+          <li><a href="https://blog.couchbase.com" target="_blank" rel="noopener">Blog</a></li>
+          <li><a href="https://www.couchbase.com/resources">Resources</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://www.couchbase.com/get-started-developing-nosql">Get Started</a></li>
+          <li><a href="https://www.couchbase.com/downloads">Downloads</a></li>
+          <li><a href="https://learn.couchbase.com/store?utf8=%E2%9C%93&ss=1&ct=78327&commit=Filter" target="_blank" rel="noopener">Training</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="social-icons">
+          <li>
+            <svg  width="14" height="14" viewBox="0 0 32.1 26.1"> <path id="twitter" class="cls-1" d="M32,7.1a11.836,11.836,0,0,1-3.8,1,6.462,6.462,0,0,0,2.9-3.6,12.606,12.606,0,0,1-4.2,1.6A6.492,6.492,0,0,0,22.1,4a6.594,6.594,0,0,0-6.6,6.6,7.719,7.719,0,0,0,.2,1.5A18.458,18.458,0,0,1,2.2,5.2a6.294,6.294,0,0,0-.9,3.3A6.765,6.765,0,0,0,4.2,14a6.109,6.109,0,0,1-3-.8v.1a6.543,6.543,0,0,0,5.3,6.4,4.678,4.678,0,0,1-1.7.2,4.869,4.869,0,0,1-1.2-.1,6.679,6.679,0,0,0,6.1,4.6,12.917,12.917,0,0,1-8.2,2.8,9.151,9.151,0,0,1-1.6-.1,18.438,18.438,0,0,0,10.1,3c12.1,0,18.7-10,18.7-18.7v-.8A13.336,13.336,0,0,0,32,7.2Z" transform="translate(0.1 -4)"/></svg>
+            <a href="https://twitter.com/couchbase" class="icon">
+              Twitter
+            </a>
+          </li>
+          <li>
+          <svg  width="14" height="14" viewBox="0 0 32 32"> <path id="linkedin" class="cls-1" d="M29,0H3A3.076,3.076,0,0,0,0,3V29a3.009,3.009,0,0,0,3,3H29a2.946,2.946,0,0,0,3-3V3A3.009,3.009,0,0,0,29,0ZM12,26H8V12h4ZM10,10a2,2,0,1,1,2-2A2.006,2.006,0,0,1,10,10ZM26,26H22V18a2,2,0,0,0-4,0v8H14V12h4v2.5c.8-1.1,2.1-2.5,3.5-2.5A4.736,4.736,0,0,1,26,17Z"/></svg>
+              <a href="https://www.linkedin.com/company/couchbase" class="icon">
+             Linkedin
+            </a>
+          </li>
+          <li>
+            <svg  width="14" height="14" viewBox="0 0 32 32"> <path id="facebook" class="cls-1" d="M29,0H3A2.652,2.652,0,0,0,0,3V29a2.652,2.652,0,0,0,3,3H16V18H12V14h4V12a6.452,6.452,0,0,1,6-6h4v4H22a2.151,2.151,0,0,0-2,2v2h6l-1,4H20V32h9a2.652,2.652,0,0,0,3-3V3A2.652,2.652,0,0,0,29,0Z"/></svg>
+            <a href="https://www.facebook.com/Couchbase" class="icon">
+            Facebook
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-terms">
+      <div class="footer-terms-copyright">
+          <span>© 2025 
+            Couchbase and the Couchbase logo are registered trademarks of Couchbase, Inc.
+            All third party trademarks (including logos and icons) referenced by Couchbase, Inc. remain the property of their respective owners.
+          </span>
+      </div>
+      <div class="footer-terms-links">
+        <a href="https://www.couchbase.com/terms-of-use">Terms of Use</a>
+        <a href="https://www.couchbase.com/privacy-policy">Privacy Policy</a>
+        <a href="https://www.couchbase.com/cookie-policy">Cookie Policy</a>
+        <a href="https://www.couchbase.com/support-policy">Support Policy</a>
+        <a href="https://info.couchbase.com/unsubscribe-or-manage-preferences.html" target="_blank" rel="noopener">Marketing Preference Center</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<template id="run-code-panel">
+<div class="action-panel">
+  <form class="action-panel-control" method="POST" action="https://couchbase.live/run" target="run-code-output">
+    <input type="hidden" name="lang">
+    <input type="hidden" name="code">
+    <input type="hidden" name="from" value="docs">
+    <div class="controls">
+      <button class="control-button rerun" type="submit"><i class="fas fa-redo"></i></button>
+      <span class="shell-name control-label">Output</span>
+      <button class="control-button close"><i class="fas fa-times"></i> Close</button>
+    </div>
+  </form>
+  <iframe class="run-code-output" name="run-code-output"></iframe>
+</div>
+</template>
+
+<script id="site-script" src="../_/js/vendor/chatbox-ui.js"></script>
+
+<script id="site-script" src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/tabs.js" data-sync-storage-key="preferred-tab"></script>
+<script defer src="../_/js/vendor/fontawesome-icon-defs.js"></script>
+<script defer src="../_/js/vendor/fontawesome.js" data-search-pseudo-elements="true"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+</body>
+</html>

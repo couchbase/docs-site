@@ -16,7 +16,7 @@ site:
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
-        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
@@ -40,12 +40,20 @@ content:
   - url: .
     branches: HEAD
     start_path: home
+  - url: ../docs-devex
+    # branches: [release/7.2, capella, elixir]
+    branches: [release/7.6, release/7.2, capella]
+  - url: ../docs-server
+    # branches: [release/7.2, capella, elixir]
+    branches: [release/7.6, release/7.2]
     # Mobile Docs Pages
   - url: https://github.com/couchbase/docs-mobile
     branches: [HEAD]
   - url: ../docs-couchbase-lite
     branches: [HEAD]
   - url: ../docs-sync-gateway
+    branches: [HEAD]
+  - url: ../docs-couchbase-lite-edge-server
     branches: [HEAD]
   - url: ../couchbase-cloud
     branches: [HEAD]
@@ -91,6 +99,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-202/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-203/ui-bundle.zip
 output:
   dir: ./public

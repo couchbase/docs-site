@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv=content-security-policy content="default-src 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https:; img-src 'self' data: https:; connect-src 'self' https:; worker-src blob:;">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://metrics.couchbase.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVPNN2');</script>
+<!-- End Google Tag Manager -->
+<title>Generate REST API Documentation | Couchbase Docs Local Preview</title>
+<link rel="stylesheet" href="../../_/css/site.css">
+<script src="../../_/js/vendor/jquery.js"></script>
+<link rel="schema.dcterms" href="https://purl.org/dc/terms/">
+
+
+<meta name="dcterms.subject" content="home">
+<meta name="dcterms.identifier" content="master">
+<meta name="page-url" content="/home/contribute/generate-rest-api.html">
+<meta name="page-nav-header-levels" content="0">
+
+<meta name="docsearch:component" content="home">
+<meta name="docsearch:component_title" content="Couchbase Documentation">
+<meta name="docsearch:cversion" content="master">
+<meta name="docsearch:component_version" content="home@master">
+<meta name="docsearch:module" content="contribute">
+<meta name="docsearch:breadcrumbs" content=" / Technical details / Generate REST API Documentation">
+<meta name="docsearch:topic_type" content="">
+<meta name="docsearch:version_rank" content="1">
+<meta name="docsearch:status" content="UNDER DEVELOPMENT">
+<meta name="docsearch:edition" content="">
+<meta name="docsearch:page_rank" content="0">
+
+
+<meta name="generator" content="Antora 3.1.10">
+<link rel="icon" href="../../_/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon" sizes="any">
+</head>
+<body class="article">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVPNN2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="header fixed-top">
+  <div class="header-top-row">
+      <div class="container">
+          <nav class="navbar navbar-expand-md flex-nowrap justify-content-between navbar-new-top">
+              <ul class="navbar-brand-list">
+                <li class="brand-logo">
+                  <a class="navbar-brand" href="https://www.couchbase.com">
+                    <img src="../../_/img/couchbase-logo.svg" alt="Couchbase" />
+                  </a>
+                </li>
+                <li>
+                  <a class="navbar-brand cb-documentation"
+                      href="/Users/elliothunter/Documents/GitHub/docs-site/preview/couchbase-lite-edge-server/current/introduction/intro.html">
+                    <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
+                    <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
+                  </a>
+                </li>
+              </ul>
+              <button class="navbar-burger" data-target="topbar-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+          </nav>
+      </div>
+  </div>
+  <div class="header-bottom-row" id="topbar-menu">
+    <div class="container">
+        <nav  class="navbar navbar-new-bottom ">
+
+              <div class="navbar-collapse collapse" id="navbar2">
+                <ul class="navbar-nav w-100 justify-content-start">
+
+                  <li class="nav-item "">
+                    <a href="/Users/elliothunter/Documents/GitHub/docs-site/preview/couchbase-lite-edge-server/current/introduction/intro.html" class="nav-link">
+                      <i class="fas fa-home"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../server.html">
+                      Server
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../mobile.html">
+                      Mobile
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../cloud.html">
+                      Capella
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../sdk.html">
+                      SDKs
+                      
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="primary-action">
+                <a class="btn btn-primary btn-grey-reverse" onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Download'});" href="https://www.couchbase.com/downloads">
+                  Downloads
+                  <i class="far fa-arrow-to-bottom fa-fw"></i>
+                </a>
+                <a href="https://cloud.couchbase.com/sign-up" class="btn btn-primary" onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Free Trial'});" >
+                  Try Free
+                  <i class="far fa-cloud fa-fw"></i>
+                </a>
+              </div>
+
+        </nav>
+    </div>
+   </div>
+</header>
+<div class="body container">
+<aside class="nav left-sidebar">
+  <div class="nav-container">
+    <a href="#" class="menu-expand-toggle"><span>Navigation</span><i class="fas fa-times-circle"></i><i class="fas fa-chevron-circle-left"></i></a>
+  </div>
+</aside>
+<aside class="toc sidebar"
+      data-title="Contents"
+      data-levels="2">
+  <div class="sidebar-box">
+    <div class="tools" role="navigation">
+<ul>
+<li class="tool edit"><a href="file:///Users/elliothunter/Documents/GitHub/docs-site/home/modules/contribute/pages/generate-rest-api.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+</ul>
+</div>
+    <div class="toc-menu"></div>
+    <div class="is-this-helpful-box">
+      <h4> Is this page helpful?</h4>
+      <div class="btn-row">
+        <a href="#" class="like-btn helpful-btn" id="yesBtn" data-page-rating="like" >
+                <i class="far fa-thumbs-up"></i>
+            Yes
+
+            </a>
+        <a href="#" class="dislike-btn helpful-btn" id="noBtn"  data-page-rating="dislike"> <i class="far fa-thumbs-down"></i> No</a>
+      </div>
+      <div class="any-feedback">
+        <a href="#" class="btn any-feedback-btn" id="myCustomTrigger">Leave Additional Feedback? </a>
+      </div>
+      <div class="dialog-box" id="dialogBox">
+        <form>
+            <div class="form-group " id="additionalFeedbackBox">
+              <textarea class="input-control feed-back-msg" rows="8" placeholder="Any Additonal Feedback?"></textarea>
+
+              <div class="action-btn-row ">
+                <a href="#" class="skip-btn" id="skipBtnMsg">Skip</a>
+                  <button class="submit-btn btn blue-btn disabled" > Submit  </button>
+                  <a href="#" class="info-btn"><i class="fas fa-info-circle"></i></a>
+              </div>
+
+
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</aside>
+
+<div class="feedback-modal modal-popup">
+  <div class="modal-popup-dialogue">
+    <div class="popup-header">
+      <a href="#" class="close-popup"><i class="fa fa-times"></i></a>
+    </div>
+    <div class="popup-content">
+      <p>
+        Please use the form below to provide your feedback. Because your feedback is valuable to us,
+         the information you submit in this form is recorded in our issue tracking system (JIRA), which is publicly available.
+        You can track the status of your feedback using the ticket number displayed in the dialog once you submit the form.
+      </p>
+    </div>
+  </div>
+</div>
+
+<main class="article" data-ceiling="topbar">
+<div id="watermark">2025-01-16 docs-couchbase-lite-edge-server DOC-12851-edge-intro-page</div>
+<div class="article-banner">
+<i class="fas fa-cog"></i>
+<h2><tt>2025-01-16 docs-couchbase-lite-edge-server DOC-12851-edge-intro-page</tt>
+</h2>
+<p>You are viewing a preview version of the documentation.</p>
+<p>Visit the <a href="/Users/elliothunter/Documents/GitHub/docs-site/preview/doctor/tree.html">preview landing page</a> for more details.</p>
+</div>
+<div class="article-header">
+<nav class="crumbs" aria-label="breadcrumbs">
+<ul>
+<li class="crumb">Technical details</li>
+<li class="crumb"><a href="generate-rest-api.html">Generate REST API Documentation</a></li>
+</ul>
+</nav>
+</div>
+<article class="doc">
+<div class="page-heading-title">
+<h1 class="page">Generate REST API Documentation</h1>
+
+<div class="labels">
+<ul></ul>
+</div>
+
+<div class="labels">
+<ul>
+<li class="status"><span>UNDER DEVELOPMENT</span></li>
+</ul>
+</div>
+
+</div>
+<div class="contributor-list-box">
+<span class="last-commit-date" id="commitdate">    </span>
+<ul id="contributorList"></ul>
+<span  id="otherContributor"> + </span>
+</div><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+this information is targeted at Couchbase Docs team,
+but may be of interest to others if you want to change the
+generated REST API docs.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following known tooling is used to generate the API docs from OpenAPI specs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>openapi-generator: (Capella)</p>
+</li>
+<li>
+<p>SwaggerUI: (Mobile, travel-sample, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>swagger2markup: (Mobile, Server, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>Redocly (Capella Management API)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="openapi-generator"><a class="anchor" href="#openapi-generator"></a>openapi-generator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This toolset is used throughout the Capella project.</p>
+</div>
+<div class="sect2">
+<h3 id="core-capella"><a class="anchor" href="#core-capella"></a>Core Capella</h3>
+<div class="paragraph">
+<p>The dev team use an OpenAPI document to generate various scaffolding for their APIs.
+To ensure consistency, the same files generate the API documentation included in the
+docs, and are built every time the code is built.</p>
+</div>
+<div class="paragraph">
+<p>The versions in <code>internal</code> are canonical, and the <code>copy.sh</code> script copies the generated
+output to the docs tree.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>internal/rest/
+├── generate.sh
+├── copy.sh
+├── examples/
+├── specs/
+│   └── openapi.yml
+├── generated/
+│   └── asciidoc/
+│       └── index.adoc
+└── api/
+    └── openapi.yaml
+
+docs/public/modules/reference/
+├── partials/
+│   ├── examples/
+│   └── index.adoc
+└── assets/attachments/
+    └── openapi.yaml</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="capella-app-services-mobile-sync-gateway"><a class="anchor" href="#capella-app-services-mobile-sync-gateway"></a>Capella App Services (Mobile sync-gateway)</h3>
+<div class="paragraph">
+<p>The mobile development team have some OpenAPI specs used for testing, but which are not currently canonical for documentation.</p>
+</div>
+<div class="paragraph">
+<p>The docs team created and maintained a non-canonical Swagger spec for Sync Gateway at:
+<a href="https://github.com/couchbase/docs-sync-gateway/tree/release/3.0/modules/ROOT/assets/attachments" class="bare">https://github.com/couchbase/docs-sync-gateway/tree/release/3.0/modules/ROOT/assets/attachments</a></p>
+</div>
+<div class="paragraph">
+<p>When porting the reference docs to Capella, we noticed that the Swagger2Markup toolchain was non-functional,
+and instead used:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>modified, local copies of the yaml specs</p>
+</li>
+<li>
+<p>a modified, local copy of the Core Capella openapi-generator toolchain</p>
+</li>
+<li>
+<p>a custom <code>[markdown]</code> tag to parse the content of OpenAPI descriptions.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="specs-sources"><a class="anchor" href="#specs-sources"></a>Specs sources</h4>
+<div class="paragraph">
+<p>We copied the files from <a href="https://github.com/couchbase/docs-sync-gateway/tree/release/3.0/modules/ROOT/assets/attachments" class="bare">https://github.com/couchbase/docs-sync-gateway/tree/release/3.0/modules/ROOT/assets/attachments</a>
+but had to make local changes.
+The files are copied to <code>docs/public/modules/app-services/pages/references/assets/rest/specs/</code>.</p>
+</div>
+<div class="paragraph">
+<p>Ideally we would have one set of source files shared between SGW and Capella App Services, but we had to account for the following differences:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wording "Sync Gateway" vs "App Services".
+We attempted to handle this by parametrizing <code>{SGW}</code> as the openapi-generator toolchain doesn&#8217;t expand these variables and simply passes them through. This is handled on the Capella side and defined in <code>partial$tokens.adoc</code>.</p>
+</li>
+<li>
+<p>Remove references to versions.
+As these aren&#8217;t to be exposed for Capella, we placed these behind an undefined ifdef, e.g. <code>ifdef::expose-versions[(CBS 7.0.2 Developer Preview)]</code>.</p>
+</li>
+<li>
+<p>Select subset of endpoints
+For Preview, and then GA, and then ongoing, the set of exposed functionality for App Services will be more constrained than for SGW.
+The ideal solution would be to generate a defined subset of a spec, using either functionality built into openapi-generator, or a 3rd party pre-processing step.
+(I believe the <code>adoc_yaml_parser</code> used in SGW swagger2markup toolchain does something similar?)
+However, given time constraints, we&#8217;ve simply <strong>deleted</strong> or commented out sections manually.
+This has the obvious disadvantage that <strong>reintroducing</strong> endpoints as features are introduced from GA
+will now require extra manual splicing.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="toolchain"><a class="anchor" href="#toolchain"></a>Toolchain</h4>
+<div class="paragraph">
+<p>The <code>references/assets/rest/</code> directory currently contains the specs, template files, and generated output.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>docs/public/modules/app-services/pages/references/assets/rest/
+├── generate.sh <i class="conum" data-value="1"></i><b>(1)</b>
+├── generated <i class="conum" data-value="2"></i><b>(2)</b>
+│   ├── rest-api-admin
+│   │   └── index.adoc
+│   ├── rest-api-metrics
+│   │   └── index.adoc
+│   └── rest-api-public
+│       └── index.adoc
+├── override <i class="conum" data-value="3"></i><b>(3)</b>
+│   └── asciidoc
+│       ├── index.mustache
+│       ├── model.mustache
+│       ├── param.mustache
+│       ├── params.mustache
+│       └── stubs
+│           └── empty.adoc
+└── specs <i class="conum" data-value="4"></i><b>(4)</b>
+    ├── rest-api-admin.yaml
+    ├── rest-api-metrics.yaml
+    └── rest-api-public.yaml</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>builds the contents of <code>generated/</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>contains partials for inclusion by Antora</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>contains mustache templates copied from Capella Core above, but with tweaks detailed below.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>contains the 3 specs for the APIs (Public, Admin, and Metrics)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Generate script uses Docker to run openapi-generator -
+this is convenient as you don&#8217;t have to worry about installing the toolchain, but is a bit slower.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Some of the mustache files are changed in the following ways:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Change from e.g. <code>{{message}}</code> to <code>{{{message}}}</code> to prevent HTML escaping</p>
+</li>
+<li>
+<p>surround in <code>[markdown]</code> block (see below)</p>
+</li>
+<li>
+<p>where in a table, this requires prefixing the cell declaration as <code>a|</code></p>
+</li>
+<li>
+<p>replace e.g. <code>{{{notes}}}</code> with <code>{{{unescapedNotes}}}</code></p>
+</li>
+<li>
+<p>this unlovable workaround for lack of an <code>if</code> statement:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-mustache hljs" data-lang="mustache">{{#unescapedDescription?}}
+{{{unescapedDescription}}}
+{{/unescapedDescription?}}
+{{^unescapedDescription?}}
+{{{description}}}
+{{/unescapedDescription?}}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Other minor edits</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>OpenAPI content can include Markdown, however openapi-generator
+<a href="https://github.com/OpenAPITools/openapi-generator/issues/7765">does not convert Markdown</a>
+so we modify the mustache files above to wrap their output in a <code>[markdown]</code> block macro.</p>
+</div>
+<div class="paragraph">
+<p>This is defined in <a href="https://github.com/couchbase/docs-site/blob/HEAD/lib/markdown-block.js" class="bare">https://github.com/couchbase/docs-site/blob/HEAD/lib/markdown-block.js</a>
+and should be included in your antora-playbook.yml to preview locally.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="publishing-the-rest-api"><a class="anchor" href="#publishing-the-rest-api"></a>Publishing the REST API</h4>
+<div class="paragraph">
+<p>Running the generate script above adds some partials to the source tree.
+You still need to publish the site in Antora.</p>
+</div>
+<div class="paragraph">
+<p><code>docs/public/modules/app-services/pages/references/</code> contains three .adoc files for the API pages:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>rest_api_admin_static.adoc</code></p>
+</li>
+<li>
+<p><code>rest_api_metrics_static.adoc</code></p>
+</li>
+<li>
+<p><code>rest_api_public_static.adoc</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>These contain a bare skeleton and include the partials generated above.
+They declare some variables and <code>:page-role: openapi</code> which improves the formatting of the openapi tables, preventing excessive wrapping and hyphenation.
+(This requires docs-ui 149 or later).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="swagger-ui"><a class="anchor" href="#swagger-ui"></a>Swagger UI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can include a Swagger UI block using the <code>swagger_ui::</code> block macro.
+See for example <a href="https://github.com/couchbase/docs-sdk-common/blob/release/7.1/modules/shared/partials/sample-application.adoc" class="bare">https://github.com/couchbase/docs-sdk-common/blob/release/7.1/modules/shared/partials/sample-application.adoc</a>
+which is included by all the travel-sample app docs, for example <a href="https://docs.couchbase.com/java-sdk/current/hello-world/sample-application.html#rest-api" class="bare">https://docs.couchbase.com/java-sdk/current/hello-world/sample-application.html#rest-api</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="swagger2markup"><a class="anchor" href="#swagger2markup"></a>Swagger2Markup</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="couchbase-server-rest-apis"><a class="anchor" href="#couchbase-server-rest-apis"></a>Couchbase Server REST APIs</h3>
+<div class="paragraph">
+<p>Documentation for the Analytics Service REST APIs, Query Service REST APIs, and some Index Service REST APIs is pulled in from AsciiDoc partials which are stored in the <code>docs</code> subdirectory of the <a href="https://github.com/couchbaselabs/cb-swagger">cb-swagger</a> repository.</p>
+</div>
+<div class="paragraph">
+<p>The documentation in that repository is generated automatically, using the swagger2markup gradle plugin, from swagger specification files which are stored in the <code>src</code> subdirectory of the same repository.
+The swagger2markup gradle plugin also takes additional content from the <code>src</code> subdirectory, including examples.</p>
+</div>
+<div class="paragraph">
+<p>The AsciiDoc partials are built automatically by GitHub Workflows every time a pull request is merged into the <a href="https://github.com/couchbaselabs/cb-swagger">cb-swagger</a> repository.
+For further details, refer to the <a href="https://github.com/couchbaselabs/cb-swagger#readme">README</a> in that repository.</p>
+</div>
+<div class="paragraph">
+<p>Note that documentation for the other Couchbase Server REST APIs is still written by hand.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sync-gateway"><a class="anchor" href="#sync-gateway"></a>Sync Gateway</h3>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+the following comprises our historical understanding of generation process,
+but is unverified, due to Swagger2Markup repositories in jfrog/bintray changing,
+and may need verification or replacement.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Each of the API is defined in its own yaml file in:
+<code>/modules/ROOT/assets/attachments</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>rest-api-admin.yaml</p>
+</li>
+<li>
+<p>rest-api-public.yaml</p>
+</li>
+<li>
+<p>rest-api-metrics.yaml</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ALL API changes should be made in one or more of these files. In addition to providing input to the generated SwaggerUI interface, they also drive static API content, as input to swagger2markup –
+see: Generate static API content – and <code>sg-&lt;object&gt;_model.yaml</code> data models.</p>
+</div>
+<div class="paragraph">
+<p>Note, that the metrics endpoints, for example, are described in both the metrics and admin API files at the moment; this probably ought to be addressed.</p>
+</div>
+<div class="paragraph">
+<p>The other contents comprise:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>sg-&lt;object&gt;_model.yaml</code> files
+These are extracted from <code>rest-api-admin.yaml</code> and via JSON-CONFIG_UI, provide content in <code>configuration-schema-&lt;object&gt;.adoc</code> pages.
+Do not edit content here – edit it in the rest-api-admin.aml file and reextract – see: Generate Data Models.</p>
+</li>
+<li>
+<p>The configuration-properties-legacy.yaml file.
+This is essentially the 2.8 configuration file, it is used to generate a click-thru schema on configuration-properties-legacy.adoc</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="generate-data-models"><a class="anchor" href="#generate-data-models"></a>Generate Data Models</h4>
+<div class="paragraph">
+<p>To present JSON click-thru data models we extract definitions from the rest-api-admin.yaml file using a compiled Python script adoc-yaml-parser, which generates a set of <code>sg-&lt;object&gt;_model.yaml</code> files.
+These <code>sg-</code> are processed by the antora macro JSON-CONFIG-UI in the <code>configuration-schema-&lt;object&gt;.adoc</code> pages.</p>
+</div>
+<div class="paragraph">
+<p>cd into the modules\ROOT\assets\attachments folder
+If required edit preset parameters in config.yaml
+Run adoc_yaml_parser</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+the sources for this compiled script are in:
+<a href="https://github.com/couchbaselabs/cbm_scripts/blob/master/adoc_yaml_parser/adoc_yaml_parser.py" class="bare">https://github.com/couchbaselabs/cbm_scripts/blob/master/adoc_yaml_parser/adoc_yaml_parser.py</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="generate-static-api-content"><a class="anchor" href="#generate-static-api-content"></a>Generate static API content</h4>
+<div class="paragraph">
+<p>We use Swagger2Markup to generate static API content from the  <code>assets/attachments/rest-api-&lt;type&gt;.yaml</code> files.</p>
+</div>
+<div class="paragraph">
+<p>The standard swagger2markup-generated content (paths.adoc and definitions.adoc) is supplemented by asciidoc/antora tags that allow it to be included piecemeal in the appropriate places.
+This customization of swagger2markup is done within the folder:
+<code>modules/ROOT/assets/s2adoc</code>.</p>
+</div>
+<div class="paragraph">
+<p>The pom.xml file within that folder defines the overall configuration.
+The tags inserts for the generated pages are driven by files in:
+modules/ROOT/assets/s2adoc/src/docs/asciidoc/extensions/definitions
+assets/s2adoc/src/docs/asciidoc/extensions/paths</p>
+</div>
+<div class="paragraph">
+<p>To run this:</p>
+</div>
+<div class="paragraph">
+<p>cd into the modules\ROOT\assets\attachements\s2adoc folder</p>
+</div>
+<div class="paragraph">
+<p>Run the extract scripts using: maven generate-sources</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-links">
+      <div class="col">
+        <div class="footer-logo">
+          <a href="https://www.couchbase.com" class="icon">
+            <img src="../../_/img/couchbase-logo.svg" alt="Couchbase">
+          </a>
+        </div>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://docs.couchbase.com" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://forums.couchbase.com" target="_blank" rel="noopener">Forums</a></li>
+          <li><a href="https://support.couchbase.com" target="_blank" rel="noopener">Support</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://developer.couchbase.com" target="_blank" rel="noopener">Developer Portal</a></li>
+          <li><a href="https://blog.couchbase.com" target="_blank" rel="noopener">Blog</a></li>
+          <li><a href="https://www.couchbase.com/resources">Resources</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://www.couchbase.com/get-started-developing-nosql">Get Started</a></li>
+          <li><a href="https://www.couchbase.com/downloads">Downloads</a></li>
+          <li><a href="https://learn.couchbase.com/store?utf8=%E2%9C%93&ss=1&ct=78327&commit=Filter" target="_blank" rel="noopener">Training</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="social-icons">
+          <li>
+            <svg  width="14" height="14" viewBox="0 0 32.1 26.1"> <path id="twitter" class="cls-1" d="M32,7.1a11.836,11.836,0,0,1-3.8,1,6.462,6.462,0,0,0,2.9-3.6,12.606,12.606,0,0,1-4.2,1.6A6.492,6.492,0,0,0,22.1,4a6.594,6.594,0,0,0-6.6,6.6,7.719,7.719,0,0,0,.2,1.5A18.458,18.458,0,0,1,2.2,5.2a6.294,6.294,0,0,0-.9,3.3A6.765,6.765,0,0,0,4.2,14a6.109,6.109,0,0,1-3-.8v.1a6.543,6.543,0,0,0,5.3,6.4,4.678,4.678,0,0,1-1.7.2,4.869,4.869,0,0,1-1.2-.1,6.679,6.679,0,0,0,6.1,4.6,12.917,12.917,0,0,1-8.2,2.8,9.151,9.151,0,0,1-1.6-.1,18.438,18.438,0,0,0,10.1,3c12.1,0,18.7-10,18.7-18.7v-.8A13.336,13.336,0,0,0,32,7.2Z" transform="translate(0.1 -4)"/></svg>
+            <a href="https://twitter.com/couchbase" class="icon">
+              Twitter
+            </a>
+          </li>
+          <li>
+          <svg  width="14" height="14" viewBox="0 0 32 32"> <path id="linkedin" class="cls-1" d="M29,0H3A3.076,3.076,0,0,0,0,3V29a3.009,3.009,0,0,0,3,3H29a2.946,2.946,0,0,0,3-3V3A3.009,3.009,0,0,0,29,0ZM12,26H8V12h4ZM10,10a2,2,0,1,1,2-2A2.006,2.006,0,0,1,10,10ZM26,26H22V18a2,2,0,0,0-4,0v8H14V12h4v2.5c.8-1.1,2.1-2.5,3.5-2.5A4.736,4.736,0,0,1,26,17Z"/></svg>
+              <a href="https://www.linkedin.com/company/couchbase" class="icon">
+             Linkedin
+            </a>
+          </li>
+          <li>
+            <svg  width="14" height="14" viewBox="0 0 32 32"> <path id="facebook" class="cls-1" d="M29,0H3A2.652,2.652,0,0,0,0,3V29a2.652,2.652,0,0,0,3,3H16V18H12V14h4V12a6.452,6.452,0,0,1,6-6h4v4H22a2.151,2.151,0,0,0-2,2v2h6l-1,4H20V32h9a2.652,2.652,0,0,0,3-3V3A2.652,2.652,0,0,0,29,0Z"/></svg>
+            <a href="https://www.facebook.com/Couchbase" class="icon">
+            Facebook
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-terms">
+      <div class="footer-terms-copyright">
+          <span>© 2025 
+            Couchbase and the Couchbase logo are registered trademarks of Couchbase, Inc.
+            All third party trademarks (including logos and icons) referenced by Couchbase, Inc. remain the property of their respective owners.
+          </span>
+      </div>
+      <div class="footer-terms-links">
+        <a href="https://www.couchbase.com/terms-of-use">Terms of Use</a>
+        <a href="https://www.couchbase.com/privacy-policy">Privacy Policy</a>
+        <a href="https://www.couchbase.com/cookie-policy">Cookie Policy</a>
+        <a href="https://www.couchbase.com/support-policy">Support Policy</a>
+        <a href="https://info.couchbase.com/unsubscribe-or-manage-preferences.html" target="_blank" rel="noopener">Marketing Preference Center</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../../_/js/site-navigation-data.js"></script>
+<script id="page-navigation-group" type="application/json">
+{"title":"Contribute","components":["home"],"latestVersions":{"home":"master"}}
+</script>
+<template id="run-code-panel">
+<div class="action-panel">
+  <form class="action-panel-control" method="POST" action="https://couchbase.live/run" target="run-code-output">
+    <input type="hidden" name="lang">
+    <input type="hidden" name="code">
+    <input type="hidden" name="from" value="docs">
+    <div class="controls">
+      <button class="control-button rerun" type="submit"><i class="fas fa-redo"></i></button>
+      <span class="shell-name control-label">Output</span>
+      <button class="control-button close"><i class="fas fa-times"></i> Close</button>
+    </div>
+  </form>
+  <iframe class="run-code-output" name="run-code-output"></iframe>
+</div>
+</template>
+
+<script id="site-script" src="../../_/js/vendor/chatbox-ui.js"></script>
+
+<script id="site-script" src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/tabs.js" data-sync-storage-key="preferred-tab"></script>
+<script defer src="../../_/js/vendor/fontawesome-icon-defs.js"></script>
+<script defer src="../../_/js/vendor/fontawesome.js" data-search-pseudo-elements="true"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+</body>
+</html>

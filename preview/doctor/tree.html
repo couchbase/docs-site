@@ -1,0 +1,993 @@
+<style>
+
+body {
+    max-width: 60em;
+    margin: 3em auto;
+}
+
+/* Remove default bullets */
+ul, #tree {
+    list-style-type: none;
+}
+
+#pagesForReview {
+    list-style-type: disc;
+    font-size: 1.5em;
+}
+
+/* Remove margins and padding from the parent ul */
+#tree {
+    background-color: #eee;
+    margin: 0.5em;
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.tag {
+    text-decoration: none;
+}
+
+.tag:hover::after,
+.tag-first::after {
+    content: ' ' attr(data-tag);
+}
+
+/* Style the caret/arrow */
+.caret {
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.doc::before {
+    content: "\1F4C4";
+    display: inline-block;
+    margin-right: 6px;   
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+    display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+    display: block;
+}
+
+.prbody {
+    background: cornsilk;
+    margin: 0.5em;    
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+</style>
+
+<h1>What's Up, Doc? &#x1F407;</h1>
+<h2>Generated at Thu Jan 16 2025 15:18:51 GMT+0000 (Greenwich Mean Time)</h2>
+
+<h3>Featured Pages</h3>
+<ul id="pagesForReview">
+    <li>
+        <a href="../index.html">Start page</a>
+    </li>
+    <li> <a href="../home/cloud.html">Couchbase Documentation &gt; Welcome to Couchbase Capella</a>
+        (<a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/ROOT/pages/cloud.adoc">&#x2691;</a>)</li>
+</ul>
+
+
+<h3>Detailed Report</h3>
+From this <a href="antora-playbook.json">antora playbook</a>.
+
+<ul id="tree">
+       <li>
+           
+           <span class="caret ">home</span>
+           
+               <span
+                   target="_blank" 
+                   data-tag="docs-site/preview-build/:home" 
+                   class="tag tag-first" style="color: ff0029;">
+                   &#x2691;
+               </span>
+           
+               <ul class="nested ">
+                       <li>
+                           
+                           <span class="caret ">contribute</span>
+                           
+                               <span
+                                   target="_blank" 
+                                   data-tag="docs-site/preview-build/:home" 
+                                   class="tag" style="color: ff0029;">
+                                   &#x2691;
+                               </span>
+                           
+                               <ul class="nested ">
+                                       <li>
+                                           <a href="../home/contribute/add-pages.html" target="_blank">
+                                           <span class="doc">add-pages.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/add-pages.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/asciidoc-overview.html" target="_blank">
+                                           <span class="doc">asciidoc-overview.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/asciidoc-overview.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/attributes-and-roles.html" target="_blank">
+                                           <span class="doc">attributes-and-roles.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/attributes-and-roles.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/basics.html" target="_blank">
+                                           <span class="doc">basics.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/basics.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/code-blocks.html" target="_blank">
+                                           <span class="doc">code-blocks.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/code-blocks.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/component-configuration.html" target="_blank">
+                                           <span class="doc">component-configuration.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/component-configuration.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/create-branches.html" target="_blank">
+                                           <span class="doc">create-branches.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/create-branches.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/cross-references.html" target="_blank">
+                                           <span class="doc">cross-references.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/cross-references.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/edit-pages.html" target="_blank">
+                                           <span class="doc">edit-pages.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/edit-pages.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/extensions-embargoed-ok.html" target="_blank">
+                                           <span class="doc">extensions-embargoed-ok.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/extensions-embargoed-ok.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/extensions-flagged.html" target="_blank">
+                                           <span class="doc">extensions-flagged.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/extensions-flagged.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/extensions-template.html" target="_blank">
+                                           <span class="doc">extensions-template.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/extensions-template.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/extensions.html" target="_blank">
+                                           <span class="doc">extensions.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/extensions.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/generate-rest-api.html" target="_blank">
+                                           <span class="doc">generate-rest-api.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/generate-rest-api.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/ids.html" target="_blank">
+                                           <span class="doc">ids.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/ids.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/includes.html" target="_blank">
+                                           <span class="doc">includes.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/includes.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/index.html" target="_blank">
+                                           <span class="doc">index.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/index.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/install-antora.html" target="_blank">
+                                           <span class="doc">install-antora.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/install-antora.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/install-git-and-editor.html" target="_blank">
+                                           <span class="doc">install-git-and-editor.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/install-git-and-editor.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/nav-menus-and-files.html" target="_blank">
+                                           <span class="doc">nav-menus-and-files.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/nav-menus-and-files.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/pages.html" target="_blank">
+                                           <span class="doc">pages.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/pages.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/playbook.html" target="_blank">
+                                           <span class="doc">playbook.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/playbook.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/repositories.html" target="_blank">
+                                           <span class="doc">repositories.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/repositories.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/send-pr.html" target="_blank">
+                                           <span class="doc">send-pr.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/send-pr.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/set-up-repository.html" target="_blank">
+                                           <span class="doc">set-up-repository.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/set-up-repository.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/tabs.html" target="_blank">
+                                           <span class="doc">tabs.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/tabs.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/test-site.html" target="_blank">
+                                           <span class="doc">test-site.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/test-site.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/update-nav.html" target="_blank">
+                                           <span class="doc">update-nav.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/update-nav.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                                       <li>
+                                           <a href="../home/contribute/workflow-overview.html" target="_blank">
+                                           <span class="doc">workflow-overview.html</span></a>
+                                           
+                                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/contribute/pages/workflow-overview.adoc"
+                                                   target="_blank" 
+                                                   data-tag="docs-site/preview-build/:home" 
+                                                   class="tag" style="color: ff0029;">
+                                                   &#x2691;
+                                               </a>
+                                           
+                                       </li>
+                               </ul>
+                       </li>
+                       <li>
+                           <a href="../home/cloud.html" target="_blank">
+                           <span class="doc">cloud.html</span></a>
+                           
+                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/ROOT/pages/cloud.adoc"
+                                   target="_blank" 
+                                   data-tag="docs-site/preview-build/:home" 
+                                   class="tag" style="color: ff0029;">
+                                   &#x2691;
+                               </a>
+                           
+                       </li>
+                       <li>
+                           <a href="../home/index.html" target="_blank">
+                           <span class="doc">index.html</span></a>
+                           
+                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/ROOT/pages/index.adoc"
+                                   target="_blank" 
+                                   data-tag="docs-site/preview-build/:home" 
+                                   class="tag" style="color: ff0029;">
+                                   &#x2691;
+                               </a>
+                           
+                       </li>
+                       <li>
+                           <a href="../home/integrations.html" target="_blank">
+                           <span class="doc">integrations.html</span></a>
+                           
+                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/ROOT/pages/integrations.adoc"
+                                   target="_blank" 
+                                   data-tag="docs-site/preview-build/:home" 
+                                   class="tag" style="color: ff0029;">
+                                   &#x2691;
+                               </a>
+                           
+                       </li>
+                       <li>
+                           <a href="../home/mobile.html" target="_blank">
+                           <span class="doc">mobile.html</span></a>
+                           
+                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/ROOT/pages/mobile.adoc"
+                                   target="_blank" 
+                                   data-tag="docs-site/preview-build/:home" 
+                                   class="tag" style="color: ff0029;">
+                                   &#x2691;
+                               </a>
+                           
+                       </li>
+                       <li>
+                           <a href="../home/sdk.html" target="_blank">
+                           <span class="doc">sdk.html</span></a>
+                           
+                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/ROOT/pages/sdk.adoc"
+                                   target="_blank" 
+                                   data-tag="docs-site/preview-build/:home" 
+                                   class="tag" style="color: ff0029;">
+                                   &#x2691;
+                               </a>
+                           
+                       </li>
+                       <li>
+                           <a href="../home/server.html" target="_blank">
+                           <span class="doc">server.html</span></a>
+                           
+                               <a href="https://github.com/couchbase/docs-site/blob/preview-build/home/modules/ROOT/pages/server.adoc"
+                                   target="_blank" 
+                                   data-tag="docs-site/preview-build/:home" 
+                                   class="tag" style="color: ff0029;">
+                                   &#x2691;
+                               </a>
+                           
+                       </li>
+               </ul>
+       </li>
+       <li>
+           
+           <span class="caret ">couchbase-lite-edge-server</span>
+           
+               <span
+                   target="_blank" 
+                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                   class="tag tag-first" style="color: 377eb8;">
+                   &#x2691;
+               </span>
+           
+               <ul class="nested ">
+                       <li>
+                           
+                           <span class="caret ">current</span>
+                           
+                               <span
+                                   target="_blank" 
+                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                   class="tag" style="color: 377eb8;">
+                                   &#x2691;
+                               </span>
+                           
+                               <ul class="nested ">
+                                       <li>
+                                           
+                                           <span class="caret ">administer</span>
+                                           
+                                               <span
+                                                   target="_blank" 
+                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                   class="tag" style="color: 377eb8;">
+                                                   &#x2691;
+                                               </span>
+                                           
+                                               <ul class="nested ">
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/administer/administer-landing.html" target="_blank">
+                                                           <span class="doc">administer-landing.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/administer/pages/administer-landing.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/administer/audit-logging.html" target="_blank">
+                                                           <span class="doc">audit-logging.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/administer/pages/audit-logging.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/administer/high-availability.html" target="_blank">
+                                                           <span class="doc">high-availability.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/administer/pages/high-availability.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/administer/operational-logging.html" target="_blank">
+                                                           <span class="doc">operational-logging.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/administer/pages/operational-logging.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                               </ul>
+                                       </li>
+                                       <li>
+                                           
+                                           <span class="caret ">configuration</span>
+                                           
+                                               <span
+                                                   target="_blank" 
+                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                   class="tag" style="color: 377eb8;">
+                                                   &#x2691;
+                                               </span>
+                                           
+                                               <ul class="nested ">
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/configuration/configuration-landing.html" target="_blank">
+                                                           <span class="doc">configuration-landing.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/configuration/pages/configuration-landing.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                               </ul>
+                                       </li>
+                                       <li>
+                                           
+                                           <span class="caret ">get-started</span>
+                                           
+                                               <span
+                                                   target="_blank" 
+                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                   class="tag" style="color: 377eb8;">
+                                                   &#x2691;
+                                               </span>
+                                           
+                                               <ul class="nested ">
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/get-started/get-started-landing.html" target="_blank">
+                                                           <span class="doc">get-started-landing.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/get-started/pages/get-started-landing.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/get-started/install.html" target="_blank">
+                                                           <span class="doc">install.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/get-started/pages/install.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/get-started/prereqs.html" target="_blank">
+                                                           <span class="doc">prereqs.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/get-started/pages/prereqs.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/get-started/running-edge-server.html" target="_blank">
+                                                           <span class="doc">running-edge-server.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/get-started/pages/running-edge-server.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                               </ul>
+                                       </li>
+                                       <li>
+                                           
+                                           <span class="caret ">introduction</span>
+                                           
+                                               <span
+                                                   target="_blank" 
+                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                   class="tag" style="color: 377eb8;">
+                                                   &#x2691;
+                                               </span>
+                                           
+                                               <ul class="nested ">
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/introduction/intro.html" target="_blank">
+                                                           <span class="doc">intro.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/introduction/pages/intro.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/introduction/whats-new.html" target="_blank">
+                                                           <span class="doc">whats-new.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/introduction/pages/whats-new.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                               </ul>
+                                       </li>
+                                       <li>
+                                           
+                                           <span class="caret ">rest-based-access</span>
+                                           
+                                               <span
+                                                   target="_blank" 
+                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                   class="tag" style="color: 377eb8;">
+                                                   &#x2691;
+                                               </span>
+                                           
+                                               <ul class="nested ">
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/rest-based-access/api-spec.html" target="_blank">
+                                                           <span class="doc">api-spec.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/rest-based-access/pages/api-spec.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/rest-based-access/changes-feed.html" target="_blank">
+                                                           <span class="doc">changes-feed.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/rest-based-access/pages/changes-feed.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/rest-based-access/database-operations.html" target="_blank">
+                                                           <span class="doc">database-operations.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/rest-based-access/pages/database-operations.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/rest-based-access/document-access.html" target="_blank">
+                                                           <span class="doc">document-access.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/rest-based-access/pages/document-access.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/rest-based-access/queries-api.html" target="_blank">
+                                                           <span class="doc">queries-api.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/rest-based-access/pages/queries-api.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/rest-based-access/replication.html" target="_blank">
+                                                           <span class="doc">replication.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/rest-based-access/pages/replication.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/rest-based-access/rest-api-landing.html" target="_blank">
+                                                           <span class="doc">rest-api-landing.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/rest-based-access/pages/rest-api-landing.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                               </ul>
+                                       </li>
+                                       <li>
+                                           
+                                           <span class="caret ">product-notes</span>
+                                           
+                                               <span
+                                                   target="_blank" 
+                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                   class="tag" style="color: 377eb8;">
+                                                   &#x2691;
+                                               </span>
+                                           
+                                               <ul class="nested ">
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/product-notes/compatibility.html" target="_blank">
+                                                           <span class="doc">compatibility.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/product-notes/pages/compatibility.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/product-notes/product-notes-landing.html" target="_blank">
+                                                           <span class="doc">product-notes-landing.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/product-notes/pages/product-notes-landing.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/product-notes/release-notes.html" target="_blank">
+                                                           <span class="doc">release-notes.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/product-notes/pages/release-notes.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/product-notes/supported-platforms.html" target="_blank">
+                                                           <span class="doc">supported-platforms.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/product-notes/pages/supported-platforms.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                               </ul>
+                                       </li>
+                                       <li>
+                                           
+                                           <span class="caret ">sync</span>
+                                           
+                                               <span
+                                                   target="_blank" 
+                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                   class="tag" style="color: 377eb8;">
+                                                   &#x2691;
+                                               </span>
+                                           
+                                               <ul class="nested ">
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/sync/edge-sync-cbl.html" target="_blank">
+                                                           <span class="doc">edge-sync-cbl.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/sync/pages/edge-sync-cbl.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/sync/edge-to-edge-sync.html" target="_blank">
+                                                           <span class="doc">edge-to-edge-sync.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/sync/pages/edge-to-edge-sync.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/sync/remote-sync.html" target="_blank">
+                                                           <span class="doc">remote-sync.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/sync/pages/remote-sync.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                                       <li>
+                                                           <a href="../couchbase-lite-edge-server/current/sync/sync-landing.html" target="_blank">
+                                                           <span class="doc">sync-landing.html</span></a>
+                                                           
+                                                               <a href="https://github.com/couchbaselabs/docs-couchbase-lite-edge-server/blob/DOC-12851-edge-intro-page/modules/sync/pages/sync-landing.adoc"
+                                                                   target="_blank" 
+                                                                   data-tag="docs-couchbase-lite-edge-server/DOC-12851-edge-intro-page/" 
+                                                                   class="tag" style="color: 377eb8;">
+                                                                   &#x2691;
+                                                               </a>
+                                                           
+                                                       </li>
+                                               </ul>
+                                       </li>
+                               </ul>
+                       </li>
+               </ul>
+       </li>
+</ul>
+
+
+<script>
+const togglers = document.getElementsByClassName("caret");
+
+for (var toggler of togglers) {
+  toggler.addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>

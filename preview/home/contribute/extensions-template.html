@@ -1,0 +1,4002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv=content-security-policy content="default-src 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https:; img-src 'self' data: https:; connect-src 'self' https:; worker-src blob:;">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://metrics.couchbase.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVPNN2');</script>
+<!-- End Google Tag Manager -->
+<title>Demo of template extension | Couchbase Docs Local Preview</title>
+<link rel="stylesheet" href="../../_/css/site.css">
+<script src="../../_/js/vendor/jquery.js"></script>
+<link rel="schema.dcterms" href="https://purl.org/dc/terms/">
+
+
+<meta name="dcterms.subject" content="home">
+<meta name="dcterms.identifier" content="master">
+<meta name="page-url" content="/home/contribute/extensions-template.html">
+<meta name="page-nav-header-levels" content="0">
+
+<meta name="docsearch:component" content="home">
+<meta name="docsearch:component_title" content="Couchbase Documentation">
+<meta name="docsearch:cversion" content="master">
+<meta name="docsearch:component_version" content="home@master">
+<meta name="docsearch:module" content="contribute">
+<meta name="docsearch:breadcrumbs" content=" / Demo of template extension">
+<meta name="docsearch:topic_type" content="">
+<meta name="docsearch:version_rank" content="1">
+<meta name="docsearch:status" content="">
+<meta name="docsearch:edition" content="">
+<meta name="docsearch:page_rank" content="0">
+
+
+<meta name="generator" content="Antora 3.1.10">
+<link rel="icon" href="../../_/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon" sizes="any">
+</head>
+<body class="article">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVPNN2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="header fixed-top">
+  <div class="header-top-row">
+      <div class="container">
+          <nav class="navbar navbar-expand-md flex-nowrap justify-content-between navbar-new-top">
+              <ul class="navbar-brand-list">
+                <li class="brand-logo">
+                  <a class="navbar-brand" href="https://www.couchbase.com">
+                    <img src="../../_/img/couchbase-logo.svg" alt="Couchbase" />
+                  </a>
+                </li>
+                <li>
+                  <a class="navbar-brand cb-documentation"
+                      href="/Users/elliothunter/Documents/GitHub/docs-site/preview/couchbase-lite-edge-server/current/introduction/intro.html">
+                    <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
+                    <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
+                  </a>
+                </li>
+              </ul>
+              <button class="navbar-burger" data-target="topbar-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+          </nav>
+      </div>
+  </div>
+  <div class="header-bottom-row" id="topbar-menu">
+    <div class="container">
+        <nav  class="navbar navbar-new-bottom ">
+
+              <div class="navbar-collapse collapse" id="navbar2">
+                <ul class="navbar-nav w-100 justify-content-start">
+
+                  <li class="nav-item "">
+                    <a href="/Users/elliothunter/Documents/GitHub/docs-site/preview/couchbase-lite-edge-server/current/introduction/intro.html" class="nav-link">
+                      <i class="fas fa-home"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../server.html">
+                      Server
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../mobile.html">
+                      Mobile
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../cloud.html">
+                      Capella
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../sdk.html">
+                      SDKs
+                      
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="primary-action">
+                <a class="btn btn-primary btn-grey-reverse" onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Download'});" href="https://www.couchbase.com/downloads">
+                  Downloads
+                  <i class="far fa-arrow-to-bottom fa-fw"></i>
+                </a>
+                <a href="https://cloud.couchbase.com/sign-up" class="btn btn-primary" onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Free Trial'});" >
+                  Try Free
+                  <i class="far fa-cloud fa-fw"></i>
+                </a>
+              </div>
+
+        </nav>
+    </div>
+   </div>
+</header>
+<div class="body container openapi">
+<aside class="nav left-sidebar">
+  <div class="nav-container">
+    <a href="#" class="menu-expand-toggle"><span>Navigation</span><i class="fas fa-times-circle"></i><i class="fas fa-chevron-circle-left"></i></a>
+  </div>
+</aside>
+<aside class="toc sidebar"
+      data-title="Contents"
+      data-levels="2">
+  <div class="sidebar-box">
+    <div class="tools" role="navigation">
+<ul>
+<li class="tool edit"><a href="file:///Users/elliothunter/Documents/GitHub/docs-site/home/modules/contribute/pages/extensions-template.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+</ul>
+</div>
+    <div class="toc-menu"></div>
+    <div class="is-this-helpful-box">
+      <h4> Is this page helpful?</h4>
+      <div class="btn-row">
+        <a href="#" class="like-btn helpful-btn" id="yesBtn" data-page-rating="like" >
+                <i class="far fa-thumbs-up"></i>
+            Yes
+
+            </a>
+        <a href="#" class="dislike-btn helpful-btn" id="noBtn"  data-page-rating="dislike"> <i class="far fa-thumbs-down"></i> No</a>
+      </div>
+      <div class="any-feedback">
+        <a href="#" class="btn any-feedback-btn" id="myCustomTrigger">Leave Additional Feedback? </a>
+      </div>
+      <div class="dialog-box" id="dialogBox">
+        <form>
+            <div class="form-group " id="additionalFeedbackBox">
+              <textarea class="input-control feed-back-msg" rows="8" placeholder="Any Additonal Feedback?"></textarea>
+
+              <div class="action-btn-row ">
+                <a href="#" class="skip-btn" id="skipBtnMsg">Skip</a>
+                  <button class="submit-btn btn blue-btn disabled" > Submit  </button>
+                  <a href="#" class="info-btn"><i class="fas fa-info-circle"></i></a>
+              </div>
+
+
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</aside>
+
+<div class="feedback-modal modal-popup">
+  <div class="modal-popup-dialogue">
+    <div class="popup-header">
+      <a href="#" class="close-popup"><i class="fa fa-times"></i></a>
+    </div>
+    <div class="popup-content">
+      <p>
+        Please use the form below to provide your feedback. Because your feedback is valuable to us,
+         the information you submit in this form is recorded in our issue tracking system (JIRA), which is publicly available.
+        You can track the status of your feedback using the ticket number displayed in the dialog once you submit the form.
+      </p>
+    </div>
+  </div>
+</div>
+
+<main class="article" data-ceiling="topbar">
+<div id="watermark">2025-01-16 docs-couchbase-lite-edge-server DOC-12851-edge-intro-page</div>
+<div class="article-banner">
+<i class="fas fa-cog"></i>
+<h2><tt>2025-01-16 docs-couchbase-lite-edge-server DOC-12851-edge-intro-page</tt>
+</h2>
+<p>You are viewing a preview version of the documentation.</p>
+<p>Visit the <a href="/Users/elliothunter/Documents/GitHub/docs-site/preview/doctor/tree.html">preview landing page</a> for more details.</p>
+</div>
+<div class="article-header">
+<nav class="crumbs" aria-label="breadcrumbs">
+<ul>
+<li class="crumb"><a href="extensions-template.html">Demo of template extension</a></li>
+</ul>
+</nav>
+</div>
+<article class="doc">
+<div class="page-heading-title">
+<h1 class="page">Demo of template extension</h1>
+
+<div class="labels">
+<ul></ul>
+</div>
+
+
+</div>
+<div class="contributor-list-box">
+<span class="last-commit-date" id="commitdate">    </span>
+<ul id="contributorList"></ul>
+<span  id="otherContributor"> + </span>
+</div><div class="sect1">
+<h2 id="metrics-example"><a class="anchor" href="#metrics-example"></a>Metrics example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A (partial) listing of <code>kv-metrics.json</code>.
+Relating to <a href="https://issues.couchbase.com/browse/DOC-10720">DOC-10720</a></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kv_bg_batch_size</code></p>
+<p class="tableblock">Batch size for background fetches</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gauge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">count</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kv_bg_load_seconds</code></p>
+<p class="tableblock">bg fetches waiting for disk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gauge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kv_bg_wait_seconds</code></p>
+<p class="tableblock">bg fetches waiting in the dispatcher queue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gauge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kv_cmd_duration_seconds</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gauge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kv_cmd_lookup</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gauge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">count</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kv_cmd_lookup_10s_count</code></p>
+<p class="tableblock">The number of lookup operations performed within the last 10 seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gauge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">count</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="yaml-support"><a class="anchor" href="#yaml-support"></a>YAML support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Try: A successful test</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="included-template"><a class="anchor" href="#included-template"></a>Included template</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a included Handlebars template!</p>
+</div>
+<div class="paragraph">
+<p>Type: gauge</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="datafile-not-found"><a class="anchor" href="#datafile-not-found"></a>Datafile not found</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following should give an error</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>ERROR (template-block): Data file example$this-file-does-not-exist.json not resolved</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="helpers-and-partials"><a class="anchor" href="#helpers-and-partials"></a>Helpers and Partials</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="automatically-included-helpers"><a class="anchor" href="#automatically-included-helpers"></a>Automatically included helpers</h3>
+<div class="paragraph">
+<p>Handlebars in docs-site lib/helpers/*.js are automatically included</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Matched expected content</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-custom-helpers-by-resourceid"><a class="anchor" href="#adding-custom-helpers-by-resourceid"></a>Adding custom helpers by resourceId</h3>
+<div class="paragraph">
+<p>Hello from the foo helper!</p>
+</div>
+<div class="paragraph">
+<p>This is some text from a partial</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="each-openapi-helper"><a class="anchor" href="#each-openapi-helper"></a>each-openapi helper.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This handlebars Block Helper should work with both YAML and JSON.</p>
+</div>
+<div class="paragraph">
+<p>This requires output collated into a single file, for example using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">redocly bundle \
+    ~/couchbase/sync_gateway/docs/api/admin.yaml \
+    --dereferenced \
+    --ext json \
+    --output bundled-admin.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pass in a schema node, in this example <code>components.schemas.Database</code>.
+The macro descends into each <code>properties</code> object and generates a table of contents.</p>
+</div>
+<div class="paragraph">
+<p>In addition, we pass the contents of each node in turn to the Handlebars template contained in the <code>{{#each-openapi}}</code> block.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+handling <code>additionalProperties</code> is not yet implemented.
+</td>
+</tr>
+</table>
+</div>
+<pre>
+{
+   <a href="#allow_empty_password">allow_empty_password</a>: false,
+   <a href="#bucket">bucket</a>: "The database name",
+   <a href="#bucket_op_timeout_ms">bucket_op_timeout_ms</a>: 0,
+   <a href="#cacertpath">cacertpath</a>: "string",
+   cache: {
+      <a href="#cache-channel_cache">channel_cache</a>: {
+         <a href="#cache-channel_cache-compact_high_watermark_pct">compact_high_watermark_pct</a>: 80,
+         <a href="#cache-channel_cache-compact_low_watermark_pct">compact_low_watermark_pct</a>: 60,
+         <a href="#cache-channel_cache-enable_star_channel">enable_star_channel</a>: false,
+         <a href="#cache-channel_cache-expiry_seconds">expiry_seconds</a>: 60,
+         <a href="#cache-channel_cache-max_length">max_length</a>: 500,
+         <a href="#cache-channel_cache-max_num_pending">max_num_pending</a>: 10000,
+         <a href="#cache-channel_cache-max_number">max_number</a>: 50000,
+         <a href="#cache-channel_cache-max_wait_pending">max_wait_pending</a>: 5000,
+         <a href="#cache-channel_cache-max_wait_skipped">max_wait_skipped</a>: 3600000,
+         <a href="#cache-channel_cache-min_length">min_length</a>: 50
+      },
+      <a href="#cache-rev_cache">rev_cache</a>: {
+         <a href="#cache-rev_cache-shard_count">shard_count</a>: "16",
+         <a href="#cache-rev_cache-size">size</a>: "5000"
+      }
+   },
+   <a href="#certpath">certpath</a>: "string",
+   <a href="#client_partition_window_secs">client_partition_window_secs</a>: 2592000,
+   <a href="#compact_interval_days">compact_interval_days</a>: 1,
+   <a href="#delta_sync">delta_sync</a>: {
+      <a href="#delta_sync-enabled">enabled</a>: false,
+      <a href="#delta_sync-rev_max_age_seconds">rev_max_age_seconds</a>: 86400
+   },
+   <a href="#disable_password_auth">disable_password_auth</a>: false,
+   <a href="#enable_shared_bucket_access">enable_shared_bucket_access</a>: true,
+   <a href="#event_handlers">event_handlers</a>: {
+      db_state_changed: {
+         <a href="#event_handlers-db_state_changed-filter">filter</a>: "string",
+         <a href="#event_handlers-db_state_changed-handler">handler</a>: "string",
+         <a href="#event_handlers-db_state_changed-options">options</a>: {
+            <a href="#event_handlers-db_state_changed-options-additionalProperties">additionalProperties</a>: (unknown)
+         },
+         <a href="#event_handlers-db_state_changed-timeout">timeout</a>: 0,
+         <a href="#event_handlers-db_state_changed-url">url</a>: "string"
+      },
+      document_changed: {
+         <a href="#event_handlers-document_changed-filter">filter</a>: "string",
+         <a href="#event_handlers-document_changed-handler">handler</a>: "string",
+         <a href="#event_handlers-document_changed-options">options</a>: {
+            <a href="#event_handlers-document_changed-options-additionalProperties">additionalProperties</a>: (unknown)
+         },
+         <a href="#event_handlers-document_changed-timeout">timeout</a>: 0,
+         <a href="#event_handlers-document_changed-url">url</a>: "string"
+      },
+      <a href="#event_handlers-max_processes">max_processes</a>: "string",
+      <a href="#event_handlers-wait_for_process">wait_for_process</a>: "string"
+   },
+   <a href="#guest">guest</a>: {
+      <a href="#guest-admin_channels">admin_channels</a>: [],
+      <a href="#guest-admin_roles">admin_roles</a>: [],
+      <a href="#guest-all_channels">all_channels</a>: [],
+      <a href="#guest-collection_access">collection_access</a>: {
+         <a href="#guest-collection_access-{additionalProperties}">{additionalProperties...}</a>: {
+            <a href="#guest-collection_access-{additionalProperties}-{additionalProperties}">{additionalProperties...}</a>: {
+               <a href="#guest-collection_access-{additionalProperties}-{additionalProperties}-admin_channels">admin_channels</a>: [],
+               <a href="#guest-collection_access-{additionalProperties}-{additionalProperties}-all_channels">all_channels</a>: [],
+               <a href="#guest-collection_access-{additionalProperties}-{additionalProperties}-jwt_channels">jwt_channels</a>: [],
+               <a href="#guest-collection_access-{additionalProperties}-{additionalProperties}-jwt_last_updated">jwt_last_updated</a>: "string"
+            }
+         }
+      },
+      <a href="#guest-disabled">disabled</a>: true,
+      <a href="#guest-email">email</a>: "string",
+      <a href="#guest-jwt_channels">jwt_channels</a>: [],
+      <a href="#guest-jwt_issuer">jwt_issuer</a>: "string",
+      <a href="#guest-jwt_last_updated">jwt_last_updated</a>: "string",
+      <a href="#guest-jwt_roles">jwt_roles</a>: [],
+      <a href="#guest-name">name</a>: "string",
+      <a href="#guest-password">password</a>: "string",
+      <a href="#guest-roles">roles</a>: []
+   },
+   <a href="#import_backup_old_rev">import_backup_old_rev</a>: false,
+   <a href="#import_docs">import_docs</a>: true,
+   <a href="#import_filter">import_filter</a>: "function(doc) { if (doc.type != 'mobile') { return false; } return true; }",
+   <a href="#import_partitions">import_partitions</a>: 16,
+   <a href="#javascript_timeout_secs">javascript_timeout_secs</a>: 60,
+   <a href="#keypath">keypath</a>: "string",
+   <a href="#kv_tls_port">kv_tls_port</a>: 11207,
+   <a href="#local_doc_expiry_secs">local_doc_expiry_secs</a>: 7776000,
+   <a href="#local_jwt">local_jwt</a>: {
+      <a href="#local_jwt-{additionalProperties}">{additionalProperties...}</a>: {
+         <a href="#local_jwt-{additionalProperties}-algorithms">algorithms</a>: [],
+         <a href="#local_jwt-{additionalProperties}-channels_claim">channels_claim</a>: "string",
+         <a href="#local_jwt-{additionalProperties}-client_id">client_id</a>: "string",
+         <a href="#local_jwt-{additionalProperties}-disable_session">disable_session</a>: true,
+         <a href="#local_jwt-{additionalProperties}-issuer">issuer</a>: "string",
+         <a href="#local_jwt-{additionalProperties}-keys">keys</a>: [],
+         <a href="#local_jwt-{additionalProperties}-register">register</a>: true,
+         <a href="#local_jwt-{additionalProperties}-roles_claim">roles_claim</a>: "string",
+         <a href="#local_jwt-{additionalProperties}-user_prefix">user_prefix</a>: "string",
+         <a href="#local_jwt-{additionalProperties}-username_claim">username_claim</a>: "string"
+      }
+   },
+   <a href="#max_concurrent_query_ops">max_concurrent_query_ops</a>: 1000,
+   <a href="#name">name</a>: "string",
+   <a href="#num_index_replicas">num_index_replicas</a>: 1,
+   <a href="#offline">offline</a>: false,
+   <a href="#oidc">oidc</a>: {
+      <a href="#oidc-default_provider">default_provider</a>: "string",
+      <a href="#oidc-providers">providers</a>: {
+         <a href="#oidc-providers-{additionalProperties}">{additionalProperties...}</a>: {
+            <a href="#oidc-providers-{additionalProperties}-InsecureSkipVerify">InsecureSkipVerify</a>: false,
+            <a href="#oidc-providers-{additionalProperties}-IsDefault">IsDefault</a>: true,
+            <a href="#oidc-providers-{additionalProperties}-Name">Name</a>: "string",
+            <a href="#oidc-providers-{additionalProperties}-allow_unsigned_provider_tokens">allow_unsigned_provider_tokens</a>: true,
+            <a href="#oidc-providers-{additionalProperties}-callback_url">callback_url</a>: "string",
+            <a href="#oidc-providers-{additionalProperties}-channels_claim">channels_claim</a>: "string",
+            <a href="#oidc-providers-{additionalProperties}-client_id">client_id</a>: "string",
+            <a href="#oidc-providers-{additionalProperties}-disable_callback_state">disable_callback_state</a>: false,
+            <a href="#oidc-providers-{additionalProperties}-disable_cfg_validation">disable_cfg_validation</a>: false,
+            <a href="#oidc-providers-{additionalProperties}-disable_session">disable_session</a>: true,
+            <a href="#oidc-providers-{additionalProperties}-discovery_url">discovery_url</a>: "string",
+            <a href="#oidc-providers-{additionalProperties}-include_access">include_access</a>: true,
+            <a href="#oidc-providers-{additionalProperties}-issuer">issuer</a>: "string",
+            <a href="#oidc-providers-{additionalProperties}-register">register</a>: true,
+            <a href="#oidc-providers-{additionalProperties}-roles_claim">roles_claim</a>: "string",
+            <a href="#oidc-providers-{additionalProperties}-scope">scope</a>: [],
+            <a href="#oidc-providers-{additionalProperties}-user_prefix">user_prefix</a>: "string",
+            <a href="#oidc-providers-{additionalProperties}-username_claim">username_claim</a>: "string",
+            <a href="#oidc-providers-{additionalProperties}-validation_key">validation_key</a>: "string"
+         }
+      }
+   },
+   <a href="#old_rev_expiry_seconds">old_rev_expiry_seconds</a>: 300,
+   <a href="#password">password</a>: "string",
+   <a href="#query_pagination_limit">query_pagination_limit</a>: 5000,
+   replications: {
+      <a href="#replications-replication_id">replication_id</a>: {
+         <a href="#replications-replication_id-adhoc">adhoc</a>: false,
+         <a href="#replications-replication_id-batch_size">batch_size</a>: 200,
+         <a href="#replications-replication_id-collections_enabled">collections_enabled</a>: false,
+         <a href="#replications-replication_id-collections_local">collections_local</a>: [scope1.collection1,scope1.collection3,scope1.collection6],
+         <a href="#replications-replication_id-collections_remote">collections_remote</a>: [scope1.collectionA,,scope1.collectionF],
+         <a href="#replications-replication_id-conflict_resolution_type">conflict_resolution_type</a>: "default",
+         <a href="#replications-replication_id-continuous">continuous</a>: false,
+         <a href="#replications-replication_id-custom_conflict_resolver">custom_conflict_resolver</a>: "none",
+         <a href="#replications-replication_id-direction">direction</a>: "string",
+         <a href="#replications-replication_id-enable_delta_sync">enable_delta_sync</a>: false,
+         <a href="#replications-replication_id-filter">filter</a>: "string",
+         <a href="#replications-replication_id-initial_state">initial_state</a>: "running",
+         <a href="#replications-replication_id-max_backoff_time">max_backoff_time</a>: 5,
+         <a href="#replications-replication_id-purge_on_removal">purge_on_removal</a>: false,
+         <a href="#replications-replication_id-query_params">query_params</a>: [],
+         <a href="#replications-replication_id-remote">remote</a>: "string",
+         <a href="#replications-replication_id-remote_password">remote_password</a>: "string",
+         <a href="#replications-replication_id-remote_username">remote_username</a>: "string",
+         <a href="#replications-replication_id-replication_id">replication_id</a>: "string",
+         <a href="#replications-replication_id-run_as">run_as</a>: "string"
+      }
+   },
+   <a href="#revs_limit">revs_limit</a>: 100,
+   roles: (unknown),
+   <a href="#scopes">scopes</a>: {
+      <a href="#scopes-additionalProperties">additionalProperties</a>: {
+         <a href="#scopes-additionalProperties-{additionalProperties}">{additionalProperties...}</a>: {
+            <a href="#scopes-additionalProperties-{additionalProperties}-import_filter">import_filter</a>: "function(doc) { if (doc.type != 'mobile') { return false; } return true; }",
+            <a href="#scopes-additionalProperties-{additionalProperties}-sync">sync</a>: "function(doc){channel(doc.channels);}"
+         }
+      }
+   },
+   <a href="#send_www_authentice_header">send_www_authentice_header</a>: true,
+   <a href="#serve_insecure_attachment_types">serve_insecure_attachment_types</a>: false,
+   <a href="#server">server</a>: "string",
+   <a href="#session_cookie_http_only">session_cookie_http_only</a>: false,
+   <a href="#session_cookie_name">session_cookie_name</a>: "string",
+   <a href="#session_cookie_secure">session_cookie_secure</a>: true,
+   <a href="#sgreplicate_enabled">sgreplicate_enabled</a>: true,
+   <a href="#sgreplicate_websocket_heartbeat_secs">sgreplicate_websocket_heartbeat_secs</a>: 300,
+   <a href="#slow_query_warning_threshold">slow_query_warning_threshold</a>: 500,
+   <a href="#suspendable">suspendable</a>: false,
+   <a href="#sync">sync</a>: "function(doc){channel(doc.channels);}",
+   <a href="#unsupported">unsupported</a>: {
+      api_endpoints: {
+         <a href="#unsupported-api_endpoints-enable_couchbase_bucket_flush">enable_couchbase_bucket_flush</a>: true
+      },
+      <a href="#unsupported-dcp_read_buffer">dcp_read_buffer</a>: 0,
+      <a href="#unsupported-force_api_forbidden_errors">force_api_forbidden_errors</a>: true,
+      <a href="#unsupported-guest_read_only">guest_read_only</a>: true,
+      <a href="#unsupported-kv_buffer">kv_buffer</a>: 0,
+      oidc_test_provider: {
+         <a href="#unsupported-oidc_test_provider-enabled">enabled</a>: true
+      },
+      <a href="#unsupported-oidc_tls_skip_verify">oidc_tls_skip_verify</a>: true,
+      <a href="#unsupported-remote_config_tls_skip_verify">remote_config_tls_skip_verify</a>: true,
+      <a href="#unsupported-sgr_tls_skip_verify">sgr_tls_skip_verify</a>: true,
+      user_views: {
+         <a href="#unsupported-user_views-enabled">enabled</a>: true
+      },
+      warning_thresholds: {
+         <a href="#unsupported-warning_thresholds-access_and_role_grants_per_doc">access_and_role_grants_per_doc</a>: 0,
+         <a href="#unsupported-warning_thresholds-channel_name_size">channel_name_size</a>: 0,
+         <a href="#unsupported-warning_thresholds-channels_per_doc">channels_per_doc</a>: 0,
+         <a href="#unsupported-warning_thresholds-channels_per_user">channels_per_user</a>: 0,
+         <a href="#unsupported-warning_thresholds-xattr_size_bytes">xattr_size_bytes</a>: 0
+      }
+   },
+   <a href="#use_views">use_views</a>: false,
+   <a href="#user_xattr_key">user_xattr_key</a>: "string",
+   <a href="#username">username</a>: "string",
+   users: (unknown),
+   <a href="#view_query_timeout_secs">view_query_timeout_secs</a>: 75
+}
+</pre>
+<div class="sect2">
+<h3 id="allow_empty_password"><code>allow_empty_password</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This controls whether users that are created can have an empty password or not.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bucket"><code>bucket</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The Couchbase Server backing bucket for the database.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bucket_op_timeout_ms"><code>bucket_op_timeout_ms</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is the amount of milliseconds should pass before a bucket operation times out. An error will be returned if the bucket operation times out saying: <code>operation timed out</code>.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cacertpath"><code>cacertpath</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The root CA cert path for X.509 bucket authentication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache"><code>cache.channel_cache</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The channel cache config settings.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-compact_high_watermark_pct"><code>cache.channel_cache.compact_high_watermark_pct</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The trigger value for starting the channel cache eviction process.</p>
+<p>Specify this as a percentage which will be the percentage used on `max_number).</p>
+<p>When the cache size, determined by <code>max_number</code>, reaches the high watermark, the eviction process iterates through the cache, removing inactive channels.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-compact_low_watermark_pct"><code>cache.channel_cache.compact_low_watermark_pct</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The trigger value for stopping the channel cache eviction process.</p>
+<p>Specify this as a percentage which will be the percentage used on `max_number).</p>
+<p>When the cache size, determined by <code>max_number</code> returns to a value lower than the percentage of it set here, the cache eviction process is stopped.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-enable_star_channel"><code>cache.channel_cache.enable_star_channel</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Used to control whether Sync Gateway should use the all documents (*) channel.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-expiry_seconds"><code>cache.channel_cache.expiry_seconds</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The amount of time (in seconds) to keep entries in the cache beyond the minimum retained.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-max_length"><code>cache.channel_cache.max_length</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum number of entries to maintain in the cache per channel.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-max_num_pending"><code>cache.channel_cache.max_num_pending</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum number of pending sequences before skipping sequences.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-max_number"><code>cache.channel_cache.max_number</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum number of channel caches which can exist at any one point.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-max_wait_pending"><code>cache.channel_cache.max_wait_pending</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum time (in milliseconds) for waiting for a pending sequence before skipping it.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-max_wait_skipped"><code>cache.channel_cache.max_wait_skipped</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum amount of time (in milliseconds) to wait for a skipped sequence before abandoning it.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-channel_cache-min_length"><code>cache.channel_cache.min_length</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The minimum number of entries to maintain in the cache per channel.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-rev_cache"><code>cache.rev_cache</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The revision cache config settings.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-rev_cache-shard_count"><code>cache.rev_cache.shard_count</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of shards the revision cache should be split into.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cache-rev_cache-size"><code>cache.rev_cache.size</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum number of revisions that can be stored in the revision cache.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="certpath"><code>certpath</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The cert path (public key) for X.509 bucket auth.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="client_partition_window_secs"><code>client_partition_window_secs</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>How long (in seconds) clients can remain offline for without losing replication metadata.</p>
+<p>Defaults to 30 days (in seconds)</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compact_interval_days"><code>compact_interval_days</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The interval between scheduled tombstone compaction runs (in days). This can be a floating point number.</p>
+<p>If set to 0, compaction will not run automatically.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delta_sync"><code>delta_sync</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Delta sync configuration settings.</p>
+<p><strong>This is an enterprise-edition feature only</strong></p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delta_sync-enabled"><code>delta_sync.enabled</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Whether delta sync is enabled.</p>
+<p><strong>This is an enterprise-edition feature only</strong></p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delta_sync-rev_max_age_seconds"><code>delta_sync.rev_max_age_seconds</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of seconds deltas for old revisions are available for.</p>
+<p>This defaults to 24 hours (in seconds).</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="disable_password_auth"><code>disable_password_auth</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Whether to disable username/password authentication and only allow OIDC and guest access.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enable_shared_bucket_access"><code>enable_shared_bucket_access</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Whether to use extended attributes to store Sync Gateway document (<code>_sync</code>) metadata.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers"><code>event_handlers</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>These are the settings for webhooks.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-db_state_changed-filter"><code>event_handlers.db_state_changed.filter</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The Javascript function to use to filter the webhook events.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-db_state_changed-handler"><code>event_handlers.db_state_changed.handler</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The handler type.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-db_state_changed-options"><code>event_handlers.db_state_changed.options</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The options for the event.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-db_state_changed-options-additionalProperties"><code>event_handlers.db_state_changed.options.additionalProperties</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The option key and value.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-db_state_changed-timeout"><code>event_handlers.db_state_changed.timeout</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The amount of time (in seconds) to attempt connect to the webhook before giving up.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-db_state_changed-url"><code>event_handlers.db_state_changed.url</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The URL of the webhook.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-document_changed-filter"><code>event_handlers.document_changed.filter</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The Javascript function to use to filter the webhook events.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-document_changed-handler"><code>event_handlers.document_changed.handler</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The handler type.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-document_changed-options"><code>event_handlers.document_changed.options</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The options for the event.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-document_changed-options-additionalProperties"><code>event_handlers.document_changed.options.additionalProperties</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The option key and value.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-document_changed-timeout"><code>event_handlers.document_changed.timeout</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The amount of time (in seconds) to attempt connect to the webhook before giving up.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-document_changed-url"><code>event_handlers.document_changed.url</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The URL of the webhook.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-max_processes"><code>event_handlers.max_processes</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum amount of concurrent event handling independent functions that can be running at the same time.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_handlers-wait_for_process"><code>event_handlers.wait_for_process</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum amount of time (in milliseconds) to wait when the even queue is full.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest"><code>guest</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Properties associated with a user</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-admin_channels"><code>guest.admin_channels</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>A list of channels to explicitly grant to the user for the default collection.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-admin_roles"><code>guest.admin_roles</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>A list of roles to explicitly grant to the user.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-all_channels"><code>guest.all_channels</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>All the channels that the user has been granted access to for the default collection.</p>
+<p>Access could have been granted through the sync function, roles, or explicitly on the user under the <code>admin_channels</code> property.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-collection_access"><code>guest.collection_access</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>A set of access grants by scope and collection.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-collection_access-{additionalProperties}"><code>guest.collection_access.{additionalProperties&#8230;&#8203;}</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>An object keyed by scope, containing a set of collections.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-collection_access-{additionalProperties}-{additionalProperties}"><code>guest.collection_access.{additionalProperties&#8230;&#8203;}.{additionalProperties&#8230;&#8203;}</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>An object keyed by collection name, defines access for the collection.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-collection_access-{additionalProperties}-{additionalProperties}-admin_channels"><code>guest.collection_access.{additionalProperties&#8230;&#8203;}.{additionalProperties&#8230;&#8203;}.admin_channels</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>A list of channels to explicitly grant to the user.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-collection_access-{additionalProperties}-{additionalProperties}-all_channels"><code>guest.collection_access.{additionalProperties&#8230;&#8203;}.{additionalProperties&#8230;&#8203;}.all_channels</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>All the channels that the user has been granted access to.</p>
+<p>Access could have been granted through the sync function, roles, or explicitly on the user under the <code>admin_channels</code> property.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-collection_access-{additionalProperties}-{additionalProperties}-jwt_channels"><code>guest.collection_access.{additionalProperties&#8230;&#8203;}.{additionalProperties&#8230;&#8203;}.jwt_channels</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The channels that the user has been granted access to through channels_claim.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-collection_access-{additionalProperties}-{additionalProperties}-jwt_last_updated"><code>guest.collection_access.{additionalProperties&#8230;&#8203;}.{additionalProperties&#8230;&#8203;}.jwt_last_updated</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The last time that the user's JWT roles/channels were updated.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-disabled"><code>guest.disabled</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If true, the user will not be able to login to the account as it is disabled.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-email"><code>guest.email</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The email address of the user.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-jwt_channels"><code>guest.jwt_channels</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The channels that the user has been granted access to through channels_claim.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-jwt_issuer"><code>guest.jwt_issuer</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The issuer of the last JSON Web Token that the user last used to sign in.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-jwt_last_updated"><code>guest.jwt_last_updated</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The last time that the user's JWT roles/channels were updated.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-jwt_roles"><code>guest.jwt_roles</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The roles that the user has been added to through roles_claim.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-name"><code>guest.name</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The name of the user.</p>
+<p>User names can only have alphanumeric ASCII characters and underscores.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-password"><code>guest.password</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The password of the user.</p>
+<p>Mandatory. unless <code>allow_empty_password</code> is <code>true</code> in the database configs.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="guest-roles"><code>guest.roles</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>All the roles that the user has been granted access to.</p>
+<p>Access could have been granted through the sync function, roles_claim, or explicitly on the user under the <code>admin_roles</code> property.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import_backup_old_rev"><code>import_backup_old_rev</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This controls whether import should attempt to create a temporary backup of the previous revision body (if available) when the document is modified in the bucket.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import_docs"><code>import_docs</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If true, documents will be imported in to Sync Gateway from the bucket when requested. Documents will be ran through the set <code>import_filter</code> if any is set.</p>
+<p>The default value depends on the edition of Sync Gateway being used. If the edition is the community-edition, then this will default to <code>false</code> or else in the enterprise-edition, it will default to <code>true</code>.</p>
+<p>This can also be set to the string <code>continuous</code> which maps to true.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import_filter"><code>import_filter</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is the function that all imported documents in the _default scope and collection are ran through in order to filter out what to import and what not to import. This allows you to control what is made available to Couchbase Mobile clients. If it is not set, then no documents are filtered when imported.</p>
+<p><code>import_docs</code> must be true to make this field applicable.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import_partitions"><code>import_partitions</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>** This is an enterprise-edition feature only**</p>
+<p>This is how many import partitions should be used for import sharding.</p>
+<p>Partitions are distributed among all Sync Gateway nodes participating in import processing (<code>import_docs=true</code>), and each process a subset of the server's vbuckets.</p>
+<p>Each partition is processed by an independent function that runs simultaneously to others, so <code>import_partitions</code> can be used to tune concurrency based on the number of Sync Gateway nodes, and the number of cores per node.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="javascript_timeout_secs"><code>javascript_timeout_secs</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum number of seconds the sync, import filter, and custom conflict resolver JavaScript functions are allowed to run for before timing out. Set to 0 to allow the JS functions to run uncapped.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="keypath"><code>keypath</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The key path (private key) for X.509 bucket auth</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="kv_tls_port"><code>kv_tls_port</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The Memcached TLS port.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_doc_expiry_secs"><code>local_doc_expiry_secs</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of seconds before a <code>_local</code> document should expire.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt"><code>local_jwt</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Configuration for Local JWT authentication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}"><code>local_jwt.{additionalProperties&#8230;&#8203;}</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The providers name.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-algorithms"><code>local_jwt.{additionalProperties&#8230;&#8203;}.algorithms</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The JWT signing algorithms to accept for authentication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-channels_claim"><code>local_jwt.{additionalProperties&#8230;&#8203;}.channels_claim</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If set, the value(s) of the given JSON Web Token claim will be added to the user's channels.</p>
+<p>The value of this claim must be either a string or an array of strings, any other type will result in an error.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-client_id"><code>local_jwt.{additionalProperties&#8230;&#8203;}.client_id</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The value to match against the &quot;aud&quot; claim of JWTs. Set to an empty string to disable audience validation.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-disable_session"><code>local_jwt.{additionalProperties&#8230;&#8203;}.disable_session</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Disable Sync Gateway session creation on successful JWT authentication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-issuer"><code>local_jwt.{additionalProperties&#8230;&#8203;}.issuer</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The value to match against the &quot;iss&quot; claim of JWTs.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-keys"><code>local_jwt.{additionalProperties&#8230;&#8203;}.keys</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The JSON Web Keys to use to validate JWTs.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-register"><code>local_jwt.{additionalProperties&#8230;&#8203;}.register</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If to register a new Sync Gateway user account when a user logs in with a JWT.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-roles_claim"><code>local_jwt.{additionalProperties&#8230;&#8203;}.roles_claim</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If set, the value(s) of the given JSON Web Token claim will be added to the user's roles.</p>
+<p>The value of this claim must be either a string or an array of strings, any other type will result in an error.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-user_prefix"><code>local_jwt.{additionalProperties&#8230;&#8203;}.user_prefix</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is the username prefix for all users created through this provider.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jwt-{additionalProperties}-username_claim"><code>local_jwt.{additionalProperties&#8230;&#8203;}.username_claim</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Allows a different OpenID Connect field to be specified instead of the Subject (<code>sub</code>).</p>
+<p>The field name to use can be specified here.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="max_concurrent_query_ops"><code>max_concurrent_query_ops</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum amount of query operations that can be running at any one point.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="name"><code>name</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The name of the database.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="num_index_replicas"><code>num_index_replicas</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is the number of Global Secondary Indexes (GSI) to use for core indexes.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="offline"><code>offline</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Start the database in an offline state.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc"><code>oidc</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Configuration for OpenID Connect authentication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-default_provider"><code>oidc.default_provider</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The default provider to use when the provider is not specified in the client.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers"><code>oidc.providers</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>List of OpenID Connect issuers.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}"><code>oidc.providers.{additionalProperties&#8230;&#8203;}</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The providers name.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-InsecureSkipVerify"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.InsecureSkipVerify</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Determines whether the TLS certificate verification should be disabled for this provider.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-IsDefault"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.IsDefault</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Indicates if this is the default OpenID Connect provider.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-Name"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.Name</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The name of the OpenID Connect Provider.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-allow_unsigned_provider_tokens"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.allow_unsigned_provider_tokens</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Allows users accept unsigned tokens from providers.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-callback_url"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.callback_url</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The URL that the OpenID Connect will redirect to after authentication.</p>
+<p>If not provided, a callback URL will be generated.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-channels_claim"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.channels_claim</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If set, the value(s) of the given OpenID Connect authentication token claim will be added to the user's channels.</p>
+<p>The value of this claim must be either a string or an array of strings, any other type will result in an error.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-client_id"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.client_id</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The OpenID Connect provider client ID.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-disable_callback_state"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.disable_callback_state</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Controls whether to maintain state between the auth request and callback endpoints (<code>/_oidc</code> and <code>/_oidc_callback</code>).</p>
+<p><strong>This is not recommended as it would cause OpenID Connect authentication to be vulnerable to Cross-Site Request Forgery (CSRF, XSRF).</strong></p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-disable_cfg_validation"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.disable_cfg_validation</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This bypasses the configuration validation based on the OpenID Connect specifications. This may be required for some OpenID providers that don't strictly adhere to the specifications.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-disable_session"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.disable_session</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Disable Sync Gateway session creation on successful OpenID Connect authentication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-discovery_url"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.discovery_url</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The non-standard discovery endpoint.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-include_access"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.include_access</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is whether the <code>_oidc_callback</code> response should include the OpenID Connect access token and associated fields (such as <code>token_type</code>, and <code>expires_in</code>).</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-issuer"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.issuer</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The URL for the OpenID Connect issuer.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-register"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.register</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If to register a new Sync Gateway user account when a user logs in with OpenID Connect.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-roles_claim"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.roles_claim</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If set, the value(s) of the given OpenID Connect authentication token claim will be added to the user's roles.</p>
+<p>The value of this claim must be either a string or an array of strings, any other type will result in an error.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-scope"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.scope</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The scope sent for the OpenID Connect request.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-user_prefix"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.user_prefix</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is the username prefix for all users created through this provider.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-username_claim"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.username_claim</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Allows a different OpenID Connect field to be specified instead of the Subject (<code>sub</code>).</p>
+<p>The field name to use can be specified here.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oidc-providers-{additionalProperties}-validation_key"><code>oidc.providers.{additionalProperties&#8230;&#8203;}.validation_key</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The OpenID Connect provider client secret.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="old_rev_expiry_seconds"><code>old_rev_expiry_seconds</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of seconds before old revisions are removed from the Couchbase Server bucket.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="password"><code>password</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The password for authenticating to the server.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="query_pagination_limit"><code>query_pagination_limit</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The query limit to be used during pagination of large queries.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id"><code>replications.replication_id</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Properties of a replication</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-adhoc"><code>replications.replication_id.adhoc</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Set to true to run the replication as an adhoc replication instead of a persistent one.</p>
+<p>This means that the replication will only last the period of the replication until the status is changed to <code>stopped</code> and then it will be removed automatically. It will also be removed if Sync Gateway restarts or if removed due to user action.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-batch_size"><code>replications.replication_id.batch_size</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The amount of changes to be sent in one batch of replications. Changing this is an enterprise-edition only feature.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-collections_enabled"><code>replications.replication_id.collections_enabled</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If true, the replicator will run with collections, and will replicate all collections, unless otherwise limited by <code>keyspace_map</code>.</p>
+<p>If false, the replicator will only replicate the default collection.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-collections_local"><code>replications.replication_id.collections_local</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Limits the set of collections replicated to those listed in this array.</p>
+<p>The replication will use all collections defined on the database if this list is empty.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-collections_remote"><code>replications.replication_id.collections_remote</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Remaps the local collection name to the one specified in this array when replicating with the remote.</p>
+<p>If only a subset of collections need remapping, elements in this array can be specified as <code>null</code> to preserve the local collection name.</p>
+<p>The same index is used for both <code>collections_remote</code> and <code>collections_local</code>, and both arrays must be the same length.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-conflict_resolution_type"><code>replications.replication_id.conflict_resolution_type</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This defines what conflict resolution policy Sync Gateway should use to apply when resolving conflicting revisions.</p>
+<p>Changing this is an enterprise-edition only feature.</p>
+<p><strong>Behaviour</strong></p>
+<ul>
+<li><em>default</em> - In priority order, this will cause
+<ul>
+<li>Deletes to always win (the delete with the logest revision history wins if both revisions are deletes)</li>
+<li>The revision with the longest revision history to win. This means the the revision with the most changes and therefore the highest revision ID will win.</li>
+</ul>
+</li>
+<li><em>localWins</em> - This will result in local revisions always being the winner in any conflict.</li>
+<li><em>remoteWins</em> - This will result in remote revisions always being the winner in any conflict.</li>
+<li><em>custom</em> - This will result in conflicts going through your own custom conflict resolver. You must provide this logic as a Javascript function in the <code>custom_conflict_resolver</code> parameter. This is an enterprise-edition only feature.</li>
+</ul>
+<p>Note: replications created prior to Sync Gateway 2.8 will default to <code>default</code>.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-continuous"><code>replications.replication_id.continuous</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If true, changes will be immediately synced when they happen. This is known as a continuous replication.</p>
+<p>If false, all changes will be synced until they have been processed. The replication will then cease and not process any future changes (unless started again by the user). This is known as a one-shot replication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-custom_conflict_resolver"><code>replications.replication_id.custom_conflict_resolver</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This specifies the Javascript function to use to resolve conflicts between conflicting revisions.</p>
+<p>This <strong>must</strong> be used when <code>conflict_resolution_type=custom</code>. This property will be ignored when <code>conflict_resolution_type</code> is not <code>custom</code>.</p>
+<p>The Javascript function to provide this property should be in backticks (like the sync function). The function takes 1 parameter which is a struct that represents the conflict. This struct has 2 properties:</p>
+<ul>
+<li><code>LocalDocument</code> - The local document. This contains the document ID under the <code>_id</code> key.</li>
+<li><code>RemoteDocument</code> - The remote document
+The function should return the new documents body. This can be the winning revision (for example, <code>return conflict.LocalDocument</code>), a new body, or <code>nil</code> to resolve as a delete.</li>
+</ul>
+<p>Example:</p>
+<pre><code>&quot;custom_conflict_resolver&quot;:\`
+	function(conflict) {
+		console.log(&quot;Doc ID: &quot;+conflict.LocalDocument._id);
+		console.log(&quot;Full remote doc: &quot;+JSON.stringify(conflict.RemoteDocument));
+		return conflict.RemoteDocument;
+	}
+\`
+</code></pre>
+<p>Using complex <code>custom_conflict_resolver</code> functions can noticeably degrade performance. Use a built-in resolver whenever possible.</p>
+<p>This is an enterprise-edition only feature.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-direction"><code>replications.replication_id.direction</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This specifies which direction the replication will be replicating with the <code>remote</code> replicator.</p>
+<p>The directions are:</p>
+<ul>
+<li><code>pull</code> - changes are pulled from the remote database</li>
+<li><code>push</code> - changes are pushed to the remote database</li>
+<li><code>pushAndPull</code> - changes are both push-to and pulled-from the remote database</li>
+</ul>
+<p>Replications created prior to Sync Gateway 2.8 derive their <code>direction</code> from the source/target URL of the replication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-enable_delta_sync"><code>replications.replication_id.enable_delta_sync</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This will turn on delta- sync for the replication. This works in conjunction with the database level setting <code>delta_sync.enabled</code></p>
+<p>If set to true, delta-sync will be used as long as both databases involved in the replication have delta-sync enabled. If a database does not have delta-sync enabled, then the replication will run without delta-sync.</p>
+<p>Replications created prior to Sync Gateway 2.8 must have delta-sync disabled.</p>
+<p>Enabling this is an enterprise-edition only feature.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-filter"><code>replications.replication_id.filter</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This defines whether to filter documents by their channels or not.</p>
+<p>If set to <code>sync_gateway/bychannel</code> then a <strong>pull</strong> replication will be limited to a specific set of channels specified by the <code>query_params.channels</code> property.</p>
+<p>This only can be used with pull replications.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-initial_state"><code>replications.replication_id.initial_state</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is what state to start the replication in when creating a new replication.</p>
+<p>This allows you to control if the replication starts in a <code>stopped</code> start or <code>running</code> state.</p>
+<p>Replications prior to Sync Gateway 2.8 will run in the default state <code>running</code>.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-max_backoff_time"><code>replications.replication_id.max_backoff_time</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Specifies the maximum time-period (in minutes) that Sync Gateway will attempt to reconnect to a lost or unreachable remote.</p>
+<p>When a disconnection happens, Sync Gateway will do an exponential backoff up to this specified value. When this value is met, it will attempt to reconnect indefinitely every <code>max_backoff_time</code> minutes.</p>
+<p>If this is set to 0, Sync Gateway will do the normal exponential backoff after the disconnect happens but then attempting 10 minutes and stop the replication.</p>
+<p>Note: this defaults to 5 minutes for replications created prior to Sync Gateway 2.8.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-purge_on_removal"><code>replications.replication_id.purge_on_removal</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Specifies whether to purge a document if the remote user loses access to all of the channels on the document when attempting to pull it from the remote.</p>
+<p>If false, documents will not be replicated and not be purged when the user loses access.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-query_params"><code>replications.replication_id.query_params</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>array</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is a set of key/value pairs used in the query string of the replication.</p>
+<p>If <code>filters=sync_gateway/bychannel</code> then this can be used to set the channels to filter by in a pull replication. To do this, set the <code>channels</code> key to a string array of the channels to filter by. For example:</p>
+<pre><code>&quot;filter&quot;:&quot;sync_gateway/bychannel&quot;,
+&quot;query_params&quot;: {
+  &quot;channels&quot;:[&quot;chanUser1&quot;]
+},
+</code></pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-remote"><code>replications.replication_id.remote</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is the endpoint of the database for the remote Sync Gateway that is the subject of this replication's <code>push</code>, <code>pull</code>, or <code>pushAndPull</code> action.</p>
+<p>Typically this would include the URI, port, and database name. For example, <code>http://localhost:4985/db</code>.</p>
+<p>How this remote is used depends on the <code>direction</code> of the replication:</p>
+<ul>
+<li><code>pull</code> - this replicator <em>pulls</em> changes from the <code>remote</code></li>
+<li><code>push</code> - this replicator <em>pushes</em> changes to this <code>remote</code></li>
+<li><code>pushAndPull</code> - this replicator <em>pushes</em> changes to this <code>remote</code>, while also pulling receiving changes</li>
+</ul>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-remote_password"><code>replications.replication_id.remote_password</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The password to use to authenticate with the remote.</p>
+<p>This password will be redacted in the replication config.</p>
+<p>This can only be used for a pull replication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-remote_username"><code>replications.replication_id.remote_username</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The username to use to authenticate with the remote.</p>
+<p>This can only be used for a pull replication.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-replication_id"><code>replications.replication_id.replication_id</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is the ID of the replication.</p>
+<p>When creating a new replication using a POST request, this will be set to a random UUID if not explicitly set.</p>
+<p>When the replication ID is specified in the URL, this must be set to the same replication ID if specifying it at all.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replications-replication_id-run_as"><code>replications.replication_id.run_as</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is used if you want to specify a user to run the replication as. This means that the replication will only be able to replicate what the user  access to what the user has access to.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="revs_limit"><code>revs_limit</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The maximum depth a document's revision tree can grow too.</p>
+<p>The minimum is <code>20</code> if conflicts are allowed and 0 if not. It is not recommended to go below <code>100</code> when conflicts are allowed.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scopes"><code>scopes</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Scope and collection specific config.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scopes-additionalProperties"><code>scopes.additionalProperties</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>A map of all the collections with their corresponding configs for this scope</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scopes-additionalProperties-{additionalProperties}"><code>scopes.additionalProperties.{additionalProperties&#8230;&#8203;}</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The configuration for the individual collection</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scopes-additionalProperties-{additionalProperties}-import_filter"><code>scopes.additionalProperties.{additionalProperties&#8230;&#8203;}.import_filter</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is the function that all imported documents in this collection are ran through in order to filter out what to import and what not to import. This allows you to control what is made available to Couchbase Mobile clients. If it is not set, then no documents are filtered when imported.</p>
+<p><code>import_docs</code> in the database config must be true to make this field applicable.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scopes-additionalProperties-{additionalProperties}-sync"><code>scopes.additionalProperties.{additionalProperties&#8230;&#8203;}.sync</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The Javascript function that newly created documents in this collection are ran through.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="send_www_authentice_header"><code>send_www_authentice_header</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Controls whether to send a <code>WWW-Authenticate</code> header in <code>401 Unauthorized</code> HTTP responses.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="serve_insecure_attachment_types"><code>serve_insecure_attachment_types</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>If set, always serve attachments with the <code>Content-Type</code> header set to the type of the attachment.</p>
+<p>When serving an attachment, usually the <code>Content-Type</code> header is set to the type of the attachment but the <code>Content-Disposition</code> response header will be set instead if the content type is vulnerable to a phishing attack, causing the browser to download the file instead of display it. This option will override that behaviour and always set the <code>Content-Type</code> header.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="server"><code>server</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This is the Couchbase Server address or addresses that the database connect to.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="session_cookie_http_only"><code>session_cookie_http_only</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Make all session cookies for the database set the <code>HttpOnly</code> flag so they are inaccessible to JavaScript.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="session_cookie_name"><code>session_cookie_name</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>This can be used to define a custom per-database session cookie name.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="session_cookie_secure"><code>session_cookie_secure</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Override the session cookie <code>secure</code> flag. If set, the cookie will have the <code>secure</code> flag.</p>
+<p>This will default to <code>true</code> if startup config <code>api.https.tls_cert_path</code> is set otherwise it will default to <code>false</code>.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sgreplicate_enabled"><code>sgreplicate_enabled</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Whether the node should accept assign replications (<code>true</code>) or not (<code>false</code>).</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sgreplicate_websocket_heartbeat_secs"><code>sgreplicate_websocket_heartbeat_secs</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Use a custom heartbeat interval (in seconds) for websocket ping frames.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="slow_query_warning_threshold"><code>slow_query_warning_threshold</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The amount of milliseconds a N1QL query should run before logging a warning.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="suspendable"><code>suspendable</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Set to true to allow the database to be suspended.</p>
+<p>Defaults to true when running in serverless mode otherwise defaults to false.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sync"><code>sync</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The Javascript function that newly created documents are ran through for the _default scope and collection.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported"><code>unsupported</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>object</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>These are unsupported options and therefore it is not recommended to use them.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-api_endpoints-enable_couchbase_bucket_flush"><code>unsupported.api_endpoints.enable_couchbase_bucket_flush</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p><strong>Setting for test purposes only</strong></p>
+<p>Whether Couchbase buckets can be flushed via Admin REST API.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-dcp_read_buffer"><code>unsupported.dcp_read_buffer</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Set the dcp feed to use a different read buffer size.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-force_api_forbidden_errors"><code>unsupported.force_api_forbidden_errors</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Force REST API errors to return forbidden</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-guest_read_only"><code>unsupported.guest_read_only</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Restrict GUEST document access to read-only.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-kv_buffer"><code>unsupported.kv_buffer</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Set the kv pool to use a different buffer size.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-oidc_test_provider-enabled"><code>unsupported.oidc_test_provider.enabled</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Whether the <code>oidc_test_provider</code> endpoints should be exposed on the public API.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-oidc_tls_skip_verify"><code>unsupported.oidc_tls_skip_verify</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Enable self-signed certificates for OIDC testing.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-remote_config_tls_skip_verify"><code>unsupported.remote_config_tls_skip_verify</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Enable self-signed certificates for external JavaScript load.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-sgr_tls_skip_verify"><code>unsupported.sgr_tls_skip_verify</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Enable self-signed certificates for SG-replicate testing.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-user_views-enabled"><code>unsupported.user_views.enabled</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Whether pass-through view query is supported through public API.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-warning_thresholds-access_and_role_grants_per_doc"><code>unsupported.warning_thresholds.access_and_role_grants_per_doc</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of access and role grants per document to be used as a threshold for grant count warnings.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-warning_thresholds-channel_name_size"><code>unsupported.warning_thresholds.channel_name_size</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of channel name characters to be used as a threshold for channel name warnings.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-warning_thresholds-channels_per_doc"><code>unsupported.warning_thresholds.channels_per_doc</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of channels per document to be used as a threshold for the channel count warnings.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-warning_thresholds-channels_per_user"><code>unsupported.warning_thresholds.channels_per_user</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of channels per user to be used as a threshold for channel count warnings.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsupported-warning_thresholds-xattr_size_bytes"><code>unsupported.warning_thresholds.xattr_size_bytes</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>number</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of bytes to be used as a threshold for xattr size limit warnings.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use_views"><code>use_views</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>Force the use of views instead of GSI.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="user_xattr_key"><code>user_xattr_key</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The key to use for the user xattr that will be accessible from the sync function. IF empty, the feature will be disabled.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="username"><code>username</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The username for authenticating to the server.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view_query_timeout_secs"><code>view_query_timeout_secs</code></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<p>The number of seconds before a view query should timeout.</p>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-links">
+      <div class="col">
+        <div class="footer-logo">
+          <a href="https://www.couchbase.com" class="icon">
+            <img src="../../_/img/couchbase-logo.svg" alt="Couchbase">
+          </a>
+        </div>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://docs.couchbase.com" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://forums.couchbase.com" target="_blank" rel="noopener">Forums</a></li>
+          <li><a href="https://support.couchbase.com" target="_blank" rel="noopener">Support</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://developer.couchbase.com" target="_blank" rel="noopener">Developer Portal</a></li>
+          <li><a href="https://blog.couchbase.com" target="_blank" rel="noopener">Blog</a></li>
+          <li><a href="https://www.couchbase.com/resources">Resources</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://www.couchbase.com/get-started-developing-nosql">Get Started</a></li>
+          <li><a href="https://www.couchbase.com/downloads">Downloads</a></li>
+          <li><a href="https://learn.couchbase.com/store?utf8=%E2%9C%93&ss=1&ct=78327&commit=Filter" target="_blank" rel="noopener">Training</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="social-icons">
+          <li>
+            <svg  width="14" height="14" viewBox="0 0 32.1 26.1"> <path id="twitter" class="cls-1" d="M32,7.1a11.836,11.836,0,0,1-3.8,1,6.462,6.462,0,0,0,2.9-3.6,12.606,12.606,0,0,1-4.2,1.6A6.492,6.492,0,0,0,22.1,4a6.594,6.594,0,0,0-6.6,6.6,7.719,7.719,0,0,0,.2,1.5A18.458,18.458,0,0,1,2.2,5.2a6.294,6.294,0,0,0-.9,3.3A6.765,6.765,0,0,0,4.2,14a6.109,6.109,0,0,1-3-.8v.1a6.543,6.543,0,0,0,5.3,6.4,4.678,4.678,0,0,1-1.7.2,4.869,4.869,0,0,1-1.2-.1,6.679,6.679,0,0,0,6.1,4.6,12.917,12.917,0,0,1-8.2,2.8,9.151,9.151,0,0,1-1.6-.1,18.438,18.438,0,0,0,10.1,3c12.1,0,18.7-10,18.7-18.7v-.8A13.336,13.336,0,0,0,32,7.2Z" transform="translate(0.1 -4)"/></svg>
+            <a href="https://twitter.com/couchbase" class="icon">
+              Twitter
+            </a>
+          </li>
+          <li>
+          <svg  width="14" height="14" viewBox="0 0 32 32"> <path id="linkedin" class="cls-1" d="M29,0H3A3.076,3.076,0,0,0,0,3V29a3.009,3.009,0,0,0,3,3H29a2.946,2.946,0,0,0,3-3V3A3.009,3.009,0,0,0,29,0ZM12,26H8V12h4ZM10,10a2,2,0,1,1,2-2A2.006,2.006,0,0,1,10,10ZM26,26H22V18a2,2,0,0,0-4,0v8H14V12h4v2.5c.8-1.1,2.1-2.5,3.5-2.5A4.736,4.736,0,0,1,26,17Z"/></svg>
+              <a href="https://www.linkedin.com/company/couchbase" class="icon">
+             Linkedin
+            </a>
+          </li>
+          <li>
+            <svg  width="14" height="14" viewBox="0 0 32 32"> <path id="facebook" class="cls-1" d="M29,0H3A2.652,2.652,0,0,0,0,3V29a2.652,2.652,0,0,0,3,3H16V18H12V14h4V12a6.452,6.452,0,0,1,6-6h4v4H22a2.151,2.151,0,0,0-2,2v2h6l-1,4H20V32h9a2.652,2.652,0,0,0,3-3V3A2.652,2.652,0,0,0,29,0Z"/></svg>
+            <a href="https://www.facebook.com/Couchbase" class="icon">
+            Facebook
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-terms">
+      <div class="footer-terms-copyright">
+          <span>© 2025 
+            Couchbase and the Couchbase logo are registered trademarks of Couchbase, Inc.
+            All third party trademarks (including logos and icons) referenced by Couchbase, Inc. remain the property of their respective owners.
+          </span>
+      </div>
+      <div class="footer-terms-links">
+        <a href="https://www.couchbase.com/terms-of-use">Terms of Use</a>
+        <a href="https://www.couchbase.com/privacy-policy">Privacy Policy</a>
+        <a href="https://www.couchbase.com/cookie-policy">Cookie Policy</a>
+        <a href="https://www.couchbase.com/support-policy">Support Policy</a>
+        <a href="https://info.couchbase.com/unsubscribe-or-manage-preferences.html" target="_blank" rel="noopener">Marketing Preference Center</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../../_/js/site-navigation-data.js"></script>
+<script id="page-navigation-group" type="application/json">
+{"title":"Contribute","components":["home"],"latestVersions":{"home":"master"}}
+</script>
+<template id="run-code-panel">
+<div class="action-panel">
+  <form class="action-panel-control" method="POST" action="https://couchbase.live/run" target="run-code-output">
+    <input type="hidden" name="lang">
+    <input type="hidden" name="code">
+    <input type="hidden" name="from" value="docs">
+    <div class="controls">
+      <button class="control-button rerun" type="submit"><i class="fas fa-redo"></i></button>
+      <span class="shell-name control-label">Output</span>
+      <button class="control-button close"><i class="fas fa-times"></i> Close</button>
+    </div>
+  </form>
+  <iframe class="run-code-output" name="run-code-output"></iframe>
+</div>
+</template>
+
+<script id="site-script" src="../../_/js/vendor/chatbox-ui.js"></script>
+
+<script id="site-script" src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/tabs.js" data-sync-storage-key="preferred-tab"></script>
+<script defer src="../../_/js/vendor/fontawesome-icon-defs.js"></script>
+<script defer src="../../_/js/vendor/fontawesome.js" data-search-pseudo-elements="true"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+</body>
+</html>

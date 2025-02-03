@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv=content-security-policy content="default-src 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https:; img-src 'self' data: https:; connect-src 'self' https:; worker-src blob:;">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://metrics.couchbase.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVPNN2');</script>
+<!-- End Google Tag Manager -->
+<title>AsciiDoc Basics | Couchbase Docs Local Preview</title>
+<link rel="stylesheet" href="../../_/css/site.css">
+<script src="../../_/js/vendor/jquery.js"></script>
+<link rel="schema.dcterms" href="https://purl.org/dc/terms/">
+
+
+<meta name="dcterms.subject" content="home">
+<meta name="dcterms.identifier" content="master">
+<meta name="page-url" content="/home/contribute/basics.html">
+<meta name="page-nav-header-levels" content="0">
+
+<meta name="docsearch:component" content="home">
+<meta name="docsearch:component_title" content="Couchbase Documentation">
+<meta name="docsearch:cversion" content="master">
+<meta name="docsearch:component_version" content="home@master">
+<meta name="docsearch:module" content="contribute">
+<meta name="docsearch:breadcrumbs" content=" / Writing Documentation / AsciiDoc Basics">
+<meta name="docsearch:topic_type" content="">
+<meta name="docsearch:version_rank" content="1">
+<meta name="docsearch:status" content="">
+<meta name="docsearch:edition" content="">
+<meta name="docsearch:page_rank" content="0">
+
+
+<meta name="generator" content="Antora 3.1.10">
+<link rel="icon" href="../../_/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon" sizes="any">
+</head>
+<body class="article">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVPNN2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="header fixed-top">
+  <div class="header-top-row">
+      <div class="container">
+          <nav class="navbar navbar-expand-md flex-nowrap justify-content-between navbar-new-top">
+              <ul class="navbar-brand-list">
+                <li class="brand-logo">
+                  <a class="navbar-brand" href="https://www.couchbase.com">
+                    <img src="../../_/img/couchbase-logo.svg" alt="Couchbase" />
+                  </a>
+                </li>
+                <li>
+                  <a class="navbar-brand cb-documentation"
+                      href="/Users/elliothunter/Documents/GitHub/docs-site/preview/couchbase-lite-edge-server/current/introduction/intro.html">
+                    <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
+                    <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
+                  </a>
+                </li>
+              </ul>
+              <button class="navbar-burger" data-target="topbar-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+          </nav>
+      </div>
+  </div>
+  <div class="header-bottom-row" id="topbar-menu">
+    <div class="container">
+        <nav  class="navbar navbar-new-bottom ">
+
+              <div class="navbar-collapse collapse" id="navbar2">
+                <ul class="navbar-nav w-100 justify-content-start">
+
+                  <li class="nav-item "">
+                    <a href="/Users/elliothunter/Documents/GitHub/docs-site/preview/couchbase-lite-edge-server/current/introduction/intro.html" class="nav-link">
+                      <i class="fas fa-home"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../server.html">
+                      Server
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../mobile.html">
+                      Mobile
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../cloud.html">
+                      Capella
+                      
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="../sdk.html">
+                      SDKs
+                      
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="primary-action">
+                <a class="btn btn-primary btn-grey-reverse" onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Download'});" href="https://www.couchbase.com/downloads">
+                  Downloads
+                  <i class="far fa-arrow-to-bottom fa-fw"></i>
+                </a>
+                <a href="https://cloud.couchbase.com/sign-up" class="btn btn-primary" onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Free Trial'});" >
+                  Try Free
+                  <i class="far fa-cloud fa-fw"></i>
+                </a>
+              </div>
+
+        </nav>
+    </div>
+   </div>
+</header>
+<div class="body container">
+<aside class="nav left-sidebar">
+  <div class="nav-container">
+    <a href="#" class="menu-expand-toggle"><span>Navigation</span><i class="fas fa-times-circle"></i><i class="fas fa-chevron-circle-left"></i></a>
+  </div>
+</aside>
+<aside class="toc sidebar"
+      data-title="Contents"
+      data-levels="2">
+  <div class="sidebar-box">
+    <div class="tools" role="navigation">
+<ul>
+<li class="tool edit"><a href="file:///Users/elliothunter/Documents/GitHub/docs-site/home/modules/contribute/pages/basics.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+</ul>
+</div>
+    <div class="toc-menu"></div>
+    <div class="is-this-helpful-box">
+      <h4> Is this page helpful?</h4>
+      <div class="btn-row">
+        <a href="#" class="like-btn helpful-btn" id="yesBtn" data-page-rating="like" >
+                <i class="far fa-thumbs-up"></i>
+            Yes
+
+            </a>
+        <a href="#" class="dislike-btn helpful-btn" id="noBtn"  data-page-rating="dislike"> <i class="far fa-thumbs-down"></i> No</a>
+      </div>
+      <div class="any-feedback">
+        <a href="#" class="btn any-feedback-btn" id="myCustomTrigger">Leave Additional Feedback? </a>
+      </div>
+      <div class="dialog-box" id="dialogBox">
+        <form>
+            <div class="form-group " id="additionalFeedbackBox">
+              <textarea class="input-control feed-back-msg" rows="8" placeholder="Any Additonal Feedback?"></textarea>
+
+              <div class="action-btn-row ">
+                <a href="#" class="skip-btn" id="skipBtnMsg">Skip</a>
+                  <button class="submit-btn btn blue-btn disabled" > Submit  </button>
+                  <a href="#" class="info-btn"><i class="fas fa-info-circle"></i></a>
+              </div>
+
+
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</aside>
+
+<div class="feedback-modal modal-popup">
+  <div class="modal-popup-dialogue">
+    <div class="popup-header">
+      <a href="#" class="close-popup"><i class="fa fa-times"></i></a>
+    </div>
+    <div class="popup-content">
+      <p>
+        Please use the form below to provide your feedback. Because your feedback is valuable to us,
+         the information you submit in this form is recorded in our issue tracking system (JIRA), which is publicly available.
+        You can track the status of your feedback using the ticket number displayed in the dialog once you submit the form.
+      </p>
+    </div>
+  </div>
+</div>
+
+<main class="article" data-ceiling="topbar">
+<div id="watermark">2025-01-16 docs-couchbase-lite-edge-server DOC-12851-edge-intro-page</div>
+<div class="article-banner">
+<i class="fas fa-cog"></i>
+<h2><tt>2025-01-16 docs-couchbase-lite-edge-server DOC-12851-edge-intro-page</tt>
+</h2>
+<p>You are viewing a preview version of the documentation.</p>
+<p>Visit the <a href="/Users/elliothunter/Documents/GitHub/docs-site/preview/doctor/tree.html">preview landing page</a> for more details.</p>
+</div>
+<div class="article-header">
+<nav class="crumbs" aria-label="breadcrumbs">
+<ul>
+<li class="crumb">Writing Documentation</li>
+<li class="crumb"><a href="basics.html">AsciiDoc Basics</a></li>
+</ul>
+</nav>
+</div>
+<article class="doc">
+<div class="page-heading-title">
+<h1 class="page">AsciiDoc Basics</h1>
+
+<div class="labels">
+<ul></ul>
+</div>
+
+
+</div>
+<div class="contributor-list-box">
+<span class="last-commit-date" id="commitdate">    </span>
+<ul id="contributorList"></ul>
+<span  id="otherContributor"> + </span>
+</div><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the following as a reference for some of the common AsciiDoc markup used to write Couchbase Documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="inline-styles"><a class="anchor" href="#inline-styles"></a>Inline Styles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use inline styles to add special markup to characters, words, or whole sentences inside your documentation.</p>
+</div>
+<div class="sect2">
+<h3 id="bold-and-code-styles"><a class="anchor" href="#bold-and-code-styles"></a>Bold and Code Styles</h3>
+<div class="paragraph">
+<p>Use the <strong>bold</strong> and <code>code</code> (highlighted monospace font) styles to mark up UI elements and user input in the documentation.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">A bold *word*, a *bold phrase*, and bold c**hara**cter**s**.
+
+A monospace `word`, a `monospace phrase`, and monospace c``hara``cter``s``.
+
+`*monospace bold phrase*` and ``**char**``acter``**s**``</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>A bold <strong>word</strong>, a <strong>bold phrase</strong>, and bold c<strong>hara</strong>cter<strong>s</strong>.</p>
+</div>
+<div class="paragraph">
+<p>A monospace <code>word</code>, a <code>monospace phrase</code>, and monospace c<code>hara</code>cter<code>s</code>.</p>
+</div>
+<div class="paragraph">
+<p><code><strong>monospace bold phrase</strong></code> and <code><strong>char</strong></code>acter<code><strong>s</strong></code></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You can add multiple inline styles to text as long as the syntax is placed in the correct order.
+Monospace syntax (<code>`</code>) is always the outermost formatting set.</p>
+</div>
+<div class="paragraph">
+<p>For more information about when to use monospace and bold font, see <a href="#styleguide:ROOT:monospace-highlight.adoc" class="xref unresolved">styleguide:ROOT:monospace-highlight.adoc</a> or <a href="#styleguide:ROOT:bold.adoc" class="xref unresolved">styleguide:ROOT:bold.adoc</a>.</p>
+</div>
+<div class="paragraph">
+<p>Do not use the <code>code</code> style to mark up extended code samples or examples in the documentation.
+To mark up code blocks and include example files, see <a href="code-blocks.html" class="xref page">Code Blocks and Callouts</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Couchbase style does not allow the use of italic markup for text.
+For more information, see <a href="#styleguide:ROOT:italic.adoc" class="xref unresolved">styleguide:ROOT:italic.adoc</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ui-macros"><a class="anchor" href="#ui-macros"></a>Button, Keyboard, and Menu UI Macros</h3>
+<div class="paragraph">
+<p>Couchbase style uses 3 different markup styles for different user interactions with the UI:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use the <strong>button macro</strong> to mark up specific button interactions in a UI procedure.</p>
+</li>
+<li>
+<p>Use the <strong>keyboard macro</strong> to mark up keyboard input.</p>
+</li>
+<li>
+<p>Use the <strong>menu UI macro</strong> to mark up menu navigation in a UI procedure.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Click the btn:[Submit] button.
+
+Press kbd:[esc] to exit insert mode.
+
+You can cancel a running query by using the kbd:[Ctrl+C] keys.
+
+In the tool bar, select menu:File[Save].
+
+Select menu:View[Zoom &gt; Reset] to reset the zoom level.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Click the <b class="button">Submit</b> button.</p>
+</div>
+<div class="paragraph">
+<p>Press <kbd>esc</kbd> to exit insert mode.</p>
+</div>
+<div class="paragraph">
+<p>You can cancel a running query by using the <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>C</kbd></span> keys.</p>
+</div>
+<div class="paragraph">
+<p>In the tool bar, select <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save</b></span>.</p>
+</div>
+<div class="paragraph">
+<p>Select <span class="menuseq"><b class="menu">View</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Zoom</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Reset</b></span> to reset the zoom level.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information about when to use each type of markup, see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#styleguide:ROOT:button-macro.adoc" class="xref unresolved">styleguide:ROOT:button-macro.adoc</a></p>
+</li>
+<li>
+<p><a href="#styleguide:ROOT:keyboard-macro.adoc" class="xref unresolved">styleguide:ROOT:keyboard-macro.adoc</a></p>
+</li>
+<li>
+<p><a href="#styleguide:ROOT:menu-ui-macro.adoc" class="xref unresolved">styleguide:ROOT:menu-ui-macro.adoc</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="links-and-urls"><a class="anchor" href="#links-and-urls"></a>Links and URLs</h3>
+<div class="paragraph">
+<p>Antora and AsciiDoc turn any URLs that begin with one of the common schemes (<code>http</code>, <code>https</code>, <code>ftp</code>, <code>irc</code>, <code>mailto</code>, or any email address) into links automatically.</p>
+</div>
+<div class="paragraph">
+<p>Add the exact text of the link into your AsciiDoc file, ending with a set of square brackets (<code>[]</code>).</p>
+</div>
+<div class="paragraph">
+<p>Enter the text you want to display as the link text inside the square brackets, or leave them empty to display the link as-is.
+Add a caret to the end of your link text <code>^</code> for any links that go to external websites.</p>
+</div>
+<div class="paragraph">
+<p>This will open the page in a new tab, so readers do not actually leave the Couchbase Documentation.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://www.couchbase.com/[The Couchbase Website^]
+
+https://github.com/[]
+
+mailto:someone@something.com[]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><a href="https://www.couchbase.com/" target="_blank" rel="noopener">The Couchbase Website</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/" class="bare">https://github.com/</a></p>
+</div>
+<div class="paragraph">
+<p><a href="mailto:someone@something.com">someone@something.com</a></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Avoid using the <code><a href="" class="bare"></a></code> macro&#8201;&#8212;&#8201;you&#8217;ll only need it in rare circumstances, such as for links with unusual schemes.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Do NOT use URLs or system paths to link between pages in the Couchbase Documentation.
+If the page is inside a Couchbase Docs repository on GitHub, you must use a <a href="cross-references.html" class="xref page">cross reference</a> to link to it.
+Xrefs ensure domain, component, and version portability.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="url-best-practices"><a class="anchor" href="#url-best-practices"></a>URL Best Practices</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Always use the secure <code>https://</code> scheme for external webpage links.</p>
+</li>
+<li>
+<p><a href="#escaping">Escape</a> <code>http://localhost</code> URLs in regular text so they do not become links.</p>
+</li>
+<li>
+<p>Create <a href="attributes-and-roles.html" class="xref page">attributes</a> for long URLs to improve the source readability for other contributors.</p>
+</li>
+<li>
+<p>Create <a href="attributes-and-roles.html" class="xref page">attributes</a> for URLs that contain sets of symbols, such as multiple underscores (<code>_</code>) and backticks (<code>`</code>), that could be misinterpreted as inline markup.</p>
+</li>
+<li>
+<p>Create attributes for URLs used several times on the same page.</p>
+</li>
+<li>
+<p>Do not use URLs for linking between documentation pages or to in-page anchors.
+Use <a href="cross-references.html" class="xref page">cross references</a>, instead.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="escaping"><a class="anchor" href="#escaping"></a>How To Escape Any Inline AsciiDoc Markup</h3>
+<div class="paragraph">
+<p>When you need to display any kind of AsciiDoc markup as-is in your published page, such as a link that should be inactive, you can escape the markup by adding a single backslash (<code>\</code>) to the start of the markup.</p>
+</div>
+<div class="paragraph">
+<p>For URLs, if you also need to add markup while marking the link inactive, use a plus sign (<code>+</code>) inside any inline style markup.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">If it is not specified, the default URL \http://localhost:8091 is used.
+
+If it is not specified, the default URL `+http://localhost:8091+` is used.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>If you do not specify a URL, the default URL http://localhost:8091 is used.</p>
+</div>
+<div class="paragraph">
+<p>If you do not specify a URL, the default URL <code>http://localhost:8091</code> is used.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="description-lists"><a class="anchor" href="#description-lists"></a>Description Lists</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use description lists for writing out terms and definitions in your documentation, such as in a glossary.</p>
+</div>
+<div class="paragraph">
+<p>Mark the term you want to highlight with a set of double colons (<code>::</code>) before writing the definition on the same line.
+If you need to add a second line of text on a new line in your definition, add a plus sign (<code>+</code>) to the empty line between the start of the term and definition, and the second line of content.</p>
+</div>
+<div class="paragraph">
+<p>Block content like lists can be entered on a new line below the term and its double colons.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Bucket:: The top-level data storage container for data in a Capella database.
+A database can have multiple buckets, but must contain at least 1 bucket before it can store any data.
++
+For more information about buckets, see Buckets, Scopes, and Collections.
+These sentences appear as a new line for the definition of *Bucket*.
+
+Scope:: A data storage container inside a Capella database.
+Add scopes to a bucket to organize and group related collections in a Capella database.
++
+NOTE: A bucket can only contain a maximum of 1000 scopes.
+This admonition is part of the definition for *Scope*.
+
+Collection::
+* Collections exist inside scopes.
+.. Create a new collection to store your documents.
+.. This is the final list item.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Bucket</dt>
+<dd>
+<p>The top-level data storage container for data in a Capella database.
+A database can have multiple buckets, but must contain at least 1 bucket before it can store any data.</p>
+<div class="paragraph">
+<p>For more information about buckets, see Buckets, Scopes, and Collections.
+These sentences appear as a new line for the definition of <strong>Bucket</strong>.</p>
+</div>
+</dd>
+<dt class="hdlist1">Scope</dt>
+<dd>
+<p>A data storage container inside a Capella database.
+Add scopes to a bucket to organize and group related collections in a Capella database.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A bucket can only contain a maximum of 1000 scopes.
+This admonition is part of the definition for <strong>Scope</strong>.
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">Collection</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Collections exist inside scopes.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Create a new collection to store your documents.</p>
+</li>
+<li>
+<p>This is the final list item.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information about description lists in AsciiDoc, see <a href="https://docs.asciidoctor.org/asciidoc/latest/lists/description/" target="_blank" rel="noopener">Description Lists</a> in the AsciiDoctor Docs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ordered-lists"><a class="anchor" href="#ordered-lists"></a>Ordered Lists</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use an ordered list when you have a procedure, task, or collection of items where the order matters.</p>
+</div>
+<div class="paragraph">
+<p>Use a period (.) to render an item as an ordered list item.
+The number of periods sets the depth of the list item.</p>
+</div>
+<div class="paragraph">
+<p>For more information about when to use ordered lists, see <a href="#styleguide:ROOT:ordered-list.adoc" class="xref unresolved">styleguide:ROOT:ordered-list.adoc</a>.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">. Step 1, Level 1
+.. Step 1, Level 2
+... Step 1, Level 3
+.... Step 1, Level 4
+..... Step 1, Level 5
+. Step 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Step 1, Level 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Step 1, Level 2</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Step 1, Level 3</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>Step 1, Level 4</p>
+<div class="olist upperroman">
+<ol class="upperroman" type="I">
+<li>
+<p>Step 1, Level 5</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Step 2</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="unordered-lists"><a class="anchor" href="#unordered-lists"></a>Unordered Lists</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use an unordered or bulleted list when you have a collection of three or more things and the order of the items does not matter.
+These items could be nouns, phrases, or topics.</p>
+</div>
+<div class="paragraph">
+<p>Use an asterix (*) to render an item as an unordered list item.
+The number of asterixes sets the depth of the list item.</p>
+</div>
+<div class="paragraph">
+<p>For more information about when to use unordered lists, see <a href="#styleguide:ROOT:unordered-list.adoc" class="xref unresolved">styleguide:ROOT:unordered-list.adoc</a>.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* Level 1
+** Level 2
+*** Level 3
+**** Level 4
+***** Level 5
+* Level 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Level 1</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Level 2</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Level 3</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Level 4</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Level 5</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Level 1</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="update-nav.html" class="xref page">Navigation files</a> also use the unordered list syntax.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="images"><a class="anchor" href="#images"></a>Images</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The block image macro (<code>image::[]</code>) and the inline image macro (<code>image:[]</code>) accept SVG, PNG, JPG/JPEG, and GIF file formats.</p>
+</div>
+<div class="paragraph">
+<p>Block images, indicated by two colons (<code>::</code>), are entered on their own line and displayed on their own line.
+Optional attributes and values are entered inside the macro&#8217;s attribute list (<code>[]</code>).
+In the <a href="#block">block image example</a>, the first positional value is empty, so the opening square bracket (<code>[</code>) is directly followed by a comma (<code>,</code>).
+The second positional value, <code>280</code>, indicates the maximum width of the image.
+The next attribute, <code>align</code>, and its assigned value <code>left</code>, places the image against the left page margin.</p>
+</div>
+<div class="paragraph">
+<p>If the macro&#8217;s attribute list is empty (e.g., <code>image::filename.jpg[]</code>), the image is displayed at its original size and centered on the page.</p>
+</div>
+<div id="block" class="listingblock">
+<div class="title">Block image</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">image::console-login.png[,280,align=left]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="imageblock text-left">
+<div class="content">
+<img src="_images/console-login.png" alt="console login" width="280">
+</div>
+</div>
+<div class="paragraph">
+<p>The inline image macro, indicated by a single colon (<code>:</code>), is used for displaying small images and icons directly in the flow of a sentence.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Click the image:edit.svg[,16] icon.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Click the <span class="image"><img src="_images/edit.svg" alt="edit" width="16"></span> icon.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="admonitions"><a class="anchor" href="#admonitions"></a>Admonitions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Couchbase Documentation uses 5 different admonition types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NOTE</p>
+</li>
+<li>
+<p>TIP</p>
+</li>
+<li>
+<p>IMPORTANT</p>
+</li>
+<li>
+<p>CAUTION</p>
+</li>
+<li>
+<p>WARNING</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A basic admonition contains only a few lines of text.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">TIP: Positional parameters are set using the `-args` query parameter.
+
+NOTE: Once a node has been successfully added, the Couchbase Server cluster indicates that a rebalance is required to complete the operation.
+
+IMPORTANT: The node names passed to the `nodes` parameter must include the cluster administration port (by default 8091).
+For example `WITH {"nodes": ["192.0.2.0:8091"]}` instead of `WITH {"nodes": ["192.0.2.0"]}`.
+
+WARNING: Never stop or restart Couchbase Server before you first remove that node from a cluster.
+
+CAUTION: Don't stick forks in power sockets.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Positional parameters are set using the <code>-args</code> query parameter.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Once a node has been successfully added, the Couchbase Server cluster indicates that a rebalance is required to complete the operation.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The node names passed to the <code>nodes</code> parameter must include the cluster administration port (by default 8091).
+For example <code>WITH {"nodes": ["192.0.2.0:8091"]}</code> instead of <code>WITH {"nodes": ["192.0.2.0"]}</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Never stop or restart Couchbase Server before you first remove that node from a cluster.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Don&#8217;t stick forks in power sockets.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>If you need to include compound or block content inside your admonition, use a compound admonition.</p>
+</div>
+<div class="paragraph">
+<p>A compound admonition is any admonition block that contains more than one paragraph or contains a block other than a paragraph - such as a list or other block element.
+The contents of the compound admonition must be wrapped in the example block delimiter, which is 4 equals signs (<code>====</code>).</p>
+</div>
+<div class="paragraph">
+<p>The admonition type must be assigned as the block style, using square brackets above the first set of delimiters (<code>[IMPORTANT]</code>).</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[IMPORTANT]
+.Optional Title
+====
+Use an example block to create an admonition that contains compound content, such as:
+
+* Lists
+* Multiple paragraphs
+* Source code
+====</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Optional Title</div>
+<div class="paragraph">
+<p>Use an example block to create an admonition that contains compound content, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists</p>
+</li>
+<li>
+<p>Multiple paragraphs</p>
+</li>
+<li>
+<p>Source code</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tables"><a class="anchor" href="#tables"></a>Tables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Display content in a table to show the relationship between different pieces of information.</p>
+</div>
+<div class="paragraph">
+<p>Start a table in your documentation with the delimiter <code>|====</code> (a vertical bar followed by 4 equals signs).</p>
+</div>
+<div class="paragraph">
+<p>Set the number of columns in your table using vertical bars (<code>|</code>) or by adding a <code>cols</code> attribute in square brackets (<code>[]</code>) before the table delimiter.</p>
+</div>
+<div class="paragraph">
+<p>Enter the name of each column after each vertical bar.</p>
+</div>
+<div class="paragraph">
+<p>Start a new cell by adding additional vertical bars.</p>
+</div>
+<div class="paragraph">
+<p>To make your documentation easier for maintainers to understand, try to enter each cell on a new line.</p>
+</div>
+<div class="paragraph">
+<p>Cells are grouped into rows.
+Each row must share the same number of cells, taking into account any column or row spans.</p>
+</div>
+<div class="paragraph">
+<p>For example, the following table has 2 columns with 2 rows:</p>
+</div>
+<div class="listingblock">
+<div class="title">Table with implicit column value and header row</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">|====
+|Name of Column 1 |Name of Column 2
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|====</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name of Column 1</th>
+<th class="tableblock halign-left valign-top">Name of Column 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="paragraph">
+<p>Since tables are AsciiDoc block elements, they can have titles, roles, <a href="ids.html" class="xref page">IDs</a>, and table-specific <a href="attributes-and-roles.html" class="xref page">attributes</a>.</p>
+</div>
+<div class="paragraph">
+<p>For example, the following table:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sets an optional table title.</p>
+</li>
+<li>
+<p>Sets an optional ID value, for linking directly to this table from a <a href="cross-references.html" class="xref page">cross reference</a>.</p>
+</li>
+<li>
+<p>Sets the width of the third column to be twice the width of the first 2 columns by setting <code>cols="1,1,2"</code>.</p>
+</li>
+<li>
+<p>Sets the first row as the header row explicitly by setting <code>options="header"</code>.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Table with title, ID, <code>cols</code>, and <code>options="header"</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">.Optional title
+[#optional-id,cols="1,1,2",options="header"]
+|===
+
+|Name of Column 1
+|Name of Column 2
+|Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<table id="optional-id" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Optional title</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name of Column 1</th>
+<th class="tableblock halign-left valign-top">Name of Column 2</th>
+<th class="tableblock halign-left valign-top">Name of Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of a table with a title, implicit header row, and the proportional width of the two columns set.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">.CLI parameters for adding a node
+[cols="1,2"]
+|===
+|Parameter |Description
+
+|`--cluster`
+|The IP address of a node in the existing cluster.
+
+|`--user`
+|The username for the existing cluster.
+
+|`--password`
+|The password for the existing cluster.
+|===</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. CLI parameters for adding a node</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--cluster</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The IP address of a node in the existing cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--user</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The username for the existing cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The password for the existing cluster.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="block-elements-in-tables"><a class="anchor" href="#block-elements-in-tables"></a>Block Elements in Tables</h3>
+<div class="paragraph">
+<p>You can add block-level elements, such as code blocks, lists, multiple paragraphs, and admonitions, to a table cell.</p>
+</div>
+<div class="paragraph">
+<p>To add any block-level elements to a table cell, you must add an <code>a</code> before the vertical bar for that cell.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">.cbq Shell Commands
+[#table-cbq-shell-commands,cols="1,2,4"]
+|===
+|Shell Command |Arguments |Description and Examples
+
+|`\SET`
+|`parameter=prefix:variable name`
+a|
+Sets the top most value of the stack for the given variable with the specified value.
+
+Variables can be of the following types:
+
+[#set-var-types]
+* Query parameters
+* Session variables
+* User-defined
+* Pre-defined and named parameters.
+
+|`\PUSH`
+|`parameter value`
+a|
+Pushes the specified value on to the given parameter stack.
+
+----
+cbq&gt; \PUSH -args  [8];
+----
+
+.Resulting variable stack
+----
+cbq&gt; \SET;
+ Query Parameters :
+ Parameter name : args
+ Value : [[6,7] [8] [8]]
+...
+cbq&gt;
+----
+|===</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<table id="table-cbq-shell-commands" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. cbq Shell Commands</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Shell Command</th>
+<th class="tableblock halign-left valign-top">Arguments</th>
+<th class="tableblock halign-left valign-top">Description and Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\SET</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>parameter=prefix:variable name</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Sets the top most value of the stack for the given variable with the specified value.</p>
+</div>
+<div class="paragraph">
+<p>Variables can be of the following types:</p>
+</div>
+<div id="set-var-types" class="ulist">
+<ul>
+<li>
+<p>Query parameters</p>
+</li>
+<li>
+<p>Session variables</p>
+</li>
+<li>
+<p>User-defined</p>
+</li>
+<li>
+<p>Pre-defined and named parameters.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\PUSH</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>parameter value</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Pushes the specified value on to the given parameter stack.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cbq&gt; \PUSH -args  [8];</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Resulting variable stack</div>
+<div class="content">
+<pre>cbq&gt; \SET;
+ Query Parameters :
+ Parameter name : args
+ Value : [[6,7] [8] [8]]
+...
+cbq&gt;</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="column-and-row-spans"><a class="anchor" href="#column-and-row-spans"></a>Column and Row Spans</h3>
+<div class="paragraph">
+<p>You can extend cells to span multiple rows or columns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To have a cell span multiple columns, before the vertical bar (<code>|</code>) for the cell:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add the number of columns the cell should span.</p>
+</li>
+<li>
+<p>Add a plus sign (<code>+</code>) operator after the number.
+For example, <code>2+|</code> would span 2 columns.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>To have a cell span multiple rows, before the vertical bar (<code>|</code>) for the cell:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add a period (<code>.</code>).</p>
+</li>
+<li>
+<p>Add the number of rows the cell should span.</p>
+</li>
+<li>
+<p>Add a plus sign (<code>+</code>) operator after the number.
+For example, <code>.3+|</code> would span 3 rows.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the following table uses row and column spans:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">|===
+
+|Cell in column 1, row 1 |Cell in column 2, row 1 |Cell in column 3, row 1
+
+3+|Content in a single cell that spans columns 1, 2, and 3
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+
+.2+|Content in a single cell that spans rows 4 and 5
+|Cell in column 2, row 4
+|Cell in column 3, row 4
+
+|Cell in column 2, row 5
+|Cell in column 3, row 5
+|===</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It renders as:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Content in a single cell that spans columns 1, 2, and 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Content in a single cell that spans rows 4 and 5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="table-widths"><a class="anchor" href="#table-widths"></a>Table Widths</h3>
+<div class="paragraph">
+<p>By default, table width is set to 100%.</p>
+</div>
+<div class="paragraph">
+<p>You can override the table width default by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Setting the width explicitly with a percentage value (<code>%</code>) and the width attribute.</p>
+<div class="paragraph">
+<p>For example, <code>[width=50%]</code>.</p>
+</div>
+</li>
+<li>
+<p>Setting the <code>autowidth</code> option, so that table only expands to accommodate the contents</p>
+<div class="paragraph">
+<p>For example, <code>[%autowidth]</code>.</p>
+</div>
+</li>
+<li>
+<p>Assigning a <a href="attributes-and-roles.html" class="xref page">role</a> to the table to control the width with CSS.</p>
+<div class="paragraph">
+<p>For example, <code>[.narrow]</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://asciidoctor.org/docs/user-manual/#table-width" target="_blank" rel="noopener">Asciidoctor table width documentation</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="table-attributes-and-options"><a class="anchor" href="#table-attributes-and-options"></a>Table Attributes and Options</h3>
+<div class="paragraph">
+<p>AsciiDoc has a lot of table attributes, options, and specifiers.
+For more examples and information, see the <a href="https://asciidoctor.org/docs/user-manual/#tables" target="_blank" rel="noopener">Asciidoctor table documentation</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="learn-more"><a class="anchor" href="#learn-more"></a>Learn More</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="cross-references.html" class="xref page">Document-to-document cross references</a></p>
+</li>
+<li>
+<p><a href="ids.html" class="xref page">Element IDs</a></p>
+</li>
+<li>
+<p><a href="code-blocks.html" class="xref page">Code blocks</a></p>
+</li>
+<li>
+<p><a href="tabs.html" class="xref page">Tabs sets</a></p>
+</li>
+<li>
+<p><a href="includes.html" class="xref page">Example and partial file includes</a></p>
+</li>
+<li>
+<p><a href="attributes-and-roles.html#page-roles" class="xref page">Page roles</a></p>
+</li>
+<li>
+<p><a href="attributes-and-roles.html" class="xref page">Attributes</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="additional-resources"><a class="anchor" href="#additional-resources"></a>Additional Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can find more AsciiDoc examples in the <a href="https://docs.antora.org/antora/2.0/page/" target="_blank" rel="noopener">Pages category of the Antora documentation</a>.</p>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-links">
+      <div class="col">
+        <div class="footer-logo">
+          <a href="https://www.couchbase.com" class="icon">
+            <img src="../../_/img/couchbase-logo.svg" alt="Couchbase">
+          </a>
+        </div>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://docs.couchbase.com" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://forums.couchbase.com" target="_blank" rel="noopener">Forums</a></li>
+          <li><a href="https://support.couchbase.com" target="_blank" rel="noopener">Support</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://developer.couchbase.com" target="_blank" rel="noopener">Developer Portal</a></li>
+          <li><a href="https://blog.couchbase.com" target="_blank" rel="noopener">Blog</a></li>
+          <li><a href="https://www.couchbase.com/resources">Resources</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="https://www.couchbase.com/get-started-developing-nosql">Get Started</a></li>
+          <li><a href="https://www.couchbase.com/downloads">Downloads</a></li>
+          <li><a href="https://learn.couchbase.com/store?utf8=%E2%9C%93&ss=1&ct=78327&commit=Filter" target="_blank" rel="noopener">Training</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="social-icons">
+          <li>
+            <svg  width="14" height="14" viewBox="0 0 32.1 26.1"> <path id="twitter" class="cls-1" d="M32,7.1a11.836,11.836,0,0,1-3.8,1,6.462,6.462,0,0,0,2.9-3.6,12.606,12.606,0,0,1-4.2,1.6A6.492,6.492,0,0,0,22.1,4a6.594,6.594,0,0,0-6.6,6.6,7.719,7.719,0,0,0,.2,1.5A18.458,18.458,0,0,1,2.2,5.2a6.294,6.294,0,0,0-.9,3.3A6.765,6.765,0,0,0,4.2,14a6.109,6.109,0,0,1-3-.8v.1a6.543,6.543,0,0,0,5.3,6.4,4.678,4.678,0,0,1-1.7.2,4.869,4.869,0,0,1-1.2-.1,6.679,6.679,0,0,0,6.1,4.6,12.917,12.917,0,0,1-8.2,2.8,9.151,9.151,0,0,1-1.6-.1,18.438,18.438,0,0,0,10.1,3c12.1,0,18.7-10,18.7-18.7v-.8A13.336,13.336,0,0,0,32,7.2Z" transform="translate(0.1 -4)"/></svg>
+            <a href="https://twitter.com/couchbase" class="icon">
+              Twitter
+            </a>
+          </li>
+          <li>
+          <svg  width="14" height="14" viewBox="0 0 32 32"> <path id="linkedin" class="cls-1" d="M29,0H3A3.076,3.076,0,0,0,0,3V29a3.009,3.009,0,0,0,3,3H29a2.946,2.946,0,0,0,3-3V3A3.009,3.009,0,0,0,29,0ZM12,26H8V12h4ZM10,10a2,2,0,1,1,2-2A2.006,2.006,0,0,1,10,10ZM26,26H22V18a2,2,0,0,0-4,0v8H14V12h4v2.5c.8-1.1,2.1-2.5,3.5-2.5A4.736,4.736,0,0,1,26,17Z"/></svg>
+              <a href="https://www.linkedin.com/company/couchbase" class="icon">
+             Linkedin
+            </a>
+          </li>
+          <li>
+            <svg  width="14" height="14" viewBox="0 0 32 32"> <path id="facebook" class="cls-1" d="M29,0H3A2.652,2.652,0,0,0,0,3V29a2.652,2.652,0,0,0,3,3H16V18H12V14h4V12a6.452,6.452,0,0,1,6-6h4v4H22a2.151,2.151,0,0,0-2,2v2h6l-1,4H20V32h9a2.652,2.652,0,0,0,3-3V3A2.652,2.652,0,0,0,29,0Z"/></svg>
+            <a href="https://www.facebook.com/Couchbase" class="icon">
+            Facebook
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-terms">
+      <div class="footer-terms-copyright">
+          <span>© 2025 
+            Couchbase and the Couchbase logo are registered trademarks of Couchbase, Inc.
+            All third party trademarks (including logos and icons) referenced by Couchbase, Inc. remain the property of their respective owners.
+          </span>
+      </div>
+      <div class="footer-terms-links">
+        <a href="https://www.couchbase.com/terms-of-use">Terms of Use</a>
+        <a href="https://www.couchbase.com/privacy-policy">Privacy Policy</a>
+        <a href="https://www.couchbase.com/cookie-policy">Cookie Policy</a>
+        <a href="https://www.couchbase.com/support-policy">Support Policy</a>
+        <a href="https://info.couchbase.com/unsubscribe-or-manage-preferences.html" target="_blank" rel="noopener">Marketing Preference Center</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../../_/js/site-navigation-data.js"></script>
+<script id="page-navigation-group" type="application/json">
+{"title":"Contribute","components":["home"],"latestVersions":{"home":"master"}}
+</script>
+<template id="run-code-panel">
+<div class="action-panel">
+  <form class="action-panel-control" method="POST" action="https://couchbase.live/run" target="run-code-output">
+    <input type="hidden" name="lang">
+    <input type="hidden" name="code">
+    <input type="hidden" name="from" value="docs">
+    <div class="controls">
+      <button class="control-button rerun" type="submit"><i class="fas fa-redo"></i></button>
+      <span class="shell-name control-label">Output</span>
+      <button class="control-button close"><i class="fas fa-times"></i> Close</button>
+    </div>
+  </form>
+  <iframe class="run-code-output" name="run-code-output"></iframe>
+</div>
+</template>
+
+<script id="site-script" src="../../_/js/vendor/chatbox-ui.js"></script>
+
+<script id="site-script" src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/tabs.js" data-sync-storage-key="preferred-tab"></script>
+<script defer src="../../_/js/vendor/fontawesome-icon-defs.js"></script>
+<script defer src="../../_/js/vendor/fontawesome.js" data-search-pseudo-elements="true"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+</body>
+</html>
