@@ -66,6 +66,7 @@ asciidoc:
     sqlppc: SQL++ for Capella columnar
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
+    kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
     # the url-issues and url-issues-* attributes configure the URLs for the inline jira macro
     url-issues: https://issues.couchbase.com/browse
@@ -79,6 +80,7 @@ asciidoc:
   - ./lib/swagger-ui-block-macro.js
   - ./lib/markdown-block.js
   - ./lib/template-block.js
+  - asciidoctor-kroki
   - asciidoctor-external-callout
   - '@asciidoctor/tabs'
 ui:
