@@ -53,8 +53,8 @@ pipeline {
     SHOW_FEEDBACK_BUTTON='true'
   }
   triggers {
-    githubPush()
-    cron('TZ=Etc/UTC\nH H(2-4) * * *')
+    // githubPush()
+    // cron('TZ=Etc/UTC\nH H(2-4) * * *')
   }
   options {
     buildDiscarder logRotator(artifactDaysToKeepStr: '60', artifactNumToKeepStr: '', daysToKeepStr: '60', numToKeepStr: '')
