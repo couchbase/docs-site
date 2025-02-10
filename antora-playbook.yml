@@ -81,6 +81,7 @@ content:
     branches: [DOC-12865]
   - url: https://github.com/simon-dew/edge-server
     branches: [DOC-12865]
+    start_path: docs
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
