@@ -51,11 +51,11 @@ module.exports = function(context, ...schemas) {
     function process_toc (node) {
         
         // the Left of the JSON expression (except at the Root) is `key: `
-        // IF the related node has a Description, then link to it.
+        // IF the related node has a Description OR Title, then link to it.
         
         const left = (node, path) =>
             path.length ?
-                node.description ?
+                (node.description || node.title) ?
                     `<a href="#${path_id_href(path)}">${path[path.length-1]}</a>: `
                     : `${path[path.length-1]}: `
                 : ''
