@@ -78,6 +78,8 @@ content:
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-connectors-power-bi
     branches: [main]
+  - url: https://github.com/couchbase/docs-connectors-superset.git
+    branches: release/1.0
   # - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://github.com/couchbase/docs-connectors-talend
   # - url: https://git@github.com/couchbase/docs-analytics
