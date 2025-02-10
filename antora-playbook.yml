@@ -17,7 +17,7 @@ site:
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
-        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
@@ -76,7 +76,11 @@ content:
     branches: [main]
   # delete me to save time
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [DOC-12841]
+    branches: [release/3.2]
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
+    branches: [DOC-12865]
+  - url: https://github.com/simon-dew/edge-server
+    branches: [DOC-12865]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
