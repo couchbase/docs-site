@@ -9,7 +9,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/DOC-12533
+  url: https://preview.docs-test.couchbase.com/AV-90185
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -40,7 +40,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [DOC-12533, capella]
+    branches: [release/7.6, AV-90185-capella-7.6.5]
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, capella]
     start_path: docs
@@ -52,7 +52,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
   - url: https://github.com/couchbase/docs-analytics
-    branches: [DOC-12228]
+    branches: [release/7.6]
   - url: https://github.com/couchbase/couchbase-cli
     branches: [trinity]
     start_path: docs
@@ -114,6 +114,6 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-197/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-203/ui-bundle.zip
 output:
   dir: ./public
