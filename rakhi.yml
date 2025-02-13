@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex.git
-    branches: AV-68634-tutorial-feature-branch
+    branches: AV-68634-tutorial-create-deploy-cluster
   - url: https://github.com/couchbase/docs-capella.git
     branches: AV-68634-dev-tutorial-navigation 
 asciidoc:
