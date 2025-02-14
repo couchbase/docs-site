@@ -55,7 +55,6 @@ content:
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
     start_path: docs
-  # - url: https://git@github.com/couchbasecloud/couchbase-cloud
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_paths: [docs/public, docs/columnar]
@@ -63,7 +62,6 @@ content:
     branches: [main]
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
-  # - url: https://git@github.com/couchbase/couchbase-operator
   - url: https://github.com/couchbase/couchbase-operator
     branches: [2.7.x, 2.6.x, 2.5.x, 2.4.x, 2.3.x]
     start_path: docs/user
@@ -85,15 +83,12 @@ content:
     branches: [main]
   - url: https://github.com/couchbase/docs-connectors-superset.git
     branches: [release/1.0]
-  # - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://github.com/couchbase/docs-connectors-talend
-  # - url: https://git@github.com/couchbase/docs-analytics
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.6, release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/couchbase-cli
     branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
-  # - url: https://git@github.com/couchbase/backup
   - url: https://github.com/couchbase/backup
     branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
@@ -144,18 +139,11 @@ content:
     branches: [release/3.2, release/3.1, release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.2, release/3.1, release/3.0, release/2.8]
-  # - url: https://git@github.com/couchbase/docs-cloud-native
   - url: https://github.com/couchbase/docs-cloud-native
     branches: [cloud-native-2.2]
-#  - url: https://github.com/couchbaselabs/tutorials
-  - url: https://github.com/couchbase/developer-content
-  - url: https://github.com/couchbaselabs/tutorial-template
   - url: https://github.com/couchbaselabs/mobile-travel-sample
     branches: [master]
     start_path: content
-  # - url: https://github.com/couchbaselabs/hotel-finder-react-native
-  # - url: https://github.com/couchbaselabs/hotel-lister-cordova
-#  - url: https://github.com/couchbaselabs/tutorials-contrib
   - url: https://github.com/couchbaselabs/mobile-training-todo
     branches: tutorials
     start_path: content
@@ -167,13 +155,9 @@ content:
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
     branches: [standalone, query, sync]
     start_path: content
-  # - url: https://github.com/couchbaselabs/couchbase-lite-ios-api-playground
   - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
     branches: [standalone, query, sync]
     start_path: content
-  # - url: https://github.com/amarantha-k/OpenID_connect_tutorial
-  #   branches: [tutorial]
-  #   start_path: content
   - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
     branches: [master]
     start_path: content
