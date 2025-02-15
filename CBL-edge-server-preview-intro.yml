@@ -46,6 +46,9 @@ content:
     branches: [release/3.2]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
     branches: [DOC-12851-edge-intro-page]
+  - url: https://github.com/couchbase/edge-server
+    branches: [main]
+    start_path: docs
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
