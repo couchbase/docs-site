@@ -22,7 +22,7 @@ site:
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
-        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
@@ -144,6 +144,11 @@ content:
     branches: [release/3.2, release/3.1, release/3.0, release/2.8]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.2, release/3.1, release/3.0, release/2.8]
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/edge-server
+    branches: [main]
+    start_path: docs
   # - url: https://git@github.com/couchbase/docs-cloud-native
   - url: https://github.com/couchbase/docs-cloud-native
     branches: [cloud-native-2.2]
