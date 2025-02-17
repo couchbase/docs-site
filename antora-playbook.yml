@@ -9,7 +9,7 @@ antora:
 # - "@antora/collector-extension"
 site:
   title: Couchbase Docs (Preview)
-  url: https://preview.docs-test.couchbase.com/DOC-12865
+  url: https://preview.docs-test.couchbase.com/DOC-12863
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -78,9 +78,9 @@ content:
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.2]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
-    branches: [DOC-12865]
-  - url: https://github.com/simon-dew/edge-server
-    branches: [DOC-12865]
+    branches: [DOC-12863]
+  - url: https://github.com/couchbase/edge-server
+    branches: [main]
     start_path: docs
 asciidoc:
   attributes:
