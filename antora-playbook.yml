@@ -75,6 +75,10 @@ content:
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
   # delete me to save time
+  - url: https://github.com/couchbase/docs-mobile
+    branches: [release/3.1]
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite
+    branches: [release/3.2]
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.2]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
@@ -99,7 +103,7 @@ asciidoc:
     xrefstyle: short
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
-    sqlpp: SQL+{wj}+
+    sqlpp: SQL+&#8288;+
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
