@@ -41,7 +41,7 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbaselabs/docs-columnar.git
+  - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [AV-87533_ionic-reference-api]
