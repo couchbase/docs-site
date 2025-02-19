@@ -1,10 +1,11 @@
 = Couchbase Documentation
 :page-meta-zd-site-verification: odvin2siwmodz30xrtxq
-:page-layout: landing-page-top-level-sdk
-:page-role: tiles
-:page-rank: 75
+:page-layout: landing-page-capella
+:tabs:
+:page-rank: 85
 :!sectids:
-:collapsible:
+:icons: font
+:page-nav-header-levels: 2
 
 include::partial$info-banner.adoc[]
 
@@ -17,12 +18,78 @@ include::partial$info-banner.adoc[]
 [.column]
 ====== {empty}
 [.content]
-_Couchbase is the modern database for enterprise applications._
+_Couchbase is the Developer Data Platform for Critical Applications in Our AI World._
 
+
+Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
+Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in eleven popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
+
+////
 Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
+////
 
 Find the documentation, samples, and references to help you use Couchbase and build applications.
 
+
+
+[.centered.card-container]
+== Development Choices for Your Use Cases
+
+[.card-box]
+=== icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
+
+*Capella Operational* -- Couchbase in the Cloud, managed by us.
+
+xref:[Sign up for Perpetual Free Tier] |
+xref:[Get Started with Capella] |
+xref:[Deployment & Admin] |
+xref:home:ROOT:sdk.adoc[Developer Docs] |
+xref:[Learn -- Concepts & Reference]
+
+*Self-managed Couchbase Server*
+
+xref:[Get Started with Couchbase Server] |
+xref:[Deployment Options] |
+xref:home:ROOT:sdk.adoc[Developer Docs] |
+xref:[Learn -- Concepts & Reference]
+
+
+[.card-box]
+=== icon:rocket[] Real Time Analytics with Capella Columnar
+
+xref:columnar:intro:intro.adoc[Capella Columnar] brings the power of NoSQL to the world of analytics.
+This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications.
+
+
+
+[.card-box]
+=== icon:rocket[] Develop for Mobile and the Edge
+
+Build your app for offline-first connectivity with xref:couchbase-lite::introduction.adoc[Couchbase Lite],
+then sync to Couchbase Server with xref:cloud:app-services:index.adoc[Capella App Services]
+(or self-managed xref:sync-gateway::introduction.adoc[Sync Gateway]) --
+or run peer-to-peer.
+
+
+
+
+[.card-box]
+=== icon:rocket[] Develop RAG and Agentic AI Applications
+
+Our Vector Search Service facilitates RAG applications -- and offers the ability to combine searches with our sophisticated Search API.
+Agentic Apps can be built with Agent Catalog (currently in Private Preview).
+
+* Vector Search
+* Agent Catalog Private Preview
+* Capella iQ
+
+
+
+
+
+
+
+////
 [.column]
 ====== {empty}
 [.content]
@@ -285,3 +352,4 @@ xref:home:contribute:index.adoc[Contribute to the Documentation]
 ++++
 </div>
 ++++
+////
