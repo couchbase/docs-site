@@ -16,11 +16,10 @@ site:
   keys:
     nav_groups: |
       [
+        { "title": "Get Started", "startPage": "home::server.adoc", "components": ["server"] },
         { "title": "Develop", "startPage": "home::developer-docs.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "sdk-extensions", "*-columnar-sdk", "couchbase-lite"] },
-        { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
-        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
-        { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] }
+        { "title": "Deploy & Admin", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"] },
+        { "title": "Learn", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] }
       ]
 git:
   ensure_git_suffix: false
