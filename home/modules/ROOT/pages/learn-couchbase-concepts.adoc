@@ -1,0 +1,57 @@
+= Couchbase Concepts
+:page-layout: landing-page-capella
+:tabs:
+:page-rank: 85
+:!sectids:
+:icons: font
+:page-nav-header-levels: 2
+
+include::home::partial$info-banner.adoc[]
+
+= Couchbase Concepts & Reference
+
+The Developer Data Platform for Critical Applications in Our AI World.
+
+Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
+Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in eleven popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
+
+
+
+[.centered.card-container]
+= Couchbase Concepts & Reference
+
+[.card-box]
+=== icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
+
+Develop an app for Capella Operational, or a self-managed Couchbase Server.
+Explore {sqlpp}, or the fast CRUD interface of the Data Service.
+
+Core concepts.
+
+
+[.card-box]
+=== icon:rocket[] Real Time Analytics with Capella Columnar SDKs
+
+xref:columnar:intro:intro.adoc[Capella Columnar] brings the power of NoSQL to the world of analytics.
+This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications.
+
+Core concepts.
+
+
+[.card-box]
+=== icon:rocket[] Develop for Mobile and the Edge
+
+Build your app for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
+
+Mobile concepts.
+
+
+[.card-box]
+=== icon:rocket[] Develop RAG and Agentic AI Applications
+
+Our Vector Search Service facilitates RAG applications -- and offers the ability to combine searches with our sophisticated Search API.
+Agentic Apps can be built with Agent Catalog (currently in Private Preview).
+
+* Vector Search
+* Agent Catalog Private Preview
+* Other AI?
