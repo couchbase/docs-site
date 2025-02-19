@@ -5,8 +5,6 @@
 :!sectids:
 :icons: font
 :page-nav-header-levels: 2
-:page-aliases: cloud::index.adoc
-:page-for-review:
 
 include::home::partial$info-banner.adoc[]
 
