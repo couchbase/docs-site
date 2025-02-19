@@ -33,7 +33,8 @@ Find the documentation, samples, and references to help you use Couchbase and bu
 
 
 [.centered.card-container]
-== Development Choices for Your Use Cases
+== Transactional, analytical, mobile, and AI applications with Couchbase.
+
 
 [.card-box]
 === icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
