@@ -1,0 +1,90 @@
+= Get Started with Couchbase
+:page-layout: landing-page-capella
+:tabs:
+:page-rank: 85
+:!sectids:
+:icons: font
+:page-nav-header-levels: 2
+
+include::home::partial$info-banner.adoc[]
+
+= Get Started with Couchbase
+
+The Developer Data Platform for Critical Applications in Our AI World.
+
+Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
+Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in eleven popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
+
+The easiest way to get started is to https://cloud.couchbase.com/sign-up[sign up to Capella, and our perpetual Free Tier],
+then follow along the tutorials that are signposted along the way.
+
+Alternatively, check out the various parts of the Couchbase platform below:
+
+
+[.centered.card-container]
+== Getting Started with transactional, analytical, mobile, and AI applications with Couchbase.
+
+[.card-box]
+=== icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
+
+Develop an app for Capella Operational, or a self-managed Couchbase Server.
+Explore {sqlpp}, or the fast CRUD interface of the Data Service.
+
+* https://cloud.couchbase.com/sign-up[Sign up to Capella, and our perpetual Free Tier]
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Get Started with the Java SDK] -- and our tutorial for xref:erver/current/tutorials/couchbase-tutorial-student-records.adoc[NoSQL for RDBMS users]
+* Try our other SDKs: 
+xref:c-sdk:hello-world:overview.adoc[C]
+| xref:cxx-sdk:hello-world:overview.adoc[{cpp}]
+| xref:dotnet-sdk:hello-world:overview.adoc[.NET]
+| xref:go-sdk:hello-world:overview.adoc[Go]
+| xref:kotlin-sdk:hello-world:overview.adoc[Kotlin]
+| xref:nodejs-sdk:hello-world:overview.adoc[Node.js]
+| xref:php-sdk:hello-world:overview.adoc[PHP]
+| xref:python-sdk:hello-world:overview.adoc[Python]
+| xref:ruby-sdk:hello-world:overview.adoc[Ruby]
+| xref:scala-sdk:hello-world:overview.adoc[Scala]
+
+
+[.card-box]
+=== icon:rocket[] Real Time Analytics with Capella Columnar SDKs
+
+xref:columnar:intro:intro.adoc[Capella Columnar] brings the power of NoSQL to the world of analytics.
+This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications.
+
+xref:columnar-sdk.adoc[Columnar SDKs] are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
+they are purpose built for Columnar's analytical use cases.
+They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
+such as connection management and robust error handling.
+
+// * xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs]|
+* xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs]|
+* xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK Docs]
+* xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] 
+
+
+
+[.card-box]
+=== icon:rocket[] Develop for Mobile and the Edge
+
+Build your app for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
+
+
+* xref:couchbase-lite:android:quickstart.adoc[Develop for Android in Java or Kotlin]
+* xref:couchbase-lite:swift:quickstart.adoc[Couchbase Lite on Swift]
+(and xref:couchbase-lite:objc:quickstart.adoc[Objective-C])
+* xref:couchbase-lite:c:quickstart.adoc[Devlop for Edge devices in C]
+* xref:couchbase-lite:csharp:quickstart.adoc[Couchbase Lite on C# .NET]
+* xref:couchbase-lite:java:quickstart.adoc[Couchbase Lite on Java]
+* xref:couchbase-lite:javascript:quickstart.adoc[Couchbase Lite on JavaScript -- Ionic and React]
+* Sync your data with App Services / self-managed SyncGateway / Edge Server
+
+
+[.card-box]
+=== icon:rocket[] Develop RAG and Agentic AI Applications
+
+Our Vector Search Service facilitates RAG applications -- and offers the ability to combine searches with our sophisticated Search API.
+Agentic Apps can be built with Agent Catalog (currently in Private Preview).
+
+* Vector Search
+* Agent Catalog Private Preview
+* Other AI?
