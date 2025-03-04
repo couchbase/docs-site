@@ -63,7 +63,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
   - url: https://github.com/couchbase/couchbase-operator
-    branches: [2.7.x, 2.6.x, 2.5.x, 2.4.x, 2.3.x]
+    branches: [2.8.x, 2.7.x, 2.6.x, 2.5.x, 2.4.x]
     start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
     branches: [0.2.x]
