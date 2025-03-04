@@ -30,7 +30,7 @@ image::secure-manage-and-develop-with-ease.svg[,275]
 
 == Embedded Database on the Edge
 ++++
-<div class="card-row three-column-row">
+<div class="card-row two-column-row">
 ++++
 
 [.column]
@@ -48,6 +48,14 @@ xref:couchbase-lite::introduction.adoc[Go to Couchbase Lite Docs]
 [.content]
 Sync Gateway is an internet-facing synchronization mechanism designed to provide data synchronization for large-scale interactive web, mobile, and IoT applications. +
 xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
+
+[.column]
+.Edge Server
+
+[.content]
+Edge Server is a lightweight standalone database for resource-constrained edge.
+It exposes a REST API that enables you to get database information, perform document operations, run {sqlpp} queries, and manage change feeds and replication. +
+xref:couchbase-edge-server:introduction:intro.adoc[Go to Edge Server Docs]
 
 [.column]
 .Tutorials
