@@ -21,6 +21,14 @@ such as connection management and robust error handling.
 
 [{tabs}] 
 ==== 
+Go::
++
+--
+xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs] |
+xref:go-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+// https://docs.couchbase.com/sdk-api/columnar-java-client[Go API Reference]
+--
+
 Java::
 +
 --
