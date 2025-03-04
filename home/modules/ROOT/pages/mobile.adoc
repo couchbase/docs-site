@@ -55,7 +55,7 @@ xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
 [.content]
 Edge Server is a lightweight standalone database for resource-constrained edge.
 It exposes a REST API that enables you to get database information, perform document operations, run {sqlpp} queries, and manage change feeds and replication. +
-xref:couchbase-edge-server::introduction.adoc[Go to Edge Server Docs]
+xref:couchbase-edge-server:introduction:intro.adoc[Go to Edge Server Docs]
 
 [.column]
 .Tutorials
