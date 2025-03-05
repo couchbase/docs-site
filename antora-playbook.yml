@@ -126,6 +126,8 @@ content:
     # Columnar dev
   - url: https://github.com/couchbase/docs-columnar-sdk-common
     branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-columnar-sdk-go
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-java
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
