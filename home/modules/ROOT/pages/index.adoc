@@ -91,7 +91,8 @@ The combination of _Sync Gateway_ and _Couchbase Lite_ coupled with the power of
 Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
 
 xref:couchbase-lite::introduction.adoc[Couchbase Lite] |
-xref:sync-gateway::introduction.adoc[Sync Gateway]
+xref:sync-gateway::introduction.adoc[Sync Gateway] |
+xref:couchbase-edge-server:introduction:intro.adoc[Couchbase Edge Server] 
 
 ++++
 </div>

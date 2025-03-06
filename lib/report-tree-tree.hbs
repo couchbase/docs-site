@@ -1,0 +1,29 @@
+    <li>
+        {{#if $href}}<a href="../{{$href}}" target="_blank">{{/if}}
+        <span class="{{#if $children}}caret {{#unless $tag}}caret-down{{/unless}}{{else}}doc{{/if}}">{{@key}}</span>{{#if $href}}</a>{{/if}}
+        
+        {{#if $tag}}
+            {{#with $githubUrl}}
+            <a href="{{.}}"
+            {{else}}
+            <span
+            {{/with}}
+                target="_blank" 
+                data-tag="{{$tag}}" 
+                {{{tagStyle $tag}}}>
+                &#x2691;
+            {{#if $githubUrl}}
+            </a>
+            {{else}}
+            </span>
+            {{/if}}
+        {{/if}}
+        
+        {{#if $children}}
+            <ul class="nested {{#unless $tag}}active{{/unless}}">
+                {{#each $children}}
+                {{> tree}}
+                {{/each}}
+            </ul>
+        {{/if}}
+    </li>

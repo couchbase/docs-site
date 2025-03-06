@@ -3,6 +3,7 @@
 /netlify/node_modules/
 /node_modules/
 /public/
+/preview/
 /scripts/node_modules/
 scripts/.npmrc
 scripts/package-lock.json

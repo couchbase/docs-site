@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    body {
+        max-width: 60em;
+        margin: 3em auto;
+    }
+
+    dt {
+        margin-top: 1em;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    #pagesForReview {
+        list-style-type: disc;
+        font-size: 1.5em;
+    }
+
+    .prbody {
+        background: cornsilk;
+        margin: 0.5em;    
+        padding: 0.5em;
+        font-size: 1.2em;
+    }
+    </style>
+</head>
+<h1> Preview builds </h1>
+
+See the <a href="https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/1971224949/Docs+Team+demo+site+passwords">Docs team demo site passwords</a> page for access.
+
+(If you are outside Couchbase, and do not have access to Confluence, please ask your Couchbase contact if you believe you should have access to a private preview.)
+
+<h1>Most recent builds</h1>
+
+<dl>
+{{#each (sortByRecent this)}}
+    <dt><a href="/{{subdirectory}}/">{{subdirectory}}</a></dt>
+    <dd>
+    Last built {{date}} by {{actor}}
+    ({{builds}} builds since {{firstbuild}})
+    (<a href="/{{subdirectory}}/doctor/tree.html">&#x1F6E0;</a>
+    <a href="{{url}}">&#x1f3d7;</a>)
+
+    {{#if pagesForReview.[0]}}
+    <ul id="pagesForReview">
+        {{#each pagesForReview}}
+        <li> <a href="../{{$href}}">{{$title}}</a>
+            (<a href="{{$githubUrl}}">&#x2691;</a>)</li>
+        {{/each}}
+    </ul>
+    {{/if}}
+
+    {{#with pr}}
+    <h3> GitHub PR <a href="{{url}}">#{{number}}: {{title}}</a>
+    by {{author.name}} ({{state}} {{updatedAt}}) </h3>
+    <div class="prbody">
+        {{{body}}}
+    </div>
+    {{/with}}
+    </dd>
+{{/each}}
+</dl>
+</html>

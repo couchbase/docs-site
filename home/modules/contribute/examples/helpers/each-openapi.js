@@ -51,26 +51,33 @@ module.exports = function(context, ...schemas) {
     function process_toc (node) {
         
         // the Left of the JSON expression (except at the Root) is `key: `
-        // IF the related node has a Description, then link to it.
+        // IF the related node has a Description OR Title, then link to it.
         
         const left = (node, path) =>
             path.length ?
-                node.description ?
+                (node.description || node.title) ?
                     `<a href="#${path_id_href(path)}">${path[path.length-1]}</a>: `
                     : `${path[path.length-1]}: `
                 : ''
 
         const level = (path) => indent.repeat(path.length)
         
-        const internal = (node, path, children) => 
+        const handleObject = (node, path, children) =>
             level(path) + left(node, path) + '{\n' +
             children.join(',\n') + '\n' +
             level(path) + '}'
 
-        const leaf = (node, path) =>
+        const handleArray = (node, path, children) =>
+            level(path) + left(node, path) + '[' +
+            (children.length > 1 ?
+                '\n' + children.join(',\n') + '\n' + level(path) :
+                children[0])
+            + ']'
+
+        const handleLeaf = (node, path) =>
             level(path) + left(node, path) + format_type(node)
     
-        return iterate_properties(node, leaf, internal)
+        return iterate_properties(node, handleLeaf, handleObject, handleArray)
     }
     
     // The usual path to get to child objects is `properties` which includes specific, *named* properties.
@@ -98,26 +105,39 @@ module.exports = function(context, ...schemas) {
         return [...via_properties, ...via_additionalProperties]
     }
 
-    // recursive function to walk the tree, and call the supplied leaf and internal
-    // callbacks on each node in turn.
+    // recursive function to walk the tree.
+    // pass in callbacks for:
+    //   `handleLeaf`
+    //   `handleObject`
+    //   `handleArray`
+    // to handle the tree as appropriate
     // this can be used to:
     //    * generate a tree (as per process_toc)
     //    * flatten the tree into a list (as per get_items)
-    function iterate_properties (node, leaf, internal) {
+    function iterate_properties (node, handleLeaf, handleObject, handleArray) {
         
-        function recurse(node, path) {
-            if (node.type === 'object') {
 
-                const children = 
-                    child_entries(node)
+        function recurse(node, path) {
+
+            const get_children = (node) =>
+                child_entries(node)
                     .filter(([_,child]) => ! child.deprecated)
                     .sort()
                         .map(
                             ([child_key,child]) => recurse(child, [...path, child_key]))
-                return internal(node, path, children)
+
+            if (node.type === 'object') {
+                return handleObject(node, path, get_children(node))
+            }
+            else if (node.type == 'array') {
+                let children = get_children(node.items)
+                if (! children.length) {
+                    children = [ `${format_type(node.items)}...` ]
+                }
+                return handleArray(node, path, children)
             }
             else {
-                return leaf(node, path)
+                return handleLeaf(node, path)
             }
         }
         
@@ -125,10 +145,11 @@ module.exports = function(context, ...schemas) {
     }
     
     function get_items(node) {
-        const leaf = (node, path) => [{node, path}]
-        const internal = (node, path, children) => [{node, path}, ...children.flat()]
+        const handleLeaf = (node, path) => [{node, path}]
+        const handleObject = (node, path, children) => [{node, path}, ...children.flat()]
+        const handleArray = (node, path, children) => [{node, path}, ...children.flat()]
         
-        return iterate_properties(node, leaf, internal)
+        return iterate_properties(node, handleLeaf, handleObject, handleArray)
     }
     
     // workaround for displaying e.g. Role + User schemas

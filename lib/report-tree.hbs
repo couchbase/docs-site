@@ -1,0 +1,119 @@
+<style>
+
+body {
+    max-width: 60em;
+    margin: 3em auto;
+}
+
+/* Remove default bullets */
+ul, #tree {
+    list-style-type: none;
+}
+
+#pagesForReview {
+    list-style-type: disc;
+    font-size: 1.5em;
+}
+
+/* Remove margins and padding from the parent ul */
+#tree {
+    background-color: #eee;
+    margin: 0.5em;
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.tag {
+    text-decoration: none;
+}
+
+.tag:hover::after,
+.tag-first::after {
+    content: ' ' attr(data-tag);
+}
+
+/* Style the caret/arrow */
+.caret {
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.doc::before {
+    content: "\1F4C4";
+    display: inline-block;
+    margin-right: 6px;   
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+    display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+    display: block;
+}
+
+.prbody {
+    background: cornsilk;
+    margin: 0.5em;    
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+</style>
+
+<h1>What's Up, Doc? &#x1F407;</h1>
+<h2>Generated at {{date}}</h2>
+
+<h3>Featured Pages</h3>
+<ul id="pagesForReview">
+    <li>
+        <a href="../index.html">Start page</a>
+    </li>
+    {{#each pagesForReview}}
+    <li> <a href="../{{$href}}">{{$title}}</a>
+        (<a href="{{$githubUrl}}">&#x2691;</a>)</li>
+    {{/each}}
+</ul>
+
+{{#with pr}}
+<h3> GitHub PR <a href="{{url}}">#{{number}}: {{title}}</a>
+by {{author.name}} ({{state}} {{updatedAt}}) </h3>
+<div class="prbody">
+    {{{body}}}
+</div>
+{{/with}}
+
+<h3>Detailed Report</h3>
+From this <a href="antora-playbook.json">antora playbook</a>.
+
+<ul id="tree">
+{{#each tree.$children}}
+   {{> tree}}
+{{/each}}
+</ul>
+
+
+<script>
+const togglers = document.getElementsByClassName("caret");
+
+for (var toggler of togglers) {
+  toggler.addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
