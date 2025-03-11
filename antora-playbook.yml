@@ -6,7 +6,11 @@ site:
   title: Couchbase Docs Archive
   url: https://docs-archive.couchbase.com
   start_page: home::index.adoc
-  robots: disallow
+  robots: |
+    User-agent: *
+    Disallow: /
+    User-agent: Algolia Crawler
+    Allow: /
 git:
   ensure_git_suffix: false
 content:
