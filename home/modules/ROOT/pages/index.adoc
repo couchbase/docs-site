@@ -40,6 +40,7 @@ endif::[]
 
 [.tile]
 .Couchbase Autonomous Operator (Kubernetes)
+* xref:2.8@operator::whats-new.adoc[Version 2.8]
 * xref:2.7@operator::whats-new.adoc[Version 2.7]
 * xref:2.6@operator::whats-new.adoc[Version 2.6]
 * xref:2.5@operator::whats-new.adoc[Version 2.5]
@@ -245,6 +246,10 @@ endif::[]
 == Columnar SDKs
 
 [.tile]
+.Go SDK
+* xref:go-columnar-sdk:hello-world:overview.adoc[Version 1.0]
+
+[.tile]
 .Java SDK
 * xref:java-columnar-sdk:hello-world:overview.adoc[Version 1.0]
 
@@ -304,3 +309,4 @@ endif::[]
 * xref:4.6@server:connectors:hadoop-1.2/hadoop.adoc[Hadoop Connector 1.2]
 * xref:power-bi-connector:ROOT:index.adoc[Power BI Connector]
 * xref:tableau-connector:ROOT:index.adoc[Tableau Connector]
+* xref:superset-connector:ROOT:index.adoc[Apache Superset Connector]
