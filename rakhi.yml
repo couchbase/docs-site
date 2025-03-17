@@ -42,14 +42,10 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [AV-68634-tutorial-feature-branch, release/7.6] 
-  - url: https://github.com/couchbase/docs-capella
-    branches: [AV-68634-dev-tutorial-navigation]
+    branches: [DOC-9249-hashbytes-function, release/7.6] 
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.6]
-  - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.5]  
-    
+ 
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
