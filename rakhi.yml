@@ -41,13 +41,13 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: ../docs-devex
+  - url: https://github.com/couchbaselabs/docs-devex
     branches: [AV-68634-tutorial-feature-branch, release/7.6] 
-  - url: ../docs-capella
+  - url: https://github.com/couchbase/docs-capella
     branches: [AV-68634-dev-tutorial-navigation]
-  - url: ../docs-server
+  - url: https://github.com/couchbase/docs-server
     branches: [release/7.6]
-  - url: ../docs-sdk-java
+  - url: https://github.com/couchbase/docs-sdk-java
     branches: [release/3.5]  
     
 asciidoc:
