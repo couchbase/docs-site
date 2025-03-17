@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [DOC-9249-hashbytes-function, release/7.6] 
+    branches: [DOC-9249-hashbytes-function] 
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.6]
  
