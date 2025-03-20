@@ -68,7 +68,6 @@ content:
   - url: https://github.com/couchbase/docs-operator
     branches: [release/2.8.1, release/2.8, release/2.7, release/2.6, release/2.5, release/2.4]
     # release/2.8.1 is set to version `2.9` so should not clash with release/2.8
-    start_path: docs/user
   - url: https://github.com/couchbaselabs/observability
     branches: [main]
     start_path: docs
