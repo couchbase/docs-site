@@ -64,7 +64,7 @@ content:
     branches: [main]
 
   # Operator unbundling test:
-  - url: https://github.com/osfameron/couchbase-operator # Hakim's fork 
+  - url: https://github.com/couchbase/couchbase-operator
     branches: [master, 2.8.x, 2.7.x, 2.6.x, 2.5.x, 2.4.x]
     start_path: docs/user
   - url: https://github.com/couchbase/docs-operator
