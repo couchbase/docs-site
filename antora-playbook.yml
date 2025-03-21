@@ -62,9 +62,16 @@ content:
     branches: [main]
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
+
+  # Couchbase Autonomous Kubernetes Operator
+  # Generated content remains in monorepo
+  # handwritten in docs-operator.
   - url: https://github.com/couchbase/couchbase-operator
     branches: [2.8.x, 2.7.x, 2.6.x, 2.5.x, 2.4.x]
     start_path: docs/user
+  - url: https://github.com/couchbase/docs-operator
+    branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.4]
+
   - url: https://github.com/couchbaselabs/observability
     branches: [0.2.x]
     start_path: docs
