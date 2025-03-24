@@ -169,23 +169,36 @@ if [ -n "$REMOTE" ]; then
     echo Requested the build at Github
     echo see https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
     echo
+    echo Visit 'https://preview.docs-test.couchbase.com/builds.html' to see all completed builds
+    echo
 
-    sleep 5
-    gh run list --repo=couchbase/docs-infra \
-        --workflow=preview-deploy.yml \
-        --created $(date '+%Y-%m-%d') \
-        --limit 3 \
-        --json url,displayTitle,createdAt \
-        --template \
-'{{range .}}
+    for i in {1..10}
+    do
+        echo "Polling github..."
+        RUN=$(
+            gh run list --repo=couchbase/docs-infra \
+                --workflow=preview-deploy.yml \
+                --created $(date '+%Y-%m-%d') \
+                --limit 3 \
+                --json url,displayTitle,createdAt \
+                --template $TEMPLATE \
+'read -r -d '' TEMPLATE <<EOT
+{{range .}}
 {{.url}}
 {{ .displayTitle}}
 {{ (timeago .createdAt)}}
 {{end}}' \
-        | grep --context=1 "${PREVIEW_REPO}-${PREVIEW_BRANCH}"
+                | grep --context=1 "/${PREVIEW_REPO}-${PREVIEW_BRANCH}/" \
+                | head -n 1 )
+        # https://github.com/couchbase/docs-infra/actions/runs/14029636191
+        if [ -n "$RUN" ]; then
+            echo "Opening $RUN in browser"
+            open $RUN
+            exit 0
+        fi
+    done
 
-    echo
-    echo Visit 'https://preview.docs-test.couchbase.com/builds.html' to see all completed builds
+
 else
     export PREVIEW_GITHUB_REMOTE=$(git remote get-url origin 2>/dev/null)
     DOCS_SITE=$(realpath $0/../..)
