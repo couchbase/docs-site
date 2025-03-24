@@ -49,7 +49,6 @@ content:
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [release/7.6, release/7.2, capella]
-    start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_paths: [docs/public, docs/columnar]
