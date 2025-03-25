@@ -175,7 +175,8 @@ if [ -n "$REMOTE" ]; then
     for i in {1..10}
     do
         echo "Polling github..."
-        RUN=$(
+        sleep 7 # try to avoid showing an earlier run
+        if RUN=$(
             gh run list --repo=couchbase/docs-infra \
                 --workflow=preview-deploy.yml \
                 --created $(date '+%Y-%m-%d') \
@@ -189,9 +190,8 @@ if [ -n "$REMOTE" ]; then
 {{ (timeago .createdAt)}}
 {{end}}' \
                 | grep --context=1 "/${PREVIEW_REPO}-${PREVIEW_BRANCH}/" \
-                | head -n 1 )
-        # https://github.com/couchbase/docs-infra/actions/runs/14029636191
-        if [ -n "$RUN" ]; then
+                | head -n 1 ); then
+            # https://github.com/couchbase/docs-infra/actions/runs/14029636191
             echo "Opening $RUN in browser"
             open $RUN
             exit 0
