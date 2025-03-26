@@ -1,0 +1,73 @@
+
+= Deploy and Manage Couchbase
+:page-layout: landing-page-capella
+:tabs:
+:page-rank: 85
+:!sectids:
+:icons: font
+:page-nav-header-levels: 2
+
+include::home::partial$info-banner.adoc[]
+
+= Deploy and Manage Couchbase
+
+The Developer Data Platform for Critical Applications in Our AI World.
+
+Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
+Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in eleven popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
+
+
+
+[.centered.card-container]
+== Deployment Choices for Your Database
+
+
+[.card-box]
+=== icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
+
+The easiest route is to https://cloud.couchbase.com/sign-up[sign up to Couchbase Capella and deploy a free tier cluster^].
+Alternatively, take a look at the self-managed Couchbase Server options:
+
+* xref:{version-server}@server:install:get-started.adoc[Deployment overview]
+* xref:{version-server}@server:install:getting-started-docker.adoc[Docker Install]
+* xref:operator::overview.adoc[Couchbase Autonomous Operator]
+** xref:operator::install-kubernetes.adoc[Kubernetes]
+** xref:operator::install-openshift.adoc[Openshift]
+* xref:{version-server}server:cloud:couchbase-cloud-deployment.adoc[Cloud Marketplace]:
+** xref:{version-server}@server:cloud:couchbase-aws-marketplace.adoc[AWS Marketplace]
+** xref:{version-server}@server:cloud:couchbase-azure-marketplace.adoc[Azure Marketplace]
+** xref:{version-server}@server:cloud:couchbase-gcp-cloud-launcher.adoc[GCP Marketplace]
+
+
+
+
+[.card-box]
+=== icon:rocket[] Real Time Analytics with Capella Columnar SDKs
+
+xref:columnar:intro:intro.adoc[Capella Columnar] brings the power of NoSQL to the world of analytics.
+This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications.
+
+Self-managed Columnar allows versatile deployment options.
+
+
+
+[.card-box]
+=== icon:rocket[] Develop for Mobile and the Edge
+
+Build your app for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
+
+Build your app for offline-first connectivity with xref:couchbase-lite::introduction.adoc[Couchbase Lite],
+then sync to Couchbase Server with xref:cloud:app-services:index.adoc[Capella App Services]
+(or self-managed xref:sync-gateway::introduction.adoc[Sync Gateway]) --
+or run peer-to-peer.
+
+
+[.card-box]
+=== icon:rocket[] Develop RAG and Agentic AI Applications
+
+Our Vector Search Service facilitates RAG applications -- and offers the ability to combine searches with our sophisticated Search API.
+Agentic Apps can be built with Agent Catalog (currently in Private Preview).
+
+* Vector Search
+* Agent Catalog Private Preview
+* Other AI?
