@@ -159,45 +159,44 @@ if [ -n "$REMOTE" ]; then
     assert "$(git status -s -uno)" '' 'You have uncommitted changes.'
     assert "$(git push --dry-run 2>&1)" 'Everything up-to-date' 'You have unpushed changes.'
 
-    gh workflow run --repo couchbase/docs-infra preview-deploy.yml \
+    WORKFLOW=preview-deploy.yml
+    UUID=$(uuidgen)
+
+    gh workflow run --repo couchbase/docs-infra $WORKFLOW \
         --field preview_repo=${PREVIEW_REPO} \
         --field preview_branch=${PREVIEW_BRANCH} \
         --field preview_start_path=${PREVIEW_START_PATH} \
         --field preview_override=${PREVIEW_OVERRIDE} \
+        --field uuid=${UUID} \
         > /dev/null
 
-    echo Requested the build at Github
+    echo Requested the build at Github with UUID $UUID
     echo see https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
     echo
     echo Visit 'https://preview.docs-test.couchbase.com/builds.html' to see all completed builds
     echo
 
-    for i in {1..10}
-    do
-        echo "Polling github..."
-        sleep 7 # try to avoid showing an earlier run
-        if RUN=$(
-            gh run list --repo=couchbase/docs-infra \
-                --workflow=preview-deploy.yml \
-                --created $(date '+%Y-%m-%d') \
-                --limit 3 \
-                --json url,displayTitle,createdAt \
-                --template $TEMPLATE \
-'read -r -d '' TEMPLATE <<EOT
-{{range .}}
-{{.url}}
-{{ .displayTitle}}
-{{ (timeago .createdAt)}}
-{{end}}' \
-                | grep --context=1 "/${PREVIEW_REPO}-${PREVIEW_BRANCH}/" \
-                | head -n 1 ); then
-            # https://github.com/couchbase/docs-infra/actions/runs/14029636191
-            echo "Opening $RUN in browser"
-            open $RUN
+
+    for i in {1..10}; do
+        echo Polling github...
+        URL=$(gh run list \
+            --repo couchbase/docs-infra \
+            -w $WORKFLOW \
+            --json displayTitle,url,databaseId \
+            | jq -r \
+                --arg UUID $UUID \
+                '.[] | select(.displayTitle | test($UUID))| .url' )
+        if [ -n "$URL" ]; then
+            echo Opening $URL in your web browser
+            # or could `gh run watch $databaseId`
+            open $URL
             exit 0
         fi
-    done
 
+        sleep 3
+    done
+    echo Timed out. Check Github actions
+    exit 1
 
 else
     export PREVIEW_GITHUB_REMOTE=$(git remote get-url origin 2>/dev/null)
