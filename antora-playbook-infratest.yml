@@ -63,98 +63,98 @@ content:
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
 
-  # Couchbase Autonomous Kubernetes Operator
-  # Generated content remains in monorepo
-  # handwritten in docs-operator.
-  - url: https://github.com/couchbase/couchbase-operator
-    branches: [2.8.x]
-    start_path: docs/user
-  - url: https://github.com/couchbase/docs-operator
-    branches: [release/2.8]
-
-  - url: https://github.com/couchbaselabs/observability
-    branches: [0.2.x]
-    start_path: docs
-  - url: https://github.com/couchbaselabs/cbmultimanager
-    branches: [0.2.x]
-    start_path: docs
-  - url: https://github.com/couchbase/docs-elastic-search
-    branches: [main]
-  - url: https://github.com/couchbase/docs-kafka
-    branches: [main]
-  - url: https://github.com/couchbase/docs-spark
-    branches: [release/3.5]
-  - url: https://github.com/couchbase/docs-tableau
-    branches: [release/1.1]
-  - url: https://github.com/couchbase/docs-connectors-power-bi
-    branches: [main]
-  - url: https://github.com/couchbase/docs-connectors-superset.git
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-connectors-talend
-  - url: https://github.com/couchbase/docs-analytics
-    branches: [release/7.6]
-  - url: https://github.com/couchbase/couchbase-cli
-    branches: [trinity]
-    start_path: docs
-  - url: https://github.com/couchbase/backup
-    branches: [trinity]
-    start_path: docs
-  # NOTE docs-server is currently after other server repos so nav key wins
-  - url: https://github.com/couchbase/docs-server
-    branches: [release/7.6]
-  - url: https://github.com/couchbase/docs-sdk-common
-    branches: [release/7.6]
-  - url: https://github.com/couchbase/docs-sdk-c
-    branches: [release/3.3]
-  - url: https://github.com/couchbase/docs-sdk-cxx
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [temp/3.6]
-  - url: https://github.com/couchbase/docs-sdk-go
-    branches: [temp/2.9]
-  - url: https://github.com/couchbase/docs-sdk-java
-    branches: [temp/3.7]
-  - url: https://github.com/couchbase/docs-quarkus-extension
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [temp/1.4]
-  - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [temp/4.4]
-  - url: https://github.com/couchbase/docs-sdk-php
-    branches: [temp/4.2]
-  - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.3]
-  - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [temp/3.5]
-  - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/1.7]
-  - url: https://github.com/couchbase/docs-sdk-extensions
-    branches: [main]
-    # Columnar dev
-  - url: https://github.com/couchbase/docs-columnar-sdk-common
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-columnar-sdk-go
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-columnar-sdk-java
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-columnar-sdk-python
-    branches: [release/1.0]
-    # Mobile Docs Pages
-  - url: https://github.com/couchbase/docs-mobile
-    branches: [release/3.1]
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/3.2]
-  - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/3.2]
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/edge-server
-    branches: [main]
-    start_path: docs
-  - url: https://github.com/couchbase/docs-cloud-native
-    branches: [cloud-native-2.2]
+#  # Couchbase Autonomous Kubernetes Operator
+#  # Generated content remains in monorepo
+#  # handwritten in docs-operator.
+#  - url: https://github.com/couchbase/couchbase-operator
+#    branches: [2.8.x]
+#    start_path: docs/user
+#  - url: https://github.com/couchbase/docs-operator
+#    branches: [release/2.8]
+#
+#  - url: https://github.com/couchbaselabs/observability
+#    branches: [0.2.x]
+#    start_path: docs
+#  - url: https://github.com/couchbaselabs/cbmultimanager
+#    branches: [0.2.x]
+#    start_path: docs
+#  - url: https://github.com/couchbase/docs-elastic-search
+#    branches: [main]
+#  - url: https://github.com/couchbase/docs-kafka
+#    branches: [main]
+#  - url: https://github.com/couchbase/docs-spark
+#    branches: [release/3.5]
+#  - url: https://github.com/couchbase/docs-tableau
+#    branches: [release/1.1]
+#  - url: https://github.com/couchbase/docs-connectors-power-bi
+#    branches: [main]
+#  - url: https://github.com/couchbase/docs-connectors-superset.git
+#    branches: [release/1.0]
+#  - url: https://github.com/couchbase/docs-connectors-talend
+#  - url: https://github.com/couchbase/docs-analytics
+#    branches: [release/7.6]
+#  - url: https://github.com/couchbase/couchbase-cli
+#    branches: [trinity]
+#    start_path: docs
+#  - url: https://github.com/couchbase/backup
+#    branches: [trinity]
+#    start_path: docs
+#  # NOTE docs-server is currently after other server repos so nav key wins
+#  - url: https://github.com/couchbase/docs-server
+#    branches: [release/7.6]
+#  - url: https://github.com/couchbase/docs-sdk-common
+#    branches: [release/7.6]
+#  - url: https://github.com/couchbase/docs-sdk-c
+#    branches: [release/3.3]
+#  - url: https://github.com/couchbase/docs-sdk-cxx
+#    branches: [release/1.0]
+#  - url: https://github.com/couchbase/docs-sdk-dotnet
+#    branches: [temp/3.6]
+#  - url: https://github.com/couchbase/docs-sdk-go
+#    branches: [temp/2.9]
+#  - url: https://github.com/couchbase/docs-sdk-java
+#    branches: [temp/3.7]
+#  - url: https://github.com/couchbase/docs-quarkus-extension
+#    branches: [release/1.0]
+#  - url: https://github.com/couchbase/docs-sdk-kotlin
+#    branches: [temp/1.4]
+#  - url: https://github.com/couchbase/docs-sdk-nodejs
+#    branches: [temp/4.4]
+#  - url: https://github.com/couchbase/docs-sdk-php
+#    branches: [temp/4.2]
+#  - url: https://github.com/couchbase/docs-sdk-python
+#    branches: [temp/4.3]
+#  - url: https://github.com/couchbase/docs-sdk-ruby
+#    branches: [temp/3.5]
+#  - url: https://github.com/couchbase/docs-sdk-scala
+#    branches: [release/1.7]
+#  - url: https://github.com/couchbase/docs-sdk-extensions
+#    branches: [main]
+#    # Columnar dev
+#  - url: https://github.com/couchbase/docs-columnar-sdk-common
+#    branches: [release/1.0]
+#  - url: https://github.com/couchbase/docs-columnar-sdk-go
+#    branches: [release/1.0]
+#  - url: https://github.com/couchbase/docs-columnar-sdk-java
+#    branches: [release/1.0]
+#  - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
+#    branches: [release/1.0]
+#  - url: https://github.com/couchbase/docs-columnar-sdk-python
+#    branches: [release/1.0]
+#    # Mobile Docs Pages
+#  - url: https://github.com/couchbase/docs-mobile
+#    branches: [release/3.1]
+#  - url: https://github.com/couchbaselabs/docs-couchbase-lite
+#    branches: [release/3.2]
+#  - url: https://github.com/couchbaselabs/docs-sync-gateway
+#    branches: [release/3.2]
+#  - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
+#    branches: [release/1.0]
+#  - url: https://github.com/couchbase/edge-server
+#    branches: [main]
+#    start_path: docs
+#  - url: https://github.com/couchbase/docs-cloud-native
+#    branches: [cloud-native-2.2]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
