@@ -47,13 +47,13 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbaselabs/docs-devex
-    branches: [capella]
-  - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [main]
-    start_paths: [docs/public]
-  - url: https://github.com/couchbase/docs-capella
+  - url: ../docs-devex
     branches: [AV-93521-capella-udf-support]
+  #- url: https://github.com/couchbasecloud/couchbase-cloud
+    #branches: [main]
+    #start_paths: [docs/public]
+  - url: ../docs-capella
+    branches: [main]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
