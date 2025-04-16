@@ -48,7 +48,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [AV-93521-capella-udf-support]
+    branches: [AV-93521-capella-udfs-support]
   #- url: https://github.com/couchbasecloud/couchbase-cloud
     #branches: [main]
     #start_paths: [docs/public]
