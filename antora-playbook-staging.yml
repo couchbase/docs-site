@@ -114,7 +114,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-go
     branches: [temp/2.10, temp/2.9, temp/2.8, release/2.7, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.8, temp/3.7, temp/3.6, release/3.5, release/3.4]
+    branches: [tutorial-student-record, temp/3.7, temp/3.6, release/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-quarkus-extension
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-kotlin
