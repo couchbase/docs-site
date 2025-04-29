@@ -76,39 +76,6 @@ POSITIONAL_ARGS=()
 REMOTE=""
 INIT=""
 
-while [[ $# -gt 0 ]]; do
-  case $1 in
-    -h|--help)
-      help
-      exit 0
-      ;;
-    -r|--remote)
-      REMOTE="true"
-      shift # past argument
-      ;;
-    --init)
-      INIT=true
-      shift
-      ;;
-    -*|--*)
-      echo "Unknown option $1"
-      exit 1
-      ;;
-    *)
-      POSITIONAL_ARGS+=("$1") # save positional arg
-      shift # past argument
-      ;;
-  esac
-done
-
-if [ -n "$INIT" ]; then
-    echo "Linking 'preview' command (you may need to enter your password)"
-    set -x
-    sudo ln -sf $(realpath $0) /usr/local/bin/preview
-    which preview
-    exit 0
-fi
-
 # define utility function
 upfind () {
     WHAT=$1
@@ -131,6 +98,45 @@ TOPLEVEL=$(git rev-parse --show-toplevel)
 export PREVIEW_REPO=$(basename $TOPLEVEL)
 export PREVIEW_BRANCH=$(git branch --show-current)
 export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
+export PREVIEW_CONFIG=$PREVIEW_BRANCH
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      help
+      exit 0
+      ;;
+    -r|--remote)
+      REMOTE="true"
+      shift # past argument
+      ;;
+    --init)
+      INIT=true
+      shift
+      ;;
+    -c|--config)
+      shift
+      PREVIEW_CONFIG=$1
+      shift
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+if [ -n "$INIT" ]; then
+    echo "Linking 'preview' command (you may need to enter your password)"
+    set -x
+    sudo ln -sf $(realpath $0) /usr/local/bin/preview
+    which preview
+    exit 0
+fi
 
 if [ -z "$REMOTE" ]; then
     export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
@@ -158,6 +164,7 @@ assert() {
 if [ -n "$REMOTE" ]; then
     assert "$(git status -s -uno)" '' 'You have uncommitted changes.'
     assert "$(git push --dry-run 2>&1)" 'Everything up-to-date' 'You have unpushed changes.'
+    assert "$PREVIEW_BRANCH" "$PREVIEW_CONFIG" "Remote preview doesn't support custom --config, will be ignored"
 
     WORKFLOW=preview-deploy.yml
     UUID=$(uuidgen)
