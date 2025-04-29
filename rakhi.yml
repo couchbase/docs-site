@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [DOC-12664-automatic-workload-reporting] 
+    branches: [DOC-13215-compress-uncompress-functions] 
   - url: https://github.com/couchbase/docs-server
     branches: [release/8.0]
  
