@@ -54,7 +54,7 @@ content:
     branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [AV-45646-gcp-pvt-endpoints]
+    branches: [AV-98982_oidc-procedures]
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
   # - url: https://git@github.com/couchbase/couchbase-operator
