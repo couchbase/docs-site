@@ -14,3 +14,4 @@ xref-validator.log
 .idea
 lab.sh
 record.json
+antora-playbook.preview.local.yml
