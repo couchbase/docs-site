@@ -37,37 +37,9 @@ The latter will show you the URL to find the workflow:
 
     https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
 
-CONFIGURATION
+DOCUMENTATION
 
-You don't need to do any configuration to use this. If your antora.yml contains, e.g:
-
-    name: columnar
-    start_page: intro:intro.adoc
-
-Then the preview will automatically start on the defined page.
-
-In some cases you might want to add additional sources to build along with this content:
-
-    ext:
-        preview:
-            HEAD:
-                sources:
-                    couchbase-cloud:
-                        branches: main
-                        startPaths: docs/columnar/
-
-Note that e.g. 'startPaths' must be camel-cased.
-
-You can also override other playbook details.
-
-                override:
-                    asciidoc:
-                        attributes:
-                            foo: bar
-
-SEE ALSO
-
-https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2660597775/experimental+preview+script
+See https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2660597775/preview+script
 
 HELP
 }
@@ -75,30 +47,7 @@ HELP
 POSITIONAL_ARGS=()
 REMOTE=""
 INIT=""
-
-# define utility function
-upfind () {
-    WHAT=$1
-    DEPTH=${2:-1}
-    if [ "$DEPTH" -ge 5 ]; then
-        return
-    fi
-    ls -d $WHAT 2>/dev/null || upfind ../$WHAT $((++DEPTH))
-}
-
-ANTORA=$(upfind antora.yml)
-if [ -z "$ANTORA" ]; then
-    echo Did not find 'antora.yml'.
-    echo Run preview from a content repository under startPath!
-    exit 1
-fi
-ANTORA=$(realpath $(dirname $ANTORA))
-TOPLEVEL=$(git rev-parse --show-toplevel)
-
-export PREVIEW_REPO=$(basename $TOPLEVEL)
-export PREVIEW_BRANCH=$(git branch --show-current)
-export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
-export PREVIEW_CONFIG=$PREVIEW_BRANCH
+PREVIEW_CONFIG=""
 
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -131,12 +80,43 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [ -n "$INIT" ]; then
+    DOCS_SITE=$(realpath $0/../..)
+    cd $DOCS_SITE
+
+    cp -n antora-playbook.preview.local.yml-example antora-playbook.preview.local.yml \
+      || echo "antora-playbook.preview.local.yml already exists"
+
     echo "Linking 'preview' command (you may need to enter your password)"
     set -x
+
     sudo ln -sf $(realpath $0) /usr/local/bin/preview
     which preview
     exit 0
 fi
+
+# define utility function
+upfind () {
+    WHAT=$1
+    DEPTH=${2:-1}
+    if [ "$DEPTH" -ge 5 ]; then
+        return
+    fi
+    ls -d $WHAT 2>/dev/null || upfind ../$WHAT $((++DEPTH))
+}
+
+ANTORA=$(upfind antora.yml)
+if [ -z "$ANTORA" ]; then
+    echo Did not find 'antora.yml'.
+    echo Run preview from a content repository under startPath!
+    exit 1
+fi
+ANTORA=$(realpath $(dirname $ANTORA))
+TOPLEVEL=$(git rev-parse --show-toplevel)
+
+export PREVIEW_REPO=$(basename $TOPLEVEL)
+export PREVIEW_BRANCH=$(git branch --show-current)
+export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
+export PREVIEW_CONFIG=${PREVIEW_CONFIG:-$PREVIEW_BRANCH}
 
 if [ -z "$REMOTE" ]; then
     export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
