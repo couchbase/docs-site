@@ -45,6 +45,9 @@ content:
     branches: [DOC-12664-add-awr] 
   - url: https://github.com/couchbase/docs-server
     branches: [release/8.0]
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [release/7.6]
+    start_path: docs
  
 asciidoc:
   attributes:
