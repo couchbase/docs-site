@@ -1,0 +1,98 @@
+= Welcome to Couchbase Capella
+:page-layout: landing-page-capella
+:tabs:
+:page-rank: 85
+:!sectids:
+:icons: font
+:page-nav-header-levels: 2
+:page-aliases: cloud::index.adoc,
+// cloud & server?
+
+include::home::partial$info-banner.adoc[]
+
+= Your Operational Database -- in the Cloud, or Self-Managed
+
+
+
+// Role groups
+////
+== Get Started
+
+* xref:cloud:get-started:intro.adoc[Get started with Couchbase Capella -- a managed NoSQL database in the Cloud]
+xref:server:getting-started:start-here.adoc[Get started with Couchbase Server in your datacenter] -- or xref:server:install:getting-started-docker.adoc[Docker Install on your laptop].
+** xref:operator::overview.adoc[Couchbase Autonomous Operator] --
+with xref:operator::install-kubernetes.adoc[Kubernetes] or
+xref:operator::install-openshift.adoc[Openshift]
+** xref:{version-server}server:cloud:couchbase-cloud-deployment.adoc[Cloud Marketplace], with
+xref:{version-server}@server:cloud:couchbase-aws-marketplace.adoc[AWS Marketplace], 
+xref:{version-server}@server:cloud:couchbase-azure-marketplace.adoc[Azure Marketplace], or
+xref:{version-server}@server:cloud:couchbase-gcp-cloud-launcher.adoc[GCP Marketplace].
+* xref:sdk.adoc[Choose from 11 SDK languages].
+* Or develop for xref:[Mobile and Edge].
+
+
+== Develop
+
+
+
+== Manage
+
+
+
+
+== Exploe and Learn
+
+////
+
+
+
+
+// Product Groups
+
+== Couchbase Capella
+
+Your managed service in the Cloud.
+
+
+* https://cloud.couchbase.com/sign-up[Sign Up^]
+* xref:cloud:get-started:intro.adoc[]
+* xref:cloud:get-started:configuring-app-services.adoc[App Services, for data on the Edge]
+* xref:sdk.adoc[Dwvelop with SDKs in 11 popular languages]
+
+
+== Couchbase Server
+
+Couchbase Server -- Couchbase your way, with a self-managed cluster in your datacenter or private cloud.
+
+* xref:{version-server}@server:install:get-started.adoc[Deployment overview]
+* xref:{version-server}@server:install:getting-started-docker.adoc[Docker Install]
+* xref:operator::overview.adoc[Couchbase Autonomous Operator]
+** xref:operator::install-kubernetes.adoc[Kubernetes]
+** xref:operator::install-openshift.adoc[Openshift]
+* xref:{version-server}server:cloud:couchbase-cloud-deployment.adoc[Cloud Marketplace]:
+** xref:{version-server}@server:cloud:couchbase-aws-marketplace.adoc[AWS Marketplace]
+** xref:{version-server}@server:cloud:couchbase-azure-marketplace.adoc[Azure Marketplace]
+** xref:{version-server}@server:cloud:couchbase-gcp-cloud-launcher.adoc[GCP Marketplace]
+* xref:sdk.adoc[Dwvelop with SDKs in 11 popular languages]
+* Mobile and Edge data, synced through a xref:[self-managed SyncGateway Cluster].
+
+== 
+
+
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]
+* xref[]

@@ -55,7 +55,7 @@ they are purpose built for Columnar's analytical use cases.
 They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
 such as connection management and robust error handling.
 
-// * xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs]|
+* xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs]|
 * xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs]|
 * xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK Docs]
 * xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] 
