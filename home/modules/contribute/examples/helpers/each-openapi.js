@@ -92,7 +92,7 @@ module.exports = function(context, ...schemas) {
         
         function format_additionalProperties (ap) {
             if (typeof(ap) === 'boolean') ap = {}
-            return { ...{type: "object"}, ...ap }                                       
+            return { type: "object", ...ap }
         }
         
         const via_additionalProperties =
@@ -101,8 +101,10 @@ module.exports = function(context, ...schemas) {
                     `{${node.additionalProperties["x-additionalPropertiesName"] || "additionalProperties"}...}`,
                     format_additionalProperties(node.additionalProperties) ]]
                 : []
-        
-        return [...via_properties, ...via_additionalProperties]
+
+        const via_allOf = node.allOf?.flatMap(a => Object.entries(a.properties)) || []
+
+        return [...via_properties, ...via_additionalProperties, ...via_allOf]
     }
 
     // recursive function to walk the tree.
@@ -118,6 +120,18 @@ module.exports = function(context, ...schemas) {
         
 
         function recurse(node, path) {
+
+            if (! node.type) {
+                if (
+                    node?.additionalProperties?.type === 'object' || 
+                    node?.allOf?.[0]?.type === 'object'
+                ) {
+                    node.type = 'object'
+                } else {
+                    // node.type = 'unknown'
+                    console.warn(`No type for node ${path}`)
+                }
+            }
 
             const get_children = (node) =>
                 child_entries(node)
