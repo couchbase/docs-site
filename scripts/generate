@@ -1,14 +1,14 @@
 #!/bin/bash
 
 set -eo pipefail
-echo "🐇 Hello! Let's update stuff!"
+echo "🐇 Hello! Let's generate stuff!"
 echo
 
 help() {
     cat <<HELP | less
 NAME
 
-    update - a script to quickly update complex dependencies for a docs project
+    generate - a script to quickly generate complex dependencies for a docs project
 
 SET UP
 
@@ -18,20 +18,16 @@ Update your docs-site repo, and install the script.
     git checkout master
     git pull
 
-    scripts/update --init
+    scripts/generate --init
 
 You will also want to install 'gh' and log in.
 
     brew install gh
     gh auth login  # follow the instructions
 
-Now, from a content repo (under antora.yml) you can update dependencies.
+Now, from a content repo (under antora.yml) you can generate dependencies.
 
-    update
-
-Or a specific dependency
-
-    update management-api
+    generate data-api-docs
 
 DOCUMENTATION
 
@@ -69,11 +65,11 @@ if [ -n "$INIT" ]; then
     DOCS_SITE=$(realpath $0/../..)
     cd $DOCS_SITE
 
-    echo "Linking 'update' command (you may need to enter your password)"
+    echo "Linking 'generate' command (you may need to enter your password)"
     set -x
 
-    sudo ln -sf $(realpath $0) /usr/local/bin/update
-    which update
+    sudo ln -sf $(realpath $0) /usr/local/bin/generate
+    which generate
     exit 0
 fi
 
@@ -90,7 +86,7 @@ upfind () {
 ANTORA=$(upfind antora.yml)
 if [ -z "$ANTORA" ]; then
     echo Did not find 'antora.yml'.
-    echo Run update from a content repository under startPath!
+    echo Run generate from a content repository under startPath!
     exit 1
 fi
 ANTORA=$(realpath $(dirname $ANTORA))
@@ -102,9 +98,9 @@ export START_PATH=${ANTORA#$TOPLEVEL}
 START_PATH=${START_PATH#/}
 echo START :$START_PATH:
 if [[ -n "$START_PATH" ]]; then
-  WORKFLOW_PREFIX+="update-$START_PATH"
+  WORKFLOW_PREFIX+="generate-$START_PATH"
 else
-  WORKFLOW_PREFIX+="update"
+  WORKFLOW_PREFIX+="generate"
 fi
 
 WORKFLOW+="-${POSITIONAL_ARGS[0]}"
@@ -161,7 +157,7 @@ then
   exit 1
   
 else
-  echo no workflows found in $WORKFLOW_DIR, nothing to update
+  echo no workflows found in $WORKFLOW_DIR, nothing to generate
   exit 1
 fi
 
