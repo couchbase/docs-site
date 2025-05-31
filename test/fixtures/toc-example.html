@@ -1,0 +1,294 @@
+{
+   <a href="#allow_empty_password">allow_empty_password</a>: false,
+   <a href="#bucket">bucket</a>: "The database name",
+   <a href="#bucket_op_timeout_ms">bucket_op_timeout_ms</a>: 0,
+   <a href="#cacertpath">cacertpath</a>: "string",
+   cache: {
+      <a href="#cache-channel_cache">channel_cache</a>: {
+         <a href="#cache-channel_cache-compact_high_watermark_pct">compact_high_watermark_pct</a>: 80,
+         <a href="#cache-channel_cache-compact_low_watermark_pct">compact_low_watermark_pct</a>: 60,
+         <a href="#cache-channel_cache-enable_star_channel">enable_star_channel</a>: true,
+         <a href="#cache-channel_cache-expiry_seconds">expiry_seconds</a>: 60,
+         <a href="#cache-channel_cache-max_length">max_length</a>: 500,
+         <a href="#cache-channel_cache-max_num_pending">max_num_pending</a>: 10000,
+         <a href="#cache-channel_cache-max_number">max_number</a>: 50000,
+         <a href="#cache-channel_cache-max_wait_pending">max_wait_pending</a>: 5000,
+         <a href="#cache-channel_cache-max_wait_skipped">max_wait_skipped</a>: 3600000,
+         <a href="#cache-channel_cache-min_length">min_length</a>: 50
+      },
+      <a href="#cache-rev_cache">rev_cache</a>: {
+         <a href="#cache-rev_cache-max_memory_count_mb">max_memory_count_mb</a>: 0,
+         <a href="#cache-rev_cache-shard_count">shard_count</a>: "16",
+         <a href="#cache-rev_cache-size">size</a>: "5000"
+      }
+   },
+   <a href="#certpath">certpath</a>: "string",
+   <a href="#client_partition_window_secs">client_partition_window_secs</a>: 2592000,
+   <a href="#compact_interval_days">compact_interval_days</a>: 1,
+   <a href="#cors">cors</a>: {
+      <a href="#cors-headers">headers</a>: ["string"...],
+      <a href="#cors-login_origin">login_origin</a>: ["string"...],
+      <a href="#cors-origin">origin</a>: ["string"...]
+   },
+   <a href="#delta_sync">delta_sync</a>: {
+      <a href="#delta_sync-enabled">enabled</a>: false,
+      <a href="#delta_sync-rev_max_age_seconds">rev_max_age_seconds</a>: 86400
+   },
+   <a href="#disable_password_auth">disable_password_auth</a>: false,
+   <a href="#disable_public_all_docs">disable_public_all_docs</a>: false,
+   <a href="#enable_shared_bucket_access">enable_shared_bucket_access</a>: true,
+   <a href="#event_handlers">event_handlers</a>: {
+      <a href="#event_handlers-db_state_changed">db_state_changed</a>: {
+         <a href="#event_handlers-db_state_changed-filter">filter</a>: "string",
+         <a href="#event_handlers-db_state_changed-handler">handler</a>: "string",
+         <a href="#event_handlers-db_state_changed-options">options</a>: {
+            <a href="#event_handlers-db_state_changed-options-{additionalProperties}">{additionalProperties...}</a>: {
+
+            }
+         },
+         <a href="#event_handlers-db_state_changed-timeout">timeout</a>: 0,
+         <a href="#event_handlers-db_state_changed-url">url</a>: "string"
+      },
+      <a href="#event_handlers-document_changed">document_changed</a>: {
+         <a href="#event_handlers-document_changed-filter">filter</a>: "string",
+         <a href="#event_handlers-document_changed-handler">handler</a>: "string",
+         <a href="#event_handlers-document_changed-options">options</a>: {
+            <a href="#event_handlers-document_changed-options-{additionalProperties}">{additionalProperties...}</a>: {
+
+            }
+         },
+         <a href="#event_handlers-document_changed-timeout">timeout</a>: 0,
+         <a href="#event_handlers-document_changed-url">url</a>: "string"
+      },
+      <a href="#event_handlers-max_processes">max_processes</a>: "string",
+      <a href="#event_handlers-wait_for_process">wait_for_process</a>: "string"
+   },
+   <a href="#guest">guest</a>: {
+      <a href="#guest-admin_channels">admin_channels</a>: ["string"...],
+      <a href="#guest-admin_roles">admin_roles</a>: ["string"...],
+      <a href="#guest-all_channels">all_channels</a>: ["string"...],
+      <a href="#guest-collection_access">collection_access</a>: {
+         <a href="#guest-collection_access-{scopename}">{scopename...}</a>: {
+            <a href="#guest-collection_access-{scopename}-{collectionname}">{collectionname...}</a>: {
+               <a href="#guest-collection_access-{scopename}-{collectionname}-admin_channels">admin_channels</a>: ["string"...],
+               <a href="#guest-collection_access-{scopename}-{collectionname}-all_channels">all_channels</a>: ["string"...],
+               <a href="#guest-collection_access-{scopename}-{collectionname}-jwt_channels">jwt_channels</a>: ["string"...],
+               <a href="#guest-collection_access-{scopename}-{collectionname}-jwt_last_updated">jwt_last_updated</a>: "string"
+            }
+         }
+      },
+      <a href="#guest-disabled">disabled</a>: false,
+      <a href="#guest-email">email</a>: "string",
+      <a href="#guest-jwt_channels">jwt_channels</a>: ["string"...],
+      <a href="#guest-jwt_issuer">jwt_issuer</a>: "string",
+      <a href="#guest-jwt_last_updated">jwt_last_updated</a>: "string",
+      <a href="#guest-jwt_roles">jwt_roles</a>: ["string"...],
+      <a href="#guest-name">name</a>: "string",
+      <a href="#guest-password">password</a>: "string",
+      <a href="#guest-roles">roles</a>: ["string"...]
+   },
+   <a href="#import_backup_old_rev">import_backup_old_rev</a>: false,
+   <a href="#import_docs">import_docs</a>: true,
+   <a href="#import_filter">import_filter</a>: "function(doc) { if (doc.type != 'mobile') { return false; } return true; }",
+   <a href="#import_partitions">import_partitions</a>: 16,
+   index: {
+      <a href="#index-create_separate_principal_indexes">create_separate_principal_indexes</a>: false,
+      <a href="#index-num_partitions">num_partitions</a>: 1
+   },
+   <a href="#javascript_timeout_secs">javascript_timeout_secs</a>: 60,
+   <a href="#keypath">keypath</a>: "string",
+   <a href="#kv_tls_port">kv_tls_port</a>: 11207,
+   <a href="#local_doc_expiry_secs">local_doc_expiry_secs</a>: 7776000,
+   <a href="#local_jwt">local_jwt</a>: {
+      <a href="#local_jwt-{providername}">{providername...}</a>: {
+         <a href="#local_jwt-{providername}-algorithms">algorithms</a>: ["string"...],
+         <a href="#local_jwt-{providername}-channels_claim">channels_claim</a>: "string",
+         <a href="#local_jwt-{providername}-client_id">client_id</a>: "string",
+         <a href="#local_jwt-{providername}-disable_session">disable_session</a>: true,
+         <a href="#local_jwt-{providername}-issuer">issuer</a>: "string",
+         <a href="#local_jwt-{providername}-keys">keys</a>: [
+            <a href="#local_jwt-{providername}-keys-alg">alg</a>: "string",
+            <a href="#local_jwt-{providername}-keys-crv">crv</a>: "string",
+            <a href="#local_jwt-{providername}-keys-e">e</a>: "string",
+            <a href="#local_jwt-{providername}-keys-kid">kid</a>: "string",
+            <a href="#local_jwt-{providername}-keys-kty">kty</a>: "string",
+            <a href="#local_jwt-{providername}-keys-n">n</a>: "string",
+            <a href="#local_jwt-{providername}-keys-use">use</a>: "string",
+            <a href="#local_jwt-{providername}-keys-x">x</a>: "string",
+            <a href="#local_jwt-{providername}-keys-y">y</a>: "string"
+         ],
+         <a href="#local_jwt-{providername}-register">register</a>: true,
+         <a href="#local_jwt-{providername}-roles_claim">roles_claim</a>: "string",
+         <a href="#local_jwt-{providername}-user_prefix">user_prefix</a>: "string",
+         <a href="#local_jwt-{providername}-username_claim">username_claim</a>: "string"
+      }
+   },
+   <a href="#logging">logging</a>: {
+      <a href="#logging-audit">audit</a>: {
+         <a href="#logging-audit-disabled_roles">disabled_roles</a>: [
+            <a href="#logging-audit-disabled_roles-domain">domain</a>: "string",
+            <a href="#logging-audit-disabled_roles-name">name</a>: "string"
+         ],
+         <a href="#logging-audit-disabled_users">disabled_users</a>: [
+            <a href="#logging-audit-disabled_users-domain">domain</a>: "string",
+            <a href="#logging-audit-disabled_users-name">name</a>: "string"
+         ],
+         <a href="#logging-audit-enabled">enabled</a>: false,
+         <a href="#logging-audit-enabled_events">enabled_events</a>: [1234...]
+      },
+      <a href="#logging-console">console</a>: {
+         <a href="#logging-console-log_keys">log_keys</a>: ["string"...],
+         <a href="#logging-console-log_level">log_level</a>: "debug"
+      }
+   },
+   <a href="#max_concurrent_query_ops">max_concurrent_query_ops</a>: 1000,
+   <a href="#name">name</a>: "string",
+   <a href="#offline">offline</a>: false,
+   <a href="#oidc">oidc</a>: {
+      <a href="#oidc-default_provider">default_provider</a>: "string",
+      <a href="#oidc-providers">providers</a>: {
+         <a href="#oidc-providers-{providername}">{providername...}</a>: {
+            <a href="#oidc-providers-{providername}-InsecureSkipVerify">InsecureSkipVerify</a>: false,
+            <a href="#oidc-providers-{providername}-IsDefault">IsDefault</a>: true,
+            <a href="#oidc-providers-{providername}-Name">Name</a>: "string",
+            <a href="#oidc-providers-{providername}-allow_unsigned_provider_tokens">allow_unsigned_provider_tokens</a>: true,
+            <a href="#oidc-providers-{providername}-callback_url">callback_url</a>: "string",
+            <a href="#oidc-providers-{providername}-channels_claim">channels_claim</a>: "string",
+            <a href="#oidc-providers-{providername}-client_id">client_id</a>: "string",
+            <a href="#oidc-providers-{providername}-disable_callback_state">disable_callback_state</a>: false,
+            <a href="#oidc-providers-{providername}-disable_cfg_validation">disable_cfg_validation</a>: false,
+            <a href="#oidc-providers-{providername}-disable_session">disable_session</a>: true,
+            <a href="#oidc-providers-{providername}-discovery_url">discovery_url</a>: "string",
+            <a href="#oidc-providers-{providername}-include_access">include_access</a>: true,
+            <a href="#oidc-providers-{providername}-issuer">issuer</a>: "string",
+            <a href="#oidc-providers-{providername}-register">register</a>: true,
+            <a href="#oidc-providers-{providername}-roles_claim">roles_claim</a>: "string",
+            <a href="#oidc-providers-{providername}-scope">scope</a>: ["string"...],
+            <a href="#oidc-providers-{providername}-user_prefix">user_prefix</a>: "string",
+            <a href="#oidc-providers-{providername}-username_claim">username_claim</a>: "string",
+            <a href="#oidc-providers-{providername}-validation_key">validation_key</a>: "string"
+         }
+      }
+   },
+   <a href="#old_rev_expiry_seconds">old_rev_expiry_seconds</a>: 300,
+   <a href="#password">password</a>: "string",
+   <a href="#query_pagination_limit">query_pagination_limit</a>: 5000,
+   replications: {
+      <a href="#replications-replication_id">replication_id</a>: {
+         <a href="#replications-replication_id-adhoc">adhoc</a>: false,
+         <a href="#replications-replication_id-batch_size">batch_size</a>: 200,
+         <a href="#replications-replication_id-collections_enabled">collections_enabled</a>: false,
+         <a href="#replications-replication_id-collections_local">collections_local</a>: ["string"...],
+         <a href="#replications-replication_id-collections_remote">collections_remote</a>: ["string"...],
+         <a href="#replications-replication_id-conflict_resolution_type">conflict_resolution_type</a>: "default",
+         <a href="#replications-replication_id-continuous">continuous</a>: false,
+         <a href="#replications-replication_id-custom_conflict_resolver">custom_conflict_resolver</a>: "none",
+         <a href="#replications-replication_id-direction">direction</a>: "string",
+         <a href="#replications-replication_id-enable_delta_sync">enable_delta_sync</a>: false,
+         <a href="#replications-replication_id-filter">filter</a>: "string",
+         <a href="#replications-replication_id-initial_state">initial_state</a>: "running",
+         <a href="#replications-replication_id-max_backoff_time">max_backoff_time</a>: 5,
+         <a href="#replications-replication_id-purge_on_removal">purge_on_removal</a>: false,
+         <a href="#replications-replication_id-query_params">query_params</a>: ["string"...],
+         <a href="#replications-replication_id-remote">remote</a>: "string",
+         <a href="#replications-replication_id-remote_password">remote_password</a>: "string",
+         <a href="#replications-replication_id-remote_username">remote_username</a>: "string",
+         <a href="#replications-replication_id-replication_id">replication_id</a>: "string",
+         <a href="#replications-replication_id-run_as">run_as</a>: "string"
+      }
+   },
+   <a href="#revs_limit">revs_limit</a>: 100,
+   roles: {
+      <a href="#roles-{rolename}">{rolename...}</a>: {
+         <a href="#roles-{rolename}-admin_channels">admin_channels</a>: ["string"...],
+         <a href="#roles-{rolename}-all_channels">all_channels</a>: ["string"...],
+         <a href="#roles-{rolename}-collection_access">collection_access</a>: {
+            <a href="#roles-{rolename}-collection_access-{scopename}">{scopename...}</a>: {
+               <a href="#roles-{rolename}-collection_access-{scopename}-{collectionname}">{collectionname...}</a>: {
+                  <a href="#roles-{rolename}-collection_access-{scopename}-{collectionname}-admin_channels">admin_channels</a>: ["string"...],
+                  <a href="#roles-{rolename}-collection_access-{scopename}-{collectionname}-all_channels">all_channels</a>: ["string"...],
+                  <a href="#roles-{rolename}-collection_access-{scopename}-{collectionname}-jwt_channels">jwt_channels</a>: ["string"...],
+                  <a href="#roles-{rolename}-collection_access-{scopename}-{collectionname}-jwt_last_updated">jwt_last_updated</a>: "string"
+               }
+            }
+         },
+         <a href="#roles-{rolename}-name">name</a>: "string"
+      }
+   },
+   <a href="#scopes">scopes</a>: {
+      <a href="#scopes-{scopename}">{scopename...}</a>: {
+         <a href="#scopes-{scopename}-collections">collections</a>: {
+            <a href="#scopes-{scopename}-collections-{collectionname}">{collectionname...}</a>: {
+               <a href="#scopes-{scopename}-collections-{collectionname}-import_filter">import_filter</a>: "function(doc) { if (doc.type != 'mobile') { return false; } return true; }",
+               <a href="#scopes-{scopename}-collections-{collectionname}-sync">sync</a>: "function(doc){channel("collection name");}"
+            }
+         }
+      }
+   },
+   <a href="#send_www_authenticate_header">send_www_authenticate_header</a>: true,
+   <a href="#serve_insecure_attachment_types">serve_insecure_attachment_types</a>: false,
+   <a href="#server">server</a>: "string",
+   <a href="#session_cookie_http_only">session_cookie_http_only</a>: false,
+   <a href="#session_cookie_name">session_cookie_name</a>: "string",
+   <a href="#session_cookie_secure">session_cookie_secure</a>: true,
+   <a href="#sgreplicate_enabled">sgreplicate_enabled</a>: true,
+   <a href="#sgreplicate_websocket_heartbeat_secs">sgreplicate_websocket_heartbeat_secs</a>: 300,
+   <a href="#slow_query_warning_threshold">slow_query_warning_threshold</a>: 500,
+   <a href="#suspendable">suspendable</a>: false,
+   <a href="#sync">sync</a>: "function(doc){channel(doc.channels);}",
+   <a href="#unsupported">unsupported</a>: {
+      api_endpoints: {
+         <a href="#unsupported-api_endpoints-enable_couchbase_bucket_flush">enable_couchbase_bucket_flush</a>: true
+      },
+      <a href="#unsupported-dcp_read_buffer">dcp_read_buffer</a>: 0,
+      <a href="#unsupported-force_api_forbidden_errors">force_api_forbidden_errors</a>: true,
+      <a href="#unsupported-guest_read_only">guest_read_only</a>: true,
+      <a href="#unsupported-kv_buffer">kv_buffer</a>: 0,
+      oidc_test_provider: {
+         <a href="#unsupported-oidc_test_provider-enabled">enabled</a>: true
+      },
+      <a href="#unsupported-oidc_tls_skip_verify">oidc_tls_skip_verify</a>: true,
+      <a href="#unsupported-remote_config_tls_skip_verify">remote_config_tls_skip_verify</a>: true,
+      <a href="#unsupported-sgr_tls_skip_verify">sgr_tls_skip_verify</a>: true,
+      user_views: {
+         <a href="#unsupported-user_views-enabled">enabled</a>: true
+      },
+      warning_thresholds: {
+         <a href="#unsupported-warning_thresholds-access_and_role_grants_per_doc">access_and_role_grants_per_doc</a>: 0,
+         <a href="#unsupported-warning_thresholds-channel_name_size">channel_name_size</a>: 0,
+         <a href="#unsupported-warning_thresholds-channels_per_doc">channels_per_doc</a>: 0,
+         <a href="#unsupported-warning_thresholds-channels_per_user">channels_per_user</a>: 0,
+         <a href="#unsupported-warning_thresholds-xattr_size_bytes">xattr_size_bytes</a>: 0
+      }
+   },
+   <a href="#use_views">use_views</a>: false,
+   <a href="#user_xattr_key">user_xattr_key</a>: "string",
+   <a href="#username">username</a>: "string",
+   users: {
+      <a href="#users-{username}">{username...}</a>: {
+         <a href="#users-{username}-admin_channels">admin_channels</a>: ["string"...],
+         <a href="#users-{username}-admin_roles">admin_roles</a>: ["string"...],
+         <a href="#users-{username}-all_channels">all_channels</a>: ["string"...],
+         <a href="#users-{username}-collection_access">collection_access</a>: {
+            <a href="#users-{username}-collection_access-{scopename}">{scopename...}</a>: {
+               <a href="#users-{username}-collection_access-{scopename}-{collectionname}">{collectionname...}</a>: {
+                  <a href="#users-{username}-collection_access-{scopename}-{collectionname}-admin_channels">admin_channels</a>: ["string"...],
+                  <a href="#users-{username}-collection_access-{scopename}-{collectionname}-all_channels">all_channels</a>: ["string"...],
+                  <a href="#users-{username}-collection_access-{scopename}-{collectionname}-jwt_channels">jwt_channels</a>: ["string"...],
+                  <a href="#users-{username}-collection_access-{scopename}-{collectionname}-jwt_last_updated">jwt_last_updated</a>: "string"
+               }
+            }
+         },
+         <a href="#users-{username}-disabled">disabled</a>: false,
+         <a href="#users-{username}-email">email</a>: "string",
+         <a href="#users-{username}-jwt_channels">jwt_channels</a>: ["string"...],
+         <a href="#users-{username}-jwt_issuer">jwt_issuer</a>: "string",
+         <a href="#users-{username}-jwt_last_updated">jwt_last_updated</a>: "string",
+         <a href="#users-{username}-jwt_roles">jwt_roles</a>: ["string"...],
+         <a href="#users-{username}-name">name</a>: "string",
+         <a href="#users-{username}-password">password</a>: "string",
+         <a href="#users-{username}-roles">roles</a>: ["string"...]
+      }
+   },
+   <a href="#view_query_timeout_secs">view_query_timeout_secs</a>: 75
+}

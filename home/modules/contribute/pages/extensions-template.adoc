@@ -77,9 +77,10 @@ Handlebars in docs-site lib/helpers/*.js are automatically included
 
 == each-openapi helper.
 
-This handlebars Block Helper should work with both YAML and JSON.
+This handlebars Block Helper is now bundled in docs-site.
+It should work with both YAML and JSON.
 
-This requires output collated into a single file, for example using:
+It requires the OpenAPI to be output collated into a single file, for example using:
 
 [source,shell]
 ----
@@ -95,9 +96,7 @@ The macro descends into each `properties` object and generates a table of conten
 
 In addition, we pass the contents of each node in turn to the Handlebars template contained in the `{{#each-openapi}}` block.
 
-WARNING: handling `additionalProperties` is not yet implemented.
-
-[template,example$bundled-admin.json, helpers="example$helpers/each-openapi.js"]
+[template,example$bundled-admin.yaml]
 --
 
 {{#each-openapi components.schemas.Database}}

@@ -19,6 +19,12 @@
     "markdown-it": "^13.0.1",
     "yaml": "^2.7.0"
   },
+  "devDependencies": {
+    "mocha": "^11.5.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/couchbase/docs-site.git"
