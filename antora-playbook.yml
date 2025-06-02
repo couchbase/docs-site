@@ -127,7 +127,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-python
     branches: [temp/4.3, temp/4.2, release/4.1]
   - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [temp/3.5, release/3.4]
+    branches: [temp/3.6, temp/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/1.8, release/1.7, temp/1.6, release/1.5, release/1.4]
   - url: https://github.com/couchbase/docs-sdk-extensions
