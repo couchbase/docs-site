@@ -143,6 +143,7 @@ assert() {
 
 if [ -n "$REMOTE" ]; then
     assert "$(git status -s -uno)" '' 'You have uncommitted changes.'
+    assert "$(git status -s preview/HEAD.yml preview/${PREVIEW_BRANCH}.yml)" '' 'You have uncommitted changes to the preview/ configuration.'
     assert "$(git push --dry-run 2>&1)" 'Everything up-to-date' 'You have unpushed changes.'
     assert "$PREVIEW_BRANCH" "$PREVIEW_CONFIG" "Remote preview doesn't support custom --config, will be ignored"
 
