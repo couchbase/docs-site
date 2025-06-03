@@ -10,16 +10,143 @@ describe('process_toc', function () {
     const bundledAdmin = yaml.load(
       fs.readFileSync('home/modules/contribute/examples/bundled-admin.yaml', 'utf8'))
 
-    console.dir(bundledAdmin, {depth: 2})
-
     const toc = process_toc(bundledAdmin.components.schemas.Database)
     fs.writeFileSync('test/fixtures/toc-example.html.actual', toc)
 
     const expected = fs.readFileSync('test/fixtures/toc-example.html', 'utf8')
 
     assert.equal(toc, expected)
-
   })
+
+  const cleanup_whitespace = (str) => str.replace(/\s+/g, ' ').trim()
+  const assert_equal_no_whitespace = (actual, expected) => {
+    assert.equal(
+      cleanup_whitespace(actual),
+      cleanup_whitespace(expected))
+  }
+
+  ok('process_toc simple no type', function () {
+    const schema = yaml.load(`
+      properties:
+        bar:
+          type: string
+          description: The bar property.`)
+    const toc = process_toc(schema)
+    const expected = `
+      { 
+        <a href="#bar">bar</a>: "string" 
+      }`
+    assert_equal_no_whitespace(expected, toc);
+  })
+
+  ok('simple no type, using single allOf with type:object', function () {
+    const schema = yaml.load(`
+      allOf:
+        - type: object
+          properties:
+            bar:
+              type: string
+              description: The bar property.`)
+    const toc = process_toc(schema)
+    const expected = `
+      {
+        <a href="#bar">bar</a>: "string"
+      }`
+    assert_equal_no_whitespace(expected, toc);
+  })
+
+  ok('simple no type, using single allOf without type:object', function () {
+    const schema = yaml.load(`
+      allOf:
+        - type: object
+          properties:
+            bar:
+              type: string
+              description: The bar property.`)
+    const toc = process_toc(schema)
+    const expected = `
+      {
+        <a href="#bar">bar</a>: "string"
+      }`
+    assert_equal_no_whitespace(expected, toc);
+  })
+
+  ok('multiple properties without allOf', function () {
+    const schema = yaml.load(`
+      properties:
+        bar:
+          type: string
+          description: The bar property.
+        foo:
+          type: string
+          description: The foo property.`)
+    const toc = process_toc(schema)
+    const expected = `
+      {
+        <a href="#bar">bar</a>: "string",
+        <a href="#foo">foo</a>: "string"
+      }`
+    assert_equal_no_whitespace(expected, toc);
+  })
+
+  ok('multiple allOf with type:object', function () {
+    const schema = yaml.load(`
+      allOf:
+        - type: object
+          properties:
+            bar:
+              type: string
+              description: The bar property.
+        - type: object
+          properties:
+            foo:
+              type: string
+              description: The bar property.`)
+    const toc = process_toc(schema)
+    const expected = `
+      {
+        <a href="#bar">bar</a>: "string",
+        <a href="#foo">foo</a>: "string"
+      }`
+    assert_equal_no_whitespace(expected, toc);
+  })
+
+  // FIXME, verify this output makes sense, not sure if this is how we should display additionalProperties
+  ok('basic additionalProperties', function () {
+    const schema = yaml.load(`
+      additionalProperties:
+        properties:
+          bar:
+            type: string
+            description: The bar property.`)
+    const toc = process_toc(schema)
+    const expected = `
+      { {additionalProperties...}: {
+          <a href="#{additionalProperties}-bar">bar</a>: "string"
+      } }`
+    assert_equal_no_whitespace(expected, toc);
+  })
+
+  ok('additionalProperties, empty"', function () {
+    const schema = yaml.load(`
+      additionalProperties: {}`)
+    const toc = process_toc(schema)
+    const expected = `
+      { {additionalProperties...}: {
+      } }`
+    assert_equal_no_whitespace(expected, toc);
+  })
+
+  ok('additionalProperties: true""', function () {
+    const schema = yaml.load(`
+      additionalProperties: true`)
+    const toc = process_toc(schema)
+    const expected = `
+      { {additionalProperties...}: {
+      } }`
+    assert_equal_no_whitespace(expected, toc);
+  })
+  
 })
 
 describe('format_type', function () {
