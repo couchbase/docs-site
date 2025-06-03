@@ -20,22 +20,34 @@ Develop at the edge with offline-first Couchbase Lite, for transactional workloa
 [.centered.card-container]
 = Couchbase Concepts & Reference
 
+Reference docs, concept guides, and all the background you need to architect your Couchbase use.
+
+
 [.card-box]
 === icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
 
 Develop an app for Capella Operational, or a self-managed Couchbase Server.
 Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 
-Core concepts.
+Understand how Couchbase achieves speed at scale, and read up on core concepts.
+
+* xref:#[Shared nothing architecture]
+* xref:#[Fast failover]
+* xref:#[Cross-datacenter Replication (XDCR)]
+* xref:#[{sqlpp} -- SQL for a document database]
+* xref:#[Flexible schemas with clusters, buckets, scopes, and collections]
 
 
 [.card-box]
-=== icon:rocket[] Real Time Analytics with Capella Columnar SDKs
+=== icon:rocket[] Real Time Analytics with Analytics SDKs
 
-xref:columnar:intro:intro.adoc[Capella Columnar] brings the power of NoSQL to the world of analytics.
-This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications.
+xref:columnar:intro:intro.adoc[Enterprise Analytics] brings the power of NoSQL to the world of analytics.
+This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications --
+or try self-managed Enterprise Analytics in your datacenter or private cloud.
 
 Core concepts.
+* Foo
+* Bar
 
 
 [.card-box]
@@ -45,6 +57,9 @@ Build your app for offline-first connectivity, then sync to Couchbase Server wit
 
 Mobile concepts.
 
+* Offline first
+* Peer-to-peer options
+*  ???
 
 [.card-box]
 === icon:rocket[] Develop RAG and Agentic AI Applications

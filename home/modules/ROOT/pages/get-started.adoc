@@ -31,7 +31,7 @@ Develop an app for Capella Operational, or a self-managed Couchbase Server.
 Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 
 * https://cloud.couchbase.com/sign-up[Sign up to Capella, and our perpetual Free Tier]
-* xref:java-sdk:hello-world:start-using-sdk.adoc[Get Started with the Java SDK] -- and our tutorial for xref:erver/current/tutorials/couchbase-tutorial-student-records.adoc[NoSQL for RDBMS users]
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Get Started with the Java SDK] -- and our for xref:erver/current/tutorials/couchbase-tutorial-student-records.adoc[NoSQL for RDBMS users] tutorial.
 * Try our other SDKs: 
 xref:c-sdk:hello-world:overview.adoc[C]
 | xref:cxx-sdk:hello-world:overview.adoc[{cpp}]
@@ -46,17 +46,18 @@ xref:c-sdk:hello-world:overview.adoc[C]
 
 
 [.card-box]
-=== icon:rocket[] Real Time Analytics with Capella Columnar SDKs
+=== icon:rocket[] Real Time Analytics with Analytics SDKs
 
-xref:columnar:intro:intro.adoc[Capella Columnar] brings the power of NoSQL to the world of analytics.
+xref:columnar:intro:intro.adoc[Capella Analytics] brings the power of NoSQL to the world of analytics.
 This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications.
+Or host your own self-managed xref:#[Couchbase Enterprise Analytics].
 
-xref:columnar-sdk.adoc[Columnar SDKs] are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
+xref:columnar-sdk.adoc[Analytics SDKs] are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
 they are purpose built for Columnar's analytical use cases.
 They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
 such as connection management and robust error handling.
 
-// * xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs]|
+* xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs]|
 * xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs]|
 * xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK Docs]
 * xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] 
@@ -76,7 +77,7 @@ Build your app for offline-first connectivity, then sync to Couchbase Server wit
 * xref:couchbase-lite:csharp:quickstart.adoc[Couchbase Lite on C# .NET]
 * xref:couchbase-lite:java:quickstart.adoc[Couchbase Lite on Java]
 * xref:couchbase-lite:javascript:quickstart.adoc[Couchbase Lite on JavaScript -- Ionic and React]
-* Sync your data with App Services / self-managed SyncGateway / Edge Server
+* Sync your data with App Services / self-managed SyncGateway / Edge Server -- or go xref:#[peer-to-peer].
 
 
 [.card-box]

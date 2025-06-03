@@ -22,7 +22,7 @@ _Couchbase is the Developer Data Platform for Critical Applications in Our AI Wo
 
 
 Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
-Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in eleven popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
+// Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in eleven popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
 
 ////
 Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
@@ -46,7 +46,7 @@ xref:[Deployment & Admin] |
 xref:home:ROOT:sdk.adoc[Developer Docs] |
 xref:[Learn -- Concepts & Reference]
 
-Or learn about xref:[Self-managed Couchbase Server].
+Or learn about xref:[Self-managed Couchbase Server], in your datacenter or private cloud.
 
 ////
 xref:[Sign up for Perpetual Free Tier] |
@@ -63,11 +63,18 @@ xref:home:ROOT:sdk.adoc[Developer Docs] |
 xref:[Learn -- Concepts & Reference]
 ////
 
-[.card-box]
-=== icon:rocket[] Real Time Analytics with Capella Columnar
 
-xref:columnar:intro:intro.adoc[Capella Columnar] brings the power of NoSQL to the world of analytics.
+[.card-box]
+=== icon:rocket[] Real Time Analytics with Couchbase Enterprise Analytics
+
+Enterprise Analytics brings the power of NoSQL to the world of analytics.
+Columnar storage speeds up querying, enabling real-time use cases for analytical data.
+
+* xref:columnar:intro:intro.adoc[Capella Analytics] brings the power of NoSQL to the world of analytics.
 This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications.
+
+*  xref:columnar:intro:intro.adoc[Enterprise Analytics] brings the power of NoSQL to the world of analytics.
+Run in your datacenter or private cloud.
 
 
 
