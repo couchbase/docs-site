@@ -24,7 +24,7 @@ site:
         { "title": "Get Started", "startPage": "home::get-started.adoc", "components": ["server"] },
         { "title": "Develop", "startPage": "home::developer-docs.adoc", "components": ["dotnet-sdk", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "sdk-extensions", "*-columnar-sdk", "couchbase-lite"] },
         { "title": "Deploy & Admin", "startPage": "home::deploy-and-admin.adoc", "components": ["couchbase-lite", "sync-gateway"] },
-        { "title": "Learn", "startPage": "home::learn-couchbase-concepts.adoc", "components": ["cloud", "columnar"] }
+        { "title": "Learn", "startPage": "home::learn-couchbase-concepts.adoc", "components": ["columnar"] }
       ]
 git:
   ensure_git_suffix: false
@@ -49,9 +49,9 @@ content:
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
     start_path: docs
-  - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [main]
-    start_paths: [docs/public, docs/columnar]
+#  - url: https://github.com/couchbasecloud/couchbase-cloud
+#    branches: [main]
+#    start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
   - url: https://github.com/couchbaselabs/docs-columnar
