@@ -52,8 +52,8 @@ content:
 #  - url: https://github.com/couchbasecloud/couchbase-cloud
 #    branches: [main]
 #    start_paths: [docs/public, docs/columnar]
-  - url: https://github.com/couchbase/docs-capella
-    branches: [main]
+#  - url: https://github.com/couchbase/docs-capella
+#    branches: [main]
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
 
