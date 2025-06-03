@@ -16,13 +16,13 @@ describe('antora build with extensions', function () {
     {'stdio': 'inherit'})
   })
 
-  ok('test files', function () { 
-    // wanted these to happen after the build, so looks like they need to be within an OK?
-    const files = 
-      fs.readdirSync('test/fixtures/antora-output/').filter(
-        file => file.match(/^extension.*\.html$/))
-    
-      for (const file of files) {
+  const files = 
+  fs.readdirSync('test/fixtures/antora-output/').filter(
+    file => file.match(/^extension.*\.html$/))
+
+  for (const file of files) {
+
+    ok(`test file ${file}`, function () { 
         const expected = fs.readFileSync(`test/fixtures/antora-output/${file}`, 'utf8')
 
         let actualHtml
@@ -37,13 +37,12 @@ describe('antora build with extensions', function () {
           // so we just return an empty string.
           // This means we can test the embargoed content by supplying a
           // zero-length fixture.
-
-          console.error(`Error reading actual file for ${file}:`, err)
+          // console.error(`Error reading actual file for ${file}:`, err)
           actualHtml = ''
         }
         fs.writeFileSync(`test/fixtures/antora-output/${file}.actual`, actualHtml)
 
         assert.equal(actualHtml, expected)
+      })
     }
   })
-})
