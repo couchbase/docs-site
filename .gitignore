@@ -16,3 +16,4 @@ lab.sh
 record.json
 antora-playbook.preview.local.yml
 **/*.actual
+test/build/
