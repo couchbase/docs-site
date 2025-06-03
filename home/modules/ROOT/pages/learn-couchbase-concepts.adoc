@@ -10,6 +10,13 @@ include::home::partial$info-banner.adoc[]
 
 = Couchbase Concepts & Reference
 
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
 The Developer Data Platform for Critical Applications in Our AI World.
 
 Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
