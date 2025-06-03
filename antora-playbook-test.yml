@@ -1,0 +1,68 @@
+antora:
+  extensions:
+  - '@antora/site-generator-ms'
+  - ./lib/embargo.js
+  - ./lib/antora-component-version-rank.js
+site:
+  title: Couchbase Test build for testing extensions
+  url: https://docs.couchbase.com
+  start_page: home::index.adoc
+  robots: disallow
+  keys:
+    google_analytics: GTM-MVPNN2
+    nav_groups: |
+      [
+      ]
+git:
+  ensure_git_suffix: false
+  fetch_concurrency: 1
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
+content:
+  branches: master
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: home
+asciidoc:
+  attributes:
+    site-navigation-data-path: _/js/site-navigation-data.js
+    enable-cmos: ''
+    max-include-depth: 10
+    page-partial: false
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    tabs: tabs
+    tabs-sync-option: ''
+    toc: ~
+    page-toclevels: 1@
+    page-rank: 50@
+    xrefstyle: short
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    sqlpp: SQL++
+    sqlppc: SQL++ for Capella columnar
+    sqlpp_url: https://www.couchbase.com/products/n1ql
+    cbpp: Couchbase++
+    kroki-server-url: null
+    kroki-fetch-diagram: true
+  extensions:
+  - ./lib/source-url-include-processor.js
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/markdown-block.js
+  - ./lib/template-block.js
+  - asciidoctor-kroki
+  - asciidoctor-external-callout
+  - '@asciidoctor/tabs'
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-210/ui-bundle.zip
+output:
+  dir: ./public
+runtime:
+  fetch: true
