@@ -18,3 +18,8 @@ jobs:
         run: |
           npm ci
           npm test
+
+      - name: debug
+        run: |
+          sudo snap install tree
+          tree -a .
