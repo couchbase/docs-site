@@ -18,13 +18,6 @@ describe('process_toc', function () {
     assert.equal(toc, expected)
   })
 
-  const cleanup_whitespace = (str) => str.replace(/\s+/g, ' ').trim()
-  const assert_equal_no_whitespace = (actual, expected) => {
-    assert.equal(
-      cleanup_whitespace(actual),
-      cleanup_whitespace(expected))
-  }
-
   ok('process_toc simple no type', function () {
     const schema = yaml.load(`
       properties:
@@ -146,7 +139,6 @@ describe('process_toc', function () {
       } }`
     assert_equal_no_whitespace(expected, toc);
   })
-  
 })
 
 describe('format_type', function () {
@@ -307,3 +299,11 @@ describe('child_entries', function () {
       ])
   })
 })
+
+// Helper function to clean up whitespace in strings for comparison
+const cleanup_whitespace = (str) => str.replace(/\s+/g, ' ').trim()
+function assert_equal_no_whitespace (actual, expected) {
+  assert.equal(
+    cleanup_whitespace(actual),
+    cleanup_whitespace(expected))
+}
