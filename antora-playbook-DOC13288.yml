@@ -1,0 +1,127 @@
+# npx antora --clean --fetch antora-playbook.yml
+# or
+# npx antora antora-playbook.yml
+antora:
+  extensions:
+  - '@antora/site-generator-ms'
+  - ./lib/embargo.js
+  - ./lib/antora-component-version-rank.js
+site:
+  title: Couchbase Docs
+  url: https://docs.couchbase.com
+  start_page: home::index.adoc
+  robots: |
+    User-agent: *
+    Allow: /
+    Disallow: /sdk-api/
+    Allow: /sdk-api/*-client/
+    Allow: /sdk-api/couchbase-core-io/
+    Allow: /sdk-api/couchbase-transactions-dotnet/
+  keys:
+    google_analytics: GTM-MVPNN2
+    nav_groups: |
+      [
+          { "title": "Get Started", "startPage": "home::get-started.adoc", "components": ["server"] },
+          {
+            "title": "Develop",
+            "subGroups": [
+              {
+                "title": "Operational SDKs",
+                "startPage": "home::develop-operational.adoc",
+                "components": [
+                  "java-sdk", "kotlin-sdk" ]
+              },
+              {
+                "title": "Analytic SDKs",
+                "startPage": "home::develop-analytics.adoc",
+                "components": ["*-columnar-sdk"]
+              },
+              {
+                "title": "Mobile SDKs",
+                "startPage": "home::develop-mobile.adoc",
+                "components": ["couchbase-lite"]
+              }
+            ]
+          },
+          { "title": "Deploy & Admin",
+            "subGroups": [
+              {
+                "title": "Mobile",
+                "startPage": "home::mobile-server-admin.adoc", "components": ["sync-gateway"]
+              }
+            ]
+          },
+          { "title": "Learn", "startPage": "home::learn-couchbase-concepts.adoc", "components": ["columnar"] }
+      ]
+git:
+  ensure_git_suffix: false
+  fetch_concurrency: 1
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
+content:
+  branches: master
+  # NOTE the git@ segment in the URL indicates which repositories are private
+  ## The above has a bug when upgrading to Antora 3.1. Original sources commented
+  ## out and replaced with a non git@ prefix. To revert if it causes issues
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: home
+  - url: https://github.com/couchbase/docs-sdk-common
+    branches: [release/7.6]
+  - url: https://github.com/couchbase/docs-sdk-java
+    branches: [release/3.8]
+  - url: https://github.com/couchbase/docs-sdk-kotlin
+    branches: [temp/1.5]
+  - url: https://github.com/couchbase/docs-sdk-nodejs
+    branches: [temp/4.5]
+  - url: https://github.com/couchbase/docs-columnar-sdk-common
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-columnar-sdk-go
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-columnar-sdk-java
+    branches: [release/1.0]
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite
+    branches: [release/3.2]
+asciidoc:
+  attributes:
+    site-navigation-data-path: _/js/site-navigation-data.js
+    enable-cmos: ''
+    max-include-depth: 10
+    page-partial: false
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    tabs: tabs
+    tabs-sync-option: ''
+    toc: ~
+    page-toclevels: 1@
+    page-rank: 50@
+    xrefstyle: short
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    sqlpp: SQL++
+    sqlppc: SQL++ for Capella columnar
+    sqlpp_url: https://www.couchbase.com/products/n1ql
+    cbpp: Couchbase++
+    kroki-server-url: http://3.91.133.254:9500
+    kroki-fetch-diagram: true
+  extensions:
+  - ./lib/source-url-include-processor.js
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/markdown-block.js
+  - ./lib/template-block.js
+  - asciidoctor-kroki
+  - asciidoctor-external-callout
+  - '@asciidoctor/tabs'
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-13288-ia-support-1/ui-bundle.zip
+output:
+  dir: ./public
+runtime:
+  fetch: true
