@@ -13,7 +13,7 @@ describe('antora build with extensions', function () {
       '--log-level', 'fatal', 
       '--to-dir', 'test/build',
       'antora-playbook-test.yml'],
-    {'stdio': 'inherit'})
+      {'stdio': 'inherit'})
   })
 
   const files = 
