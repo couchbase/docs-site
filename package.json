@@ -13,7 +13,7 @@
     "array.prototype.groupby": "^1.1.0",
     "asciidoctor-external-callout": "~1.2.2",
     "asciidoctor-kroki": "0.18.1",
-    "gulp": "~4.0",
+    "gulp": "~5.0",
     "gulp-connect": "~5.7",
     "js-yaml": "~4.1",
     "markdown-it": "^13.0.1",
