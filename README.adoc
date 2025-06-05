@@ -14,22 +14,28 @@ This is the Antora playbook project (aka site build) for the Couchbase documenta
 
 == Prerequisites
 
-You must have Node.js 16 installed to generate the site.
+We generally aim to run Node at the "Current LTS (Long Term Support)" version.
+See https://nodejs.org/en/about/previous-releases for details on Node's release schedule.
+
+Run:
 
  node -v
 
-If that command does not report a version that is 16 or greater, head over to https://nodejs.org to download the latest LTS release of Node.js.
+to compare your version with the current installed one.
+We suggest using `nvm` to manage versions of node.
 
 == Playbook
 
 The playbook, defined in the playbook file [.path]_antora-playbook.yml_, configures the build for this site.
 The playbook specifies the content sources (repository and branches), site URL, UI bundle URL, global AsciiDoc attributes, and Asciidoctor extensions.
 
-The production site is built for each change to the master branch.
-A deploy preview of the site is also published for each pull request, though without any of the private content sources (unless the pull request comes from a trusted source).
-The configuration for the deploy preview build is located in the [.path]_netlify_ folder.
+=== Building the site
 
-If you're building a local version of the Couchbase docs for testing, and want a reduced-scope playbook that just builds Server docs with the components that you are editing locally, https://github.com/couchbase/docs-site/blob/master/home/modules/contribute/examples/local-staging-antora-playbook.yml[here is an SDK-based playbook file] -- use it as a basis for your own local playbook.
+This is documented for the Couchbase docs team on [Confluence](https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2099578216/Building+the+Docs+Site).
+
+If you do not have access to Confluence, you may wish to review the [Antora documentation](https://docs.antora.org/antora/latest/).
+
+A helper script at `scripts/preview` simplifies this for some common cases.
 
 == Home Docs Component
 
@@ -40,48 +46,9 @@ All other content is sourced from separate repositories and branches.
 
 The custom extensions in the [.path]_lib/_ directory process the manpage macro (Couchbase CLI and Backup components), Swagger UI macro, and multi-row table headers.
 
-== File Watcher and LiveReload
+== Tests
 
-This repository contains a script that watches `.adoc` and `antora.yml` files in the author workspace (as defined by local-antora-playbook.yml) and triggers a new Antora build when it detects changes to those files.
-The script also starts a web server and can use LiveReload to reload the browser tab after the Antora build completes.
-To use the script, run the following.
-
-. Install dependencies.
-
- $ npm ci
-
-. If you're using Chrome, install the LiveReload https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[chrome extension].
-Firefox has built-in support for LiveReload.
-. Start the build.
-+
---
- $ LIVERELOAD=true npx gulp
-
-The build first generates the site using Antora, analgous to the `npx antora local-antora-playbook.yml` command.
-It then serves the files in the output directory using a local web server.
-
-The web server's host URL is printed to the console after the `watch` task completes.
-
-....
-[17:43:27] Starting server...
-[17:43:27] Documentation Site Preview started http://localhost:5000
-[17:43:27] LiveReload started on port 35729
-[17:43:27] Running server
-....
-
-TIP: To skip the initial build, use `npx gulp serve` as the Gulp command.
---
-
-. The console output will print status information every time a change is detected.
-+
-....
-[17:33:59] Starting 'generate'...
-[17:34:02] Finished 'generate' after 3.35 s
-....
-
-. Make changes to your AsciiDoc files locally.
-The browser tab should automatically reload after a short while.
-. Use Ctrl+C to stop the process.
+Run `npm test` to run some basic checks on our custom extensions.
 
 == Reference Validation
 
@@ -107,6 +74,8 @@ Here's an excerpt from that report:
 Each message shows the repository source, the refname, and the path from the root of that repository.
 
 == Contributing
+
+NOTE: somewhat out of date
 
 To learn how to use the playbook and generate the docs site locally, see our {url-contribute}[contributing guide].
 
