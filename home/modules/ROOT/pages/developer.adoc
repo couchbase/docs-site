@@ -23,12 +23,14 @@ Develop at the edge with offline-first Couchbase Lite, for transactional workloa
 [.card-box]
 === icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
 
-Develop an app for Capella Operational, or a self-managed Couchbase Server.
+Develop an app for xref:cloud:develop:intro.adoc[Capella Operational],
+or a xref:server:develop:intro.adoc[self-managed Couchbase Server].
 Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 
 * xref:java-sdk:hello-world:start-using-sdk.adoc[Get Started with the Java SDK]
 * xref:server/current/tutorials/couchbase-tutorial-student-records.adoc[NoSQL for RDBMS users]
-* Try our other SDKs: 
+* Try our other SDKs:
++
 xref:c-sdk:hello-world:overview.adoc[C]
 | xref:cxx-sdk:hello-world:overview.adoc[{cpp}]
 | xref:dotnet-sdk:hello-world:overview.adoc[.NET]
@@ -51,13 +53,15 @@ xref:columnar:intro:intro.adoc[Capella Columnar] brings the power of NoSQL to th
 This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications.
 // Or try self-managed Enterprise Analytics, in your datacenter or private cloud.
 
+////
 xref:columnar-sdk.adoc[Columnar SDKs] are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
 they are purpose built for Enterprise Analytics' analytical use cases.
 They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
 such as connection management and robust error handling.
+////
 
-* xref:go-columnar-sdk:hello-world:overview.adoc[Go Analytics SDK Docs]|
-* xref:java-columnar-sdk:hello-world:overview.adoc[Java Analytics SDK Docs]|
+* xref:go-columnar-sdk:hello-world:overview.adoc[Go Analytics SDK Docs]
+* xref:java-columnar-sdk:hello-world:overview.adoc[Java Analytics SDK Docs]
 * xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Analytics SDK Docs]
 * xref:python-columnar-sdk:hello-world:overview.adoc[Python Analytics SDK Docs] 
 
@@ -70,12 +74,12 @@ Build your app for offline-first connectivity, then sync to Couchbase Server wit
 
 
 * xref:couchbase-lite:android:quickstart.adoc[Develop for Android in Java or Kotlin]
-* xref:couchbase-lite:swift:quickstart.adoc[Couchbase Lite on Swift]
+* xref:couchbase-lite:swift:quickstart.adoc[Develop for iOS on Swift]
 (and xref:couchbase-lite:objc:quickstart.adoc[Objective-C])
 * xref:couchbase-lite:c:quickstart.adoc[Devlop for Edge devices in C]
-* xref:couchbase-lite:csharp:quickstart.adoc[Couchbase Lite on C# .NET]
-* xref:couchbase-lite:java:quickstart.adoc[Couchbase Lite on Java]
-* xref:couchbase-lite:javascript:quickstart.adoc[Couchbase Lite on JavaScript -- Ionic and React]
+* Couchbase Lite xref:couchbase-lite:csharp:quickstart.adoc[on C# .NET] | 
+xref:couchbase-lite:java:quickstart.adoc[Java] | 
+xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
 * Sync your data with App Services / self-managed SyncGateway / Edge Server -- or run peer-to-peer.
 
 
