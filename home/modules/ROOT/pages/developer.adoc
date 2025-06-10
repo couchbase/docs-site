@@ -29,7 +29,7 @@ Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 
 * xref:java-sdk:hello-world:start-using-sdk.adoc[Get Started with the Java SDK]
 * xref:server/current/tutorials/couchbase-tutorial-student-records.adoc[NoSQL for RDBMS users]
-* Try our other SDKs:
+* Try our xref:sdk.adoc[other SDKs]:
 +
 xref:c-sdk:hello-world:overview.adoc[C]
 | xref:cxx-sdk:hello-world:overview.adoc[{cpp}]
