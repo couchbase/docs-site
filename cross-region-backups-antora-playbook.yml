@@ -53,7 +53,7 @@ content:
     branches: [main]
     start_path: [docs/public]
   - url: https://github.com/couchbase/docs-capella
-    branches: [AV-90606-cloud-snapshots-phase-2]
+    branches: [AV-90606-cloud-snapshots-cross-region]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
