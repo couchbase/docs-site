@@ -53,7 +53,7 @@ content:
     branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [main]
+    branches: [AV-95038_Docs-GCP-PSC]
   - url: https://github.com/couchbaselabs/docs-columnar
     branches: [main]
 asciidoc:
