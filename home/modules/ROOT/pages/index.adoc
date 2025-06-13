@@ -201,6 +201,7 @@ endif::[]
 
 [.tile]
 .PHP SDK
+* xref:4.3@php-sdk:hello-world:start-using-sdk.adoc[Version 4.3]
 * xref:4.2@php-sdk:hello-world:start-using-sdk.adoc[Version 4.2]
 * xref:4.1@php-sdk:hello-world:start-using-sdk.adoc[Version 4.1]
 * xref:4.0@php-sdk:hello-world:start-using-sdk.adoc[Version 4.0]
