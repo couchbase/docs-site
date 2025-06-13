@@ -109,6 +109,7 @@ endif::[]
 * xref:2.3@java-sdk::start-using-sdk.adoc[Version 2.3]
 * xref:2.2@java-sdk::java-intro.adoc[Version 2.2]
 * xref:2.1@java-sdk::java-intro.adoc[Version 2.1]
+* xref:1.1@quarkus-extension::overview.adoc[Quarkus Java Extension 1.1]
 * xref:1.0@quarkus-extension::overview.adoc[Quarkus Java Extension 1.0]
 
 [.tile]
