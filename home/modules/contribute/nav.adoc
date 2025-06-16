@@ -38,4 +38,5 @@
  ** xref:extensions.adoc[]
 
 
-//* Additional Resources (Pending)
+* Additional Resources
+** xref:anywhere-footnotes.adoc[]

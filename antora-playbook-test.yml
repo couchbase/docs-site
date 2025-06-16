@@ -58,10 +58,11 @@ asciidoc:
   - ./lib/template-block.js
   - asciidoctor-kroki
   - asciidoctor-external-callout
+  - asciidoctor-anywhere-footnote
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-210/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-213/ui-bundle.zip
 output:
   dir: ./public
 runtime:

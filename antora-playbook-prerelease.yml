@@ -166,9 +166,10 @@ asciidoc:
   - asciidoctor-kroki
   - asciidoctor-external-callout
   - '@asciidoctor/tabs'
+  - asciidoctor-anywhere-footnote
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-198/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-213/ui-bundle.zip
 output:
   dir: ./public
 runtime:
