@@ -37,6 +37,21 @@ The latter will show you the URL to find the workflow:
 
     https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
 
+TROUBLESHOOTING
+
+If you run into issues, you can run the script in debug mode.
+
+    preview --debug
+
+These files should be sent to the docs team:
+
+    preview/debug.log
+    preview/doctor/tree.html
+    preview/doctor/antora-playbook.js
+
+The automated email will only work on MacOS.
+If you are on Linux, then just send those files manually.
+
 DOCUMENTATION
 
 See https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2660597775/preview+script
@@ -48,6 +63,7 @@ POSITIONAL_ARGS=()
 REMOTE=""
 INIT=""
 PREVIEW_CONFIG=""
+DEBUG=""
 
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -66,6 +82,10 @@ while [[ $# -gt 0 ]]; do
     -c|--config)
       shift
       PREVIEW_CONFIG=$1
+      shift
+      ;;
+    -d|--debug)
+      DEBUG=true
       shift
       ;;
     -*|--*)
@@ -192,5 +212,16 @@ else
     cd $DOCS_SITE
     echo
 
-    npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url "$(pwd)/preview"
+    ANTORA="npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url '$(pwd)/preview'"
+
+    if [ -n "$DEBUG" ]; then
+        echo "Running in debug mode"
+        $ANTORA --log-format=pretty 2>&1 | tee preview-debug.log
+        mv preview-debug.log preview/debug.log
+
+        echo Creating preview debug report...
+        osascript scripts/preview-debug.scpt
+    else
+        $ANTORA
+    fi
 fi
