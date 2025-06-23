@@ -1,7 +1,9 @@
 #!/bin/bash
+PREVIEW_VERSION="1.1.0"
 
 set -eo pipefail
-echo "🐇 Hello! I'm the Docs Build Rabbit."
+echo "🐇 Hello! I'm the Docs Build Rabbit"
+echo "version $PREVIEW_VERSION"
 echo
 
 help() {
@@ -37,6 +39,24 @@ The latter will show you the URL to find the workflow:
 
     https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
 
+UPDATING
+
+To update the preview script, if your script is recent enough, simply run:
+
+    preview --update
+
+Otherwise, you can update the script manually.
+
+    cd docs-site          # navigate to your docs-site repo
+    git checkout master   # ensure you are on the master branch
+
+    git pull
+    scripts/preview --init
+
+
+
+    
+
 TROUBLESHOOTING
 
 If you run into issues, you can run the script in debug mode.
@@ -70,6 +90,10 @@ while [[ $# -gt 0 ]]; do
   case $1 in
     -h|--help)
       help
+      exit 0
+      ;;
+    -v|--version)
+      # no-op, we have already printed the version
       exit 0
       ;;
     -r|--remote)
