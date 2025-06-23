@@ -64,6 +64,7 @@ REMOTE=""
 INIT=""
 PREVIEW_CONFIG=""
 DEBUG=""
+UPDATE=""
 
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -84,6 +85,10 @@ while [[ $# -gt 0 ]]; do
       PREVIEW_CONFIG=$1
       shift
       ;;
+    -u|--update)
+      UPDATE=true
+      shift
+      ;;
     -d|--debug)
       DEBUG=true
       shift
@@ -99,6 +104,18 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+if [ -n "$UPDATE" ]; then
+    DOCS_SITE=$(realpath $0/../..)
+    cd $DOCS_SITE
+
+    echo "🐇 Let's try to update preview, by updating your docs-site checkout"
+    git checkout master || ( echo "Failed to checkout master branch"; exit 1 )
+    git pull || ( echo "Failed to pull latest changes"; exit 1 )
+
+    echo "🐇 Now let's update the preview script"
+    INIT=true
+fi
+
 if [ -n "$INIT" ]; then
     DOCS_SITE=$(realpath $0/../..)
     cd $DOCS_SITE
@@ -106,13 +123,16 @@ if [ -n "$INIT" ]; then
     cp -n antora-playbook.preview.local.yml-example antora-playbook.preview.local.yml \
       || echo "antora-playbook.preview.local.yml already exists"
 
-    echo "Linking 'preview' command (you may need to enter your password)"
-    set -x
+    echo "🐇 Linking 'preview' command (you may need to enter your password)"
 
     sudo ln -sf $(realpath $0) /usr/local/bin/preview
-    which preview
+    which preview >/dev/null || ( echo "Failed to link preview command"; exit 1 )
+
+    echo "🐇 initialised preview script"
     exit 0
 fi
+
+
 
 # define utility function
 upfind () {
