@@ -18,6 +18,18 @@ describe('process_toc', function () {
     assert.equal(toc, expected)
   })
 
+  ok('process_toc of Bootstrap schema', function () {
+    const bundledAdmin = yaml.load(
+      fs.readFileSync('home/modules/contribute/examples/bundled-admin.yaml', 'utf8'))
+
+    const toc = process_toc(bundledAdmin.components.schemas["Startup-config"])
+    fs.writeFileSync('test/fixtures/toc-bootstrap.html.actual', toc)
+
+    const expected = fs.readFileSync('test/fixtures/toc-bootstrap.html', 'utf8')
+
+    assert.equal(toc, expected)
+  })
+
   ok('process_toc simple no type', function () {
     const schema = yaml.load(`
       properties:

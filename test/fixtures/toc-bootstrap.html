@@ -1,0 +1,169 @@
+{
+   <a href="#api">api</a>: {
+      <a href="#api-admin_interface">admin_interface</a>: "127.0.0.1:4985",
+      <a href="#api-admin_interface_authentication">admin_interface_authentication</a>: true,
+      <a href="#api-compress_responses">compress_responses</a>: true,
+      cors: {
+         <a href="#api-cors-headers">headers</a>: ["string"...],
+         <a href="#api-cors-login_origin">login_origin</a>: ["string"...],
+         <a href="#api-cors-max_age">max_age</a>: 0,
+         <a href="#api-cors-origin">origin</a>: ["string"...]
+      },
+      <a href="#api-enable_advanced_auth_dp">enable_advanced_auth_dp</a>: true,
+      <a href="#api-hide_product_version">hide_product_version</a>: true,
+      https: {
+         <a href="#api-https-tls_cert_path">tls_cert_path</a>: "string",
+         <a href="#api-https-tls_key_path">tls_key_path</a>: "string",
+         <a href="#api-https-tls_minimum_version">tls_minimum_version</a>: "tlsv1.2"
+      },
+      <a href="#api-idle_timeout">idle_timeout</a>: "90s",
+      <a href="#api-max_connections">max_connections</a>: 0,
+      <a href="#api-metrics_interface">metrics_interface</a>: "127.0.0.1:4986",
+      <a href="#api-metrics_interface_authentication">metrics_interface_authentication</a>: true,
+      <a href="#api-profile_interface">profile_interface</a>: "string",
+      <a href="#api-public_interface">public_interface</a>: ":4984",
+      <a href="#api-read_header_timeout">read_header_timeout</a>: "5s",
+      <a href="#api-server_read_timeout">server_read_timeout</a>: "string",
+      <a href="#api-server_write_timeout">server_write_timeout</a>: "string"
+   },
+   auth: {
+      <a href="#auth-bcrypt_cost">bcrypt_cost</a>: 10
+   },
+   <a href="#bootstrap">bootstrap</a>: {
+      <a href="#bootstrap-ca_cert_path">ca_cert_path</a>: "string",
+      <a href="#bootstrap-config_update_frequency">config_update_frequency</a>: "10s",
+      <a href="#bootstrap-group_id">group_id</a>: "default",
+      <a href="#bootstrap-password">password</a>: "string",
+      <a href="#bootstrap-server">server</a>: "string",
+      <a href="#bootstrap-server_tls_skip_verify">server_tls_skip_verify</a>: false,
+      <a href="#bootstrap-use_tls_server">use_tls_server</a>: true,
+      <a href="#bootstrap-username">username</a>: "string",
+      <a href="#bootstrap-x509_cert_path">x509_cert_path</a>: "string",
+      <a href="#bootstrap-x509_key_path">x509_key_path</a>: "string"
+   },
+   <a href="#bucket_credentials">bucket_credentials</a>: {
+      <a href="#bucket_credentials-{bucketname}">{bucketname...}</a>: {
+         <a href="#bucket_credentials-{bucketname}-password">password</a>: "string",
+         <a href="#bucket_credentials-{bucketname}-username">username</a>: "string",
+         <a href="#bucket_credentials-{bucketname}-x509_cert_path">x509_cert_path</a>: "string",
+         <a href="#bucket_credentials-{bucketname}-x509_key_path">x509_key_path</a>: "string"
+      }
+   },
+   <a href="#database_credentials">database_credentials</a>: {
+      <a href="#database_credentials-{databasename}">{databasename...}</a>: {
+         <a href="#database_credentials-{databasename}-password">password</a>: "string",
+         <a href="#database_credentials-{databasename}-username">username</a>: "string",
+         <a href="#database_credentials-{databasename}-x509_cert_path">x509_cert_path</a>: "string",
+         <a href="#database_credentials-{databasename}-x509_key_path">x509_key_path</a>: "string"
+      }
+   },
+   <a href="#heap_profile_collection_threshold">heap_profile_collection_threshold</a>: NaN,
+   <a href="#heap_profile_disable_collection">heap_profile_disable_collection</a>: false,
+   <a href="#logging">logging</a>: {
+      <a href="#logging-audit">audit</a>: {
+         <a href="#logging-audit-audit_log_file_path">audit_log_file_path</a>: "string",
+         <a href="#logging-audit-enabled">enabled</a>: false,
+         <a href="#logging-audit-enabled_events">enabled_events</a>: [0...],
+         rotation: {
+            <a href="#logging-audit-rotation-localtime">localtime</a>: false,
+            <a href="#logging-audit-rotation-max_age">max_age</a>: 6,
+            <a href="#logging-audit-rotation-max_size">max_size</a>: 100,
+            <a href="#logging-audit-rotation-rotated_logs_size_limit">rotated_logs_size_limit</a>: 1024,
+            <a href="#logging-audit-rotation-rotation_interval">rotation_interval</a>: "0"
+         }
+      },
+      console: {
+
+      },
+      <a href="#logging-debug">debug</a>: {
+         <a href="#logging-debug-collation_buffer_size">collation_buffer_size</a>: 1000,
+         <a href="#logging-debug-enabled">enabled</a>: false,
+         rotation: {
+            <a href="#logging-debug-rotation-localtime">localtime</a>: false,
+            <a href="#logging-debug-rotation-max_age">max_age</a>: 2,
+            <a href="#logging-debug-rotation-max_size">max_size</a>: 100,
+            <a href="#logging-debug-rotation-rotated_logs_size_limit">rotated_logs_size_limit</a>: 1024,
+            <a href="#logging-debug-rotation-rotation_interval">rotation_interval</a>: "0"
+         }
+      },
+      <a href="#logging-error">error</a>: {
+         <a href="#logging-error-collation_buffer_size">collation_buffer_size</a>: 0,
+         <a href="#logging-error-enabled">enabled</a>: true,
+         rotation: {
+            <a href="#logging-error-rotation-localtime">localtime</a>: false,
+            <a href="#logging-error-rotation-max_age">max_age</a>: 360,
+            <a href="#logging-error-rotation-max_size">max_size</a>: 100,
+            <a href="#logging-error-rotation-rotated_logs_size_limit">rotated_logs_size_limit</a>: 1024,
+            <a href="#logging-error-rotation-rotation_interval">rotation_interval</a>: "0"
+         }
+      },
+      <a href="#logging-info">info</a>: {
+         <a href="#logging-info-collation_buffer_size">collation_buffer_size</a>: 0,
+         <a href="#logging-info-enabled">enabled</a>: true,
+         rotation: {
+            <a href="#logging-info-rotation-localtime">localtime</a>: false,
+            <a href="#logging-info-rotation-max_age">max_age</a>: 6,
+            <a href="#logging-info-rotation-max_size">max_size</a>: 100,
+            <a href="#logging-info-rotation-rotated_logs_size_limit">rotated_logs_size_limit</a>: 1024,
+            <a href="#logging-info-rotation-rotation_interval">rotation_interval</a>: "0"
+         }
+      },
+      <a href="#logging-log_file_path">log_file_path</a>: "string",
+      <a href="#logging-redaction_level">redaction_level</a>: "partial",
+      <a href="#logging-stats">stats</a>: {
+         <a href="#logging-stats-collation_buffer_size">collation_buffer_size</a>: 0,
+         <a href="#logging-stats-enabled">enabled</a>: true,
+         rotation: {
+            <a href="#logging-stats-rotation-localtime">localtime</a>: false,
+            <a href="#logging-stats-rotation-max_age">max_age</a>: 6,
+            <a href="#logging-stats-rotation-max_size">max_size</a>: 100,
+            <a href="#logging-stats-rotation-rotated_logs_size_limit">rotated_logs_size_limit</a>: 1024,
+            <a href="#logging-stats-rotation-rotation_interval">rotation_interval</a>: "0"
+         }
+      },
+      <a href="#logging-trace">trace</a>: {
+         <a href="#logging-trace-collation_buffer_size">collation_buffer_size</a>: 1000,
+         <a href="#logging-trace-enabled">enabled</a>: false,
+         rotation: {
+            <a href="#logging-trace-rotation-localtime">localtime</a>: false,
+            <a href="#logging-trace-rotation-max_age">max_age</a>: 2,
+            <a href="#logging-trace-rotation-max_size">max_size</a>: 100,
+            <a href="#logging-trace-rotation-rotated_logs_size_limit">rotated_logs_size_limit</a>: 1024,
+            <a href="#logging-trace-rotation-rotation_interval">rotation_interval</a>: "0"
+         }
+      },
+      <a href="#logging-warn">warn</a>: {
+         <a href="#logging-warn-collation_buffer_size">collation_buffer_size</a>: 0,
+         <a href="#logging-warn-enabled">enabled</a>: true,
+         rotation: {
+            <a href="#logging-warn-rotation-localtime">localtime</a>: false,
+            <a href="#logging-warn-rotation-max_age">max_age</a>: 180,
+            <a href="#logging-warn-rotation-max_size">max_size</a>: 100,
+            <a href="#logging-warn-rotation-rotated_logs_size_limit">rotated_logs_size_limit</a>: 1024,
+            <a href="#logging-warn-rotation-rotation_interval">rotation_interval</a>: "0"
+         }
+      }
+   },
+   <a href="#max_file_descriptors">max_file_descriptors</a>: 5000,
+   replicator: {
+      <a href="#replicator-blip_compression">blip_compression</a>: 0,
+      <a href="#replicator-max_concurrent_changes_batches">max_concurrent_changes_batches</a>: 2,
+      <a href="#replicator-max_concurrent_replications">max_concurrent_replications</a>: 0,
+      <a href="#replicator-max_concurrent_revs">max_concurrent_revs</a>: 5,
+      <a href="#replicator-max_heartbeat">max_heartbeat</a>: "string"
+   },
+   <a href="#unsupported">unsupported</a>: {
+      <a href="#unsupported-allow_dbconfig_env_vars">allow_dbconfig_env_vars</a>: true,
+      <a href="#unsupported-diagnostic_interface">diagnostic_interface</a>: "",
+      http2: {
+         <a href="#unsupported-http2-enabled">enabled</a>: false
+      },
+      <a href="#unsupported-serverless">serverless</a>: {
+         <a href="#unsupported-serverless-enabled">enabled</a>: true,
+         <a href="#unsupported-serverless-min_config_fetch_interval">min_config_fetch_interval</a>: "1s"
+      },
+      <a href="#unsupported-stats_log_frequency">stats_log_frequency</a>: "1m",
+      <a href="#unsupported-use_stdlib_json">use_stdlib_json</a>: false,
+      <a href="#unsupported-use_xattr_config">use_xattr_config</a>: false
+   }
+}
