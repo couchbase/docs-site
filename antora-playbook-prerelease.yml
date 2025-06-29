@@ -153,7 +153,7 @@ asciidoc:
     sqlppc: SQL++ for Capella columnar
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
-    kroki-server-url: http://3.91.133.254:9500
+    kroki-server-url: http://localhost:9500
     kroki-fetch-diagram: true
   extensions:
   - ./lib/source-url-include-processor.js
@@ -166,6 +166,7 @@ asciidoc:
   - asciidoctor-kroki
   - asciidoctor-external-callout
   - '@asciidoctor/tabs'
+  - asciidoctor-anywhere-footnote
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-198/ui-bundle.zip
