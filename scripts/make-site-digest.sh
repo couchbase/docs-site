@@ -9,5 +9,8 @@ for URL in $(
         $MANIFEST \
     | grep -v '^null$')
 do
-    md5sum public$URL
+    FILE=public$URL
+    # fillet out just the <main> section of the HTML file
+    <$FILE htmlq main > $FILE.digest
+    md5sum $FILE.digest
 done > $DIGEST
