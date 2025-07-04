@@ -212,6 +212,9 @@ if [ -n "$REMOTE" ]; then
     assert "$PREVIEW_BRANCH" "$PREVIEW_CONFIG" "Remote preview doesn't support custom --config, will be ignored"
     assert "$DEBUG" "" "Remote preview doesn't support --debug, will be ignored"
 
+    PR_BASE_OID=$(gh pr view --json baseRefOid -q .baseRefOid 2>/dev/null) || true
+    PR_BASE_NAME=$(gh pr view --json baseRefName -q .baseRefName 2>/dev/null) || true
+
     WORKFLOW=preview-deploy.yml
     UUID=$(uuidgen)
 
@@ -220,6 +223,8 @@ if [ -n "$REMOTE" ]; then
         --field preview_branch=${PREVIEW_BRANCH} \
         --field preview_start_path=${PREVIEW_START_PATH} \
         --field preview_override=${PREVIEW_OVERRIDE} \
+        --field pr_base_name=${PR_BASE_NAME} \
+        --field pr_base_oid=${PR_BASE_OID} \
         --field uuid=${UUID} \
         > /dev/null
 
