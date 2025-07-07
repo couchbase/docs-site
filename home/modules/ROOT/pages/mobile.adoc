@@ -1,69 +1,91 @@
-= Couchbase Mobile - Embedded Database on the Edge
-:page-layout: landing-page-top-level-sdk
-:page-role: tiles
+= Couchbase Mobile 
+// :page-layout: landing-page-top-level-sdk
+// :page-role: tiles 
+:page-toclevels: 2
 :page-rank: 75
-:!sectids:
 
-include::partial$info-banner.adoc[]
+Couchbase Mobile is a comprehensive NoSQL database solution for building offline-first mobile and edge applications. 
+It enables seamless data synchronization between devices and the cloud, with automatic conflict resolution and security.
 
-= Couchbase Mobile
+== Components
 
-++++
-<div class="card-row">
-++++
+Couchbase Mobile consists of:
 
-[.column]
-====== {empty}
-[.content]
-_Couchbase Mobile_ brings the power of NoSQL to the edge.
-The combination of _Sync Gateway_ and _Couchbase Lite_ coupled with the power of _Couchbase Server_ provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
-Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+*https://docs.couchbase.com/couchbase-lite/current/index.html[Couchbase Lite]* - Embedded NoSQL database for mobile and edge devices. 
+Couchbase Lite local storage, querying, and offline operations.
 
-[.column]
-====== {empty}
-[.media-left]
-image::secure-manage-and-develop-with-ease.svg[,275]
+*https://docs.couchbase.com/sync-gateway/current/introduction.html[Sync Gateway]* - Secure, high-performance synchronization server for cloud-to-edge data sync. 
+Provides authentication, access control, and RESTful APIs. 
+Both on-premises and Capella (cloud) deployments use Sync Gateway.
 
-++++
-</div>
-++++
+*https://docs.couchbase.com/couchbase-edge-server/current/introduction/intro.html[Edge Server]* - Lightweight database for edge/IoT environments. 
+Edge Server enables local data processing and synchronization with Couchbase Lite and Capella.
 
-== Embedded Database on the Edge
-++++
-<div class="card-row two-column-row">
-++++
+*https://docs.couchbase.com/home/cloud.html[Capella]* - Fully managed Database-as-a-Service (DBaaS) for Couchbase, including managed mobile sync via App Services.
 
-[.column]
-.Couchbase Lite
+*https://docs.couchbase.com/cloud/app-services/references/rest-api-introduction.html[App Services]* - The managed synchronization layer in Capella, providing the same sync capabilities as Sync Gateway but fully managed in the cloud.
 
-[.content]
-Couchbase Lite is an embedded, NoSQL JSON Document Style database for your mobile apps.
-It natively supports all major operating systems and platforms.
-Its NoSQL client database provides CRUD, full-text search and query capabilities that runs locally on the device. +
-xref:couchbase-lite::introduction.adoc[Go to Couchbase Lite Docs]
 
-[.column]
-.Sync Gateway
+== Deployment Options
 
-[.content]
-Sync Gateway is an internet-facing synchronization mechanism designed to provide data synchronization for large-scale interactive web, mobile, and IoT applications. +
-xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
+=== On-Premises
 
-[.column]
-.Edge Server
+Components: Couchbase Lite + Sync Gateway + Edge Server
 
-[.content]
-Edge Server is a lightweight standalone database for resource-constrained edge.
-It exposes a REST API that enables you to get database information, perform document operations, run {sqlpp} queries, and manage change feeds and replication. +
-xref:couchbase-edge-server:introduction:intro.adoc[Go to Edge Server Docs]
+* Deploy and manage your own infrastructure
+* Sync Gateway handles synchronization between devices and Couchbase Server
+* Full control over security, data, and hosting
 
-[.column]
-.Tutorials
+=== Cloud (Capella)
+Components: Couchbase Lite + App Services + Edge Server
 
-[.content]
-Sample tutorials to build Mobile applications on the edge. +
-https://developer.couchbase.com/tutorials[Couchbase Mobile Tutorials]
+* Fully managed cloud solution
+* App Services provides managed, scalable synchronization for Capella
+* Automatic scaling, maintenance, and cloud-native management
 
-++++
-</div>
-++++
+== Data Flow
+
+1. Couchbase Lite stores and syncs data locally on mobile/edge devices, supporting offline operations.
+2. Sync Gateway (on-prem) or App Services (cloud) manage secure, bi-directional synchronization between devices and the backend database.
+3. Edge Server provides local data processing and sync for IoT/edge devices.
+4. Capella offers a fully managed cloud database and sync solution
+
+== Mobile Development
+
+=== Couchbase Lite SDKs
+
+Build mobile apps with native SDKs for:
+
+* iOS/macOS: https://docs.couchbase.com/couchbase-lite/current/swift/quickstart.html[Swift], https://docs.couchbase.com/couchbase-lite/current/objc/quickstart.html[Objective-C]
+
+* Android: https://docs.couchbase.com/couchbase-lite/current/java/quickstart.html[Java], https://docs.couchbase.com/couchbase-lite/current/android/kotlin.html[Kotlin]
+
+* Cross-Platform: https://docs.couchbase.com/couchbase-lite/current/csharp/quickstart.html[.NET], https://docs.couchbase.com/couchbase-lite/current/c/quickstart.html[C]
+
+* JavaScript: https://docs.couchbase.com/couchbase-lite/current/javascript/ionic.html[Ionic], https://docs.couchbase.com/couchbase-lite/current/javascript/react.html[React Native]
+
+NOTE: JavaScript is community managed and not supported by Couchbase officially. 
+
+=== Sync Gateway Platforms
+Deploy Sync Gateway on:
+
+Linux: Ubuntu, CentOS, Red Hat Enterprise Linux
+
+Windows: Windows Server
+
+macOS: macOS for development
+
+Docker: https://docs.couchbase.com/sync-gateway/current/deploy-cluster-to-kubernetes.html[Container deployments]
+
+== Getting Started
+
+* For cloud development: https://docs.couchbase.com/home/cloud.html[Start with Capella] and https://docs.couchbase.com/cloud/app-services/index.html[App Services] for managed Sync. 
+* For on-premises: https://docs.couchbase.com/couchbase-lite/current/index.html[Install Couchbase Lite] and https://docs.couchbase.com/sync-gateway/current/introduction.html[configure Sync Gateway]
+* For Edge computing: https://docs.couchbase.com/couchbase-edge-server/current/introduction/intro.html[Deploy Edge Server] for local/IoT sync.
+
+== Learn More
+
+* https://developer.couchbase.com/tutorials/[Couchbase Mobile Tutorials]
+* xref:mobile:introduction:architecture-overview.adoc[Couchbase Documentation]
+* xref:cloud:mobile:index.adoc[Manage App Services for Mobile and Edge (Capella)]
+* xref:couchbase-edge-server:get-started:get-started-landing.adoc[Getting Started with Edge Server]
