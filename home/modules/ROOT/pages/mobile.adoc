@@ -4,8 +4,10 @@
 :page-toclevels: 2
 :page-rank: 75
 
-Couchbase Mobile is a comprehensive NoSQL database solution for building offline-first mobile and edge applications. 
-It enables seamless data synchronization between devices and the cloud, with automatic conflict resolution and security.
+Couchbase Mobile brings the power of NoSQL JSON document database to the edge. 
+The combination of Sync Gateway and Couchbase Lite provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
+This enables you to deploy offline-first mobile and edge applications with greater agility on premises or in any cloud. 
+Features include automatic conflict resolution, security, Full-Text Search, and SQL++ querying capabilities.
 
 == Components
 
@@ -21,33 +23,39 @@ Both on-premises and Capella (cloud) deployments use Sync Gateway.
 *https://docs.couchbase.com/couchbase-edge-server/current/introduction/intro.html[Edge Server]* - Lightweight database for edge/IoT environments. 
 Edge Server enables local data processing and synchronization with Couchbase Lite and Capella.
 
-*https://docs.couchbase.com/home/cloud.html[Capella]* - Fully managed Database-as-a-Service (DBaaS) for Couchbase, including managed mobile sync via App Services.
-
-*https://docs.couchbase.com/cloud/app-services/references/rest-api-introduction.html[App Services]* - The managed synchronization layer in Capella, providing the same sync capabilities as Sync Gateway but fully managed in the cloud.
+*https://docs.couchbase.com/cloud/app-services/references/rest-api-introduction.html[App Services]* - Fully managed synchronization service providing the same sync capabilities as Sync Gateway but without infrastructure management.
 
 
 == Deployment Options
 
-=== On-Premises
-
-Components: Couchbase Lite + Sync Gateway + Edge Server
-
-* Deploy and manage your own infrastructure
-* Sync Gateway handles synchronization between devices and Couchbase Server
-* Full control over security, data, and hosting
-
 === Cloud (Capella)
-Components: Couchbase Lite + App Services + Edge Server
+Components: Couchbase Lite + App Services
 
 * Fully managed cloud solution
 * App Services provides managed, scalable synchronization for Capella
 * Automatic scaling, maintenance, and cloud-native management
 
+=== On-Premises
+
+Components: Couchbase Lite + Sync Gateway
+
+* Deploy and manage your own infrastructure
+* Sync Gateway handles synchronization between devices and Couchbase Server
+* Full control over security, data, and hosting
+
+=== Edge/IoT Deployments (Optional)
+Components: Couchbase Lite + Edge Server + (Sync Gateway or App Services)
+
+* For lightweight edge computing and IoT environments
+* Edge Server enables local data processing at the edge
+* Can sync with either on-premises Sync Gateway or cloud-based App Services
+* Ideal for scenarios requiring reduced latency and local data processing
+
 == Data Flow
 
-1. Couchbase Lite stores and syncs data locally on mobile/edge devices, supporting offline operations.
-2. Sync Gateway (on-prem) or App Services (cloud) manage secure, bi-directional synchronization between devices and the backend database.
-3. Edge Server provides local data processing and sync for IoT/edge devices.
+1. Couchbase Lite stores and syncs data locally on mobile devices, supporting offline operations.
+2. Sync Gateway (on-prem) or App Services (cloud) manage secure, bidirectional synchronization between devices and the backend database.
+3. For edge deployments, Edge Server provides local data processing and sync for IoT/edge devices.
 4. Capella offers a fully managed cloud database and sync solution
 
 == Mobile Development
@@ -69,13 +77,13 @@ NOTE: JavaScript is community managed and not supported by Couchbase officially.
 === Sync Gateway Platforms
 Deploy Sync Gateway on:
 
-Linux: Ubuntu, CentOS, Red Hat Enterprise Linux
+https://docs.couchbase.com/sync-gateway/current/get-started-install.html#install-for-linux[Linux]
 
-Windows: Windows Server
+https://docs.couchbase.com/sync-gateway/current/get-started-install.html#install-for-windows[Windows]
 
-macOS: macOS for development
+https://docs.couchbase.com/sync-gateway/current/get-started-install.html#install-for-mac-os[macOS]
 
-Docker: https://docs.couchbase.com/sync-gateway/current/deploy-cluster-to-kubernetes.html[Container deployments]
+https://docs.couchbase.com/sync-gateway/current/deploy-cluster-to-kubernetes.html[Kubernetes]
 
 == Getting Started
 
