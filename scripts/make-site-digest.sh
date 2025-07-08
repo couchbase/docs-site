@@ -16,7 +16,7 @@ for URL in $(
     | sort -u)
 do
     FILE=public$URL
-    # fillet out just the <main> section of the HTML file
-    <$FILE htmlq main > $FILE.digest
+    # fillet out just the <main><article> section of the HTML file
+    <$FILE htmlq main article > $FILE.digest
     md5sum $FILE.digest
 done > $DIGEST
