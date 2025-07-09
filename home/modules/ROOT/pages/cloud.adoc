@@ -12,12 +12,13 @@ include::home::partial$info-banner.adoc[]
 
 = Welcome to Couchbase Capella
 
-Capella operational is the easiest way to use our Couchbase NoSQL database.
-Get access to SQL-like querying, full-text search, powerful eventing, and connect to mobile and IoT devices at the edge.
+Capella operational is the easiest way to use Couchbase Server.
+Get access to SQL-like querying, Full-Text Search (FTS), powerful eventing, and connectivity to mobile and IoT devices at the edge.
 
-Capella columnar is an analytical database (RT-OLAP) for real time apps and operational intelligence.
+Capella columnar is an analytical database (RT-OLAP) for real-time apps and operational intelligence.
 Capella columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
+Capella AI services is a fully managed set of tools that help you build, deploy, and scale your agentic and retrieval-augmented generation (RAG) applications.
 
 [.centered.card-container]
 == Explore Couchbase Capella
@@ -25,7 +26,7 @@ Capella columnar is a standalone, cloud-only offering from Couchbase under the C
 [.card-box]
 === icon:rocket[] Get Started With Capella Operational
 
-Get set up with an account and deploy a free tier operational cluster.
+Get set up with an account and deploy a free tier Capella operational cluster.
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
 * xref:cloud:get-started:intro.adoc[]
@@ -38,10 +39,23 @@ Get set up with an account and deploy a free tier operational cluster.
 [.card-box]
 === icon:rocket[] Get Started With Capella Columnar
 
-Create your account and follow our tutorial on how to load data into your columnar cluster.
+Create your account and follow the tutorial on how to load data into a Capella Columnar cluster.
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
 * xref:columnar:intro:intro.adoc[]
 * xref:columnar:admin:prepare-project.adoc[]
 * xref:columnar:intro:examples.adoc[]
 * xref:columnar:query:workbench.adoc[]
+
+[.card-box]
+=== icon:rocket[] Get Started With Capella AI Services
+
+Create your account and start working with Capella AI Services.
+
+* https://cloud.couchbase.com/sign-up[Sign Up^]
+* xref:ai:get-started:about-ai-services.adoc[]
+* xref:ai:build:build-agent-with-catalog.adoc[]
+* xref:ai:build:deploy-llm-model.adoc[]
+* xref:ai:build:deploy-embed-model.adoc[]
+* xref:ai:build:vectorize-structured-data.adoc[]
+* xref:ai:build:vectorize-unstructured-data.adoc[]
