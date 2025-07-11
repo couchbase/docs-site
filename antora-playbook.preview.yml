@@ -204,6 +204,7 @@ asciidoc:
   - ./lib/template-block.js
   - asciidoctor-kroki
   - asciidoctor-external-callout
+  - asciidoctor-anywhere-footnote
   - '@asciidoctor/tabs'
 ui:
   bundle:
