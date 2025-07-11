@@ -147,10 +147,13 @@ if [ -n "$INIT" ]; then
     cp -n antora-playbook.preview.local.yml-example antora-playbook.preview.local.yml \
       || echo "antora-playbook.preview.local.yml already exists"
 
-    echo "🐇 Linking 'preview' command (you may need to enter your password)"
+    echo "🐇 Checking 'preview' command link (you may need to enter your password)"
 
-    sudo ln -sf $(realpath $0) /usr/local/bin/preview
+    which preview || sudo ln -sf $(realpath $0) /usr/local/bin/preview
     which preview >/dev/null || ( echo "Failed to link preview command"; exit 1 )
+
+    brew install gh jq yq
+    gh auth token || gh auth login
 
     echo "🐇 initialised preview script"
     exit 0
@@ -181,6 +184,7 @@ export PREVIEW_REPO=$(basename $TOPLEVEL)
 export PREVIEW_BRANCH=$(git branch --show-current)
 export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
 export PREVIEW_CONFIG=${PREVIEW_CONFIG:-$PREVIEW_BRANCH}
+export PREVIEW_COMPONENT=$(yq .name $ANTORA/antora.yml 2>/dev/null)
 
 if [ -z "$REMOTE" ]; then
     export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
@@ -214,6 +218,8 @@ if [ -n "$REMOTE" ]; then
 
     PR_BASE_OID=$(gh pr view --json baseRefOid -q .baseRefOid 2>/dev/null) || true
     PR_BASE_NAME=$(gh pr view --json baseRefName -q .baseRefName 2>/dev/null) || true
+    PR_NUMBER=$(gh pr view --json number -q .number 2>/dev/null) || true
+    PREVIEW_OWNER=$(gh repo view --json owner -q .owner.login) || true
 
     WORKFLOW=preview-deploy.yml
     UUID=$(uuidgen)
@@ -223,9 +229,11 @@ if [ -n "$REMOTE" ]; then
         --field preview_branch=${PREVIEW_BRANCH} \
         --field preview_start_path=${PREVIEW_START_PATH} \
         --field preview_override=${PREVIEW_OVERRIDE} \
-        --field pr_base_name=${PR_BASE_NAME} \
         --field pr_base_oid=${PR_BASE_OID} \
+        --field preview_owner=${PREVIEW_OWNER} \
+        --field pr_number=${PR_NUMBER} \
         --field uuid=${UUID} \
+        --field preview_component=${PREVIEW_COMPONENT} \
         > /dev/null
 
     echo Requested the build at Github with UUID $UUID
