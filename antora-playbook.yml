@@ -26,7 +26,7 @@ site:
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
-        { "title": "Develop", "startPage": "home::developer.adoc", "components": ["develop"] },
+        { "title": "Develop", "startPage": "home::developer.adoc", "components": ["develop", sdk-extensions"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
@@ -79,7 +79,7 @@ content:
   - url: https://github.com/couchbase/docs-elastic-search
     branches: [main]
   - url: https://github.com/couchbase/docs-kafka
-    branches: [main]
+    branches: [release/4.2]
   - url: https://github.com/couchbase/docs-spark
     branches: [release/3.5, release/3.3]
   - url: https://github.com/couchbase/docs-tableau
