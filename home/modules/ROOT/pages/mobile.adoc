@@ -14,10 +14,10 @@ Features include automatic conflict resolution, security, Full-Text Search, and 
 
 Couchbase Mobile consists of:
 
-xref:couchbase-lite:index.adoc[Couchbase Lite] - Embedded NoSQL database for mobile and edge devices.
+xref:couchbase-lite:ROOT:index.adoc[Couchbase Lite] - Embedded NoSQL database for mobile and edge devices.
 Couchbase Lite provides local storage, querying, and offline operations.
 
-xref:sync-gateway:introduction.adoc[Sync Gateway] - Secure, high-performance synchronization server for cloud-to-edge data sync.
+xref:sync-gateway:ROOT:introduction.adoc[Sync Gateway] - Secure, high-performance synchronization server for cloud-to-edge data sync.
 Provides authentication, access control, and RESTful API.
 Both on-premises and Capella (Cloud) deployments use Sync Gateway.
 
@@ -76,25 +76,26 @@ Build mobile apps with native SDKs for:
 NOTE: JavaScript is community managed and not supported by Couchbase officially.
 
 === Sync Gateway Platforms
+
 Deploy Sync Gateway on:
 
-xref:sync-gateway:get-started-install.adoc#install-for-linux[Linux]
+xref:sync-gateway:ROOT:get-started-install.adoc#install-for-linux[Linux]
 
-xref:sync-gateway:get-started-install.adoc#install-for-windows[Windows]
+xref:sync-gateway:ROOT:get-started-install.adoc#install-for-windows[Windows]
 
-xref:sync-gateway:get-started-install.adoc#install-for-mac-os[macOS]
+xref:sync-gateway:ROOT:get-started-install.adoc#install-for-mac-os[macOS]
 
-xref:sync-gateway:deploy-cluster-to-kubernetes.adoc[Kubernetes]
+xref:sync-gateway:ROOT:deploy-cluster-to-kubernetes.adoc[Kubernetes]
 
 == Getting Started
 
-* For cloud development: xref:cloud:index.adoc[Start with Capella] and xref:cloud:app-services:index.adoc[App Services] for managed Sync.
-* For on-premises: xref:couchbase-lite:introduction.adoc[Install Couchbase Lite] and xref:sync-gateway:introduction.adoc[configure Sync Gateway]
+* For cloud development: xref:cloud:get-started:intro.adoc[Start with Capella] and xref:cloud:app-services:index.adoc[App Services] for managed Sync.
+* For on-premises: xref:couchbase-lite:ROOT:index.adoc[Install Couchbase Lite] and xref:sync-gateway:ROOT:introduction.adoc[configure Sync Gateway]
 * For Edge computing: xref:couchbase-edge-server:introduction:intro.adoc[Edge Server] for local/IoT sync.
 
 == Learn More
 
 * https://developer.couchbase.com/tutorials/[Couchbase Mobile Tutorials]
-* xref:mobile:introduction:architecture-overview.adoc[Couchbase Documentation]
-* xref:cloud:mobile:index.adoc[Manage App Services for Mobile and Edge (Capella)]
-* xref:couchbase-edge-server:get-started:get-started-landing.adoc[Getting Started with Edge Server]
+* xref:home:ROOT:index.adoc[Couchbase Documentation]
+* xref:cloud:app-services:index.adoc[Manage App Services for Mobile and Edge (Capella)]
+* xref:couchbase-edge-server:get-started:introduction:intro.adoc[Getting Started with Edge Server]
