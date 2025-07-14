@@ -32,32 +32,32 @@ xref:cloud:app-services:index.adoc[App Services] - Fully managed synchronization
 === Cloud (Capella)
 Components: Couchbase Lite + App Services
 
-* Fully managed cloud solution
-* App Services provides managed, scalable synchronization for Capella
-* Automatic scaling, maintenance, and cloud-native management
+* Fully managed cloud solution.
+* App Services provides managed, scalable synchronization for Capella.
+* Automatic scaling, maintenance, and cloud-native management.
 
 === On-Premises
 
 Components: Couchbase Lite + Sync Gateway
 
-* Deploy and manage your own infrastructure
-* Sync Gateway handles synchronization between devices and Couchbase Server
-* Full control over security, data, and hosting
+* Deploy and manage your own infrastructure.
+* Sync Gateway handles synchronization between devices and Couchbase Server.
+* Full control over security, data, and hosting.
 
 === Edge/IoT Deployments (Optional)
 Components: Couchbase Lite + Edge Server + (Sync Gateway or App Services)
 
-* For lightweight edge computing and IoT environments
-* Edge Server enables local data processing at the edge
-* Can sync with either on-premises Sync Gateway or cloud-based App Services
-* Ideal for scenarios requiring reduced latency and local data processing
+* For lightweight edge computing and IoT environments.
+* Edge Server enables local data processing at the edge.
+* Can sync with either on-premises Sync Gateway or cloud-based App Services.
+* Ideal for scenarios requiring reduced latency and local data processing.
 
 == Data Flow
 
 1. Couchbase Lite stores and syncs data locally on mobile devices, supporting offline operations.
 2. Sync Gateway (on-prem) or App Services (cloud) manage secure, bidirectional synchronization between devices and the backend database.
 3. For edge deployments, Edge Server provides local data processing and sync for IoT/edge devices.
-4. Capella offers a fully managed cloud database and sync solution
+4. Capella offers a fully managed cloud database and sync solution.
 
 == Mobile Development
 
@@ -90,7 +90,7 @@ xref:sync-gateway:ROOT:deploy-cluster-to-kubernetes.adoc[Kubernetes]
 == Getting Started
 
 * For cloud development: xref:cloud:get-started:intro.adoc[Start with Capella] and xref:cloud:app-services:index.adoc[App Services] for managed Sync.
-* For on-premises: xref:couchbase-lite:ROOT:index.adoc[Install Couchbase Lite] and xref:sync-gateway:ROOT:introduction.adoc[configure Sync Gateway]
+* For on-premises: xref:couchbase-lite:ROOT:index.adoc[Install Couchbase Lite] and xref:sync-gateway:ROOT:introduction.adoc[configure Sync Gateway].
 * For Edge computing: xref:couchbase-edge-server:introduction:intro.adoc[Edge Server] for local/IoT sync.
 
 == Learn More
