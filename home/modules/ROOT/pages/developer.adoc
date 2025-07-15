@@ -23,8 +23,8 @@ Develop at the edge with offline-first Couchbase Lite, for transactional workloa
 [.card-box]
 === icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
 
-Develop an app for capella@xref:develop:develop:intro.adoc[Capella Operational],
-or a 7.6@xref:develop:develop:intro.adoc[self-managed Couchbase Server].
+Develop an app for xref:capella@develop:develop:intro.adoc[Capella Operational],
+or a xref:7.6@develop:develop:intro.adoc[self-managed Couchbase Server].
 Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 
 * xref:java-sdk:hello-world:start-using-sdk.adoc[Get Started with the Java SDK]
