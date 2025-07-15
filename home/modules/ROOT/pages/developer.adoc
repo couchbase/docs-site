@@ -42,15 +42,16 @@ xref:c-sdk:hello-world:overview.adoc[C]
 | xref:ruby-sdk:hello-world:overview.adoc[Ruby]
 | xref:scala-sdk:hello-world:overview.adoc[Scala]
 * xref:cloud:third-party:integrations.adoc[Integrations, Connectors, and Tools]
-* Multi-Document ACID Transactions
-* xref:cloud:develop:intro.adoc[Capella Operational Developer Intro]
+// * Multi-Document ACID Transactions
+// * xref:cloud:develop:intro.adoc[Capella Operational Developer Intro]
 
 
 [.card-box]
-=== icon:rocket[] Real Time Analytics with Columnar SDKs
+=== icon:rocket[] Real Time Analytics with Analytics SDKs
 
-xref:columnar:intro:intro.adoc[Capella Columnar] brings the power of NoSQL to the world of analytics.
-This service integrates seamlessly with the Couchbase Capella cloud platform, enabling the creation of real-time, adaptive applications.
+xref:columnar:intro:intro.adoc[Enterprise Analytics] brings the power of NoSQL to the world of analytics.
+Self-managed Enterprise Analytics brings real-time adaptive applications to your datacenter or private cloud --
+or try this service fully-hosted as Capella Columnar, which integrates seamlessly with the Couchbase Capella cloud platform.
 // Or try self-managed Enterprise Analytics, in your datacenter or private cloud.
 
 ////
@@ -89,6 +90,19 @@ xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
 Our Vector Search Service facilitates RAG applications -- and offers the ability to combine searches with our sophisticated Search API.
 Agentic Apps can be built with Agent Catalog (currently in Private Preview).
 
+////
+// text for AI dev landing page??
+...enable developers to build agentic apps ...
+... combining data and intelligence in a unified platform.
+
+// Also:
+[AI ecosystem integrations]
+...for production-grade AI.
+
+////
+
+
 * Vector Search
+// billion-scale Vector GSI / Query
 * Agent Catalog Private Preview
-* Other AI?
+* Other AI? Columnar...

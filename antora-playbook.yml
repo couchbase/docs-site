@@ -26,7 +26,7 @@ site:
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
-        { "title": "Develop", "startPage": "home::developer.adoc", "components": ["develop"] },
+        { "title": "Develop", "startPage": "home::developer.adoc", "components": ["develop", "sdk-extensions", "couchbase-lite", ""] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
