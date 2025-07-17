@@ -99,7 +99,7 @@ content:
   # NOTE docs-server is currently after other server repos so nav key wins
   # - url: https://github.com/couchbase/docs-server
   - url: https://github.com/couchbase/docs-server.git
-    branches: DOC-12691-Improve-auto-failover-docs
+    branches: DOC_12484_xdcr_conflict_logging_feature
   #  branches: 7.6  
   #  branches: DOC_12539_b2_server_admin_tools
   # - url: https://github.com/couchbase/couchbase-cli
