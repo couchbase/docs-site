@@ -13,8 +13,8 @@ This is very handy for pages where you have multiple tables appearing on the pag
 |ID |Name |Description
 
 |1
-|Product Aafnote:first-block[This is the first footnote]
-|High-quality widget with advanced features{empty}afnote:first-block[This is the second]
+|Product Aafnote:first-block[This is the first footnote, refid=first]
+|High-quality widget with advanced features{empty}afnote:first-block[This is the second, refid=second]
 
 |2
 |Product B
@@ -31,7 +31,7 @@ This is very handy for pages where you have multiple tables appearing on the pag
 |Quarter |Product |Units Sold |Revenue ($) |Profit Margin (%)
 
 |Q1
-|Smartphone Xafnote:second-block[This is for the second block.]
+|Smartphone Xafnote:second-block[This is for the second block., refid=third]
 |5,420
 |$1,084,000
 |32.5
@@ -51,7 +51,7 @@ This is very handy for pages where you have multiple tables appearing on the pag
 |Q2
 |Smartphone X
 |6,780
-|$1,356,000afnote:second-block[Pricey!]
+|$1,356,000afnote:second-block[Pricey!, refid=fourth]
 |33.8
 
 |Q2
@@ -97,7 +97,7 @@ afnote:second-block[]
 |===
 |Product |Price ($) |Rating (1-5) |Stock Status
 
-|Premium Headphonesafnote:mid-block[Special offer!] |249.99 |4.7 |In Stock
+|Premium Headphonesafnote:mid-block[Special offer!, refid=special] |249.99 |4.7 |In Stock
 
 |Wireless Speaker |129.95 |4.2 |Limited
 
