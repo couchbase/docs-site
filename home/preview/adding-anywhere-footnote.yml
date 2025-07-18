@@ -1,4 +1,7 @@
 override:
+  asciidoc:
+    extensions:
+      - asciidoctor-anywhere-footnote
   ui:
     bundle:
       url: https://github.com/couchbase/docs-ui/releases/download/adding-anywhere-footnote-11/ui-bundle.zip
