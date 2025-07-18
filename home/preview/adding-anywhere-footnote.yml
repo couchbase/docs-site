@@ -1,0 +1,4 @@
+override:
+  ui:
+    bundle:
+      url: https://github.com/couchbase/docs-ui/releases/download/adding-anywhere-footnote-11/ui-bundle.zip

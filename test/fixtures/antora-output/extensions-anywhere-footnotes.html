@@ -1,0 +1,243 @@
+
+<div class="page-heading-title">
+<h1 class="page">Anywhere Footnotes</h1>
+
+<div class="labels">
+<ul></ul>
+</div>
+
+
+</div>
+<div class="contributor-list-box">
+<span class="last-commit-date" id="commitdate">    </span>
+<ul id="contributorList"></ul>
+<span id="otherContributor"> + </span>
+</div><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the AsciiDoc extension extras we run on the site is Anywhere footnotes.
+This extension allows you to add footnotes to the page,
+with the block of references appearing anywhere on the page.
+(Regular AsciiDoc footnotes always appear right at the bottom).</p>
+</div>
+<div class="paragraph">
+<p>This is very handy for pages where you have multiple tables appearing on the page, like this:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Sample Table Title</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product A<span class="anywhere-footnote-marker"><a id="first-block-EyEQeGCN-ref"></a><a href="#first-block-EyEQeGCN-block">[1]</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High-quality widget with advanced features<span class="anywhere-footnote-marker"><a id="first-block-w81bvhl1-ref"></a><a href="#first-block-w81bvhl1-block">[2]</a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Budget-friendly solution for everyday use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Premium option with extended warranty</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Quarterly Sales Report 2025</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6669%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Quarter</th>
+<th class="tableblock halign-left valign-top">Product</th>
+<th class="tableblock halign-left valign-top">Units Sold</th>
+<th class="tableblock halign-left valign-top">Revenue ($)</th>
+<th class="tableblock halign-left valign-top">Profit Margin (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smartphone X<span class="anywhere-footnote-marker"><a id="second-block-8LiTnzaL-ref"></a><a href="#second-block-8LiTnzaL-block">[3]</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5,420</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,084,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32.5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Laptop Pro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,875</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,250,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28.7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Watch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,650</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$729,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">41.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smartphone X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6,780</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,356,000<span class="anywhere-footnote-marker"><a id="second-block-htOZG3NA-ref"></a><a href="#second-block-htOZG3NA-block">[4]</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">33.8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Laptop Pro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,140</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,568,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">29.4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Watch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,290</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$858,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smartphone X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7,890</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,578,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Laptop Pro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,560</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,072,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Watch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5,130</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,026,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43.5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="first-block-of-footnotes"><a class="anchor" href="#first-block-of-footnotes"></a>First block of footnotes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="anywhere-footnote-block"></span></p><div class="paragraph anywhere-footnote-hr-divider">
+<p></p>
+</div>
+<div class="dlist anywhere-footnote-horizontal">
+<dl>
+<dt class="hdlist1"><a href="#first-block-EyEQeGCN-ref" class="anywhere-footnote-marker">[1]</a><a id="first-block-EyEQeGCN-block"></a></dt>
+<dd>
+<p>This is the first footnote</p>
+</dd>
+<dt class="hdlist1"><a href="#first-block-w81bvhl1-ref" class="anywhere-footnote-marker">[2]</a><a id="first-block-w81bvhl1-block"></a></dt>
+<dd>
+<p>This is the second</p>
+</dd>
+</dl>
+</div><p></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="second-block-of-footnotes"><a class="anchor" href="#second-block-of-footnotes"></a>Second block of footnotes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="anywhere-footnote-block"></span></p><div class="paragraph anywhere-footnote-hr-divider">
+<p></p>
+</div>
+<div class="dlist anywhere-footnote-horizontal">
+<dl>
+<dt class="hdlist1"><a href="#second-block-8LiTnzaL-ref" class="anywhere-footnote-marker">[3]</a><a id="second-block-8LiTnzaL-block"></a></dt>
+<dd>
+<p>This is for the second block.</p>
+</dd>
+<dt class="hdlist1"><a href="#second-block-htOZG3NA-ref" class="anywhere-footnote-marker">[4]</a><a id="second-block-htOZG3NA-block"></a></dt>
+<dd>
+<p>Pricey!</p>
+</dd>
+</dl>
+</div><p></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Sample Product Comparison</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Product</th>
+<th class="tableblock halign-left valign-top">Price ($)</th>
+<th class="tableblock halign-left valign-top">Rating (1-5)</th>
+<th class="tableblock halign-left valign-top">Stock Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Premium Headphones<span class="anywhere-footnote-marker"><a id="mid-block-YQRi82Xu-ref"></a><a href="#mid-block-YQRi82Xu-block">[5]</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">249.99</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In Stock</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wireless Speaker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">129.95</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limited</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><span class="anywhere-footnote-block">
+
+
+</span></p><div class="dlist anywhere-footnote-horizontal">
+<dl>
+<dt class="hdlist1"><a href="#mid-block-YQRi82Xu-ref" class="anywhere-footnote-marker">[5]</a><a id="mid-block-YQRi82Xu-block"></a></dt>
+<dd>
+<p>Special offer!</p>
+</dd>
+</dl>
+</div><p></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smart Watch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">199.50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In Stock</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bluetooth Earbuds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">89.99</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Out of Stock</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
