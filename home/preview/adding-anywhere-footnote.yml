@@ -1,5 +1,7 @@
 override:
   asciidoc:
+    attributes:
+      test-hakim: test
     extensions:
       - asciidoctor-anywhere-footnote
   ui:
