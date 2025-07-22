@@ -1,0 +1,38 @@
+#!/bin/bash
+
+ESCROW_VERSION=$1
+
+if [ -z "$ESCROW_VERSION" ]; then
+  echo Usage:
+  echo    scripts/escrow {version}
+  echo
+  echo e.g.
+  echo    scripts/escrow 7.6.5
+  echo
+  echo    will build antora-playbook.escrow.7.6.5.yml
+  exit 1
+fi
+
+cd $(dirname $0)
+cd ..
+
+set -eo pipefail
+echo "🐦‍⬛ Building Escrow docs for $ESCROW_VERSION"
+
+PLAYBOOK=antora-playbook.escrow.$ESCROW_VERSION.yml
+DIR=./escrow-$ESCROW_VERSION
+
+npm ci
+npx antora $PLAYBOOK --to-dir $DIR --stacktrace --fetch
+cp $PLAYBOOK $DIR
+
+TARFILE=./escrow-$ESCROW_VERSION.tgz
+
+tar cvzf $TARFILE escrow-$ESCROW_VERSION
+
+echo Created tarfile in: $TARFILE
+echo 
+echo will now try to open this in Finder on Mac
+
+open -R $TARFILE 2>/dev/null || true
+
