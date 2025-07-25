@@ -64,12 +64,12 @@ xref:cloud::index.adoc[Couchbase Capella]
 
 {empty} +
 
-.Capella Columnar (RT-OLAP)
+.Capella Analytics (RT-OLAP)
 
-Capella Columnar is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
-Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
+Capella Analytics is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
+Capella Analytics is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
-xref:columnar:intro:intro.adoc[Capella Columnar]
+xref:analytics:intro:intro.adoc[Capella Analytics]
 
 
 [.column]
@@ -114,7 +114,7 @@ xref:couchbase-edge-server:introduction:intro.adoc[Couchbase Edge Server]
 Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
 
 xref:home:ROOT:sdk.adoc[Developer Docs] |
-xref:home:ROOT:columnar-sdk.adoc[Columnar SDKs]
+xref:home:ROOT:columnar-sdk.adoc[Analytics SDKs]
 
 [.column]
 ====== {empty}
@@ -190,7 +190,7 @@ https://forums.couchbase.com/[Community]
 
 a| xref:cloud::index.adoc[Couchbase Capella]
 
-xref:columnar:intro:intro.adoc[Capella Columnar]
+xref:analytics:intro:intro.adoc[Capella Analytics]
 
 a| xref:server.adoc[Couchbase Server]
 

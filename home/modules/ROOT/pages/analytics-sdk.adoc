@@ -9,7 +9,7 @@
 include::partial$info-banner.adoc[]
 
 xref:analytics:intro:intro.adoc[Enterprise Analytics] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
-// Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
+// Capella Analytics is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
 Analytics SDKs are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
 they are purpose built for Enterprise Analytics's real-time analytical use cases.
@@ -17,7 +17,7 @@ They support streaming APIs to handle large datasets, as well as the common feat
 such as connection management and robust error handling.
 
 
-== SDK APIs to work with Capella Columnar:
+== SDK APIs to work with Capella Analytics:
 
 [{tabs}] 
 ==== 

@@ -1,22 +1,22 @@
-= Develop with Capella Columnar 
+= Develop with Capella Analytics 
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :page-rank: 75
 :!sectids:
 
-= Develop with Capella Columnar 
+= Develop with Capella Analytics 
 
 include::partial$info-banner.adoc[]
 
-xref:columnar:intro:intro.adoc[Capella Columnar] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
-Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
+xref:analytics:intro:intro.adoc[Capella Analytics] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
+Capella Analytics is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
-Columnar SDKs are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
-they are purpose built for Columnar's analytical use cases.
+Analytics SDKs are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
+they are purpose built for Analytics's analytical use cases.
 They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
 such as connection management and robust error handling.
 
-== SDK APIs to work with Capella Columnar:
+== SDK APIs to work with Capella Analytics:
 
 
 [{tabs}] 

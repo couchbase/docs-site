@@ -28,7 +28,7 @@ collection.reactive.upsert("document-key", json)
 [TIP]
 .Columnar SDKs
 ====
-SDKs for xref:columnar:intro:intro.adoc[Capella Columnar] --
+SDKs for xref:analytics:intro:intro.adoc[Capella Analytics] --
 Couchbase's analytical database (RT-OLAP) for real time apps and operational intelligence --
 are xref:columnar-sdk.adoc[available] for the Java, Node.js, and Python platforms.
 ====
@@ -155,7 +155,7 @@ xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transac
 
 == Capella columnar SDKs
 
-xref:columnar:intro:intro.adoc[Capella Columnar] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
+xref:analytics:intro:intro.adoc[Capella Analytics] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
 xref:columnar-sdk.adoc[Columnar SDKs] are tailored to the APIs offered by this service.
 
 [#table_columnar_sdk,cols="42,40,60,50"]
