@@ -15,6 +15,8 @@ include::partial$info-banner.adoc[]
 xref:analytics:intro:intro.adoc[Enterprise Analytics] is a self-managed, JSON-native NoSQL analytical database.
 It serves to unify data from diverse sources, allowing for the execution of complex analytical queries and the extraction of timely insights.
 
+{empty} +
+
 
 == SDK APIs to work with Enterprise Analytics
 
@@ -58,14 +60,28 @@ https://docs.couchbase.com/sdk-api/analytics-python-client[Python API Reference]
 --
 ====
 
+{empty} +
+
+=== Big Data Connectors
+
+The available options for Enterprise Analytics `DataFrame` and `Dataset` operations with the xref:spark-connector::index.html[Couchbase Spark Connector]
+can be found on the Spark xref:spark-connector::spark-sql.adoc#enterprise-analytics-options[] page.
+
+See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytics] docs for information on streaming from Confluent for Kafka.
+
+{empty} +
 
 == Other Analytics Services
 
-In addition to the Enterprise Analytics (self-managed and Capell Analytics), older Couchbase Analytics services are available --
+In addition to the Enterprise Analytics,
+// (self-managed and Capella Analytics), 
+older Couchbase Analytics services are available --
 Enterprise Analytics' forerunner, Columnar, remains available as Capella Analytics for the present time.
 
 Traditional, row-based analytics is also available in Couchbase operational clusters -- self-managed, of Capella Operational.
 
+
+{empty} +
 
 === SDK APIs to work with Capella Analytics:
 
@@ -109,6 +125,8 @@ https://docs.couchbase.com/sdk-api/columnar-python-client[Python API Reference]
 --
 ====
 
+
+{empty} +
 
 === Row-Based Couchbase Analytics
 
