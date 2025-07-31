@@ -78,7 +78,7 @@ In addition to the Enterprise Analytics,
 older Couchbase Analytics services are available --
 Enterprise Analytics' forerunner, Columnar, remains available as Capella Analytics for the present time.
 
-Traditional, row-based analytics is also available in Couchbase operational clusters -- self-managed, of Capella Operational.
+Traditional, row-based analytics is also available in Couchbase operational clusters -- self-managed, or Capella Operational.
 
 
 {empty} +
