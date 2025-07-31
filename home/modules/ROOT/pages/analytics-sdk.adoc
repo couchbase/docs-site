@@ -21,7 +21,7 @@ It serves to unify data from diverse sources, allowing for the execution of comp
 == SDK APIs to work with Enterprise Analytics
 
 Analytics SDKs are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
-they are purpose built for Enterprise Analytics's real-time analytical use cases.
+they are purpose built for Enterprise Analytics' real-time analytical use cases.
 They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
 such as connection management and robust error handling.
 
