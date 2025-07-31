@@ -64,7 +64,7 @@ https://docs.couchbase.com/sdk-api/analytics-python-client[Python API Reference]
 
 === Big Data Connectors
 
-The available options for Enterprise Analytics `DataFrame` and `Dataset` operations with the xref:spark-connector::index.html[Couchbase Spark Connector]
+The available options for Enterprise Analytics `DataFrame` and `Dataset` operations with the xref:spark-connector:ROOT:index.adoc[Couchbase Spark Connector]
 can be found on the Spark xref:spark-connector:ROOT:spark-sql.adoc#enterprise-analytics-options[DataFrames, Datasets, and SQL] page.
 
 See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytics] docs for information on streaming from Confluent for Kafka.
