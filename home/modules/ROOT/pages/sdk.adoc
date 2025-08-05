@@ -20,6 +20,91 @@ Explore our SDK documentation for your chosen platform:
 
 [{tabs}] 
 ==== 
+{cpp}::
++
+--
+xref:cxx-sdk:hello-world:overview.adoc[{cpp} SDK Docs] |
+xref:cxx-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] |
+xref:cxx-sdk:project-docs:sdk-release-notes.adoc[] |
+https://docs.couchbase.com/sdk-api/couchbase-cxx-client[{cpp} API Reference]
+
+{empty} +
+
+[discrete]
+== Using Your Database icon:database[] 
+
+How-to guides to help you start your development journey with Couchbase and the {cpp} SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Easy to Connect & Get Started
+* xref:cxx-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] -- CRUD against a Document Database.
+* xref:cxx-sdk:howtos:managing-connections.adoc[Connect your App] -- connect from dev or production environment.
+* xref:cxx-sdk:hello-world:sample-application.adoc[Sample Application] -- build a full app
+* xref:cxx-sdk:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial] -- introduction to the SDK, Document data model, and {sqlpp} for document databases.
+
+[.column]
+.Search, Query, Analyze
+* xref:cxx-sdk:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
+* xref:cxx-sdk:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
+* xref:cxx-sdk:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
+* xref:cxx-sdk:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
+
+[.column]
+.Lightning Fast Data Service
+* xref:cxx-sdk:howtos:kv-operations.adoc[]
+* xref:cxx-sdk:howtos:subdocument-operations.adoc[]
+* xref:cxx-sdk:howtos:encrypting-using-sdk.adoc[]
+* xref:cxx-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
+
+[.column]
+.Observability & Error Handling
+* xref:cxx-sdk:howtos:error-handling.adoc[]
+* xref:cxx-sdk:howtos:collecting-information-and-logging.adoc[]
+* xref:cxx-sdk:howtos:slow-operations-logging.adoc[]
+* xref:cxx-sdk:howtos:health-check.adoc[]
+
+++++
+</div>
+++++
+
+
+{empty} +
+
+[discrete]
+== Resources icon:book[] 
+
+Useful resources to help support your development experience with Couchbase and the {cpp} SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Reference
+* https://docs.couchbase.com/sdk-api/couchbase-cxx-client/[API Reference^]
+* xref:cxx-sdk:ref:client-settings.adoc[]
+* xref:cxx-sdk:ref:error-codes.adoc[]
+* xref:cxx-sdk:ref:glossary.adoc[Glossary]
+// * xref:cxx-sdk:ref:travel-app-data-model.adoc[]
+
+[.column]
+.Deployment
+* xref:cxx-sdk:project-docs:sdk-release-notes.adoc[]
+* xref:cxx-sdk:project-docs:compatibility.adoc[Compatibility]
+// * https://docs-archive.couchbase.com/home/index.html[Older Versions Archive]
+// * xref:cxx-sdk:project-docs:migrating-sdk-code-to-3.n.adoc[]
+* xref:cxx-sdk:project-docs:third-party-integrations.adoc[]
+* xref:cxx-sdk:project-docs:sdk-full-installation.adoc[]
+
+++++
+</div>
+++++
+--
+
 Java::
 +
 --
@@ -41,31 +126,31 @@ How-to guides to help you start your development journey with Couchbase and the 
 
 [.column]
 .Easy to Connect & Get Started
-* xref:hello-world:start-using-sdk.adoc[Quickstart Guide] -- CRUD against a Document Database.
-* xref:howtos:managing-connections.adoc[Connect your App] -- connect from dev or production environment.
-* xref:hello-world:sample-application.adoc[Sample Application] -- build a full app
-* xref:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial] -- introduction to the SDK, DOcument data model, and SQL++ for document databases.
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] -- CRUD against a Document Database.
+* xref:java-sdk:howtos:managing-connections.adoc[Connect your App] -- connect from dev or production environment.
+* xref:java-sdk:hello-world:sample-application.adoc[Sample Application] -- build a full app
+* xref:java-sdk:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial] -- introduction to the SDK, DOcument data model, and SQL++ for document databases.
 
 [.column]
 .Search, Query, Analyze
-* xref:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
-* xref:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
-* xref:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
-* xref:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
+* xref:java-sdk:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
+* xref:java-sdk:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
+* xref:java-sdk:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
+* xref:java-sdk:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
 
 [.column]
 .Lightning Fast Data Service
-* xref:howtos:kv-operations.adoc[]
-* xref:howtos:subdocument-operations.adoc[]
-* xref:howtos:encrypting-using-sdk.adoc[]
-* xref:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
+* xref:java-sdk:howtos:kv-operations.adoc[]
+* xref:java-sdk:howtos:subdocument-operations.adoc[]
+* xref:java-sdk:howtos:encrypting-using-sdk.adoc[]
+* xref:java-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
 
 [.column]
 .Observability & Error Handling
-* xref:howtos:error-handling.adoc[]
-* xref:howtos:collecting-information-and-logging.adoc[]
-* xref:howtos:slow-operations-logging.adoc[]
-* xref:howtos:health-check.adoc[]
+* xref:java-sdk:howtos:error-handling.adoc[]
+* xref:java-sdk:howtos:collecting-information-and-logging.adoc[]
+* xref:java-sdk:howtos:slow-operations-logging.adoc[]
+* xref:java-sdk:howtos:health-check.adoc[]
 
 ++++
 </div>
@@ -86,19 +171,19 @@ Useful resources to help support your development experience with Couchbase and 
 [.column]
 .Reference
 * https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference^]
-* xref:ref:client-settings.adoc[]
-* xref:ref:error-codes.adoc[]
-* xref:ref:glossary.adoc[Glossary]
-// * xref:ref:travel-app-data-model.adoc[]
+* xref:java-sdk:ref:client-settings.adoc[]
+* xref:java-sdk:ref:error-codes.adoc[]
+* xref:java-sdk:ref:glossary.adoc[Glossary]
+// * xref:java-sdk:ref:travel-app-data-model.adoc[]
 
 [.column]
 .Deployment
-* xref:project-docs:sdk-release-notes.adoc[]
-* xref:project-docs:compatibility.adoc[Compatibility]
+* xref:java-sdk:project-docs:sdk-release-notes.adoc[]
+* xref:java-sdk:project-docs:compatibility.adoc[Compatibility]
 // * https://docs-archive.couchbase.com/home/index.html[Older Versions Archive]
-// * xref:project-docs:migrating-sdk-code-to-3.n.adoc[]
-* xref:project-docs:third-party-integrations.adoc[]
-* xref:project-docs:sdk-full-installation.adoc[]
+// * xref:java-sdk:project-docs:migrating-sdk-code-to-3.n.adoc[]
+* xref:java-sdk:project-docs:third-party-integrations.adoc[]
+* xref:java-sdk:project-docs:sdk-full-installation.adoc[]
 
 ++++
 </div>
@@ -127,31 +212,31 @@ How-to guides to help you start your development journey with Couchbase and the 
 
 [.column]
 .Easy to Connect & Get Started
-* xref:hello-world:start-using-sdk.adoc[Quickstart Guide]
-* xref:hello-world:sample-application.adoc[]
-* xref:howtos:managing-connections.adoc[]
-* xref:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial]
+* xref:scala-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide]
+* xref:scala-sdk:hello-world:sample-application.adoc[]
+* xref:scala-sdk:howtos:managing-connections.adoc[]
+* xref:scala-sdk:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial]
 
 [.column]
 .Search, Query, Analyze
-* xref:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
-* xref:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
-* xref:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
-* xref:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
+* xref:scala-sdk:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
+* xref:scala-sdk:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
+* xref:scala-sdk:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
+* xref:scala-sdk:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
 
 [.column]
 .Lightning Fast Data Service
-* xref:howtos:kv-operations.adoc[]
-* xref:howtos:subdocument-operations.adoc[]
-* xref:howtos:encrypting-using-sdk.adoc[]
-* xref:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
+* xref:scala-sdk:howtos:kv-operations.adoc[]
+* xref:scala-sdk:howtos:subdocument-operations.adoc[]
+* xref:scala-sdk:howtos:encrypting-using-sdk.adoc[]
+* xref:scala-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
 
 [.column]
 .Observability & Error Handling
-* xref:howtos:error-handling.adoc[]
-* xref:howtos:collecting-information-and-logging.adoc[]
-* xref:howtos:slow-operations-logging.adoc[]
-* xref:howtos:health-check.adoc[]
+* xref:scala-sdk:howtos:error-handling.adoc[]
+* xref:scala-sdk:howtos:collecting-information-and-logging.adoc[]
+* xref:scala-sdk:howtos:slow-operations-logging.adoc[]
+* xref:scala-sdk:howtos:health-check.adoc[]
 
 ++++
 </div>
@@ -172,19 +257,19 @@ Useful resources to help support your development experience with Couchbase and 
 [.column]
 .Reference
 * https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[API Reference^]
-* xref:ref:client-settings.adoc[]
-* xref:ref:error-codes.adoc[]
-* xref:ref:glossary.adoc[Glossary]
-// * xref:ref:travel-app-data-model.adoc[]
+* xref:scala-sdk:ref:client-settings.adoc[]
+* xref:scala-sdk:ref:error-codes.adoc[]
+* xref:scala-sdk:ref:glossary.adoc[Glossary]
+// * xref:scala-sdk:ref:travel-app-data-model.adoc[]
 
 [.column]
 .Deployment
-* xref:project-docs:sdk-release-notes.adoc[]
-* xref:project-docs:compatibility.adoc[Compatibility]
+* xref:scala-sdk:project-docs:sdk-release-notes.adoc[]
+* xref:scala-sdk:project-docs:compatibility.adoc[Compatibility]
 // * https://docs-archive.couchbase.com/home/index.html[Older Versions Archive]
-// * xref:project-docs:migrating-sdk-code-to-3.n.adoc[]
-* xref:project-docs:third-party-integrations.adoc[]
-* xref:project-docs:sdk-full-installation.adoc[]
+// * xref:scala-sdk:project-docs:migrating-sdk-code-to-3.n.adoc[]
+* xref:scala-sdk:project-docs:third-party-integrations.adoc[]
+* xref:scala-sdk:project-docs:sdk-full-installation.adoc[]
 
 ++++
 </div>
