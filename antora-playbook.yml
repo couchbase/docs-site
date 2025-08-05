@@ -24,8 +24,7 @@ site:
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
-        { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
-        { "title": "Autonomous Operator", "components": ["operator"] },
+        { "title": "Kubernetes Operator", "startPage": "cloud-native-database::index.adoc", "components": ["operator"] },
         { "title": "Develop", "startPage": "home::developer.adoc", "components": ["develop", "sdk-extensions", "couchbase-lite", ""] },
         { "title": "Operational SDKs", "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"] },
         { "title": "Analytics SDKs", "components": ["*-analytics-sdk", "*-columnar-sdk"] },
@@ -103,23 +102,23 @@ content:
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.6, release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [release/8.0, release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
   - url: https://github.com/couchbase/docs-sdk-cxx
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [temp/3.7, temp/3.6, release/3.5, release/3.4]
+    branches: [temp/3.8, temp/3.7, temp/3.6, release/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-efcore
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-go
     branches: [temp/2.10, temp/2.9, temp/2.8, release/2.7, release/2.6]
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.8, temp/3.7, temp/3.6, release/3.5, release/3.4]
+    branches: [release/3.9, release/3.8, temp/3.7, temp/3.6, release/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-quarkus-extension
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [temp/1.5, temp/1.4, temp/1.3, release/1.2, release/1.1]
+    branches: [release/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2, release/1.1]
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [temp/4.5, temp/4.4, temp/4.3, release/4.2]
   - url: https://github.com/couchbase/docs-sdk-php
@@ -129,10 +128,20 @@ content:
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [temp/3.6, temp/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/1.8, release/1.7, temp/1.6, release/1.5, release/1.4]
+    branches: [release/3.9, release/1.8, release/1.7, temp/1.6, release/1.5, release/1.4]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
     # Columnar dev
+  - url: https://github.com/couchbase/docs-analytics-sdk-common
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-go
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-java
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-nodejs
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-python
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-common
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-go
