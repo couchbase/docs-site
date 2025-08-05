@@ -33,14 +33,19 @@ site:
                 "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
               },
               {
-                "title": "Analytic SDKs",
+                "title": "Analytics SDKs",
                 "startPage": "home::analytics-sdk.adoc",
                 "components": ["*-analytics-sdk", "*-columnar-sdk"]
               },
               {
-                "title": "Mobile SDKs",
-                "startPage": "home::mobile.adoc",
+                "title": "Mobile Development",
+                "startPage": "couchbase-lite::index.adoc",
                 "components": ["couchbase-lite"]
+              },
+              {
+                "title": "Develop for AI",
+                "startPage": "ai:get-started:home.adoc",
+                "components": ["ai"]
               }
             ]
           },
@@ -78,6 +83,8 @@ content:
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
   - url: https://github.com/couchbaselabs/docs-columnar
+    branches: [main]
+  - url: https://github.com/couchbaselabs/docs-ai
     branches: [main]
 
   # Couchbase Autonomous Kubernetes Operator
