@@ -29,12 +29,12 @@ site:
             "subGroups": [
               {
                 "title": "Operational SDKs",
-                "startPage": "develop:develop:intro.adoc",
+                "startPage": "capella@develop:develop:intro.adoc",
                 "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
               },
               {
                 "title": "Analytics SDKs",
-                "startPage": "home::analytics-sdk.adoc",
+                "startPage": "home:ROOT:analytics-sdk.adoc",
                 "components": ["*-analytics-sdk", "*-columnar-sdk"]
               },
               {
