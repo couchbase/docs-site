@@ -25,7 +25,7 @@ site:
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
         { "title": "Kubernetes Operator", "startPage": "cloud-native-database::index.adoc", "components": ["operator"] },
-        { "title": "Develop", "startPage": "home::developer.adoc", "components": ["develop", "sdk-extensions", "couchbase-lite", ""] }, 
+        { "title": "Develop", "startPage": "home::developer.adoc", "components": ["develop", "sdk-extensions", "couchbase-lite", ""], 
             "subGroups": [
               {
                 "title": "Operational SDKs",
