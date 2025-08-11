@@ -72,8 +72,7 @@ such as connection management and robust error handling.
 [.card-box]
 === icon:rocket[] Develop for Mobile and the Edge
 
-xref:couchbase-lite::index.adoc[Build your app] for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
-
+Build your app with xref:couchbase-lite::index.adoc[Couchbase Lite] for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
 
 * xref:couchbase-lite:android:quickstart.adoc[Develop for Android in Java or Kotlin]
 * xref:couchbase-lite:swift:quickstart.adoc[Develop for iOS on Swift]
