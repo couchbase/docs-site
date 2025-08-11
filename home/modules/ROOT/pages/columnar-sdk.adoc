@@ -8,6 +8,10 @@
 
 include::partial$info-banner.adoc[]
 
+////
+TIP box on analytics, after EA GA.
+////
+
 xref:columnar:intro:intro.adoc[Capella Columnar] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
 Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
