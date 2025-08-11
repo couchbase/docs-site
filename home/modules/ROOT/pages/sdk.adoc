@@ -26,11 +26,19 @@ collection.reactive.upsert("document-key", json)
 ----
 
 [TIP]
-.Columnar SDKs
+.Analytics SDKs
 ====
-SDKs for xref:columnar:intro:intro.adoc[Capella Columnar] --
+////
+SDKs for xref:analytics:intro:intro.adoc[Enterprise Analytics] --
 Couchbase's analytical database (RT-OLAP) for real time apps and operational intelligence --
-are xref:columnar-sdk.adoc[available] for the Java, Node.js, and Python platforms.
+are xref:analytics-sdk.adoc[available] for the Go, Java, Node.js, and Python platforms.
+
+
+SDKs for xref:columnar:intro:intro.adoc[Capella Analytics] are similar to the Enterprise Analytics SDKs.
+They must be used to connect to the current Capella Analytics Service, as it presents a different connection interface, without Enterprise Analytics' load balancer.
+They are xref:columnar-sdk.adoc[available] for the Go, Java, Node.js, and Python platforms.
+////
+SDKs for xref:columnar:intro:intro.adoc[Capella Columnar] are xref:columnar-sdk.adoc[available] for the Go, Java, Node.js, and Python platforms.
 ====
 
 {empty} +
@@ -148,7 +156,40 @@ xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transac
 +++
 
 
-// commented out section, ready for Columnar SDK GA:
+
+////
+{empty} +
+
+== Enterprise Analytics SDKs
+
+xref:enterprise-analytics:intro:intro.adoc[Capella Columnar] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
+xref:analytics-sdk.adoc[Analytics SDKs] are tailored to the APIs offered by this service.
+
+[#table_columnar_sdk,cols="42,40,60,50"]
+|===
+| Columnar SDK | Documentation | Hello World Example | API Reference
+
+| Go Analytics SDK
+| xref:go-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:go-analytics-sdk:hello-world:start-using-sdk.adoc[Go Getting Started]
+| https://pkg.go.dev/github.com/couchbase/gocbanalytics[Go Analytics API Reference]
+
+| Java Analytics SDK
+| xref:java-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:java-analytics-sdk:hello-world:start-using-sdk.adoc[Java Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-analytics-java-client[Java Analytics API Reference]
+
+| Node.js Analytics SDK
+| xref:nodejs-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:nodejs-analytics-sdk:hello-world:start-using-sdk.adoc[Node.js Getting Started]
+| https://docs.couchbase.com/sdk-api/analytics-nodejs-client/[Node.js Analytics API Reference]
+
+| Python Analytics SDK
+| xref:python-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:python-analytics-sdk:hello-world:start-using-sdk.adoc[Python Getting Started]
+| https://docs.couchbase.com/sdk-api/analytics-python-client/[Python Analytics API Reference]
+|===
+////
 
 
 {empty} +
@@ -161,6 +202,11 @@ xref:columnar-sdk.adoc[Columnar SDKs] are tailored to the APIs offered by this s
 [#table_columnar_sdk,cols="42,40,60,50"]
 |===
 | Columnar SDK | Documentation | Hello World Example | API Reference
+
+| Go Columnar SDK
+| xref:go-columnar-sdk:hello-world:overview.adoc[Docs]
+| xref:go-columnar-sdk:hello-world:start-using-sdk.adoc[Go Getting Started]
+| https://pkg.go.dev/github.com/couchbase/gocbcolumnar[Go Columnar API Reference]
 
 | Java Columnar SDK
 | xref:java-columnar-sdk:hello-world:overview.adoc[Docs]
