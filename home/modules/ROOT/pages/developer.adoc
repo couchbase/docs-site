@@ -24,7 +24,7 @@ Develop at the edge with offline-first Couchbase Lite, for transactional workloa
 === icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
 
 Develop an app for xref:capella@cloud:develop:intro.adoc[Capella Operational],
-or a xref:7.6@server:develop:intro.adoc[self-managed Couchbase Server].
+or a xref:7.6@server:develop:intro.adoc[self-managed Couchbase Server] -- with xref:sdk.adoc[Operational SDKs].
 Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 
 * xref:java-sdk:hello-world:start-using-sdk.adoc[Get Started with the Java SDK]
@@ -51,7 +51,8 @@ xref:c-sdk:hello-world:overview.adoc[C]
 
 xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] brings the power of NoSQL to the world of analytics.
 Self-managed Enterprise Analytics brings real-time adaptive applications to your datacenter or private cloud --
-or try this service fully-hosted as xref:columnar:intro:intro.adoc[Capella Analytics], which integrates seamlessly with the Couchbase Capella cloud platform.
+or try this service fully-hosted as xref:columnar:intro:intro.adoc[Capella Analytics], which integrates seamlessly with the Couchbase Capella cloud platform --
+with xref::analytics-sdk.adoc[Analytics SDKs].
 // Or try self-managed Enterprise Analytics, in your datacenter or private cloud.
 
 ////
