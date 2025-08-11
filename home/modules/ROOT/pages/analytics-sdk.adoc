@@ -3,6 +3,7 @@
 :page-role: tiles
 :page-rank: 75
 :!sectids:
+// :page-aliases: columnar-sdk.adoc
 
 = Develop with Enterprise Analytics 
 
