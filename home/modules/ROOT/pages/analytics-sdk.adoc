@@ -40,7 +40,7 @@ Java::
 --
 xref:java-analytics-sdk:hello-world:overview.adoc[Java Analytics SDK Docs] |
 xref:java-analytics-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/analytics-java-client[Java API Reference]
+https://docs.couchbase.com/sdk-api/couchbase-analytics-java-client/[Java API Reference]
 --
 
 Node.js::
@@ -87,7 +87,7 @@ Traditional, row-based analytics is also available in Couchbase operational clus
 
 xref:enterprise-analytics:intro:intro.adoc[Capella Analytics] is a standalone, managed cloud offering from Couchbase under the Capella family of products.
 
-Capella Analytics SDKs, known as Columnar SDKs, are similar to the Enterprise Analytics SDKs.
+Capella Analytics SDKs, formerly known as Columnar SDKs, are similar to the Enterprise Analytics SDKs.
 They must be used to connect to the current Capella Analytics Service, as it presents a different connection interface, without Enterprise Analytics' load balancer.
 
 [{tabs}] 
@@ -105,7 +105,7 @@ Java::
 --
 xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs] |
 xref:java-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/columnar-java-client[Java API Reference]
+https://docs.couchbase.com/sdk-api/couchbase-columnar-java-client[Java API Reference]
 --
 
 Node.js::
