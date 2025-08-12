@@ -113,8 +113,10 @@ xref:couchbase-edge-server:introduction:intro.adoc[Couchbase Edge Server]
 [.content]
 Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
 
-xref:home:ROOT:sdk.adoc[Developer Docs] |
-xref:home:ROOT:columnar-sdk.adoc[Analytics SDKs]
+xref:home:ROOT:developer.adoc[Developer Docs] |
+xref:home:ROOT:sdk.adoc[Operational SDKs] |
+xref:home:ROOT:analytics-sdk.adoc[Enterprise Analytics SDKs] |
+xref:home:ROOT:columnar-sdk.adoc[Capella Analytics SDKs]
 
 [.column]
 ====== {empty}
@@ -227,6 +229,16 @@ xref:elasticsearch-connector::getting-started.adoc[Couchbase Elasticsearch Conne
 xref:kafka-connector::quickstart.adoc[Couchbase Kafka Connector]
 
 xref:spark-connector::getting-started.adoc[Couchbase Spark Connector]
+
+xref:go-analytics-sdk:hello-world:overview.adoc[Go Analytics SDK]
+
+xref:java-analytics-sdk:hello-world:overview.adoc[Java Analytics SDK]
+
+xref:nodejs-analytics-sdk:hello-world:overview.adoc[Node.js Analytics SDK]
+
+xref:python-analytics-sdk:hello-world:overview.adoc[Python Analytics SDK]
+
+xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK]
 
 xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK]
 
