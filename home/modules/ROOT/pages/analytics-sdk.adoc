@@ -86,7 +86,7 @@ See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytic
 | xref:columnar-sdk.adoc[Columnar (Capella Analytics) SDKs]
 
 | xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] 
-| xref:sdk.adoc[operational SDKs]
+| xref:sdk.adoc[Operational SDKs]
 |===
 
 
