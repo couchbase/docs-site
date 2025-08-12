@@ -149,7 +149,7 @@ content:
     ############################
 
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [release/8.0, release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
 
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
@@ -167,13 +167,13 @@ content:
 
     # JVM
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.8, temp/3.7, temp/3.6, release/3.5]
+    branches: [release/3.9, release/3.8, temp/3.7, temp/3.6, release/3.5]
   - url: https://github.com/couchbase/docs-quarkus-extension
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [temp/1.5, temp/1.4, temp/1.3, release/1.2]
+    branches: [temp/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/1.8, release/1.7, temp/1.6, release/1.5]
+    branches: [release/3.9, release/1.8, release/1.7, temp/1.6, release/1.5]
 
     # "scripting languages"
   - url: https://github.com/couchbase/docs-sdk-nodejs
@@ -276,6 +276,7 @@ asciidoc:
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     sqlpp: SQL++
     sqlppc: SQL++ for Capella columnar
+    sqlppea: SQL++ for Enterprise Analytics
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500

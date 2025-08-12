@@ -27,8 +27,22 @@ site:
         { "title": "Cloud-Native", "startPage": "cloud-native-database::index.adoc", "components": ["cloud-native-database"] },
         { "title": "Autonomous Operator", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Transactional Couchbase SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"] },
-        { "title": "Analytics SDKs", "startPage": "home::analytics-sdk.adoc", "components": ["*-analytics-sdk", "*-columnar-sdk"] },
+        { "title": "Develop", "startPage": "home::developer.adoc", 
+            "subGroups": [
+              {
+                "title": "Operational SDKs",
+                "startPage": "home::sdk.adoc",
+                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
+              },
+              {
+                "title": "Analytics SDKs",
+                "startPage": "home::analytics-sdk.adoc",
+                "components": ["*-analytics-sdk", "*-columnar-sdk"]
+              }
+            ]
+          },
+        { "title": "Operational SDKs", "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"] },
+        { "title": "Analytics SDKs", "components": ["*-analytics-sdk", "*-columnar-sdk"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
@@ -108,7 +122,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-cxx
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [temp/3.7, temp/3.6, release/3.5, release/3.4]
+    branches: [temp/3.8, temp/3.7, temp/3.6, release/3.5, release/3.4]
   - url: https://github.com/couchbase/docs-efcore
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-go
@@ -131,7 +145,7 @@ content:
     branches: [release/3.9, release/1.8, release/1.7, temp/1.6, release/1.5, release/1.4]
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
-    # Columnar dev
+    # Analytics dev
   - url: https://github.com/couchbase/docs-columnar-sdk-common
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-common
@@ -222,7 +236,7 @@ asciidoc:
   - '@asciidoctor/tabs'
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-210/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-13288-ia-support-1/ui-bundle.zip
 output:
   dir: ./public
 runtime:
