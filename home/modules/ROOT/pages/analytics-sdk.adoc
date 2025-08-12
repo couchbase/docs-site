@@ -74,6 +74,8 @@ See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytic
 
 == Other Analytics Services
 
+
+.SDK Compatibility with Analytics Service
 |===
 | Analytics solution
 | Development option
@@ -86,7 +88,6 @@ a| xref:columnar-sdk.adoc[Columnar (Capella Analytics) SDKs]
 
 a| xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] 
 a| xref:sdk.adoc[operational SDKs]
-
 |===
 
 
