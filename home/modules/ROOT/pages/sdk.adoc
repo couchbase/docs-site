@@ -35,8 +35,6 @@ are xref:analytics-sdk.adoc[available] for the Go, Java, Node.js, and Python pla
 SDKs for xref:analytics:intro:intro.adoc[Capella Analytics] are similar to the Enterprise Analytics SDKs.
 They must be used to connect to the current Capella Analytics Service, as it presents a different connection interface, without Enterprise Analytics' load balancer.
 They are xref:columnar-sdk.adoc[available] for the Go, Java, Node.js, and Python platforms.
-
-SDKs for xref:analytics:intro:intro.adoc[Capella Columnar] are xref:columnar-sdk.adoc[available] for the Go, Java, Node.js, and Python platforms.
 ====
 
 {empty} +
