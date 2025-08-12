@@ -275,7 +275,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     sqlpp: SQL++
-    sqlppc: SQL++ for Capella columnar
+    sqlppc: SQL++ for Capella Analytics
     sqlppea: SQL++ for Enterprise Analytics
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
