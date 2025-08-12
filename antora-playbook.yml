@@ -87,7 +87,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-columnar
     branches:
       - main                      # `analytics` component (Capella Analytics)
-      - release/1.0               # `enterprise-analytics` component (self-managed)
+      - release/2.0               # `enterprise-analytics` component (self-managed)
       - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
 
     # Couchbase Autonomous Kubernetes Operator
