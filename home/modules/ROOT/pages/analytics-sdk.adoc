@@ -77,8 +77,7 @@ See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytic
 
 .SDK Compatibility with Analytics Service
 |===
-| Analytics solution
-| Development option
+| Analytics solution | Development option
 
 | xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
 | xref:analytics-sdk.adoc[Analytics SDKs]
