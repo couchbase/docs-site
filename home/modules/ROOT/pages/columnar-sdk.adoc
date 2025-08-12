@@ -9,7 +9,8 @@
 include::partial$info-banner.adoc[]
 
 xref:analytics:intro:intro.adoc[Capella Analytics] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
-Capella Analytics is a standalone, cloud-only offering from Couchbase under the Capella family of products.
+Capella Analytics is a standalone, managed offering from Couchbase under the Capella family of products -- 
+a self-managed xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] product is also available.
 
 TIP
 .Which Analytics Service?
