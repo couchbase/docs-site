@@ -80,14 +80,14 @@ See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytic
 | Analytics solution
 | Development option
 
-a| xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
-a| xref:analytics-sdk.adoc[Analytics SDKs]
+| xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
+| xref:analytics-sdk.adoc[Analytics SDKs]
 
-a| xref:analytics:intro:intro.adoc[Enterprise Analytics]
-a| xref:columnar-sdk.adoc[Columnar (Capella Analytics) SDKs]
+| xref:analytics:intro:intro.adoc[Enterprise Analytics]
+| xref:columnar-sdk.adoc[Columnar (Capella Analytics) SDKs]
 
-a| xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] 
-a| xref:sdk.adoc[operational SDKs]
+| xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] 
+| xref:sdk.adoc[operational SDKs]
 |===
 
 
