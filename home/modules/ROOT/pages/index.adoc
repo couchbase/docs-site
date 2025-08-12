@@ -81,6 +81,14 @@ Explore Couchbase Server, a modern, distributed document database with all the d
 
 xref:server.adoc[Couchbase Server]
 
+{empty} +
+
+.Enterprise Analytics (RT-OLAP)
+
+Enterprise Analytics is a self-managed analytical database (RT-OLAP) for real time apps and operational intelligence.
+
+xref:analytics:intro:intro.adoc[Capella Analytics]
+
 [.column]
 ====== {empty}
 .Couchbase Mobile
@@ -194,13 +202,22 @@ a| xref:cloud::index.adoc[Couchbase Capella]
 
 xref:analytics:intro:intro.adoc[Capella Analytics]
 
+
+
+
 a| xref:server.adoc[Couchbase Server]
+
+xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
 
 xref:operator::overview.adoc[Couchbase Autonomous Operator]
 
 xref:service-broker::index.adoc[Couchbase Service Broker]
 
 xref:cmos::index.adoc[Couchbase Monitoring and Observability Stack]
+
+
+
+
 
 a| xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
 
