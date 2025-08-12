@@ -34,9 +34,20 @@ site:
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"] },
-
-        { "title": "Analytics SDKs", "startPage": "home::analytics-sdk.adoc", "components": ["*-analytics-sdk", "*-columnar-sdk"] },
+        { "title": "Develop", "startPage": "home::developer.adoc", 
+            "subGroups": [
+              {
+                "title": "Operational SDKs",
+                "startPage": "home::sdk.adoc",
+                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
+              },
+              {
+                "title": "Analytics SDKs",
+                "startPage": "home::analytics-sdk.adoc",
+                "components": ["*-analytics-sdk", "*-columnar-sdk"]
+              }
+            ]
+          },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
