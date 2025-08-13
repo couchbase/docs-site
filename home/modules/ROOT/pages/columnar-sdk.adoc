@@ -12,7 +12,7 @@ xref:analytics:intro:intro.adoc[Capella Analytics] is a real-time analytical dat
 Capella Analytics is a standalone, managed offering from Couchbase under the Capella family of products -- 
 a self-managed xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] product is also available.
 
-TIP
+[TIP]
 .Which Analytics Service?
 ====
 Capella Analytics and Enterprise Analytics are column-based real-time analytical databases.
