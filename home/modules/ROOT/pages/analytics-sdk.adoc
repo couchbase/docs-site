@@ -103,7 +103,7 @@ Traditional, row-based analytics is also available in Couchbase operational clus
 
 === SDK APIs to work with Capella Analytics:
 
-xref:enterprise-analytics:intro:intro.adoc[Capella Analytics] is a standalone, managed cloud offering from Couchbase under the Capella family of products.
+xref:analytics:intro:intro.adoc[Capella Analytics] is a standalone, managed cloud offering from Couchbase under the Capella family of products.
 
 Capella Analytics SDKs, formerly known as Columnar SDKs, are similar to the Enterprise Analytics SDKs.
 They must be used to connect to the current Capella Analytics Service, as it presents a different connection interface, without Enterprise Analytics' load balancer.
