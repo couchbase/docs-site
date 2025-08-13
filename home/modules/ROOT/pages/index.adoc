@@ -87,7 +87,7 @@ xref:server.adoc[Couchbase Server]
 
 Enterprise Analytics is a self-managed analytical database (RT-OLAP) for real time apps and operational intelligence.
 
-xref:analytics:intro:intro.adoc[Capella Analytics]
+xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
 
 [.column]
 ====== {empty}
