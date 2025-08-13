@@ -36,12 +36,12 @@ Get set up with an account and deploy a free tier operational cluster.
 
 
 [.card-box]
-=== icon:rocket[] Get Started With Capella Columnar
+=== icon:rocket[] Get Started With Capella Analytics
 
 Create your account and follow our tutorial on how to load data into your columnar cluster.
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
-* xref:columnar:intro:intro.adoc[]
-* xref:columnar:admin:prepare-project.adoc[]
-* xref:columnar:intro:examples.adoc[]
-* xref:columnar:query:workbench.adoc[]
+* xref:analytics:intro:intro.adoc[]
+* xref:analytics:admin:prepare-project.adoc[]
+* xref:analytics:intro:examples.adoc[]
+* xref:analytics:query:workbench.adoc[]

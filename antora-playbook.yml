@@ -28,14 +28,26 @@ site:
     # see https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2963243023/FAQ+how+does+the+top+nav+bar+work
     nav_groups: |
       [
-        { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Couchbase SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"] },
-        { "title": "Columnar SDKs", "startPage": "home::columnar-sdk.adoc", "components": ["*-columnar-sdk"] },
+        { "title": "Develop", "startPage": "home::developer.adoc", 
+            "subGroups": [
+              {
+                "title": "Operational SDKs",
+                "startPage": "home::sdk.adoc",
+                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
+              },
+              {
+                "title": "Analytics SDKs",
+                "startPage": "home::analytics-sdk.adoc",
+                "components": ["*-analytics-sdk", "*-columnar-sdk"]
+              }
+            ]
+          },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
@@ -62,6 +74,7 @@ content:
   - url: .
     branches: HEAD
     start_path: home
+
   - url: https://github.com/couchbaselabs/docs-style-guide
     branches: main
     start_paths: [styleguide, ui-ux, pendo]
@@ -81,8 +94,12 @@ content:
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
+
   - url: https://github.com/couchbaselabs/docs-columnar
-    branches: [main]
+    branches:
+      - main                      # `analytics` component (Capella Analytics)
+      - release/2.0               # `enterprise-analytics` component (self-managed)
+      - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
 
     # Couchbase Autonomous Kubernetes Operator
     ############################
@@ -122,7 +139,7 @@ content:
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-connectors-talend
 
-    # Server related sections
+    # Server
     ############################
 
   - url: https://github.com/couchbase/docs-analytics
@@ -134,8 +151,6 @@ content:
     branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
 
-    # docs-server
-    ############################
     # NOTE docs-server is currently after other server repos so nav key wins
 
   - url: https://github.com/couchbase/docs-server
@@ -184,7 +199,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
 
-    # Columnar SDKs
+    # Analytics SDKs (aka Columnar)
     ############################
 
   - url: https://github.com/couchbase/docs-columnar-sdk-common
@@ -197,6 +212,18 @@ content:
   - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-python
+    branches: [release/1.0]
+
+  - url: https://github.com/couchbase/docs-analytics-sdk-common
+    branches: [release/1.0]
+
+  - url: https://github.com/couchbase/docs-analytics-sdk-go
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-java
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-nodejs
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-python
     branches: [release/1.0]
 
     # Mobile
@@ -259,7 +286,7 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     sqlpp: SQL++
-    sqlppc: SQL++ for Capella columnar
+    sqlppc: SQL++ for Capella Analytics
     sqlppea: SQL++ for Enterprise Analytics
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
@@ -280,7 +307,7 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-210/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-215/ui-bundle.zip
 output:
   dir: ./public
 runtime:

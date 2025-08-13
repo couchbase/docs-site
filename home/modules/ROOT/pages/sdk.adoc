@@ -28,17 +28,13 @@ collection.reactive.upsert("document-key", json)
 [TIP]
 .Analytics SDKs
 ====
-////
-SDKs for xref:analytics:intro:intro.adoc[Enterprise Analytics] --
+SDKs for xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] --
 Couchbase's analytical database (RT-OLAP) for real time apps and operational intelligence --
 are xref:analytics-sdk.adoc[available] for the Go, Java, Node.js, and Python platforms.
 
-
-SDKs for xref:columnar:intro:intro.adoc[Capella Analytics] are similar to the Enterprise Analytics SDKs.
+SDKs for xref:analytics:intro:intro.adoc[Capella Analytics] are similar to the Enterprise Analytics SDKs.
 They must be used to connect to the current Capella Analytics Service, as it presents a different connection interface, without Enterprise Analytics' load balancer.
 They are xref:columnar-sdk.adoc[available] for the Go, Java, Node.js, and Python platforms.
-////
-SDKs for xref:columnar:intro:intro.adoc[Capella Columnar] are xref:columnar-sdk.adoc[available] for the Go, Java, Node.js, and Python platforms.
 ====
 
 {empty} +
@@ -157,17 +153,17 @@ xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transac
 
 
 
-////
+
 {empty} +
 
 == Enterprise Analytics SDKs
 
-xref:enterprise-analytics:intro:intro.adoc[Capella Columnar] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
+xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
 xref:analytics-sdk.adoc[Analytics SDKs] are tailored to the APIs offered by this service.
 
-[#table_columnar_sdk,cols="42,40,60,50"]
+[#table_analytics_sdk,cols="42,40,60,50"]
 |===
-| Columnar SDK | Documentation | Hello World Example | API Reference
+| Analytics SDK | Documentation | Hello World Example | API Reference
 
 | Go Analytics SDK
 | xref:go-analytics-sdk:hello-world:overview.adoc[Docs]
@@ -189,15 +185,15 @@ xref:analytics-sdk.adoc[Analytics SDKs] are tailored to the APIs offered by this
 | xref:python-analytics-sdk:hello-world:start-using-sdk.adoc[Python Getting Started]
 | https://docs.couchbase.com/sdk-api/analytics-python-client/[Python Analytics API Reference]
 |===
-////
+
 
 
 {empty} +
 
-== Capella columnar SDKs
+== Capella Analytics SDKs
 
-xref:columnar:intro:intro.adoc[Capella Columnar] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
-xref:columnar-sdk.adoc[Columnar SDKs] are tailored to the APIs offered by this service.
+xref:analytics:intro:intro.adoc[Capella Analytics] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
+xref:columnar-sdk.adoc[Columnar SDKs] for Capella Analytics are tailored to the APIs offered by this service.
 
 [#table_columnar_sdk,cols="42,40,60,50"]
 |===
@@ -247,23 +243,23 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 
 | Couchbase Lite Java Android
 | xref:couchbase-lite:android:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-android/[API Reference]
+| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-android/[API Reference]
 
 | Couchbase Lite C#
 | xref:couchbase-lite:csharp:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-net[API Reference]
+| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-net[API Reference]
 
 | Couchbase Lite Java
 | xref:couchbase-lite:java:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-java/index.html?[API Reference]
+| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-java/index.html?[API Reference]
 
 | Couchbase Lite Objective-C
 | xref:couchbase-lite:objc:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-objc[API Reference]
+| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-objc[API Reference]
 
 | Couchbase Lite Swift
 | xref:couchbase-lite:swift:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/2.8.0/couchbase-lite-swift[API Reference]
+| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-swift[API Reference]
 
 | Couchbase Lite JavaScript
 | xref:couchbase-lite::javascript.adoc[Docs]
@@ -297,6 +293,7 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 * xref:spark-connector::getting-started.adoc[Get Started]
 * xref:spark-connector::dev-workflow.adoc[Development Workflow]
 * xref:spark-connector::java-api.adoc[Java API]
+* xref:spark-connector::pyspark.adoc[PySpark]
 
 [.column]
 .ODBC and JDBC Drivers
