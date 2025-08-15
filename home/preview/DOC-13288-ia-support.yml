@@ -1,0 +1,51 @@
+sources:
+  docs-sdk-c:
+    branches: [release/3.3]
+  docs-sdk-dotnet:
+    branches: [temp/3.7]
+  docs-columnar-sdk-go:
+    branches: [release/1.0]
+  docs-couchbase-lite:
+    branches: [release/3.2]
+
+override:
+  ui:     
+    bundle: 
+      url: https://github.com/couchbase/docs-ui/releases/download/DOC-13288-ia-support-1/ui-bundle.zip
+  
+  site:
+    keys: 
+      navGroups: |
+        [
+          { "title": "Get Started", "startPage": "home::get-started.adoc", "components": ["server"] },
+          { 
+            "title": "Develop",
+            "subGroups": [
+              {
+                "title": "Operational SDKs",
+                "startPage": "home::develop-operational.adoc",
+                "components": [
+                  "dotnet-sdk", "c-sdk" ]
+              },
+              {
+                "title": "Analytic SDKs",
+                "startPage": "home::develop-analytics.adoc",
+                "components": ["*-columnar-sdk"]
+              },
+              { 
+                "title": "Mobile SDKs",
+                "startPage": "home::develop-mobile.adoc",
+                "components": ["couchbase-lite"]
+              }
+            ]
+          },
+          { "title": "Deploy & Admin", 
+            "subGroups": [
+              {
+                "title": "Mobile",
+                "startPage": "home::mobile-server-admin.adoc", "components": ["sync-gateway"]
+              }
+            ]
+          },
+          { "title": "Learn", "startPage": "home::learn-couchbase-concepts.adoc", "components": ["columnar"] }
+        ]
