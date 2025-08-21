@@ -12,6 +12,7 @@ NAME
 
     preview - a script to quickly preview docs work
 
+
 SET UP
 
 Update your docs-site repo, and install the script.
@@ -39,6 +40,7 @@ The latter will show you the URL to find the workflow:
 
     https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
 
+
 UPDATING
 
 To update the preview script, if your script is recent enough, simply run:
@@ -53,10 +55,7 @@ Otherwise, you can update the script manually.
     git pull
     scripts/preview --init
 
-
-
     
-
 TROUBLESHOOTING
 
 If you run into issues, you can run the script in debug mode.
@@ -71,6 +70,7 @@ These files should be sent to the docs team:
 
 The automated email will only work on MacOS.
 If you are on Linux, then just send those files manually.
+
 
 DOCUMENTATION
 
