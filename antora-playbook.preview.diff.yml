@@ -1,0 +1,22 @@
+# RUN:
+#  scripts/patch-playbook antora-playbook.yml antora-playbook.preview.diff.yml > antora-playbook.preview.yml
+
+antora:
+  extensions:
+  - ./lib/preview.js
+  - ./lib/report-tree.js
+
+site:
+  title: Couchbase Docs Preview
+  robots: disallow
+
+content:
+  sources:
+  - url: https://github.com/couchbaselabs/docs-ai
+    branches: [main]
+
+asciidoc:
+  attributes:
+    kroki-server-url: null
+    page-show-preview-banner: true
+    page-watermark: preview@
