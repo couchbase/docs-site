@@ -1,5 +1,5 @@
 #!/bin/bash
-PREVIEW_VERSION="1.1.0"
+PREVIEW_VERSION="1.1.1"
 
 set -eo pipefail
 echo "🐇 Hello! I'm the Docs Build Rabbit"
@@ -128,8 +128,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+DOCS_SITE=$(realpath $0/../..)
+
 if [ -n "$UPDATE" ]; then
-    DOCS_SITE=$(realpath $0/../..)
     cd $DOCS_SITE
 
     echo "🐇 Let's try to update preview, by updating your docs-site checkout"
@@ -154,6 +155,17 @@ if [ -n "$INIT" ]; then
 
     brew install gh jq yq
     gh auth token || gh auth login
+
+    if [ ! -f ~/.git-credentials ]; then
+      scripts/add-credentials
+    else
+      echo "Git credentials found, let's assume they are good."
+      echo "If you get errors cloning private repos, then try running:"
+      echo 
+      echo "    cd $DOCS_SITE"
+      echo "    scripts/add-credentials"
+      echo
+    fi
 
     echo "🐇 initialised preview script"
     exit 0
