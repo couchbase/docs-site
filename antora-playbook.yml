@@ -174,7 +174,7 @@ content:
     branches: [release/1.0]
 
   - url: https://github.com/couchbase/docs-sdk-go
-    branches: [temp/2.10, temp/2.9, temp/2.8, release/2.7]
+    branches: [temp/2.11, temp/2.10, temp/2.9, temp/2.8, release/2.7]
 
     # JVM
   - url: https://github.com/couchbase/docs-sdk-java
