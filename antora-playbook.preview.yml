@@ -96,8 +96,10 @@ content:
     - url: https://github.com/couchbaselabs/docs-columnar
       branches:
         - main
-        - release/2.0
         - legacy-columnar-component
+    - url: https://github.com/couchbaselabs/docs-enterprise-analytics
+      branches:
+        - release/2.0
     - url: https://github.com/couchbase/couchbase-operator
       branches:
         - 2.8.x
