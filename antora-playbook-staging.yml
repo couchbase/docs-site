@@ -71,8 +71,12 @@ content:
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
+
   - url: https://github.com/couchbaselabs/docs-columnar
-    branches: [main]
+    branches:
+        - main                      # `analytics` component (Capella Analytics)
+        - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
+      # see under Server section below for enterprise-analytics and legacy analytics
 
   # Operator unbundling test:
   - url: https://github.com/couchbase/couchbase-operator
@@ -101,6 +105,9 @@ content:
   - url: https://github.com/couchbase/docs-connectors-superset.git
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-connectors-talend
+
+  - url: https://github.com/couchbaselabs/docs-enterprise-analytics
+    branches: [release/2.0]
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.6, release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/couchbase-cli
