@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbase/docs-server.git
-    branches: DOC_12749_data_service_settings_rest_api
+    branches: DOC_12484_xdcr_conflict_logging_feature
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
