@@ -50,8 +50,9 @@ if ($select) {
 let sn = Object.groupBy(ds, (s) => s.url)
 
 sources = sources.map(({url, ...s}) => {
+  if (typeof s.branches != 'object') { s.branches = [s.branches || 'master'] }
   if ($prune) {
-    s.branches = (s.branches || ['master']).slice(0,$prune)
+    s.branches = s.branches.slice(0,$prune)
   }
 
   let s2 = sn[url]

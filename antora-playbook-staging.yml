@@ -102,7 +102,8 @@ content:
   branches: master
   sources:
     - url: https://github.com/couchbaselabs/docs-style-guide
-      branches: mai
+      branches:
+        - main
       start_paths:
         - styleguide
         - ui-ux
@@ -259,7 +260,6 @@ content:
       branches:
         - temp/4.3
         - temp/4.2
-        - release/4.1
     - url: https://github.com/couchbase/docs-sdk-python
       branches:
         - temp/4.4
@@ -269,7 +269,6 @@ content:
       branches:
         - temp/3.6
         - temp/3.5
-        - release/3.4
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
         - main
@@ -329,7 +328,8 @@ content:
         - master
       start_path: content
     - url: https://github.com/couchbaselabs/mobile-training-todo
-      branches: tut
+      branches:
+        - tutorials
       start_path: content
     - url: https://github.com/couchbaselabs/UniversityLister-Android
       start_path: content
