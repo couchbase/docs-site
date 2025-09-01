@@ -75,6 +75,7 @@ endif::[]
 
 [.tile]
 .Couchbase Sync Gateway
+* xref:3.3@sync-gateway::index.adoc[Version 3.3]
 * xref:3.2@sync-gateway::index.adoc[Version 3.2]
 * xref:3.1@sync-gateway::index.adoc[Version 3.1]
 * xref:3.0@sync-gateway::index.adoc[Version 3.0]
@@ -88,11 +89,16 @@ endif::[]
 * xref:1.4@sync-gateway::index.adoc[Version 1.4]
 * xref:1.3@sync-gateway::index.adoc[Version 1.3]
 
+[.tile]
+.Couchbase Edge Server
+* xref:1.0@couchbase-edge-server:introduction:intro.adoc[Version 1.0]
+
 [.tiles.browse]
 == Couchbase SDKs
 
 [.tile]
 .Java SDK
+* xref:3.9@java-sdk:hello-world:start-using-sdk.adoc[Version 3.9]
 * xref:3.8@java-sdk:hello-world:start-using-sdk.adoc[Version 3.8]
 * xref:3.7@java-sdk:hello-world:start-using-sdk.adoc[Version 3.7]
 * xref:3.6@java-sdk:hello-world:start-using-sdk.adoc[Version 3.6]
@@ -132,6 +138,7 @@ endif::[]
 
 [.tile]
 .NET SDK
+* xref:3.8@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.8]
 * xref:3.7@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.7]
 * xref:3.6@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.6]
 * xref:3.5@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.5]
@@ -181,6 +188,7 @@ endif::[]
 
 [.tile]
 .Scala SDK
+* xref:3.9@scala-sdk:hello-world:start-using-sdk.adoc[Version 3.9]
 * xref:1.8@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.8]
 * xref:1.7@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.7]
 * xref:1.6@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.6]
@@ -193,6 +201,7 @@ endif::[]
 
 [.tile]
 .Kotlin SDK
+* xref:3.9@kotlin-sdk:hello-world:overview.adoc[Version 3.9]
 * xref:1.5@kotlin-sdk:hello-world:overview.adoc[Version 1.5]
 * xref:1.4@kotlin-sdk:hello-world:overview.adoc[Version 1.4]
 * xref:1.3@kotlin-sdk:hello-world:overview.adoc[Version 1.3]
@@ -218,6 +227,8 @@ endif::[]
 
 [.tile]
 .Go SDK
+* xref:2.11@go-sdk:hello-world:start-using-sdk.adoc[Version 2.11]
+* xref:2.10@go-sdk:hello-world:start-using-sdk.adoc[Version 2.10]
 * xref:2.9@go-sdk:hello-world:start-using-sdk.adoc[Version 2.9]
 * xref:2.8@go-sdk:hello-world:start-using-sdk.adoc[Version 2.8]
 * xref:2.7@go-sdk:hello-world:start-using-sdk.adoc[Version 2.7]
@@ -257,6 +268,26 @@ endif::[]
 
 
 [.tiles.browse]
+== Analytics SDKs
+
+[.tile]
+.Go SDK
+* xref:go-analytics-sdk:hello-world:overview.adoc[Version 1.0]
+
+[.tile]
+.Java SDK
+* xref:java-analytics-sdk:hello-world:overview.adoc[Version 1.0]
+
+[.tile]
+.Node.js SDK
+* xref:nodejs-analytics-sdk:hello-world:overview.adoc[Version 1.0]
+
+[.tile]
+.Python SDK
+* xref:python-analytics-sdk:hello-world:overview.adoc[Version 1.0]
+
+
+[.tiles.browse]
 == Columnar SDKs
 
 [.tile]
@@ -290,6 +321,7 @@ endif::[]
 
 [.tile]
 .Kafka Connector
+* xref:4.3@kafka-connector::index.adoc[Version 4.3]
 * xref:4.2@kafka-connector::index.adoc[Version 4.2]
 * xref:4.1@kafka-connector::index.adoc[Version 4.1]
 * xref:4.0@kafka-connector::index.adoc[Version 4.0]
