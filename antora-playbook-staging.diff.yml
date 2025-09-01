@@ -1,0 +1,51 @@
+antora:
+  extensions:
+  - ./lib/report-tree.js
+
+site:
+  title: Couchbase Docs Staging
+  url: https://docs-staging.couchbase.com
+  start_page: home::index.adoc
+  robots: |
+    User-agent: *
+    Disallow: /
+
+    User-agent: Algolia Crawler
+    Allow: /
+  keys:
+    google_analytics: ~
+
+content:
+
+  $select:
+    - '**' # everything
+    # see https://github.com/micromatch/picomatch for full details
+    # e.g.
+    # - '**/*sdk*' # add all repos matching *sdk*
+
+  # start off with first 3 branches
+  $prune: 3
+
+  sources:
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [capella] # ensure added as well as most recent release/* branches
+
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches: [capella] # ensure added as well as most recent release/* branches
+
+  - url: https://github.com/couchbase/docs-operator
+    branches: [release/2.8.1]
+    # release/2.8.1 is set to version `2.9` so should not clash with release/2.8
+
+  - url: https://github.com/couchbaselabs/cbmultimanager
+    branches:
+      $replace: [master]
+
+  - url: https://github.com/couchbase/docs-sdk-kotlin
+    branches: 
+      # 'release/3.9' instead of 'temp/3.9'
+      $replace: [release/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2]
+
+# ui:
+  # bundle:
+    # url: https://github.com/couchbase/docs-ui/releases/download/prod-216/ui-bundle.zip
