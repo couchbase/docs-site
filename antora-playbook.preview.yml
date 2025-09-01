@@ -360,6 +360,7 @@ asciidoc:
     - asciidoctor-kroki
     - asciidoctor-external-callout
     - "@asciidoctor/tabs"
+    - asciidoctor-anywhere-footnote
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
     enable-cmos: ""
