@@ -172,7 +172,7 @@ content:
 
     # .NET
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [temp/3.8, temp/3.7, temp/3.6, release/3.5, release/3.4]
+    branches: [temp/3.8, temp/3.7, temp/3.6, release/3.5]
   - url: https://github.com/couchbase/docs-efcore
     branches: [release/1.0]
 
@@ -193,11 +193,11 @@ content:
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [temp/4.5, temp/4.4, temp/4.3]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [temp/4.3, temp/4.2, release/4.1]
+    branches: [temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-python
     branches: [temp/4.4, temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [temp/3.6, temp/3.5, release/3.4]
+    branches: [temp/3.6, temp/3.5]
 
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
