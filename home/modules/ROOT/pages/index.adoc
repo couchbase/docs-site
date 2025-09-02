@@ -2,6 +2,8 @@
 :page-layout: landing-page-capella
 :page-rank: 75
 :!sectids:
+:table-caption!:
+
 
 
 include::partial$info-banner.adoc[]
