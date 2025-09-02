@@ -1,11 +1,7 @@
 = Couchbase Documentation
-# :page-meta-zd-site-verification: odvin2siwmodz30xrtxq
 :page-layout: landing-page-capella
-# :page-layout: landing-page-top-level-sdk
-# :page-role: tiles
 :page-rank: 75
 :!sectids:
-# :collapsible:
 
 
 include::partial$info-banner.adoc[]
@@ -110,7 +106,10 @@ Agentic Apps can be built with Agent Catalog (currently in Private Preview), and
 Self-managed in your data center or private cloud -- or Couchbase-managed with Capella services -- the choice is yours.
 
 
-=== Capella -- Couchbase-Managed Deployment
+[.column]
+====== {empty}
+
+.Capella -- Couchbase-Managed Deployment
 
 [#table_products-services,cols="25,25,25,25"]
 |===
@@ -132,19 +131,22 @@ a| https://info.couchbase.com/capella-ai-services-signup[AI Services Private Pre
 [.column]
 ====== {empty}
 
+[.column]
+====== {empty}
 
-=== Self-Managed Couchbase Server Deployment
+
+.Self-Managed Couchbase Server Deployment
 
 [#table_products-services,cols="25,25,25,25"]
 |===
 | Operational | Real-Time Analytics | Mobile | Working with LLMs
 
-a| xref:server.adoc[Couchbase Server]
+a| * xref:server.adoc[Couchbase Server]
 * xref:operator::overview.adoc[Couchbase Autonomous Operator]
 * Connectors.....
 
-a| xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
-Connectors.....
+a| * xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
+* Connectors.....
 
 a| xref:sync-gateway::index.adoc[Couchbase Sync Gateway]
 
@@ -159,7 +161,7 @@ a| Vector search for RAG
 ====== {empty}
 
 
-=== The Couchbase Developer Story
+.The Couchbase Developer Story
 
 [#table_products-services,cols="25,25,25,25"]
 |===
@@ -167,6 +169,7 @@ a| Vector search for RAG
 
 a| Develop against Capella Operational _and_ self-managed Couchbase Server,
 with xref:sdk.adoc[SDKs] in eleven popular programming languages.
++
 Connectors.....
 
 a| 
@@ -191,6 +194,9 @@ a| * Agentic Apps can be built with Agent Catalog (currently in Private Preview)
 
 
 
+
+[.column]
+====== {empty}
 
 
 [.column]
