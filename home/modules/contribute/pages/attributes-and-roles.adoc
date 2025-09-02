@@ -45,11 +45,13 @@ In this case, the tabs feature is turned on by setting `tabs`.
 <5> Reference an attribute in the body of the document by entering the attribute name inside a set of curly brackets (`+{attribute-name}+`).
 <6> Code blocks are assigned the source language `javascript`.
 
-== Available Document Attributes 
+== Required Document Attributes 
 
 The following document attributes must be included for every AsciiDoc file stored in a *pages* directory: 
 
 include::partial$available-attributes.adoc[tag=required]
+
+== Optional Document Attributes
 
 You can also use the following optional attributes: 
 

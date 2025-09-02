@@ -1,0 +1,110 @@
+= Develop with Couchbase
+:page-layout: landing-page-capella
+:tabs:
+:page-rank: 85
+:!sectids:
+:icons: font
+:page-nav-header-levels: 2
+
+include::home::partial$info-banner.adoc[]
+
+= Develop with Couchbase
+
+The Developer Data Platform for Critical Applications in Our AI World.
+
+Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
+Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in eleven popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
+
+
+
+[.centered.card-container]
+== Development Choices for Your Use Cases
+
+[.card-box]
+=== icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
+
+Develop an app for https://docs.couchbase.com/cloud/develop/intro.html[Capella Operational],
+// xref version is ~    Will that work?
+// Develop an app for xref:~@cloud:develop:intro.adoc[Capella Operational],
+or a xref:7.6@server:develop:intro.adoc[self-managed Couchbase Server] -- with xref:sdk.adoc[Operational SDKs].
+Explore {sqlpp}, or the fast CRUD interface of the Data Service.
+
+* xref:java-sdk:hello-world:start-using-sdk.adoc[Get Started with the Java SDK]
+* xref:cloud:tutorials:couchbase-tutorial-student-records.adoc[NoSQL for RDBMS users]
+* Try our xref:sdk.adoc[other SDKs]:
++
+xref:c-sdk:hello-world:overview.adoc[C]
+| xref:cxx-sdk:hello-world:overview.adoc[{cpp}]
+| xref:dotnet-sdk:hello-world:overview.adoc[.NET]
+| xref:go-sdk:hello-world:overview.adoc[Go]
+| xref:kotlin-sdk:hello-world:overview.adoc[Kotlin]
+| xref:nodejs-sdk:hello-world:overview.adoc[Node.js]
+| xref:php-sdk:hello-world:overview.adoc[PHP]
+| xref:python-sdk:hello-world:overview.adoc[Python]
+| xref:ruby-sdk:hello-world:overview.adoc[Ruby]
+| xref:scala-sdk:hello-world:overview.adoc[Scala]
+* xref:cloud:third-party:integrations.adoc[Integrations, Connectors, and Tools]
+// * Multi-Document ACID Transactions
+// * xref:cloud:develop:intro.adoc[Capella Operational Developer Intro]
+
+
+[.card-box]
+=== icon:rocket[] Real Time Analytics with Analytics SDKs
+
+xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] brings the power of NoSQL to the world of analytics.
+Self-managed Enterprise Analytics brings real-time adaptive applications to your datacenter or private cloud --
+or try this service fully-hosted as xref:columnar:intro:intro.adoc[Capella Analytics], which integrates seamlessly with the Couchbase Capella cloud platform.
+xref::analytics-sdk.adoc[Analytics SDKs] support streaming APIs to handle large datasets.
+
+////
+xref:columnar-sdk.adoc[Columnar SDKs] are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
+they are purpose built for Enterprise Analytics' analytical use cases.
+They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
+such as connection management and robust error handling.
+////
+
+* xref:go-analytics-sdk:hello-world:overview.adoc[Go Analytics SDK Docs]
+* xref:java-analytics-sdk:hello-world:overview.adoc[Java Analytics SDK Docs]
+* xref:nodejs-analytics-sdk:hello-world:overview.adoc[Node.js Analytics SDK Docs]
+* xref:python-analytics-sdk:hello-world:overview.adoc[Python Analytics SDK Docs] 
+
+
+
+[.card-box]
+=== icon:rocket[] Develop for Mobile and the Edge
+
+Build your app with xref:couchbase-lite::index.adoc[Couchbase Lite] for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
+
+* xref:couchbase-lite:android:quickstart.adoc[Develop for Android in Java or Kotlin]
+* xref:couchbase-lite:swift:quickstart.adoc[Develop for iOS on Swift]
+(and xref:couchbase-lite:objc:quickstart.adoc[Objective-C])
+* xref:couchbase-lite:c:quickstart.adoc[Develop for Edge devices in C]
+* Couchbase Lite xref:couchbase-lite:csharp:quickstart.adoc[on C# .NET] | 
+xref:couchbase-lite:java:quickstart.adoc[Java] | 
+xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
+* Sync your data with xref:cloud:app-services:index.adoc[App Services] / self-managed xref:sync-gateway:ROOT:introduction.adoc[SyncGateway] / 
+  xref:couchbase-edge-server:introduction:intro.adoc[Edge Server] -- or run xref:couchbase-lite:swift:p2psync-websocket.adoc[peer-to-peer].
+
+
+[.card-box]
+=== icon:rocket[] Develop RAG and Agentic AI Applications
+
+Our Vector Search Service facilitates RAG applications -- and offers the ability to combine searches with our sophisticated Search API.
+Agentic Apps can be built with Agent Catalog (currently in Private Preview).
+
+////
+// text for AI dev landing page??
+...enable developers to build agentic apps ...
+... combining data and intelligence in a unified platform.
+
+// Also:
+[AI ecosystem integrations]
+...for production-grade AI.
+
+////
+
+
+* xref:cloud:vector-search:vector-search.adoc[Vector Search]
+// billion-scale Vector GSI / Query
+* https://info.couchbase.com/capella-ai-services-signup[Agent Catalog Private Preview]
+// * Other AI? Columnar...

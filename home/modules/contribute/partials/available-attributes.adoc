@@ -10,6 +10,10 @@ a| * For concepts: `concept`
 * For tasks: `guide`
 * For references: `reference`
 
+| `:keywords:`
+| Use the `keywords` attribute to add meta keywords to the HTML head for your page. 
+| Any applicable keyword, separated by commas (`,`).
+
 | `:description:` 
 | The page description is used for SEO and provides a brief description of the page, which is displayed using the `[abstract]` attribute on the page. 
 a| Enter a quick description of the content on the page.
@@ -37,10 +41,6 @@ image::name-of-image.png[]
 a| `:imagesdir: ../assets/images`
 
 Try to keep your images inside the `assets/images` folder in a module.
-
-| `:keywords:`
-| Use the `keywords` attribute to add meta keywords to the HTML head for your page. 
-| Any applicable keyword, separated by commas (`,`).
 
 | `:page-aliases:` 
 a| Use the `page-aliases` attribute when you need to delete or rename a page to avoid breaking links.

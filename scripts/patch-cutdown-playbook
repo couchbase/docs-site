@@ -1,0 +1,99 @@
+#!/usr/bin/env node
+
+'use strict'
+
+const path = require('node:path')
+const yaml = require('yaml')
+const fs = require('node:fs')
+const deepmerge = require('@fastify/deepmerge')
+const picomatch = require('picomatch')
+
+function readYaml (path) {
+  if (fs.existsSync(path)) {
+    return yaml.parse(fs.readFileSync(path).toString())
+  }
+  else {
+    throw new Error(`Could not find ${path}`)
+  }
+}
+
+const [_,script, BASE] = process.argv
+if (! BASE) {
+    throw new Error(`Pass in the basename of the playbook to create, like 'antora-playbook-staging'`)
+}
+
+
+let {content: {sources, ...content},   ...playbook} = readYaml('antora-playbook.yml')
+const {content: {$select, $prune, sources: ds, ...dc}, ...diff} = readYaml(`${BASE}.diff.yml`)
+
+
+function mergeArray(target, source) {
+  if (typeof target != 'object') { target = [target] }
+  if (typeof source != 'object') { source = [source] }
+
+  return Array.from(new Set([...target, ...source]))
+}
+const mergeArrayPrepend = (target, source) => mergeArray(source, target)
+
+let preview = deepmerge({mergeArray: (_) => mergeArray, all: true})(
+  playbook,
+  {content},
+  diff,
+  {content: dc})
+
+if ($select) {
+  const f = picomatch($select)
+  sources = sources.filter((s) => {
+    return f(s.url)})
+}
+
+let sn = Object.groupBy(ds, (s) => s.url)
+
+sources = sources.map(({url, ...s}) => {
+  if (typeof s.branches != 'object') { s.branches = [s.branches || 'master'] }
+  if ($prune) {
+    s.branches = s.branches.slice(0,$prune)
+  }
+
+  let s2 = sn[url]
+  if (s2) {
+    console.log(url, sn[url])
+    delete sn[url]
+    ;[s2] = s2
+    s = deepmerge({mergeArray: (_) => mergeArrayPrepend})(s, s2)
+
+    /*
+     * if branches: [...] then it'll get merged
+     * BUT... if we defined $replace then we'll clobber with the object instead */
+    s.branches = s.branches.$replace || s.branches
+  }
+
+  return {url, ...s}
+})
+
+for (const s of Object.values(sn).flat()) {
+  if ('$prepend' in s) {
+    delete s.$prepend
+    sources.unshift(s)
+  }
+  else {
+    sources.push(s)
+  }
+}
+
+preview.content.sources = sources
+
+const header = `\######
+# WARNING: DO NOT EDIT BY HAND
+# (it will get overwritten)
+#
+# Instead
+#
+#  * edit ${BASE}.diff.yml with just the *differences* from the main playbook
+#  * run: ${script} ${BASE} \n\n`
+
+fs.writeFileSync(
+  `${BASE}.yml`,
+  header + yaml.stringify(preview),
+  { encoding: 'utf8' })
+

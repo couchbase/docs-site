@@ -1,0 +1,144 @@
+# Playbook for 7.6.5 Escrow requirement
+# 22 July 2025
+
+# 1. Edit this file up to date
+# 2. Edit scripts/escrow 
+# 3. Run scripts/escrow
+# 4. and send the zipped file to the requestor
+
+site:
+  title: Couchbase Docs
+  url: https://docs.couchbase.com
+  start_page: home::index.adoc
+  robots: allow
+  keys:
+    nav_groups: |
+      [
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
+        { "title": "Couchbase SDKs", "startPage": "home::sdk.adoc", "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"] },
+        { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] }
+      ]
+
+git:
+  ensure_git_suffix: false
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
+content:
+  branches: release/*
+  sources:
+
+    # NOTE docs-server is currently after other server repos so nav key wins
+
+    ###############
+    # Docs Site Root
+  - url: https://git@github.com/couchbase/docs-site
+    branches: [master]
+    start_path: home
+
+    ###############
+    # Analytics
+  - url: https://github.com/couchbase/docs-analytics
+    branches: [release/7.6]
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [release/7.6]
+    start_path: docs
+
+    ###############
+    # Backup
+  - url: https://github.com/couchbase/backup.git
+    branches: [trinity]
+    start_path: docs
+
+    ###############
+    # CLI
+  - url: https://github.com/couchbase/couchbase-cli
+    branches: [trinity]
+    start_path: docs
+
+    ###############
+    # Cloud Native (Couchbase Autonomous Operator)
+  - url: https://github.com/couchbase/docs-service-broker
+    branches: [1.1.x]
+  - url: https://git@github.com/couchbase/docs-cloud-native
+    branches: [cloud-native-2.2]
+
+  - url: https://github.com/couchbase/docs-operator.git
+    branches: [release/2.7]
+  - url: https://github.com/couchbase/couchbase-operator.git
+    branches: [2.7.x]
+    start_path: docs/user
+
+    ###############
+  - url: https://github.com/couchbaselabs/observability.git
+    branches: [0.2.x]
+    start_path: docs
+  - url: https://github.com/couchbaselabs/cbmultimanager.git
+    branches: [0.2.x]
+    start_path: docs
+
+    ###############
+    # Server 7.6
+  - url: https://github.com/couchbase/docs-server
+    branches: [release/7.6]
+
+    ###############
+    # SDKs
+  - url: https://github.com/couchbase/docs-sdk-common
+    branches: [release/7.6.6]
+  - url: https://github.com/couchbase/docs-sdk-c
+    branches: [release/3.3]
+  - url: https://github.com/couchbase/docs-sdk-cxx
+    branches: [release/1.1]
+  - url: https://github.com/couchbase/docs-sdk-dotnet
+    branches: [temp/3.7]
+  - url: https://github.com/couchbase/docs-efcore
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-sdk-go
+    branches: [temp/2.10]
+  - url: https://github.com/couchbase/docs-sdk-java
+    branches: [release/3.8]
+  - url: https://github.com/couchbase/docs-quarkus-extension
+    branches: [release/1.1]
+  - url: https://github.com/couchbase/docs-sdk-kotlin
+    branches: [temp/1.5]
+  - url: https://github.com/couchbase/docs-sdk-nodejs
+    branches: [temp/4.5]
+  - url: https://github.com/couchbase/docs-sdk-php
+    branches: [temp/4.3]
+  - url: https://github.com/couchbase/docs-sdk-python
+    branches: [temp/4.4]
+  - url: https://github.com/couchbase/docs-sdk-ruby
+    branches: [temp/3.6]
+  - url: https://github.com/couchbase/docs-sdk-scala
+    branches: [release/1.8]
+  - url: https://github.com/couchbase/docs-sdk-extensions
+    branches: [main]
+
+asciidoc:
+  attributes:
+    max-include-depth: 10
+    page-partial: false
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    sqlpp: SQL++
+    tabs: tabs
+    toc: ~
+    page-toclevels: 1@
+    xrefstyle: short
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    kroki-fetch-diagram: true
+    kroki-server-url: ~
+  extensions:
+  - ./lib/source-url-include-processor.js
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/markdown-block.js
+  - asciidoctor-kroki
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-210/ui-bundle.zip

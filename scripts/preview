@@ -1,5 +1,5 @@
 #!/bin/bash
-PREVIEW_VERSION="1.1.0"
+PREVIEW_VERSION="1.1.1"
 
 set -eo pipefail
 echo "🐇 Hello! I'm the Docs Build Rabbit"
@@ -11,6 +11,7 @@ help() {
 NAME
 
     preview - a script to quickly preview docs work
+
 
 SET UP
 
@@ -39,6 +40,7 @@ The latter will show you the URL to find the workflow:
 
     https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
 
+
 UPDATING
 
 To update the preview script, if your script is recent enough, simply run:
@@ -53,10 +55,7 @@ Otherwise, you can update the script manually.
     git pull
     scripts/preview --init
 
-
-
     
-
 TROUBLESHOOTING
 
 If you run into issues, you can run the script in debug mode.
@@ -71,6 +70,7 @@ These files should be sent to the docs team:
 
 The automated email will only work on MacOS.
 If you are on Linux, then just send those files manually.
+
 
 DOCUMENTATION
 
@@ -128,8 +128,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+DOCS_SITE=$(realpath $0/../..)
+
 if [ -n "$UPDATE" ]; then
-    DOCS_SITE=$(realpath $0/../..)
     cd $DOCS_SITE
 
     echo "🐇 Let's try to update preview, by updating your docs-site checkout"
@@ -147,10 +148,24 @@ if [ -n "$INIT" ]; then
     cp -n antora-playbook.preview.local.yml-example antora-playbook.preview.local.yml \
       || echo "antora-playbook.preview.local.yml already exists"
 
-    echo "🐇 Linking 'preview' command (you may need to enter your password)"
+    echo "🐇 Checking 'preview' command link (you may need to enter your password)"
 
-    sudo ln -sf $(realpath $0) /usr/local/bin/preview
+    which preview || sudo ln -sf $(realpath $0) /usr/local/bin/preview
     which preview >/dev/null || ( echo "Failed to link preview command"; exit 1 )
+
+    brew install gh jq yq
+    gh auth token || gh auth login
+
+    if [ ! -f ~/.git-credentials ]; then
+      scripts/add-credentials
+    else
+      echo "Git credentials found, let's assume they are good."
+      echo "If you get errors cloning private repos, then try running:"
+      echo 
+      echo "    cd $DOCS_SITE"
+      echo "    scripts/add-credentials"
+      echo
+    fi
 
     echo "🐇 initialised preview script"
     exit 0
@@ -181,6 +196,7 @@ export PREVIEW_REPO=$(basename $TOPLEVEL)
 export PREVIEW_BRANCH=$(git branch --show-current)
 export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
 export PREVIEW_CONFIG=${PREVIEW_CONFIG:-$PREVIEW_BRANCH}
+export PREVIEW_COMPONENT=$(yq .name $ANTORA/antora.yml 2>/dev/null)
 
 if [ -z "$REMOTE" ]; then
     export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
@@ -214,6 +230,8 @@ if [ -n "$REMOTE" ]; then
 
     PR_BASE_OID=$(gh pr view --json baseRefOid -q .baseRefOid 2>/dev/null) || true
     PR_BASE_NAME=$(gh pr view --json baseRefName -q .baseRefName 2>/dev/null) || true
+    PR_NUMBER=$(gh pr view --json number -q .number 2>/dev/null) || true
+    PREVIEW_OWNER=$(gh repo view --json owner -q .owner.login) || true
 
     WORKFLOW=preview-deploy.yml
     UUID=$(uuidgen)
@@ -223,9 +241,11 @@ if [ -n "$REMOTE" ]; then
         --field preview_branch=${PREVIEW_BRANCH} \
         --field preview_start_path=${PREVIEW_START_PATH} \
         --field preview_override=${PREVIEW_OVERRIDE} \
-        --field pr_base_name=${PR_BASE_NAME} \
         --field pr_base_oid=${PR_BASE_OID} \
+        --field preview_owner=${PREVIEW_OWNER} \
+        --field pr_number=${PR_NUMBER} \
         --field uuid=${UUID} \
+        --field preview_component=${PREVIEW_COMPONENT} \
         > /dev/null
 
     echo Requested the build at Github with UUID $UUID

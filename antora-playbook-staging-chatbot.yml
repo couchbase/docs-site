@@ -60,8 +60,11 @@ content:
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
   - url: https://github.com/couchbaselabs/docs-columnar
-    branches: [main]
-  # - url: https://git@github.com/couchbase/couchbase-operator
+    branches:
+      - main                      # `analytics` component (Capella Analytics)
+      - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
+    # see under Server section below for enterprise-analytics and legacy analytics
+
   - url: https://github.com/couchbase/couchbase-operator
     branches: [master]
     start_path: docs/user
@@ -85,19 +88,21 @@ content:
     branches: [release/1.0]
   # - url: https://git@github.com/couchbase/docs-connectors-talend
   - url: https://github.com/couchbase/docs-connectors-talend
-  # - url: https://git@github.com/couchbase/docs-analytics
+
+  - url: https://github.com/couchbaselabs/docs-enterprise-analytics
+    branches: [release/2.0]
   - url: https://github.com/couchbase/docs-analytics
-    branches: [release/7.6]
+    branches: [release/7.6, release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [trinity]
+    branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
   # - url: https://git@github.com/couchbase/backup
   - url: https://github.com/couchbase/backup
-    branches: [trinity]
+    branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.6]
+    branches: [release/7.6, release/7.2, release/7.1, release/7.0]
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/7.6]
   - url: https://github.com/couchbase/docs-sdk-c
@@ -110,6 +115,8 @@ content:
     branches: [temp/2.9]
   - url: https://github.com/couchbase/docs-sdk-java
     branches: [temp/3.7]
+  - url: https://github.com/couchbase/docs-quarkus-extension
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-sdk-kotlin
     branches: [temp/1.4]
   - url: https://github.com/couchbase/docs-sdk-nodejs
