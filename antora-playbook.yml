@@ -1,15 +1,19 @@
 # npx antora --clean --fetch antora-playbook.yml
 # or
 # npx antora antora-playbook.yml
+
 antora:
   extensions:
   - '@antora/site-generator-ms'
   - ./lib/embargo.js
   - ./lib/antora-component-version-rank.js
+
 site:
   title: Couchbase Docs
   url: https://docs.couchbase.com
+
   start_page: home::index.adoc
+
   robots: |
     User-agent: *
     Allow: /
@@ -17,43 +21,36 @@ site:
     Allow: /sdk-api/*-client/
     Allow: /sdk-api/couchbase-core-io/
     Allow: /sdk-api/couchbase-transactions-dotnet/
+
   keys:
     google_analytics: GTM-MVPNN2
+
+    # see https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2963243023/FAQ+how+does+the+top+nav+bar+work
     nav_groups: |
       [
-        { "title": "Server", "startPage": "home::server.adoc", "components": ["server"] },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "columnar"] },
-        { "title": "Kubernetes Operator", "startPage": "cloud-native-database::index.adoc", "components": ["operator"] },
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics", "operator"] },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
+        { "title": "Cloud-Native", "components": ["cloud-native-database"] },
+        { "title": "CMOS", "components": ["cmos"] },
         { "title": "Develop", "startPage": "home::developer.adoc", 
             "subGroups": [
               {
                 "title": "Operational SDKs",
-                "startPage": "capella@develop:develop:intro.adoc",
+                "startPage": "home::sdk.adoc",
                 "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
               },
               {
                 "title": "Analytics SDKs",
-                "startPage": "home:ROOT:analytics-sdk.adoc",
+                "startPage": "home::analytics-sdk.adoc",
                 "components": ["*-analytics-sdk", "*-columnar-sdk"]
-              },
-              {
-                "title": "Mobile Development",
-                "startPage": "couchbase-lite::index.adoc",
-                "components": ["couchbase-lite"]
-              },
-              {
-                "title": "Develop for AI",
-                "startPage": "ai:get-started:home.adoc",
-                "components": ["ai"]
               }
             ]
           },
-        { "title": "Operational SDKs", "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"] },
-        { "title": "Analytics SDKs", "components": ["*-analytics-sdk", "*-columnar-sdk"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
+
 git:
   ensure_git_suffix: false
   fetch_concurrency: 1
@@ -61,19 +58,35 @@ urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
 content:
+
   branches: master
+
   # NOTE the git@ segment in the URL indicates which repositories are private
   ## The above has a bug when upgrading to Antora 3.1. Original sources commented
   ## out and replaced with a non git@ prefix. To revert if it causes issues
+
   sources:
+
+    # The main docs-site project
+    ############################
+
   - url: .
     branches: HEAD
     start_path: home
+
   - url: https://github.com/couchbaselabs/docs-style-guide
     branches: main
     start_paths: [styleguide, ui-ux, pendo]
+
+    # Capella & related content
+    ############################
+
+    # shared content for Server & Capella
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [ia-dev-7.6, ia-dev-7.2, ia-dev-capella]
+
+##    branches: [release/7.6, release/7.2, capella]
+
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
     start_path: docs
@@ -82,17 +95,22 @@ content:
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
-  - url: https://github.com/couchbaselabs/docs-columnar
-    branches: [main]
-  - url: https://github.com/couchbaselabs/docs-ai
-    branches: [main]
 
-  # Couchbase Autonomous Kubernetes Operator
-  # Generated content remains in monorepo
-  # handwritten in docs-operator.
+  - url: https://github.com/couchbaselabs/docs-columnar
+    branches:
+      - main                      # `analytics` component (Capella Analytics)
+      - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
+    # see under Server section below for enterprise-analytics and legacy analytics
+
+    # Couchbase Autonomous Kubernetes Operator
+    ############################
+
+    # Generated content remains in monorepo
   - url: https://github.com/couchbase/couchbase-operator
     branches: [2.8.x, 2.7.x, 2.6.x, 2.5.x, 2.4.x]
     start_path: docs/user
+
+    # handwritten content lives in docs-operator.
   - url: https://github.com/couchbase/docs-operator
     branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.4]
 
@@ -102,10 +120,16 @@ content:
   - url: https://github.com/couchbaselabs/cbmultimanager
     branches: [0.2.x]
     start_path: docs
+  - url: https://github.com/couchbase/docs-cloud-native
+    branches: [cloud-native-2.2]
+
+    # Connectors
+    ############################
+
   - url: https://github.com/couchbase/docs-elastic-search
     branches: [main]
   - url: https://github.com/couchbase/docs-kafka
-    branches: [main]
+    branches: [release/4.3, release/4.2]
   - url: https://github.com/couchbase/docs-spark
     branches: [release/3.5, release/3.3]
   - url: https://github.com/couchbase/docs-tableau
@@ -115,60 +139,76 @@ content:
   - url: https://github.com/couchbase/docs-connectors-superset.git
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-connectors-talend
+
+    # Server
+    ############################
+
+  - url: https://github.com/couchbaselabs/docs-enterprise-analytics
+    branches: [release/2.0]
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/7.6, release/7.2, release/7.1, release/7.0]
+
   - url: https://github.com/couchbase/couchbase-cli
     branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
   - url: https://github.com/couchbase/backup
     branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
-  # NOTE docs-server is currently after other server repos so nav key wins
+
+    # NOTE docs-server is currently after other server repos so nav key wins
+
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.6, release/7.2, release/7.1, release/7.0]
+
+    # SDK
+    ############################
+
   - url: https://github.com/couchbase/docs-sdk-common
     branches: [release/8.0, release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
   - url: https://github.com/couchbase/docs-sdk-cxx
     branches: [release/1.1, release/1.0]
+
+    # .NET
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [temp/3.8, temp/3.7, temp/3.6, release/3.5, release/3.4]
+    branches: [temp/3.8, temp/3.7, temp/3.6, release/3.5]
   - url: https://github.com/couchbase/docs-efcore
     branches: [release/1.0]
+
   - url: https://github.com/couchbase/docs-sdk-go
-    branches: [temp/2.10, temp/2.9, temp/2.8, release/2.7, release/2.6]
+    branches: [temp/2.11, temp/2.10, temp/2.9, temp/2.8, release/2.7]
+
+    # JVM
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.9, release/3.8, temp/3.7, temp/3.6, release/3.5, release/3.4]
+    branches: [release/3.9, release/3.8, temp/3.7, temp/3.6, release/3.5]
   - url: https://github.com/couchbase/docs-quarkus-extension
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [release/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2, release/1.1]
-  - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [temp/4.5, temp/4.4, temp/4.3, release/4.2]
-  - url: https://github.com/couchbase/docs-sdk-php
-    branches: [temp/4.2, release/4.1]
-  - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.4, temp/4.3, temp/4.2, release/4.1]
-  - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [temp/3.6, temp/3.5, release/3.4]
+    branches: [temp/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/3.9, release/1.8, release/1.7, temp/1.6, release/1.5, release/1.4]
+    branches: [release/3.9, release/1.8, release/1.7, temp/1.6, release/1.5]
+
+    # "scripting languages"
+  - url: https://github.com/couchbase/docs-sdk-nodejs
+    branches: [temp/4.5, temp/4.4, temp/4.3]
+  - url: https://github.com/couchbase/docs-sdk-php
+    branches: [temp/4.3, temp/4.2]
+  - url: https://github.com/couchbase/docs-sdk-python
+    branches: [temp/4.4, temp/4.3, temp/4.2]
+  - url: https://github.com/couchbase/docs-sdk-ruby
+    branches: [temp/3.6, temp/3.5]
+
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
-    # Columnar dev
-  - url: https://github.com/couchbase/docs-analytics-sdk-common
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-analytics-sdk-go
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-analytics-sdk-java
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-analytics-sdk-nodejs
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-analytics-sdk-python
-    branches: [release/1.0]
+
+    # Analytics SDKs (aka Columnar)
+    ############################
+
   - url: https://github.com/couchbase/docs-columnar-sdk-common
     branches: [release/1.0]
+
   - url: https://github.com/couchbase/docs-columnar-sdk-go
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-java
@@ -177,20 +217,40 @@ content:
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-python
     branches: [release/1.0]
-    # Mobile Docs Pages
+
+  - url: https://github.com/couchbase/docs-analytics-sdk-common
+    branches: [release/1.0]
+
+  - url: https://github.com/couchbase/docs-analytics-sdk-go
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-java
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-nodejs
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-analytics-sdk-python
+    branches: [release/1.0]
+
+    # Mobile
+    ############################
+
+    # possibly legacy shared content
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.1, release/2.8]
+
   - url: https://github.com/couchbaselabs/docs-couchbase-lite
     branches: [release/3.2, release/3.1, release/3.0, release/2.8]
+
   - url: https://github.com/couchbaselabs/docs-sync-gateway
-    branches: [release/3.2, release/3.1, release/3.0, release/2.8]
+    branches: [release/3.3, release/3.2, release/3.1, release/3.0, release/2.8]
+
   - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
     branches: [release/1.0]
+
   - url: https://github.com/couchbase/edge-server
     branches: [main]
     start_path: docs
-  - url: https://github.com/couchbase/docs-cloud-native
-    branches: [cloud-native-2.2]
+
+    # random mobile tutorials
   - url: https://github.com/couchbaselabs/mobile-travel-sample
     branches: [master]
     start_path: content
@@ -211,6 +271,7 @@ content:
   - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
     branches: [master]
     start_path: content
+
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
@@ -229,11 +290,13 @@ asciidoc:
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     sqlpp: SQL++
-    sqlppc: SQL++ for Capella columnar
+    sqlppc: SQL++ for Capella Analytics
+    sqlppea: SQL++ for Enterprise Analytics
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
     kroki-server-url: http://3.91.133.254:9500
     kroki-fetch-diagram: true
+
   extensions:
   - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
@@ -245,9 +308,10 @@ asciidoc:
   - asciidoctor-kroki
   - asciidoctor-external-callout
   - '@asciidoctor/tabs'
+
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-13288-ia-support-1/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-216/ui-bundle.zip
 output:
   dir: ./public
 runtime:
