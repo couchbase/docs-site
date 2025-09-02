@@ -1,10 +1,11 @@
 = Couchbase Documentation
-:page-meta-zd-site-verification: odvin2siwmodz30xrtxq
-:page-layout: landing-page-top-level-sdk
-:page-role: tiles
+# :page-meta-zd-site-verification: odvin2siwmodz30xrtxq
+:page-layout: landing-page-capella
+# :page-layout: landing-page-top-level-sdk
+# :page-role: tiles
 :page-rank: 75
 :!sectids:
-:collapsible:
+# :collapsible:
 
 
 include::partial$info-banner.adoc[]
