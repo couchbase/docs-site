@@ -8,9 +8,16 @@
 We're no longer updating the content on this site regularly. Check out the https://www.couchbase.com/support-policy[Couchbase Support Policy] for information on version support and End of Life schedule.
 
 ifdef::primary-site-url[]
-Click {primary-site-url}[here] to return to the main documentation site.
+This page contains links to End-of-Life, archived documentation, for reference purposes, as well as links to docs for current, GA products. Click {primary-site-url}[here] to return to the main documentation site.
 endif::[]
 --
+
+
+[.tiles.browse]
+== Couchbase Capella
+
+Capella is an -as-a-service offering of our operational and analytics databases, App Services to connect edge devices, and AI Services (in Developer Preview).
+Find current documentation on the https://docs.couchbase.com/home/cloud.html[Capella pages].
 
 [.tiles.browse]
 == Couchbase Server
@@ -55,6 +62,11 @@ endif::[]
 * xref:1.2@service-broker::index.adoc[Service Broker Version 1.2]
 * xref:1.1@service-broker::index.adoc[Service Broker Version 1.1]
 * xref:1.0@service-broker::index.adoc[Service Broker Version 1.0]
+
+[.tile]
+.Couchbase Enterprise Analytics
+* xref:1.0@enterprise-analytics:intro:intro.adoc[Version 1.0]
+
 
 [.tiles.browse]
 == Couchbase Mobile
@@ -354,5 +366,5 @@ endif::[]
 * xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC/JDBC Drivers]
 * xref:4.6@server:connectors:hadoop-1.2/hadoop.adoc[Hadoop Connector 1.2]
 * xref:power-bi-connector:ROOT:index.adoc[Power BI Connector]
-* xref:tableau-connector:ROOT:index.adoc[Tableau Connector]
+* Tableau Connector: xref:1.0@tableau-connector:ROOT:index.adoc[1.0] | xref:1.1@tableau-connector:ROOT:index.adoc[1.1]
 * xref:superset-connector:ROOT:index.adoc[Apache Superset Connector]
