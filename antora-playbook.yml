@@ -179,6 +179,7 @@ content:
   - url: https://github.com/couchbase/docs-efcore
     branches: [release/1.0]
 
+    # Go
   - url: https://github.com/couchbase/docs-sdk-go
     branches: [temp/2.11, temp/2.10, temp/2.9, temp/2.8, release/2.7]
 
@@ -192,6 +193,10 @@ content:
   - url: https://github.com/couchbase/docs-sdk-scala
     branches: [release/3.9, release/1.8, release/1.7, temp/1.6, release/1.5]
 
+    # Rust
+  - url: https://github.com/couchbase/docs-sdk-rust
+    branches: [release/1.0]
+    
     # "scripting languages"
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [temp/4.5, temp/4.4, temp/4.3]
