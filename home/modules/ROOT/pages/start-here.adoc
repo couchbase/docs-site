@@ -39,7 +39,7 @@ Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 * Capella Operational -- 
 ** https://cloud.couchbase.com/sign-up[Sign Up to Capella^]
 ** xref:cloud:get-started:intro.adoc[Read the Capella Docs]
-**  xref:~@develop:develop:intro.adoc[Develop for Capella]
+**  https://docs.couchbase.com/cloud/develop/intro.html[Develop for Capella]
 * Self-managed xref:server:getting-started:start-here.adoc[Couchbase Server]
 ** xref:operator::overview.adoc[Couchbase Autonomous Operator for Kubernetes]
 ** xref:7.6@develop:develop:intro.adoc[Develop for Couchbase Server]
@@ -83,7 +83,7 @@ Build your app in Couchbase Lite (CBL) for offline-first connectivity, then sync
 
 
 * Couchbase Lite for xref:couchbase-lite:android:quickstart.adoc[Android in Java or Kotlin] |
-* xref:couchbase-lite:swift:quickstart.adoc[iOS Swift]
+xref:couchbase-lite:swift:quickstart.adoc[iOS Swift]
 and xref:couchbase-lite:objc:quickstart.adoc[iOS Objective-C] |
 xref:couchbase-lite:c:quickstart.adoc[Edge devices in C] |
 xref:couchbase-lite:csharp:quickstart.adoc[C# .NET] | 
@@ -91,9 +91,9 @@ xref:couchbase-lite:java:quickstart.adoc[Java] |
 xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
 * Sync your data with:
 ** xref:cloud:mobile-guides:intro.adoc[Capella App Services]
-** self-managed SyncGateway 
-** Edge Server 
-** peer-to-peer.
+** xref:sync-gateway::introduction.adoc[Self-managed SyncGateway]
+** xref:couchbase-edge-server:introduction:intro.adoc[Edge Server]
+** xref:couchbase-lite:android:p2psync-websocket.adoc[peer-to-peer]
 
 
 [.card-box]
@@ -105,6 +105,6 @@ Vector Search Service offers the ability to combine searches with our sophistica
 * xref:cloud:vector-search:vector-search.adoc[Vector Search in Capella Operational]
 * xref:server:vector-search:vector-search.adoc[Vector Search in self-managed Couchbase Server]
 
-Agentic Apps can be built with Agent Catalog (https://info.couchbase.com/capella-ai-services-signup[currently in Private Preview]).
+Explore AI Services and build Agentic Apps (https://info.couchbase.com/capella-ai-services-signup[currently in Private Preview]).
 
 
