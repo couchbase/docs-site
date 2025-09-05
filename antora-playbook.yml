@@ -28,11 +28,8 @@ site:
     # see https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2963243023/FAQ+how+does+the+top+nav+bar+work
     nav_groups: |
       [
-        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics", "operator"] },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
-        { "title": "Cloud-Native", "components": ["cloud-native-database"] },
-        { "title": "CMOS", "components": ["cmos"] },
+        { "title": "Get Started", "startPage": "home::start-here.adoc" },
+        { "title": "Deploy & Manage", "startPage": "home::deploy-manage.adoc" },
         { "title": "Develop", "startPage": "home::developer.adoc", 
             "subGroups": [
               {
@@ -48,7 +45,12 @@ site:
             ]
           },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
-        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
+        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics", "operator"] },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
+        { "title": "Cloud-Native", "components": ["cloud-native-database"] },
+        { "title": "CMOS", "components": ["cmos"] }
       ]
 
 git:
