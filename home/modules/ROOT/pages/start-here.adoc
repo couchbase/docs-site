@@ -56,6 +56,7 @@ xref:c-sdk:hello-world:start-using-sdk.adoc[C]
 | xref:php-sdk:hello-world:start-using-sdk.adoc[PHP]
 | xref:python-sdk:hello-world:start-using-sdk.adoc[Python]
 | xref:ruby-sdk:hello-world:start-using-sdk.adoc[Ruby]
+| xref:rust-sdk:hello-world:start-using-sdk.adoc[Rust]
 | xref:scala-sdk:hello-world:start-using-sdk.adoc[Scala]
 * xref:cloud:third-party:integrations.adoc[Integrations, Connectors, and Tools]
 // * Multi-Document ACID Transactions
