@@ -13,7 +13,7 @@ include::home::partial$info-banner.adoc[]
 The Developer Data Platform for Critical Applications in Our AI World.
 
 Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
-Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in eleven popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
+Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in 11 popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
 
 
 
@@ -21,7 +21,7 @@ Develop at the edge with offline-first Couchbase Lite, for transactional workloa
 == Development Choices for Your Use Cases
 
 [.card-box]
-=== icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
+=== icon:rocket[] Transactional Workloads -- in the Cloud or Your Datacenter
 
 Develop an app for xref:capella@develop:develop:intro.adoc[Capella Operational],
 or a xref:7.6@develop:develop:intro.adoc[self-managed Couchbase Server].
@@ -51,7 +51,7 @@ xref:c-sdk:hello-world:overview.adoc[C]
 
 xref:columnar:intro:intro.adoc[Enterprise Analytics] brings the power of NoSQL to the world of analytics.
 Self-managed Enterprise Analytics brings real-time adaptive applications to your datacenter or private cloud --
-or try this service fully-hosted as Capella Columnar, which integrates seamlessly with the Couchbase Capella cloud platform.
+or try this service fully hosted as Capella Columnar, which integrates seamlessly with the Couchbase Capella cloud platform.
 // Or try self-managed Enterprise Analytics, in your datacenter or private cloud.
 
 ////
@@ -71,13 +71,13 @@ such as connection management and robust error handling.
 [.card-box]
 === icon:rocket[] Develop for Mobile and the Edge
 
-Build your app for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
+Build your app for offline-first connectivity, then sync to Couchbase Server with Capella App Services (or self-managed Sync Gateway) -- or run peer-to-peer.
 
 
 * xref:couchbase-lite:android:quickstart.adoc[Develop for Android in Java or Kotlin]
 * xref:couchbase-lite:swift:quickstart.adoc[Develop for iOS on Swift]
 (and xref:couchbase-lite:objc:quickstart.adoc[Objective-C])
-* xref:couchbase-lite:c:quickstart.adoc[Devlop for Edge devices in C]
+* xref:couchbase-lite:c:quickstart.adoc[Develop for Edge devices in C]
 * Couchbase Lite xref:couchbase-lite:csharp:quickstart.adoc[on C# .NET] | 
 xref:couchbase-lite:java:quickstart.adoc[Java] | 
 xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]

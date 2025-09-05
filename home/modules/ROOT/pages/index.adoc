@@ -26,7 +26,7 @@ Most services are available to run self-managed in your datacenter, or managed b
 == A Multipurpose NoSQL Platform for Transactional, Analytical, Mobile / Edge, and AI Applications
 
 [.card-box]
-=== icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
+=== icon:rocket[] Transactional Workloads -- in the Cloud or Your Datacenter
 
 Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 
@@ -56,7 +56,7 @@ Enterprise Analytics brings the power of NoSQL to the world of analytics -- self
 [.card-box]
 === icon:rocket[] Develop for Mobile and the Edge
 
-Build your app in Couchbase Lite (CBL) for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
+Build your app in Couchbase Lite (CBL) for offline-first connectivity, then sync to Couchbase Server with Capella App Services (or self-managed Sync Gateway) -- or run peer-to-peer.
 
 
 * Couchbase Lite for xref:couchbase-lite:android:quickstart.adoc[Android in Java or Kotlin] |
@@ -76,7 +76,7 @@ xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
 [.card-box]
 === icon:rocket[] Develop RAG and Agentic AI Applications
 
-Vector Query  facilitates RAG applications speedily and at scale. 
+Vector Query facilitates RAG applications speedily and at scale. 
 Vector Search Service offers the ability to combine searches with our sophisticated Search API.
 
 * xref:cloud:vector-search:vector-search.adoc[Vector Search in Capella Operational]
@@ -171,7 +171,7 @@ a|
 * xref:couchbase-lite:android:quickstart.adoc[Develop for Android in Java or Kotlin]
 * xref:couchbase-lite:swift:quickstart.adoc[Develop for iOS on Swift]
 (& xref:couchbase-lite:objc:quickstart.adoc[Objective-C])
-* xref:couchbase-lite:c:quickstart.adoc[Devlop for Edge devices in C]
+* xref:couchbase-lite:c:quickstart.adoc[Develop for Edge devices in C]
 * Couchbase Lite xref:couchbase-lite:csharp:quickstart.adoc[on C# .NET], 
 xref:couchbase-lite:java:quickstart.adoc[Java],
 & xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
@@ -265,7 +265,7 @@ xref:server:introduction:contact-couchbase.adoc[Contact Couchbase]
 .Contribute
 
 [.content]
-You can submit simple changes, such as typo fixes and minor clarifications directly on GitHub. Contributions are greatly encouraged.
+You can submit simple changes, such as typo fixes and minor clarifications, directly on GitHub. Contributions are greatly encouraged.
 
 xref:home:contribute:index.adoc[Contribute to the Documentation]
 

@@ -31,7 +31,7 @@ AI Services (currently in private preview) simplify building agentic apps.
 == A Multipurpose NoSQL Platform for Transactional, Analytical, Mobile / Edge, and AI Applications
 
 [.card-box]
-=== icon:rocket[] Transactional Workloads -- in the Cloud or your Datacenter
+=== icon:rocket[] Transactional Workloads -- in the Cloud or Your Datacenter
 
 Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 
@@ -79,7 +79,7 @@ Enterprise Analytics brings the power of NoSQL to the world of analytics -- self
 [.card-box]
 === icon:rocket[] Develop for Mobile and the Edge
 
-Build your app in Couchbase Lite (CBL) for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
+Build your app in Couchbase Lite (CBL) for offline-first connectivity, then sync to Couchbase Server with Capella App Services (or self-managed Sync Gateway) -- or run peer-to-peer.
 
 
 * Couchbase Lite for xref:couchbase-lite:android:quickstart.adoc[Android in Java or Kotlin] |
@@ -99,7 +99,7 @@ xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
 [.card-box]
 === icon:rocket[] Develop RAG and Agentic AI Applications
 
-Vector Query  facilitates RAG applications speedily and at scale. 
+Vector Query facilitates RAG applications speedily and at scale.
 Vector Search Service offers the ability to combine searches with our sophisticated Search API.
 
 * xref:cloud:vector-search:vector-search.adoc[Vector Search in Capella Operational]
