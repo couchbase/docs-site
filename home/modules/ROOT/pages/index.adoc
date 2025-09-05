@@ -8,7 +8,8 @@
 We're no longer updating the content on this site regularly. Check out the https://www.couchbase.com/support-policy[Couchbase Support Policy] for information on version support and End of Life schedule.
 
 ifdef::primary-site-url[]
-This page contains links to End-of-Life, archived documentation, for reference purposes, as well as links to docs for current, GA products. Click {primary-site-url}[here] to return to the main documentation site.
+This page contains links to End-of-Life, archived documentation, for reference purposes, as well as links to docs for current, GA products. 
+Alternatively, return to {primary-site-url}[the main documentation site].
 endif::[]
 --
 
