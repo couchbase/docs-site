@@ -40,6 +40,7 @@ xref:c-sdk:hello-world:overview.adoc[C]
 | xref:php-sdk:hello-world:overview.adoc[PHP]
 | xref:python-sdk:hello-world:overview.adoc[Python]
 | xref:ruby-sdk:hello-world:overview.adoc[Ruby]
+| xref:rust-sdk:hello-world:overview.adoc[Rust]
 | xref:scala-sdk:hello-world:overview.adoc[Scala]
 * xref:cloud:third-party:integrations.adoc[Integrations, Connectors, and Tools]
 // * Multi-Document ACID Transactions
