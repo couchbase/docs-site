@@ -13,9 +13,6 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-216/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -369,7 +366,6 @@ asciidoc:
     tabs: tabs
     tabs-sync-option: ""
     toc: null
-    page-chatbot-origin: https://d2sozpdiqok6m4.cloudfront.net
     page-toclevels: 1@
     page-rank: 50@
     xrefstyle: short
@@ -384,3 +380,7 @@ asciidoc:
     kroki-server-url: null
     page-show-preview-banner: true
     page-watermark: preview@
+    page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net/
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip
