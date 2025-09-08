@@ -49,3 +49,7 @@ content:
 # ui:
   # bundle:
     # url: https://github.com/couchbase/docs-ui/releases/download/prod-216/ui-bundle.zip
+
+asciidoc:
+  attributes:
+    page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net/ # via Elliot Scribner

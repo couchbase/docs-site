@@ -97,9 +97,6 @@ content:
       branches:
         - main
         - legacy-columnar-component
-    - url: https://github.com/couchbaselabs/docs-enterprise-analytics
-      branches:
-        - release/2.0
     - url: https://github.com/couchbase/couchbase-operator
       branches:
         - 2.8.x
@@ -148,6 +145,9 @@ content:
       branches:
         - release/1.0
     - url: https://github.com/couchbase/docs-connectors-talend
+    - url: https://github.com/couchbaselabs/docs-enterprise-analytics
+      branches:
+        - release/2.0
     - url: https://github.com/couchbase/docs-analytics
       branches:
         - release/7.6
@@ -201,12 +201,12 @@ content:
         - temp/3.7
         - temp/3.6
         - release/3.5
-        - release/3.4
     - url: https://github.com/couchbase/docs-efcore
       branches:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-go
       branches:
+        - temp/2.11
         - temp/2.10
         - temp/2.9
         - temp/2.8
@@ -245,7 +245,6 @@ content:
       branches:
         - temp/4.3
         - temp/4.2
-        - release/4.1
     - url: https://github.com/couchbase/docs-sdk-python
       branches:
         - temp/4.4
@@ -255,7 +254,6 @@ content:
       branches:
         - temp/3.6
         - temp/3.5
-        - release/3.4
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
         - main
@@ -371,6 +369,7 @@ asciidoc:
     tabs: tabs
     tabs-sync-option: ""
     toc: null
+    page-chatbot-origin: https://d2sozpdiqok6m4.cloudfront.net
     page-toclevels: 1@
     page-rank: 50@
     xrefstyle: short

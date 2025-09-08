@@ -283,6 +283,7 @@ asciidoc:
     tabs: tabs
     tabs-sync-option: ''
     toc: ~
+    page-chatbot-origin: https://d2sozpdiqok6m4.cloudfront.net # original Improving Canada bot
     page-toclevels: 1@
     page-rank: 50@
     xrefstyle: short
@@ -293,7 +294,7 @@ asciidoc:
     sqlppea: SQL++ for Enterprise Analytics
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
-    kroki-server-url: http://3.91.133.254:9500
+    kroki-server-url: ~
     kroki-fetch-diagram: true
 
   extensions:
