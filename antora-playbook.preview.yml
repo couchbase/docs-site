@@ -380,7 +380,7 @@ asciidoc:
     kroki-server-url: null
     page-show-preview-banner: true
     page-watermark: preview@
-    page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net/
+    page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip

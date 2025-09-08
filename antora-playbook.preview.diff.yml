@@ -20,7 +20,7 @@ asciidoc:
     kroki-server-url: null
     page-show-preview-banner: true
     page-watermark: preview@
-    page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net/ # via Elliot Scribner
+    page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net # via Elliot Scribner
 
 ui:
   bundle:
