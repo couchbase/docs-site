@@ -41,6 +41,36 @@ content:
     branches:
       $replace: [master]
 
+  - url: https://github.com/couchbase/docs-sdk-common
+    # not $replace, as we can just merge
+    branches: 
+       - release/8.0
+       - release/7.7
+       - release/7.6.6
+       - release/7.6.2
+       - release/7.6
+       - release/7.2
+
+  - url: https://github.com/couchbase/docs-sdk-cxx
+    branches: 
+       - release/1.2
+
+  - url: https://github.com/couchbase/docs-sdk-nodejs
+    branches: 
+       - temp/4.6
+
+  - url: https://github.com/couchbase/docs-sdk-php
+    branches: 
+       - temp/4.4
+
+  - url: https://github.com/couchbase/docs-sdk-python
+    branches: 
+       - temp/4.5
+
+  - url: https://github.com/couchbase/docs-sdk-ruby
+    branches: 
+       - temp/3.7
+
   - url: https://github.com/couchbase/docs-sdk-kotlin
     branches: 
       # 'release/3.9' instead of 'temp/3.9'
