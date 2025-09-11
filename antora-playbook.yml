@@ -185,7 +185,7 @@ content:
 
     # JVM
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.9, release/3.8, temp/3.7, temp/3.6, release/3.5]
+    branches: [3.8-api, release/3.8, temp/3.7, temp/3.6, release/3.5]
   - url: https://github.com/couchbase/docs-quarkus-extension
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-kotlin
