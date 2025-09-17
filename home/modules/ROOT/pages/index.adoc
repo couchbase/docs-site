@@ -183,6 +183,159 @@ a| * Agentic Apps can be built with Agent Catalog (currently in Private Preview)
 
 
 
+[.column]
+====== {empty}
+
+
+[.column]
+====== {empty}
+
+
+.Operational SDKs
+
+[#table_sdk,cols="38,40,60,50"]
+|===
+| SDK | Documentation | Hello World Example | API Reference
+
+| .NET SDK
+| xref:dotnet-sdk:hello-world:overview.adoc[Docs]
+| xref:dotnet-sdk:hello-world:start-using-sdk.adoc[.NET Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-net-client[.NET API Reference]
+
+| C SDK
+| xref:c-sdk:hello-world:overview.adoc[Docs]
+| xref:c-sdk:hello-world:start-using-sdk.adoc[C Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-c-client/index.html[C API Reference]
+
+| {cpp} SDK
+| xref:cxx-sdk:hello-world:overview.adoc[Docs]
+| xref:cxx-sdk:hello-world:start-using-sdk.adoc[{cpp} Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-cxx-client/index.html[{cpp} API Reference]
+
+| Go SDK
+| xref:go-sdk:hello-world:overview.adoc[Docs]
+| xref:go-sdk:hello-world:start-using-sdk.adoc[Go Getting Started]
+| https://pkg.go.dev/github.com/couchbase/gocb/v2[Go API Reference]
+
+| Java SDK
+| xref:java-sdk:hello-world:overview.adoc[Docs]
+| xref:java-sdk:hello-world:start-using-sdk.adoc[Java Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-java-client[Java API Reference]
+
+| Kotlin SDK
+| xref:kotlin-sdk:hello-world:overview.adoc[Docs]
+| xref:kotlin-sdk:hello-world:start-using-sdk.adoc[Kotlin Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-kotlin-client[Kotlin API Reference]
+
+| Node.js SDK
+| xref:nodejs-sdk:hello-world:overview.adoc[Docs]
+| xref:nodejs-sdk:hello-world:start-using-sdk.adoc[Node.js Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-node-client/modules.html[Node.js API Reference]
+
+| PHP SDK
+| xref:php-sdk:hello-world:overview.adoc[Docs]
+| xref:php-sdk:hello-world:start-using-sdk.adoc[PHP Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-php-client/namespaces/couchbase.html[PHP API Reference]
+
+| Python SDK
+| xref:python-sdk:hello-world:overview.adoc[Docs]
+| xref:python-sdk:hello-world:start-using-sdk.adoc[Python Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-python-client/[Python API Reference]
+
+| Ruby SDK
+| xref:ruby-sdk:hello-world:overview.adoc[Docs]
+| xref:ruby-sdk:hello-world:start-using-sdk.adoc[Ruby Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[Ruby API Reference]
+
+| Scala SDK
+| xref:scala-sdk:hello-world:overview.adoc[Docs]
+| xref:scala-sdk:hello-world:start-using-sdk.adoc[Scala Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-scala-client/com/couchbase/client/scala/index.html[Scala API Reference]
+|===
+
+
+
+
+[.column]
+====== {empty}
+
+
+[.column]
+====== {empty}
+
+
+
+.Enterprise Analytics SDKs
+
+[#table_analytics_sdk,cols="42,40,60,50"]
+|===
+| Analytics SDK | Documentation | Hello World Example | API Reference
+
+| Go Analytics SDK
+| xref:go-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:go-analytics-sdk:hello-world:start-using-sdk.adoc[Go Getting Started]
+| https://pkg.go.dev/github.com/couchbase/gocbanalytics[Go Analytics API Reference]
+
+| Java Analytics SDK
+| xref:java-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:java-analytics-sdk:hello-world:start-using-sdk.adoc[Java Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-analytics-java-client[Java Analytics API Reference]
+
+| Node.js Analytics SDK
+| xref:nodejs-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:nodejs-analytics-sdk:hello-world:start-using-sdk.adoc[Node.js Getting Started]
+| https://docs.couchbase.com/sdk-api/analytics-nodejs-client/[Node.js Analytics API Reference]
+
+| Python Analytics SDK
+| xref:python-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:python-analytics-sdk:hello-world:start-using-sdk.adoc[Python Getting Started]
+| https://docs.couchbase.com/sdk-api/analytics-python-client/[Python Analytics API Reference]
+|===
+
+
+
+
+
+[.column]
+====== {empty}
+
+
+[.column]
+====== {empty}
+
+
+
+.Capella Analytics SDKs
+
+[#table_columnar_sdk,cols="42,40,60,50"]
+|===
+| Columnar SDK | Documentation | Hello World Example | API Reference
+
+| Go Columnar SDK
+| xref:go-columnar-sdk:hello-world:overview.adoc[Docs]
+| xref:go-columnar-sdk:hello-world:start-using-sdk.adoc[Go Getting Started]
+| https://pkg.go.dev/github.com/couchbase/gocbcolumnar[Go Columnar API Reference]
+
+| Java Columnar SDK
+| xref:java-columnar-sdk:hello-world:overview.adoc[Docs]
+| xref:java-columnar-sdk:hello-world:start-using-sdk.adoc[Java Getting Started]
+| https://docs.couchbase.com/sdk-api/couchbase-columnar-java-client[Java Columnar API Reference]
+
+| Node.js Columnar SDK
+| xref:nodejs-columnar-sdk:hello-world:overview.adoc[Docs]
+| xref:nodejs-columnar-sdk:hello-world:start-using-sdk.adoc[Node.js Getting Started]
+| https://docs.couchbase.com/sdk-api/columnar-nodejs-client/[Node.js Columnar API Reference]
+
+| Python Columnar SDK
+| xref:python-columnar-sdk:hello-world:overview.adoc[Docs]
+| xref:python-columnar-sdk:hello-world:start-using-sdk.adoc[Python Getting Started]
+| https://docs.couchbase.com/sdk-api/columnar-python-client/[Python Columnar API Reference]
+|===
+
+
+
+
+
 
 
 [.column]
