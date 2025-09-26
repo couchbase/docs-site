@@ -1,4 +1,5 @@
 = Attributes and Roles
+:page-toclevels: 3
 
 Use attributes and roles to insert content or CSS styles into your pages. 
 
@@ -102,6 +103,44 @@ You can add multiple roles to a single block or phrase by separating each role n
 I'm a block with an assigned role!
 \----
 ----
+
+=== Inline Roles for Editions, Versions, and Deprecation
+
+Couchbase Documentation created inline page roles for marking sections of documentation as deprecated, for a specific Couchbase Server version, or for marking sections as applying to a specific product edition - similar to <<page-edition,the :page-edition: attribute>>. 
+
+You can use the following inline roles to mark sections of text in your documentation: 
+
+|==== 
+| Role | Example 
+
+a|
+[source,asciidoc]
+----
+[.edition]#{enterprise}#
+----
+a| [.edition]#{enterprise}# 
+
+This text applies to Couchbase Server Enterprise Edition 
+
+a| 
+[source,asciidoc]
+----
+[.edition]#{community}#
+----
+a| [.edition]#{community}# 
+
+This text applies to Couchbase Server Community Edition 
+
+a| 
+[source,asciidoc]
+----
+[.status]#Couchbase Server x.x.x#
+----
+a| [.status]#Couchbase Server 7.6.2#
+
+This text applies to Couchbase Server version 7.6.2 
+
+|====
 
 === Page Roles
 

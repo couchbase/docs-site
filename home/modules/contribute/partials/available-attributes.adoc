@@ -64,7 +64,7 @@ For a page in another repository: `:page-aliases:7.6@server:develop:integrations
 
 When linking to a repository that has a version, you must specify which version in that repository redirects to your current page.
 
-| `:page-edition:`
+| [[page-edition]]`:page-edition:`
 | If you're writing content that only applies to a specific edition of Couchbase Server, usually the Enterprise Edition, use the `page-edition` attribute to add a badge to the page that indicates the Edition the content applies to.
 | `page-edition: Enterprise Edition`
 
