@@ -59,6 +59,12 @@ content:
   # NOTE docs-server is currently after other server repos so nav key wins
   - url: https://github.com/couchbase/docs-server
     branches: [release/8.0, release/7.6, release/7.2, release/7.1, release/7.0]
+  # Minimal SDK build
+    - url: https://github.com/couchbase/docs-sdk-common
+      branches:
+        - release/8.0
+  - url: https://github.com/couchbase/docs-sdk-java
+    branches: [3.8-api]
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
