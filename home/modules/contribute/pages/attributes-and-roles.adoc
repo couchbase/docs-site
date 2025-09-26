@@ -140,6 +140,15 @@ a| [.status]#Couchbase Server 7.6.2#
 
 This text applies to Couchbase Server version 7.6.2 
 
+a| 
+[source,asciidoc]
+----
+[.deprecated]#Deprecated#
+----
+a| [.deprecated]#Deprecated#
+
+This text applies to a deprecated feature 
+
 |====
 
 === Page Roles
