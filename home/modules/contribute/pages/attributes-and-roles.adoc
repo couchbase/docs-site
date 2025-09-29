@@ -151,6 +151,11 @@ This text applies to a deprecated feature
 
 |====
 
+The `#{enterprise}#` and `#{community}#` edition attributes are defined in the Antora playbook and automatically add a link to details about the different Couchbase Server editions. 
+
+When adding badges to text, try to always add the badge on a single line, by itself, following the heading of the section where it applies.
+Otherwise, place the badge as close to the edition, version, or deprecated content as possible. 
+
 === Page Roles
 
 Assigning a role to a page applies that role to the entire page, rather than a specific block or phrase.
