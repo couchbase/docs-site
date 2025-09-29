@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbase/docs-server.git
-    branches: fix-whats-new-sections-for-xdcr-mbs
+    branches: DOC-11708-Deprecated-REST-API-endpoint-for-bucket-stats
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
