@@ -190,6 +190,7 @@ content:
         - release/3.3
     - url: https://github.com/couchbase/docs-sdk-cxx
       branches:
+        - release/1.2
         - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-dotnet
@@ -235,6 +236,7 @@ content:
         - release/1.5
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
+        - temp/4.6
         - temp/4.5
         - temp/4.4
         - temp/4.3
@@ -244,11 +246,13 @@ content:
         - temp/4.2
     - url: https://github.com/couchbase/docs-sdk-python
       branches:
+        - temp/4.5
         - temp/4.4
         - temp/4.3
         - temp/4.2
     - url: https://github.com/couchbase/docs-sdk-ruby
       branches:
+        - temp/3.7
         - temp/3.6
         - temp/3.5
     - url: https://github.com/couchbase/docs-sdk-extensions
@@ -380,7 +384,7 @@ asciidoc:
     kroki-server-url: null
     page-show-preview-banner: true
     page-watermark: preview@
-    page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net/
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip

@@ -98,7 +98,7 @@ asciidoc:
     cbpp: Couchbase++
     kroki-server-url: null
     kroki-fetch-diagram: true
-    page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net/
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net/
 content:
   branches: master
   sources:
@@ -261,7 +261,6 @@ content:
         - temp/4.6
         - temp/4.5
         - temp/4.4
-        - temp/4.3
     - url: https://github.com/couchbase/docs-sdk-php
       branches:
         - temp/4.4
@@ -272,7 +271,6 @@ content:
         - temp/4.5
         - temp/4.4
         - temp/4.3
-        - temp/4.2
     - url: https://github.com/couchbase/docs-sdk-ruby
       branches:
         - temp/3.7
