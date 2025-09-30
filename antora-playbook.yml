@@ -191,13 +191,13 @@ content:
 
     # "scripting languages"
   - url: https://github.com/couchbase/docs-sdk-nodejs
-    branches: [temp/4.5, temp/4.4, temp/4.3]
+    branches: [temp/4.6, temp/4.5, temp/4.4, temp/4.3]
   - url: https://github.com/couchbase/docs-sdk-php
     branches: [temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.4, temp/4.3, temp/4.2]
+    branches: [temp/4.5, temp/4.4, temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-ruby
-    branches: [temp/3.6, temp/3.5]
+    branches: [temp/3.7, temp/3.6, temp/3.5]
 
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
