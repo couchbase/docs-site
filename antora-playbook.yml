@@ -193,7 +193,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: [temp/4.6, temp/4.5, temp/4.4, temp/4.3]
   - url: https://github.com/couchbase/docs-sdk-php
-    branches: [temp/4.3, temp/4.2]
+    branches: [temp/4.4, temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-python
     branches: [temp/4.5, temp/4.4, temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-ruby
