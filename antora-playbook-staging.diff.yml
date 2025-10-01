@@ -82,5 +82,5 @@ content:
 
 asciidoc:
   attributes:
-    # page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net/ # Production, via Elliot
-    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net/ # Staging, via Elliot
+    # page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net # Production, via Elliot
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net # Staging, via Elliot

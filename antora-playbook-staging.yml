@@ -98,7 +98,7 @@ asciidoc:
     cbpp: Couchbase++
     kroki-server-url: null
     kroki-fetch-diagram: true
-    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net/
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net
 content:
   branches: master
   sources:
