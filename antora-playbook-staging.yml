@@ -102,6 +102,10 @@ asciidoc:
 content:
   branches: master
   sources:
+    - url: .
+      branches:
+        - HEAD
+      start_path: home
     - url: https://github.com/couchbaselabs/docs-style-guide
       branches:
         - main

@@ -18,6 +18,7 @@ site:
 content:
 
   $select:
+    - '.'
     - '**' # everything
     # see https://github.com/micromatch/picomatch for full details
     # e.g.
