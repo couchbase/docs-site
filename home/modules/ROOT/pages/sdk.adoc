@@ -173,6 +173,11 @@ xref:analytics-sdk.adoc[Analytics SDKs] are tailored to the APIs offered by this
 |===
 | Analytics SDK | Documentation | Hello World Example | API Reference
 
+| .NET Analytics SDK
+| xref:dotnet-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:dotnet-analytics-sdk:hello-world:start-using-sdk.adoc[.NET Getting Started]
+| https://docs.couchbase.com/sdk-api/analytics-dotnet-client[.NET Analytics API Reference]
+
 | Go Analytics SDK
 | xref:go-analytics-sdk:hello-world:overview.adoc[Docs]
 | xref:go-analytics-sdk:hello-world:start-using-sdk.adoc[Go Getting Started]

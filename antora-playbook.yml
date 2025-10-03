@@ -220,6 +220,8 @@ content:
   - url: https://github.com/couchbase/docs-analytics-sdk-common
     branches: [release/1.0]
 
+  - url: https://github.com/couchbase/docs-analytics-sdk-dotnet
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-go
     branches: [release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-java
