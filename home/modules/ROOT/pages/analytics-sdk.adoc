@@ -35,7 +35,7 @@ such as connection management and robust error handling.
 --
 xref:dotnet-analytics-sdk:hello-world:overview.adoc[.NET Analytics SDK Docs] |
 xref:dotnet-analytics-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/analytics-dotnet-client[Go API Reference]
+| https://docs.couchbase.com/sdk-api/analytics-dotnet-client[.NET Analytics API Reference]
 --
 
 Go::
