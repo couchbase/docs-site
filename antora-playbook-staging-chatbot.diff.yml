@@ -69,10 +69,6 @@ content:
     branches: 
        - release/1.2
 
-  - url: https://github.com/couchbase/docs-sdk-java
-    branches: 
-       - 3.8-api
-
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: 
        - temp/4.6
