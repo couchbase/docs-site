@@ -39,7 +39,8 @@ content:
     branches: [master]
     start_path: docs/
 
-  - url: https://github.com/couchbase/backup
+  # a fork of couchbase/backup that has 8.0 in the master branch
+  - url: https://github.com/couchbaselabs/backup-docs
     branches: [master]
     start_path: docs/
 
@@ -48,8 +49,7 @@ content:
       - release/2.8.1 # is set to version `2.9` so will coexist with release/2.8
 
   - url: https://github.com/couchbaselabs/cbmultimanager
-    branches:
-      $replace: [master]
+    branches: [master]
 
   - url: https://github.com/couchbase/docs-sdk-common
     # not $replace, as we can just merge

@@ -154,6 +154,7 @@ content:
       start_path: docs
       branches:
         - master
+        - 0.2.x
     - url: https://github.com/couchbase/docs-cloud-native
       branches:
         - cloud-native-2.2
@@ -198,11 +199,10 @@ content:
       start_path: docs
     - url: https://github.com/couchbase/backup
       branches:
-        - master
         - trinity
         - neo
         - 7.1.x-docs
-      start_path: docs/
+      start_path: docs
     - url: https://github.com/couchbase/docs-server
       branches:
         - release/7.6
@@ -372,6 +372,10 @@ content:
         - master
       start_path: content
     - url: https://github.com/couchbaselabs/couchbase-cli-doc
+      branches:
+        - master
+      start_path: docs/
+    - url: https://github.com/couchbaselabs/backup-docs
       branches:
         - master
       start_path: docs/
