@@ -154,7 +154,6 @@ content:
       start_path: docs
       branches:
         - master
-        - 0.2.x
     - url: https://github.com/couchbase/docs-cloud-native
       branches:
         - cloud-native-2.2
