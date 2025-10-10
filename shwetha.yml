@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbase/docs-server.git
-    branches: DOC_13618_auto_resolve_name_conflicts_during_backup_restore
+    branches: DOC_13419_apply_some_ea_doc_changes_into_server_docs
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
