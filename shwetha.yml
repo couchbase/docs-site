@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbase/docs-server.git
-    branches: DOC_13168_hybrid_mandatory_with_n2n_client_cert_authentications
+    branches: DOC_13619_dev_preview_doc_pitr_in_backup
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
