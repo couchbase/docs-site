@@ -238,7 +238,6 @@ content:
         - temp/2.9
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
-        - 3.8-api
         - release/3.9
         - release/3.8
         - temp/3.7
@@ -323,7 +322,6 @@ content:
         - release/3.3
         - release/3.2
         - release/3.1
-        - release/3.0
     - url: https://github.com/couchbaselabs/docs-sync-gateway
       branches:
         - release/3.3
