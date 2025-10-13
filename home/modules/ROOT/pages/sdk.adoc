@@ -98,6 +98,11 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | xref:ruby-sdk:hello-world:start-using-sdk.adoc[Ruby Getting Started]
 | https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[Ruby API Reference]
 
+| Rust SDK
+| xref:rust-sdk:hello-world:overview.adoc[Docs]
+| xref:rust-sdk:hello-world:start-using-sdk.adoc[Rust Getting Started]
+| https://docs.rs/couchbase/[Rust API Reference]
+
 | Scala SDK
 | xref:scala-sdk:hello-world:overview.adoc[Docs]
 | xref:scala-sdk:hello-world:start-using-sdk.adoc[Scala Getting Started]

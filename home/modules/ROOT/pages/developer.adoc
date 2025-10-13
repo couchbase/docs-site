@@ -13,7 +13,7 @@ include::home::partial$info-banner.adoc[]
 The Developer Data Platform for Critical Applications in Our AI World.
 
 Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
-Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in eleven popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
+Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in a dozen popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
 
 
 
@@ -42,6 +42,7 @@ xref:c-sdk:hello-world:overview.adoc[C]
 | xref:php-sdk:hello-world:overview.adoc[PHP]
 | xref:python-sdk:hello-world:overview.adoc[Python]
 | xref:ruby-sdk:hello-world:overview.adoc[Ruby]
+| xref:rust-sdk:hello-world:overview.adoc[Rust]
 | xref:scala-sdk:hello-world:overview.adoc[Scala]
 * xref:cloud:third-party:integrations.adoc[Integrations, Connectors, and Tools]
 // * Multi-Document ACID Transactions
@@ -63,6 +64,7 @@ They support streaming APIs to handle large datasets, as well as the common feat
 such as connection management and robust error handling.
 ////
 
+* xref:dotnet-analytics-sdk:hello-world:overview.adoc[.NET Analytics SDK Docs]
 * xref:go-analytics-sdk:hello-world:overview.adoc[Go Analytics SDK Docs]
 * xref:java-analytics-sdk:hello-world:overview.adoc[Java Analytics SDK Docs]
 * xref:nodejs-analytics-sdk:hello-world:overview.adoc[Node.js Analytics SDK Docs]
