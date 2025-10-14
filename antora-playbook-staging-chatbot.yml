@@ -45,7 +45,7 @@ site:
               {
                 "title": "Operational SDKs",
                 "startPage": "home::sdk.adoc",
-                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
+                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
               },
               {
                 "title": "Analytics SDKs",
@@ -111,9 +111,8 @@ content:
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
         - release/8.0
-        - capella
         - release/7.6
-        - release/7.2
+        - AV-91970-8-0-docs-uptake-capella
     - url: https://github.com/couchbaselabs/cb-swagger
       start_path: docs
       branches:
@@ -123,6 +122,7 @@ content:
         - release/7.1
     - url: https://github.com/couchbasecloud/couchbase-cloud
       branches:
+        - 8-0-docs-uptake
         - main
       start_paths:
         - docs/public
@@ -236,6 +236,9 @@ content:
         - temp/2.11
         - temp/2.10
         - temp/2.9
+    - url: https://github.com/couchbase/docs-sdk-rust
+      branches:
+        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
         - release/3.9

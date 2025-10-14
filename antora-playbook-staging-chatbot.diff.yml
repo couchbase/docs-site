@@ -28,8 +28,15 @@ content:
 
   - url: https://github.com/couchbaselabs/docs-devex
     branches:
-      - release/8.0 # prerelease 
-      - capella # keep this here
+      # - capella # keep this here
+      $replace:
+        - release/8.0 # prerelease 
+        - release/7.6
+        - AV-91970-8-0-docs-uptake-capella # capella 8.0 prerelease
+
+  - url: https://github.com/couchbasecloud/couchbase-cloud
+    branches: [8-0-docs-uptake]
+    start_paths: [docs/public, docs/columnar]
 
   - url: https://github.com/couchbase/docs-analytics
     branches:
