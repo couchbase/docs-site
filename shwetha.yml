@@ -42,7 +42,7 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbase/docs-server.git
-    branches: DOC-13623-whats-new
+    branches: DOC_13627_preview_docs_feedback
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
