@@ -280,6 +280,9 @@ content:
         - temp/3.7
         - temp/3.6
         - temp/3.5
+    - url: https://github.com/couchbase/docs-sdk-rust
+      branches:
+        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
         - main
