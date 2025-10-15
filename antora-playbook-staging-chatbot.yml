@@ -204,6 +204,7 @@ content:
       start_path: docs
     - url: https://github.com/couchbase/docs-server
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
         - release/7.1

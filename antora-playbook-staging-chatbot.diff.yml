@@ -59,6 +59,10 @@ content:
     branches:
       $replace: [master]
 
+  - url: https://github.com/couchbase/docs-server
+    branches:
+      - release/8.0
+
   - url: https://github.com/couchbase/docs-sdk-common
     # not $replace, as we can just merge
     branches: 
