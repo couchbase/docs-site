@@ -110,12 +110,11 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 |===
 
 
-////
 === Alternatives to SDKs
 
 The Data API gives access to data in Capella Operational clusters --
 for when to use the Data API, or Capella's other REST APIs, see xref:cloud:data-api-guide:data-api-sdks.adoc[].
-////
+
 
 
 [.column]
