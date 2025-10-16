@@ -61,6 +61,7 @@ endif::[]
 
 [.tile]
 .Couchbase Lite
+* xref:3.3@couchbase-lite::index.adoc[Version 3.3]
 * xref:3.2@couchbase-lite::index.adoc[Version 3.2]
 * xref:3.1@couchbase-lite::index.adoc[Version 3.1]
 * xref:3.0@couchbase-lite::index.adoc[Version 3.0]
@@ -120,6 +121,7 @@ endif::[]
 
 [.tile]
 .Node.js SDK
+* xref:4.6@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.6]
 * xref:4.5@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.5]
 * xref:4.4@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.4]
 * xref:4.3@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.3]
@@ -158,6 +160,7 @@ endif::[]
 
 [.tile]
 .Python SDK
+* xref:4.5@python-sdk:hello-world:start-using-sdk.adoc[Version 4.5]
 * xref:4.4@python-sdk:hello-world:start-using-sdk.adoc[Version 4.4]
 * xref:4.3@python-sdk:hello-world:start-using-sdk.adoc[Version 4.3]
 * xref:4.2@python-sdk:hello-world:start-using-sdk.adoc[Version 4.2]
@@ -175,6 +178,7 @@ endif::[]
 
 [.tile]
 .Ruby SDK
+* xref:3.7@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.7]
 * xref:3.6@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.6]
 * xref:3.5@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.5]
 * xref:3.4@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.4]
@@ -211,6 +215,7 @@ endif::[]
 
 [.tile]
 .PHP SDK
+* xref:4.4@php-sdk:hello-world:start-using-sdk.adoc[Version 4.4]
 * xref:4.3@php-sdk:hello-world:start-using-sdk.adoc[Version 4.3]
 * xref:4.2@php-sdk:hello-world:start-using-sdk.adoc[Version 4.2]
 * xref:4.1@php-sdk:hello-world:start-using-sdk.adoc[Version 4.1]
@@ -263,6 +268,7 @@ endif::[]
 
 [.tile]
 .{cpp} SDK 
+* xref:1.2@cxx-sdk:hello-world:start-using-sdk.adoc[Version 1.2]
 * xref:1.1@cxx-sdk:hello-world:start-using-sdk.adoc[Version 1.1]
 * xref:1.0@cxx-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
