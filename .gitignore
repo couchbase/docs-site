@@ -6,7 +6,6 @@
 /preview/
 /scripts/node_modules/
 scripts/.npmrc
-scripts/package-lock.json
 local-antora-playbook.yml
 xref-validator.log
 .asciidoctorconfig
