@@ -129,7 +129,7 @@ How-to guides to help you start your development journey with Couchbase and the 
 * xref:java-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] -- CRUD against a Document Database.
 * xref:java-sdk:howtos:managing-connections.adoc[Connect your App] -- connect from dev or production environment.
 * xref:java-sdk:hello-world:sample-application.adoc[Sample Application] -- build a full app
-* xref:java-sdk:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial] -- introduction to the SDK, DOcument data model, and SQL++ for document databases.
+* xref:java-sdk:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial] -- introduction to the SDK, Document data model, and SQL++ for document databases.
 
 [.column]
 .Search, Query, Analyze
