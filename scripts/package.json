@@ -2,15 +2,17 @@
   "name": "scripts",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free": "~7.1",
-    "@fortawesome/fontawesome-svg-core": "~7.1",
-    "@fortawesome/free-brands-svg-icons": "~7.1",
-    "@fortawesome/free-regular-svg-icons": "~7.1",
-    "@fortawesome/free-solid-svg-icons": "~7.1",
-    "@fortawesome/pro-light-svg-icons": "~7.1",
-    "@fortawesome/pro-regular-svg-icons": "~7.1",
-    "@fortawesome/pro-solid-svg-icons": "~7.1",
-    "js-yaml": "~4.1",
-    "vinyl-fs": "~4.0"
+    "@fortawesome/fontawesome-free": "~5.15",
+    "@fortawesome/fontawesome-svg-core": "~1.2",
+    "@fortawesome/free-brands-svg-icons": "~5.15",
+    "@fortawesome/free-solid-svg-icons": "~5.15",
+    "@fortawesome/free-regular-svg-icons": "~5.15",
+    "vinyl-fs": "~3.0",
+    "js-yaml": "~4.1"
+  },
+  "optionalDependencies": {
+    "@fortawesome/pro-solid-svg-icons": "~5.15",
+    "@fortawesome/pro-regular-svg-icons": "~5.15",
+    "@fortawesome/pro-light-svg-icons": "~5.15"
   }
 }

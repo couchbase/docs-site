@@ -30,7 +30,6 @@ const iconPacks = {
       return require('@fortawesome/pro-light-svg-icons')
     } catch (e) {
       console.log('FontAwesome Light icons not found.')
-      console.log(e)
       return null    }
   })(),
   fab: require('@fortawesome/free-brands-svg-icons'),
