@@ -110,6 +110,10 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 |===
 
 
+[.column]
+====== {empty}
+
+
 === Alternatives to SDKs
 
 The Data API gives access to data in Capella Operational clusters --
