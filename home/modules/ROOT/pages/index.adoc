@@ -17,6 +17,7 @@ endif::[]
 
 [.tile]
 .Server
+* xref:8.0@server:introduction:whats-new.adoc[Version 8.0]
 * xref:7.6@server:introduction:whats-new.adoc[Version 7.6]
 * xref:7.2@server:introduction:whats-new.adoc[Version 7.2]
 * xref:7.1@server:introduction:whats-new.adoc[Version 7.1]
