@@ -84,10 +84,10 @@ content:
 
     # shared content for Server & Capella
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, release/7.2, capella]
+    branches: [release/8.0, release/7.6, release/7.2, capella]
 
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.6, release/7.2, release/7.1, release/7.0, capella]
+    branches: [release/8.0, release/7.6, release/7.2, release/7.1, release/7.0, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
@@ -145,19 +145,19 @@ content:
   - url: https://github.com/couchbaselabs/docs-enterprise-analytics
     branches: [release/2.0]
   - url: https://github.com/couchbase/docs-analytics
-    branches: [release/7.6, release/7.2, release/7.1, release/7.0]
+    branches: [release/8.0, release/7.6, release/7.2, release/7.1, release/7.0]
 
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
+    branches: [morpheus, trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
   - url: https://github.com/couchbase/backup
-    branches: [trinity, neo, 7.1.x-docs, cheshire-cat]
+    branches: [morpheus, trinity, neo, 7.1.x-docs, cheshire-cat]
     start_path: docs
 
     # NOTE docs-server is currently after other server repos so nav key wins
 
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.6, release/7.2, release/7.1, release/7.0]
+    branches: [release/8.0, release/7.6, release/7.2, release/7.1, release/7.0]
 
     # SDK
     ############################
