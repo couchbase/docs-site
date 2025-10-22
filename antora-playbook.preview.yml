@@ -42,7 +42,7 @@ site:
               {
                 "title": "Operational SDKs",
                 "startPage": "home::sdk.adoc",
-                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
+                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
               },
               {
                 "title": "Analytics SDKs",
@@ -70,11 +70,13 @@ content:
         - pendo
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
         - capella
     - url: https://github.com/couchbaselabs/cb-swagger
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
         - release/7.1
@@ -147,12 +149,14 @@ content:
         - release/2.0
     - url: https://github.com/couchbase/docs-analytics
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
         - release/7.1
         - release/7.0
     - url: https://github.com/couchbase/couchbase-cli
       branches:
+        - morpheus
         - trinity
         - neo
         - 7.1.x-docs
@@ -160,6 +164,7 @@ content:
       start_path: docs
     - url: https://github.com/couchbase/backup
       branches:
+        - morpheus
         - trinity
         - neo
         - 7.1.x-docs
@@ -167,6 +172,7 @@ content:
       start_path: docs
     - url: https://github.com/couchbase/docs-server
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
         - release/7.1
@@ -209,6 +215,9 @@ content:
         - temp/2.9
         - temp/2.8
         - release/2.7
+    - url: https://github.com/couchbase/docs-sdk-rust
+      branches:
+        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
         - release/3.9
@@ -277,6 +286,9 @@ content:
     - url: https://github.com/couchbase/docs-analytics-sdk-common
       branches:
         - release/1.0
+    - url: https://github.com/couchbase/docs-analytics-sdk-dotnet
+      branches:
+        - release/1.0
     - url: https://github.com/couchbase/docs-analytics-sdk-go
       branches:
         - release/1.0
@@ -295,6 +307,7 @@ content:
         - release/2.8
     - url: https://github.com/couchbaselabs/docs-couchbase-lite
       branches:
+        - release/3.3
         - release/3.2
         - release/3.1
         - release/3.0
@@ -346,6 +359,9 @@ content:
         - master
       start_path: content
     - url: https://github.com/couchbaselabs/docs-ai
+      branches:
+        - main
+    - url: https://github.com/couchbaselabs/docs-couchbase-lite-web
       branches:
         - main
 asciidoc:

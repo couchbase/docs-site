@@ -14,6 +14,8 @@ content:
   sources:
   - url: https://github.com/couchbaselabs/docs-ai
     branches: [main]
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite-web
+    branches: [main]
 
 asciidoc:
   attributes:
