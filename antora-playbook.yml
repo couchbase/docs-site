@@ -288,8 +288,7 @@ asciidoc:
     tabs: tabs
     tabs-sync-option: ''
     toc: ~
-    # page-chatbot-origin: https://d2sozpdiqok6m4.cloudfront.net # original Improving Canada bot
-    page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net # Production, via Elliot
+    page-chatbot-origin: https://d2sozpdiqok6m4.cloudfront.net # original Improving Canada bot
     page-toclevels: 1@
     page-rank: 50@
     xrefstyle: short
