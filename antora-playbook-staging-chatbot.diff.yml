@@ -23,6 +23,9 @@ content:
   $prune: 3
 
   sources:
+  - url: .
+    branches: AV-87603_update-capella-landing-for-AI 
+
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [capella] # ensure added as well as most recent release/* branches
 
@@ -100,6 +103,9 @@ content:
     branches: 
       # 'release/3.9' instead of 'temp/3.9'
       $replace: [release/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2]
+
+  - url: https://github.com/couchbaselabs/docs-ai
+    branches: [ai-services-ga]
 
 # ui:
   # bundle:

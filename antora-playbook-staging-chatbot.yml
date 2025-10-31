@@ -40,7 +40,7 @@ site:
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Develop", "startPage": "home::developer.adoc", 
+        { "title": "Develop", "startPage": "home::developer.adoc",
             "subGroups": [
               {
                 "title": "Operational SDKs",
@@ -98,9 +98,8 @@ content:
   branches: master
   sources:
     - url: .
-      branches:
-        - HEAD
       start_path: home
+      branches: AV-87603_update-capella-landing-for-AI
     - url: https://github.com/couchbaselabs/docs-style-guide
       branches:
         - main
@@ -117,9 +116,9 @@ content:
       start_path: docs
       branches:
         - capella
+        - release/8.0
         - release/7.6
         - release/7.2
-        - release/7.1
     - url: https://github.com/couchbasecloud/couchbase-cloud
       branches:
         - 8-0-docs-uptake
@@ -189,25 +188,23 @@ content:
         - release/8.0
         - release/7.6
         - release/7.2
-        - release/7.1
     - url: https://github.com/couchbase/couchbase-cli
       branches:
+        - morpheus
         - trinity
         - neo
-        - 7.1.x-docs
       start_path: docs
     - url: https://github.com/couchbase/backup
       branches:
+        - morpheus
         - trinity
         - neo
-        - 7.1.x-docs
       start_path: docs
     - url: https://github.com/couchbase/docs-server
       branches:
         - release/8.0
         - release/7.6
         - release/7.2
-        - release/7.1
     - url: https://github.com/couchbase/docs-sdk-common
       branches:
         - release/8.0
@@ -247,6 +244,7 @@ content:
         - temp/3.7
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
+        - release/1.2
         - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-kotlin
@@ -324,13 +322,13 @@ content:
     - url: https://github.com/couchbaselabs/docs-couchbase-lite
       branches:
         - release/3.3
+        - release/4.0
         - release/3.2
-        - release/3.1
     - url: https://github.com/couchbaselabs/docs-sync-gateway
       branches:
+        - release/4.0
         - release/3.3
         - release/3.2
-        - release/3.1
     - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
       branches:
         - release/1.0
@@ -380,3 +378,6 @@ content:
       branches:
         - master
       start_path: docs/
+    - url: https://github.com/couchbaselabs/docs-ai
+      branches:
+        - ai-services-ga
