@@ -93,7 +93,7 @@ content:
       - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
     # see under Server section below for enterprise-analytics and legacy analytics
 
-    - url: https://github.com/couchbaselabs/docs-ai
+  - url: https://github.com/couchbaselabs/docs-ai
     branches: [ai-services-ga]
 
     # Couchbase Autonomous Kubernetes Operator
