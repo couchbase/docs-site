@@ -370,10 +370,6 @@ content:
       branches:
         - master
       start_path: content
-    - url: https://github.com/couchbaselabs/couchbase-cli-doc
-      branches:
-        - master
-      start_path: docs/
     - url: https://github.com/couchbaselabs/backup-docs
       branches:
         - master

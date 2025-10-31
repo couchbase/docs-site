@@ -45,10 +45,6 @@ content:
     branches:
       - release/8.0 # prerelease 
 
-  - url: https://github.com/couchbaselabs/couchbase-cli-doc
-    branches: [master]
-    start_path: docs/
-
   # a fork of couchbase/backup that has 8.0 in the master branch
   - url: https://github.com/couchbaselabs/backup-docs
     branches: [master]
