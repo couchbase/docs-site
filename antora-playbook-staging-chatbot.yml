@@ -109,9 +109,10 @@ content:
         - pendo
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
+        - capella
         - release/8.0
         - release/7.6
-        - AV-91970-8-0-docs-uptake-capella
+        - release/7.2
     - url: https://github.com/couchbaselabs/cb-swagger
       start_path: docs
       branches:
@@ -370,10 +371,6 @@ content:
       branches:
         - master
       start_path: content
-    - url: https://github.com/couchbaselabs/backup-docs
-      branches:
-        - master
-      start_path: docs/
     - url: https://github.com/couchbaselabs/docs-ai
       branches:
         - ai-services-ga

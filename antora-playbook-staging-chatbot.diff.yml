@@ -31,11 +31,7 @@ content:
 
   - url: https://github.com/couchbaselabs/docs-devex
     branches:
-      # - capella # keep this here
-      $replace:
-        - release/8.0 # prerelease 
-        - release/7.6
-        - AV-91970-8-0-docs-uptake-capella # capella 8.0 prerelease
+      - capella # keep this here
 
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [8-0-docs-uptake]
@@ -43,12 +39,7 @@ content:
 
   - url: https://github.com/couchbase/docs-analytics
     branches:
-      - release/8.0 # prerelease 
-
-  # a fork of couchbase/backup that has 8.0 in the master branch
-  - url: https://github.com/couchbaselabs/backup-docs
-    branches: [master]
-    start_path: docs/
+      - release/8.0
 
   - url: https://github.com/couchbase/docs-operator
     branches: 
