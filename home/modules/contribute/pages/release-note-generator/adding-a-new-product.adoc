@@ -1,0 +1,223 @@
+= Adding a New Product
+:description: Demonstrates how to add a new product to the Release Note Generator.
+:page-pagination: prev
+:page-topic-type: howto
+
+[abstract]
+{description}
+
+== Prerequisites
+This guide is intended for technical writers and developers who are familiar with the Release Note Generator. If you are new to the tool, please refer to the link:https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/3338961232/Other+Tools[installation and use of the Release Note Generator] guide for more information.
+Before you begin, make sure that you have the release note generator installed and running.
+
+You should also familiarize yourself with the xref:./design-guide.adoc[].
+
+You will also need a code editor or an IDE for editing the YAML configuration file.
+
+You should also have a terminal application running.
+
+== Overview
+
+The Release Note Generator has been designed so that it can be extended to support new Couchbase products without having to
+alter the Python script itself. Adding a new product involves two steps:
+
+. Add the new product release set to `cb_release_notes_config.yaml`.
+. Create a new Jinja template for rendering the AsciiDoc file for your new release note.
+
+To demonstrate this process, we're going to create a new release note configuration for the Sync Gateway product.
+
+NOTE: You should run the following commands from the directory where your Release Notes Generator is installed.
+
+=== Step {counter: step}: Make a copy of your `cb_release_notes_config.yaml` file.
+
+You can make a copy of the file using the following terminal command:
+
+[source, shell]
+----
+cp cb_release_notes_config.yaml cb_release_notes_config.yaml.spare
+----
+
+=== Step {counter: step}: Name your release product
+
+Edit the original `cb_release_notes_config.yaml` file
+and add the new `name` item underneath the `release_settings` section:
+
+[source, yaml]
+----
+release_settings:
+  - name: "Sync Gateway"
+----
+
+=== Step {counter: step}: Define your parameters
+
+The user will need to supply parameters that need to be fed to the script.
+These can vary depending on what's going to appear on the release note,
+and what the JQL will need to gather the tickets.
+The most common parameters are:
+
+[horizontal]
+
+Release number::
+The label that our JQL will use to find the release tag.
+
+Release date::
+This will appear in the release note heading.
+
+File path::
+This is a mandatory item needed for each release set.
+It supplies the name of the AsciiDoc file that the script generates.
+
+Other parameters that the SQL will need, (such as the project name), are fixed values
+and don't need to be parameterized.
+
+[source, yaml]
+----
+release_settings:
+  - name: "Sync Gateway"
+    fields:
+      - name: release_number
+        type: text
+        message: 'Enter the release number:'
+      - name: release_date
+        type: text
+        message: 'Enter the release date (Month Year):'
+      - name: file_path
+        type: file
+        message: 'Enter the file path for the release notes:'
+----
+
+=== Step {counter: step}: Define your JQL statement
+
+Now, you add the URL and the JQL statements used to retrieve the Jira tickets that match your parameters:
+
+[source, yaml]
+----
+release_settings:
+  - name: "Sync Gateway"
+    fields:
+      - name: release_number
+        type: text
+        message: 'Enter the release number:'
+      - name: release_date
+        type: text
+        message: 'Enter the release date (Month Year):'
+      - name: file_path
+        type: file
+        message: 'Enter the file path for the release notes:'
+    url: https://jira.issues.couchbase.com
+    jql: project = CBG AND issuetype in (Bug, "New Feature") #<.>
+      AND (fixVersion = {{release_number}} OR labels IN (known_issue)) #<.>
+      ORDER BY key ASC #<.>
+----
+
+<.> Note that the JQL statement restricts the query to tickets belonging to the Sync Gateway project,
+and also ensures that the ticket is either a Bug or a New Feature.
+<.> We supply the `release_number` parameter to the JQL statement so that we only pick up tickets from the specified release.
+<.> The `ORDER BY key` clause ensures that the tickets are returned in ascending order based on their Jira key.
+This is important to ensure that the tickets are passed to the template in the correct order.
+
+[#define-your-jinja-template]
+=== Step {counter: step}: Define your JINJA template
+
+Before creating the rendering template, you need to add it's location to your release set.
+You can share templates between release sets.
+
+[source,yaml]
+.The completed release set
+----
+release_settings:
+  - name: "Sync Gateway"
+    fields:
+      - name: release_number
+        type: text
+        message: 'Enter the release number:'
+      - name: release_date
+        type: text
+        message: 'Enter the release date (Month Year):'
+      - name: file_path
+        type: file
+        message: 'Enter the file path for the release notes:'
+    url: https://jira.issues.couchbase.com
+    jql: project = CBG AND issuetype in (Bug, "New Feature")
+      AND (fixVersion = {{release_number}} OR labels IN (known_issue))
+      ORDER BY key ASC
+    template: sync-gateway.jinja2
+----
+
+Step {counter: step}: Create your JINJA template
+
+The templates reside in the `templates` directory, as defined near the top of the configuration file.
+Use your editor to create a new template file in this directory. The file should be called `sync-gateway.jinja2`,
+as defined in the release set configuration. (<<define-your-jinja-template>>)
+
+Copy the template below into your file, then save the file.
+
+[source]
+----
+
+{% macro generate_issue_list(issues) %} <1>
+
+{%  if issues | length %}
+{% for issue in issues %} <2>
+
+* {{ user_settings.release_set.url }}/browse/{{ issue.key }}[++{{ issue.key }} {{ issue.fields.summary }}++] <3>
+{% endfor %}
+{% else %}
+None for this release.
+{%  endif %}
+
+{% endmacro %} <1>
+
+{% set improvements = issues | selectattr('fields.issuetype.name', 'in', 'New Feature,Epic,Improvement') <4>
+| selectattr('fields.status.name', 'in','Resolved, Closed')
+| selectattr('fields.resolution.name', 'in','Fixed, Done')
+| rejectattr('fields.labels', 'contains', 'known_issue') | list %}
+
+{% set bugs = issues | selectattr('fields.issuetype.name', 'in', 'Bug')
+| selectattr('fields.resolution.name', 'in','Fixed')
+| rejectattr('fields.labels', 'contains', 'known_issue') | list  %}
+
+{% set known_issues = issues  | selectattr('fields.labels', 'contains', 'known_issue')
+| rejectattr('fields.status.name', 'in','Resolved, Closed') | list %}
+
+== {{ user_settings.fields.release_number }} -- {{ user_settings.fields.release_date }}
+
+[#maint-{{user_settings.fields.release_number | replace_dots('-') }}]
+
+=== Enhancements
+{{ generate_issue_list(improvements) }} <1>
+
+=== Issues and Resolutions
+
+==== Fixed Issues
+
+{{ generate_issue_list(bugs) }} <1>
+
+==== Known Issues
+
+{{ generate_issue_list(known_issues) }} <1
+
+----
+
+We won't cover the breadth of what you can do with JINJA templates,
+but we will highlight some of the features used in this example:
+
+<1> We can define reusable macros that can be called from anywhere within the template.
+<2> We can define a `for … endfor` loop to iterate over the list of issues passed to the template.
+<3> We can access all the fields of an issue using the dot notation.
+<4> We can filter the issue list even further by using the built-in `selectattr` function
+to filter issues based on field values.
+
+=== Step {counter: step}: Run the Release Note Generator
+
+From the terminal screen, run the application using the following command:
+
+[source, shell]
+----
+./cb-release-note
+----
+
+.Running the generator with the new Sync Gateway release set
+image::release-note-generator/sync-gateway-example.png[Running the Release Note Generator]
+
+
