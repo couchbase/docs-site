@@ -85,7 +85,7 @@ content:
     branches: [AV-106226_ai-api-docs-reference]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [main]
+    branches: [ai-services-ga]
 
   - url: https://github.com/couchbaselabs/docs-columnar
     branches:
