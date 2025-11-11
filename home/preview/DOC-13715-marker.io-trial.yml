@@ -1,0 +1,4 @@
+override:
+  ui:
+    bundle:
+      url: https://github.com/couchbase/docs-ui/releases/download/DOC-13715-marker.io-trial-1/ui-bundle.zip
