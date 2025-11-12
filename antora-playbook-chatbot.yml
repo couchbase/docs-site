@@ -35,12 +35,12 @@ site:
     nav_groups: >
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-js", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Develop", "startPage": "home::developer.adoc", 
+        { "title": "Develop", "startPage": "home::developer.adoc",
             "subGroups": [
               {
                 "title": "Operational SDKs",
@@ -240,6 +240,7 @@ content:
         - temp/3.7
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
+        - release/1.2
         - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-kotlin
@@ -314,14 +315,17 @@ content:
         - release/2.8
     - url: https://github.com/couchbaselabs/docs-couchbase-lite
       branches:
+        - release/4.0
         - release/3.3
         - release/3.2
-        - release/3.1
+    - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
+      branches:
+        - release/1.0
     - url: https://github.com/couchbaselabs/docs-sync-gateway
       branches:
+        - release/4.0
         - release/3.3
         - release/3.2
-        - release/3.1
     - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
       branches:
         - release/1.0

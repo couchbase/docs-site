@@ -32,7 +32,7 @@ site:
     nav_groups: >
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-js", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
@@ -314,6 +314,9 @@ content:
         - release/3.1
         - release/3.0
         - release/2.8
+    - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
+      branches:
+        - release/1.0
     - url: https://github.com/couchbaselabs/docs-sync-gateway
       branches:
         - release/4.0
@@ -362,9 +365,6 @@ content:
         - master
       start_path: content
     - url: https://github.com/couchbaselabs/docs-ai
-      branches:
-        - main
-    - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
       branches:
         - main
 asciidoc:
