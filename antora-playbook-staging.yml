@@ -40,17 +40,17 @@ site:
     nav_groups: >
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-js", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Develop", "startPage": "home::developer.adoc", 
+        { "title": "Develop", "startPage": "home::developer.adoc",
             "subGroups": [
               {
                 "title": "Operational SDKs",
                 "startPage": "home::sdk.adoc",
-                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
+                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
               },
               {
                 "title": "Analytics SDKs",
@@ -116,15 +116,16 @@ content:
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
         - capella
+        - release/8.0
         - release/7.6
         - release/7.2
     - url: https://github.com/couchbaselabs/cb-swagger
       start_path: docs
       branches:
         - capella
+        - release/8.0
         - release/7.6
         - release/7.2
-        - release/7.1
     - url: https://github.com/couchbasecloud/couchbase-cloud
       branches:
         - main
@@ -190,26 +191,26 @@ content:
         - release/2.0
     - url: https://github.com/couchbase/docs-analytics
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
-        - release/7.1
     - url: https://github.com/couchbase/couchbase-cli
       branches:
+        - morpheus
         - trinity
         - neo
-        - 7.1.x-docs
       start_path: docs
     - url: https://github.com/couchbase/backup
       branches:
+        - morpheus
         - trinity
         - neo
-        - 7.1.x-docs
       start_path: docs
     - url: https://github.com/couchbase/docs-server
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
-        - release/7.1
     - url: https://github.com/couchbase/docs-sdk-common
       branches:
         - release/8.0
@@ -239,6 +240,9 @@ content:
         - temp/2.11
         - temp/2.10
         - temp/2.9
+    - url: https://github.com/couchbase/docs-sdk-rust
+      branches:
+        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
         - release/3.9
@@ -246,6 +250,7 @@ content:
         - temp/3.7
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
+        - release/1.2
         - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-kotlin
@@ -280,9 +285,6 @@ content:
         - temp/3.7
         - temp/3.6
         - temp/3.5
-    - url: https://github.com/couchbase/docs-sdk-rust
-      branches:
-        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
         - main
@@ -326,14 +328,16 @@ content:
     - url: https://github.com/couchbaselabs/docs-couchbase-lite
       branches:
         - release/3.3
+        - release/4.0
         - release/3.2
-        - release/3.1
-        - release/3.0
+    - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
+      branches:
+        - release/1.0
     - url: https://github.com/couchbaselabs/docs-sync-gateway
       branches:
+        - release/4.0
         - release/3.3
         - release/3.2
-        - release/3.1
     - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
       branches:
         - release/1.0
