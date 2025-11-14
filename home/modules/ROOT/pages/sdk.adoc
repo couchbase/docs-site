@@ -113,6 +113,9 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 [.column]
 ====== {empty}
 
+[.column]
+====== {empty}
+
 
 === Alternatives to SDKs
 
@@ -123,6 +126,11 @@ for when to use the Data API, or Capella's other REST APIs, see xref:cloud:data-
 
 [.column]
 ====== {empty}
+
+[.column]
+====== {empty}
+
+
 
 == SDK Extension Libraries
 []
