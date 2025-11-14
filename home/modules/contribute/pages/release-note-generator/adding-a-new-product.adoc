@@ -1,6 +1,6 @@
 = Adding a New Product
 :description: Demonstrates how to add a new product to the Release Note Generator.
-:page-pagination: prev
+:page-pagination: full
 :page-topic-type: howto
 
 [abstract]
