@@ -80,7 +80,7 @@ content:
 
     # shared content for Server & Capella
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [capella]
+    branches: [ai-services-ga]
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [AV-106226_ai-api-docs-reference]
     start_paths: [docs/public, docs/columnar]
