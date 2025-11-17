@@ -37,5 +37,11 @@
  ** xref:generate-rest-api.adoc[]
  ** xref:extensions.adoc[]
 
+* Release Note Generator
+ ** xref:release-note-generator/design-guide.adoc[Release Note Generator Design Guide]
+ ** xref:release-note-generator/adding-a-new-product.adoc[Adding a New Product]
+ ** xref:release-note-generator/generate_ai_summaries.adoc[Generate AI Summaries]
+
 
 //* Additional Resources (Pending)
+
