@@ -310,6 +310,21 @@ describe('child_entries', function () {
         ['bar', {type: 'number'}]
       ])
   })
+
+  ok('via allOf recursive', function () {
+    assert.deepEqual(
+      child_entries({
+        allOf: [
+          {properties: {'outer': {type: 'string'}}},
+          {allOf: [{properties: {'inner': {type: 'number'}}}]}
+        ]
+      }),
+      [
+        ['outer', {type: 'string'}],
+        ['inner', {type: 'number'}]
+      ])
+  })
+
 })
 
 // Helper function to clean up whitespace in strings for comparison

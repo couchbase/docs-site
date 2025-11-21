@@ -13,9 +13,6 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-216/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -30,22 +27,24 @@ antora:
 site:
   url: https://docs.couchbase.com
   start_page: home::index.adoc
+  title: Couchbase Docs Preview
+  robots: disallow
   keys:
     google_analytics: GTM-MVPNN2
     nav_groups: >
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai"] },
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Develop", "startPage": "home::developer.adoc", 
+        { "title": "Develop", "startPage": "home::developer.adoc",
             "subGroups": [
               {
                 "title": "Operational SDKs",
                 "startPage": "home::sdk.adoc",
-                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
+                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
               },
               {
                 "title": "Analytics SDKs",
@@ -57,8 +56,6 @@ site:
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
-  title: Couchbase Docs Preview
-  robots: disallow
 content:
   branches: master
   sources:
@@ -73,11 +70,13 @@ content:
         - pendo
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
         - capella
     - url: https://github.com/couchbaselabs/cb-swagger
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
         - release/7.1
@@ -97,9 +96,6 @@ content:
       branches:
         - main
         - legacy-columnar-component
-    - url: https://github.com/couchbaselabs/docs-enterprise-analytics
-      branches:
-        - release/2.0
     - url: https://github.com/couchbase/couchbase-operator
       branches:
         - 2.8.x
@@ -148,14 +144,19 @@ content:
       branches:
         - release/1.0
     - url: https://github.com/couchbase/docs-connectors-talend
+    - url: https://github.com/couchbaselabs/docs-enterprise-analytics
+      branches:
+        - release/2.0
     - url: https://github.com/couchbase/docs-analytics
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
         - release/7.1
         - release/7.0
     - url: https://github.com/couchbase/couchbase-cli
       branches:
+        - morpheus
         - trinity
         - neo
         - 7.1.x-docs
@@ -163,6 +164,7 @@ content:
       start_path: docs
     - url: https://github.com/couchbase/backup
       branches:
+        - morpheus
         - trinity
         - neo
         - 7.1.x-docs
@@ -170,6 +172,7 @@ content:
       start_path: docs
     - url: https://github.com/couchbase/docs-server
       branches:
+        - release/8.0
         - release/7.6
         - release/7.2
         - release/7.1
@@ -193,6 +196,7 @@ content:
         - release/3.3
     - url: https://github.com/couchbase/docs-sdk-cxx
       branches:
+        - release/1.2
         - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-dotnet
@@ -201,18 +205,22 @@ content:
         - temp/3.7
         - temp/3.6
         - release/3.5
-        - release/3.4
     - url: https://github.com/couchbase/docs-efcore
       branches:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-go
       branches:
+        - temp/2.11
         - temp/2.10
         - temp/2.9
         - temp/2.8
         - release/2.7
+    - url: https://github.com/couchbase/docs-sdk-rust
+      branches:
+        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
+        - release/3.10
         - release/3.9
         - release/3.8
         - temp/3.7
@@ -220,10 +228,12 @@ content:
         - release/3.5
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
+        - release/1.2
         - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-kotlin
       branches:
+        - temp/3.10
         - temp/3.9
         - temp/1.5
         - temp/1.4
@@ -231,6 +241,7 @@ content:
         - release/1.2
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
+        - release/3.10
         - release/3.9
         - release/1.8
         - release/1.7
@@ -238,24 +249,26 @@ content:
         - release/1.5
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
+        - temp/4.6
         - temp/4.5
         - temp/4.4
         - temp/4.3
     - url: https://github.com/couchbase/docs-sdk-php
       branches:
+        - temp/4.4
         - temp/4.3
         - temp/4.2
-        - release/4.1
     - url: https://github.com/couchbase/docs-sdk-python
       branches:
+        - temp/4.5
         - temp/4.4
         - temp/4.3
         - temp/4.2
     - url: https://github.com/couchbase/docs-sdk-ruby
       branches:
+        - temp/3.7
         - temp/3.6
         - temp/3.5
-        - release/3.4
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
         - main
@@ -277,6 +290,9 @@ content:
     - url: https://github.com/couchbase/docs-analytics-sdk-common
       branches:
         - release/1.0
+    - url: https://github.com/couchbase/docs-analytics-sdk-dotnet
+      branches:
+        - release/1.0
     - url: https://github.com/couchbase/docs-analytics-sdk-go
       branches:
         - release/1.0
@@ -295,12 +311,18 @@ content:
         - release/2.8
     - url: https://github.com/couchbaselabs/docs-couchbase-lite
       branches:
+        - release/4.0
+        - release/3.3
         - release/3.2
         - release/3.1
         - release/3.0
         - release/2.8
+    - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
+      branches:
+        - release/1.0
     - url: https://github.com/couchbaselabs/docs-sync-gateway
       branches:
+        - release/4.0
         - release/3.3
         - release/3.2
         - release/3.1
@@ -385,3 +407,7 @@ asciidoc:
     kroki-server-url: null
     page-show-preview-banner: true
     page-watermark: preview@
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip

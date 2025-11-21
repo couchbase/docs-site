@@ -49,8 +49,8 @@ while [[ $# -gt 0 ]]; do
       INIT=true
       shift
       ;;
-    -*|--*)
-      FIELD=$1; shift
+    --*)
+      FIELD=${1#--}; shift
       VALUE=$1; shift
       FIELDS+="--field $FIELD='$VALUE'"
       ;;

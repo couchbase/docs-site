@@ -98,6 +98,11 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 | xref:ruby-sdk:hello-world:start-using-sdk.adoc[Ruby Getting Started]
 | https://docs.couchbase.com/sdk-api/couchbase-ruby-client/Couchbase.html[Ruby API Reference]
 
+| Rust SDK
+| xref:rust-sdk:hello-world:overview.adoc[Docs]
+| xref:rust-sdk:hello-world:start-using-sdk.adoc[Rust Getting Started]
+| https://docs.rs/couchbase/[Rust API Reference]
+
 | Scala SDK
 | xref:scala-sdk:hello-world:overview.adoc[Docs]
 | xref:scala-sdk:hello-world:start-using-sdk.adoc[Scala Getting Started]
@@ -105,16 +110,27 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 |===
 
 
-////
+[.column]
+====== {empty}
+
+[.column]
+====== {empty}
+
+
 === Alternatives to SDKs
 
 The Data API gives access to data in Capella Operational clusters --
 for when to use the Data API, or Capella's other REST APIs, see xref:cloud:data-api-guide:data-api-sdks.adoc[].
-////
+
 
 
 [.column]
 ====== {empty}
+
+[.column]
+====== {empty}
+
+
 
 == SDK Extension Libraries
 []
@@ -172,6 +188,11 @@ xref:analytics-sdk.adoc[Analytics SDKs] are tailored to the APIs offered by this
 [#table_analytics_sdk,cols="42,40,60,50"]
 |===
 | Analytics SDK | Documentation | Hello World Example | API Reference
+
+| .NET Analytics SDK
+| xref:dotnet-analytics-sdk:hello-world:overview.adoc[Docs]
+| xref:dotnet-analytics-sdk:hello-world:start-using-sdk.adoc[.NET Getting Started]
+| https://docs.couchbase.com/sdk-api/analytics-dotnet-client[.NET Analytics API Reference]
 
 | Go Analytics SDK
 | xref:go-analytics-sdk:hello-world:overview.adoc[Docs]
