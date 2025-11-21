@@ -72,7 +72,7 @@ content:
     ############################
 
   - url: .
-    branches: AV-87603_update-capella-landing-for-AI
+    branches: HEAD
     start_path: home
 
     # Capella & related content
