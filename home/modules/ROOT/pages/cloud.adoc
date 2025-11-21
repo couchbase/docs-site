@@ -13,7 +13,7 @@ include::home::partial$info-banner.adoc[]
 = Welcome to Couchbase Capella
 
 Capella operational is the easiest way to use Couchbase Server.
-Get access to SQL-like querying, Full-Text Search (FTS), powerful eventing, and connectivity to mobile and IoT devices at the edge.
+Get access to SQL-like querying, full-text and vector search, powerful eventing, and connectivity to mobile and IoT devices at the edge.
 
 Capella Analytics is an analytical database (RT-OLAP) for real-time apps and operational intelligence.
 Capella Analytics is a standalone, cloud-only offering from Couchbase under the Capella family of products.
