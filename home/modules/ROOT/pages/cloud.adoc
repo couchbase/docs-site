@@ -24,7 +24,7 @@ Capella AI Services is a fully managed set of tools that help you build, deploy,
 == Explore Couchbase Capella
 
 [.card-box]
-=== icon:rocket[] Get Started With Capella Operational
+=== icon:database[] Get Started With Capella Operational
 
 Get set up with an account and deploy a free tier Capella operational cluster.
 
@@ -37,7 +37,7 @@ Get set up with an account and deploy a free tier Capella operational cluster.
 
 
 [.card-box]
-=== icon:rocket[] Get Started With Capella Analytics
+=== icon:analytics[] Get Started With Capella Analytics
 
 Create your account and follow our tutorial on how to load data into your Analytics cluster.
 
@@ -48,7 +48,7 @@ Create your account and follow our tutorial on how to load data into your Analyt
 * xref:analytics:query:workbench.adoc[]
 
 [.card-box]
-=== icon:rocket[] Get Started With Capella AI Services
+=== icon:stars[] Get Started With Capella AI Services
 
 Create your account and start working with Capella AI Services.
 
