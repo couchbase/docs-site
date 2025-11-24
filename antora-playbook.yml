@@ -30,7 +30,7 @@ site:
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai"] },
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
@@ -100,6 +100,9 @@ content:
       - main                      # `analytics` component (Capella Analytics)
       - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
     # see under Server section below for enterprise-analytics and legacy analytics
+
+  - url: https://github.com/couchbaselabs/docs-ai
+    branches: [main]
 
     # Couchbase Autonomous Kubernetes Operator
     ############################
