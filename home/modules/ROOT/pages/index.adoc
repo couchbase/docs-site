@@ -66,6 +66,7 @@ xref:cloud::index.adoc[Couchbase Capella]
 
 .Capella Analytics (RT-OLAP)
 
+[.content]
 Capella Analytics is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
 Capella Analytics is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
@@ -85,6 +86,7 @@ xref:server.adoc[Couchbase Server]
 
 .Enterprise Analytics (RT-OLAP)
 
+[.content]
 Enterprise Analytics is a self-managed analytical database (RT-OLAP) for real time apps and operational intelligence.
 
 xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
@@ -100,7 +102,17 @@ Enabling you to deploy your offline-first mobile and embedded applications with 
 
 xref:couchbase-lite::introduction.adoc[Couchbase Lite] |
 xref:sync-gateway::introduction.adoc[Sync Gateway] |
-xref:couchbase-edge-server:introduction:intro.adoc[Couchbase Edge Server] 
+xref:couchbase-edge-server:introduction:intro.adoc[Couchbase Edge Server]
+
+{empty} +
+
+.Capella AI Services
+
+[.content]
+Capella AI Services is a fully managed set of tools that help you build, deploy, and scale your agentic and retrieval-augmented generation (RAG) AI applications.
+These tools integrate seamlessly with the Couchbase Capella cloud platform, enabling you to develop your AI applications on the same platform as your data.
+
+xref:ai:get-started:intro.adoc[Capella AI Services]
 
 ++++
 </div>
