@@ -14,9 +14,11 @@
     "array.prototype.groupby": "^1.1.0",
     "asciidoctor-external-callout": "~1.2.2",
     "asciidoctor-kroki": "0.18.1",
+    "dom-to-semantic-markdown": "^1.5.0",
     "gulp": "~5.0",
     "gulp-connect": "~5.7",
     "js-yaml": "~4.1",
+    "jsdom": "^27.2.0",
     "markdown-it": "^13.0.1",
     "picomatch": "^4.0.3",
     "yaml": "^2.7.0"
