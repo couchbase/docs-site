@@ -1,72 +1,188 @@
-:page-status: OUT OF DATE
-
-= Tabs Sets
+= Tabbed Content
 :tabs:
 
-NOTE: {out-of-date}
+TIP: For guidance around when to use tabbed content in your docs, see xref:styleguide:ROOT:tabs-set.adoc[].
 
-== Set and Create Tabs
+To add tabbed content to your docs page: 
 
-To use the tabs block in a page, set the `tabs` attribute in the document header.
-
-----
-= Page Title
-:tabs:
-----
-
-Then, in the body of your page, you can create a set of tabs.
-
-[line-comment=//]
-....
-[{tabs}] <1>
-==== <2>
-Tab 1 Title:: <3>
-+ <4>
--- <5>
-This is the content of the first tab.
-
-Another paragraph in the first tab.
-
-[source,console]
-----
-$ a code block
-----
---
-<6>
-Tab 2 Title::
+. Add the `:tabs:` attribute to the front matter of your `.adoc` file: 
 +
-This is the content of the second tab. <7>
-====
-....
-<1> Reference the tabs attribute in the block's attribute list.
-<2> Place the tab titles and content in a delimited example block (`====`).
-<3> The tab title is directly followed by two colons (`::`).
-<4> Insert a list continuation to attach the tab contents to the tab title.
-<5> Enter compound tab contents in a delimited open block (`--`).
-<6> Insert a blank line between a tab's content and the title of the next tab.
-<7> If the tab contents is a single paragraph, it can be attached without enclosing it in an open block.
+[source,asciidoc]
+----
+= Document Title 
+:page-topic-type: guide
+:description: This is a description of the document.
+:page-toclevels: 3
+:tabs:
+:keywords: cmek, encryption, security, backups
+----
 
-This tabs set is rendered as:
+. If you're going to add multiple tabs with the same options on your page, make sure to also add `:tabs-sync-option:`:
++
+[source,asciidoc]
+----
+= Document Title 
+:page-topic-type: guide
+:description: This is a description of the document.
+:page-toclevels: 3
+:tabs:
+:tabs-sync-option:
+:keywords: cmek, encryption, security, backups
+----
++
+NOTE: Tabs will not sync across your page if tab names are not an exact match.
+Make sure to use the same name for each tab for `tabs-sync-option` to work as expected and sync a user's tab selection across the page.
+
+. In your `.adoc` file, start the tabbed content by adding `[{tabs}]` to a content block: 
++
+[source,asciidoc]
+----
+[{tabs}]
+====
+
+====
+----
+
+. Define the title of your first tab by marking it with 2 colons, inside the `tabs` content block: 
++
+[source,asciidoc]
+----
+[{tabs}]
+====
+My First Tab::
+
+====
+----
+
+. Write the content for your first tab.
+Make sure that any new lines or block content are connected together using a `+` inside your tab: 
++
+[source,asciidoc]
+----
+[{tabs}]
+====
+My First Tab::
++
+This is the content for my first tab.
+I need it to display together.
++
+I want to add a code block:
++
+// In these examples, code blocks are marked with 3 (---) dashes to make them render correctly in the example block.
+// Use 4 (----) dashes in your own code blocks.
+[source,txt]
+---
+Yay a code block!
+--- 
++
+[NOTE]
+--
+This is a note.
+
+We need to use a different delimiter.
+-- 
+====
+----
++
+You can also enclose the entire contents of your tab inside a delimited open block (`--`) to reduce the number of `+` you need to add: 
++
+[source,asciidoc]
+----
+[{tabs}]
+====
+My First Tab::
++
+--
+This is the content for my first tab.
+I need it to display together.
+
+I want to add a code block:
+
+// In these examples, code blocks are marked with 3 (---) dashes to make them render correctly in the example block.
+// Use 4 (----) dashes in your own code blocks.
+[source,txt] 
+---
+Yay a code block!
+---
++
+[NOTE]
+---
+This is a note.
+
+We need to use a different delimiter.
+---
+--
+====
+----
+
+. Repeat for any additional tabs: 
++
+[source,asciidoc]
+----
+[{tabs}]
+====
+My First Tab::
++
+This is the content for my first tab.
+I need it to display together.
++
+I want to add a code block:
++
+// In these examples, code blocks are marked with 3 (---) dashes to make them render correctly in the example block.
+// Use 4 (----) dashes in your own code blocks.
+[source,txt]
+---
+Yay a code block!
+--- 
++
+[NOTE]
+--
+This is a note.
+
+We need to use a different delimiter.
+-- 
+
+// Make sure to leave a blank line between the end of the first tab's content and your next tab title.
+My Second Tab::
++
+--
+This is the second tab, even better than the first. 
+
+Woohoo tabs!
+--
+====
+----
+
+Your tabs should render like this:
 
 [{tabs}]
 ====
-Tab 1 Title::
+My First Tab::
++
+This is the content for my first tab.
+I need it to display together.
++
+I want to add a code block:
++
+[source,txt]
+----
+Yay a code block!
+----
++
+[NOTE]
+--
+This is a note.
+
+We need to use a different delimiter.
+-- 
+
+My Second Tab::
 +
 --
-This is the content of the first tab.
+This is the second tab, even better than the first. 
 
-Another paragraph in the first tab.
-
-[source,console]
-----
-$ a code block
-----
+Woohoo tabs!
 --
-
-Tab 2 Title::
-+
-This is the content of the second tab.
 ====
 
 See a tabs set in action on the xref:sync-gateway::getting-started.adoc#installation[Sync Gateway Getting Started page].
-// https://docs-staging.couchbase.com/home/index.html
