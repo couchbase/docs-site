@@ -13,9 +13,6 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-218/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -26,6 +23,7 @@ antora:
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/report-tree.js
+    - ./lib/markdown-for-llm.js
 site:
   title: Couchbase Docs Staging Chatbot
   url: https://chatbot-staging.docs-test.couchbase.com
@@ -58,6 +56,9 @@ site:
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
     google_analytics: null
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-13760-markdown-alt-1/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
@@ -183,6 +184,7 @@ content:
         - master
     - url: https://github.com/couchbaselabs/docs-enterprise-analytics
       branches:
+        - release/2.1
         - release/2.0
     - url: https://github.com/couchbase/docs-analytics
       branches:
@@ -240,9 +242,9 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
+        - release/3.10
         - release/3.9
         - release/3.8
-        - temp/3.7
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
         - release/1.2
@@ -257,9 +259,9 @@ content:
         - release/1.2
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
+        - release/3.10
         - release/3.9
         - release/1.8
-        - release/1.7
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
         - temp/4.6

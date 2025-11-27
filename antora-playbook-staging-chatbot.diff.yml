@@ -1,6 +1,7 @@
 antora:
   extensions:
   - ./lib/report-tree.js
+  - ./lib/markdown-for-llm.js
 
 site:
   title: Couchbase Docs Staging Chatbot
@@ -94,9 +95,9 @@ content:
   - url: https://github.com/couchbaselabs/docs-ai
     branches: [ai-services-ga]
 
-# ui:
-  # bundle:
-    # url: https://github.com/couchbase/docs-ui/releases/download/prod-216/ui-bundle.zip
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-13760-markdown-alt-1/ui-bundle.zip
 
 asciidoc:
   attributes:
