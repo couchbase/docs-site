@@ -26,6 +26,8 @@ antora:
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/report-tree.js
+    - ./lib/site-stats-extension.js
+    - ./lib/component-stats.js
 site:
   title: Couchbase Docs Staging Chatbot
   url: https://chatbot-staging.docs-test.couchbase.com
@@ -36,7 +38,7 @@ site:
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai"] },
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
@@ -134,6 +136,10 @@ content:
       branches:
         - main
         - legacy-columnar-component
+    - url: https://github.com/couchbaselabs/docs-ai
+      branches:
+        - ai-services-ga
+        - main
     - url: https://github.com/couchbase/couchbase-operator
       branches:
         - 2.8.x
@@ -183,6 +189,7 @@ content:
         - master
     - url: https://github.com/couchbaselabs/docs-enterprise-analytics
       branches:
+        - release/2.1
         - release/2.0
     - url: https://github.com/couchbase/docs-analytics
       branches:
@@ -240,9 +247,9 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
+        - release/3.10
         - release/3.9
         - release/3.8
-        - temp/3.7
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
         - release/1.2
@@ -257,9 +264,9 @@ content:
         - release/1.2
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
+        - release/3.10
         - release/3.9
         - release/1.8
-        - release/1.7
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
         - temp/4.6
@@ -374,6 +381,3 @@ content:
       branches:
         - master
       start_path: content
-    - url: https://github.com/couchbaselabs/docs-ai
-      branches:
-        - ai-services-ga
