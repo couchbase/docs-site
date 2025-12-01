@@ -24,6 +24,8 @@ antora:
     - ./lib/antora-component-version-rank.js
     - ./lib/preview.js
     - ./lib/report-tree.js
+    - ./lib/site-stats-extension.js
+    - ./lib/component-stats.js
 site:
   url: https://docs.couchbase.com
   start_page: home::index.adoc
@@ -96,6 +98,9 @@ content:
       branches:
         - main
         - legacy-columnar-component
+    - url: https://github.com/couchbaselabs/docs-ai
+      branches:
+        - main
     - url: https://github.com/couchbase/couchbase-operator
       branches:
         - 2.8.x
@@ -146,6 +151,7 @@ content:
     - url: https://github.com/couchbase/docs-connectors-talend
     - url: https://github.com/couchbaselabs/docs-enterprise-analytics
       branches:
+        - release/2.1
         - release/2.0
     - url: https://github.com/couchbase/docs-analytics
       branches:
