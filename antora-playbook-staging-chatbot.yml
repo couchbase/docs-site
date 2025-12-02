@@ -138,7 +138,6 @@ content:
         - legacy-columnar-component
     - url: https://github.com/couchbaselabs/docs-ai
       branches:
-        - ai-services-ga
         - main
     - url: https://github.com/couchbase/couchbase-operator
       branches:
