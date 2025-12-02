@@ -1,8 +1,7 @@
 antora:
   extensions:
   - ./lib/report-tree.js
-  - ./lib/site-stats-extension.js
-  - ./lib/component-stats.js
+  # - ./lib/site-stats-extension.js
 
 site:
   title: Couchbase Docs Staging Chatbot

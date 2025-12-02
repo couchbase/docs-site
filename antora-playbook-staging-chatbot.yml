@@ -26,8 +26,6 @@ antora:
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/report-tree.js
-    - ./lib/site-stats-extension.js
-    - ./lib/component-stats.js
 site:
   title: Couchbase Docs Staging Chatbot
   url: https://chatbot-staging.docs-test.couchbase.com
