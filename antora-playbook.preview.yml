@@ -24,8 +24,6 @@ antora:
     - ./lib/antora-component-version-rank.js
     - ./lib/preview.js
     - ./lib/report-tree.js
-    - ./lib/site-stats-extension.js
-    - ./lib/component-stats.js
 site:
   url: https://docs.couchbase.com
   start_page: home::index.adoc
