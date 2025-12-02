@@ -1,0 +1,3 @@
+#!/bin/bash
+
+htmlq -t -f $1 article | wc -c
