@@ -4,7 +4,7 @@ echo "Word counts of all <article> content:"
 echo =============
 echo
 
-for dir in build/*/*/
+for dir in public/*/*/
 do
   WC=$(
     find $dir \
