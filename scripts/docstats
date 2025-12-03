@@ -15,6 +15,9 @@ do
   if [[ -n "$WC" && "$WC" -gt 0 ]]; then
     echo $dir
     echo $WC
+
+    PAGES=$( find $dir -name '*.html' | wc -l )
+    echo $PAGES
   fi  
 done
 
