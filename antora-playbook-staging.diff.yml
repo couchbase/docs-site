@@ -59,6 +59,10 @@ content:
     branches: 
        - release/1.2
 
+  - url: https://github.com/couchbase/docs-sdk-java
+    branches: 
+       - release/3.10
+
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: 
        - temp/4.6
@@ -75,10 +79,14 @@ content:
     branches: 
        - temp/3.7
 
+  - url: https://github.com/couchbase/docs-sdk-scala
+    branches: 
+       - release/3.10
+
   - url: https://github.com/couchbase/docs-sdk-kotlin
     branches: 
-      # 'release/3.9' instead of 'temp/3.9'
-      $replace: [release/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2]
+      # 'release/3.10' instead of 'temp/3.10'
+      $replace: [release/3.10, temp/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2]
 
 # ui:
   # bundle:
