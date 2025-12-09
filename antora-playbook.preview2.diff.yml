@@ -3,7 +3,6 @@
 
 antora:
   extensions:
-  - ./lib/preview.js
   - ./lib/report-tree.js
 
 site:

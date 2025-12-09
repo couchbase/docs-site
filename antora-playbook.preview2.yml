@@ -25,7 +25,6 @@ antora:
     - "@antora/site-generator-ms"
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
-    - ./lib/preview.js
     - ./lib/report-tree.js
 site:
   url: https://docs.couchbase.com
