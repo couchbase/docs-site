@@ -1,0 +1,44 @@
+antora:
+  extensions:
+  - ./lib/report-tree.js
+
+site:
+  title: Couchbase Docs Infratest
+  url: https://infratest.docs-test.couchbase.com
+  start_page: home::index.adoc
+  robots: |
+    User-agent: *
+    Disallow: /
+
+    User-agent: Algolia Crawler
+    Allow: /
+  keys:
+    google_analytics: ~
+
+content:
+
+  $select:
+    - '.'
+    - '**' # everything
+    # see https://github.com/micromatch/picomatch for full details
+    # e.g.
+    # - '**/*sdk*' # add all repos matching *sdk*
+
+  # start off with just 1 branch
+  $prune: 1
+
+  sources:
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [capella] # ensure added as well as most recent release/* branches
+
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches: [capella] # ensure added as well as most recent release/* branches
+
+# ui:
+  # bundle:
+    # url: https://github.com/couchbase/docs-ui/releases/download/prod-216/ui-bundle.zip
+
+asciidoc:
+  attributes:
+    # page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net # Production, via Elliot
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net # Staging, via Elliot
