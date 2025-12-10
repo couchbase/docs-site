@@ -1,0 +1,102 @@
+antora:
+  extensions:
+  - ./lib/report-tree.js
+  # - ./lib/site-stats-extension.js
+
+site:
+  title: Couchbase Docs Staging Chatbot
+  url: https://chatbot-staging.docs-test.couchbase.com
+  start_page: home::index.adoc
+  robots: disallow
+  keys:
+    google_analytics: ~
+
+content:
+
+  $select:
+    - '.'
+    - '**' # everything
+    # see https://github.com/micromatch/picomatch for full details
+    # e.g.
+    # - '**/*sdk*' # add all repos matching *sdk*
+
+  # start off with first 3 branches
+  $prune: 3
+
+  sources:
+  - url: .
+    branches: AV-87603_update-capella-landing-for-AI 
+
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [capella] # ensure added as well as most recent release/* branches
+
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches:
+      - capella # keep this here
+
+  - url: https://github.com/couchbasecloud/couchbase-cloud
+    branches: [8-0-docs-uptake]
+    start_paths: [docs/public, docs/columnar]
+
+  - url: https://github.com/couchbase/docs-analytics
+    branches:
+      - release/8.0
+
+  - url: https://github.com/couchbase/docs-operator
+    branches: 
+      - release/2.8.1 # is set to version `2.9` so will coexist with release/2.8
+
+  - url: https://github.com/couchbaselabs/cbmultimanager
+    branches:
+      $replace: [master]
+
+  - url: https://github.com/couchbase/docs-server
+    branches:
+      - release/8.0
+
+  - url: https://github.com/couchbase/docs-sdk-common
+    # not $replace, as we can just merge
+    branches: 
+       - release/8.0
+       - release/7.7
+       - release/7.6.6
+       - release/7.6.2
+       - release/7.6
+       - release/7.2
+
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite
+    branches: [release/3.3]
+
+  - url: https://github.com/couchbase/docs-sdk-cxx
+    branches: 
+       - release/1.2
+
+  - url: https://github.com/couchbase/docs-sdk-nodejs
+    branches: 
+       - temp/4.6
+
+  - url: https://github.com/couchbase/docs-sdk-php
+    branches: 
+       - temp/4.4
+
+  - url: https://github.com/couchbase/docs-sdk-python
+    branches: 
+       - temp/4.5
+
+  - url: https://github.com/couchbase/docs-sdk-ruby
+    branches: 
+       - temp/3.7
+
+  - url: https://github.com/couchbase/docs-sdk-kotlin
+    branches: 
+      # 'release/3.9' instead of 'temp/3.9'
+      $replace: [release/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2]
+
+# ui:
+  # bundle:
+    # url: https://github.com/couchbase/docs-ui/releases/download/prod-216/ui-bundle.zip
+
+asciidoc:
+  attributes:
+    # page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net # Production, via Elliot
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net # Staging, via Elliot

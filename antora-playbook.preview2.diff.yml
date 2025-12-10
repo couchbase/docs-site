@@ -1,0 +1,39 @@
+# RUN:
+#  scripts/patch-cutdown-playbook antora-playbook.preview2
+
+antora:
+  extensions:
+  - ./lib/report-tree.js
+
+site:
+  title: Couchbase Docs Preview
+  robots: disallow
+
+content:
+  $select:
+    - '.'
+    - '**/docs-ai'
+    - '**/docs-columnar'
+
+  sources:
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches: [capella]
+
+  - url: https://github.com/couchbasecloud/couchbase-cloud
+    branches: [AV-117622_cmek-api]
+    start_paths: [docs/public, docs/columnar]
+
+  - url: https://github.com/couchbase/docs-capella
+    branches: [AV-115233-azure-cmek-support]
+
+asciidoc:
+  attributes:
+    kroki-server-url: null
+    page-show-preview-banner: false
+    page-watermark: preview2@
+    # page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net # Production, via Elliot
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net # Staging, via Elliot
+
+#ui:
+  #bundle:
+    #url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip

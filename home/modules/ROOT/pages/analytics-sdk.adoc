@@ -1,0 +1,162 @@
+= Develop with Enterprise Analytics 
+:page-layout: landing-page-top-level-sdk
+:page-role: tiles
+:page-rank: 75
+:dotnet: .NET
+:!sectids:
+// :page-aliases: columnar-sdk.adoc
+
+= Develop with Enterprise Analytics 
+
+include::partial$info-banner.adoc[]
+
+// xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
+// Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
+// It uses column storage, which gives speedier retrieval of data.
+
+xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] is a self-managed, JSON-native NoSQL analytical database.
+It serves to unify data from diverse sources, allowing for the execution of complex analytical queries and the extraction of timely insights.
+
+{empty} +
+
+
+== SDK APIs to work with Enterprise Analytics
+
+Analytics SDKs are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
+they are purpose built for Enterprise Analytics' real-time analytical use cases.
+They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
+such as connection management and robust error handling.
+
+[{tabs}] 
+==== 
+
+{dotnet}::
++
+--
+xref:dotnet-analytics-sdk:hello-world:overview.adoc[.NET Analytics SDK Docs] |
+xref:dotnet-analytics-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+| https://docs.couchbase.com/sdk-api/analytics-dotnet-client[.NET Analytics API Reference]
+--
+
+Go::
++
+--
+xref:go-analytics-sdk:hello-world:overview.adoc[Go Analytics SDK Docs] |
+xref:go-analytics-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://pkg.go.dev/github.com/couchbase/gocbanalytics[Go API Reference]
+--
+
+Java::
++
+--
+xref:java-analytics-sdk:hello-world:overview.adoc[Java Analytics SDK Docs] |
+xref:java-analytics-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://docs.couchbase.com/sdk-api/couchbase-analytics-java-client/[Java API Reference]
+--
+
+Node.js::
++
+--
+xref:nodejs-analytics-sdk:hello-world:overview.adoc[Node.js Analytics SDK Docs] |  
+xref:nodejs-analytics-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://docs.couchbase.com/sdk-api/analytics-nodejs-client[Node.js API Reference]
+--
+
+Python::
++
+--
+xref:python-analytics-sdk:hello-world:overview.adoc[Python Analytics SDK Docs] |
+xref:python-analytics-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://docs.couchbase.com/sdk-api/analytics-python-client[Python API Reference]
+--
+====
+
+{empty} +
+
+=== Big Data Connectors
+
+The available options for Enterprise Analytics `DataFrame` and `Dataset` operations with the xref:spark-connector:ROOT:index.adoc[Couchbase Spark Connector]
+can be found on the Spark xref:spark-connector:ROOT:spark-sql.adoc#enterprise-analytics-options[DataFrames, Datasets, and SQL] page.
+
+See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytics] docs for information on streaming from Confluent for Kafka.
+
+{empty} +
+
+== Other Analytics Services
+
+
+.SDK Compatibility with Analytics Service
+|===
+| Analytics solution | Development option
+
+| xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
+| xref:analytics-sdk.adoc[Analytics SDKs]
+
+| xref:analytics:intro:intro.adoc[Capella Analytics]
+| xref:columnar-sdk.adoc[Columnar (Capella Analytics) SDKs]
+
+| xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] 
+| xref:sdk.adoc[Operational SDKs]
+|===
+
+
+
+In addition to the Enterprise Analytics,
+// (self-managed and Capella Analytics), 
+older Couchbase Analytics services are available --
+Enterprise Analytics' forerunner, Columnar, remains available as Capella Analytics for the present time.
+
+Traditional, row-based analytics is also available in Couchbase operational clusters -- self-managed, or Capella Operational.
+
+
+{empty} +
+
+=== SDK APIs to work with Capella Analytics:
+
+xref:analytics:intro:intro.adoc[Capella Analytics] is a standalone, managed cloud offering from Couchbase under the Capella family of products.
+
+Capella Analytics SDKs, formerly known as Columnar SDKs, are similar to the Enterprise Analytics SDKs.
+They must be used to connect to the current Capella Analytics Service, as it presents a different connection interface, without Enterprise Analytics' load balancer.
+
+[{tabs}] 
+==== 
+Go::
++
+--
+xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs] |
+xref:go-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://pkg.go.dev/github.com/couchbase/gocbcolumnar[Go API Reference]
+--
+
+Java::
++
+--
+xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs] |
+xref:java-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://docs.couchbase.com/sdk-api/couchbase-columnar-java-client[Java API Reference]
+--
+
+Node.js::
++
+--
+xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK Docs] |  
+xref:nodejs-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://docs.couchbase.com/sdk-api/columnar-nodejs-client[Node.js API Reference]
+--
+
+Python::
++
+--
+xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] |
+xref:python-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
+https://docs.couchbase.com/sdk-api/columnar-python-client[Python API Reference]
+--
+====
+
+
+{empty} +
+
+=== Row-Based Couchbase Analytics
+
+xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] is our classic OLAP available as part of self-managed Couchbase Server and Capella Operational.
+Use the xref:sdk.adoc[operational SDKs] to develop for this service.

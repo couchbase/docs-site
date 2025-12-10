@@ -1,0 +1,163 @@
+#!/bin/bash
+
+set -eo pipefail
+echo "🐇 Hello! Let's generate stuff!"
+echo
+
+help() {
+    cat <<HELP | less
+NAME
+
+    generate - a script to quickly generate complex dependencies for a docs project
+
+SET UP
+
+Update your docs-site repo, and install the script.
+
+    cd docs-site/
+    git checkout master
+    git pull
+
+    scripts/generate --init
+
+You will also want to install 'gh' and log in.
+
+    brew install gh
+    gh auth login  # follow the instructions
+
+Now, from a content repo (under antora.yml) you can generate dependencies.
+
+    generate data-api-docs
+
+DOCUMENTATION
+
+See TODO
+
+HELP
+}
+
+POSITIONAL_ARGS=()
+INIT=""
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      help
+      exit 0
+      ;;
+    --init)
+      INIT=true
+      shift
+      ;;
+    --*)
+      FIELD=${1#--}; shift
+      VALUE=$1; shift
+      FIELDS+="--field $FIELD='$VALUE'"
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+if [ -n "$INIT" ]; then
+    DOCS_SITE=$(realpath $0/../..)
+    cd $DOCS_SITE
+
+    echo "Linking 'generate' command (you may need to enter your password)"
+    set -x
+
+    sudo ln -sf $(realpath $0) /usr/local/bin/generate
+    which generate
+    exit 0
+fi
+
+# define utility function
+upfind () {
+    WHAT=$1
+    DEPTH=${2:-1}
+    if [ "$DEPTH" -ge 5 ]; then
+        return
+    fi
+    ls -d $WHAT 2>/dev/null || upfind ../$WHAT $((++DEPTH))
+}
+
+ANTORA=$(upfind antora.yml)
+if [ -z "$ANTORA" ]; then
+    echo Did not find 'antora.yml'.
+    echo Run generate from a content repository under startPath!
+    exit 1
+fi
+ANTORA=$(realpath $(dirname $ANTORA))
+TOPLEVEL=$(git rev-parse --show-toplevel)
+export REPO=$(basename $TOPLEVEL)
+export BRANCH=$(git branch --show-current)
+
+export START_PATH=${ANTORA#$TOPLEVEL}
+START_PATH=${START_PATH#/}
+echo START :$START_PATH:
+if [[ -n "$START_PATH" ]]; then
+  WORKFLOW_PREFIX+="generate-$START_PATH"
+else
+  WORKFLOW_PREFIX+="generate"
+fi
+
+WORKFLOW+="-${POSITIONAL_ARGS[0]}"
+
+WORKFLOW_DIR=$TOPLEVEL/.github/workflows/
+
+
+ls $WORKFLOW_DIR/$WORKFLOW_PREFIX-*
+
+if ls $WORKFLOW_DIR/$WORKFLOW_PREFIX-* 2>/dev/null
+then
+  echo workflows found
+  export WORKFLOW=$WORKFLOW_PREFIX-${POSITIONAL_ARGS[0]}.yml
+  echo RUNNING $WORKFLOW from ${POSITIONAL_ARGS}
+
+  export UUID=$(uuidgen)
+
+  gh workflow run $WORKFLOW \
+      --ref $BRANCH \
+      --field uuid=${UUID} \
+      $FIELDS \
+      > /dev/null
+
+  echo Requested the build at Github with UUID $UUID
+  echo see $REPO/.github/workflows/$WORKFLOW
+  echo
+
+
+  for i in {1..10}; do
+      echo Polling github...
+
+      RET=$(gh run list \
+          -w $WORKFLOW \
+          --json displayTitle,url,databaseId \
+          | jq -r \
+              --arg UUID $UUID \
+              '.[] | select(.displayTitle | test($UUID))| .url' )
+              # '.[] | select(.displayTitle | test($UUID))| .databaseId' )
+
+      if [ -n "$RET" ]; then
+          echo Opening $RET in your web browser
+          open $RET
+
+          # gh run watch $RET
+          # gh run view $RET
+          # # gah, this doesn't show the Job Summary easily
+
+          exit 0
+      fi
+
+      sleep 3
+  done
+  echo Timed out. Check Github actions
+  exit 1
+  
+else
+  echo no workflows found in $WORKFLOW_DIR, nothing to generate
+  exit 1
+fi
+

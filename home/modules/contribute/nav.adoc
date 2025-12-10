@@ -25,7 +25,7 @@
  ** xref:cross-references.adoc[Cross References]
   *** xref:ids.adoc[IDs and Same-Page Cross References]
  ** xref:code-blocks.adoc[Code Blocks and Callouts]
- ** xref:tabs.adoc[Tabs Sets]
+ ** xref:tabs.adoc[]
  ** xref:attributes-and-roles.adoc[Attributes and Roles]
  ** xref:includes.adoc[Include Examples and Partials]
 

@@ -1,4 +1,5 @@
 = Attributes and Roles
+:page-toclevels: 3
 
 Use attributes and roles to insert content or CSS styles into your pages. 
 
@@ -45,11 +46,13 @@ In this case, the tabs feature is turned on by setting `tabs`.
 <5> Reference an attribute in the body of the document by entering the attribute name inside a set of curly brackets (`+{attribute-name}+`).
 <6> Code blocks are assigned the source language `javascript`.
 
-== Available Document Attributes 
+== Required Document Attributes 
 
 The following document attributes must be included for every AsciiDoc file stored in a *pages* directory: 
 
 include::partial$available-attributes.adoc[tag=required]
+
+== Optional Document Attributes
 
 You can also use the following optional attributes: 
 
@@ -100,6 +103,58 @@ You can add multiple roles to a single block or phrase by separating each role n
 I'm a block with an assigned role!
 \----
 ----
+
+=== Inline Roles for Editions, Versions, and Deprecation
+
+Couchbase Documentation created inline page roles for marking sections of documentation as deprecated, for a specific Couchbase Server version, or for marking sections as applying to a specific product edition - similar to <<page-edition,the :page-edition: attribute>>. 
+
+You can use the following inline roles to mark sections of text in your documentation: 
+
+|==== 
+| Role | Example 
+
+a|
+[source,asciidoc]
+----
+[.edition]#{enterprise}#
+----
+a| [.edition]#{enterprise}# 
+
+This text applies to Couchbase Server Enterprise Edition 
+
+a| 
+[source,asciidoc]
+----
+[.edition]#{community}#
+----
+a| [.edition]#{community}# 
+
+This text applies to Couchbase Server Community Edition 
+
+a| 
+[source,asciidoc]
+----
+[.status]#Couchbase Server x.x.x#
+----
+a| [.status]#Couchbase Server 7.6.2#
+
+This text applies to Couchbase Server version 7.6.2 
+
+a| 
+[source,asciidoc]
+----
+[.deprecated]#Deprecated#
+----
+a| [.deprecated]#Deprecated#
+
+This text applies to a deprecated feature 
+
+|====
+
+The `#{enterprise}#` and `#{community}#` edition attributes are defined in the Antora playbook and automatically add a link to details about the different Couchbase Server editions. 
+
+When adding badges to text, try to always add the badge on a single line, by itself, following the heading of the section where it applies.
+Otherwise, place the badge as close to the edition, version, or deprecated content as possible. 
 
 === Page Roles
 

@@ -10,6 +10,10 @@ a| * For concepts: `concept`
 * For tasks: `guide`
 * For references: `reference`
 
+| `:keywords:`
+| Use the `keywords` attribute to add meta keywords to the HTML head for your page. 
+| Any applicable keyword, separated by commas (`,`).
+
 | `:description:` 
 | The page description is used for SEO and provides a brief description of the page, which is displayed using the `[abstract]` attribute on the page. 
 a| Enter a quick description of the content on the page.
@@ -38,10 +42,6 @@ a| `:imagesdir: ../assets/images`
 
 Try to keep your images inside the `assets/images` folder in a module.
 
-| `:keywords:`
-| Use the `keywords` attribute to add meta keywords to the HTML head for your page. 
-| Any applicable keyword, separated by commas (`,`).
-
 | `:page-aliases:` 
 a| Use the `page-aliases` attribute when you need to delete or rename a page to avoid breaking links.
 Antora will resolve any links to the filename(s) you specify in this attribute to redirect to the current page, instead.
@@ -64,7 +64,7 @@ For a page in another repository: `:page-aliases:7.6@server:develop:integrations
 
 When linking to a repository that has a version, you must specify which version in that repository redirects to your current page.
 
-| `:page-edition:`
+| [[page-edition]]`:page-edition:`
 | If you're writing content that only applies to a specific edition of Couchbase Server, usually the Enterprise Edition, use the `page-edition` attribute to add a badge to the page that indicates the Edition the content applies to.
 | `page-edition: Enterprise Edition`
 

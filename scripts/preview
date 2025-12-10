@@ -1,7 +1,9 @@
 #!/bin/bash
+PREVIEW_VERSION="1.1.1"
 
 set -eo pipefail
-echo "🐇 Hello! I'm the Docs Build Rabbit."
+echo "🐇 Hello! I'm the Docs Build Rabbit"
+echo "version $PREVIEW_VERSION"
 echo
 
 help() {
@@ -9,6 +11,7 @@ help() {
 NAME
 
     preview - a script to quickly preview docs work
+
 
 SET UP
 
@@ -37,37 +40,41 @@ The latter will show you the URL to find the workflow:
 
     https://github.com/couchbase/docs-infra/actions/workflows/preview-deploy.yml
 
-CONFIGURATION
 
-You don't need to do any configuration to use this. If your antora.yml contains, e.g:
+UPDATING
 
-    name: columnar
-    start_page: intro:intro.adoc
+To update the preview script, if your script is recent enough, simply run:
 
-Then the preview will automatically start on the defined page.
+    preview --update
 
-In some cases you might want to add additional sources to build along with this content:
+Otherwise, you can update the script manually.
 
-    ext:
-        preview:
-            HEAD:
-                sources:
-                    couchbase-cloud:
-                        branches: main
-                        startPaths: docs/columnar/
+    cd docs-site          # navigate to your docs-site repo
+    git checkout master   # ensure you are on the master branch
 
-Note that e.g. 'startPaths' must be camel-cased.
+    git pull
+    scripts/preview --init
 
-You can also override other playbook details.
+    
+TROUBLESHOOTING
 
-                override:
-                    asciidoc:
-                        attributes:
-                            foo: bar
+If you run into issues, you can run the script in debug mode.
 
-SEE ALSO
+    preview --debug
 
-https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2660597775/experimental+preview+script
+These files should be sent to the docs team:
+
+    preview/debug.log
+    preview/doctor/tree.html
+    preview/doctor/antora-playbook.js
+
+The automated email will only work on MacOS.
+If you are on Linux, then just send those files manually.
+
+
+DOCUMENTATION
+
+See https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2660597775/preview+script
 
 HELP
 }
@@ -75,11 +82,18 @@ HELP
 POSITIONAL_ARGS=()
 REMOTE=""
 INIT=""
+PREVIEW_CONFIG=""
+DEBUG=""
+UPDATE=""
 
 while [[ $# -gt 0 ]]; do
   case $1 in
     -h|--help)
       help
+      exit 0
+      ;;
+    -v|--version)
+      # no-op, we have already printed the version
       exit 0
       ;;
     -r|--remote)
@@ -88,6 +102,19 @@ while [[ $# -gt 0 ]]; do
       ;;
     --init)
       INIT=true
+      shift
+      ;;
+    -c|--config)
+      shift
+      PREVIEW_CONFIG=$1
+      shift
+      ;;
+    -u|--update)
+      UPDATE=true
+      shift
+      ;;
+    -d|--debug)
+      DEBUG=true
       shift
       ;;
     -*|--*)
@@ -101,13 +128,50 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+DOCS_SITE=$(realpath $0/../..)
+
+if [ -n "$UPDATE" ]; then
+    cd $DOCS_SITE
+
+    echo "🐇 Let's try to update preview, by updating your docs-site checkout"
+    git checkout master || ( echo "Failed to checkout master branch"; exit 1 )
+    git pull || ( echo "Failed to pull latest changes"; exit 1 )
+
+    echo "🐇 Now let's update the preview script"
+    INIT=true
+fi
+
 if [ -n "$INIT" ]; then
-    echo "Linking 'preview' command (you may need to enter your password)"
-    set -x
-    sudo ln -sf $(realpath $0) /usr/local/bin/preview
-    which preview
+    DOCS_SITE=$(realpath $0/../..)
+    cd $DOCS_SITE
+
+    cp -n antora-playbook.preview.local.yml-example antora-playbook.preview.local.yml \
+      || echo "antora-playbook.preview.local.yml already exists"
+
+    echo "🐇 Checking 'preview' command link (you may need to enter your password)"
+
+    which preview || sudo ln -sf $(realpath $0) /usr/local/bin/preview
+    which preview >/dev/null || ( echo "Failed to link preview command"; exit 1 )
+
+    brew install gh jq yq
+    gh auth token || gh auth login
+
+    if [ ! -f ~/.git-credentials ]; then
+      scripts/add-credentials
+    else
+      echo "Git credentials found, let's assume they are good."
+      echo "If you get errors cloning private repos, then try running:"
+      echo 
+      echo "    cd $DOCS_SITE"
+      echo "    scripts/add-credentials"
+      echo
+    fi
+
+    echo "🐇 initialised preview script"
     exit 0
 fi
+
+
 
 # define utility function
 upfind () {
@@ -131,6 +195,8 @@ TOPLEVEL=$(git rev-parse --show-toplevel)
 export PREVIEW_REPO=$(basename $TOPLEVEL)
 export PREVIEW_BRANCH=$(git branch --show-current)
 export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
+export PREVIEW_CONFIG=${PREVIEW_CONFIG:-$PREVIEW_BRANCH}
+export PREVIEW_COMPONENT=$(yq .name $ANTORA/antora.yml 2>/dev/null)
 
 if [ -z "$REMOTE" ]; then
     export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
@@ -157,7 +223,15 @@ assert() {
 
 if [ -n "$REMOTE" ]; then
     assert "$(git status -s -uno)" '' 'You have uncommitted changes.'
+    assert "$(git status -s preview/HEAD.yml preview/${PREVIEW_BRANCH}.yml)" '' 'You have uncommitted changes to the preview/ configuration.'
     assert "$(git push --dry-run 2>&1)" 'Everything up-to-date' 'You have unpushed changes.'
+    assert "$PREVIEW_BRANCH" "$PREVIEW_CONFIG" "Remote preview doesn't support custom --config, will be ignored"
+    assert "$DEBUG" "" "Remote preview doesn't support --debug, will be ignored"
+
+    PR_BASE_OID=$(gh pr view --json baseRefOid -q .baseRefOid 2>/dev/null) || true
+    PR_BASE_NAME=$(gh pr view --json baseRefName -q .baseRefName 2>/dev/null) || true
+    PR_NUMBER=$(gh pr view --json number -q .number 2>/dev/null) || true
+    PREVIEW_OWNER=$(gh repo view --json owner -q .owner.login) || true
 
     WORKFLOW=preview-deploy.yml
     UUID=$(uuidgen)
@@ -167,7 +241,11 @@ if [ -n "$REMOTE" ]; then
         --field preview_branch=${PREVIEW_BRANCH} \
         --field preview_start_path=${PREVIEW_START_PATH} \
         --field preview_override=${PREVIEW_OVERRIDE} \
+        --field pr_base_oid=${PR_BASE_OID} \
+        --field preview_owner=${PREVIEW_OWNER} \
+        --field pr_number=${PR_NUMBER} \
         --field uuid=${UUID} \
+        --field preview_component=${PREVIEW_COMPONENT} \
         > /dev/null
 
     echo Requested the build at Github with UUID $UUID
@@ -204,5 +282,16 @@ else
     cd $DOCS_SITE
     echo
 
-    npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url "$(pwd)/preview"
+    ANTORA="npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url '$(pwd)/preview'"
+
+    if [ -n "$DEBUG" ]; then
+        echo "Running in debug mode"
+        $ANTORA --log-format=pretty 2>&1 | tee preview-debug.log
+        mv preview-debug.log preview/debug.log
+
+        echo Creating preview debug report...
+        osascript scripts/preview-debug.scpt
+    else
+        $ANTORA
+    fi
 fi

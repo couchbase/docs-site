@@ -5,18 +5,29 @@
   "private": true,
   "dependencies": {
     "@antora/collector-extension": "^1.0.1",
+    "@antora/pdf-extension": "^1.0.0-alpha.11",
     "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension",
     "@asciidoctor/tabs": "1.0.0-beta.6",
     "@fastify/deepmerge": "^2.0.0",
-    "antora": "^3.2.0-alpha.8",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "antora": "~3.1",
     "array.prototype.groupby": "^1.1.0",
-    "asciidoctor-external-callout": "~1.2.0",
+    "asciidoctor-external-callout": "~1.2.2",
     "asciidoctor-kroki": "0.18.1",
-    "gulp": "~4.0",
+    "gulp": "~5.0",
     "gulp-connect": "~5.7",
     "js-yaml": "~4.1",
+    "jsdom": "^27.2.0",
     "markdown-it": "^13.0.1",
+    "picomatch": "^4.0.3",
     "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0",
+    "mocha": "^11.5.0"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

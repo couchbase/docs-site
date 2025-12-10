@@ -64,12 +64,13 @@ xref:cloud::index.adoc[Couchbase Capella]
 
 {empty} +
 
-.Capella Columnar (RT-OLAP)
+.Capella Analytics (RT-OLAP)
 
-Capella Columnar is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
-Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
+[.content]
+Capella Analytics is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
+Capella Analytics is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
-xref:columnar:intro:intro.adoc[Capella Columnar]
+xref:analytics:intro:intro.adoc[Capella Analytics]
 
 
 [.column]
@@ -80,6 +81,15 @@ xref:columnar:intro:intro.adoc[Capella Columnar]
 Explore Couchbase Server, a modern, distributed document database with all the desired capabilities of a relational database and more. It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
 
 xref:server.adoc[Couchbase Server]
+
+{empty} +
+
+.Enterprise Analytics (RT-OLAP)
+
+[.content]
+Enterprise Analytics is a self-managed analytical database (RT-OLAP) for real time apps and operational intelligence.
+
+xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
 
 [.column]
 ====== {empty}
@@ -92,7 +102,17 @@ Enabling you to deploy your offline-first mobile and embedded applications with 
 
 xref:couchbase-lite::introduction.adoc[Couchbase Lite] |
 xref:sync-gateway::introduction.adoc[Sync Gateway] |
-xref:couchbase-edge-server:introduction:intro.adoc[Couchbase Edge Server] 
+xref:couchbase-edge-server:introduction:intro.adoc[Couchbase Edge Server]
+
+{empty} +
+
+.Capella AI Services
+
+[.content]
+Capella AI Services is a fully managed set of tools that help you build, deploy, and scale your agentic and retrieval-augmented generation (RAG) AI applications.
+These tools integrate seamlessly with the Couchbase Capella cloud platform, enabling you to develop your AI applications on the same platform as your data.
+
+xref:ai:get-started:intro.adoc[Capella AI Services]
 
 ++++
 </div>
@@ -113,8 +133,10 @@ xref:couchbase-edge-server:introduction:intro.adoc[Couchbase Edge Server]
 [.content]
 Couchbase SDKs allow applications to access a Couchbase cluster and the big data Connectors enable data exchange with other platforms.
 
-xref:home:ROOT:sdk.adoc[Developer Docs] |
-xref:home:ROOT:columnar-sdk.adoc[Columnar SDKs]
+xref:home:ROOT:developer.adoc[Developer Docs] |
+xref:home:ROOT:sdk.adoc[Operational SDKs] |
+xref:home:ROOT:analytics-sdk.adoc[Enterprise Analytics SDKs] |
+xref:home:ROOT:columnar-sdk.adoc[Capella Analytics SDKs]
 
 [.column]
 ====== {empty}
@@ -190,15 +212,24 @@ https://forums.couchbase.com/[Community]
 
 a| xref:cloud::index.adoc[Couchbase Capella]
 
-xref:columnar:intro:intro.adoc[Capella Columnar]
+xref:analytics:intro:intro.adoc[Capella Analytics]
+
+
+
 
 a| xref:server.adoc[Couchbase Server]
+
+xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
 
 xref:operator::overview.adoc[Couchbase Autonomous Operator]
 
 xref:service-broker::index.adoc[Couchbase Service Broker]
 
 xref:cmos::index.adoc[Couchbase Monitoring and Observability Stack]
+
+
+
+
 
 a| xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
 
@@ -227,6 +258,16 @@ xref:elasticsearch-connector::getting-started.adoc[Couchbase Elasticsearch Conne
 xref:kafka-connector::quickstart.adoc[Couchbase Kafka Connector]
 
 xref:spark-connector::getting-started.adoc[Couchbase Spark Connector]
+
+xref:go-analytics-sdk:hello-world:overview.adoc[Go Analytics SDK]
+
+xref:java-analytics-sdk:hello-world:overview.adoc[Java Analytics SDK]
+
+xref:nodejs-analytics-sdk:hello-world:overview.adoc[Node.js Analytics SDK]
+
+xref:python-analytics-sdk:hello-world:overview.adoc[Python Analytics SDK]
+
+xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK]
 
 xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK]
 
