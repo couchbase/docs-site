@@ -59,6 +59,10 @@ content:
     branches: 
        - release/1.2
 
+  - url: https://github.com/couchbase/docs-sdk-dotnet
+    branches: 
+       - temp/3.9
+       
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: 
        - temp/4.6
@@ -69,7 +73,7 @@ content:
 
   - url: https://github.com/couchbase/docs-sdk-python
     branches: 
-       - temp/4.5
+       - release/4.5
 
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: 
