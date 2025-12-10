@@ -229,6 +229,7 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-dotnet
       branches:
+        - temp/3.9
         - temp/3.8
         - temp/3.7
         - temp/3.6
@@ -277,7 +278,7 @@ content:
         - temp/4.2
     - url: https://github.com/couchbase/docs-sdk-python
       branches:
-        - temp/4.5
+        - release/4.5
         - temp/4.4
         - temp/4.3
     - url: https://github.com/couchbase/docs-sdk-ruby
