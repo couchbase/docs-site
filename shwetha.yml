@@ -41,8 +41,8 @@ content:
   - url: .
     branches: HEAD
     start_path: home
-  - url: https://github.com/couchbase/docs-devex.git
-    branches: DOC-13623-b
+  - url: https://github.com/couchbase/docs-operator.git
+    branches: DOC-13826-release-notes-cao-2-9-0
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
