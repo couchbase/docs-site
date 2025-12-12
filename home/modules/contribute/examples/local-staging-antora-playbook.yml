@@ -18,61 +18,81 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbase/couchbase-cli.git
-    branches: [master, alice]
+    branches: [trinity, morpheus]
     start_path: docs
   # NOTE server-docs is currently after other server repos so nav key wins
   - url: ~/Couchbase/docs/docs-server/
-    branches: [release/7.1 release/7.2]
+    branches: [release/8.0 release/7.6]
   - url: ~/Couchbase/docs/docs-sdk-common/
-    branches: [release/7.1.2, release/7.1]
+    branches: [release/8.0, release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1]
   - url: ~/Couchbase/docs/docs-sdk-c/
     branches: [release/3.4, release/3.3]
+  - url: ~/Couchbase/docs/docs-sdk-cxx/
+    branches: [release/1.2, release/1.1]
   - url: ~/Couchbase/docs/docs-sdk-dotnet/
-    branches: [release/3.4, release/3.3]
+    branches: [release/3.8, release/3.7]
   - url: ~/Couchbase/docs/docs-sdk-go/
-    branches: [release/2.6, release/2.5]
+    branches: [release/2.11, release/2.10]
   - url: ~/Couchbase/docs/docs-sdk-java/
-    branches: [release/3.4, release/3.3]    
+    branches: [release/3.10, release/3.9]    
   - url: ~/Couchbase/docs/docs-sdk-kotlin/
-    branches: [release/1.0]    
+    branches: [release/3.10, release/3.9]    
   - url: ~/Couchbase/docs/docs-sdk-nodejs/
-    branches: [release/4.2, release/4.1]
+    branches: [release/4.6, release/4.5]
   - url: ~/Couchbase/docs/docs-sdk-php/
-    branches: [release/4.1, release/4.0]
+    branches: [release/4.4, release/4.3]
   - url: ~/Couchbase/docs/docs-sdk-python/
-    branches: [release/4.1, release/4.0]
+    branches: [release/4.5, release/4.4]
   - url: ~/Couchbase/docs/docs-sdk-ruby/
-    branches: [release/3.4 release/3.3]
+    branches: [release/3.7 release/3.6]
+  - url: ~/Couchbase/docs/docs-sdk-rust/
+    branches: [release/1.0]
   - url: ~/Couchbase/docs/docs-sdk-scala/
-    branches: [release/1.4, release/1.3]    
-        
+    branches: [release/3.10, release/3.9]    
+
+
 asciidoc:
   attributes:
+    site-navigation-data-path: _/js/site-navigation-data.js
+    enable-cmos: ''
+    max-include-depth: 10
+    page-partial: false
     experimental: ''
     idprefix: '@'
     idseparator: '-@'
     tabs: tabs
+    tabs-sync-option: ''
     toc: ~
+    page-chatbot-origin: https://d2sozpdiqok6m4.cloudfront.net # original Improving Canada bot
+    page-toclevels: 1@
+    page-rank: 50@
     xrefstyle: short
-    kroki-server-url: https://kroki.io
-    kroki-fetch-diagram: true    
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    sqlpp: SQL++
+    sqlppc: SQL++ for Capella Analytics
+    sqlppea: SQL++ for Enterprise Analytics
+    sqlpp_url: https://www.couchbase.com/products/n1ql
+    cbpp: Couchbase++
+    kroki-server-url: ~
+    kroki-fetch-diagram: true
+
   extensions:
+  - ./lib/source-url-include-processor.js
   - ./lib/json-config-ui-block-macro.js
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
-  - ./lib/tabs-block.js
+  - ./lib/markdown-block.js
+  - ./lib/template-block.js
   - asciidoctor-kroki
+  - asciidoctor-external-callout
+  - '@asciidoctor/tabs'
+
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-175/ui-bundle.zip   
-  supplemental_files:
-  - path: robots.txt
-    contents: |
-      User-agent: *
-      Disallow: /
-  - path: ui.yml
-    contents: |
-      static_files: [robots.txt]
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-218/ui-bundle.zip
 output:
   dir: ./public
+runtime:
+  fetch: true        
