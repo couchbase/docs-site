@@ -114,7 +114,7 @@ content:
 
     # handwritten content lives in docs-operator.
   - url: https://github.com/couchbase/docs-operator
-    branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.4]
+    branches: [release/2.9, release/2.8, release/2.7, release/2.6, release/2.5, release/2.4]
 
   - url: https://github.com/couchbaselabs/observability
     branches: [0.2.x]
