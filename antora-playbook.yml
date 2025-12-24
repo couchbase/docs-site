@@ -109,7 +109,7 @@ content:
 
     # Generated content remains in monorepo
   - url: https://github.com/couchbase/couchbase-operator
-    branches: [2.9.x, 2.8.x, 2.7.x, 2.6.x, 2.5.x]
+    branches: [2.8.x, 2.7.x, 2.6.x, 2.5.x]
     start_path: docs/user
 
     # handwritten content lives in docs-operator.
