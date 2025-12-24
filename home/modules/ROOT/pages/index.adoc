@@ -2,15 +2,24 @@
 :page-meta-zd-site-verification: bcbeq3pryf5y3hqcdqpy4q
 :page-layout: home
 :!sectids:
+:dotnet: .NET
 
 --
 [CAUTION]
 We're no longer updating the content on this site regularly. Check out the https://www.couchbase.com/support-policy[Couchbase Support Policy] for information on version support and End of Life schedule.
 
 ifdef::primary-site-url[]
-Click {primary-site-url}[here] to return to the main documentation site.
+This page contains links to End-of-Life, archived documentation, for reference purposes, as well as links to docs for current, GA products. 
+Alternatively, return to {primary-site-url}[the main documentation site].
 endif::[]
 --
+
+
+[.tiles.browse]
+== Couchbase Capella
+
+Capella is a Couchbase-managed offering of our operational and analytics databases, App Services to connect edge devices, and AI Services.
+Find current documentation on the https://docs.couchbase.com/home/cloud.html[Capella pages].
 
 [.tiles.browse]
 == Couchbase Server
@@ -41,6 +50,7 @@ endif::[]
 
 [.tile]
 .Couchbase Autonomous Operator (Kubernetes)
+* xref:2.9@operator::whats-new.adoc[Version 2.9]
 * xref:2.8@operator::whats-new.adoc[Version 2.8]
 * xref:2.7@operator::whats-new.adoc[Version 2.7]
 * xref:2.6@operator::whats-new.adoc[Version 2.6]
@@ -57,11 +67,17 @@ endif::[]
 * xref:1.1@service-broker::index.adoc[Service Broker Version 1.1]
 * xref:1.0@service-broker::index.adoc[Service Broker Version 1.0]
 
+[.tile]
+.Couchbase Enterprise Analytics
+* xref:1.0@enterprise-analytics:intro:intro.adoc[Version 1.0]
+
+
 [.tiles.browse]
 == Couchbase Mobile
 
 [.tile]
 .Couchbase Lite
+* xref:4.0@couchbase-lite::index.adoc[Version 4.0]
 * xref:3.3@couchbase-lite::index.adoc[Version 3.3]
 * xref:3.2@couchbase-lite::index.adoc[Version 3.2]
 * xref:3.1@couchbase-lite::index.adoc[Version 3.1]
@@ -77,6 +93,7 @@ endif::[]
 
 [.tile]
 .Couchbase Sync Gateway
+* xref:4.0@sync-gateway::index.adoc[Version 4.0]
 * xref:3.3@sync-gateway::index.adoc[Version 3.3]
 * xref:3.2@sync-gateway::index.adoc[Version 3.2]
 * xref:3.1@sync-gateway::index.adoc[Version 3.1]
@@ -100,6 +117,7 @@ endif::[]
 
 [.tile]
 .Java SDK
+* xref:3.10@java-sdk:hello-world:start-using-sdk.adoc[Version 3.10]
 * xref:3.9@java-sdk:hello-world:start-using-sdk.adoc[Version 3.9]
 * xref:3.8@java-sdk:hello-world:start-using-sdk.adoc[Version 3.8]
 * xref:3.7@java-sdk:hello-world:start-using-sdk.adoc[Version 3.7]
@@ -193,6 +211,7 @@ endif::[]
 
 [.tile]
 .Scala SDK
+* xref:3.10@scala-sdk:hello-world:start-using-sdk.adoc[Version 3.10]
 * xref:3.9@scala-sdk:hello-world:start-using-sdk.adoc[Version 3.9]
 * xref:1.8@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.8]
 * xref:1.7@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.7]
@@ -206,6 +225,7 @@ endif::[]
 
 [.tile]
 .Kotlin SDK
+* xref:3.10@kotlin-sdk:hello-world:overview.adoc[Version 3.10]
 * xref:3.9@kotlin-sdk:hello-world:overview.adoc[Version 3.9]
 * xref:1.5@kotlin-sdk:hello-world:overview.adoc[Version 1.5]
 * xref:1.4@kotlin-sdk:hello-world:overview.adoc[Version 1.4]
@@ -278,6 +298,10 @@ endif::[]
 == Analytics SDKs
 
 [.tile]
+.{dotnet} SDK
+* xref:dotnet-analytics-sdk:hello-world:overview.adoc[Version 1.0]
+
+[.tile]
 .Go SDK
 * xref:go-analytics-sdk:hello-world:overview.adoc[Version 1.0]
 
@@ -295,7 +319,7 @@ endif::[]
 
 
 [.tiles.browse]
-== Columnar SDKs
+== Columnar SDKs for Capella Analytics
 
 [.tile]
 .Go SDK
@@ -361,5 +385,5 @@ endif::[]
 * xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC/JDBC Drivers]
 * xref:4.6@server:connectors:hadoop-1.2/hadoop.adoc[Hadoop Connector 1.2]
 * xref:power-bi-connector:ROOT:index.adoc[Power BI Connector]
-* xref:tableau-connector:ROOT:index.adoc[Tableau Connector]
+* Tableau Connector: xref:1.0@tableau-connector:ROOT:index.adoc[1.0] | xref:1.1@tableau-connector:ROOT:index.adoc[1.1]
 * xref:superset-connector:ROOT:index.adoc[Apache Superset Connector]
