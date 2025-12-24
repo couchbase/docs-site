@@ -223,6 +223,8 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 * xref:1.1@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.1]
 * xref:1.0@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
+[.tiles.browse]
+
 [.tile]
 .Kotlin SDK
 * xref:3.10@kotlin-sdk:hello-world:overview.adoc[Version 3.10]
@@ -293,6 +295,9 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 * xref:1.1@cxx-sdk:hello-world:start-using-sdk.adoc[Version 1.1]
 * xref:1.0@cxx-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
+[.tile]
+.Rust SDK
+* xref:1.0@rust-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
 [.tiles.browse]
 == Analytics SDKs
