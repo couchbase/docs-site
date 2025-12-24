@@ -2,6 +2,7 @@
 :page-meta-zd-site-verification: bcbeq3pryf5y3hqcdqpy4q
 :page-layout: home
 :!sectids:
+:dotnet: .NET
 
 --
 [CAUTION]
@@ -17,7 +18,7 @@ endif::[]
 [.tiles.browse]
 == Couchbase Capella
 
-Capella is an -as-a-service offering of our operational and analytics databases, App Services to connect edge devices, and AI Services (in Developer Preview).
+Capella is a Couchbase-managed offering of our operational and analytics databases, App Services to connect edge devices, and AI Services.
 Find current documentation on the https://docs.couchbase.com/home/cloud.html[Capella pages].
 
 [.tiles.browse]
@@ -25,6 +26,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Server
+* xref:8.0@server:introduction:whats-new.adoc[Version 8.0]
 * xref:7.6@server:introduction:whats-new.adoc[Version 7.6]
 * xref:7.2@server:introduction:whats-new.adoc[Version 7.2]
 * xref:7.1@server:introduction:whats-new.adoc[Version 7.1]
@@ -48,6 +50,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Couchbase Autonomous Operator (Kubernetes)
+* xref:2.9@operator::whats-new.adoc[Version 2.9]
 * xref:2.8@operator::whats-new.adoc[Version 2.8]
 * xref:2.7@operator::whats-new.adoc[Version 2.7]
 * xref:2.6@operator::whats-new.adoc[Version 2.6]
@@ -74,6 +77,8 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Couchbase Lite
+* xref:4.0@couchbase-lite::index.adoc[Version 4.0]
+* xref:3.3@couchbase-lite::index.adoc[Version 3.3]
 * xref:3.2@couchbase-lite::index.adoc[Version 3.2]
 * xref:3.1@couchbase-lite::index.adoc[Version 3.1]
 * xref:3.0@couchbase-lite::index.adoc[Version 3.0]
@@ -88,6 +93,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Couchbase Sync Gateway
+* xref:4.0@sync-gateway::index.adoc[Version 4.0]
 * xref:3.3@sync-gateway::index.adoc[Version 3.3]
 * xref:3.2@sync-gateway::index.adoc[Version 3.2]
 * xref:3.1@sync-gateway::index.adoc[Version 3.1]
@@ -111,6 +117,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Java SDK
+* xref:3.10@java-sdk:hello-world:start-using-sdk.adoc[Version 3.10]
 * xref:3.9@java-sdk:hello-world:start-using-sdk.adoc[Version 3.9]
 * xref:3.8@java-sdk:hello-world:start-using-sdk.adoc[Version 3.8]
 * xref:3.7@java-sdk:hello-world:start-using-sdk.adoc[Version 3.7]
@@ -133,6 +140,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Node.js SDK
+* xref:4.6@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.6]
 * xref:4.5@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.5]
 * xref:4.4@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.4]
 * xref:4.3@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.3]
@@ -171,6 +179,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Python SDK
+* xref:4.5@python-sdk:hello-world:start-using-sdk.adoc[Version 4.5]
 * xref:4.4@python-sdk:hello-world:start-using-sdk.adoc[Version 4.4]
 * xref:4.3@python-sdk:hello-world:start-using-sdk.adoc[Version 4.3]
 * xref:4.2@python-sdk:hello-world:start-using-sdk.adoc[Version 4.2]
@@ -188,6 +197,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Ruby SDK
+* xref:3.7@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.7]
 * xref:3.6@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.6]
 * xref:3.5@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.5]
 * xref:3.4@ruby-sdk:hello-world:start-using-sdk.adoc[Version 3.4]
@@ -201,6 +211,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Scala SDK
+* xref:3.10@scala-sdk:hello-world:start-using-sdk.adoc[Version 3.10]
 * xref:3.9@scala-sdk:hello-world:start-using-sdk.adoc[Version 3.9]
 * xref:1.8@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.8]
 * xref:1.7@scala-sdk:hello-world:start-using-sdk.adoc[Version 1.7]
@@ -214,6 +225,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Kotlin SDK
+* xref:3.10@kotlin-sdk:hello-world:overview.adoc[Version 3.10]
 * xref:3.9@kotlin-sdk:hello-world:overview.adoc[Version 3.9]
 * xref:1.5@kotlin-sdk:hello-world:overview.adoc[Version 1.5]
 * xref:1.4@kotlin-sdk:hello-world:overview.adoc[Version 1.4]
@@ -224,6 +236,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .PHP SDK
+* xref:4.4@php-sdk:hello-world:start-using-sdk.adoc[Version 4.4]
 * xref:4.3@php-sdk:hello-world:start-using-sdk.adoc[Version 4.3]
 * xref:4.2@php-sdk:hello-world:start-using-sdk.adoc[Version 4.2]
 * xref:4.1@php-sdk:hello-world:start-using-sdk.adoc[Version 4.1]
@@ -276,12 +289,17 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .{cpp} SDK 
+* xref:1.2@cxx-sdk:hello-world:start-using-sdk.adoc[Version 1.2]
 * xref:1.1@cxx-sdk:hello-world:start-using-sdk.adoc[Version 1.1]
 * xref:1.0@cxx-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
 
 [.tiles.browse]
 == Analytics SDKs
+
+[.tile]
+.{dotnet} SDK
+* xref:dotnet-analytics-sdk:hello-world:overview.adoc[Version 1.0]
 
 [.tile]
 .Go SDK
@@ -301,7 +319,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 
 [.tiles.browse]
-== Columnar SDKs
+== Columnar SDKs for Capella Analytics
 
 [.tile]
 .Go SDK
