@@ -20,10 +20,10 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/6.6, release/6.5, release/6.0]
+    branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0]
     start_path: docs
   - url: https://git@github.com/couchbase/couchbase-operator
-    branches: [2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
+    branches: [2.4.x, 2.3.x, 2.2.x, 2.1.x, 2.0.x, 1.2.x, 1.1.x, 1.0.x]
     start_path: docs/user
 #  - url: https://github.com/couchbaselabs/observability
 #    branches: [0.2.x]
@@ -38,9 +38,9 @@ content:
   - url: https://github.com/couchbase/docs-spark
     branches: [release/3.2, release/3.1, release/3.0, release/2.4, release/2.3, release/2.2, release/2.1]
   - url: https://github.com/couchbase/docs-server
-    branches: [release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0, release/4.6, release/4.5, release/4.1, release/4.0]
+    branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0, release/4.6, release/4.5, release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [release/7.2, release/7.1, release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/4.6, release/4.5]
+    branches: [release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/4.6, release/4.5]
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.2, release/3.1, release/3.0, release/2.10, release/2.9, release/2.8, release/2.7, release/2.6, release/2.5]
   - url: https://github.com/couchbase/docs-txn-cxx
@@ -70,13 +70,13 @@ content:
   - url: https://github.com/couchbase/docs-service-broker
     branches: [1.2.x, 1.1.x, 1.0.x]
   - url: https://git@github.com/couchbase/backup
-    branches: [mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.x]
+    branches: [neo, 7.1.x-docs, cheshire-cat, mad-hatter, 6.5.x-docs, alice, vulcan, spock, 5.0.x]
     start_path: docs
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [mad-hatter, 6.5.x-docs]
+    branches: [neo, 7.1.x-docs, cheshire-cat, mad-hatter, 6.5.x-docs]
     start_path: docs
   - url: https://git@github.com/couchbase/docs-analytics
-    branches: [release/6.6, release/6.5, release/6.0, release/5.5]
+    branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0, release/5.5]
 asciidoc:
   attributes:
     max-include-depth: 10
