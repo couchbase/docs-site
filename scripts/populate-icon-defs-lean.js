@@ -124,10 +124,10 @@ async function main () {
       const k = def.prefix + ' ' + iconName
       if (!seen.has(k)) { defs.push(def); seen.add(k) }
     } else if (prefix === 'fal') {
-      console.log(`FontAwesome Light icon missing or Pro not installed: ${iconKey}`)
+      console.log(`FontAwesome Light icon missing or Pro not installed: ${iconName}`)
     }
     else {
-        console.log(`Icon not found: ${iconKey}`)
+        console.log(`Icon not found: ${iconName}`)
     }
   }
 
