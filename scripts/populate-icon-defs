@@ -1,0 +1,18 @@
+#!/bin/bash
+set -euo pipefail
+
+RG='rg --no-heading --no-messages --only-matching --no-line-number --no-filename --type html'
+OUT=$(mktemp)
+
+siteDir=./public
+
+(
+    # Capture FA5 class usage (fas|far|fal|fab)
+    $RG 'fa[brs]?\s+fa-[a-z0-9-]+' $siteDir || true
+
+    # Capture FA6 class usage (fa-solid|fa-regular|fa-light|fa-brands)
+    $RG 'fa-(solid|regular|light|brands)\s+fa-[a-z0-9-]+' $siteDir || true
+) | sort | uniq > $OUT
+
+node scripts/populate-icon-defs-lean.js $OUT $siteDir
+echo DONE
