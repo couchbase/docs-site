@@ -134,7 +134,7 @@ async function main () {
   // iconNames: ['far fa-copy', 'fas fa-link', 'fab fa-github', 'fas fa-terminal', 'fal fa-external-link-alt']
   fs.writeFileSync(iconDefsFile, 
     `${stubComment || ''}
-     window.fontawesomeIconDefs = ${JSON.stringify(defs)}\n`,
+     window.FontAwesomeIconDefs = ${JSON.stringify(defs)}\n`,
     'utf8')
 
   console.log(`Wrote ${defs.length} icon defs to ${iconDefsFile}`)
