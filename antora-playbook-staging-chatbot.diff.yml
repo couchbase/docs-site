@@ -43,10 +43,6 @@ content:
     branches:
       - release/8.0
 
-  - url: https://github.com/couchbase/docs-operator
-    branches: 
-      - release/2.8.1 # is set to version `2.9` so will coexist with release/2.8
-
   - url: https://github.com/couchbaselabs/cbmultimanager
     branches:
       $replace: [master]

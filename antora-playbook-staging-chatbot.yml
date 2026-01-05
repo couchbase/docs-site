@@ -147,7 +147,6 @@ content:
       start_path: docs/user
     - url: https://github.com/couchbase/docs-operator
       branches:
-        - release/2.8.1
         - release/2.9
         - release/2.8
         - release/2.7
