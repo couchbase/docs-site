@@ -24,6 +24,8 @@ antora:
     - ./lib/antora-component-version-rank.js
     - ./lib/preview.js
     - ./lib/report-tree.js
+    - ./lib/site-stats-extension.js
+    - ./lib/component-stats.js
 site:
   url: https://docs.couchbase.com
   start_page: home::index.adoc
@@ -101,19 +103,19 @@ content:
         - main
     - url: https://github.com/couchbase/couchbase-operator
       branches:
+        - 2.9.x
         - 2.8.x
         - 2.7.x
         - 2.6.x
         - 2.5.x
-        - 2.4.x
       start_path: docs/user
     - url: https://github.com/couchbase/docs-operator
       branches:
+        - release/2.9
         - release/2.8
         - release/2.7
         - release/2.6
         - release/2.5
-        - release/2.4
     - url: https://github.com/couchbaselabs/observability
       branches:
         - 0.2.x
