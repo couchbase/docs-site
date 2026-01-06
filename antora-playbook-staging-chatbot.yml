@@ -26,6 +26,8 @@ antora:
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/report-tree.js
+    - ./lib/site-stats-extension.js
+    - ./lib/component-stats.js
 site:
   title: Couchbase Docs Staging Chatbot
   url: https://chatbot-staging.docs-test.couchbase.com
@@ -139,16 +141,15 @@ content:
         - main
     - url: https://github.com/couchbase/couchbase-operator
       branches:
+        - 2.9.x
         - 2.8.x
         - 2.7.x
-        - 2.6.x
       start_path: docs/user
     - url: https://github.com/couchbase/docs-operator
       branches:
-        - release/2.8.1
+        - release/2.9
         - release/2.8
         - release/2.7
-        - release/2.6
     - url: https://github.com/couchbaselabs/observability
       branches:
         - 0.2.x

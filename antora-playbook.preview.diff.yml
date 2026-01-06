@@ -5,8 +5,8 @@ antora:
   extensions:
   - ./lib/preview.js
   - ./lib/report-tree.js
-  # - ./lib/site-stats-extension.js
-  # - ./lib/component-stats.js
+  - ./lib/site-stats-extension.js
+  - ./lib/component-stats.js
 
 site:
   title: Couchbase Docs Preview

@@ -34,10 +34,6 @@ content:
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [capella] # ensure added as well as most recent release/* branches
 
-  - url: https://github.com/couchbase/docs-operator
-    branches: [release/2.8.1]
-    # release/2.8.1 is set to version `2.9` so should not clash with release/2.8
-
   - url: https://github.com/couchbaselabs/cbmultimanager
     branches:
       $replace: [master]
@@ -59,6 +55,10 @@ content:
     branches: 
        - release/1.2
 
+  - url: https://github.com/couchbase/docs-sdk-dotnet
+    branches: 
+       - temp/3.9
+       
   - url: https://github.com/couchbase/docs-sdk-nodejs
     branches: 
        - temp/4.6
@@ -69,7 +69,7 @@ content:
 
   - url: https://github.com/couchbase/docs-sdk-python
     branches: 
-       - temp/4.5
+       - release/4.5
 
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: 
