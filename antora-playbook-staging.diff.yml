@@ -67,10 +67,6 @@ content:
     branches: 
        - temp/4.4
 
-  - url: https://github.com/couchbase/docs-sdk-python
-    branches: 
-       - release/4.5
-
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: 
        - temp/3.7
