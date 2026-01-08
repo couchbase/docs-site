@@ -199,7 +199,7 @@ rl.on('line', (line) => {
         spinner.prefixText = ''
         spinner.stopAndPersist({ symbol: "*", text: format(truncate(line)) }).start()
       } else {
-        console.log("RARR", line)
+        console.log("*", line)
         log_main.write(line + "\n")
       }
     }
