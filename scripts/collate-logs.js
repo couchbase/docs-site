@@ -146,6 +146,10 @@ const log_parsers = [
         type: 'callout',
         regex: /callout list item index: expected (?<expected>\d+), got (?<got>\d+)/
     },
+    {
+        type: 'existing',
+        regex: /Page alias cannot reference an existing page: (?<coordinate>.*)\n\s*source: (?<source>.*)\n\s*existing page: (?<existing>.*)/m
+    },
 ]
 
 const files = {}
@@ -163,26 +167,29 @@ var log_other = fs.createWriteStream("other.log", {flags:'w'});
 
 var obj
 rl.on('line', (line) => {
-    let ret
     if ((line.match(/^\{/) && line.match(/\}$/))) {
       obj = JSON.parse(line)
 
+      const filepath = obj?.file?.path
       // increment file counter
-      files[obj.file.path] ||= 0
-      files[obj.file.path] ++
+      if (filepath) {
+        files[filepath] ||= 0
+        files[filepath] ++
+      }
 
       const msg = obj.msg
 
       // for string messages, try each parser and *return early* if found
       if (typeof msg == 'string') {
-        const prefix = path.basename(obj.source.url, '.git')
+        const prefix = path.basename(obj?.source?.url || '', '.git')
         
         flash(msg, prefix)
+        let match
         for (const parser of log_parsers) {
-          if (ret = parser.regex.exec(msg)) {
+          if (match = parser.regex.exec(msg)) {
             errors[parser.type]++; 
             obj.type = parser.type
-            if (ret.groups) { obj.details = ret.groups }
+            if (match.groups) { obj.details = {... match.groups} }
             log_main.write(JSON.stringify(obj) + "\n")
             return
           }
