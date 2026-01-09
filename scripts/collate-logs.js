@@ -170,20 +170,30 @@ rl.on('line', (line) => {
     if ((line.match(/^\{/) && line.match(/\}$/))) {
       obj = JSON.parse(line)
 
+      const repo = path.basename(obj?.source?.url || '', '.git')
       const filepath = obj?.file?.path
+      const refname = obj?.source?.refname || ''
+
       // increment file counter
       if (filepath) {
-        files[filepath] ||= 0
-        files[filepath] ++
+        const match = filepath.match(/\bmodules\/([^/]+)\/pages\/(.+)/)
+        // this is NOT really an Antora coordinate, as we
+        // don't have the component name, only the repo.
+        const coordish =
+          (refname && `${refname}@`) +
+          (repo && `${repo} `) +
+          (match ? `${match[1]}\$${match[2]}` : filepath)
+
+        files[coordish] ||= 0
+        files[coordish] ++
       }
 
       const msg = obj.msg
 
       // for string messages, try each parser and *return early* if found
       if (typeof msg == 'string') {
-        const prefix = path.basename(obj?.source?.url || '', '.git')
         
-        flash(msg, prefix)
+        flash(msg, repo)
         let match
         for (const parser of log_parsers) {
           if (match = parser.regex.exec(msg)) {
