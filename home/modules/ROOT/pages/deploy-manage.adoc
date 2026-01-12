@@ -1,0 +1,24 @@
+= Deploy and Manage Couchbase
+:page-layout: landing-page-capella
+:page-rank: 75
+:!sectids:
+
+
+include::partial$info-banner.adoc[]
+
+
+
+= Deploy and Manage Couchbase 
+
+
+
+The Developer Data Platform for Critical Applications in Our AI World.
+
+Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
+Our operational and analytical databases can be deployed self-managed or fully-managed as a service offering.
+Offline-first mobile takes Couchbase to the edge, and can be synced via App Services in the cloud, or a self-managed Sync Gateway deployment.
+AI Services (currently in private preview) simplify building agentic apps.
+
+
+
+  
