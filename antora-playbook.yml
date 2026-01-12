@@ -166,7 +166,7 @@ content:
     ############################
 
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [release/8.0, release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [release/8.0.1, release/8.0, release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
 
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
@@ -181,7 +181,7 @@ content:
 
     # Go and Rust
   - url: https://github.com/couchbase/docs-sdk-go
-    branches: [temp/2.11, temp/2.10, temp/2.9, temp/2.8, release/2.7]
+    branches: [release/2.12, temp/2.11, temp/2.10, temp/2.9, temp/2.8, release/2.7]
   - url: https://github.com/couchbase/docs-sdk-rust
     branches: [release/1.0]
 
@@ -201,7 +201,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-php
     branches: [temp/4.4, temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [temp/4.5, temp/4.4, temp/4.3, temp/4.2]
+    branches: [release/4.6, temp/4.5, temp/4.4, temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [temp/3.7, temp/3.6, temp/3.5]
 
