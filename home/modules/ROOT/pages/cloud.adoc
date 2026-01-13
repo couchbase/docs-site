@@ -53,12 +53,12 @@ Create your account and follow our tutorial on how to load data into your Analyt
 Get set up with App Services to sync data between Capella and mobile/IoT devices at the edge.
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
-* xref:cloud:app-services:index.adoc[App Services Overview]
-* xref:cloud:get-started:configuring-app-services.adoc[Get Started with App Services]
-* xref:cloud:app-services:deployment/creating-an-app-service.adoc[Create an App Service]
-* xref:cloud:app-services:deployment/creating-an-app-endpoint.adoc[Create an App Endpoint]
-* xref:cloud:app-services:user-management/create-user.adoc[Manage App Endpoint Users]
-* xref:cloud:app-services:connect/connect-apps-to-endpoint.adoc[Connect Apps to Endpoint]
+* xref:cloud:app-services:index.adoc[]
+* xref:cloud:get-started:configuring-app-services.adoc[]
+* xref:cloud:app-services:deployment/creating-an-app-service.adoc[]
+* xref:cloud:app-services:deployment/creating-an-app-endpoint.adoc[]
+* xref:cloud:app-services:user-management/create-user.adoc[]
+* xref:cloud:app-services:connect/connect-apps-to-endpoint.adoc[]
 
 
 [.card-box]
