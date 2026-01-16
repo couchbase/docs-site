@@ -13,9 +13,6 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-218/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -60,6 +57,9 @@ site:
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
     google_analytics: null
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-219/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
@@ -124,7 +124,7 @@ content:
         - release/7.2
     - url: https://github.com/couchbasecloud/couchbase-cloud
       branches:
-        - 8-0-docs-uptake
+        - AV-120497-link-service-desc
         - main
       start_paths:
         - docs/public
@@ -325,15 +325,15 @@ content:
       branches:
         - release/3.1
         - release/2.8
-    - url: https://github.com/couchbaselabs/docs-couchbase-lite
+    - url: https://github.com/couchbase/docs-couchbase-lite
       branches:
-        - release/3.3
         - release/4.0
+        - release/3.3
         - release/3.2
     - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
       branches:
         - release/1.0
-    - url: https://github.com/couchbaselabs/docs-sync-gateway
+    - url: https://github.com/couchbase/docs-sync-gateway
       branches:
         - release/4.0
         - release/3.3
@@ -379,3 +379,6 @@ content:
       branches:
         - master
       start_path: content
+    - url: https://github.com/couchbaselabs/docs-couchbase-lite
+      branches:
+        - release/3.3
