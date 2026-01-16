@@ -125,7 +125,6 @@ content:
     - url: https://github.com/couchbasecloud/couchbase-cloud
       branches:
         - AV-120497-link-service-desc
-        - main
       start_paths:
         - docs/public
         - docs/columnar

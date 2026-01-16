@@ -36,7 +36,8 @@ content:
       - capella # keep this here
 
   - url: https://github.com/couchbasecloud/couchbase-cloud
-    branches: [AV-120497-link-service-desc]
+    branches: 
+      $replace: [AV-120497-link-service-desc]
     start_paths: [docs/public, docs/columnar]
 
   - url: https://github.com/couchbase/docs-analytics
