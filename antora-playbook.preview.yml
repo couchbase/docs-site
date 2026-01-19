@@ -416,4 +416,4 @@ asciidoc:
     page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-220/ui-bundle.zip
