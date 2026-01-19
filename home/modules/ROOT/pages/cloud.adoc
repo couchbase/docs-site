@@ -48,7 +48,7 @@ Create your account and follow our tutorial on how to load data into your Analyt
 * xref:analytics:query:workbench.adoc[]
 
 [.card-box]
-=== icon:rocket[] Develop Mobile Apps
+=== icon:rocket[] Get Started with Capella App Services
 
 Get set up with App Services to sync data between Capella and mobile/IoT devices at the edge.
 
