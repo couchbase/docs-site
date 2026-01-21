@@ -16,7 +16,7 @@ site:
         [
           { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
           { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
-          { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai"] },
+          { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai", "app-services"] },
           { "title": "Cloud-Native", "components": ["cloud-native-database"] },
           { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
           { "title": "CMOS", "components": ["cmos"] },
@@ -41,6 +41,9 @@ site:
 content:
   sources:
   - url: https://github.com/couchbaselabs/docs-ai
+    branches: [main]
+
+  - url: https://github.com/couchbaselabs/docs-capella-app-services
     branches: [main]
 
 asciidoc:
