@@ -95,7 +95,7 @@ content:
   - url: https://github.com/couchbase/docs-capella
     branches: [main]
 
-  - url: https://github.com/couchbase/docs-capella-app-services
+  - url: https://github.com/couchbaselabs/docs-capella-app-services
     branches: [main]
 
   - url: https://github.com/couchbaselabs/docs-columnar
