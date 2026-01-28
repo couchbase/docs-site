@@ -388,6 +388,3 @@ content:
       branches:
         - master
       start_path: content
-    - url: https://github.com/couchbaselabs/docs-couchbase-lite
-      branches:
-        - release/3.3

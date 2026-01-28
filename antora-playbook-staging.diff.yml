@@ -50,9 +50,6 @@ content:
        - release/7.6
        - release/7.2
 
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite
-    branches: [release/3.3]
-
   - url: https://github.com/couchbase/docs-sdk-cxx
     branches: 
        - release/1.2
