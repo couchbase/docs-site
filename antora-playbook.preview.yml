@@ -125,9 +125,6 @@ content:
       branches:
         - 0.2.x
       start_path: docs
-    - url: https://github.com/couchbase/docs-cloud-native
-      branches:
-        - cloud-native-2.2
     - url: https://github.com/couchbase/docs-elastic-search
       branches:
         - main
@@ -178,6 +175,7 @@ content:
         - release/7.2
     - url: https://github.com/couchbase/docs-sdk-common
       branches:
+        - release/8.0.1
         - release/8.0
         - release/7.7
         - release/7.6.6
@@ -219,6 +217,7 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
+        - release/3.11
         - release/3.10
         - release/3.9
         - release/3.8
@@ -232,6 +231,7 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-kotlin
       branches:
+        - temp/3.11
         - temp/3.10
         - temp/3.9
         - temp/1.5
@@ -240,6 +240,7 @@ content:
         - release/1.2
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
+        - release/3.11
         - release/3.10
         - release/3.9
         - release/1.8
@@ -372,6 +373,9 @@ content:
     - url: https://github.com/couchbaselabs/docs-capella-app-services
       branches:
         - main
+    - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
+      branches:
+        - release/1.0
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js

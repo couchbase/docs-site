@@ -46,6 +46,9 @@ content:
   - url: https://github.com/couchbaselabs/docs-capella-app-services
     branches: [main]
 
+  - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
+    branches: [release/1.0]
+
 asciidoc:
   attributes:
     kroki-server-url: null
