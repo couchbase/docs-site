@@ -13,6 +13,9 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-218/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -56,9 +59,6 @@ site:
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
     google_analytics: null
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-13760-markdown-alt-1/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
