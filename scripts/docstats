@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "Word counts of all <article> content:"
+echo =============
+echo
+
+for dir in public/*/*/
+do
+  WC=$(
+    find $dir \
+      -name '*.html' \
+      -exec scripts/hwc {} ';' \
+      | perl -ne '$SUM += $_; END { print "$SUM\n" }' )
+
+  if [[ -n "$WC" && "$WC" -gt 0 ]]; then
+    echo $dir
+    echo $WC
+
+    PAGES=$( find $dir -name '*.html' | wc -l )
+    echo $PAGES
+  fi  
+done
+
+echo
+

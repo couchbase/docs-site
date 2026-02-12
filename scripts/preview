@@ -155,6 +155,7 @@ if [ -n "$INIT" ]; then
 
     brew install gh jq yq
     gh auth token || gh auth login
+    npm ci
 
     if [ ! -f ~/.git-credentials ]; then
       scripts/add-credentials

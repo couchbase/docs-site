@@ -13,9 +13,6 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-218/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -27,6 +24,8 @@ antora:
     - ./lib/antora-component-version-rank.js
     - ./lib/report-tree.js
     - ./lib/markdown-for-llm.js
+    - ./lib/site-stats-extension.js
+    - ./lib/component-stats.js
 site:
   title: Couchbase Docs Staging Chatbot
   url: https://chatbot-staging.docs-test.couchbase.com
@@ -37,8 +36,7 @@ site:
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
-        { "title": "Cloud-Native", "components": ["cloud-native-database"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "app-services", "ai", "analytics"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
         { "title": "Develop", "startPage": "home::developer.adoc",
@@ -59,6 +57,9 @@ site:
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
     google_analytics: null
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-219/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
@@ -123,30 +124,34 @@ content:
         - release/7.2
     - url: https://github.com/couchbasecloud/couchbase-cloud
       branches:
-        - 8-0-docs-uptake
-        - main
+        - AV-120497-link-service-desc
       start_paths:
         - docs/public
         - docs/columnar
     - url: https://github.com/couchbase/docs-capella
       branches:
         - main
+    - url: https://github.com/couchbaselabs/docs-capella-app-services
+      branches:
+        - main
     - url: https://github.com/couchbaselabs/docs-columnar
       branches:
         - main
         - legacy-columnar-component
+    - url: https://github.com/couchbaselabs/docs-ai
+      branches:
+        - main
     - url: https://github.com/couchbase/couchbase-operator
       branches:
+        - 2.9.x
         - 2.8.x
         - 2.7.x
-        - 2.6.x
       start_path: docs/user
     - url: https://github.com/couchbase/docs-operator
       branches:
-        - release/2.8.1
+        - release/2.9
         - release/2.8
         - release/2.7
-        - release/2.6
     - url: https://github.com/couchbaselabs/observability
       branches:
         - 0.2.x
@@ -155,9 +160,6 @@ content:
       start_path: docs
       branches:
         - master
-    - url: https://github.com/couchbase/docs-cloud-native
-      branches:
-        - cloud-native-2.2
     - url: https://github.com/couchbase/docs-elastic-search
       branches:
         - main
@@ -216,6 +218,7 @@ content:
         - release/7.6.2
         - release/7.6
         - release/7.2
+        - release/8.0.1
     - url: https://github.com/couchbase/docs-sdk-c
       branches:
         - release/3.3
@@ -242,9 +245,9 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
+        - release/3.11
         - release/3.10
         - release/3.9
-        - release/3.8
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
         - release/1.2
@@ -259,9 +262,9 @@ content:
         - release/1.2
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
+        - release/3.11
         - release/3.10
         - release/3.9
-        - release/1.8
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
         - temp/4.6
@@ -322,7 +325,7 @@ content:
       branches:
         - release/3.1
         - release/2.8
-    - url: https://github.com/couchbaselabs/docs-couchbase-lite
+    - url: https://github.com/couchbase/docs-couchbase-lite
       branches:
         - release/3.3
         - release/4.0
@@ -330,7 +333,7 @@ content:
     - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
       branches:
         - release/1.0
-    - url: https://github.com/couchbaselabs/docs-sync-gateway
+    - url: https://github.com/couchbase/docs-sync-gateway
       branches:
         - release/4.0
         - release/3.3
@@ -376,6 +379,3 @@ content:
       branches:
         - master
       start_path: content
-    - url: https://github.com/couchbaselabs/docs-ai
-      branches:
-        - ai-services-ga

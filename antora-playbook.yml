@@ -30,8 +30,7 @@ site:
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics"] },
-        { "title": "Cloud-Native", "components": ["cloud-native-database"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "app-services", "ai", "analytics"] },
         { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
         { "title": "Develop", "startPage": "home::developer.adoc",
@@ -87,12 +86,15 @@ content:
     branches: [release/8.0, release/7.6, release/7.2, capella]
 
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/8.0, release/7.6, release/7.2, release/7.1, release/7.0, capella]
+    branches: [release/8.0, release/7.6, release/7.2, capella]
     start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
+    branches: [main]
+
+  - url: https://github.com/couchbaselabs/docs-capella-app-services
     branches: [main]
 
   - url: https://github.com/couchbaselabs/docs-columnar
@@ -101,17 +103,20 @@ content:
       - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
     # see under Server section below for enterprise-analytics and legacy analytics
 
+  - url: https://github.com/couchbaselabs/docs-ai
+    branches: [main]
+
     # Couchbase Autonomous Kubernetes Operator
     ############################
 
     # Generated content remains in monorepo
   - url: https://github.com/couchbase/couchbase-operator
-    branches: [2.8.x, 2.7.x, 2.6.x, 2.5.x, 2.4.x]
+    branches: [2.9.x, 2.8.x, 2.7.x, 2.6.x, 2.5.x]
     start_path: docs/user
 
     # handwritten content lives in docs-operator.
   - url: https://github.com/couchbase/docs-operator
-    branches: [release/2.8, release/2.7, release/2.6, release/2.5, release/2.4]
+    branches: [release/2.9, release/2.8, release/2.7, release/2.6, release/2.5]
 
   - url: https://github.com/couchbaselabs/observability
     branches: [0.2.x]
@@ -119,8 +124,6 @@ content:
   - url: https://github.com/couchbaselabs/cbmultimanager
     branches: [0.2.x]
     start_path: docs
-  - url: https://github.com/couchbase/docs-cloud-native
-    branches: [cloud-native-2.2]
 
     # Connectors
     ############################
@@ -145,25 +148,25 @@ content:
   - url: https://github.com/couchbaselabs/docs-enterprise-analytics
     branches: [release/2.1, release/2.0]
   - url: https://github.com/couchbase/docs-analytics
-    branches: [release/8.0, release/7.6, release/7.2, release/7.1, release/7.0]
+    branches: [release/8.0, release/7.6, release/7.2]
 
   - url: https://github.com/couchbase/couchbase-cli
-    branches: [morpheus, trinity, neo, 7.1.x-docs, cheshire-cat]
+    branches: [morpheus, trinity, neo]
     start_path: docs
   - url: https://github.com/couchbase/backup
-    branches: [morpheus, trinity, neo, 7.1.x-docs, cheshire-cat]
+    branches: [morpheus, trinity, neo]
     start_path: docs
 
     # NOTE docs-server is currently after other server repos so nav key wins
 
   - url: https://github.com/couchbase/docs-server
-    branches: [release/8.0, release/7.6, release/7.2, release/7.1, release/7.0]
+    branches: [release/8.0, release/7.6, release/7.2]
 
     # SDK
     ############################
 
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [release/8.0, release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
+    branches: [release/8.0.1, release/8.0, release/7.7, release/7.6.6, release/7.6.2, release/7.6, temp/7.5, release/7.2, release/7.1.2, release/7.1, release/7.0, release/6.6, release/6.5]
 
   - url: https://github.com/couchbase/docs-sdk-c
     branches: [release/3.3]
@@ -184,13 +187,13 @@ content:
 
     # JVM
   - url: https://github.com/couchbase/docs-sdk-java
-    branches: [release/3.10, release/3.9, release/3.8, temp/3.7, temp/3.6, release/3.5]
+    branches: [release/3.11, release/3.10, release/3.9, release/3.8, temp/3.7, temp/3.6, release/3.5]
   - url: https://github.com/couchbase/docs-quarkus-extension
     branches: [release/1.2, release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-sdk-kotlin
-    branches: [temp/3.10, temp/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2]
+    branches: [temp/3.11, temp/3.10, temp/3.9, temp/1.5, temp/1.4, temp/1.3, release/1.2]
   - url: https://github.com/couchbase/docs-sdk-scala
-    branches: [release/3.10, release/3.9, release/1.8, release/1.7, temp/1.6, release/1.5]
+    branches: [release/3.11, release/3.10, release/3.9, release/1.8, release/1.7, temp/1.6, release/1.5]
 
     # "scripting languages"
   - url: https://github.com/couchbase/docs-sdk-nodejs
@@ -241,13 +244,13 @@ content:
   - url: https://github.com/couchbase/docs-mobile
     branches: [release/3.1, release/2.8]
 
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite
+  - url: https://github.com/couchbase/docs-couchbase-lite
     branches: [release/4.0, release/3.3, release/3.2, release/3.1, release/3.0, release/2.8]
 
   - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
     branches: [release/1.0]
 
-  - url: https://github.com/couchbaselabs/docs-sync-gateway
+  - url: https://github.com/couchbase/docs-sync-gateway
     branches: [release/4.0, release/3.3, release/3.2, release/3.1, release/3.0, release/2.8]
 
   - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
