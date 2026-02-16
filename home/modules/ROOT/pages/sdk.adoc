@@ -105,6 +105,93 @@ Useful resources to help support your development experience with Couchbase and 
 ++++
 --
 
+
+Go::
++
+--
+xref:go-sdk:hello-world:overview.adoc[Go SDK Docs] |
+xref:go-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] |
+xref:go-sdk:project-docs:sdk-release-notes.adoc[] |
+https://pkg.go.dev/github.com/couchbase/gocb/v2[Go API Reference]
+
+{empty} +
+
+[discrete]
+== Using Your Database icon:database[] 
+
+How-to guides to help you start your development journey with Couchbase and the Go SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Easy to Connect & Get Started
+* xref:go-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] -- CRUD against a Document Database.
+* xref:go-sdk:howtos:managing-connections.adoc[Connect your App] -- connect from dev or production environment.
+* xref:go-sdk:hello-world:sample-application.adoc[Sample Application] -- build a full app
+// * xref:go-sdk:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial] -- introduction to the SDK, Document data model, and {sqlpp} for document databases.
+
+[.column]
+.Search, Query, Analyze
+* xref:go-sdk:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
+* xref:go-sdk:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
+* xref:go-sdk:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
+* xref:go-sdk:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
+
+[.column]
+.Lightning Fast Data Service
+* xref:go-sdk:howtos:kv-operations.adoc[]
+* xref:go-sdk:howtos:subdocument-operations.adoc[]
+* xref:go-sdk:howtos:encrypting-using-sdk.adoc[]
+* xref:go-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
+
+[.column]
+.Observability & Error Handling
+* xref:go-sdk:howtos:error-handling.adoc[]
+* xref:go-sdk:howtos:collecting-information-and-logging.adoc[]
+* xref:go-sdk:howtos:slow-operations-logging.adoc[]
+* xref:go-sdk:howtos:health-check.adoc[]
+
+++++
+</div>
+++++
+
+
+{empty} +
+
+[discrete]
+== Resources icon:book[] 
+
+Useful resources to help support your development experience with Couchbase and the Go SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Reference
+* https://pkg.go.dev/github.com/couchbase/gocb/v2[API Reference^]
+* xref:go-sdk:ref:client-settings.adoc[]
+* xref:go-sdk:ref:error-codes.adoc[]
+* xref:go-sdk:ref:glossary.adoc[Glossary]
+* xref:go-sdk:ref:travel-app-data-model.adoc[]
+
+[.column]
+.Deployment
+* xref:go-sdk:project-docs:sdk-release-notes.adoc[]
+* xref:go-sdk:project-docs:compatibility.adoc[Compatibility]
+* https://docs-archive.couchbase.com/home/index.html[Older Versions Archive]
+* xref:go-sdk:project-docs:migrating-sdk-code-to-3.n.adoc[]
+* xref:go-sdk:project-docs:third-party-integrations.adoc[]
+* xref:go-sdk:project-docs:sdk-full-installation.adoc[]
+
+++++
+</div>
+++++
+--
+
+
 Java::
 +
 --
@@ -188,8 +275,180 @@ Useful resources to help support your development experience with Couchbase and 
 ++++
 </div>
 ++++
-
 --
+
+
+Python::
++
+--
+xref:python-sdk:hello-world:overview.adoc[Python SDK Docs] |
+xref:python-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] |
+xref:python-sdk:project-docs:sdk-release-notes.adoc[] |
+https://docs.couchbase.com/sdk-api/couchbase-python-client/[Python API Reference]
+
+{empty} +
+
+[discrete]
+== Using Your Database icon:database[] 
+
+How-to guides to help you start your development journey with Couchbase and the Python SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Easy to Connect & Get Started
+* xref:python-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] -- CRUD against a Document Database.
+* xref:python-sdk:howtos:managing-connections.adoc[Connect your App] -- connect from dev or production environment.
+* xref:python-sdk:hello-world:sample-application.adoc[Sample Application] -- build a full app
+// * xref:python-sdk:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial] -- introduction to the SDK, Document data model, and {sqlpp} for document databases.
+
+[.column]
+.Search, Query, Analyze
+* xref:python-sdk:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
+* xref:python-sdk:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
+* xref:python-sdk:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
+* xref:python-sdk:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
+
+[.column]
+.Lightning Fast Data Service
+* xref:python-sdk:howtos:kv-operations.adoc[]
+* xref:python-sdk:howtos:subdocument-operations.adoc[]
+* xref:python-sdk:howtos:encrypting-using-sdk.adoc[]
+* xref:python-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
+
+[.column]
+.Observability & Error Handling
+* xref:python-sdk:howtos:error-handling.adoc[]
+* xref:python-sdk:howtos:collecting-information-and-logging.adoc[]
+* xref:python-sdk:howtos:slow-operations-logging.adoc[]
+* xref:python-sdk:howtos:health-check.adoc[]
+
+++++
+</div>
+++++
+
+
+{empty} +
+
+[discrete]
+== Resources icon:book[] 
+
+Useful resources to help support your development experience with Couchbase and the Python SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Reference
+* https://docs.couchbase.com/sdk-api/couchbase-python-client/[API Reference^]
+* xref:python-sdk:ref:client-settings.adoc[]
+* xref:python-sdk:ref:error-codes.adoc[]
+* xref:python-sdk:ref:glossary.adoc[Glossary]
+* xref:python-sdk:ref:travel-app-data-model.adoc[]
+
+[.column]
+.Deployment
+* xref:python-sdk:project-docs:sdk-release-notes.adoc[]
+* xref:python-sdk:project-docs:compatibility.adoc[Compatibility]
+* https://docs-archive.couchbase.com/home/index.html[Older Versions Archive]
+* xref:python-sdk:project-docs:migrating-sdk-code-to-3.n.adoc[]
+* xref:python-sdk:project-docs:third-party-integrations.adoc[]
+* xref:python-sdk:project-docs:sdk-full-installation.adoc[]
+
+++++
+</div>
+++++
+--
+
+
+Rust::
++
+--
+xref:rust-sdk:hello-world:overview.adoc[Rust SDK Docs] |
+xref:rust-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] |
+xref:rust-sdk:project-docs:sdk-release-notes.adoc[] |
+https://docs.rs/couchbase/latest/couchbase/[Rust API Reference]
+
+{empty} +
+
+[discrete]
+== Using Your Database icon:database[] 
+
+How-to guides to help you start your development journey with Couchbase and the Rust SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Easy to Connect & Get Started
+* xref:rust-sdk:hello-world:start-using-sdk.adoc[Quickstart Guide] -- CRUD against a Document Database.
+* xref:rust-sdk:howtos:managing-connections.adoc[Connect your App] -- connect from dev or production environment.
+* xref:rust-sdk:hello-world:sample-application.adoc[Sample Application] -- build a full app
+// * xref:rust-sdk:hello-world:student-record-developer-tutorial.adoc[Beginners' Couchbase Tutorial] -- introduction to the SDK, Document data model, and {sqlpp} for document databases.
+
+[.column]
+.Search, Query, Analyze
+* xref:rust-sdk:howtos:sqlpp-queries-with-sdk.adoc[Query with a familiar, SQL-like language]
+* xref:rust-sdk:howtos:vector-searching-with-sdk.adoc[Vector Search for your AI app]
+* xref:rust-sdk:howtos:full-text-searching-with-sdk.adoc[Fuzzy Search with text and Geo data]
+* xref:rust-sdk:howtos:analytics-using-sdk.adoc[OLAP -- long running analytical queries]
+
+[.column]
+.Lightning Fast Data Service
+* xref:rust-sdk:howtos:kv-operations.adoc[]
+* xref:rust-sdk:howtos:subdocument-operations.adoc[]
+* xref:rust-sdk:howtos:encrypting-using-sdk.adoc[]
+* xref:rust-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
+
+[.column]
+.Observability & Error Handling
+* xref:rust-sdk:howtos:error-handling.adoc[]
+* xref:rust-sdk:howtos:collecting-information-and-logging.adoc[]
+* xref:rust-sdk:howtos:slow-operations-logging.adoc[]
+* xref:rust-sdk:howtos:health-check.adoc[]
+
+++++
+</div>
+++++
+
+
+{empty} +
+
+[discrete]
+== Resources icon:book[] 
+
+Useful resources to help support your development experience with Couchbase and the Rust SDK.
+
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+.Reference
+* https://docs.rs/couchbase/latest/couchbase/[API Reference^]
+* xref:rust-sdk:ref:client-settings.adoc[]
+* xref:rust-sdk:ref:error-codes.adoc[]
+* xref:rust-sdk:ref:glossary.adoc[Glossary]
+// * xref:rust-sdk:ref:travel-app-data-model.adoc[]
+
+[.column]
+.Deployment
+* xref:rust-sdk:project-docs:sdk-release-notes.adoc[]
+* xref:rust-sdk:project-docs:compatibility.adoc[Compatibility]
+// * https://docs-archive.couchbase.com/home/index.html[Older Versions Archive]
+// * xref:rust-sdk:project-docs:migrating-sdk-code-to-3.n.adoc[]
+* xref:rust-sdk:project-docs:third-party-integrations.adoc[]
+* xref:rust-sdk:project-docs:sdk-full-installation.adoc[]
+
+++++
+</div>
+++++
+--
+
 
 Scala::
 +
