@@ -62,16 +62,19 @@ git status --porcelain=v1 \
 # so `comm -23` prints in 1 but NOT 2 (or common)
 
 # A. in (md-changed, md-added)                 -> ADD
-git add --pathspec-from-file md-changed
-git add --pathspec-from-file md-added
+git add --pathspec-from-file=md-changed
+git add --pathspec-from-file=md-added
 
 # B. in (md-output) but NOT (md-changed)       -> CHECKOUT (revert)
 comm -23 md-output md-changed > md-checkout
-git checkout --pathspec-from-file md-checkout
+git checkout --pathspec-from-file=md-checkout
 
 # C. in (md-all) but NOT (md-added, md-output) -> DELETE
 comm -23 md-all <(sort md-added md-output) > md-delete
-git rm --pathspec-from-file md-delete
+git rm --pathspec-from-file=md-delete
+
+git config --global user.email "tech-comm-team@couchbase.com"
+git config --global user.name "Tech Comm Team Bot"
 
 git commit -m "Updating snapshot"
 git push
