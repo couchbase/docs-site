@@ -76,5 +76,8 @@ git rm --pathspec-from-file=md-delete
 git config --global user.email "tech-comm-team@couchbase.com"
 git config --global user.name "Tech Comm Team Bot"
 
+pwd
+git status
+
 git commit -m "Updating snapshot"
 git push
