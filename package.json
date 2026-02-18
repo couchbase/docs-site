@@ -19,6 +19,7 @@
     "gulp-connect": "~5.7",
     "js-yaml": "~4.1",
     "markdown-it": "^13.0.1",
+    "node-html-markdown": "^2.0.0",
     "ora": "^9.0.0",
     "picomatch": "^4.0.3",
     "striptags": "^3.2.0",

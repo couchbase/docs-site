@@ -1,6 +1,7 @@
 antora:
   extensions:
   - ./lib/report-tree.js
+  - ./lib/markdown-for-llm.js
   - ./lib/site-stats-extension.js
   - ./lib/component-stats.js
 

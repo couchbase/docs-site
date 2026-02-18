@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# An antora build with the lib/markdown-for-llms.js extension 
+# will output a directory of Markdown files, with YAML front-matter
+# including pubDate.
+# If we first clone the https://github.com/couchbaselabs/docs-markdown-snapshot/
+# repo into `public/` then the Antora build will naturally
+# update those files in place.
+#
+# This script attempts to handle these changes, including
+#  * new files
+#  * deletion of no-longer output files
+#  * preserving files which are unchanged (other than the pubDate)
+
+cd public
+
+# all markdown files
+find . -name *.md \
+  | sed 's|^\./||' \
+  | sort \
+  > md-all
+
+# all markdown that
+# were output by Antora
+# and caused a modification (M) flag
+# (e.g. that have at the very least, a new pubDate:)
+git status --porcelain=v1 \
+  --untracked-files=no \
+  | grep '\.md$' \
+  | grep '^\s*M' \
+  | awk '{ print $2 }' \
+  | sort \
+  > md-output
+
+# all markdown files that have changed more than just pubDate
+# (-I flag ignores changes which *only* contain that pattern)
+git diff --numstat -I^pubDate: \
+  | grep '\.md$' \
+  | awk '{ print $3 }' \
+  | sort \
+  > md-changed
+
+# all markdown that
+# were output by Antora
+# and aren't already in git (??)
+git status --porcelain=v1 \
+  --untracked-files=all \
+  | grep '\.md$' \
+  | grep ^\?\? \
+  | awk '{ print $2 }' \
+  | sort \
+  > md-added
+
+# So we want to categorise the following groups:
+# A. in (md-changed, md-added)                 -> ADD
+# B. in (md-output) but NOT (md-changed)       -> CHECKOUT (revert)
+# C. in (md-all) but NOT (md-added, md-output) -> DELETE
+
+# The useful-but-confusing `comm` utility prints:
+#     (only 1) (only 2) (common)
+# 
+# so `comm -23` prints in 1 but NOT 2 (or common)
+
+# A. in (md-changed, md-added)                 -> ADD
+git add --pathspec-from-file md-changed
+git add --pathspec-from-file md-added
+
+# B. in (md-output) but NOT (md-changed)       -> CHECKOUT (revert)
+comm -23 md-output md-changed > md-checkout
+git checkout --pathspec-from-file md-checkout
+
+# C. in (md-all) but NOT (md-added, md-output) -> DELETE
+comm -23 md-all <(sort md-added md-output) > md-delete
+git rm --pathspec-from-file md-delete
+
+git commit -m "Updating snapshot"
+git push
