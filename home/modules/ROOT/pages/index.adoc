@@ -2,7 +2,7 @@
 :page-meta-zd-site-verification: bcbeq3pryf5y3hqcdqpy4q
 :page-layout: home
 :!sectids:
-:dotnet: .NET
+:dotnet-attr: .NET
 
 --
 [CAUTION]
@@ -159,7 +159,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 * xref:2.1@nodejs-sdk::introduction.adoc[Version 2.1]
 
 [.tile]
-.NET SDK
+.{dotnet-attr} SDK
 * xref:3.8@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.8]
 * xref:3.7@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.7]
 * xref:3.6@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.6]
@@ -307,7 +307,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 == Analytics SDKs
 
 [.tile]
-.{dotnet} SDK
+.{dotnet-attr} SDK
 * xref:dotnet-analytics-sdk:hello-world:overview.adoc[Version 1.0]
 
 [.tile]
