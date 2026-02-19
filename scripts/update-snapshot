@@ -74,7 +74,7 @@ git add --pathspec-from-file=md-added
 git add \
   llms.txt \
   site-manifest.json \
-  _/js/site-navigation-data
+  _/js/site-navigation-data.js
 
 # B. in (md-output) but NOT (md-changed)       -> CHECKOUT (revert)
 comm -23 md-output md-changed > md-checkout
