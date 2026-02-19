@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 # An antora build with the lib/markdown-for-llms.js extension 
 # will output a directory of Markdown files, with YAML front-matter
 # including pubDate.
@@ -13,6 +15,9 @@
 #  * preserving files which are unchanged (other than the pubDate)
 
 cd public
+
+pwd
+git remote -v
 
 # all markdown files
 find . -name *.md \
@@ -64,6 +69,12 @@ git status --porcelain=v1 \
 # A. in (md-changed, md-added)                 -> ADD
 git add --pathspec-from-file=md-changed
 git add --pathspec-from-file=md-added
+
+# also add individual files
+git add \
+  llms.txt \
+  site-manifest.json \
+  _/js/site-navigation-data
 
 # B. in (md-output) but NOT (md-changed)       -> CHECKOUT (revert)
 comm -23 md-output md-changed > md-checkout
