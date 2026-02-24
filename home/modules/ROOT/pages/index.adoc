@@ -393,6 +393,6 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 .Others
 * xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC/JDBC Drivers]
 * xref:4.6@server:connectors:hadoop-1.2/hadoop.adoc[Hadoop Connector 1.2]
-* Power BI Connector: xref:1.2@power-bi-connector:ROOT:index.adoc[1.2] | xref:1.1@power-bi-connector:ROOT:index.adoc[1.1]
+* Power BI Connector: xref:1.2@power-bi-connector:ROOT:index.adoc[1.2] | xref:1.1@power-bi-connector:ROOT:index.adoc[1.1] | xref:1.0@power-bi-connector:ROOT:index.adoc[1.0]
 * Tableau Connector: xref:1.0@tableau-connector:ROOT:index.adoc[1.0] | xref:1.1@tableau-connector:ROOT:index.adoc[1.1]
 * xref:superset-connector:ROOT:index.adoc[Apache Superset Connector]
