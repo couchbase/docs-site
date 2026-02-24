@@ -116,6 +116,47 @@ They offer traditional synchronous APIs as well as scalable asynchronous APIs to
 [.column]
 ====== {empty}
 
+=== Operational SDK & Server Feature Availability
+
+Occasionally some features or integrations are not implemented for some SDKs.
+The following table gives a quick reference for what is implemented.
+See the individual SDKs' documentation for version compatibility.
+
+
+[#table_sdk,cols="6,2,2,2,2,2,2,2,2,2,2,2,2"]
+|===
+| *SDK* --> | C | {cpp} | .NET | Go | Java | Kotlin | Node.js | PHP | Python | Ruby | Rust | Scala
+
+| *Feature* |  |  |  |  |  |  |  |  |  |  |  | 
+
+| Vector Search  | N | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y
+
+| Vector GSI  | N | Y | Y | Y | Y | N | Y | Y | Y | Y | Y | Y
+
+| Preferred Server Group Replica Reads  | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | N | Y
+
+| Distributed ACID Transactions  | N | Y | Y | Y | Y | Y | Y | Y | Y | N | N | Y
+
+| Response Time Observability  | N | N | Y | N | Y | N | N | N | N | N | Y | Y
+
+| Field Level Encryption  | N | Y | Y | Y | Y | Y | Y | Y | Y | N | Y | Y
+
+| Cloud Native Gateway  | N | N | N | Y | Y | Y | N | N | N | N | N | Y
+
+| Spring Data Couchbase integration  | N | N | N | N | Y | Y | N | N | N | N | N | Y
+
+| Spark integration  | N | N | N | N | Y | Y | N | N | Y | N | N | Y
+|===
+
+
+
+
+[.column]
+====== {empty}
+
+[.column]
+====== {empty}
+
 
 === Alternatives to SDKs
 
