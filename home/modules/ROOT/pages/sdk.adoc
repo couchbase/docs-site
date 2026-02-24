@@ -123,7 +123,7 @@ The following table gives a quick reference for what is implemented.
 See the individual SDKs' documentation for version compatibility.
 
 
-[#table_sdk,cols="11,3,2,2,2,2,2,2,2,2,2,2,2"]
+[#table_sdk,cols="11,>3,^3,2,2,2,2,2,2,2,2,2,2"]
 |===
 | *SDK* -> | C | {cpp} | .NET | Go | Java | Kotlin | Node.js | PHP | Python | Ruby | Rust | Scala
 
