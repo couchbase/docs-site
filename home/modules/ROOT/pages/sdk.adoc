@@ -131,7 +131,7 @@ See the individual SDKs' documentation for version compatibility.
 
 | Vector Search  | N | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y
 
-| Vector GSI  | N | Y | Y | Y | Y | N | Y | Y | Y | Y | Y | Y
+| Vector GSI  | N | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y
 
 | Preferred Server Group Replica Reads  | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | N | Y
 
