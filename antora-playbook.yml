@@ -201,7 +201,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-php
     branches: [temp/4.5, temp/4.4, temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [DOC-14015--devguide-and-other-ia-changes, temp/4.5, temp/4.4, temp/4.3, temp/4.2]
+    branches: [release/4.6, temp/4.5, temp/4.4, temp/4.3, temp/4.2]
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [temp/3.8, temp/3.7, temp/3.6, temp/3.5]
 
