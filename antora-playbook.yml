@@ -175,7 +175,7 @@ content:
 
     # .NET
   - url: https://github.com/couchbase/docs-sdk-dotnet
-    branches: [temp/3.8, temp/3.7, temp/3.6, release/3.5]
+    branches: [temp/3.9, temp/3.8, temp/3.7, temp/3.6, release/3.5]
   - url: https://github.com/couchbase/docs-efcore
     branches: [release/1.0]
 
