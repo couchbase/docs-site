@@ -160,6 +160,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .{dotnet-attr} SDK
+* xref:3.9@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.9]
 * xref:3.8@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.8]
 * xref:3.7@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.7]
 * xref:3.6@dotnet-sdk:hello-world:start-using-sdk.adoc[Version 3.6]
