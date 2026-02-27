@@ -142,7 +142,9 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-connectors-power-bi
       branches:
-        - main
+        - release/1.2
+        - release/1.1
+        - release/1.0
     - url: https://github.com/couchbase/docs-connectors-superset.git
       branches:
         - release/1.0
