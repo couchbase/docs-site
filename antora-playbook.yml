@@ -7,6 +7,7 @@ antora:
   - '@antora/site-generator-ms'
   - ./lib/embargo.js
   - ./lib/antora-component-version-rank.js
+  - ./lib/llms-txt.js
 
 site:
   title: Couchbase Docs
