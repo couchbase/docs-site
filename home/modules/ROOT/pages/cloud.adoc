@@ -48,6 +48,20 @@ Create your account and follow our tutorial on how to load data into your Analyt
 * xref:analytics:query:workbench.adoc[]
 
 [.card-box]
+=== icon:rocket[] Get Started with Capella App Services
+
+Get set up with App Services to sync data between Capella and mobile/IoT devices at the edge.
+
+* https://cloud.couchbase.com/sign-up[Sign Up^]
+* xref:cloud:app-services:index.adoc[]
+* xref:cloud:get-started:configuring-app-services.adoc[]
+* xref:cloud:app-services:deployment/creating-an-app-service.adoc[]
+* xref:cloud:app-services:deployment/creating-an-app-endpoint.adoc[]
+* xref:cloud:app-services:user-management/create-user.adoc[]
+* xref:cloud:app-services:connect/connect-apps-to-endpoint.adoc[]
+
+
+[.card-box]
 === icon:stars[] Get Started With Capella AI Services
 
 Create your account and start working with Capella AI Services.
