@@ -28,7 +28,7 @@ site:
     # see https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2963243023/FAQ+how+does+the+top+nav+bar+work
     nav_groups: |
       [
-        { "title": "Start Here", startPage", "home::start-here.adoc"},
+        { "title": "Start Here", startPage": "home::start-here.adoc"},
         { "title": "Operational Database", "startPage": "home::operational.adoc",
             "subGroups": [
               {
