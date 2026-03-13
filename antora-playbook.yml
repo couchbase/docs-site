@@ -48,7 +48,7 @@ site:
               }
             ]
         },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
             "subGroups": [
               {
                 "title": "Couchbase Lite",
