@@ -28,12 +28,60 @@ site:
     # see https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2963243023/FAQ+how+does+the+top+nav+bar+work
     nav_groups: |
       [
-        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai"] },
-        { "title": "Cloud-Native", "components": ["cloud-native-database"] },
-        { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
-        { "title": "CMOS", "components": ["cmos"] },
+        { "title": "Start Here", startPage", "home::start-here.adoc"},
+        { "title": "Operational Database", "startPage": "home::operational.adoc",
+            "subGroups": [
+              {
+                "title": "Capella Operational",
+                "startPage": "home::cloud.adoc",
+                "components": "cloud"
+              },
+              {
+                "title": "Self-Managed Server",
+                "startPage": "home::server.adoc",
+                "components": "server"
+              },
+              {
+                "title": "Kubernetes Operator",
+                "startPage": "operator::overview.adoc",
+                "components": "operator"
+              }
+            ]
+        },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
+            "subGroups": [
+              {
+                "title": "Couchbase Lite",
+                "startPage": "couchbase-lite::index.adoc",
+                "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"]
+              },
+              {
+                "title": "Sync Gateway",
+                "startPage": "sync-gateway::introduction.adoc",
+                "components": "sync-gateway"
+              },
+              {
+                "title": "App Services",
+                "startPage": "app-services:get-started:configuring-app-services.adoc",
+                "components": "app-services"
+              }
+            ]
+        },
+        { "title": "Real Time Analytics", "startPage": "home::analytics.adoc",
+            "subGroups": [
+              {
+                "title": "Enterprise Analytics",
+                "startPage": "enterprise-analytics:intro:intro.adoc",
+                "components": ""enterprise-analytics"
+              },
+              {
+                "title": "Capella Analytics",
+                "startPage": "analytics:intro:intro.adoc",
+                "components": "analytics"
+              }
+            ]
+        },
+        { "title": "AI Services", "startPage": "ai:get-started:intro.adoc", "components": "ai" },
         { "title": "Develop", "startPage": "home::developer.adoc",
             "subGroups": [
               {
