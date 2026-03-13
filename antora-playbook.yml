@@ -88,7 +88,7 @@ content:
     branches: [AV-112757-api-doc-partials]
 
   - url: https://github.com/couchbaselabs/docs-capella-app-services
-    branches: [main]
+    branches: [AV-112757-api-doc-partials]
 
   - url: https://github.com/couchbaselabs/docs-columnar
     branches:
