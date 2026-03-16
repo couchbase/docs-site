@@ -72,7 +72,7 @@ site:
               {
                 "title": "Enterprise Analytics",
                 "startPage": "enterprise-analytics:intro:intro.adoc",
-                "components": ""enterprise-analytics"
+                "components": "enterprise-analytics"
               },
               {
                 "title": "Capella Analytics",
