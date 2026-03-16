@@ -1,0 +1,38 @@
+= Couchbase Operational Database
+:page-layout: landing-page-top-level-sdk
+:page-role: tiles
+:page-rank: 75
+:!sectids:
+:tabs:
+
+= Couchbase Operational Database
+
+
+
+include::partial$info-banner.adoc[]
+
+
+
+
+
+== Self-Managed Couchbase Server
+
+Self-managede Couchbase Cluster in your datacenter, or choose deployment with Kubernetes Operator or the CSP marketplace provider of your choice.
+
+* Get Started
+* Develop
+* Deploy
+* Learn
+
+
+
+
+== Capella Operational
+
+Couchbase-managed Operational Cluster in your choice of Cloud Provider.
+
+* Get Started
+* Develop
+* Deploy
+* Learn
+
