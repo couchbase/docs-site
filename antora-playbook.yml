@@ -47,57 +47,7 @@ site:
                 "components": "operator"
               }
             ]
-        },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
-            "subGroups": [
-              {
-                "title": "Couchbase Lite",
-                "startPage": "couchbase-lite::index.adoc",
-                "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"]
-              },
-              {
-                "title": "Sync Gateway",
-                "startPage": "sync-gateway::introduction.adoc",
-                "components": "sync-gateway"
-              },
-              {
-                "title": "App Services",
-                "startPage": "app-services:get-started:configuring-app-services.adoc",
-                "components": "app-services"
-              }
-            ]
-        },
-        { "title": "Real Time Analytics", "startPage": "home::analytics.adoc",
-            "subGroups": [
-              {
-                "title": "Enterprise Analytics",
-                "startPage": "enterprise-analytics:intro:intro.adoc",
-                "components": "enterprise-analytics"
-              },
-              {
-                "title": "Capella Analytics",
-                "startPage": "analytics:intro:intro.adoc",
-                "components": "analytics"
-              }
-            ]
-        },
-        { "title": "AI Services", "startPage": "ai:get-started:intro.adoc", "components": "ai" },
-        { "title": "Develop", "startPage": "home::developer.adoc",
-            "subGroups": [
-              {
-                "title": "Operational SDKs",
-                "startPage": "home::sdk.adoc",
-                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
-              },
-              {
-                "title": "Analytics SDKs",
-                "startPage": "home::analytics-sdk.adoc",
-                "components": ["*-analytics-sdk", "*-columnar-sdk"]
-              }
-            ]
-          },
-        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
-        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
+        }
       ]
 
 git:
