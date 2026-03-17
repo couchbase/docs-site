@@ -28,26 +28,28 @@ site:
     # see https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2963243023/FAQ+how+does+the+top+nav+bar+work
     nav_groups: |
       [
-        { "title": "Start Here", "startPage": "home::start-here.adoc"},
-        { "title": "Operational Database", "startPage": "home::operational.adoc",
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
+        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai"] },
+        { "title": "Cloud-Native", "components": ["cloud-native-database"] },
+        { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
+        { "title": "CMOS", "components": ["cmos"] },
+        { "title": "Develop", "startPage": "home::developer.adoc",
             "subGroups": [
               {
-                "title": "Capella Operational",
-                "startPage": "home::cloud.adoc",
-                "components": "cloud"
+                "title": "Operational SDKs",
+                "startPage": "home::sdk.adoc",
+                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
               },
               {
-                "title": "Self-Managed Server",
-                "startPage": "home::server.adoc",
-                "components": "server"
-              },
-              {
-                "title": "Kubernetes Operator",
-                "startPage": "operator::overview.adoc",
-                "components": "operator"
+                "title": "Analytics SDKs",
+                "startPage": "home::analytics-sdk.adoc",
+                "components": ["*-analytics-sdk", "*-columnar-sdk"]
               }
             ]
-        }
+          },
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
+        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
 
 git:
