@@ -34,17 +34,17 @@ site:
               {
                 "title": "Capella Operational",
                 "startPage": "home::cloud.adoc",
-                "components": "cloud"
+                "components": ["cloud"]
               },
               {
                 "title": "Self-Managed Server",
                 "startPage": "home::server.adoc",
-                "components": "server"
+                "components": ["server"]
               },
               {
                 "title": "Kubernetes Operator",
                 "startPage": "operator::overview.adoc",
-                "components": "operator"
+                "components": ["operator"]
               }
             ]
         },
