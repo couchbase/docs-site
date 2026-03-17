@@ -29,6 +29,25 @@ site:
     nav_groups: |
       [
         { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
+        { "title": "Operational Database", "startPage": "home::operational.adoc",
+            "subGroups": [
+              {
+                "title": "Capella Operational",
+                "startPage": "home::cloud.adoc",
+                "components": "cloud"
+              },
+              {
+                "title": "Self-Managed Server",
+                "startPage": "home::server.adoc",
+                "components": "server"
+              },
+              {
+                "title": "Kubernetes Operator",
+                "startPage": "operator::overview.adoc",
+                "components": "operator"
+              }
+            ]
+        },
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai"] },
         { "title": "Cloud-Native", "components": ["cloud-native-database"] },
