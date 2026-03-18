@@ -1,0 +1,38 @@
+antora:
+  extensions:
+  - ./lib/report-tree.js
+  - ./lib/markdown-for-llm.js
+  - ./lib/site-stats-extension.js
+  - ./lib/component-stats.js
+
+site:
+  title: Couchbase Docs Markdown Staging Chatbot
+  url: https://markdown-staging.docs-test.couchbase.com
+  start_page: home::index.adoc
+  robots: disallow
+  keys:
+    google_analytics: ~
+
+content:
+
+  $select:
+    - '.'
+    - '**' # everything
+    # see https://github.com/micromatch/picomatch for full details
+    # e.g.
+    # - '**/*sdk*' # add all repos matching *sdk*
+
+  # start off with first 3 branches
+  $prune: 3
+
+  sources:
+  - url: .
+    branches: master
+
+  - url: https://github.com/couchbaselabs/cb-swagger
+    branches: [capella] # ensure added as well as most recent release/* branches
+
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches:
+      - capella # keep this here
+
