@@ -13,6 +13,10 @@ site:
   keys:
     google_analytics: ~
 
+asciidoc:
+  attributes:
+    llms-txt-prefix: '/markdown'
+
 content:
 
   $select:
