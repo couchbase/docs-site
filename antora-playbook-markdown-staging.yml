@@ -13,9 +13,6 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-221/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -98,6 +95,9 @@ asciidoc:
     kroki-server-url: null
     kroki-fetch-diagram: true
     llms-txt-prefix: /markdown
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-222/ui-bundle.zip
 content:
   branches: master
   sources:
