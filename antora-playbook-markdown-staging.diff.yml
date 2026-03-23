@@ -39,7 +39,3 @@ content:
   - url: https://github.com/couchbaselabs/docs-devex
     branches:
       - capella # keep this here
-
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-222/ui-bundle.zip

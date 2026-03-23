@@ -4,8 +4,8 @@
 #
 # Instead
 #
-#  * edit antora-playbook-markdown-staging.diff.yml with just the *differences* from the main playbook
-#  * run: /Users/hakimcassimally/couchbase/docs-site/scripts/patch-cutdown-playbook antora-playbook-markdown-staging 
+#  * edit antora-playbook-markdown.diff.yml with just the *differences* from the main playbook
+#  * run: /Users/hakimcassimally/couchbase/docs-site/scripts/patch-cutdown-playbook antora-playbook-markdown 
 
 git:
   ensure_git_suffix: false
@@ -64,11 +64,9 @@ antora:
     - ./lib/llms-txt.js
     - ./lib/report-tree.js
     - ./lib/markdown-for-llm.js
-    - ./lib/site-stats-extension.js
-    - ./lib/component-stats.js
 site:
-  title: Couchbase Docs Markdown Staging Chatbot
-  url: https://markdown-staging.docs-test.couchbase.com
+  title: Couchbase Docs Markdown
+  url: https://markdown.docs.couchbase.com
   start_page: home::index.adoc
   robots: disallow
   keys:
@@ -112,17 +110,17 @@ content:
         - pendo
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
-        - capella
         - release/8.0
         - release/7.6
         - release/7.2
+        - capella
     - url: https://github.com/couchbaselabs/cb-swagger
-      start_path: docs
       branches:
-        - capella
         - release/8.0
         - release/7.6
         - release/7.2
+        - capella
+      start_path: docs
     - url: https://github.com/couchbasecloud/couchbase-cloud
       branches:
         - main
@@ -147,12 +145,16 @@ content:
         - 2.9.x
         - 2.8.x
         - 2.7.x
+        - 2.6.x
+        - 2.5.x
       start_path: docs/user
     - url: https://github.com/couchbase/docs-operator
       branches:
         - release/2.9
         - release/2.8
         - release/2.7
+        - release/2.6
+        - release/2.5
     - url: https://github.com/couchbaselabs/observability
       branches:
         - 0.2.x
@@ -218,6 +220,16 @@ content:
         - release/8.0.1
         - release/8.0
         - release/7.7
+        - release/7.6.6
+        - release/7.6.2
+        - release/7.6
+        - temp/7.5
+        - release/7.2
+        - release/7.1.2
+        - release/7.1
+        - release/7.0
+        - release/6.6
+        - release/6.5
     - url: https://github.com/couchbase/docs-sdk-c
       branches:
         - release/3.3
@@ -226,11 +238,14 @@ content:
         - release/1.3
         - release/1.2
         - release/1.1
+        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-dotnet
       branches:
         - temp/3.9
         - temp/3.8
         - temp/3.7
+        - temp/3.6
+        - release/3.5
     - url: https://github.com/couchbase/docs-efcore
       branches:
         - release/1.0
@@ -239,6 +254,9 @@ content:
         - release/2.12
         - temp/2.11
         - temp/2.10
+        - temp/2.9
+        - temp/2.8
+        - release/2.7
     - url: https://github.com/couchbase/docs-sdk-rust
       branches:
         - release/1.0
@@ -247,26 +265,40 @@ content:
         - release/3.11
         - release/3.10
         - release/3.9
+        - release/3.8
+        - temp/3.7
+        - temp/3.6
+        - release/3.5
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
         - release/1.3
         - release/1.2
         - release/1.1
+        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-kotlin
       branches:
         - temp/3.11
         - temp/3.10
         - temp/3.9
+        - temp/1.5
+        - temp/1.4
+        - temp/1.3
+        - release/1.2
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
         - release/3.11
         - release/3.10
         - release/3.9
+        - release/1.8
+        - release/1.7
+        - temp/1.6
+        - release/1.5
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
         - temp/4.6
         - temp/4.5
         - temp/4.4
+        - temp/4.3
     - url: https://github.com/couchbase/docs-sdk-php
       branches:
         - temp/4.4
@@ -277,6 +309,7 @@ content:
         - temp/4.5
         - temp/4.4
         - temp/4.3
+        - temp/4.2
     - url: https://github.com/couchbase/docs-sdk-ruby
       branches:
         - temp/3.7
@@ -327,6 +360,9 @@ content:
         - release/4.0
         - release/3.3
         - release/3.2
+        - release/3.1
+        - release/3.0
+        - release/2.8
     - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
       branches:
         - release/1.0
@@ -335,6 +371,9 @@ content:
         - release/4.0
         - release/3.3
         - release/3.2
+        - release/3.1
+        - release/3.0
+        - release/2.8
     - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
       branches:
         - release/1.0
@@ -359,6 +398,7 @@ content:
         - standalone
         - query
         - sync
+        - backgroundfetch
       start_path: content
     - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
       branches:
