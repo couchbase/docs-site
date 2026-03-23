@@ -18,6 +18,7 @@ site:
   robots: |
     User-agent: *
     Allow: /
+    Disallow: /*.md$
     Disallow: /sdk-api/
     Allow: /sdk-api/*-client/
     Allow: /sdk-api/couchbase-core-io/
