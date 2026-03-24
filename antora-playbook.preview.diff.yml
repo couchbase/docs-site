@@ -58,6 +58,6 @@ asciidoc:
     # page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net # Production, via Elliot
     page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net # Staging, via Elliot
 
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip
+#ui:
+  #bundle:
+    #url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip
