@@ -93,3 +93,6 @@ git status
 droid exec --auto low "/summarize-snapshot" | tee message
 git commit -F message
 git push
+
+# Remove local changes (e.g. discard changes to just pubDate)
+git restore .
