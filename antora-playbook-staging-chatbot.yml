@@ -22,8 +22,8 @@ antora:
     - "@antora/site-generator-ms"
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
+    - ./lib/llms-txt.js
     - ./lib/report-tree.js
-    - ./lib/markdown-for-llm.js
     - ./lib/site-stats-extension.js
     - ./lib/component-stats.js
 site:
@@ -177,7 +177,9 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-connectors-power-bi
       branches:
-        - main
+        - release/1.2
+        - release/1.1
+        - release/1.0
     - url: https://github.com/couchbase/docs-connectors-superset.git
       branches:
         - release/1.0
@@ -225,21 +227,21 @@ content:
     - url: https://github.com/couchbase/docs-sdk-cxx
       branches:
         - release/1.2
+        - release/1.3
         - release/1.1
-        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-dotnet
       branches:
+        - temp/3.9
         - temp/3.8
         - temp/3.7
-        - temp/3.6
     - url: https://github.com/couchbase/docs-efcore
       branches:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-go
       branches:
+        - release/2.12
         - temp/2.11
         - temp/2.10
-        - temp/2.9
     - url: https://github.com/couchbase/docs-sdk-rust
       branches:
         - release/1.0
@@ -250,9 +252,9 @@ content:
         - release/3.9
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
+        - release/1.3
         - release/1.2
         - release/1.1
-        - release/1.0
     - url: https://github.com/couchbase/docs-sdk-kotlin
       branches:
         - release/3.9
