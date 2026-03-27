@@ -33,7 +33,18 @@ Get set up with an account and deploy a free tier Capella operational cluster.
 * xref:cloud:get-started:create-account.adoc[]
 * xref:cloud:get-started:run-first-queries.adoc[]
 * xref:cloud:get-started:sdk-playground.adoc[]
-* xref:cloud:get-started:configuring-app-services.adoc[]
+
+
+[.card-box]
+=== icon:mobile[] Get Started With Capella App Services
+
+Create your account and start building mobile and edge apps with Capella App Services.
+
+* https://cloud.couchbase.com/sign-up[Sign Up^]
+* xref:app-services::index.adoc[]
+* xref:app-services::get-started/configuring-app-services.adoc[]
+* xref:app-services::app-services/creating-an-app-service.adoc[]
+* xref:app-services::migrating/on-prem-to-capella.adoc[]
 
 
 [.card-box]
@@ -59,4 +70,5 @@ Create your account and start working with Capella AI Services.
 * xref:ai:build:model-service/deploy-embed-model.adoc[]
 * xref:ai:build:integrate-agent-with-catalog.adoc[]
 * xref:ai:build:ai-functions.adoc[]
+
 
