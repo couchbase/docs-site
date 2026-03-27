@@ -61,9 +61,9 @@ content:
     branches: HEAD
     start_path: home
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/7.6, capella]
+    branches: [release/8.0, capella]
   - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/7.6, capella]
+    branches: [release/8.0, capella]
     start_path: docs
   # - url: https://github.com/couchbasecloud/couchbase-cloud
   #   branches: [main]
@@ -83,7 +83,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-ai
     branches: [main]
   - url: https://github.com/couchbase/docs-analytics
-    branches: [release/7.6]
+    branches: [release/8.0]
   - url: https://github.com/couchbase/couchbase-cli
     branches: [trinity]
     start_path: docs
@@ -94,9 +94,9 @@ content:
     # NOTE docs-server is currently after other server repos so nav key wins
 
   - url: https://github.com/couchbase/docs-server
-    branches: [release/7.6]
+    branches: [release/8.0]
   - url: https://github.com/couchbase/docs-sdk-common
-    branches: [release/7.6]
+    branches: [release/8.0]
   - url: https://github.com/couchbase/docs-sdk-dotnet
     branches: [temp/3.6]
   - url: https://github.com/couchbase/docs-sdk-java
@@ -115,9 +115,9 @@ content:
   - url: https://github.com/couchbaselabs/docs-sync-gateway
     branches: [release/3.2]
   - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
-    branches: [DOC-12864]
-  - url: https://github.com/couchbase/edge-server
-    branches: [main]
+    branches: [release/1.0]
+  - url: https://github.com/simon-dew/edge-server
+    branches: [DOC-14185-llm-readiness]
     start_path: docs
 asciidoc:
   attributes:
