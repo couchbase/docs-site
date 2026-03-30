@@ -16,6 +16,15 @@ site:
   start_page: home::index.adoc
 
   robots: |
+    # AI Crawlers — guided entry
+    User-agent: ClaudeBot
+    User-agent: GPTBot
+    User-agent: PerplexityBot
+    User-agent: Google-Extended
+    Allow: /
+    # Sitemap and LLM index
+    Sitemap: https://docs.couchbase.com/sitemap.xml
+    # Access
     User-agent: *
     Allow: /
     Disallow: /*.md$
