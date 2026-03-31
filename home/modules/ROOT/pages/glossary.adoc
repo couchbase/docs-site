@@ -9,483 +9,550 @@ ACID:: A set of properties that guarantee database transactions are processed re
 ACID stands for Atomicity, Consistency, Isolation, and Durability.
 Couchbase supports ACID transactions across multiple documents.
 
-*Adaptive Index*:: An index type that adjusts its structure based on query patterns and data distribution, providing flexibility for evolving workloads.
+Adaptive Index:: An index type that adjusts its structure based on query patterns and data distribution, providing flexibility for evolving workloads.
 
-*Agent*:: In Capella AI Services, an application that uses large language models and tools to perform tasks autonomously, often using Retrieval-Augmented Generation (RAG) patterns for context-aware responses.
+Agent:: In Capella AI Services, an application that uses large language models and tools to perform tasks autonomously, often using Retrieval-Augmented Generation (RAG) patterns for context-aware responses.
 
-*Agent Catalog*:: A Capella AI Services feature that helps manage tools and prompts for custom AI agents, supporting integration with various Large Language Models (LLMs) and agent frameworks.
+Agent Catalog:: A Capella AI Services feature that helps manage tools and prompts for custom AI agents, supporting integration with various Large Language Models (LLMs) and agent frameworks.
 
-*Agent Tracer*:: A monitoring tool in Capella AI Services that tracks and visualizes agent activity through spans and callbacks, enabling observation and debugging of AI agent behavior.
+Agent Tracer:: A monitoring tool in Capella AI Services that tracks and visualizes agent activity through spans and callbacks, enabling observation and debugging of AI agent behavior.
 
-*Aggregation*:: The process of combining multiple data values into a single result using {sqlpp} operations like SUM, COUNT, AVG, MIN, and MAX with GROUP BY clauses.
+Aggregation:: The process of combining multiple data values into a single result using {sqlpp} operations like SUM, COUNT, AVG, MIN, and MAX with GROUP BY clauses.
 
-*Analytics Service*:: Couchbase's legacy analytics capabilities.
+Analytics Service:: Couchbase's legacy analytics capabilities.
 For current analytics capabilities, see Capella Analytics for the managed service, or Enterprise Analytics for on-premises deployments.
 
-*Apache Kafka*:: A distributed streaming platform that integrates with Capella Analytics to provide real-time data ingestion through Kafka pipeline links and collections.
+Analyzer:: A part of the Search Service.
+An analyzer is a part of a Search index that filters and modifies content to improve matches for search results.
+Analyzers contain character filters, tokenizers, and token filters.
+For more information about analyzers, see xref:search:customize-index.adoc#analyzers[Analyzers].
 
-*App Endpoint*:: A connection point in Capella App Services that enables mobile and web applications to synchronize data with Couchbase, providing offline capabilities and data replication.
+Apache Kafka:: A distributed streaming platform that integrates with Capella Analytics to provide real-time data ingestion through Kafka pipeline links and collections.
 
-*App Role*:: A security construct in Capella App Services that defines permissions for users accessing data through App Endpoints, controlling access to specific channels and documents.
+App Endpoint:: A connection point in Capella App Services that enables mobile and web applications to synchronize data with Couchbase, providing offline capabilities and data replication.
 
-*App Services*:: A Capella service that enables data synchronization between Couchbase and client applications, including mobile and web apps, with offline capabilities and peer-to-peer sync.
+App Role:: A security construct in Capella App Services that defines permissions for users accessing data through App Endpoints, controlling access to specific channels and documents.
 
-*Array Index*:: An index type that indexes array fields within JSON documents, enabling efficient queries on array contents.
+App Services:: A Capella service that enables data synchronization between Couchbase and client applications, including mobile and web apps, with offline capabilities and peer-to-peer sync.
 
-*Asynchronous API*:: SDK interfaces that allow non-blocking operations, enabling applications to perform multiple tasks concurrently without waiting for each operation to complete.
+Array Index:: An index type that indexes array fields within JSON documents, enabling efficient queries on array contents.
 
-*Authentication*:: The process of verifying the identity of users, applications, or devices connecting to Couchbase.
+Asynchronous API:: SDK interfaces that allow non-blocking operations, enabling applications to perform multiple tasks concurrently without waiting for each operation to complete.
+
+Authentication:: The process of verifying the identity of users, applications, or devices connecting to Couchbase.
 Supports methods including username/password, certificates, LDAP, and single sign-on (SSO).
 
-*Auto-Failover*:: An automatic process that detects node failures and fails over services to healthy nodes without manual intervention, maintaining high availability.
+Auto-Failover:: An automatic process that detects node failures and fails over services to healthy nodes without manual intervention, maintaining high availability.
 
-*Auto-Sharding*:: The automatic distribution of data across cluster nodes based on hash values of document keys, providing load balancing and scalability without manual configuration.
+Auto-Sharding:: The automatic distribution of data across cluster nodes based on hash values of document keys, providing load balancing and scalability without manual configuration.
 
 == B
 
-*Backup*:: The process of creating point-in-time snapshots of data for disaster recovery and data protection.
+Backup:: The process of creating point-in-time snapshots of data for disaster recovery and data protection.
 The Backup Service allows scheduling and management of backups.
 
-*Backup Service*:: A Couchbase service that manages backup and restore operations, providing scheduled backups, incremental backups, and data recovery capabilities.
+Backup Service:: A Couchbase service that manages backup and restore operations, providing scheduled backups, incremental backups, and data recovery capabilities.
 
-*Batching*:: The practice of grouping multiple operations together to improve performance by reducing network round trips and optimizing resource usage.
+Batching:: The practice of grouping multiple operations together to improve performance by reducing network round trips and optimizing resource usage.
 
-*Bloom Filter*:: A space-efficient probabilistic data structure used by index services to quickly determine whether a key might exist in an index, reducing unnecessary disk reads.
+Bloom Filter:: A space-efficient probabilistic data structure used by index services to quickly determine whether a key might exist in an index, reducing unnecessary disk reads.
 
-*Bucket*:: A logical container that stores JSON documents and serves as the fundamental space for data storage.
+bm25:: A scoring algorithm used by the Search Service as of Couchbase Server version 8.0.
+The bm25 algorithm is best used for hybrid Search indexes that include vectors alongside other content.
+For more information about the bm25 algorithm, see xref:search:run-searches.adoc#bm25[bm25 Search Scoring].
+
+Boost:: A parameter that can be added to a Search query through the Search Service to increase or decrease scoring for a particular subquery.
+For more information about using `boost`, see xref:search:search-request-params.adoc#boost[Additional Query Object Properties].
+
+Bucket:: A logical container that stores JSON documents and serves as the fundamental space for data storage.
 Buckets can be Couchbase type (data in-memory and on disk) or Ephemeral (data in-memory only).
 Buckets contain scopes and collections.
 
-*Bucket Alias*:: A binding in Eventing Functions that provides JavaScript access to Couchbase collections, enabling functions to read and write data.
+Bucket Alias:: A binding in Eventing Functions that provides JavaScript access to Couchbase collections, enabling functions to read and write data.
 
-*Bucket Quota*:: The amount of memory allocated to a bucket for data storage and caching, configurable at bucket creation and modifiable during operation.
+Bucket Quota:: The amount of memory allocated to a bucket for data storage and caching, configurable at bucket creation and modifiable during operation.
 
-*Business Intelligence Tools*:: External applications like Tableau, Power BI, or Superset that connect to Couchbase for data visualization and analysis.
+Business Intelligence Tools:: External applications like Tableau, Power BI, or Superset that connect to Couchbase for data visualization and analysis.
 
 == C
 
-*Capella*:: Couchbase's fully managed database-as-a-service (DBaaS) platform that runs on cloud infrastructure (AWS, Azure, GCP), providing operational databases, analytics, App Services, and AI capabilities without requiring server management.
+Capella:: Couchbase's fully managed database-as-a-service (DBaaS) platform that runs on cloud infrastructure (AWS, Azure, GCP), providing operational databases, analytics, App Services, and AI capabilities without requiring server management.
 
-*Capella AI Functions*:: SQL++ functions that use AI capabilities to summarize text, classify content, detect sentiment, and explain patterns directly within queries.
+Capella AI Functions:: SQL++ functions that use AI capabilities to summarize text, classify content, detect sentiment, and explain patterns directly within queries.
 
-*Capella AI Services*:: Artificial intelligence capabilities in Capella that provide vectorization, model deployment, agent catalog, and AI functions for building AI-powered applications integrated with your data.
+Capella AI Services:: Artificial intelligence capabilities in Capella that provide vectorization, model deployment, agent catalog, and AI functions for building AI-powered applications integrated with your data.
 
-*Capella Analytics*:: A JSON-native NoSQL analytical database within Capella that enables complex analytical queries across multiple data sources.
+Capella Analytics:: A JSON-native NoSQL analytical database within Capella that enables complex analytical queries across multiple data sources.
 Features a column-oriented storage engine, MPP-based computation, and Zero ETL capabilities.
 
-*Capella App Services*:: See App Services.
+Capella App Services:: See App Services.
 
-*Capella iQ*:: An AI-powered assistant in Capella that helps write and optimize SQL++ queries, provides insights into query results, and offers recommendations based on natural language input.
+Capella iQ:: An AI-powered assistant in Capella that helps write and optimize SQL++ queries, provides insights into query results, and offers recommendations based on natural language input.
 
-*Capella Model Service*:: A capability within Capella AI Services to deploy and manage Large Language Models (LLMs) and embedding models alongside your data for AI-driven applications.
+Capella Model Service:: A capability within Capella AI Services to deploy and manage Large Language Models (LLMs) and embedding models alongside your data for AI-driven applications.
 
-*Cardinality*:: The number of unique values in a dataset or index field, which impacts index performance, storage requirements, and query optimization.
+Cardinality:: The number of unique values in a dataset or index field, which impacts index performance, storage requirements, and query optimization.
 
-*CAS (Compare and Swap)*:: A value associated with each document that changes with every mutation.
+CAS (Compare and Swap):: A value associated with each document that changes with every mutation.
 Used in optimistic locking to prevent lost updates during concurrent document modifications.
 
-*Certificate-Based Authentication*:: An authentication method using digital certificates to verify client identity when connecting to Couchbase, providing enhanced security.
+Certificate-Based Authentication:: An authentication method using digital certificates to verify client identity when connecting to Couchbase, providing enhanced security.
 
-*Channel*:: In App Services, a mechanism for partitioning data access, allowing users or devices to subscribe to specific subsets of data for synchronization and access control.
+Channel:: In App Services, a mechanism for partitioning data access, allowing users or devices to subscribe to specific subsets of data for synchronization and access control.
 
-*Cluster*:: A group of 1 or more Couchbase servers working together to provide high availability, scalability, and data distribution, forming a unified system with a single management interface.
+Character Filter:: A component of a Search Service analyzer. 
+Character filters remove unwanted characters from your content or Search queries before tokenization.
+For more information about character filters, see xref:search:customize-index.adoc#character-filters[Character Filters].
 
-*Collection*:: A logical container within a scope that stores related JSON documents.
+Child Field Mapping:: A component of a Search index.
+A child field mapping is a mapping that adds a specific document field to a Search index.
+Child field mappings can exist at the top level of your document hierarchy, or be nested fields underneath an object mapping or XATTRs mapping.
+For more information about mappings, see xref:search:about-mappings.adoc[].
+
+Cluster:: A group of 1 or more Couchbase servers working together to provide high availability, scalability, and data distribution, forming a unified system with a single management interface.
+
+Collection:: A logical container within a scope that stores related JSON documents.
 Collections provide data organization similar to tables in relational databases and serve as the unit of authorization and resource allocation.
 
-*Columnar Collection*:: A collection in Capella Analytics optimized for columnar storage, suitable for analytical workloads with efficient storage and query processing.
+Columnar Collection:: A collection in Capella Analytics optimized for columnar storage, suitable for analytical workloads with efficient storage and query processing.
 
-*Compaction*:: The process of reclaiming disk space by removing old data files and merging fragments, automatically performed to maintain storage efficiency.
+Collection Mapping:: A component of a Search index.
+Also called a type mapping.
+A collection mapping includes or excludes specific documents in a collection from a Search index, based on their type.
+For more information about collection mappings and document types, see xref:search:about-mappings.adoc#collections[Collection Mappings].
 
-*Compare and Swap*:: See CAS.
+Compaction:: The process of reclaiming disk space by removing old data files and merging fragments, automatically performed to maintain storage efficiency.
 
-*Composite Vector Index*:: A vector index that combines vector embeddings with scalar fields, enabling filtered vector searches that combine similarity matching with exact criteria.
+Compare and Swap:: See CAS.
 
-*Compression*:: The reduction of data size during storage or transmission, automatically applied by Couchbase to optimize memory and disk usage while maintaining data integrity.
+Composite Vector Index:: A vector index that combines vector embeddings with scalar fields, enabling filtered vector searches that combine similarity matching with exact criteria.
 
-*Concurrent Document Mutations*:: Operations that modify documents simultaneously, using mechanisms like CAS values to prevent conflicts and maintain consistency.
+Compression:: The reduction of data size during storage or transmission, automatically applied by Couchbase to optimize memory and disk usage while maintaining data integrity.
 
-*Connector*:: Software components that enable integration between Couchbase and external systems like Kafka, Elasticsearch, Tableau, or Power BI.
+Concurrent Document Mutations:: Operations that modify documents simultaneously, using mechanisms like CAS values to prevent conflicts and maintain consistency.
 
-*Consistency*:: The property that keeps all clients viewing the same data, configurable through consistency settings that balance performance with data accuracy requirements.
+Connector:: Software components that enable integration between Couchbase and external systems like Kafka, Elasticsearch, Tableau, or Power BI.
 
-*Cost-Based Optimizer (CBO)*:: A query optimizer that uses statistical information about data distribution to determine the most efficient query execution plan, improving query performance.
+Consistency:: The property that keeps all clients viewing the same data, configurable through consistency settings that balance performance with data accuracy requirements.
 
-*Couchbase Lite*:: An embedded database framework that enables data processing and storage in mobile and IoT applications, allowing local data access without Internet connectivity and synchronization with Couchbase Server or Capella.
+Cost-Based Optimizer (CBO):: A query optimizer that uses statistical information about data distribution to determine the most efficient query execution plan, improving query performance.
 
-*Couchbase Server*:: The self-hosted version of the Couchbase database platform that can be deployed on your own infrastructure, providing the same core capabilities as Capella.
+Couchbase Lite:: An embedded database framework that enables data processing and storage in mobile and IoT applications, allowing local data access without Internet connectivity and synchronization with Couchbase Server or Capella.
 
-*Covering Index*:: An index containing all fields required by a query, eliminating the need to fetch full documents from the Data Service and improving query performance.
+Couchbase Server:: The self-hosted version of the Couchbase database platform that can be deployed on your own infrastructure, providing the same core capabilities as Capella.
 
-*CRUD Operations*:: Create, Read, Update, and Delete operations - the fundamental database operations for managing documents.
+Covering Index:: An index containing all fields required by a query, eliminating the need to fetch full documents from the Data Service and improving query performance.
 
-*Cross Data Center Replication*:: See XDCR.
+CRUD Operations:: Create, Read, Update, and Delete operations - the fundamental database operations for managing documents.
+
+Cross Data Center Replication:: See XDCR.
+
+Custom Document Filter:: A component of a Search index, available in Couchbase Server version 8.0 and later. 
+A custom document filter is a type of type identifier that filters the documents added from a collection mapping.
+For more information about custom document filters, see xref:search:customize-index.adoc#type-identifiers[Type Identifier].
 
 == D
 
-*Data Definition Language*:: See DDL.
+Data Definition Language:: See DDL.
 
-*Data Manipulation Language*:: See DML.
+Data Manipulation Language:: See DML.
 
-*Data Model*:: The structure and organization of data within Couchbase, including documents, keys, values, collections, scopes, and buckets.
+Data Model:: The structure and organization of data within Couchbase, including documents, keys, values, collections, scopes, and buckets.
 Couchbase uses a flexible JSON document model that supports schema-less design.
 
-*Data Service*:: The core Couchbase service providing key-value operations and document management capabilities.
+Data Service:: The core Couchbase service providing key-value operations and document management capabilities.
 Stores, sets, and retrieves data items specified by key with high performance and low latency.
 
-*Database Change Protocol (DCP)*:: The protocol used to stream bucket-level mutations for high-speed replication, maintaining replica vBuckets, indexes, XDCR, backups, and external connections.
+Database Change Protocol (DCP):: The protocol used to stream bucket-level mutations for high-speed replication, maintaining replica vBuckets, indexes, XDCR, backups, and external connections.
 
-*DBaaS*:: Database-as-a-Service.
+Date/Time Parser:: A component of a Search index.
+A date/time parser tells the Search Service how to interpret date and time data from documents, if they use a format other than RFC-339 (ISO-8601).
+For more information about date/time parsers, see xref:search:customize-index.adoc#date-time[Date/Time Parsers].
+
+DBaaS:: Database-as-a-Service.
 A cloud computing service model that provides managed database capabilities.
 Couchbase Capella is a DBaaS offering.
 
-*DDL (Data Definition Language)*:: SQL++ statements used to define and manage database structures, including CREATE, ALTER, and DROP statements for databases, scopes, collections, and indexes.
+DDL (Data Definition Language):: SQL++ statements used to define and manage database structures, including CREATE, ALTER, and DROP statements for databases, scopes, collections, and indexes.
 
-*Delta Sync*:: A feature in App Services that synchronizes only the changed portions of documents rather than entire documents, reducing bandwidth usage and improving sync performance.
+Delta Sync:: A feature in App Services that synchronizes only the changed portions of documents rather than entire documents, reducing bandwidth usage and improving sync performance.
 
-*DML (Data Manipulation Language)*:: SQL++ statements used to manipulate data, including SELECT, INSERT, UPDATE, UPSERT, DELETE, and MERGE operations.
+DML (Data Manipulation Language):: SQL++ statements used to manipulate data, including SELECT, INSERT, UPDATE, UPSERT, DELETE, and MERGE operations.
 
-*Document*:: A JSON value stored in Couchbase, consisting of 1 or more attributes.
+Document:: A JSON value stored in Couchbase, consisting of 1 or more attributes.
 Documents are the fundamental unit of data storage, referenced by a unique key within a collection.
 
-*Document Key*:: A unique identifier for a document within a collection.
+Document Key:: A unique identifier for a document within a collection.
 Also called document ID.
 Can be any UTF-8 string up to 250 bytes.
 
-*Dot Product*:: A vector similarity metric that measures the similarity between vectors by calculating the sum of the products of corresponding elements.
+Dot Product:: A vector similarity metric that measures the similarity between vectors by calculating the sum of the products of corresponding elements.
 Used in vector search operations.
 
-*Durable Writes*:: Write operations that make sure data is persisted to disk or replicated before acknowledging success, providing configurable durability guarantees.
+Durable Writes:: Write operations that make sure data is persisted to disk or replicated before acknowledging success, providing configurable durability guarantees.
 
-*Durability Level*:: A configuration specifying how many replicas must acknowledge a write before it's considered successful, balancing performance with data durability requirements.
+Durability Level:: A configuration specifying how many replicas must acknowledge a write before it's considered successful, balancing performance with data durability requirements.
+
+Dynamic Mapping:: A component of a Search index.
+A dynamic mapping is a type of mapping that automatically includes all available fields from a matching document type, collection, or JSON object mapping.
+Dynamic mappings are useful when your document structure is unknown or frequently changing.
+For more information, see xref:search:about-mappings.adoc#static-vs-dynamic[Choosing a Static or Dynamic Mapping].
 
 == E
 
-*Embedding*:: See Vector Embedding.
+Embedding:: See Vector Embedding.
 
-*Embedding Model*:: A machine learning model that converts text, images, or other data into vector embeddings.
+Embedding Model:: A machine learning model that converts text, images, or other data into vector embeddings.
 Deployable in Capella Model Service for use in vector search and RAG applications.
 
-*Ephemeral Bucket*:: A bucket type that retains data only in-memory without persistence to disk, providing maximum performance for temporary data.
+Ephemeral Bucket:: A bucket type that retains data only in-memory without persistence to disk, providing maximum performance for temporary data.
 
-*ETL (Extract, Transform, Load)*:: The traditional process of extracting data from sources, converting it, and loading it into a data warehouse.
+ETL (Extract, Transform, Load):: The traditional process of extracting data from sources, converting it, and loading it into a data warehouse.
 Capella Analytics enables Zero ETL by allowing direct queries on operational data.
 
-*Euclidean Distance*:: A vector similarity metric that calculates the straight-line distance between vectors in multi-dimensional space.
+Euclidean Distance:: A vector similarity metric that calculates the straight-line distance between vectors in multi-dimensional space.
 Used in vector search to find similar items.
 
-*Eventing Function*:: User-defined JavaScript code that executes in response to document mutations or timer events, enabling event-driven architectures and automated workflows.
+Eventing Function:: User-defined JavaScript code that executes in response to document mutations or timer events, enabling event-driven architectures and automated workflows.
 
-*Eventing Service*:: A Couchbase service that supports near real-time handling of data changes, executing code in response to document mutations and scheduled timers.
+Eventing Service:: A Couchbase service that supports near real-time handling of data changes, executing code in response to document mutations and scheduled timers.
 
-*Extended Attributes*:: See XATTR.
+Extended Attributes:: See XATTR.
 
-*External Collection*:: A collection in Capella Analytics that references data stored in external cloud object stores like Amazon S3 or Google Cloud Storage, enabling queries without data duplication.
+External Collection:: A collection in Capella Analytics that references data stored in external cloud object stores like Amazon S3 or Google Cloud Storage, enabling queries without data duplication.
 
 == F
 
-*Failover*:: The process of transferring service responsibilities from a failed node to a healthy node in a cluster, providing continued availability.
+Facet:: A component of search results from the Search Service.
+Facets collection specific additional information about documents included in search results for a Search query.
+For more information about facets, see xref:search:search-facets.adoc[].
+
+Failover:: The process of transferring service responsibilities from a failed node to a healthy node in a cluster, providing continued availability.
 Can be automatic or manual.
 
-*Field Level Encryption*:: Encryption applied to specific fields within documents rather than entire documents, protecting sensitive data while allowing operations on non-encrypted fields.
+Field Level Encryption:: Encryption applied to specific fields within documents rather than entire documents, protecting sensitive data while allowing operations on non-encrypted fields.
 
-*Flex Index*:: An index that uses adaptive indexing techniques, enabling search on any field without a pre-defined schema and providing flexibility for evolving data models.
+Flex Index:: An index that uses adaptive indexing techniques, enabling search on any field without a pre-defined schema and providing flexibility for evolving data models.
 
-*Free Tier*:: A no-cost Capella offering that provides limited resources for evaluation, testing, and learning Couchbase features without requiring payment information initially.
+Free Tier:: A no-cost Capella offering that provides limited resources for evaluation, testing, and learning Couchbase features without requiring payment information initially.
 
-*Full-Text Search*:: Search capabilities that use linguistic analysis, relevance scoring, and natural language patterns to find documents, supporting features like fuzzy matching, wildcards, and phrase queries.
+Full-Text Search:: A legacy term for the Search Service, which describes some of its capabilities.
+For more information about the Search Service, see xref:search:search.adoc[].
+
+Fuzzy Query:: A query type in the Search Service.
+Fuzzy queries allow for approximate matches, by finding terms similar to the term in a Search query within a specified fuzziness parameter.
+For more information about fuzzy queries, see xref:search:search-request-params.adoc#fuzziness[Additional Query Object Properties].
 
 == G
 
-*Global Secondary Index (GSI)*:: An index that supports queries on document attributes, containing a filtered or full set of keys in a collection.
+[[geojson]]GeoJSON:: A type of geospatial data that can be stored and queried with the Search Service.
+GeoJSON objects describe <<geoshapes,geoshapes>> using an array of floating point coordinates.
+For more information about GeoJSON queries and the Search Service, see xref:search:search-request-params.adoc#geojson-queries-linestring[LineString GeoJSON Queries] and the other sections on GeoJSON queries.
+
+Geopoint:: A field data type and Search query type in the Search Service for geospatial data.
+Geopoint fields can be comma-separated strings, geohash points, arrays of 2 floating point integers, or a JSON object with a `lat` and `lon` or `lng` property.
+For more information about how to work with geopoint data in the Search Service, see xref:search:geo-search-ui.adoc[] or xref:search:geo-search-rest-api.adoc[].
+
+[[geoshape]]Geoshape:: A field data type and Search query type in the Search Service for geospatial data.
+Geoshapes contain <<geojson,GeoJSON>> data.
+For more information about GeoJSON queries and the Search Service, see xref:search:search-request-params.adoc#geojson-queries-linestring[LineString GeoJSON Queries] and the other sections on GeoJSON queries.
+
+Global Secondary Index (GSI):: An index that supports queries on document attributes, containing a filtered or full set of keys in a collection.
 Built and maintained by the Index Service to increase query efficiency.
 
-*GROUP BY*:: A SQL++ clause that groups query results by 1 or more fields, typically combined with aggregate functions to calculate statistics for each group.
+Global Scoring:: A feature for improving results from bm25 Search indexes in the Search Service.
+For more information about how to use global scoring in a Search query, see xref:search:search-request-params.adoc#global_scoring[Ctl Object].
 
-*Guardrails*:: Security and content filtering mechanisms in Capella AI Services that control LLM inputs and outputs, preventing inappropriate content and maintaining safe AI application behavior.
+GROUP BY:: A SQL++ clause that groups query results by 1 or more fields, typically combined with aggregate functions to calculate statistics for each group.
+
+Guardrails:: Security and content filtering mechanisms in Capella AI Services that control LLM inputs and outputs, preventing inappropriate content and maintaining safe AI application behavior.
 
 == H
 
-*Health Check*:: Diagnostic functionality that reports the status and connectivity of SDK connections to Couchbase services, helping identify configuration or network issues.
+Health Check:: Diagnostic functionality that reports the status and connectivity of SDK connections to Couchbase services, helping identify configuration or network issues.
 
-*High Availability*:: The capability of a system to remain operational and accessible even when components fail, achieved through replication, failover, and distributed architecture.
+High Availability:: The capability of a system to remain operational and accessible even when components fail, achieved through replication, failover, and distributed architecture.
 
-*Hyperscale Vector Index*:: A high-performance vector index in Capella optimized for large-scale similarity searches with full vector persistence, reranking capabilities, and support for multiple similarity metrics.
+Hybrid Search:: A type of search used in the Search Service.
+Hybrid searches combine features from regular Search queries with a vector search.
+For more information about creating and using a Search Vector index for hybrid searches, see xref:vector-search:vector-search.adoc[].
+
+Hyperscale Vector Index:: A high-performance vector index in Capella optimized for large-scale similarity searches with full vector persistence, reranking capabilities, and support for multiple similarity metrics.
 
 == I
 
-*Import Filter*:: A configuration in App Services that controls which documents are imported from Couchbase into the sync function, enabling selective synchronization.
+Import Filter:: A configuration in App Services that controls which documents are imported from Couchbase into the sync function, enabling selective synchronization.
 
-*Index*:: A data structure that improves query performance by providing efficient access to documents based on specific fields or criteria, maintained separately from the document data.
+Index:: A data structure that improves query performance by providing efficient access to documents based on specific fields or criteria, maintained separately from the document data.
 
-*Index Advisor*:: A tool that analyzes queries and provides recommendations for creating indexes to improve performance, suggesting which indexes would be most beneficial for a workload.
+Index Advisor:: A tool that analyzes queries and provides recommendations for creating indexes to improve performance, suggesting which indexes would be most beneficial for a workload.
 
-*Index Partitioning*:: The distribution of index data across multiple nodes to improve scalability and performance, particularly important for large indexes.
+Index Partitioning:: The distribution of index data across multiple nodes to improve scalability and performance, particularly important for large indexes.
 
-*Index Pushdown*:: An optimization where query predicates are evaluated during the IndexScan rather than after fetching documents, reducing the amount of data processed.
+Index Pushdown:: An optimization where query predicates are evaluated during the IndexScan rather than after fetching documents, reducing the amount of data processed.
 
-*Index Service*:: A Couchbase service responsible for building and maintaining Global Secondary Indexes, listening to data changes and updating indexes accordingly.
+Index Service:: A Couchbase service responsible for building and maintaining Global Secondary Indexes, listening to data changes and updating indexes accordingly.
 
-*Index Lifecycle*:: The stages an index goes through including creation, building, maintenance, and potential deletion or rebuilding, affecting query availability and performance.
+Index Lifecycle:: The stages an index goes through including creation, building, maintenance, and potential deletion or rebuilding, affecting query availability and performance.
 
-*INSERT*:: A DML statement that adds a new document to a collection, failing if a document with the same key already exists.
+INSERT:: A DML statement that adds a new document to a collection, failing if a document with the same key already exists.
 
 == J
 
-*JavaScript UDF*:: User-Defined Functions written in JavaScript that extend SQL++ capabilities beyond built-in functions, enabling custom logic within queries.
+JavaScript UDF:: User-Defined Functions written in JavaScript that extend SQL++ capabilities beyond built-in functions, enabling custom logic within queries.
 
-*JOIN*:: A SQL++ operation that combines documents from multiple collections based on specified conditions, enabling relational-style queries across Couchbase data.
+JOIN:: A SQL++ operation that combines documents from multiple collections based on specified conditions, enabling relational-style queries across Couchbase data.
 
-*JSON (JavaScript Object Notation)*:: The data format used by Couchbase for document storage, providing a flexible, human-readable structure that supports nested objects and arrays.
+JSON (JavaScript Object Notation):: The data format used by Couchbase for document storage, providing a flexible, human-readable structure that supports nested objects and arrays.
 
 == K
 
-*Kafka Pipeline*:: An integration in Capella Analytics that uses Kafka topics as data sources, enabling real-time streaming data ingestion and analysis.
+Kafka Pipeline:: An integration in Capella Analytics that uses Kafka topics as data sources, enabling real-time streaming data ingestion and analysis.
 
-*Key-Value Operations*:: Direct document operations using document keys, providing the fastest access method in Couchbase for creating, reading, updating, and deleting documents.
+Key-Value Operations:: Direct document operations using document keys, providing the fastest access method in Couchbase for creating, reading, updating, and deleting documents.
 
-*Keyspace*:: Any store of key-value data which a {sqlpp} query can use as data source. 
+Keyspace:: Any store of key-value data which a {sqlpp} query can use as data source. 
 A keyspace may be a collection, or a catalog in the `system` namespace.
 You must refer to a keyspace using a keyspace reference.
 
 == L
 
-*Large Language Model (LLM)*:: An AI model trained on vast amounts of text data that can generate human-like text, answer questions, and perform language tasks.
+Large Language Model (LLM):: An AI model trained on vast amounts of text data that can generate human-like text, answer questions, and perform language tasks.
 Deployable in Capella Model Service.
 
-*LDAP*:: Lightweight Directory Access Protocol.
+LDAP:: Lightweight Directory Access Protocol.
 An authentication method that integrates with existing enterprise directory services for user management.
 
-*LIMIT*:: A SQL++ clause that restricts the number of results returned by a query, commonly used for pagination.
+LIMIT:: A SQL++ clause that restricts the number of results returned by a query, commonly used for pagination.
 
-*Log Streaming*:: A feature in Capella App Services that forwards logs to external systems for centralized monitoring and analysis.
+Log Streaming:: A feature in Capella App Services that forwards logs to external systems for centralized monitoring and analysis.
 
 == M
 
-*MapReduce Views*:: A legacy indexing and query mechanism using JavaScript map and reduce functions to create materialized views of data, now largely replaced by Global Secondary Indexes.
+MapReduce Views:: A legacy indexing and query mechanism using JavaScript map and reduce functions to create materialized views of data, now largely replaced by Global Secondary Indexes.
 
-*MERGE*:: A DML statement that combines INSERT and UPDATE logic, allowing conditional data manipulation based on whether matching documents exist.
+MERGE:: A DML statement that combines INSERT and UPDATE logic, allowing conditional data manipulation based on whether matching documents exist.
 
-*Metrics*:: Quantitative measurements of system performance and behavior, including query latency, throughput, memory usage, and other operational statistics.
+Metrics:: Quantitative measurements of system performance and behavior, including query latency, throughput, memory usage, and other operational statistics.
 
-*Model Service*:: See Capella Model Service.
+Model Service:: See Capella Model Service.
 
-*MPP (Massively Parallel Processing)*:: A computation architecture used by Capella Analytics where many processors work simultaneously on different parts of a query, enabling fast analysis of large datasets.
+MPP (Massively Parallel Processing):: A computation architecture used by Capella Analytics where many processors work simultaneously on different parts of a query, enabling fast analysis of large datasets.
 
-*Multi-Tenancy*:: An architecture where a single Couchbase deployment serves multiple independent tenants, separated using buckets, scopes, and collections with appropriate access controls.
+Multi-Tenancy:: An architecture where a single Couchbase deployment serves multiple independent tenants, separated using buckets, scopes, and collections with appropriate access controls.
 
-*Mutation*:: Any operation that changes document data, including inserts, updates, deletes, and Sub-Document modifications.
+Mutation:: Any operation that changes document data, including inserts, updates, deletes, and Sub-Document modifications.
 Mutations trigger DCP streams and can activate Eventing Functions.
 
 == N
 
-*N1QL*:: The former name of SQL++, Couchbase's query language.
+N1QL:: The former name of SQL++, Couchbase's query language.
 N1QL stands for Non-first Normal Form Query Language.
 
-*Namespace*:: The highest level in the hierarchical organization of data in Couchbase.
+Namespace:: The highest level in the hierarchical organization of data in Couchbase.
 Two namespaces are available: `default` and `system`.
 Buckets, scopes, and collections are stored in the `default` namespace.
 
-*NoSQL*:: A category of databases that do not rely on traditional relational schemas and SQL, providing flexible data models.
+NoSQL:: A category of databases that do not rely on traditional relational schemas and SQL, providing flexible data models.
 Couchbase is a NoSQL database that also supports SQL-like querying.
 
 == O
 
-*OFFSET*:: A SQL++ clause that skips a specified number of results before returning data, commonly used with LIMIT for pagination.
+OFFSET:: A SQL++ clause that skips a specified number of results before returning data, commonly used with LIMIT for pagination.
 
-*Optimistic Locking*:: A concurrency control method using CAS values to detect conflicts, allowing operations to proceed assuming conflicts are rare and checking only at commit time.
+Optimistic Locking:: A concurrency control method using CAS values to detect conflicts, allowing operations to proceed assuming conflicts are rare and checking only at commit time.
 
-*Orphan Request Logging*:: A diagnostic feature that tracks requests that do not receive responses within expected timeframes, helping identify timeout issues.
+Orphan Request Logging:: A diagnostic feature that tracks requests that do not receive responses within expected timeframes, helping identify timeout issues.
 
 == P
 
 Pagination:: Splitting a resultset into pages, each containing a specified number of documents, for display purposes.
 
-*Parameterized Query*:: A SQL++ query using placeholders for dynamic values, improving security by preventing injection attacks and performance through query plan caching.
+Parameterized Query:: A SQL++ query using placeholders for dynamic values, improving security by preventing injection attacks and performance through query plan caching.
 
-*Partitioning*:: See Sharding.
+Partitioning:: See Sharding.
 
-*Peer-to-Peer Sync*:: Direct synchronization between Couchbase Lite devices without going through a central server, enabling offline collaboration.
+Peer-to-Peer Sync:: Direct synchronization between Couchbase Lite devices without going through a central server, enabling offline collaboration.
 
-*Point-in-Time Recovery*:: The ability to restore data to a specific moment using backups and transaction logs, enabling recovery from data corruption or accidental deletion.
+Point-in-Time Recovery:: The ability to restore data to a specific moment using backups and transaction logs, enabling recovery from data corruption or accidental deletion.
 
-*Prepared Statement*:: A SQL++ query that has been parsed and optimized for repeated execution with different parameters, improving performance through plan caching.
+Prepared Statement:: A SQL++ query that has been parsed and optimized for repeated execution with different parameters, improving performance through plan caching.
 
-*Primary Index*:: An index covering all documents in a collection using the document key, enabling queries without secondary indexes and supporting full collection scans.
+Primary Index:: An index covering all documents in a collection using the document key, enabling queries without secondary indexes and supporting full collection scans.
 
-*Private Endpoint*:: A network interface for accessing Capella services through private network connections rather than the public Internet, enhancing security and performance.
+Private Endpoint:: A network interface for accessing Capella services through private network connections rather than the public Internet, enhancing security and performance.
 
-*PrivateLink*:: A cloud provider feature (AWS PrivateLink, GCP Private Service Connect) that enables private connectivity to Capella without exposing traffic to the Internet.
+PrivateLink:: A cloud provider feature (AWS PrivateLink, GCP Private Service Connect) that enables private connectivity to Capella without exposing traffic to the Internet.
 
 Projection:: The set of fields returned by a {sqlpp} query.
 
-*Prompt*:: In AI applications, the input text provided to a large language model that guides its response generation.
+Prompt:: In AI applications, the input text provided to a large language model that guides its response generation.
 Capella Agent Catalog helps manage prompts.
 
-*Provisioning*:: The process of creating and configuring Couchbase clusters, buckets, scopes, collections, and other resources through UI, SDK, or REST API.
+Provisioning:: The process of creating and configuring Couchbase clusters, buckets, scopes, collections, and other resources through UI, SDK, or REST API.
 
 == Q
 
-*Query*:: The Couchbase service that executes SQL++ queries for data retrieval and manipulation, providing powerful querying capabilities across JSON documents.
+Query:: The Couchbase service that executes SQL++ queries for data retrieval and manipulation, providing powerful querying capabilities across JSON documents.
 
-*Query Context*:: The namespace, bucket, and scope used to resolve partial collection references in SQL++ queries, enabling simplified query syntax and multi-tenancy.
+Query Context:: The namespace, bucket, and scope used to resolve partial collection references in SQL++ queries, enabling simplified query syntax and multi-tenancy.
 
-*Query Plan*:: The execution strategy generated by the Query Service for a SQL++ query, showing how the query is executed and which indexes are used.
+Query Plan:: The execution strategy generated by the Query Service for a SQL++ query, showing how the query is executed and which indexes are used.
 
-*Query Service*:: See Query.
+Query Service:: See Query.
 
-*Query Timeout*:: The maximum time allowed for a SQL++ query to execute before being cancelled, configured to prevent long-running queries from consuming excessive resources.
+Query Timeout:: The maximum time allowed for a SQL++ query to execute before being cancelled, configured to prevent long-running queries from consuming excessive resources.
 
-*Query Workbench*:: A UI tool for writing, executing, and analyzing SQL++ queries, including features for query history, results visualization, and index recommendations.
+Query Workbench:: A UI tool for writing, executing, and analyzing SQL++ queries, including features for query history, results visualization, and index recommendations.
 
 == R
 
-*RAG (Retrieval-Augmented Generation)*:: An AI pattern that combines retrieval of relevant data with LLM generation to produce contextually accurate responses, reducing hallucinations and grounding answers in actual data.
+RAG (Retrieval-Augmented Generation):: An AI pattern that combines retrieval of relevant data with LLM generation to produce contextually accurate responses, reducing hallucinations and grounding answers in actual data.
 
-*RBAC (Role-Based Access Control)*:: A security model that grants permissions based on predefined roles assigned to users, enabling fine-grained access control.
+RBAC (Role-Based Access Control):: A security model that grants permissions based on predefined roles assigned to users, enabling fine-grained access control.
 
-*Rebalance*:: The process of redistributing data, indexes, and services optimally among cluster nodes, performed when nodes are added or removed to maintain balanced resource utilization.
+Rebalance:: The process of redistributing data, indexes, and services optimally among cluster nodes, performed when nodes are added or removed to maintain balanced resource utilization.
 
-*Remote Collection*:: A collection in Capella Analytics that references data in external Couchbase clusters, enabling federated querying without data duplication.
+Remote Collection:: A collection in Capella Analytics that references data in external Couchbase clusters, enabling federated querying without data duplication.
 
-*Replica*:: A copy of data maintained on different nodes to provide high availability and durability, supporting failover and read scalability.
+Replica:: A copy of data maintained on different nodes to provide high availability and durability, supporting failover and read scalability.
 
-*Replication*:: The process of copying data between nodes or clusters for high availability and disaster recovery, including intra-cluster replication and XDCR.
+Replication:: The process of copying data between nodes or clusters for high availability and disaster recovery, including intra-cluster replication and XDCR.
 
-*REST API*:: A web service interface using HTTP methods to perform operations on Couchbase resources, providing programmatic access to management and data operations.
+REST API:: A web service interface using HTTP methods to perform operations on Couchbase resources, providing programmatic access to management and data operations.
 
-*Retrieval-Augmented Generation*:: See RAG.
+Retrieval-Augmented Generation:: See RAG.
 
-*Role*:: A defined set of permissions that can be assigned to users for access control, enabling consistent security management across applications and users.
+Role:: A defined set of permissions that can be assigned to users for access control, enabling consistent security management across applications and users.
 
 == S
 
-Sargable: A {{sqlpp}} query is sargable if the optimizer is able to select an index to speed up the execution of that query.
+Sargable:: A {{sqlpp}} query is sargable if the optimizer is able to select an index to speed up the execution of that query.
 
-*Scalar*:: A single atomic value (number, string, boolean) as opposed to arrays or objects, used in composite vector indexes for filtering.
+Scalar:: A single atomic value (number, string, boolean) as opposed to arrays or objects, used in composite vector indexes for filtering.
 
-*Scope*:: A logical container within a bucket that organizes related collections, providing a namespace level between buckets and collections for data organization and access control.
+Scope:: A logical container within a bucket that organizes related collections, providing a namespace level between buckets and collections for data organization and access control.
 
-*SDK (Software Development Kit)*:: Client libraries and tools that enable applications to connect to and interact with Couchbase, available for Java, .NET, Python, Node.js, Go, C, C++, and other languages.
+SDK (Software Development Kit):: Client libraries and tools that enable applications to connect to and interact with Couchbase, available for Java, .NET, Python, Node.js, Go, C, C++, and other languages.
 
-*Search*:: The Couchbase service providing full-text search, geospatial search, and vector search capabilities with linguistic analysis and relevance scoring.
+Search:: The Couchbase service providing full-text search, geospatial search, and vector search capabilities with linguistic analysis and relevance scoring.
 
-*Search Index*:: An index designed for full-text and vector search, supporting text analysis, custom analyzers, geospatial queries, and complex search operations.
+Search Index:: An index designed for full-text and vector search, supporting text analysis, custom analyzers, geospatial queries, and complex search operations.
 
-*Search Service*:: See Search.
+Search Service:: See Search.
 
-*Search Vector Index*:: A vector index backed by the Search Service for AI-powered similarity search, supporting RAG applications and semantic search.
+Search Vector Index:: A vector index backed by the Search Service for AI-powered similarity search, supporting RAG applications and semantic search.
 
-*Secondary Index*:: An index on specific fields in a collection, used by the Query Service to efficiently filter and retrieve documents matching query criteria.
+Secondary Index:: An index on specific fields in a collection, used by the Query Service to efficiently filter and retrieve documents matching query criteria.
 
-*SELECT*:: A DML statement that retrieves data from collections, supporting filtering, joins, aggregations, and transformations.
+SELECT:: A DML statement that retrieves data from collections, supporting filtering, joins, aggregations, and transformations.
 
-*Semantic Search*:: Search based on meaning and context rather than exact keyword matching, typically implemented using vector embeddings and similarity metrics.
+Semantic Search:: Search based on meaning and context rather than exact keyword matching, typically implemented using vector embeddings and similarity metrics.
 
-*Service*:: A specialized component in Couchbase providing specific functionality: Data Service, Query Service, Search Service, Eventing Service, Index Service, and Backup Service.
+Service:: A specialized component in Couchbase providing specific functionality: Data Service, Query Service, Search Service, Eventing Service, Index Service, and Backup Service.
 
-*Sharding*:: The distribution of data across nodes in a cluster using a hash function on document keys, providing automatic load balancing and horizontal scalability.
+Sharding:: The distribution of data across nodes in a cluster using a hash function on document keys, providing automatic load balancing and horizontal scalability.
 
-*Similarity Metric*:: A mathematical method for comparing vectors to determine similarity, including Euclidean Distance, Dot Product, and Cosine Similarity.
+Similarity Metric:: A mathematical method for comparing vectors to determine similarity, including Euclidean Distance, Dot Product, and Cosine Similarity.
 
-*Slow Operations Logging*:: The capture and logging of operations exceeding performance thresholds, enabling performance analysis and optimization.
+Slow Operations Logging:: The capture and logging of operations exceeding performance thresholds, enabling performance analysis and optimization.
 
-*Span*:: In distributed tracing, a unit of work representing an operation, used by Agent Tracer to track and visualize agent activity.
+Span:: In distributed tracing, a unit of work representing an operation, used by Agent Tracer to track and visualize agent activity.
 
-*SQL++*:: The Couchbase query language based on SQL with extensions for JSON and flexible schemas, formerly known as N1QL.
+SQL++:: The Couchbase query language based on SQL with extensions for JSON and flexible schemas, formerly known as N1QL.
 Supports querying, full CRUD operations, transactions, and analytics.
 
-*SSO (Single Sign-On)*:: An authentication method allowing users to access Capella with credentials from identity providers like Okta, Azure AD, or Google Workspace.
+SSO (Single Sign-On):: An authentication method allowing users to access Capella with credentials from identity providers like Okta, Azure AD, or Google Workspace.
 
-*Standalone Collection*:: A collection in Capella Analytics that stores columnar data independently, optimized for analytical workloads with separate storage from operational data.
+Standalone Collection:: A collection in Capella Analytics that stores columnar data independently, optimized for analytical workloads with separate storage from operational data.
 
-*Statistics*:: Information about data distribution and cardinality collected by the Cost-Based Optimizer for query planning and optimization.
+Statistics:: Information about data distribution and cardinality collected by the Cost-Based Optimizer for query planning and optimization.
 
-*Sub-Document Operations*:: Operations that modify individual fields within a document rather than replacing the entire document, providing efficient, atomic updates to specific paths.
+Sub-Document Operations:: Operations that modify individual fields within a document rather than replacing the entire document, providing efficient, atomic updates to specific paths.
 
-*Sync Gateway*:: The former name for the synchronization technology now part of Capella App Services, enabling sync between Couchbase and mobile/web applications.
+Sync Gateway:: The former name for the synchronization technology now part of Capella App Services, enabling sync between Couchbase and mobile/web applications.
 
 == T
 
-*Tableau Connector*:: An integration enabling the Tableau business intelligence tool to connect to Couchbase for data visualization and analytics.
+Tableau Connector:: An integration enabling the Tableau business intelligence tool to connect to Couchbase for data visualization and analytics.
 
-*TAV (Tabular View)*:: A saved query result view in Capella Analytics for quick access and sharing, enabling reuse of analytical queries.
+TAV (Tabular View):: A saved query result view in Capella Analytics for quick access and sharing, enabling reuse of analytical queries.
 
-*Timer*:: A mechanism in Eventing Functions that schedules code execution at a specified future time, enabling time-based workflows and recurring tasks.
+Timer:: A mechanism in Eventing Functions that schedules code execution at a specified future time, enabling time-based workflows and recurring tasks.
 
-*Timeout*:: The maximum duration allowed for an operation to complete before being cancelled or returning an error, configurable for various operation types.
+Timeout:: The maximum duration allowed for an operation to complete before being cancelled or returning an error, configurable for various operation types.
 
-*Trace*:: A record of the execution path of a request through distributed systems, used for performance analysis and debugging.
+Trace:: A record of the execution path of a request through distributed systems, used for performance analysis and debugging.
 
-*Transcoder*:: A mechanism for converting between Couchbase document formats and application data types, supporting JSON, binary, and custom formats.
+Transcoder:: A mechanism for converting between Couchbase document formats and application data types, supporting JSON, binary, and custom formats.
 
-*Transaction*:: A logical unit of work maintaining ACID properties across multiple document operations, providing atomicity, consistency, isolation, and durability.
+Transaction:: A logical unit of work maintaining ACID properties across multiple document operations, providing atomicity, consistency, isolation, and durability.
 
-*Travel Sample*:: An example dataset containing information about airlines, airports, routes, hotels, and landmarks, used throughout Couchbase documentation for demonstrations.
+Travel Sample:: An example dataset containing information about airlines, airports, routes, hotels, and landmarks, used throughout Couchbase documentation for demonstrations.
 
-*TTL (Time-to-Live)*:: A duration after which a document automatically expires and is deleted from Couchbase, configurable at document, collection, or bucket level.
+TTL (Time-to-Live):: A duration after which a document automatically expires and is deleted from Couchbase, configurable at document, collection, or bucket level.
 
 == U
 
-*UDF (User-Defined Function)*:: A custom function created by users to extend {sqlpp} capabilities.
+UDF (User-Defined Function):: A custom function created by users to extend {sqlpp} capabilities.
 The Query Service, Capella Analytics, and Enterprise Analytics support user-defined functions written in {sqlpp}.
 The Query Service also supports user-defined functions written in JavaScript.
 
-*UNNEST*:: A SQL++ clause that flattens array fields into individual rows, enabling queries on array elements as separate documents.
+UNNEST:: A SQL++ clause that flattens array fields into individual rows, enabling queries on array elements as separate documents.
 
-*UPDATE*:: A DML statement that modifies existing documents in a collection, failing if the document does not exist.
+UPDATE:: A DML statement that modifies existing documents in a collection, failing if the document does not exist.
 
-*UPSERT*:: A DML operation that inserts a document if it does not exist or updates it if it does, combining INSERT and UPDATE behavior.
+UPSERT:: A DML operation that inserts a document if it does not exist or updates it if it does, combining INSERT and UPDATE behavior.
 
-*URL Alias*:: A binding in Eventing Functions that enables access to external REST APIs through the curl language construct, specifying endpoints and credentials.
+URL Alias:: A binding in Eventing Functions that enables access to external REST APIs through the curl language construct, specifying endpoints and credentials.
 
 == V
 
-*vBucket*:: A virtual bucket shard that serves as the unit of data distribution within a Couchbase bucket.
+vBucket:: A virtual bucket shard that serves as the unit of data distribution within a Couchbase bucket.
 Multiple vBuckets are distributed across cluster nodes for load balancing.
 
-*Vector*:: A dense numerical representation of data, typically produced by embedding models, used for similarity search and finding semantically related items.
+Vector:: A dense numerical representation of data, typically produced by embedding models, used for similarity search and finding semantically related items.
 
-*Vector Embedding*:: The process of converting text, images, or other data into numerical vector representations that capture semantic meaning, enabling similarity-based operations.
+Vector Embedding:: The process of converting text, images, or other data into numerical vector representations that capture semantic meaning, enabling similarity-based operations.
 
-*Vector Functions*:: SQL++ built-in functions that operate on vector data types, including functions for computing distance metrics and similarity scores.
+Vector Functions:: SQL++ built-in functions that operate on vector data types, including functions for computing distance metrics and similarity scores.
 
-*Vector Index*:: A specialized index for storing and searching vector embeddings, enabling AI-powered similarity searches.
+Vector Index:: A specialized index for storing and searching vector embeddings, enabling AI-powered similarity searches.
 Couchbase supports Hyperscale, Composite, and Search Vector Indexes.
 
-*Vector Search*:: Queries that find the most similar vectors to a query vector, typically used in AI applications for semantic search, RAG, and recommendation systems.
+Vector Search:: Queries that find the most similar vectors to a query vector, typically used in AI applications for semantic search, RAG, and recommendation systems.
 
-*Vectorization*:: See Vector Embedding.
+Vectorization:: See Vector Embedding.
 
-*View*:: In MapReduce Views, a saved query result created by map and reduce functions.
+View:: In MapReduce Views, a saved query result created by map and reduce functions.
 In Query Workbench, a saved query definition for reuse.
 
-*Virtual XATTR*:: Dynamically generated extended attributes providing document metadata without being stored, such as expiration time and CAS values.
+Virtual XATTR:: Dynamically generated extended attributes providing document metadata without being stored, such as expiration time and CAS values.
 
-*VPC Peering*:: A network connection between virtual private clouds enabling private communication, used for secure connectivity between your infrastructure and Capella.
+VPC Peering:: A network connection between virtual private clouds enabling private communication, used for secure connectivity between your infrastructure and Capella.
 
 == W
 
-*WHERE Clause*:: A SQL++ clause that filters results based on specified conditions, restricting which documents are included in query results.
+WHERE Clause:: A SQL++ clause that filters results based on specified conditions, restricting which documents are included in query results.
 
-*Wildcard*:: Special characters (* and ?) used in patterns to match multiple strings, used in LIKE expressions and search queries.
+Wildcard:: Special characters ( and ?) used in patterns to match multiple strings, used in LIKE expressions and search queries.
 
-*Window Function*:: SQL++ functions that perform calculations across rows related to the current row, using window clauses to define partitions and ordering.
+Window Function:: SQL++ functions that perform calculations across rows related to the current row, using window clauses to define partitions and ordering.
 
-*Workflow*:: In Capella AI Services, a coordinated set of operations for data processing and vectorization, automating AI pipeline tasks.
+Workflow:: In Capella AI Services, a coordinated set of operations for data processing and vectorization, automating AI pipeline tasks.
 
-*Workbench*:: See Query Workbench.
+Workbench:: See Query Workbench.
 
 == X
 
-*XATTR (Extended Attributes)*:: Metadata associated with a document that's separate from the document body, accessible via specialized operations for application-specific metadata storage.
+XATTR (Extended Attributes):: Metadata associated with a document that's separate from the document body, accessible via specialized operations for application-specific metadata storage.
 
-*XDCR (Cross Data Center Replication)*:: A feature that replicates data between separate Couchbase clusters across data centers, enabling disaster recovery, global data distribution, and latency optimization.
+XDCR (Cross Data Center Replication):: A feature that replicates data between separate Couchbase clusters across data centers, enabling disaster recovery, global data distribution, and latency optimization.
 
-*XDCR Conflict Resolution*:: The mechanism for handling conflicts when the same document is updated concurrently on different clusters, using revision IDs and configurable resolution policies.
+XDCR Conflict Resolution:: The mechanism for handling conflicts when the same document is updated concurrently on different clusters, using revision IDs and configurable resolution policies.
 
 == Z
 
-*Zero ETL*:: A capability in Capella Analytics enabling queries on operational data without extraction, transformation, and loading processes, reducing complexity and improving time to insights.
+Zero ETL:: A capability in Capella Analytics enabling queries on operational data without extraction, transformation, and loading processes, reducing complexity and improving time to insights.
 
-*Zero Trust*:: A security model requiring verification for every access request with no implicit trust, implementing stringent authentication and authorization controls.
+Zero Trust:: A security model requiring verification for every access request with no implicit trust, implementing stringent authentication and authorization controls.
