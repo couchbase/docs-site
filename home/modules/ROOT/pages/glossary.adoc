@@ -5,7 +5,7 @@ This glossary provides definitions for key terms and concepts used throughout th
 
 == A
 
-*ACID*:: A set of properties that guarantee database transactions are processed reliably.
+ACID:: A set of properties that guarantee database transactions are processed reliably.
 ACID stands for Atomicity, Consistency, Isolation, and Durability.
 Couchbase supports ACID transactions across multiple documents.
 
@@ -17,10 +17,10 @@ Couchbase supports ACID transactions across multiple documents.
 
 *Agent Tracer*:: A monitoring tool in Capella AI Services that tracks and visualizes agent activity through spans and callbacks, enabling observation and debugging of AI agent behavior.
 
-*Aggregation*:: The process of combining multiple data values into a single result using SQL++ operations like SUM, COUNT, AVG, MIN, and MAX with GROUP BY clauses.
+*Aggregation*:: The process of combining multiple data values into a single result using {sqlpp} operations like SUM, COUNT, AVG, MIN, and MAX with GROUP BY clauses.
 
-*Analytics Service*:: A legacy term for Couchbase's analytics capabilities.
-See Capella Analytics for the managed service, or Enterprise Analytics for on-premises deployments.
+*Analytics Service*:: Couchbase's legacy analytics capabilities.
+For current analytics capabilities, see Capella Analytics for the managed service, or Enterprise Analytics for on-premises deployments.
 
 *Apache Kafka*:: A distributed streaming platform that integrates with Capella Analytics to provide real-time data ingestion through Kafka pipeline links and collections.
 
@@ -244,7 +244,9 @@ Built and maintained by the Index Service to increase query efficiency.
 
 *Key-Value Operations*:: Direct document operations using document keys, providing the fastest access method in Couchbase for creating, reading, updating, and deleting documents.
 
-*Keyspace*:: A fully qualified reference to a collection in the format `bucket.scope.collection`, used in SQL++ queries to specify the data source.
+*Keyspace*:: Any store of key-value data which a {sqlpp} query can use as data source. 
+A keyspace may be a collection, or a catalog in the `system` namespace.
+You must refer to a keyspace using a keyspace reference.
 
 == L
 
@@ -280,7 +282,9 @@ Mutations trigger DCP streams and can activate Eventing Functions.
 *N1QL*:: The former name of SQL++, Couchbase's query language.
 N1QL stands for Non-first Normal Form Query Language.
 
-*Namespace*:: The hierarchical organization of data in Couchbase following the pattern `bucket.scope.collection`.
+*Namespace*:: The highest level in the hierarchical organization of data in Couchbase.
+Two namespaces are available: `default` and `system`.
+Buckets, scopes, and collections are stored in the `default` namespace.
 
 *NoSQL*:: A category of databases that do not rely on traditional relational schemas and SQL, providing flexible data models.
 Couchbase is a NoSQL database that also supports SQL-like querying.
@@ -294,6 +298,8 @@ Couchbase is a NoSQL database that also supports SQL-like querying.
 *Orphan Request Logging*:: A diagnostic feature that tracks requests that do not receive responses within expected timeframes, helping identify timeout issues.
 
 == P
+
+Pagination:: Splitting a resultset into pages, each containing a specified number of documents, for display purposes.
 
 *Parameterized Query*:: A SQL++ query using placeholders for dynamic values, improving security by preventing injection attacks and performance through query plan caching.
 
@@ -310,6 +316,8 @@ Couchbase is a NoSQL database that also supports SQL-like querying.
 *Private Endpoint*:: A network interface for accessing Capella services through private network connections rather than the public Internet, enhancing security and performance.
 
 *PrivateLink*:: A cloud provider feature (AWS PrivateLink, GCP Private Service Connect) that enables private connectivity to Capella without exposing traffic to the Internet.
+
+Projection:: The set of fields returned by a {sqlpp} query.
 
 *Prompt*:: In AI applications, the input text provided to a large language model that guides its response generation.
 Capella Agent Catalog helps manage prompts.
@@ -351,6 +359,8 @@ Capella Agent Catalog helps manage prompts.
 *Role*:: A defined set of permissions that can be assigned to users for access control, enabling consistent security management across applications and users.
 
 == S
+
+Sargable: A {{sqlpp}} query is sargable if the optimizer is able to select an index to speed up the execution of that query.
 
 *Scalar*:: A single atomic value (number, string, boolean) as opposed to arrays or objects, used in composite vector indexes for filtering.
 
@@ -417,7 +427,9 @@ Supports querying, full CRUD operations, transactions, and analytics.
 
 == U
 
-*UDF (User-Defined Function)*:: A custom function created by users to extend SQL++ capabilities, written in JavaScript for SQL++ and analytics operations.
+*UDF (User-Defined Function)*:: A custom function created by users to extend {sqlpp} capabilities.
+The Query Service, Capella Analytics, and Enterprise Analytics support user-defined functions written in {sqlpp}.
+The Query Service also supports user-defined functions written in JavaScript.
 
 *UNNEST*:: A SQL++ clause that flattens array fields into individual rows, enabling queries on array elements as separate documents.
 
