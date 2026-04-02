@@ -13,7 +13,7 @@ include::home::partial$info-banner.adoc[]
 The Developer Data Platform for Critical Applications in Our AI World.
 
 Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
-Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in a dozen popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
+Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in a dozen popular programming languages, for real-time analytics, and build agentic apps.
 
 
 
@@ -92,7 +92,7 @@ xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
 === icon:rocket[] Develop RAG and Agentic AI Applications
 
 Our Vector Search Service facilitates RAG applications -- and offers the ability to combine searches with our sophisticated Search API.
-Agentic Apps can be built with Agent Catalog (currently in Private Preview).
+Agentic Apps can be built with Agent Catalog.
 
 ////
 // text for AI dev landing page??
@@ -107,6 +107,6 @@ Agentic Apps can be built with Agent Catalog (currently in Private Preview).
 
 
 * xref:cloud:vector-search:vector-search.adoc[Vector Search]
+* xref:ai:build:integrate-agent-with-catalog.adoc[Agent Catalog]
 // billion-scale Vector GSI / Query
-* https://info.couchbase.com/capella-ai-services-signup[Agent Catalog Private Preview]
 // * Other AI? Columnar...
