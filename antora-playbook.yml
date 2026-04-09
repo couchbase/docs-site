@@ -23,6 +23,10 @@ site:
     User-agent: Google-Extended
     Allow: /
     Allow: /*.md$
+    Disallow: /sdk-api/
+    Allow: /sdk-api/*-client/
+    Allow: /sdk-api/couchbase-core-io/
+    Allow: /sdk-api/couchbase-transactions-dotnet/
     # Sitemap and LLM index
     Sitemap: https://docs.couchbase.com/sitemap.xml
     # Access
