@@ -76,10 +76,6 @@ content:
     branches: HEAD
     start_path: home
 
-  - url: https://github.com/couchbaselabs/docs-style-guide
-    branches: main
-    start_paths: [styleguide, ui-ux, pendo]
-
     # Capella & related content
     ############################
 
@@ -94,19 +90,7 @@ content:
     branches: [main]
     start_paths: [docs/public, docs/columnar]
   - url: https://github.com/couchbase/docs-capella
-    branches: [main]
-
-  - url: https://github.com/couchbaselabs/docs-capella-app-services
-    branches: [main]
-
-  - url: https://github.com/couchbaselabs/docs-columnar
-    branches:
-      - main                      # `analytics` component (Capella Analytics)
-      - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
-    # see under Server section below for enterprise-analytics and legacy analytics
-
-  - url: https://github.com/couchbaselabs/docs-ai
-    branches: [main]
+    branches: [AV-127251_7.6.11-release]
 
     # Couchbase Autonomous Kubernetes Operator
     ############################
@@ -127,22 +111,6 @@ content:
     branches: [0.2.x]
     start_path: docs
 
-    # Connectors
-    ############################
-
-  - url: https://github.com/couchbase/docs-elastic-search
-    branches: [main]
-  - url: https://github.com/couchbase/docs-kafka
-    branches: [release/4.3, release/4.2]
-  - url: https://github.com/couchbase/docs-spark
-    branches: [release/3.5, release/3.3]
-  - url: https://github.com/couchbase/docs-tableau
-    branches: [release/1.1, release/1.0]
-  - url: https://github.com/couchbase/docs-connectors-power-bi
-    branches: [release/1.2, release/1.1, release/1.0]
-  - url: https://github.com/couchbase/docs-connectors-superset.git
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-connectors-talend
 
     # Server
     ############################
@@ -209,80 +177,6 @@ content:
 
   - url: https://github.com/couchbase/docs-sdk-extensions
     branches: [main]
-
-    # Analytics SDKs (aka Columnar)
-    ############################
-
-  - url: https://github.com/couchbase/docs-columnar-sdk-common
-    branches: [release/1.0]
-
-  - url: https://github.com/couchbase/docs-columnar-sdk-go
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-columnar-sdk-java
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-columnar-sdk-python
-    branches: [release/1.0]
-
-  - url: https://github.com/couchbase/docs-analytics-sdk-common
-    branches: [release/1.0]
-
-  - url: https://github.com/couchbase/docs-analytics-sdk-dotnet
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-analytics-sdk-go
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-analytics-sdk-java
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-analytics-sdk-nodejs
-    branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-analytics-sdk-python
-    branches: [release/1.0]
-
-    # Mobile
-    ############################
-
-    # possibly legacy shared content
-  - url: https://github.com/couchbase/docs-mobile
-    branches: [release/3.1, release/2.8]
-
-  - url: https://github.com/couchbase/docs-couchbase-lite
-    branches: [release/4.0, release/3.3, release/3.2, release/3.1, release/3.0, release/2.8]
-
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
-    branches: [release/1.0]
-
-  - url: https://github.com/couchbase/docs-sync-gateway
-    branches: [release/4.0, release/3.3, release/3.2, release/3.1, release/3.0, release/2.8]
-
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
-    branches: [release/1.0]
-
-  - url: https://github.com/couchbase/edge-server
-    branches: [main]
-    start_path: docs
-
-    # random mobile tutorials
-  - url: https://github.com/couchbaselabs/mobile-travel-sample
-    branches: [master]
-    start_path: content
-  - url: https://github.com/couchbaselabs/mobile-training-todo
-    branches: tutorials
-    start_path: content
-  - url: https://github.com/couchbaselabs/UniversityLister-Android
-    start_path: content
-  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile
-    branches: [standalone, query, sync, backgroundfetch]
-    start_path: content
-  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-xamarin
-    branches: [standalone, query, sync]
-    start_path: content
-  - url: https://github.com/couchbaselabs/userprofile-couchbase-mobile-android
-    branches: [standalone, query, sync]
-    start_path: content
-  - url: https://github.com/couchbaselabs/couchbase-lite-peer-to-peer-sync-examples
-    branches: [master]
-    start_path: content
 
 asciidoc:
   attributes:
