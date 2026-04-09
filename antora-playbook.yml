@@ -22,6 +22,7 @@ site:
     User-agent: PerplexityBot
     User-agent: Google-Extended
     Allow: /
+    Allow: /*.md$
     # Sitemap and LLM index
     Sitemap: https://docs.couchbase.com/sitemap.xml
     # Access
