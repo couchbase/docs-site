@@ -77,7 +77,7 @@ content:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-13935-capella-type-AI-and-app-services-4/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14221-move-to-ask-ai-3/ui-bundle.zip
 
 asciidoc:
   attributes:
