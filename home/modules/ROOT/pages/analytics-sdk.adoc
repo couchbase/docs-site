@@ -2,7 +2,7 @@
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :page-rank: 75
-:page-nav-header-levels: 2
+:page-nav-header-levels: 1
 :dotnet: .NET
 :!sectids:
 // :page-aliases: columnar-sdk.adoc

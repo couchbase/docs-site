@@ -4,7 +4,7 @@
 :page-rank: 85
 :!sectids:
 :icons: font
-:page-nav-header-levels: 2
+:page-nav-header-levels: 1
 :page-aliases: cloud::index.adoc
 :page-for-review:
 
