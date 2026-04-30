@@ -4,7 +4,7 @@ set -euo pipefail
 RG='rg --no-heading --no-messages --only-matching --no-line-number --no-filename --type html'
 OUT=$(mktemp)
 
-siteDir=./public
+siteDir=${1:-./public}
 
 (
     # Capture FA5 class usage (fas|far|fal|fab)
