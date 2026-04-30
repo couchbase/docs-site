@@ -64,7 +64,7 @@ site:
     google_analytics: null
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14221-move-to-ask-ai-plus-refactor-templates-3/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14221-move-to-ask-ai-NaN/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
