@@ -20,7 +20,7 @@ Agent Tracer:: A monitoring tool in Capella AI Services that tracks and visualiz
 Aggregation:: The process of combining multiple data values into a single result using {sqlpp} operations like SUM, COUNT, AVG, MIN, and MAX with GROUP BY clauses.
 
 Analytics Service:: Couchbase's legacy analytics capabilities.
-For current analytics capabilities, see Capella Analytics for the managed service, or Enterprise Analytics for on-premises deployments.
+For current analytics capabilities, see xref:analytics:intro:intro.adoc[Capella Analytics] for the managed service, or xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] for on-premises deployments.
 
 Analyzer:: A part of the Search Service.
 An analyzer is a part of a Search index that filters and modifies content to improve matches for search results.
@@ -89,7 +89,6 @@ Capella App Services:: See App Services.
 
 Capella iQ:: An AI-powered assistant in Capella that helps write and optimize SQL++ queries, provides insights into query results, and offers recommendations based on natural language input.
 
-Capella Model Service:: A capability within Capella AI Services to deploy and manage Large Language Models (LLMs) and embedding models alongside your data for AI-driven applications.
 
 Cardinality:: The number of unique values in a dataset or index field, which impacts index performance, storage requirements, and query optimization.
 
@@ -234,7 +233,7 @@ Field Level Encryption:: Encryption applied to specific fields within documents 
 
 Flex Index:: An index that uses adaptive indexing techniques, enabling search on any field without a pre-defined schema and providing flexibility for evolving data models.
 
-Free Tier:: A no-cost Capella offering that provides limited resources for evaluation, testing, and learning Couchbase features without requiring payment information initially.
+Free Tier:: A no-cost Capella offering that provides limited resources for evaluation, testing, and learning Couchbase Capella features without requiring payment information.
 
 Full-Text Search:: A legacy term for the Search Service, which describes some of its capabilities.
 For more information about the Search Service, see xref:search:search.adoc[].
@@ -314,6 +313,7 @@ Key-Value Operations:: Direct document operations using document keys, providing
 Keyspace:: Any store of key-value data which a {sqlpp} query can use as data source. 
 A keyspace may be a collection, or a catalog in the `system` namespace.
 You must refer to a keyspace using a keyspace reference.
+For more information, see xref:server:n1ql:n1ql-intro/queriesandresults.adoc#logical-hierarchy[Logical Hierarchy].
 
 == L
 
@@ -335,7 +335,9 @@ MERGE:: A DML statement that combines INSERT and UPDATE logic, allowing conditio
 
 Metrics:: Quantitative measurements of system performance and behavior, including query latency, throughput, memory usage, and other operational statistics.
 
-Model Service:: See Capella Model Service.
+Model Service:: A capability within Capella AI Services to deploy and manage Large Language Models (LLMs) and embedding models alongside your data for AI-driven applications.
+
+Model Service API:: A secure REST API that enables you to invoke deployed machine learning models and retrieve inference results from Capella AI Services.
 
 MPP (Massively Parallel Processing):: A computation architecture used by Capella Analytics where many processors work simultaneously on different parts of a query, enabling fast analysis of large datasets.
 
@@ -367,6 +369,7 @@ Orphan Request Logging:: A diagnostic feature that tracks requests that do not r
 == P
 
 Pagination:: Splitting a resultset into pages, each containing a specified number of documents, for display purposes.
+For more information, see xref:server:n1ql:n1ql-language-reference/limit.adoc[] and xref:server:n1ql:n1ql-language-reference/offset.adoc[].
 
 Parameterized Query:: A SQL++ query using placeholders for dynamic values, improving security by preventing injection attacks and performance through query plan caching.
 
@@ -382,9 +385,9 @@ Primary Index:: An index covering all documents in a collection using the docume
 
 Private Endpoint:: A network interface for accessing Capella services through private network connections rather than the public Internet, enhancing security and performance.
 
-PrivateLink:: A cloud provider feature (AWS PrivateLink, GCP Private Service Connect) that enables private connectivity to Capella without exposing traffic to the Internet.
 
 Projection:: The set of fields returned by a {sqlpp} query.
+For more information, see xref:n1ql:n1ql-language-reference/selectclause.adoc[].
 
 Prompt:: In AI applications, the input text provided to a large language model that guides its response generation.
 Capella Agent Catalog helps manage prompts.
@@ -428,6 +431,7 @@ Role:: A defined set of permissions that can be assigned to users for access con
 == S
 
 Sargable:: A {{sqlpp}} query is sargable if the optimizer is able to select an index to speed up the execution of that query.
+For more information, see xref:server:n1ql:n1ql-language-reference/selectintro.adoc#index-selection[Index Selection].
 
 Scalar:: A single atomic value (number, string, boolean) as opposed to arrays or objects, used in composite vector indexes for filtering.
 
