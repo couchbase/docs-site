@@ -101,11 +101,8 @@ content:
 
     # shared content for Server & Capella
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [release/8.0, release/7.6, release/7.2, capella]
+    branches: [release/8.0, capella]
 
-  - url: https://github.com/couchbaselabs/cb-swagger
-    branches: [release/8.0, release/7.6, release/7.2, capella]
-    start_path: docs
   - url: https://github.com/couchbasecloud/couchbase-cloud
     branches: [main]
     start_paths: [docs/public, docs/columnar]
@@ -122,26 +119,16 @@ content:
     # see under Server section below for enterprise-analytics and legacy analytics
 
   - url: https://github.com/couchbaselabs/docs-ai
-    branches: [main]
+    branches: [AV-126757-agent-mem-preview]
 
     # Couchbase Autonomous Kubernetes Operator
     ############################
 
     # Generated content remains in monorepo
-  - url: https://github.com/couchbase/couchbase-operator
-    branches: [2.9.x, 2.8.x, 2.7.x, 2.6.x, 2.5.x]
-    start_path: docs/user
+
 
     # handwritten content lives in docs-operator.
-  - url: https://github.com/couchbase/docs-operator
-    branches: [release/2.9, release/2.8, release/2.7, release/2.6, release/2.5]
 
-  - url: https://github.com/couchbaselabs/observability
-    branches: [0.2.x]
-    start_path: docs
-  - url: https://github.com/couchbaselabs/cbmultimanager
-    branches: [0.2.x]
-    start_path: docs
 
     # Connectors
     ############################
@@ -167,13 +154,6 @@ content:
     branches: [release/2.1, release/2.0]
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/8.0, release/7.6, release/7.2]
-
-  - url: https://github.com/couchbase/couchbase-cli
-    branches: [morpheus, trinity, neo]
-    start_path: docs
-  - url: https://github.com/couchbase/backup
-    branches: [morpheus, trinity, neo]
-    start_path: docs
 
     # NOTE docs-server is currently after other server repos so nav key wins
 
