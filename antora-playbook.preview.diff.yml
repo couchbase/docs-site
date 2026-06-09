@@ -43,6 +43,9 @@ content:
   sources:
   - url: https://github.com/couchbaselabs/docs-ai
     branches: [main]
+    start_paths:
+      - .
+      - mcp-server
 
   - url: https://github.com/couchbaselabs/docs-capella-app-services
     branches: [main]
