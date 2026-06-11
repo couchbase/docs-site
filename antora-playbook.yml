@@ -46,10 +46,9 @@ site:
     # see https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2963243023/FAQ+how+does+the+top+nav+bar+work
     nav_groups: |
       [
-        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
+        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "operator", "enterprise-analytics"] },
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
         { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "app-services", "ai", "analytics"] },
-        { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
         { "title": "CMOS", "components": ["cmos"] },
         { "title": "Develop", "startPage": "home::developer.adoc",
             "subGroups": [
