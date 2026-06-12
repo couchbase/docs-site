@@ -99,6 +99,7 @@ asciidoc:
     page-rank: 50@
     xrefstyle: short
     ai: AI Data Plane
+    ai-long: Couchbase AI Data Plane
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     sqlpp: SQL++
