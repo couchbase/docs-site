@@ -282,13 +282,13 @@ content:
     branches: [release/1.1, release/1.0]
 
   - url: https://github.com/couchbase/docs-analytics-sdk-dotnet
-    branches: [DOC-14371--2.2-features, release/1.0]
+    branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-go
     branches: [DOC-14372--2.2-features, release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-java
-    branches: [DOC-14373--2.2-features, release/1.0]
+    branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-nodejs
-    branches: [DOC-14374--2.2-features, release/1.0]
+    branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-python
     branches: [release/1.1, release/1.0]
 
