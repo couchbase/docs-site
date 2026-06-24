@@ -6,8 +6,9 @@ Couchbase enables applications to handle massive data volumes and high concurren
 
 # AI Data Plane Launch June 2026
 
-As of June 2026, AI Services has become the Couchbase AI Data Plane.
+As of June 2026, the AI Data Plane has launched.
+Existing AI Services have become features of the Couchbase AI Data Plane.
 The AI Data Plane solves AI-ready data for your business and is fully compatible with other Couchbase services, whether you're self-managed with Couchbase Server Enterprise Edition or fully managed through Couchbase Capella.
 AI Data Plane services include Agent Memory, Data Processing Services, Agent Catalog, Model Service and AI Functions.
-See xref:ai:get-started:intro.adoc[here for more information about the AI Data Plane].
-Get enterprise support by registering for a trial here: https://www.couchbase.com/downloads/?family=ai-data-plane[licensing {ai-long}^].
+See https://docs.couchbase.com/ai/get-started/intro.html[here for more information about the Couchbase AI Data Plane].
+Get enterprise support by registering for a trial here: https://www.couchbase.com/downloads/?family=ai-data-plane[licensing the Couchbase AI Data Plane^].
