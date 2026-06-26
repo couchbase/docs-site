@@ -284,7 +284,7 @@ content:
   - url: https://github.com/couchbase/docs-analytics-sdk-dotnet
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-go
-    branches: [DOC-14372--2.2-features, release/1.0]
+    branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-java
     branches: [release/1.1, release/1.0]
   - url: https://github.com/couchbase/docs-analytics-sdk-nodejs
