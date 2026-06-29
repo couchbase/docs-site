@@ -15,7 +15,7 @@ urls:
   latest_version_segment: current
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-229/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-231/ui-bundle.zip
 output:
   dir: ./public
 runtime:
