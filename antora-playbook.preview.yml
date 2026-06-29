@@ -49,6 +49,9 @@ site:
           "startPage": "home::cloud.adoc",
           "components": ["cloud", "app-services", "ai", "analytics"],
           "expandHeaderLevels": 1 },
+        { "title": "AI Data Plane",
+            "startPage": "ai:get-started:intro.adoc", 
+            "components": ["ai", "mcp-server"] },
         { "title": "Develop",
           "startPage": "home::developer.adoc",
             "subGroups": [
