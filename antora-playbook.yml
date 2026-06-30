@@ -360,7 +360,7 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-231/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-230/ui-bundle.zip
 output:
   dir: ./public
 runtime:
