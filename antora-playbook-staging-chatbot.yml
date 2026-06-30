@@ -34,27 +34,41 @@ site:
   keys:
     nav_groups: >
       [
-        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "app-services", "ai", "analytics"] },
-        { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
-        { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Develop", "startPage": "home::developer.adoc",
+        { "title": "Server",
+          "startPage": "home::server.adoc",
+          "components": ["server", "operator", "enterprise-analytics"]
+        },
+        { "title": "Mobile / Edge",
+          "startPage": "home::mobile.adoc",
+          "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"]
+        },
+        { "title": "Capella",
+          "startPage": "home::cloud.adoc",
+          "components": ["cloud", "app-services", "analytics"],
+          "expandHeaderLevels": 1 },
+        { "title": "AI Data Plane",
+          "startPage": "ai:get-started:intro.adoc", 
+          "components": ["ai", "mcp-server"] },
+        { "title": "Develop",
+          "startPage": "home::developer.adoc",
             "subGroups": [
               {
                 "title": "Operational SDKs",
                 "startPage": "home::sdk.adoc",
-                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
+                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+                "expandHeaderLevels": 1
               },
               {
                 "title": "Analytics SDKs",
                 "startPage": "home::analytics-sdk.adoc",
-                "components": ["*-analytics-sdk", "*-columnar-sdk"]
+                "components": ["*-analytics-sdk", "*-columnar-sdk"],
+                "expandHeaderLevels": 1
               }
             ]
           },
-        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
-        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
+        { "title": "Contribute",
+          "components": ["home", "styleguide", "ui-ux", "pendo"]
+        }
       ]
     google_analytics: null
 ui:
@@ -86,6 +100,8 @@ asciidoc:
     page-toclevels: 1@
     page-rank: 50@
     xrefstyle: short
+    ai: AI Data Plane
+    ai-long: Couchbase AI Data Plane
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     sqlpp: SQL++
@@ -141,6 +157,9 @@ content:
     - url: https://github.com/couchbaselabs/docs-ai
       branches:
         - main
+    - url: https://github.com/couchbaselabs/docs-mcp-server
+      branches:
+        - main
     - url: https://github.com/couchbase/couchbase-operator
       branches:
         - 2.9.x
@@ -177,9 +196,9 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-connectors-power-bi
       branches:
+        - release/1.3
         - release/1.2
         - release/1.1
-        - release/1.0
     - url: https://github.com/couchbase/docs-connectors-superset.git
       branches:
         - release/1.0
@@ -188,6 +207,7 @@ content:
         - master
     - url: https://github.com/couchbaselabs/docs-enterprise-analytics
       branches:
+        - release/2.2
         - release/2.1
         - release/2.0
     - url: https://github.com/couchbase/docs-analytics
@@ -247,14 +267,14 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
+        - release/3.12
         - release/3.11
         - release/3.10
-        - release/3.9
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
+        - release/1.4
         - release/1.3
         - release/1.2
-        - release/1.1
     - url: https://github.com/couchbase/docs-sdk-kotlin
       branches:
         - release/3.9
@@ -264,29 +284,29 @@ content:
         - release/1.2
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
+        - release/3.12
         - release/3.11
         - release/3.10
-        - release/3.9
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
         - temp/4.6
+        - temp/4.7
         - temp/4.5
-        - temp/4.4
     - url: https://github.com/couchbase/docs-sdk-php
       branches:
         - temp/4.4
+        - temp/4.5
         - temp/4.3
-        - temp/4.2
     - url: https://github.com/couchbase/docs-sdk-python
       branches:
         - temp/4.5
+        - release/4.6
         - temp/4.4
-        - temp/4.3
     - url: https://github.com/couchbase/docs-sdk-ruby
       branches:
         - temp/3.7
+        - temp/3.8
         - temp/3.6
-        - temp/3.5
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
         - main
@@ -307,21 +327,27 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-analytics-sdk-common
       branches:
+        - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-analytics-sdk-dotnet
       branches:
+        - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-analytics-sdk-go
       branches:
+        - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-analytics-sdk-java
       branches:
+        - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-analytics-sdk-nodejs
       branches:
+        - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-analytics-sdk-python
       branches:
+        - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/docs-mobile
       branches:

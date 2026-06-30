@@ -106,13 +106,13 @@ xref:couchbase-edge-server:introduction:intro.adoc[Couchbase Edge Server]
 
 {empty} +
 
-.Capella AI Services
+.The {ai-long}
 
 [.content]
-Capella AI Services is a fully managed set of tools that help you build, deploy, and scale your agentic and retrieval-augmented generation (RAG) AI applications.
+The {ai-long} is a fully managed set of tools that help you build, deploy, and scale your agentic and retrieval-augmented generation (RAG) AI applications.
 These tools integrate seamlessly with the Couchbase Capella cloud platform, enabling you to develop your AI applications on the same platform as your data.
 
-xref:ai:get-started:intro.adoc[Capella AI Services]
+xref:ai:get-started:intro.adoc[The {ai-long}]
 
 ++++
 </div>
