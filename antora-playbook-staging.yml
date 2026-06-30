@@ -162,7 +162,7 @@ content:
         - legacy-columnar-component
     - url: https://github.com/couchbaselabs/docs-ai
       start_paths:
-        - .
+        - ./
         - mcp-server
       branches:
         - AV-133854-ai-services-rename

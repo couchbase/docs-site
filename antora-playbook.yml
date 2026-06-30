@@ -137,7 +137,7 @@ content:
 
   - url: https://github.com/couchbaselabs/docs-ai
     start_paths:
-      - .
+      - ./
       - mcp-server
     branches: [main]
 
