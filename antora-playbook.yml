@@ -155,7 +155,7 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/AV-135161_add-icons/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/AV-135161_add-icons-1/ui-bundle.zip
 output:
   dir: ./public
 runtime:
