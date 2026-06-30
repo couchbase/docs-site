@@ -165,7 +165,7 @@ content:
         - .
         - mcp-server
       branches:
-        - main
+        - AV-133854-ai-services-rename
     - url: https://github.com/couchbase/couchbase-operator
       branches:
         - 2.9.x
