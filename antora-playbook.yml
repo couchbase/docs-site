@@ -291,7 +291,7 @@ content:
     branches: [release/1.1, release/1.0]
 
   - url: https://github.com/couchbase/edge-server
-    branches: [release/1.0]
+    branches: [release/1.1, release/1.0]
     start_path: docs
 
     # random mobile tutorials
