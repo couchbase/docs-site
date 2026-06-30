@@ -136,9 +136,8 @@ content:
     # see under Server section below for enterprise-analytics and legacy analytics
 
   - url: https://github.com/couchbaselabs/docs-ai
-    start_paths:
-      - ./
-      - mcp-server
+    branches: [main]
+  - url: https://github.com/couchbaselabs/docs-mcp-server
     branches: [main]
 
     # Couchbase Autonomous Kubernetes Operator

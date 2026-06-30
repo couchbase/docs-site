@@ -117,9 +117,9 @@ content:
         - main
         - legacy-columnar-component
     - url: https://github.com/couchbaselabs/docs-ai
-      start_paths:
-        - .
-        - mcp-server
+      branches:
+        - main
+    - url: https://github.com/couchbaselabs/docs-mcp-server
       branches:
         - main
     - url: https://github.com/couchbase/couchbase-operator
@@ -172,6 +172,7 @@ content:
     - url: https://github.com/couchbase/docs-connectors-talend
     - url: https://github.com/couchbaselabs/docs-enterprise-analytics
       branches:
+        - release/2.2
         - release/2.1
         - release/2.0
     - url: https://github.com/couchbase/docs-analytics
