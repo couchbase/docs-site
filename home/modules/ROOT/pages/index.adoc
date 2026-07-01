@@ -85,8 +85,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Couchbase Lite
-* https://cbl-reactnative.dev/[Couchbase Lite React Native 1.1]
-* xref:4.0@couchbase-lite::index.adoc[Version 4.1]
+* xref:4.1@couchbase-lite::index.adoc[Version 4.1]
 * xref:4.0@couchbase-lite::index.adoc[Version 4.0]
 * xref:3.3@couchbase-lite::index.adoc[Version 3.4]
 * xref:3.3@couchbase-lite::index.adoc[Version 3.3]
@@ -103,8 +102,13 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 * xref:1.3@couchbase-lite::index.adoc[Version 1.3]
 
 [.tile]
+.Couchbase Lite React Native
+* https://cbl-reactnative.dev/[Couchbase Lite React Native 1.1]
+* https://cbl-reactnative.dev/1.0[Couchbase Lite React Native 1.0]
+
+[.tile]
 .Couchbase Sync Gateway
-* xref:4.0@sync-gateway::index.adoc[Version 4.1]
+* xref:4.1@sync-gateway::index.adoc[Version 4.1]
 * xref:4.0@sync-gateway::index.adoc[Version 4.0]
 * xref:3.3@sync-gateway::index.adoc[Version 3.3]
 * xref:3.2@sync-gateway::index.adoc[Version 3.2]
