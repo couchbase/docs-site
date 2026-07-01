@@ -103,8 +103,8 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Couchbase Lite React Native
-* https://cbl-reactnative.dev/[Couchbase Lite React Native 1.1]
-* https://cbl-reactnative.dev/1.0[Couchbase Lite React Native 1.0]
+* https://cbl-reactnative.dev/[CBL React Native 1.1]
+* https://cbl-reactnative.dev/1.0[CBL React Native 1.0]
 
 [.tile]
 .Couchbase Sync Gateway
