@@ -22,7 +22,7 @@ Capella is a Couchbase-managed offering of our operational and analytics databas
 Find current documentation on the https://docs.couchbase.com/home/cloud.html[Capella pages].
 
 [.tiles.browse]
-== Couchbase Server
+== Couchbase Server & AI Data Plane
 
 [.tile]
 .Server
