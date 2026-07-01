@@ -18,11 +18,11 @@ endif::[]
 [.tiles.browse]
 == Couchbase Capella
 
-Capella is a Couchbase-managed offering of our operational and analytics databases, App Services to connect edge devices, and AI Services.
+Capella is a Couchbase-managed offering of our operational and analytics databases, App Services to connect edge devices, and AI Data Plane.
 Find current documentation on the https://docs.couchbase.com/home/cloud.html[Capella pages].
 
 [.tiles.browse]
-== Couchbase Server
+== Couchbase Server & AI Data Plane
 
 [.tile]
 .Server
@@ -69,15 +69,25 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Couchbase Enterprise Analytics
-* xref:1.0@enterprise-analytics:intro:intro.adoc[Version 1.0]
+* xref:2.2@enterprise-analytics:intro:intro.adoc[Version 2.2]
+* xref:2.1@enterprise-analytics:intro:intro.adoc[Version 2.1]
+* xref:2.0@enterprise-analytics:intro:intro.adoc[Version 2.0]
 
+[.tile]
+.(Self-Managed) AI Data Plane
+* https://pypi.org/project/agentc/1.1.0/[Agent Catalog 1.1]
+* https://pypi.org/project/agentc/1.0.0/[Agent Catalog 1.0]
+* https://pypi.org/project/couchbase-agent-memory/[Agent Memory 1.0]
+* https://pypi.org/project/couchbase-mcp-server/1.0.0/[MCP Server 1.0]
 
 [.tiles.browse]
 == Couchbase Mobile
 
 [.tile]
 .Couchbase Lite
+* xref:4.0@couchbase-lite::index.adoc[Version 4.1]
 * xref:4.0@couchbase-lite::index.adoc[Version 4.0]
+* xref:3.3@couchbase-lite::index.adoc[Version 3.4]
 * xref:3.3@couchbase-lite::index.adoc[Version 3.3]
 * xref:3.2@couchbase-lite::index.adoc[Version 3.2]
 * xref:3.1@couchbase-lite::index.adoc[Version 3.1]
@@ -93,6 +103,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Couchbase Sync Gateway
+* xref:4.0@sync-gateway::index.adoc[Version 4.1]
 * xref:4.0@sync-gateway::index.adoc[Version 4.0]
 * xref:3.3@sync-gateway::index.adoc[Version 3.3]
 * xref:3.2@sync-gateway::index.adoc[Version 3.2]
@@ -110,6 +121,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Couchbase Edge Server
+* xref:1.0@couchbase-edge-server:introduction:intro.adoc[Version 1.1]
 * xref:1.0@couchbase-edge-server:introduction:intro.adoc[Version 1.0]
 
 [.tiles.browse]
@@ -319,22 +331,27 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .{dotnet-attr} SDK
+* xref:dotnet-analytics-sdk:hello-world:overview.adoc[Version 1.1]
 * xref:dotnet-analytics-sdk:hello-world:overview.adoc[Version 1.0]
 
 [.tile]
 .Go SDK
+* xref:go-analytics-sdk:hello-world:overview.adoc[Version 1.1]
 * xref:go-analytics-sdk:hello-world:overview.adoc[Version 1.0]
 
 [.tile]
 .Java SDK
+* xref:java-analytics-sdk:hello-world:overview.adoc[Version 1.1]
 * xref:java-analytics-sdk:hello-world:overview.adoc[Version 1.0]
 
 [.tile]
 .Node.js SDK
+* xref:nodejs-analytics-sdk:hello-world:overview.adoc[Version 1.1]
 * xref:nodejs-analytics-sdk:hello-world:overview.adoc[Version 1.0]
 
 [.tile]
 .Python SDK
+* xref:python-analytics-sdk:hello-world:overview.adoc[Version 1.1]
 * xref:python-analytics-sdk:hello-world:overview.adoc[Version 1.0]
 
 
@@ -404,6 +421,6 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 .Others
 * xref:server:connectors:odbc-jdbc-drivers.adoc[ODBC/JDBC Drivers]
 * xref:4.6@server:connectors:hadoop-1.2/hadoop.adoc[Hadoop Connector 1.2]
-* Power BI Connector: xref:1.2@power-bi-connector:ROOT:index.adoc[1.2] | xref:1.1@power-bi-connector:ROOT:index.adoc[1.1] | xref:1.0@power-bi-connector:ROOT:index.adoc[1.0]
-* Tableau Connector: xref:1.0@tableau-connector:ROOT:index.adoc[1.0] | xref:1.1@tableau-connector:ROOT:index.adoc[1.1]
+* Power BI Connector: xref:1.3@power-bi-connector:ROOT:index.adoc[1.3] | xref:1.2@power-bi-connector:ROOT:index.adoc[1.2] | xref:1.1@power-bi-connector:ROOT:index.adoc[1.1] | xref:1.0@power-bi-connector:ROOT:index.adoc[1.0]
+* Tableau Connector: xref:2.0@tableau-connector:ROOT:index.adoc[2.0] | xref:1.2@tableau-connector:ROOT:index.adoc[1.2] xref:1.1@tableau-connector:ROOT:index.adoc[1.1] | xref:1.0@tableau-connector:ROOT:index.adoc[1.0]
 * xref:superset-connector:ROOT:index.adoc[Apache Superset Connector]
