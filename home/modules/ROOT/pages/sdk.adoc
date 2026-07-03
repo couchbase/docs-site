@@ -277,15 +277,15 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 
 | Couchbase Lite C and {cpp}
 | xref:couchbase-lite:c:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/4.1.0/couchbase-lite-c[API Reference]
+| https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-c[API Reference]
 
 | Couchbase Lite .NET (C#)
 | xref:couchbase-lite:csharp:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/4.1.0/couchbase-lite-net[API Reference]
+| https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-net[API Reference]
 
 | Couchbase Lite Java
 | xref:couchbase-lite:java:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/4.1.0/couchbase-lite-java/index.html?[API Reference]
+| https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-java/index.html?[API Reference]
 
 | Couchbase Lite JavaScript (Ionic, Flutter, and React Native)
 | xref:couchbase-lite::javascript.adoc[Docs]
@@ -293,7 +293,7 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 
 | Couchbase Lite Swift
 | xref:couchbase-lite:swift:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/4.1.0/couchbase-lite-swift[API Reference]
+| https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-swift[API Reference]
 |===
 
 [.column]
