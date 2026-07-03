@@ -11,6 +11,6 @@ cd .. || exit
 echo "Running log build ..."
 
 echo "Building site ..."
-npx antora --clean --stacktrace ./doc-12476-antora-playbook.yml
+npx antora --stacktrace ./doc-12476-antora-playbook.yml
 
 
