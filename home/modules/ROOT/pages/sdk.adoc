@@ -1,5 +1,5 @@
 = SDKs & Connectors
-:page-aliases: sdks:intro.adoc,7.0@server:sdk:overview.adoc,7.1@server:sdk:overview.adoc,7.2@server:sdk:overview.adoc,7.6@server:sdk:overview.adoc,7.0@server:install:install-client-server.adoc,7.1@server:install:install-client-server.adoc,7.2@server:install:install-client-server.adoc,7.6@server:install:install-client-server.adoc
+:page-aliases: sdks:intro.adoc,8.0@server:sdk:overview.adoc,7.6@server:sdk:overview.adoc,7.2@server:sdk:overview.adoc,8.0@server:install:install-client-server.adoc,7.6@server:install:install-client-server.adoc,7.2@server:install:install-client-server.adoc
 :page-layout: landing-page-top-level-sdk
 :page-nav-header-levels: 1
 :page-role: tiles
@@ -271,29 +271,29 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 |===
 | Mobile Platform | Documentation | API Reference
 
-| Couchbase Lite Java Android
+| Couchbase Lite Android (Java and Kotlin)
 | xref:couchbase-lite:android:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-android/[API Reference]
+| https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-android/[API Reference]
 
-| Couchbase Lite C#
+| Couchbase Lite C and {cpp}
+| xref:couchbase-lite:c:quickstart.adoc[Docs]
+| https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-c[API Reference]
+
+| Couchbase Lite .NET (C#)
 | xref:couchbase-lite:csharp:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-net[API Reference]
+| https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-net[API Reference]
 
 | Couchbase Lite Java
 | xref:couchbase-lite:java:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-java/index.html?[API Reference]
+| https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-java/index.html?[API Reference]
 
-| Couchbase Lite Objective-C
-| xref:couchbase-lite:objc:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-objc[API Reference]
+| Couchbase Lite JavaScript (Ionic, Flutter, and React Native)
+| xref:couchbase-lite::javascript.adoc[Docs]
+| 
 
 | Couchbase Lite Swift
 | xref:couchbase-lite:swift:quickstart.adoc[Docs]
-| http://docs.couchbase.com/mobile/3.2.0/couchbase-lite-swift[API Reference]
-
-| Couchbase Lite JavaScript
-| xref:couchbase-lite::javascript.adoc[Docs]
-| 
+| https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-swift[API Reference]
 |===
 
 [.column]
