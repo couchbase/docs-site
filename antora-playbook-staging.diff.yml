@@ -3,6 +3,7 @@ antora:
   - ./lib/report-tree.js
   - ./lib/site-stats-extension.js
   - ./lib/component-stats.js
+  - ./lib/site-dependencies.js
 
 site:
   title: Couchbase Docs Staging
