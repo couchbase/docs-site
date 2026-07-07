@@ -102,7 +102,7 @@ site:
               }
             ]
         },
-        { "title": "AI Services", "startPage": "ai:get-started:intro.adoc", "components": ["ai"] },
+        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
       ]
