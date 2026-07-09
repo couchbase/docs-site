@@ -15,7 +15,7 @@ urls:
   latest_version_segment: current
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-230/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-229/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -351,7 +351,9 @@ content:
         - release/2.8
     - url: https://github.com/couchbase/docs-couchbase-lite
       branches:
+        - release/4.1
         - release/4.0
+        - release/3.4
         - release/3.3
         - release/3.2
         - release/3.1
@@ -362,6 +364,7 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sync-gateway
       branches:
+        - release/4.1
         - release/4.0
         - release/3.3
         - release/3.2
@@ -370,10 +373,12 @@ content:
         - release/2.8
     - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
       branches:
+        - release/1.1
         - release/1.0
     - url: https://github.com/couchbase/edge-server
       branches:
-        - main
+        - release/1.1
+        - release/1.0
       start_path: docs
     - url: https://github.com/couchbaselabs/mobile-travel-sample
       branches:
@@ -407,12 +412,6 @@ content:
       branches:
         - master
       start_path: content
-    - url: https://github.com/couchbaselabs/docs-ai
-      branches:
-        - main
-      start_paths:
-        - .
-        - mcp-server
     - url: https://github.com/couchbaselabs/docs-capella-app-services
       branches:
         - main
