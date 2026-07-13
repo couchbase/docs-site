@@ -418,6 +418,8 @@ content:
     - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
       branches:
         - release/1.0
+    - url: https://github.com/couchbaselabs/docs-fleetmanager
+      branches: main
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
