@@ -13,7 +13,7 @@ include::partial$info-banner.adoc[]
 [.content]
 Couchbase Mobile brings the power of NoSQL to the edge.
 The combination of Sync Gateway and Couchbase Lite coupled with the power of Couchbase Server provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
-Enabling you to deploy your offline-first mobile and embedded applications with greater agility on premises or in any cloud.
+This lets you deploy fully featured mobile and embedded applications with greater agility on premises or in any cloud.
 
 [.column]
 ====== {empty}
@@ -46,7 +46,7 @@ Select a product to go to its documentation.
 .Couchbase Lite
 
 [.content]
-Couchbase Lite is an embedded, NoSQL JSON Document Style database for your mobile apps. It natively supports all major operating systems and platforms. Its NoSQL client database provides CRUD, full-text search and query capabilities that runs locally on the device. +
+Couchbase Lite is an embedded, NoSQL JSON document database for your mobile apps. It natively supports all major operating systems and platforms. Its NoSQL client database provides CRUD, full-text search and query capabilities that runs locally on the device. +
 xref:couchbase-lite::introduction.adoc[Go to Couchbase Lite Docs]
 
 [.column]
@@ -61,7 +61,7 @@ xref:sync-gateway::introduction.adoc[Go to Sync Gateway Docs]
 .App Services
 
 [.content]
-Capella App Services is Capella's managed version of Sync Gateway. It runs the same synchronization engine, hosted and operated by Capella, with feature parity to self-managed Sync Gateway. You can use App Services with an embedded Couchbase Lite database in your applications. +
+App Services is Capella's managed version of Sync Gateway, running the same synchronization engine. Feature parity is common but not guaranteed: some Sync Gateway features may not be adopted into App Services, and others are built specifically for App Services as a managed offering. +
 xref:app-services:get-started:configuring-app-services.adoc[Go to App Services Docs]
 
 [.column]
@@ -75,7 +75,7 @@ xref:couchbase-edge-server:introduction:intro.adoc[Go to Edge Server Docs]
 .Couchbase Lite JavaScript
 
 [.content]
-Couchbase Lite JavaScript is a lightweight, offline-first embedded NoSQL JSON document database for browser-based frontend apps. It provides query, indexing, and data synchronization with Capella App Services or Sync Gateway. +
+Couchbase Lite JavaScript is a lightweight, fully featured embedded NoSQL JSON document database for browser-based apps. It provides query, indexing, and data synchronization with Capella App Services or Sync Gateway. +
 xref:couchbase-lite-javascript::introduction.adoc[Go to Couchbase Lite JavaScript Docs]
 
 [.column]
