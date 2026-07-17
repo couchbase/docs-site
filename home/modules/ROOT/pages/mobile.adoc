@@ -21,12 +21,15 @@ This lets you deploy fully featured mobile and embedded applications with greate
 
 == How the pieces fit together
 
-Couchbase Mobile has two deployment paths, depending on whether you self-manage your backend or use Capella.
+Couchbase Mobile supports three deployment patterns.
 
-If you self-manage your backend, Couchbase Lite on the device syncs to Sync Gateway, which connects to Couchbase Server.
-If you use Capella, Couchbase Lite syncs to Capella App Services instead.
-App Services is Capella's managed version of Sync Gateway.
-It runs the same synchronization engine, hosted and operated by Capella, so features built for Sync Gateway ship with matching support in App Services.
+In a self-managed deployment, Couchbase Lite connects to a Sync Gateway that you deploy and operate, and Sync Gateway pushes data to a self-managed Couchbase Server.
+
+In a fully managed deployment, Couchbase Lite connects directly to Capella App Services, and App Services syncs data to your Capella Operational cluster.
+
+In a hybrid deployment, Couchbase Lite connects to a self-managed Sync Gateway, but that Sync Gateway points to a Capella Operational cluster instead of a self-managed Couchbase Server.
+
+App Services is Capella's managed version of Sync Gateway. It runs the same synchronization engine, hosted and operated by Capella. Feature parity between the two is common but not guaranteed, since some Sync Gateway features may not carry over to App Services, and App Services has features of its own.
 
 For resource-constrained environments, such as single-board computers or point-of-sale terminals, Couchbase Edge Server sits between Couchbase Lite devices and the cloud sync layer.
 
