@@ -48,7 +48,7 @@ site:
         [
           { "title": "Server",
             "startPage": "home::server.adoc",
-            "components": ["server", "operator", "enterprise-analytics"]
+            "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"]
           },
           { "title": "Mobile / Edge",
             "startPage": "home::mobile.adoc",
@@ -158,6 +158,9 @@ content:
   - url: https://github.com/couchbaselabs/cbmultimanager
     branches: [0.2.x]
     start_path: docs
+
+  - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
+    branches: release/1.2
 
     # Connectors
     ############################
