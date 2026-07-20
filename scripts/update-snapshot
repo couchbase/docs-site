@@ -90,7 +90,8 @@ git config --global user.name "Tech Comm Team Bot"
 pwd
 git status
 
-droid exec --auto low "/summarize-snapshot" | tee message
+# droid exec --auto low "/summarize-snapshot" | tee message
+echo "Updated snapshot" > message
 git commit -F message
 git push
 
