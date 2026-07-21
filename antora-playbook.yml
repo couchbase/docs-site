@@ -5,6 +5,7 @@
 antora:
   extensions:
   - '@antora/site-generator-ms'
+  - ./lib/site-navigation-data-json.js
   - ./lib/embargo.js
   - ./lib/antora-component-version-rank.js
   - ./lib/llms-txt.js

@@ -61,10 +61,10 @@ runtime:
 antora:
   extensions:
     - "@antora/site-generator-ms"
+    - ./lib/site-navigation-data-json.js
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
-    - ./lib/site-navigation-data-json.js
     - ./lib/report-tree.js
     - ./lib/markdown-for-llm.js
     - ./lib/site-stats-extension.js
