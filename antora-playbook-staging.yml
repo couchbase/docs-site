@@ -23,15 +23,15 @@ runtime:
 antora:
   extensions:
     - "@antora/site-generator-ms"
-    - ./lib/time-content-aggregation.js
-    - ./lib/site-navigation-data-json.js
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
+    - ./lib/llms-txt.js
+    - ./lib/site-navigation-data-json.js
     - ./lib/report-tree.js
     - ./lib/site-stats-extension.js
     - ./lib/component-stats.js
+    - ./lib/time-content-aggregation.js
     - ./lib/site-dependencies.js
-    - ./lib/llms-txt.js
 site:
   title: Couchbase Docs Staging
   url: https://docs-staging.couchbase.com
@@ -47,7 +47,7 @@ site:
       [
         { "title": "Server",
           "startPage": "home::server.adoc",
-          "components": ["server", "operator", "enterprise-analytics"]
+          "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"]
         },
         { "title": "Mobile / Edge",
           "startPage": "home::mobile.adoc",
@@ -188,6 +188,9 @@ content:
       start_path: docs
       branches:
         - master
+    - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
+      branches:
+        - release/1.2
     - url: https://github.com/couchbase/docs-elastic-search
       branches:
         - main

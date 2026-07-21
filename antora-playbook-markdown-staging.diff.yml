@@ -1,5 +1,6 @@
 antora:
   extensions:
+  - ./lib/site-navigation-data-json.js
   - ./lib/report-tree.js
   - ./lib/markdown-for-llm.js
   - ./lib/site-stats-extension.js

@@ -1,8 +1,10 @@
 antora:
   extensions:
+  - ./lib/site-navigation-data-json.js
   - ./lib/report-tree.js
   - ./lib/site-stats-extension.js
   - ./lib/component-stats.js
+  - ./lib/time-content-aggregation.js
   - ./lib/site-dependencies.js
 
 site:
