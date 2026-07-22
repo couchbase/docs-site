@@ -240,6 +240,11 @@ content:
         - trinity
         - neo
       start_path: docs
+
+    - url: https://github.com/couchbaselabs/docs-tooling
+      branches: main
+      start_path: example
+    
     - url: https://github.com/couchbase/docs-server
       branches:
         - release/8.0
