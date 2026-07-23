@@ -1,0 +1,288 @@
+= Couchbase Release Note Generator Design Guide
+:description: This document describes the architecture and high-level design of the Couchbase Release Note Generator.
+:page-topic-type: concept
+:page-pagination: next
+
+:jql-fn: footnote:jql-footnote[JIRA Query Language]
+[abstract]
+{description}
+
+== Overview
+
+Producing release notes for the number of products that Couchbase offers is time-consuming.
+For this reason, the Technical Communications team has created a Python script that can generate release notes from JIRA tickets.
+
+The problem is made slightly more complicated because each product has its own format its release note.
+To get around this problem, the script uses a different template file for each product.
+
+NOTE: The plan is that all the products share the same format.
+
+== Design Goals
+
+When deciding on the design of the Couchbase Release Note Generator, the team considered the following goals:
+
+* Flexibility: The script should be able to handle new products and formats without requiring changes to the Python script.
+* Extensibility: The script should be easy to extend and modify to accommodate new requirements or changes in the JIRA data.
+* Maintainability: The codebase should be well-organized and easy to understand, making it easier to maintain and debug over time.
+* Allow for the optional use of AI to generate the release notes.
+
+== Release Note Generator Process Architecture
+
+The script is designed to be flexible and extendable.
+It uses a modular architecture that allows for the addition of new products and formats.
+
+[mermaid]
+.Release Note Generator Process Flow
+----
+flowchart LR
+
+jira@{shape: disk, label: "Couchbase\n JIRA\n database"}
+script@{shape: process, label: "CB Release Notes Generator\n (Python script)"}
+configuration@{shape: docs, label: "configuration files"}
+templates@{shape: docs, label: "jinja\ntemplates"}
+asciidoc@{shape: lined-document, label: "Generated\n AsciiDoc file"}
+user@{ shape: manual-input, label: "Documentarian"}
+
+jira JtoS@====> script
+templates TtoS@====> script
+configuration CtoS@====> script
+script StoA@====> asciidoc
+user ====> script
+
+JtoS@{curve: linear}
+TtoS@{curve: linear}
+CtoS@{curve: linear}
+StoA@{curve: linear}
+----
+
+. On invocation, the script loads the `release sets` from the configuration file,
+and displays them on screen.
+. The user selects one of the release sets (`Couchbase Server`, `Couchbase Mobile`, `Couchbase Operator` ...)
+. The user enters a series of parameters as defined in the selected `release set`: (`release date`, `release label` ...)
+.The script executes the JQL{empty}{jql-fn} statement defined in the `release set`,
+supplying the parameters entered by the user.
+. The script collects the JIRA tickets that match the query.
+. The script loads the Jinja template defined in the release set and uses it to render the release note as an AsciiDoc file.
+
+
+== Logic Flow
+
+=== Step {counter:flow}: Render the menu options
+
+When the script is invoked, the first thing it does is load the configuration file: `cb_release_notes_config.yaml`.
+This file contains instructions on how to generate release  notes for all supported products, as well as the location of the `.passwords.yaml`,
+a hidden file that contains security tokens for accessing JIRA.
+
+CAUTION: The contents of `.passwords.yaml` should be kept securely on your local machine.
+The file should not be shared or stored under version control.
+
+[source, yaml]
+----
+# Configuration file for the release notes builder
+
+# $schema: ./cb_release_config_schema.yaml
+
+version: "2.2"
+
+password_file: ./.passwords.yaml
+templates_directory: ./templates
+jira_batch_size: 50
+
+release_settings:
+
+  - name: "Fixes and enhancements (Server 8.0+)"
+
+  - name: "Couchbase Mobile"
+
+  - name: "Couchbase Operator"
+
+
+----
+
+At this high level, the contents of the configuration file are pretty straightforward:
+
+[horizontal]
+version::
+The current version number of the release note generator.
+
+password_file::
+The location and name of the password file.
+It is recommended that this file is prefixed with the `.` character which will hide the file under the macOS file system.
+
+templates_directory::
+The location of the JinJa templates that the script will use to render the release notes in AsciiDoc.
+
+jira_batch_size::
+Instead of fetching the Jira tickets in one go, the script can retrieve them in batches of a given size.
++
+NOTE: In practice, a release note shouldn't contain more than 50 tickets,
+so there is probably little point in changing the value.
+
+release_settings::
+Defines the instructions for retrieving the tickets from the Jira database.
+Each setting defines the `name` (as shown) which the script uses to generate an on-screen menu
+from which the user can select the product to generate the release note for.
++
+.Release Notes Generator menu options
+image::release-note-generator/cb-release-notes-menu-options.png[Release Notes Generator menu options]
+
+In the following steps, we'll look at the release set options in more detail.
+
+=== Step {counter:flow}: Get the parameters
+
+In this example, assume that the user has selected the first menu option: `Fixes and enhancements (Server 8.0+)`.
+The script will then load the release set configuration for the selected product:
+[source, yaml]
+----
+- name: "Fixes and enhancements (Server 8.0+)"
+  fields:
+    - name: release_date
+      type: text
+      message: 'Enter the release date (Month Year):'
+    - name: release_number
+      type: text
+      message: 'Enter the release label:'
+    - name: release_text
+      type: text
+      message: 'Enter the release number for the title line:'
+    - name: file_path
+      type: file
+      message: 'Enter the file path for the release notes:'
+
+----
+[#fields]
+The fields represent a list of parameters that the script will ask the user for
+by displaying a prompt for the parameter on-screen:
+
+[horizontal]
+name::
+The name of the parameter (the name elements can be separated using the underscore character: `_`)
+
+type::
+The parameter type can be one of the following:
++
+--
+[horizontal]
+text:::
+A basic character string.
+This is the most commonly used field type.
+
+multiline:::
+Another text field with the option of launching your system editor
+for entering large amounts of text.
+Handy to have, but rarely used.
+
+choice:::
+Allows for a single selection from a sublist of items denoted by `choices`.
+
+select:::
+Allows for a single selection from a sublist of items denoted by `choices`.
+
+file:::
+This allows for the entry of a filename (with support for file path completion).
++
+NOTE: This is the only item considered to be mandatory,
+as it is required to pick up the name of the AsciiDoc file to which the release note is eventually written.
+--
++
+message::
+The prompt that is displayed for the user to enter the required information.
+
+In our example, the prompts displayed will look something like this,
+each item being filled in by the user before the script displays the next prompt.
+
+.Get parameters from the user
+image::release-note-generator/retrieve-parameters.png[]
+
+TIP: The script will save the parameters as they're entered,
+then present them again on its next invocation.
+
+=== Step {counter:flow}: Retrieve the Jira tickets
+Having picked up the parameters, the script will then run a JQL query to retrieve the tickets for the release.
+
+[source,YAML]
+----
+
+url: https://jira.issues.couchbase.com
+jql: project = "Couchbase Server"
+  AND type IN (Epic, Bug, Improvement, Task, "Technical Task")
+  AND fixVersion in ({{release_number}})
+  AND labels IN (releasenote,releasenotecomplete)
+  AND ("Release Notes[Labels]" NOT IN (suppress-{{release_number}}) OR "Release Notes[Labels]" IS EMPTY)
+  AND summary !~ "System Test" AND resolution not in (Declined, "Won't Fix")
+  AND reporter not in (membersOf(couchbase-qe-team))
+  ORDER BY key ASC
+----
+
+It only needs two configuration items for this:
+
+[horizontal]
+
+url::
+The URL of the Jira instance. For this to work, you must have a token defined in `.passwords.yaml`.
++
+[WARNING]
+.public/private tickets
+====
+The script uses the Jira API to retrieve the tickets,
+and due to what I assume is a deliberate limitation,
+the API will only retrieve items that have a security level set to `public` or `none`.
+====
+
+jql::
+A valid JQL{empty}footnote:jql-footnote[] statement that the script will use to retrieve the tickets.
+Pay close attention to the field parameters delimited by `{{}}`;
+these are the named parameters that will be replaced with the values
+entered by the user from the xref:#fields[`fields`] section.
+
+=== Step {counter:flow}: Set the release note field
+
+The `release_note_field` tells the generator script where the Jira ticket it will find the release note information.
+
+[source, yaml]
+----
+release_note_field: 'customfield_11402'
+----
+
+Here, we have informed the script that it will find the release note details in field `customfield_11402` in the Jira ticket.
+The release note script makes use of `release_note_field` to determine whether the ticket has its release note filled in.
+If not, then the script can fill in the missing release notes using AI.
+
+You can also reference the release note field in your Jinja template using `user_settings.release_set.release_note_field`.
+(For more information on Jinja templates, see the xref:./adding-a-new-product.adoc#define-release-note-field[Defining the  release note field].)
+
+
+
+=== Step {counter:flow}: Render the release note
+
+Having retrieved the tickets that match the JQL,
+the script will pick up the template designated for the release set.
+
+[source, yaml]
+----
+template: couchbase-server-bug-fixes.jinja2
+----
+
+[NOTE]
+.Remember the `templates` location!
+====
+The location of the Jinja templates is defined in the `templates` section of the configuration file.
+====
+
+The script will take the collection of tickets and run them through the template, producing the final AsciiDoc file.
+
+NOTE: The Jinja template system is very similar to template engines such as JSP, ASP, and ThymeLeaf.
+The scope of its function is beyond the scope of this design guide,
+but you can find information and tutorials at https://jinja.palletsprojects.com
+
+== Further reading
+
+For more information on Jinja templates, refer to the official documentation at link:https://jinja.palletsprojects.com[].
+
+We have also created a guide for developers on link:https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/3230269470/A+Developer+s+Guide+to+Release+Notes[how to prepare Jira tickets for inclusion in release notes].
+
+There is also a guide for technical writers covering the link:https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/3338961232/Other+Tools[installation and use of the Release Note Generator].
+
+
+
+
