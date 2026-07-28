@@ -23,6 +23,7 @@ runtime:
 antora:
   extensions:
     - "@antora/site-generator-ms"
+    - ./lib/site-navigation-data-json.js
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
@@ -39,7 +40,7 @@ site:
       [
         { "title": "Server",
           "startPage": "home::server.adoc",
-          "components": ["server", "operator", "enterprise-analytics"]
+          "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"]
         },
         { "title": "Mobile / Edge",
           "startPage": "home::mobile.adoc",
@@ -145,6 +146,8 @@ content:
       branches:
         - 0.2.x
       start_path: docs
+    - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
+      branches: release/1.2
     - url: https://github.com/couchbase/docs-elastic-search
       branches:
         - main
@@ -418,6 +421,9 @@ content:
     - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
       branches:
         - release/1.0
+    - url: https://github.com/couchbaselabs/docs-couchbase-lite-react-native
+      branches:
+        - release/1.1
     - url: https://github.com/couchbaselabs/docs-fleetmanager
       branches: main
 asciidoc:
