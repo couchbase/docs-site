@@ -27,6 +27,9 @@ content:
   - url: https://github.com/couchbaselabs/docs-fleetmanager
     branches: main
 
+  - url: https://github.com/couchbaselabs/docs-rosetta
+    branches: main
+
 asciidoc:
   attributes:
     kroki-server-url: null
