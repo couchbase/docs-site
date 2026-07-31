@@ -13,9 +13,6 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-2/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -23,10 +20,10 @@ runtime:
 antora:
   extensions:
     - "@antora/site-generator-ms"
+    - ./lib/site-navigation-data-json.js
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
-    - ./lib/site-navigation-data-json.js
     - ./lib/report-tree.js
     - ./lib/site-stats-extension.js
     - ./lib/component-stats.js
@@ -43,30 +40,34 @@ site:
     User-agent: Algolia Crawler
     Allow: /
   keys:
+    google_analytics: null
     nav_groups: >
       [
         { "title": "Server",
           "startPage": "home::server.adoc",
-          "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"]
-        },
-        { "title": "Mobile / Edge",
+          "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"],
+          "color": "#c41016" },
+        { "title": "Mobile / Edge",
           "startPage": "home::mobile.adoc",
-          "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"]
-        },
+          "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
+          "color": "#d9480f" },
         { "title": "Capella",
           "startPage": "home::cloud.adoc",
           "components": ["cloud", "app-services", "analytics"],
-          "expandHeaderLevels": 1 },
+          "expandHeaderLevels": 1,
+          "color": "#e8830c" },
         { "title": "AI Data Plane",
-          "startPage": "ai:get-started:intro.adoc", 
-          "components": ["ai", "mcp-server"] },
+          "startPage": "ai:get-started:intro.adoc",
+          "components": ["ai", "mcp-server"],
+          "color": "#f2a541" },
         { "title": "Develop",
           "startPage": "home::developer.adoc",
+          "color": "#8c1c1c",
             "subGroups": [
               {
                 "title": "Operational SDKs",
                 "startPage": "home::sdk.adoc",
-                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+                "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
                 "expandHeaderLevels": 1
               },
               {
@@ -78,10 +79,12 @@ site:
             ]
           },
         { "title": "Contribute",
-          "components": ["home", "styleguide", "ui-ux", "pendo"]
-        }
+          "components": ["home", "styleguide", "ui-ux", "pendo"],
+          "color": "#6b7280" }
       ]
-    google_analytics: null
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-3/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
@@ -240,11 +243,6 @@ content:
         - trinity
         - neo
       start_path: docs
-
-    - url: https://github.com/couchbaselabs/docs-tooling
-      branches: main
-      start_path: example
-    
     - url: https://github.com/couchbase/docs-server
       branches:
         - release/8.0
