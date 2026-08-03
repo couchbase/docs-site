@@ -89,7 +89,7 @@ site:
     google_analytics: null
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-4/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-5/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
