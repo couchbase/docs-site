@@ -34,9 +34,13 @@ content:
   - url: https://github.com/couchbase/docs-elastic-search
     branches: [release/4.3, release/4.2, release/4.1, release/4.0, release/cypress]
   - url: https://github.com/couchbase/docs-kafka
-    branches: [release/4.1, release/4.0, release/3.4, release/3.3]
+    branches: [release/4.2, release/4.1, release/4.0, release/3.4, release/3.3]
   - url: https://github.com/couchbase/docs-spark
-    branches: [release/3.2, release/3.1, release/3.0, release/2.4, release/2.3, release/2.2, release/2.1]
+    branches: [release/3.3, release/3.2, release/3.1, release/3.0, release/2.4, release/2.3, release/2.2, release/2.1]
+  - url: https://github.com/couchbase/docs-tableau
+    branches: [release/1.1, release/1.0]
+  - url: https://github.com/couchbase/docs-connectors-power-bi
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-server
     branches: [release/7.1, release/7.0, release/6.6, release/6.5, release/6.0, release/5.5, release/5.1, release/5.0, release/4.6, release/4.5, release/4.1, release/4.0]
   - url: https://github.com/couchbase/docs-sdk-common
