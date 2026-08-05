@@ -46,51 +46,85 @@ site:
 
     # see https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2963243023/FAQ+how+does+the+top+nav+bar+work
     nav_groups: |
-        [
-          { "title": "Server",
-            "startPage": "home::server.adoc",
-            "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"],
-            "color": "#c41016"
-          },
-          { "title": "Mobile / Edge",
-            "startPage": "home::mobile.adoc",
-            "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
-            "color": "#d9480f"
-          },
-          { "title": "Capella",
-            "startPage": "home::cloud.adoc",
-            "components": ["cloud", "app-services", "analytics"],
-            "expandHeaderLevels": 1,
-            "color": "#e8830c"
-          },
-          { "title": "AI Data Plane",
-            "startPage": "ai:get-started:intro.adoc", 
-            "components": ["ai", "mcp-server"],
-            "color": "#f2a541"
-          },
-          { "title": "Develop",
-            "startPage": "home::developer.adoc",
-            "color": "#8c1c1c",
+      [
+        { "title": "Start Here", "startPage": "home::start-here.adoc"},
+        { "title": "Operational Database", "startPage": "home::operational.adoc",
             "subGroups": [
+              {
+                "title": "Capella Operational",
+                "startPage": "home::cloud.adoc",
+                "components": ["cloud"]
+              },
+              {
+                "title": "Self-Managed Server",
+                "startPage": "home::server.adoc",
+                "components": ["server"]
+              },
+              {
+                "title": "Kubernetes Operator",
+                "startPage": "operator::overview.adoc",
+                "components": ["operator"]
+              },
               {
                 "title": "Operational SDKs",
                 "startPage": "home::sdk.adoc",
-                "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
-                "expandHeaderLevels": 1
+                "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "sdk-extensions"]
+              },
+              {
+                "title": "Big Data Connectors",
+                "startPage": "home::connectors.adoc",
+                "components": ["elasticsearch-connector", "kafka-connector", "spark-connector"]
+              }
+            ]
+        },
+
+        { "title": "Insights", "startPage": "home::analytics.adoc",
+            "subGroups": [
+              {
+                "title": "Enterprise Analytics",
+                "startPage": "enterprise-analytics:intro:intro.adoc",
+                "components": ["enterprise-analytics"]
+              },
+              {
+                "title": "Capella Analytics",
+                "startPage": "analytics:intro:intro.adoc",
+                "components": ["analytics"]
               },
               {
                 "title": "Analytics SDKs",
                 "startPage": "home::analytics-sdk.adoc",
-                "components": ["*-analytics-sdk", "*-columnar-sdk"],
-                "expandHeaderLevels": 1
+                "components": ["*-analytics-sdk", "*-columnar-sdk"]
+              },
+              {
+                "title": "Analytics Connectors",
+                "startPage": "home::analytics-connectors.adoc",
+                "components": ["tableau-connector", "power-bi-connector", "superset-connector"]
               }
             ]
-          },
-          { "title": "Contribute",
-            "components": ["home", "styleguide", "ui-ux", "pendo"],
-            "color": "#f2a541"
-          }
-        ]
+        },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
+            "subGroups": [
+              {
+                "title": "Couchbase Lite",
+                "startPage": "couchbase-lite::index.adoc",
+                "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"]
+              },
+              {
+                "title": "Sync Gateway",
+                "startPage": "sync-gateway::introduction.adoc",
+                "components": ["sync-gateway"]
+              },
+              {
+                "title": "App Services",
+                "startPage": "app-services:get-started:configuring-app-services.adoc",
+                "components": ["app-services"]
+              }
+            ]
+        },
+        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai"] },
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
+        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
+      ]
 
 git:
   ensure_git_suffix: false
