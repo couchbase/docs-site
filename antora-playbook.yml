@@ -365,6 +365,7 @@ asciidoc:
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
+  - ./lib/description-block.js
   - ./lib/markdown-block.js
   - ./lib/template-block.js
   - asciidoctor-kroki

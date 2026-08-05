@@ -12,6 +12,7 @@ include::partial$info-banner.adoc[]
 
 == {empty}
 
+[description]
 Couchbase provides several SDKs to allow applications to access a Couchbase cluster (Capella or self-managed), 
 as well as xref:mobile.adoc[Couchbase Lite] -- an embedded, NoSQL JSON Document Style database for your mobile apps.
 To exchange data with other platforms, we offer various Big Data Connectors.

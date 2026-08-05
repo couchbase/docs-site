@@ -10,7 +10,7 @@ include::partial$info-banner.adoc[]
 
 [.column]
 ====== {empty}
-[.content]
+[description.content]
 Couchbase Mobile brings the power of NoSQL to the edge.
 The combination of Sync Gateway and Couchbase Lite coupled with the power of Couchbase Server provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
 This lets you deploy fully featured mobile and embedded applications with greater agility on premises or in any cloud.

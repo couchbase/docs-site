@@ -15,7 +15,7 @@ urls:
   latest_version_segment: current
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-230/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-232/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -23,6 +23,7 @@ runtime:
 antora:
   extensions:
     - "@antora/site-generator-ms"
+    - ./lib/site-navigation-data-json.js
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
@@ -36,38 +37,46 @@ site:
       [
         { "title": "Server",
           "startPage": "home::server.adoc",
-          "components": ["server", "operator", "enterprise-analytics"]
+          "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"],
+          "color": "#c41016"
         },
         { "title": "Mobile / Edge",
           "startPage": "home::mobile.adoc",
-          "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"]
+          "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
+          "color": "#d9480f"
         },
         { "title": "Capella",
           "startPage": "home::cloud.adoc",
           "components": ["cloud", "app-services", "analytics"],
-          "expandHeaderLevels": 1 },
+          "expandHeaderLevels": 1,
+          "color": "#e8830c"
+        },
         { "title": "AI Data Plane",
           "startPage": "ai:get-started:intro.adoc", 
-          "components": ["ai", "mcp-server"] },
+          "components": ["ai", "mcp-server"],
+          "color": "#f2a541"
+        },
         { "title": "Develop",
           "startPage": "home::developer.adoc",
-            "subGroups": [
-              {
-                "title": "Operational SDKs",
-                "startPage": "home::sdk.adoc",
-                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
-                "expandHeaderLevels": 1
-              },
-              {
-                "title": "Analytics SDKs",
-                "startPage": "home::analytics-sdk.adoc",
-                "components": ["*-analytics-sdk", "*-columnar-sdk"],
-                "expandHeaderLevels": 1
-              }
-            ]
-          },
+          "color": "#8c1c1c",
+          "subGroups": [
+            {
+              "title": "Operational SDKs",
+              "startPage": "home::sdk.adoc",
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Analytics SDKs",
+              "startPage": "home::analytics-sdk.adoc",
+              "components": ["*-analytics-sdk", "*-columnar-sdk"],
+              "expandHeaderLevels": 1
+            }
+          ]
+        },
         { "title": "Contribute",
-          "components": ["home", "styleguide", "ui-ux", "pendo"]
+          "components": ["home", "styleguide", "ui-ux", "pendo"],
+          "color": "#f2a541"
         }
       ]
   title: Couchbase Docs Preview
@@ -79,6 +88,7 @@ asciidoc:
     - ./lib/inline-man-macro.js
     - ./lib/multirow-table-head-tree-processor.js
     - ./lib/swagger-ui-block-macro.js
+    - ./lib/description-block.js
     - ./lib/markdown-block.js
     - ./lib/template-block.js
     - asciidoctor-kroki

@@ -13,7 +13,7 @@ include::partial$info-banner.adoc[]
 
 [.column]
 ====== {empty}
-[.content]
+[description.content]
 Couchbase Connectors enable you to exchange data with a number of other platforms.
 
 [.column]
