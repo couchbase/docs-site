@@ -147,7 +147,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-ai
     branches: [main]
   - url: https://github.com/couchbaselabs/docs-mcp-server
-    branches: [main]
+    branches: [release/1.0]
 
     # Couchbase Autonomous Kubernetes Operator
     ############################
