@@ -289,7 +289,7 @@ content:
 
     # possibly legacy shared content
   - url: https://github.com/couchbase/docs-mobile
-    branches: [release/3.1, release/2.8]
+    branches: [release/3.1]
 
   - url: https://github.com/couchbase/docs-couchbase-lite
     branches: [release/4.1, release/4.0, release/3.4, release/3.3, release/3.2, release/3.1, release/3.0]
