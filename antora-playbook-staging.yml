@@ -89,7 +89,7 @@ site:
     google_analytics: null
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-17/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-18/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
@@ -371,7 +371,6 @@ content:
     - url: https://github.com/couchbase/docs-mobile
       branches:
         - release/3.1
-        - release/2.8
     - url: https://github.com/couchbase/docs-couchbase-lite
       branches:
         - release/4.1
