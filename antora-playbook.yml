@@ -35,7 +35,6 @@ site:
     User-agent: Google-Extended
     User-agent: CCBot
     User-agent: OAI-SearchBot
-    User-agent: Google-Extended
     Content-Signal: ai-train=yes, search=yes, ai-input=yes
     Allow: /
     Allow: /*.md$
