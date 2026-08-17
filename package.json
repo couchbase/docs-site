@@ -35,5 +35,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/couchbase/docs-site.git"
+  },
+  "overrides": {
+    "convict": "6.2.5"
   }
 }
