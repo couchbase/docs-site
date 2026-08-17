@@ -17,20 +17,33 @@ site:
   start_page: home::index.adoc
 
   robots: |
-    # AI Crawlers — guided entry
+    # Disallow SEO scrapers
+    User-agent: MauiBot
+    User-agent: SemrushBot
+    User-agent: AhrefsBot
+    User-agent: BLEXBot
+    User-agent: SEO Spider
+    User-agent: DotBot
+    User-agent: MJ12bot
+    Disallow: /
+
+    # Explicitly permit AI Crawlers
     User-agent: ClaudeBot
+    User-agent: Claude-SearchBot
     User-agent: GPTBot
     User-agent: PerplexityBot
     User-agent: Google-Extended
+    User-agent: CCBot
+    User-agent: OAI-SearchBot
+    Content-Signal: ai-train=yes, search=yes, ai-input=yes
     Allow: /
     Allow: /*.md$
     Disallow: /sdk-api/
     Allow: /sdk-api/*-client/
     Allow: /sdk-api/couchbase-core-io/
     Allow: /sdk-api/couchbase-transactions-dotnet/
-    # Sitemap and LLM index
-    Sitemap: https://docs.couchbase.com/sitemap.xml
-    # Access
+
+    # All other crawlers
     User-agent: *
     Allow: /
     Disallow: /*.md$
@@ -38,7 +51,8 @@ site:
     Allow: /sdk-api/*-client/
     Allow: /sdk-api/couchbase-core-io/
     Allow: /sdk-api/couchbase-transactions-dotnet/
-    # Sitemap and LLM index
+
+    # Sitemaps
     Sitemap: https://docs.couchbase.com/sitemap.xml
 
   keys:
