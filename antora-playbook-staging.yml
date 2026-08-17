@@ -89,7 +89,7 @@ site:
     google_analytics: null
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-21/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-22/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
@@ -177,7 +177,7 @@ content:
         - main
     - url: https://github.com/couchbaselabs/docs-mcp-server
       branches:
-        - main
+        - release/1.0
     - url: https://github.com/couchbase/couchbase-operator
       branches:
         - 2.9.x
