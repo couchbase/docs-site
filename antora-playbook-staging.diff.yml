@@ -6,6 +6,7 @@ antora:
   - ./lib/component-stats.js
   - ./lib/time-content-aggregation.js
   - ./lib/site-dependencies.js
+  - ./lib/clone-cloud.js
 
 site:
   title: Couchbase Docs Staging
