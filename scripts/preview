@@ -155,7 +155,7 @@ if [ -n "$INIT" ]; then
 
     brew install gh jq yq
     gh auth token || gh auth login
-    npm ci
+    npm ci --allow-git=all
 
     if [ ! -f ~/.git-credentials ]; then
       scripts/add-credentials
