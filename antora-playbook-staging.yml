@@ -29,7 +29,6 @@ antora:
     - ./lib/component-stats.js
     - ./lib/time-content-aggregation.js
     - ./lib/site-dependencies.js
-    - ./lib/clone-cloud.js
 site:
   title: Couchbase Docs Staging
   url: https://docs-staging.couchbase.com
@@ -157,21 +156,15 @@ content:
         - release/8.0
         - release/7.6
         - release/7.2
-    - url: https://github.com/couchbasecloud/couchbase-cloud
-      branches:
-        - main
-      start_paths:
-        - docs/public
-        - docs/columnar
     - url: https://github.com/couchbase/docs-capella
       branches:
-        - main
+        - DOC-14602-rehome-management-api-reference # temporary just for preview
     - url: https://github.com/couchbaselabs/docs-capella-app-services
       branches:
         - main
     - url: https://github.com/couchbaselabs/docs-columnar
       branches:
-        - main
+        - DOC-14603-rehome-management-api-reference # temporary just for preview
         - legacy-columnar-component
     - url: https://github.com/couchbaselabs/docs-ai
       branches:
