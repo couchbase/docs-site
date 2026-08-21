@@ -15,7 +15,7 @@ urls:
   latest_version_segment: current
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-232/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-234/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -139,12 +139,6 @@ content:
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
         - capella
-    - url: https://github.com/couchbasecloud/couchbase-cloud
-      branches:
-        - AV-117622_cmek-api
-      start_paths:
-        - docs/public
-        - docs/columnar
     - url: https://github.com/couchbase/docs-capella
       branches:
         - AV-115233-azure-cmek-support
