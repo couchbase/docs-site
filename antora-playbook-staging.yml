@@ -89,7 +89,7 @@ site:
     google_analytics: null
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-25/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-26/ui-bundle.zip
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
@@ -158,13 +158,13 @@ content:
         - release/7.2
     - url: https://github.com/couchbase/docs-capella
       branches:
-        - DOC-14602-rehome-management-api-reference # temporary just for preview
+        - main
     - url: https://github.com/couchbaselabs/docs-capella-app-services
       branches:
         - main
     - url: https://github.com/couchbaselabs/docs-columnar
       branches:
-        - DOC-14603-rehome-management-api-reference # temporary just for preview
+        - main
         - legacy-columnar-component
     - url: https://github.com/couchbaselabs/docs-ai
       branches:
