@@ -541,7 +541,7 @@ Useful resources to help support your development experience with Couchbase and 
 
 The links above will take you to the latest version of your chosen SDK.
 Should you need to look up something for an older release, you'll discover there a dropdown version selector (in the left-hand navigation) for each SDK release --
-and links to docs for older, unsupported versions in the https://docs-archive.couchbase.com/home/index.html[dcos archive].
+and links to docs for older, unsupported versions in the https://docs-archive.couchbase.com/home/index.html[docs archive].
 
 
 {empty} +
