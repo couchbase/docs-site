@@ -283,16 +283,16 @@ else
     cd $DOCS_SITE
     echo
 
-    ANTORA="npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url '$(pwd)/preview'"
+    ANTORA=(npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url "$(pwd)/preview")
 
     if [ -n "$DEBUG" ]; then
         echo "Running in debug mode"
-        $ANTORA --log-format=pretty 2>&1 | tee preview-debug.log
+        "${ANTORA[@]}" --log-format=pretty 2>&1 | tee preview-debug.log
         mv preview-debug.log preview/debug.log
 
         echo Creating preview debug report...
         osascript scripts/preview-debug.scpt
     else
-        $ANTORA
+        "${ANTORA[@]}"
     fi
 fi

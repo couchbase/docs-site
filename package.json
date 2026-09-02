@@ -10,7 +10,7 @@
     "@asciidoctor/tabs": "1.0.0-beta.6",
     "@fastify/deepmerge": "^2.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "antora": "~3.1",
+    "antora": "~3.2",
     "array.prototype.groupby": "^1.1.0",
     "asciidoctor-external-callout": "~1.2.2",
     "asciidoctor-kroki": "0.18.1",

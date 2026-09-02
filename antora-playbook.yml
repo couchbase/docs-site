@@ -9,6 +9,7 @@ antora:
   - ./lib/embargo.js
   - ./lib/antora-component-version-rank.js
   - ./lib/llms-txt.js
+  - ./lib/override-url-component.js
 
 site:
   title: Couchbase Docs
@@ -151,8 +152,7 @@ content:
 
   - url: https://github.com/couchbaselabs/docs-columnar
     branches:
-      - main                      # `analytics` component (Capella Analytics)
-      - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
+      - main                      # `analytics` component (Capella Operational Insights)
     # see under Server section below for enterprise-analytics and legacy analytics
 
   - url: https://github.com/couchbaselabs/docs-ai
