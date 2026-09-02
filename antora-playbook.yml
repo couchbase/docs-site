@@ -135,7 +135,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-devex
     branches: [release/8.0, release/7.6, release/7.2, capella]
 
-    - url: https://github.com/couchbase/docs-capella
+  - url: https://github.com/couchbase/docs-capella
     branches: [AV-141660_vector-bedrock-pe]
 
   - url: https://github.com/couchbaselabs/docs-capella-app-services
