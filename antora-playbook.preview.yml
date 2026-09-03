@@ -27,11 +27,15 @@ antora:
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
+    - require: ./lib/override-url-component.js
+      map:
+        operational-insights:
+          - analytics
+          - columnar
     - ./lib/preview.js
     - ./lib/report-tree.js
     - ./lib/site-stats-extension.js
     - ./lib/component-stats.js
-    - ./lib/override-url-component.js
 site:
   url: https://docs.couchbase.com
   start_page: home::index.adoc
@@ -119,7 +123,6 @@ content:
     - url: https://github.com/couchbaselabs/docs-columnar
       branches:
         - main
-        - legacy-columnar-component
     - url: https://github.com/couchbaselabs/docs-ai
       branches:
         - main

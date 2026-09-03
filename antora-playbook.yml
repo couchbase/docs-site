@@ -9,7 +9,9 @@ antora:
   - ./lib/embargo.js
   - ./lib/antora-component-version-rank.js
   - ./lib/llms-txt.js
-  - ./lib/override-url-component.js
+  - require: ./lib/override-url-component.js
+    map:
+      operational-insights: [analytics, columnar]
 
 site:
   title: Couchbase Docs
