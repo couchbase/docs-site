@@ -144,7 +144,7 @@ content:
       start_path: home
     - url: https://github.com/couchbaselabs/docs-columnar
       branches:
-        - main
+        - DOC-14627-analytics-url-rename-columnar
     - url: https://github.com/couchbaselabs/docs-enterprise-analytics
       branches:
         - release/2.2
