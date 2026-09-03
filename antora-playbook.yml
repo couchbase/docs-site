@@ -10,8 +10,9 @@ antora:
   - ./lib/antora-component-version-rank.js
   - ./lib/llms-txt.js
   - require: ./lib/override-url-component.js
-    map:
-      operational-insights: [analytics, columnar]
+    data:
+      operational-insights: [enterprise-analytics]
+      operational-insights-cloud: [analytics, columnar]
 
 site:
   title: Couchbase Docs
@@ -66,7 +67,7 @@ site:
         [
           { "title": "Server",
             "startPage": "home::server.adoc",
-            "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"],
+            "components": ["server", "operator", "cloud-native-gateway"],
             "color": "#c41016"
           },
           { "title": "Mobile / Edge",
@@ -76,7 +77,7 @@ site:
           },
           { "title": "Capella",
             "startPage": "home::cloud.adoc",
-            "components": ["cloud", "app-services", "analytics"],
+            "components": ["cloud", "app-services"],
             "expandHeaderLevels": 1,
             "color": "#e8830c"
           },
@@ -84,6 +85,12 @@ site:
             "startPage": "ai:get-started:intro.adoc", 
             "components": ["ai", "mcp-server"],
             "color": "#f2a541"
+          },
+          { "title": "Operational Insights",
+            "startPage": "home::operational-insights.adoc",
+            "components": ["analytics", "enterprise-analytics"],
+            "expandHeaderLevels": 1,
+            "color": "#ed9426"
           },
           { "title": "Develop",
             "startPage": "home::developer.adoc",
@@ -205,8 +212,11 @@ content:
     # Server
     ############################
 
+    # `enterprise-analytics`
   - url: https://github.com/couchbaselabs/docs-enterprise-analytics
     branches: [release/2.2, release/2.1, release/2.0]
+
+    # legacy analytics under `server`
   - url: https://github.com/couchbase/docs-analytics
     branches: [release/8.0, release/7.6, release/7.2]
 
