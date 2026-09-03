@@ -1,4 +1,4 @@
-= Welcome to Operational Insights
+= Operational Insights
 :page-layout: landing-page-capella
 :tabs:
 :page-rank: 85
@@ -9,36 +9,45 @@
 
 include::home::partial$info-banner.adoc[]
 
-= Welcome to Operational Insights
+= Operational Insights
+
+_Formerly Analytics_
+
+*Real-Time Analytics on Your Operational Data — No Pipelines Required.*
 
 [description]
 --
-Operational Insights is Couchbase's analytical database (RT-OLAP) for real-time apps and operational intelligence, available both as a fully managed Capella service and as a self-managed deployment.
-
-Operational Insights Capella is the cloud, fully managed option, previously known as Capella Analytics.
-Operational Insights Self Managed is the on-premises and self-hosted option, previously known as Enterprise Analytics.
+Operational Insights is a columnar, MPP-powered analytics engine built directly into the Couchbase platform.
+Query your JSON data in place, in real time, with zero-ETL -- no pipelines to build or babysit.
+Choose the deployment model that fits your team: fully managed in the cloud, or self-managed on your own infrastructure.
 --
 
 [.centered.card-container]
-== Explore Operational Insights
+== Choose Your Deployment Model
 
 [.card-box]
-=== icon:cloud[] Get Started With Operational Insights Capella
+=== icon:cloud[] Operational Insights -- Managed
 
-Create your account and follow our tutorial on how to load data into your Operational Insights Capella cluster.
+Fully managed, cloud-native Operational Insights, built into the Capella platform.
+Spin up a columnar, MPP-powered cluster in minutes -- no infrastructure to provision, patch, or scale yourself.
+Connect it straight to your existing Capella data and start running SQL++ over JSON in place.
 
-* https://cloud.couchbase.com/sign-up[Sign Up^]
-* xref:analytics:intro:intro.adoc[]
-* xref:analytics:admin:prepare-project.adoc[]
-* xref:analytics:intro:examples.adoc[]
-* xref:analytics:query:workbench.adoc[]
+*Available on:* AWS | GCP
+
+* https://cloud.couchbase.com/sign-up[Get Started^]
+* xref:analytics:query:integration.adoc[Explore Integrations & BI Tools]
+* https://www.couchbase.com/pricing/[View Pricing^]
+* https://cloud.couchbase.com/sign-up[Try It Free^]
 
 [.card-box]
-=== icon:server[] Get Started With Operational Insights Self Managed
+=== icon:server[] Operational Insights -- Self-managed
 
-Install Operational Insights on your own infrastructure and start analyzing your data.
+The same columnar storage engine, MPP query engine, and SQL++ language, packaged as software you install and operate yourself -- on-premises or in your own cloud VPC.
+Full control over infrastructure, networking, and security, with open lakehouse federation via Apache Iceberg.
 
-* xref:enterprise-analytics:intro:intro.adoc[]
-* xref:enterprise-analytics:intro:start-here.adoc[]
-* xref:enterprise-analytics:intro:do-a-quick-install.adoc[]
-* xref:enterprise-analytics:sources:database-objects.adoc[]
+*Object storage support:* xref:enterprise-analytics:manage:manage-nodes/aws-s3.adoc[AWS S3] | xref:enterprise-analytics:manage:manage-nodes/azure-blob-storage.adoc[Azure Blob] | Google Cloud Storage
+
+* xref:enterprise-analytics:intro:do-a-quick-install.adoc[Get Started: Do a Quick Install]
+* xref:enterprise-analytics:sources:manage-remote.adoc[Explore Integrations, Connectors & Tools]
+* https://www.couchbase.com/pricing/[View Pricing^]
+* xref:enterprise-analytics:install:introduction-linux-installation.adoc[Download]
