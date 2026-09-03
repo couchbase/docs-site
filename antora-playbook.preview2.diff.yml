@@ -16,9 +16,10 @@ content:
     - '**/docs-enterprise-analytics'
     - '**/docs-analytics'
 
-  sources: []
-   # - url: https://github.com/couchbase/docs-capella
-     # branches: [AV-115233-azure-cmek-support]
+  sources:
+   - url: https://github.com/couchbaselabs/docs-columnar
+     branches:
+       $replace: [ DOC-14627-analytics-url-rename-columnar ]
 
 asciidoc:
   attributes:
