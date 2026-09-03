@@ -143,19 +143,19 @@ content:
   - url: https://github.com/couchbaselabs/cb-swagger
     branches: [release/8.0, release/7.6, release/7.2, capella]
     start_path: docs
-  - url: https://github.com/couchbase/docs-capella
+  - url: https://github.com/couchbase/docs-capella # private
     branches: [main]
 
-  - url: https://github.com/couchbaselabs/docs-capella-app-services
+  - url: https://github.com/couchbaselabs/docs-capella-app-services # private
     branches: [main]
 
-  - url: https://github.com/couchbaselabs/docs-columnar
+  - url: https://github.com/couchbaselabs/docs-columnar # private
     branches:
       - main                      # `analytics` component (Capella Analytics)
       - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
     # see under Server section below for enterprise-analytics and legacy analytics
 
-  - url: https://github.com/couchbaselabs/docs-ai
+  - url: https://github.com/couchbaselabs/docs-ai # private
     branches: [main]
   - url: https://github.com/couchbaselabs/docs-mcp-server
     branches: [release/1.0]
@@ -176,11 +176,11 @@ content:
   - url: https://github.com/couchbaselabs/observability
     branches: [0.2.x]
     start_path: docs
-  - url: https://github.com/couchbaselabs/cbmultimanager
+  - url: https://github.com/couchbaselabs/cbmultimanager # private
     branches: [0.2.x]
     start_path: docs
 
-  - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
+  - url: https://github.com/couchbaselabs/docs-cloud-native-gateway # private
     branches: release/1.2
 
     # Connectors
@@ -192,26 +192,26 @@ content:
     branches: [release/4.3]
   - url: https://github.com/couchbase/docs-spark
     branches: [release/4.0, release/3.5]
-  - url: https://github.com/couchbase/docs-tableau
+  - url: https://github.com/couchbase/docs-tableau # private
     branches: [release/2.0, release/1.2]
   - url: https://github.com/couchbase/docs-connectors-power-bi
     branches: [release/1.3, release/1.2, release/1.1]
   - url: https://github.com/couchbase/docs-connectors-superset.git
     branches: [release/1.0]
-  - url: https://github.com/couchbase/docs-connectors-talend
+  - url: https://github.com/couchbase/docs-connectors-talend # private
 
     # Server
     ############################
 
-  - url: https://github.com/couchbaselabs/docs-enterprise-analytics
+  - url: https://github.com/couchbaselabs/docs-enterprise-analytics # private
     branches: [release/2.2, release/2.1, release/2.0]
-  - url: https://github.com/couchbase/docs-analytics
+  - url: https://github.com/couchbase/docs-analytics # private
     branches: [release/8.0, release/7.6, release/7.2]
 
   - url: https://github.com/couchbase/couchbase-cli
     branches: [morpheus, trinity, neo]
     start_path: docs
-  - url: https://github.com/couchbase/backup
+  - url: https://github.com/couchbase/backup # private
     branches: [morpheus, trinity, neo]
     start_path: docs
 
@@ -311,10 +311,10 @@ content:
   - url: https://github.com/couchbase/docs-sync-gateway
     branches: [release/4.1, release/4.0, release/3.3, release/3.2, release/3.1, release/3.0]
 
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite-edge-server # private
     branches: [release/1.1, release/1.0]
 
-  - url: https://github.com/couchbase/edge-server
+  - url: https://github.com/couchbase/edge-server # private
     branches: [release/1.1, release/1.0]
     start_path: docs
 
