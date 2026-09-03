@@ -1,0 +1,44 @@
+= Welcome to Operational Insights
+:page-layout: landing-page-capella
+:tabs:
+:page-rank: 85
+:!sectids:
+:icons: font
+:page-nav-header-levels: 1
+:page-for-review:
+
+include::home::partial$info-banner.adoc[]
+
+= Welcome to Operational Insights
+
+[description]
+--
+Operational Insights is Couchbase's analytical database (RT-OLAP) for real-time apps and operational intelligence, available both as a fully managed Capella service and as a self-managed deployment.
+
+Operational Insights Capella is the cloud, fully managed option, previously known as Capella Analytics.
+Operational Insights Self Managed is the on-premises and self-hosted option, previously known as Enterprise Analytics.
+--
+
+[.centered.card-container]
+== Explore Operational Insights
+
+[.card-box]
+=== icon:cloud[] Get Started With Operational Insights Capella
+
+Create your account and follow our tutorial on how to load data into your Operational Insights Capella cluster.
+
+* https://cloud.couchbase.com/sign-up[Sign Up^]
+* xref:analytics:intro:intro.adoc[]
+* xref:analytics:admin:prepare-project.adoc[]
+* xref:analytics:intro:examples.adoc[]
+* xref:analytics:query:workbench.adoc[]
+
+[.card-box]
+=== icon:server[] Get Started With Operational Insights Self Managed
+
+Install Operational Insights on your own infrastructure and start analyzing your data.
+
+* xref:enterprise-analytics:intro:intro.adoc[]
+* xref:enterprise-analytics:intro:start-here.adoc[]
+* xref:enterprise-analytics:intro:do-a-quick-install.adoc[]
+* xref:enterprise-analytics:sources:database-objects.adoc[]
