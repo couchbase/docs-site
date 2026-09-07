@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+cd $(dirname $(realpath $0))/..
+
+if [ "$1" == "--init" ]
+then
+  curl -O https://docs.couchbase.com/site-manifest.json
+  brew install fzf
+  which xref || sudo ln -sf $(realpath $0) /usr/local/bin/xref
+  exit
+fi
+
+node scripts/xref.js | fzf | cut -f2 -d•

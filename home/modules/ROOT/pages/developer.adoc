@@ -4,18 +4,19 @@
 :page-rank: 85
 :!sectids:
 :icons: font
-:page-nav-header-levels: 2
+:page-nav-header-levels: 1
 
 include::home::partial$info-banner.adoc[]
 
 = Develop with Couchbase
 
+[description]
+--
 The Developer Data Platform for Critical Applications in Our AI World.
 
 Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
-Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in a dozen popular programming languages, for real-time analytics, and build agentic apps (currently in private preview).
-
-
+Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in a dozen popular programming languages, for real-time analytics, and build agentic apps.
+--
 
 [.centered.card-container]
 == Development Choices for Your Use Cases
@@ -68,23 +69,23 @@ such as connection management and robust error handling.
 * xref:go-analytics-sdk:hello-world:overview.adoc[Go Analytics SDK Docs]
 * xref:java-analytics-sdk:hello-world:overview.adoc[Java Analytics SDK Docs]
 * xref:nodejs-analytics-sdk:hello-world:overview.adoc[Node.js Analytics SDK Docs]
-* xref:python-analytics-sdk:hello-world:overview.adoc[Python Analytics SDK Docs] 
+* xref:python-analytics-sdk:hello-world:overview.adoc[Python Analytics SDK Docs]
 
 
 
 [.card-box]
 === icon:rocket[] Develop for Mobile and the Edge
 
-Build your app with xref:couchbase-lite::index.adoc[Couchbase Lite] for offline-first connectivity, then sync to Couchbase Server with Capella App services (or self-managed Sync Gateway) -- or run peer-to-peer.
+Build your app with xref:couchbase-lite::index.adoc[Couchbase Lite] for offline-first connectivity, then sync to Couchbase Server with Capella App Services (or self-managed Sync Gateway) -- or run peer-to-peer.
 
 * xref:couchbase-lite:android:quickstart.adoc[Develop for Android in Java or Kotlin]
 * xref:couchbase-lite:swift:quickstart.adoc[Develop for iOS on Swift]
 (and xref:couchbase-lite:objc:quickstart.adoc[Objective-C])
 * xref:couchbase-lite:c:quickstart.adoc[Develop for Edge devices in C]
-* Couchbase Lite xref:couchbase-lite:csharp:quickstart.adoc[on C# .NET] | 
-xref:couchbase-lite:java:quickstart.adoc[Java] | 
+* Couchbase Lite xref:couchbase-lite:csharp:quickstart.adoc[on C# .NET] |
+xref:couchbase-lite:java:quickstart.adoc[Java] |
 xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
-* Sync your data with xref:cloud:app-services:index.adoc[App Services] / self-managed xref:sync-gateway:ROOT:introduction.adoc[SyncGateway] / 
+* Sync your data with xref:cloud:app-services:index.adoc[App Services] / self-managed xref:sync-gateway:ROOT:introduction.adoc[SyncGateway] /
   xref:couchbase-edge-server:introduction:intro.adoc[Edge Server] -- or run xref:couchbase-lite:swift:p2psync-websocket.adoc[peer-to-peer].
 
 
@@ -92,7 +93,7 @@ xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
 === icon:rocket[] Develop RAG and Agentic AI Applications
 
 Our Vector Search Service facilitates RAG applications -- and offers the ability to combine searches with our sophisticated Search API.
-Agentic Apps can be built with Agent Catalog (currently in Private Preview).
+Agentic Apps can be built with Agent Catalog.
 
 ////
 // text for AI dev landing page??
@@ -107,6 +108,6 @@ Agentic Apps can be built with Agent Catalog (currently in Private Preview).
 
 
 * xref:cloud:vector-search:vector-search.adoc[Vector Search]
+* xref:ai:build:integrate-agent-with-catalog.adoc[Agent Catalog]
 // billion-scale Vector GSI / Query
-* https://info.couchbase.com/capella-ai-services-signup[Agent Catalog Private Preview]
 // * Other AI? Columnar...

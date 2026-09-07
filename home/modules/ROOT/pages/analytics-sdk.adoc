@@ -2,6 +2,7 @@
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :page-rank: 75
+:page-nav-header-levels: 1
 :dotnet: .NET
 :!sectids:
 // :page-aliases: columnar-sdk.adoc
@@ -14,6 +15,7 @@ include::partial$info-banner.adoc[]
 // Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 // It uses column storage, which gives speedier retrieval of data.
 
+[description]
 xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] is a self-managed, JSON-native NoSQL analytical database.
 It serves to unify data from diverse sources, allowing for the execution of complex analytical queries and the extraction of timely insights.
 
@@ -35,7 +37,7 @@ such as connection management and robust error handling.
 --
 xref:dotnet-analytics-sdk:hello-world:overview.adoc[.NET Analytics SDK Docs] |
 xref:dotnet-analytics-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-| https://docs.couchbase.com/sdk-api/analytics-dotnet-client[.NET Analytics API Reference]
+https://docs.couchbase.com/sdk-api/analytics-dotnet-client[.NET Analytics API Reference]
 --
 
 Go::

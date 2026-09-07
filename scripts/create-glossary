@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DIR=$(dirname $0)
+PROMPT=$(realpath $DIR/prompts/create-glossary.md)
+
+if [ -n $1 ]; then
+  cd $1
+fi
+
+cat $PROMPT
+
+echo "Invoking droid... this may take some time."
+droid exec -f $PROMPT --auto medium

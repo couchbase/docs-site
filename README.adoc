@@ -81,6 +81,6 @@ To learn how to use the playbook and generate the docs site locally, see our {ur
 
 == License
 
-Couchbase Server Documentation © 2025 by Couchbase Inc. is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
+Couchbase Server Documentation © 2026 by Couchbase Inc. is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
 
 See the LICENSE file or the {url-license}[Creative Commons CC BY-NC-SA 4.0 license page] for details.

@@ -15,7 +15,7 @@ urls:
   latest_version_segment: current
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-218/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-234/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -23,8 +23,10 @@ runtime:
 antora:
   extensions:
     - "@antora/site-generator-ms"
+    - ./lib/site-navigation-data-json.js
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
+    - ./lib/llms-txt.js
     - ./lib/report-tree.js
 site:
   url: https://docs.couchbase.com
@@ -33,28 +35,49 @@ site:
     google_analytics: GTM-MVPNN2
     nav_groups: >
       [
-        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
-        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
-        { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai"] },
-        { "title": "Cloud-Native", "components": ["cloud-native-database"] },
-        { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
-        { "title": "CMOS", "components": ["cmos"] },
-        { "title": "Develop", "startPage": "home::developer.adoc",
-            "subGroups": [
-              {
-                "title": "Operational SDKs",
-                "startPage": "home::sdk.adoc",
-                "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
-              },
-              {
-                "title": "Analytics SDKs",
-                "startPage": "home::analytics-sdk.adoc",
-                "components": ["*-analytics-sdk", "*-columnar-sdk"]
-              }
-            ]
-          },
-        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
-        { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
+        { "title": "Server",
+          "startPage": "home::server.adoc",
+          "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"],
+          "color": "#c41016"
+        },
+        { "title": "Mobile / Edge",
+          "startPage": "home::mobile.adoc",
+          "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
+          "color": "#d9480f"
+        },
+        { "title": "Capella",
+          "startPage": "home::cloud.adoc",
+          "components": ["cloud", "app-services", "analytics"],
+          "expandHeaderLevels": 1,
+          "color": "#e8830c"
+        },
+        { "title": "AI Data Plane",
+          "startPage": "ai:get-started:intro.adoc", 
+          "components": ["ai", "mcp-server"],
+          "color": "#f2a541"
+        },
+        { "title": "Develop",
+          "startPage": "home::developer.adoc",
+          "color": "#8c1c1c",
+          "subGroups": [
+            {
+              "title": "Operational SDKs",
+              "startPage": "home::sdk.adoc",
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Analytics SDKs",
+              "startPage": "home::analytics-sdk.adoc",
+              "components": ["*-analytics-sdk", "*-columnar-sdk"],
+              "expandHeaderLevels": 1
+            }
+          ]
+        },
+        { "title": "Contribute",
+          "components": ["home", "styleguide", "ui-ux", "pendo"],
+          "color": "#f2a541"
+        }
       ]
   title: Couchbase Docs Preview
   robots: disallow
@@ -65,6 +88,7 @@ asciidoc:
     - ./lib/inline-man-macro.js
     - ./lib/multirow-table-head-tree-processor.js
     - ./lib/swagger-ui-block-macro.js
+    - ./lib/description-block.js
     - ./lib/markdown-block.js
     - ./lib/template-block.js
     - asciidoctor-kroki
@@ -84,6 +108,8 @@ asciidoc:
     page-toclevels: 1@
     page-rank: 50@
     xrefstyle: short
+    ai: AI Data Plane
+    ai-long: Couchbase AI Data Plane
     enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
     community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
     sqlpp: SQL++
@@ -113,12 +139,6 @@ content:
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
         - capella
-    - url: https://github.com/couchbasecloud/couchbase-cloud
-      branches:
-        - AV-117622_cmek-api
-      start_paths:
-        - docs/public
-        - docs/columnar
     - url: https://github.com/couchbase/docs-capella
       branches:
         - AV-115233-azure-cmek-support

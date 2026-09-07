@@ -7,41 +7,28 @@ antora:
   - ./lib/report-tree.js
   - ./lib/site-stats-extension.js
   - ./lib/component-stats.js
+  - ./lib/llms-txt.js
 
 site:
   title: Couchbase Docs Preview
   robots: disallow
-  keys:
-    nav_groups: |
-        [
-          { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "enterprise-analytics"] },
-          { "title": "Mobile / Edge", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"] },
-          { "title": "Capella", "startPage": "home::cloud.adoc", "components": ["cloud", "analytics", "ai"] },
-          { "title": "Cloud-Native", "components": ["cloud-native-database"] },
-          { "title": "Kubernetes Operator", "startPage": "operator::overview.adoc", "components": ["operator"] },
-          { "title": "CMOS", "components": ["cmos"] },
-          { "title": "Develop", "startPage": "home::developer.adoc",
-              "subGroups": [
-                {
-                  "title": "Operational SDKs",
-                  "startPage": "home::sdk.adoc",
-                  "components": ["develop", "dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "power-bi-connector", "superset-connector", "sdk-extensions"]
-                },
-                {
-                  "title": "Analytics SDKs",
-                  "startPage": "home::analytics-sdk.adoc",
-                  "components": ["*-analytics-sdk", "*-columnar-sdk"]
-                }
-              ]
-            },
-          { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
-          { "title": "Contribute", "components": ["home", "styleguide", "ui-ux", "pendo"] }
-        ]
 
 content:
   sources:
-  - url: https://github.com/couchbaselabs/docs-ai
+  - url: https://github.com/couchbaselabs/docs-capella-app-services
     branches: [main]
+
+  - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
+    branches: [release/1.0]
+
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite-react-native
+    branches: [release/1.1]
+
+  - url: https://github.com/couchbaselabs/docs-fleetmanager
+    branches: main
+
+  - url: https://github.com/couchbaselabs/docs-rosetta
+    branches: main
 
 asciidoc:
   attributes:
@@ -51,6 +38,6 @@ asciidoc:
     # page-chatbot-origin: https://dfddckwnvn0ml.cloudfront.net # Production, via Elliot
     page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net # Staging, via Elliot
 
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip
+#ui:
+  #bundle:
+    #url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip

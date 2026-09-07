@@ -4,7 +4,7 @@
 :page-rank: 85
 :!sectids:
 :icons: font
-:page-nav-header-levels: 2
+:page-nav-header-levels: 1
 :page-aliases: cloud::index.adoc
 :page-for-review:
 
@@ -12,13 +12,16 @@ include::home::partial$info-banner.adoc[]
 
 = Welcome to Couchbase Capella
 
+[description]
+--
 Capella operational is the easiest way to use Couchbase Server.
 Get access to SQL-like querying, full-text and vector search, powerful eventing, and connectivity to mobile and IoT devices at the edge.
 
 Capella Analytics is an analytical database (RT-OLAP) for real-time apps and operational intelligence.
 Capella Analytics is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 
-Capella AI Services is a fully managed set of tools that help you build, deploy, and scale your agentic and retrieval-augmented generation (RAG) AI applications.
+The {ai-long} is a fully managed set of tools that help you build, deploy, and scale your agentic and retrieval-augmented generation (RAG) AI applications.
+--
 
 [.centered.card-container]
 == Explore Couchbase Capella
@@ -33,7 +36,18 @@ Get set up with an account and deploy a free tier Capella operational cluster.
 * xref:cloud:get-started:create-account.adoc[]
 * xref:cloud:get-started:run-first-queries.adoc[]
 * xref:cloud:get-started:sdk-playground.adoc[]
-* xref:cloud:get-started:configuring-app-services.adoc[]
+
+
+[.card-box]
+=== icon:mobile[] Get Started With Capella App Services
+
+Create your account and start building mobile and edge apps with Capella App Services.
+
+* https://cloud.couchbase.com/sign-up[Sign Up^]
+* xref:app-services::index.adoc[]
+* xref:app-services::get-started/configuring-app-services.adoc[]
+* xref:app-services::app-services/creating-an-app-service.adoc[]
+* xref:app-services::migrating/on-prem-to-capella.adoc[]
 
 
 [.card-box]
@@ -48,9 +62,9 @@ Create your account and follow our tutorial on how to load data into your Analyt
 * xref:analytics:query:workbench.adoc[]
 
 [.card-box]
-=== icon:stars[] Get Started With Capella AI Services
+=== icon:stars[] Get Started With the {ai-long}
 
-Create your account and start working with Capella AI Services.
+Create your account and start working with the {ai}.
 
 * https://cloud.couchbase.com/sign-up[Sign Up^]
 * xref:ai:get-started:intro.adoc[]
@@ -59,4 +73,5 @@ Create your account and start working with Capella AI Services.
 * xref:ai:build:model-service/deploy-embed-model.adoc[]
 * xref:ai:build:integrate-agent-with-catalog.adoc[]
 * xref:ai:build:ai-functions.adoc[]
+
 

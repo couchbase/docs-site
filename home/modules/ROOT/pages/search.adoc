@@ -1,0 +1,4 @@
+:page-layout: search-page
+:title: Search the site
+
+= Search the docs site

@@ -4,8 +4,8 @@
 #
 # Instead
 #
-#  * edit antora-playbook-staging.diff.yml with just the *differences* from the main playbook
-#  * run: /Users/hakimcassimally/couchbase/docs-site/scripts/patch-cutdown-playbook antora-playbook-staging 
+#  * edit antora-playbook-markdown-staging.diff.yml with just the *differences* from the main playbook
+#  * run: /Users/hakimcassimally/couchbase/docs-site/scripts/patch-cutdown-playbook antora-playbook-markdown-staging 
 
 git:
   ensure_git_suffix: false
@@ -13,6 +13,48 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
+asciidoc:
+  attributes:
+    site-navigation-data-path: _/js/site-navigation-data.js
+    enable-cmos: ""
+    max-include-depth: 10
+    page-partial: false
+    experimental: ""
+    idprefix: "@"
+    idseparator: -@
+    tabs: tabs
+    tabs-sync-option: ""
+    toc: null
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net
+    page-toclevels: 1@
+    page-rank: 50@
+    xrefstyle: short
+    ai: AI Data Plane
+    ai-long: Couchbase AI Data Plane
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    sqlpp: SQL++
+    sqlppc: SQL++ for Capella Analytics
+    sqlppea: SQL++ for Enterprise Analytics
+    sqlpp_url: https://www.couchbase.com/products/n1ql
+    cbpp: Couchbase++
+    kroki-server-url: null
+    kroki-fetch-diagram: true
+  extensions:
+    - ./lib/source-url-include-processor.js
+    - ./lib/json-config-ui-block-macro.js
+    - ./lib/inline-man-macro.js
+    - ./lib/multirow-table-head-tree-processor.js
+    - ./lib/swagger-ui-block-macro.js
+    - ./lib/description-block.js
+    - ./lib/markdown-block.js
+    - ./lib/template-block.js
+    - asciidoctor-kroki
+    - asciidoctor-external-callout
+    - "@asciidoctor/tabs"
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-234/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -25,20 +67,14 @@ antora:
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
     - ./lib/report-tree.js
+    - ./lib/markdown-for-llm.js
     - ./lib/site-stats-extension.js
     - ./lib/component-stats.js
-    - ./lib/time-content-aggregation.js
-    - ./lib/site-dependencies.js
 site:
-  title: Couchbase Docs Staging
-  url: https://docs-staging.couchbase.com
+  title: Couchbase Docs Markdown Staging Chatbot
+  url: https://markdown-staging.docs-test.couchbase.com
   start_page: home::index.adoc
-  robots: |
-    User-agent: *
-    Disallow: /
-
-    User-agent: Algolia Crawler
-    Allow: /
+  robots: disallow
   keys:
     nav_groups: >
       [
@@ -87,55 +123,12 @@ site:
         }
       ]
     google_analytics: null
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-29/ui-bundle.zip
-asciidoc:
-  extensions:
-    - ./lib/source-url-include-processor.js
-    - ./lib/json-config-ui-block-macro.js
-    - ./lib/inline-man-macro.js
-    - ./lib/multirow-table-head-tree-processor.js
-    - ./lib/swagger-ui-block-macro.js
-    - ./lib/description-block.js
-    - ./lib/markdown-block.js
-    - ./lib/template-block.js
-    - asciidoctor-kroki
-    - asciidoctor-external-callout
-    - "@asciidoctor/tabs"
-  attributes:
-    site-navigation-data-path: _/js/site-navigation-data.js
-    enable-cmos: ""
-    max-include-depth: 10
-    page-partial: false
-    experimental: ""
-    idprefix: "@"
-    idseparator: -@
-    tabs: tabs
-    tabs-sync-option: ""
-    toc: null
-    page-toclevels: 1@
-    page-rank: 50@
-    xrefstyle: short
-    ai: AI Data Plane
-    ai-long: Couchbase AI Data Plane
-    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
-    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
-    sqlpp: SQL++
-    sqlppc: SQL++ for Capella Analytics
-    sqlppea: SQL++ for Enterprise Analytics
-    sqlpp_url: https://www.couchbase.com/products/n1ql
-    cbpp: Couchbase++
-    kroki-server-url: null
-    kroki-fetch-diagram: true
-    page-chatbot-origin: https://d2sozpdiqok6m4.cloudfront.net
 content:
   branches: master
   sources:
     - url: .
-      branches:
-        - HEAD
       start_path: home
+      branches: master
     - url: https://github.com/couchbaselabs/docs-style-guide
       branches:
         - main
@@ -188,9 +181,9 @@ content:
         - 0.2.x
       start_path: docs
     - url: https://github.com/couchbaselabs/cbmultimanager
-      start_path: docs
       branches:
-        - master
+        - 0.2.x
+      start_path: docs
     - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
       branches:
         - release/1.2
@@ -248,21 +241,17 @@ content:
         - release/7.2
     - url: https://github.com/couchbase/docs-sdk-common
       branches:
+        - release/8.0.1
         - release/8.0
         - release/7.7
-        - release/7.6.6
-        - release/7.6.2
-        - release/7.6
-        - release/7.2
-        - release/8.0.1
     - url: https://github.com/couchbase/docs-sdk-c
       branches:
         - release/3.3
     - url: https://github.com/couchbase/docs-sdk-cxx
       branches:
-        - release/1.2
         - release/1.4
         - release/1.3
+        - release/1.2
     - url: https://github.com/couchbase/docs-sdk-dotnet
       branches:
         - temp/3.9
@@ -291,11 +280,9 @@ content:
         - release/1.2
     - url: https://github.com/couchbase/docs-sdk-kotlin
       branches:
-        - release/3.9
-        - temp/1.5
-        - temp/1.4
-        - temp/1.3
-        - release/1.2
+        - temp/3.12
+        - temp/3.11
+        - temp/3.10
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
         - release/3.12
@@ -303,13 +290,13 @@ content:
         - release/3.10
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
-        - temp/4.6
         - temp/4.7
+        - temp/4.6
         - temp/4.5
     - url: https://github.com/couchbase/docs-sdk-php
       branches:
-        - temp/4.4
         - temp/4.5
+        - temp/4.4
         - temp/4.3
     - url: https://github.com/couchbase/docs-sdk-python
       branches:
@@ -318,8 +305,8 @@ content:
         - temp/4.4
     - url: https://github.com/couchbase/docs-sdk-ruby
       branches:
-        - temp/3.7
         - temp/3.8
+        - temp/3.7
         - temp/3.6
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
