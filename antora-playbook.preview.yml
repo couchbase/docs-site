@@ -27,6 +27,13 @@ antora:
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
+    - require: ./lib/override-url-component.js
+      data:
+        operational-insights:
+          - enterprise-analytics
+        operational-insights-cloud:
+          - analytics
+          - columnar
     - ./lib/preview.js
     - ./lib/report-tree.js
     - ./lib/site-stats-extension.js
@@ -40,7 +47,7 @@ site:
       [
         { "title": "Server",
           "startPage": "home::server.adoc",
-          "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"],
+          "components": ["server", "operator", "cloud-native-gateway"],
           "color": "#c41016"
         },
         { "title": "Mobile / Edge",
@@ -50,7 +57,7 @@ site:
         },
         { "title": "Capella",
           "startPage": "home::cloud.adoc",
-          "components": ["cloud", "app-services", "analytics"],
+          "components": ["cloud", "app-services"],
           "expandHeaderLevels": 1,
           "color": "#e8830c"
         },
@@ -58,6 +65,12 @@ site:
           "startPage": "ai:get-started:intro.adoc", 
           "components": ["ai", "mcp-server"],
           "color": "#f2a541"
+        },
+        { "title": "Operational Insights",
+          "startPage": "home::operational-insights.adoc",
+          "components": ["analytics", "enterprise-analytics"],
+          "expandHeaderLevels": 1,
+          "color": "#ed9426"
         },
         { "title": "Develop",
           "startPage": "home::developer.adoc",
@@ -118,7 +131,6 @@ content:
     - url: https://github.com/couchbaselabs/docs-columnar
       branches:
         - main
-        - legacy-columnar-component
     - url: https://github.com/couchbaselabs/docs-ai
       branches:
         - main
