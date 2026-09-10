@@ -20,6 +20,9 @@ content:
    - url: https://github.com/couchbaselabs/docs-columnar
      branches:
        $replace: [ DOC-14627-analytics-url-rename-columnar ]
+   - url: https://github.com/couchbaselabs/docs-enterprise-analytics
+     branches:
+       $replace: [ DOC-14629-Restructure-EA ]
 
 asciidoc:
   attributes:
