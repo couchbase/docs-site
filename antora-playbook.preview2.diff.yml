@@ -10,11 +10,21 @@ site:
   robots: disallow
 
 content:
+  $prune: 1
   $select:
     - '.'
     - '**/docs-columnar'
     - '**/docs-enterprise-analytics'
     - '**/docs-analytics'
+    - '**/docs-capella'
+    - '**/docs-capella'
+    - '**/docs-devex'
+    - '**/cb-swagger'
+    - '**/docs-connectors-power-bi'
+    - '**/docs-tableau'
+    - '**/docs-sdk-java'
+    - '**/docs-sdk-common'
+    - '**/couchbase-cli'
 
   sources:
    - url: https://github.com/couchbaselabs/docs-columnar
@@ -23,6 +33,9 @@ content:
    - url: https://github.com/couchbaselabs/docs-enterprise-analytics
      branches:
        $replace: [ DOC-14629-Restructure-EA ]
+   - url: https://github.com/couchbaselabs/docs-devex
+     branches:
+       - capella
 
 asciidoc:
   attributes:
