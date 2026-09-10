@@ -17,7 +17,7 @@ content:
     - '**/docs-enterprise-analytics'
     - '**/docs-analytics'
     - '**/docs-capella'
-    - '**/docs-capella'
+    - '**/docs-server'
     - '**/docs-devex'
     - '**/cb-swagger'
     - '**/docs-connectors-power-bi'
