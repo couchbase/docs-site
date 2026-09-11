@@ -27,7 +27,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-fleetmanager
     branches: main
 
-  - url: https://github.com/couchbaselabs/docs-rosetta
+  - url: https://github.com/couchbaselabs/docs-compatibility
     branches: main
 
 asciidoc:
