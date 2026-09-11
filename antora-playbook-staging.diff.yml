@@ -80,4 +80,4 @@ content:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-30/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-31/ui-bundle.zip
