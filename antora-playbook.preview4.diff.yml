@@ -9,7 +9,7 @@ site:
   title: Couchbase Docs - Compatibility
   robots: disallow
   keys:
-    nav_groups:
+    nav_groups: |
         [
           { "title": "Server",
             "startPage": "home::server.adoc",
