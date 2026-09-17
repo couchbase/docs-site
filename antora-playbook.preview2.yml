@@ -92,7 +92,7 @@ site:
           "color": "#f2a541"
         }
       ]
-  title: Couchbase Docs Preview
+  title: Couchbase Docs Preview Polaris
   robots: disallow
 asciidoc:
   extensions:
@@ -132,9 +132,10 @@ asciidoc:
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
     kroki-fetch-diagram: true
+    docs-contact: Zeba
     kroki-server-url: null
     page-show-preview-banner: false
-    page-watermark: preview2@
+    page-watermark: Polaris
 content:
   branches: master
   sources:
