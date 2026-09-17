@@ -131,10 +131,10 @@ asciidoc:
     sqlppea: SQL++ for Enterprise Analytics
     sqlpp_url: https://www.couchbase.com/products/n1ql
     cbpp: Couchbase++
+    kroki-server-url: null
     kroki-fetch-diagram: true
     docs-contact: Zeba
-    kroki-server-url: null
-    page-show-preview-banner: false
+    page-show-preview-banner: true
     page-watermark: Polaris
 content:
   branches: master
@@ -165,7 +165,7 @@ content:
         - release/1.3
     - url: https://github.com/couchbaselabs/docs-enterprise-analytics
       branches:
-        - DOC-14629-Restructure-EA
+        - /DOC-14654-EA-2.1-Rebranding
     - url: https://github.com/couchbase/docs-analytics
       branches:
         - release/8.0

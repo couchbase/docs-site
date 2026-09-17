@@ -32,7 +32,7 @@ content:
        $replace: [ DOC-14627-analytics-url-rename-columnar ]
    - url: https://github.com/couchbaselabs/docs-enterprise-analytics
      branches:
-       $replace: [ DOC-14629-Restructure-EA ]
+       $replace: [ /DOC-14654-EA-2.1-Rebranding ]
    - url: https://github.com/couchbaselabs/docs-devex
      branches:
        - capella
@@ -40,8 +40,7 @@ content:
 asciidoc:
   attributes:
     docs-contact: Zeba
-    kroki-server-url: null
-    page-show-preview-banner: false
+    page-show-preview-banner: true
     page-watermark: Polaris
 
 #ui:
