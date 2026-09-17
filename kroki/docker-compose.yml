@@ -1,7 +1,6 @@
-version: "3"
 services:
   kroki:
-    image: yuzutech/kroki
+    image: yuzutech/kroki:latest
     depends_on:
       - blockdiag
       - mermaid
@@ -14,19 +13,24 @@ services:
       - KROKI_EXCALIDRAW_HOST=excalidraw
     ports:
       - "9500:8000"
+    restart: always
   blockdiag:
-    image: yuzutech/kroki-blockdiag
+    image: yuzutech/kroki-blockdiag:latest
     expose:
       - "8001"
+    restart: always
   mermaid:
-    image: yuzutech/kroki-mermaid
+    image: yuzutech/kroki-mermaid:latest
     expose:
       - "8002"
+    restart: always
   bpmn:
-    image: yuzutech/kroki-bpmn
+    image: yuzutech/kroki-bpmn:latest
     expose:
       - "8003"
+    restart: always
   excalidraw:
-    image: yuzutech/kroki-excalidraw
+    image: yuzutech/kroki-excalidraw:latest
     expose:
       - "8004"
+    restart: always
