@@ -6,7 +6,7 @@ antora:
   - ./lib/report-tree.js
 
 site:
-  title: Couchbase Docs Preview
+  title: Couchbase Docs Preview Polaris
   robots: disallow
 
 content:
@@ -39,9 +39,10 @@ content:
 
 asciidoc:
   attributes:
+    docs-contact: Zeba
     kroki-server-url: null
     page-show-preview-banner: false
-    page-watermark: preview2@
+    page-watermark: Polaris
 
 #ui:
   #bundle:
