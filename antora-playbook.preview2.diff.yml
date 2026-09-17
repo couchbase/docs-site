@@ -32,7 +32,7 @@ content:
        $replace: [ DOC-14627-analytics-url-rename-columnar ]
    - url: https://github.com/couchbaselabs/docs-enterprise-analytics
      branches:
-       $replace: [ /DOC-14654-EA-2.1-Rebranding ]
+       $replace: [ DOC-14654-EA-2.1-Rebranding ]
    - url: https://github.com/couchbaselabs/docs-devex
      branches:
        - capella
