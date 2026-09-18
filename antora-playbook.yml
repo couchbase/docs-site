@@ -129,7 +129,7 @@ content:
     branches: HEAD
     start_path: home
 
-    - url: https://github.com/couchbase/docs-capella # private
+  - url: https://github.com/couchbase/docs-capella # private
     branches: [AV-136175_improve-alert-experience]
 
   - url: https://github.com/couchbaselabs/docs-capella-app-services # private
