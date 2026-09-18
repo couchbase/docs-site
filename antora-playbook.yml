@@ -276,6 +276,10 @@ content:
 
   - url: https://github.com/couchbase/docs-operational-insights-sdk-dotnet
     branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-operational-insights-sdk-go
+    branches: [release/1.0]
+  - url: https://github.com/couchbase/docs-operational-insights-sdk-java
+    branches: [release/1.0]
 
     
   - url: https://github.com/couchbase/docs-columnar-sdk-common
