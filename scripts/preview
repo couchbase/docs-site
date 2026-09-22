@@ -1,10 +1,14 @@
 #!/bin/bash
-PREVIEW_VERSION="1.1.1"
+PREVIEW_VERSION="1.2.0"
 
 set -eo pipefail
 echo "🐇 Hello! I'm the Docs Build Rabbit"
 echo "version $PREVIEW_VERSION"
 echo
+
+info()    { [ -t 1 ] && printf '\033[36m%s\033[0m\n' "$*" || echo "$*"; }
+warn()    { [ -t 1 ] && printf '\033[1;31m%s\033[0m\n' "$*" || echo "$*"; }
+success() { [ -t 1 ] && printf '\033[32m%s\033[0m\n' "$*" || echo "$*"; }
 
 help() {
     cat <<HELP | less
@@ -62,14 +66,16 @@ If you run into issues, you can run the script in debug mode.
 
     preview --debug
 
-These files should be sent to the docs team:
+This shows the full build output and writes preview/debug.log. Once it
+finishes (or fails), it opens preview/doctor/ in Finder - attach debug.log
+and the files below to an email or Slack message to the docs team:
 
     preview/debug.log
     preview/doctor/tree.html
-    preview/doctor/antora-playbook.js
+    preview/doctor/antora-playbook.json
 
-The automated email will only work on MacOS.
-If you are on Linux, then just send those files manually.
+Finder only opens automatically on MacOS.
+If you are on Linux, then just find and send those files manually.
 
 
 DOCUMENTATION
@@ -203,8 +209,10 @@ if [ -z "$REMOTE" ]; then
     export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
 fi
 
-echo "   Let's build this preview!"
-env | grep ^PREVIEW
+info "🐇 Building preview for ${PREVIEW_REPO}@${PREVIEW_BRANCH} -> ${PREVIEW_COMPONENT} (start_path: ${PREVIEW_START_PATH:-.})"
+if [ -n "$DEBUG" ]; then
+    env | grep ^PREVIEW
+fi
 
 assert() {
     GOT=$1
@@ -213,10 +221,14 @@ assert() {
 
     if [ "$GOT" != "$EXPECTED" ]; then
         echo
-        echo WARNING $WARNING
-        echo "Your remote build may not match your local preview."
+        warn "WARNING $WARNING"
+        warn "Your remote build may not match your local preview."
 
-        read -n 1 -s -r -p "Press any key to continue, or Ctrl+C to exit"
+        if [ -t 1 ]; then
+            read -n 1 -s -r -p "$(printf '\033[1;31mPress any key to continue, or Ctrl+C to exit\033[0m')"
+        else
+            read -n 1 -s -r -p "Press any key to continue, or Ctrl+C to exit"
+        fi
         echo
         echo
     fi
@@ -266,7 +278,7 @@ if [ -n "$REMOTE" ]; then
                 --arg UUID $UUID \
                 '.[] | select(.displayTitle | test($UUID))| .url' )
         if [ -n "$URL" ]; then
-            echo Opening $URL in your web browser
+            success "Opening $URL in your web browser"
             # or could `gh run watch $databaseId`
             open $URL
             exit 0
@@ -283,16 +295,15 @@ else
     cd $DOCS_SITE
     echo
 
-    ANTORA="npx antora --extension ./lib/preview.js antora-playbook.preview.yml --stacktrace --url '$(pwd)/preview'"
-
     if [ -n "$DEBUG" ]; then
-        echo "Running in debug mode"
-        $ANTORA --log-format=pretty 2>&1 | tee preview-debug.log
-        mv preview-debug.log preview/debug.log
+        info "Running in debug mode"
+        node scripts/preview-runner.js --debug || CODE=$?
+        CODE=${CODE:-0}
 
-        echo Creating preview debug report...
-        osascript scripts/preview-debug.scpt
+        info "Opening preview/doctor - attach debug.log and these files if you're sending them to the docs team"
+        open preview/doctor 2>/dev/null || true
+        exit $CODE
     else
-        $ANTORA
+        node scripts/preview-runner.js
     fi
 fi
