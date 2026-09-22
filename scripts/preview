@@ -1,7 +1,8 @@
 #!/bin/bash
-PREVIEW_VERSION="1.2.0"
+PREVIEW_VERSION="1.2.1"
 
 set -eo pipefail
+ORIG_ARGS=("$@")
 echo "🐇 Hello! I'm the Docs Build Rabbit"
 echo "version $PREVIEW_VERSION"
 echo
@@ -59,7 +60,13 @@ Otherwise, you can update the script manually.
     git pull
     scripts/preview --init
 
-    
+The script also auto-updates itself (like brew/npm do) if it's more than
+7 days old, by running the same --update step above the next time you run
+it. Configure the threshold, in days, with:
+
+    export PREVIEW_UPDATE_CHECK_DAYS=14
+
+
 TROUBLESHOOTING
 
 If you run into issues, you can run the script in debug mode.
@@ -136,6 +143,25 @@ done
 
 DOCS_SITE=$(realpath $0/../..)
 
+# Like brew/npm, check every so often whether this script itself is stale
+# and update it automatically - nobody remembers to do it by hand.
+# NOTE: $0 is usually /usr/local/bin/preview, a symlink to this file - BSD
+# stat (macOS) doesn't dereference symlinks by default and would otherwise
+# report the symlink's own (never-changing) creation time forever, not this
+# file's actual mtime. -L makes both BSD and GNU stat follow it.
+PREVIEW_UPDATE_CHECK_DAYS=${PREVIEW_UPDATE_CHECK_DAYS:-7}
+if [ -z "$UPDATE" ] && [ -z "$INIT" ]; then
+    MTIME=$( { stat -L -f %m "$0" || stat -L -c %Y "$0"; } 2>/dev/null )
+    if [ -n "$MTIME" ]; then
+        AGE_DAYS=$(( ( $(date +%s) - MTIME ) / 86400 ))
+        if [ "$AGE_DAYS" -ge "$PREVIEW_UPDATE_CHECK_DAYS" ]; then
+            warn "🐇 This script is ${AGE_DAYS}d old (>= ${PREVIEW_UPDATE_CHECK_DAYS}d) - we are going to do an update, like brew/npm do..."
+            "$0" --update
+            exec "$0" "${ORIG_ARGS[@]}"
+        fi
+    fi
+fi
+
 if [ -n "$UPDATE" ]; then
     cd $DOCS_SITE
 
@@ -159,7 +185,11 @@ if [ -n "$INIT" ]; then
     which preview || sudo ln -sf $(realpath $0) /usr/local/bin/preview
     which preview >/dev/null || ( echo "Failed to link preview command"; exit 1 )
 
-    brew install gh jq yq
+    # HOMEBREW_NO_ASK: newer brew defaults to an "ask mode" that prompts
+    # "Do you want to proceed with the installation? [y/n]" for anything
+    # beyond exactly the named formulae - not what we want when this runs
+    # unattended from the auto-update check above.
+    HOMEBREW_NO_ASK=1 brew install gh jq yq
     gh auth token || gh auth login
     npm ci --allow-git=all
 
@@ -175,6 +205,10 @@ if [ -n "$INIT" ]; then
     fi
 
     echo "🐇 initialised preview script"
+    # git pull may not touch this file's mtime if its content didn't change
+    # (e.g. it was already up to date) - touch it anyway so the staleness
+    # check above doesn't immediately fire again.
+    touch "$DOCS_SITE/scripts/preview"
     exit 0
 fi
 
