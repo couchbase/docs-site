@@ -193,7 +193,7 @@ fi
 ANTORA=$(realpath $(dirname $ANTORA))
 TOPLEVEL=$(git rev-parse --show-toplevel)
 
-export PREVIEW_REPO=$(basename $TOPLEVEL)
+export PREVIEW_REPO=$(gh repo view --json name --jq .name)
 export PREVIEW_BRANCH=$(git branch --show-current)
 export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
 export PREVIEW_CONFIG=${PREVIEW_CONFIG:-$PREVIEW_BRANCH}
@@ -283,7 +283,7 @@ else
     cd $DOCS_SITE
     echo
 
-    ANTORA="npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url '$(pwd)/preview'"
+    ANTORA="npx antora --extension ./lib/preview.js antora-playbook.preview.yml --stacktrace --url '$(pwd)/preview'"
 
     if [ -n "$DEBUG" ]; then
         echo "Running in debug mode"
