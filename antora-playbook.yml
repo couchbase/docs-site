@@ -9,6 +9,10 @@ antora:
   - ./lib/embargo.js
   - ./lib/antora-component-version-rank.js
   - ./lib/llms-txt.js
+  - require: ./lib/override-url-component.js
+    data:
+      operational-insights: [enterprise-analytics]
+      operational-insights-cloud: [analytics, columnar]
 
 site:
   title: Couchbase Docs
@@ -63,37 +67,49 @@ site:
         [
           { "title": "Server",
             "startPage": "home::server.adoc",
-            "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway"],
-            "color": "#c41016"
-          },
-          { "title": "Mobile / Edge",
-            "startPage": "home::mobile.adoc",
-            "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
-            "color": "#d9480f"
-          },
-          { "title": "Capella",
-            "startPage": "home::cloud.adoc",
-            "components": ["cloud", "app-services", "analytics"],
-            "expandHeaderLevels": 1,
-            "color": "#e8830c"
-          },
-          { "title": "AI Data Plane",
-            "startPage": "ai:get-started:intro.adoc", 
-            "components": ["ai", "mcp-server"],
-            "color": "#f2a541"
-          },
-          { "title": "Develop",
-            "startPage": "home::developer.adoc",
-            "color": "#8c1c1c",
+            "components": ["server", "operator", "cloud-native-gateway"],
+            "color": "#c41016",
             "subGroups": [
               {
                 "title": "Operational SDKs",
                 "startPage": "home::sdk.adoc",
                 "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
                 "expandHeaderLevels": 1
-              },
+              }
+            ]
+          },
+          { "title": "Capella",
+            "startPage": "home::cloud.adoc",
+            "components": ["cloud", "app-services"],
+            "expandHeaderLevels": 1,
+            "color": "#e8830c",
+            "subGroups": [
               {
-                "title": "Analytics SDKs",
+                "title": "Operational SDKs",
+                "startPage": "home::sdk.adoc",
+                "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+                "expandHeaderLevels": 1
+              }
+            ]
+          },
+          { "title": "Mobile / Edge",
+            "startPage": "home::mobile.adoc",
+            "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
+            "color": "#d9480f"
+          },
+          { "title": "AI Data Plane",
+            "startPage": "ai:get-started:intro.adoc", 
+            "components": ["ai", "mcp-server"],
+            "color": "#f2a541"
+          },
+          { "title": "Operational Insights",
+            "startPage": "home::operational-insights.adoc",
+            "components": ["analytics", "enterprise-analytics"],
+            "expandHeaderLevels": 1,
+            "color": "#ed9426"
+            "subGroups": [
+              {
+                "title": "Legacy Analytics SDKs",
                 "startPage": "home::analytics-sdk.adoc",
                 "components": ["*-analytics-sdk", "*-columnar-sdk"],
                 "expandHeaderLevels": 1
@@ -151,8 +167,7 @@ content:
 
   - url: https://github.com/couchbaselabs/docs-columnar # private
     branches:
-      - main                      # `analytics` component (Capella Analytics)
-      - legacy-columnar-component # `columnar` dummy component for sake of :page-aliases:
+      - main                      # `analytics` component (Capella Operational Insights)
     # see under Server section below for enterprise-analytics and legacy analytics
 
   - url: https://github.com/couchbaselabs/docs-ai # private
@@ -203,8 +218,11 @@ content:
     # Server
     ############################
 
+    # `enterprise-analytics`
   - url: https://github.com/couchbaselabs/docs-enterprise-analytics # private
     branches: [release/2.2, release/2.1, release/2.0]
+
+    # legacy analytics under `server`
   - url: https://github.com/couchbase/docs-analytics # private
     branches: [release/8.0, release/7.6, release/7.2]
 
