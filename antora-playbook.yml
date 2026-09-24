@@ -245,17 +245,17 @@ content:
     - url: https://github.com/couchbase/docs-efcore
       branches: [release/2.0, release/1.0]
     - url: https://github.com/couchbase/docs-sdk-go
-      branches: [release/2.13, release/2.12
+      branches: [release/2.13, release/2.12]
     - url: https://github.com/couchbase/docs-sdk-rust
       branches: [release/1.1, release/1.0]
     - url: https://github.com/couchbase/docs-sdk-java
-      branches: [DOC-14113-commoning, release/3.12
+      branches: [DOC-14113-commoning, release/3.12]
     - url: https://github.com/couchbase/docs-quarkus-extension
-      branches: [release/1.4, release/1.3
+      branches: [release/1.4, release/1.3]
     - url: https://github.com/couchbase/docs-sdk-kotlin
-      branches: [DOC-10202--Kotlin-Parity, temp/3.12
+      branches: [DOC-10202--Kotlin-Parity, temp/3.12]
     - url: https://github.com/couchbase/docs-sdk-scala
-      branches: [DOC-14113-commoning, release/3.12
+      branches: [DOC-14113-commoning, release/3.12]
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
         - temp/4.7
