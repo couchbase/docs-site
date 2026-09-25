@@ -67,30 +67,6 @@ site:
             }
           ]
         },
-        { "title": "Mobile / Edge",
-          "startPage": "home::mobile.adoc",
-          "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
-          "color": "#d9480f"
-        },
-        { "title": "AI Data Plane",
-          "startPage": "ai:get-started:intro.adoc", 
-          "components": ["ai", "mcp-server"],
-          "color": "#f2a541"
-        },
-        { "title": "Operational Insights",
-          "startPage": "home::operational-insights.adoc",
-          "components": ["analytics", "enterprise-analytics", "*-insights-sdk-*"],
-          "expandHeaderLevels": 1,
-          "color": "#ed9426",
-          "subGroups": [
-            {
-              "title": "Legacy Analytics SDKs",
-              "startPage": "home::analytics-sdk.adoc",
-              "components": ["*-analytics-sdk", "*-columnar-sdk"],
-              "expandHeaderLevels": 1
-            }
-          ]
-        },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
           "color": "#f2a541"
