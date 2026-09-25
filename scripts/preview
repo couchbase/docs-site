@@ -1,10 +1,15 @@
 #!/bin/bash
-PREVIEW_VERSION="1.1.1"
+PREVIEW_VERSION="1.2.1"
 
 set -eo pipefail
+ORIG_ARGS=("$@")
 echo "🐇 Hello! I'm the Docs Build Rabbit"
 echo "version $PREVIEW_VERSION"
 echo
+
+info()    { [ -t 1 ] && printf '\033[36m%s\033[0m\n' "$*" || echo "$*"; }
+warn()    { [ -t 1 ] && printf '\033[1;31m%s\033[0m\n' "$*" || echo "$*"; }
+success() { [ -t 1 ] && printf '\033[32m%s\033[0m\n' "$*" || echo "$*"; }
 
 help() {
     cat <<HELP | less
@@ -55,21 +60,29 @@ Otherwise, you can update the script manually.
     git pull
     scripts/preview --init
 
-    
+The script also auto-updates itself (like brew/npm do) if it's more than
+7 days old, by running the same --update step above the next time you run
+it. Configure the threshold, in days, with:
+
+    export PREVIEW_UPDATE_CHECK_DAYS=14
+
+
 TROUBLESHOOTING
 
 If you run into issues, you can run the script in debug mode.
 
     preview --debug
 
-These files should be sent to the docs team:
+This shows the full build output and writes preview/debug.log. Once it
+finishes (or fails), it opens preview/doctor/ in Finder - attach debug.log
+and the files below to an email or Slack message to the docs team:
 
     preview/debug.log
     preview/doctor/tree.html
-    preview/doctor/antora-playbook.js
+    preview/doctor/antora-playbook.json
 
-The automated email will only work on MacOS.
-If you are on Linux, then just send those files manually.
+Finder only opens automatically on MacOS.
+If you are on Linux, then just find and send those files manually.
 
 
 DOCUMENTATION
@@ -130,6 +143,25 @@ done
 
 DOCS_SITE=$(realpath $0/../..)
 
+# Like brew/npm, check every so often whether this script itself is stale
+# and update it automatically - nobody remembers to do it by hand.
+# NOTE: $0 is usually /usr/local/bin/preview, a symlink to this file - BSD
+# stat (macOS) doesn't dereference symlinks by default and would otherwise
+# report the symlink's own (never-changing) creation time forever, not this
+# file's actual mtime. -L makes both BSD and GNU stat follow it.
+PREVIEW_UPDATE_CHECK_DAYS=${PREVIEW_UPDATE_CHECK_DAYS:-7}
+if [ -z "$UPDATE" ] && [ -z "$INIT" ]; then
+    MTIME=$( { stat -L -f %m "$0" || stat -L -c %Y "$0"; } 2>/dev/null )
+    if [ -n "$MTIME" ]; then
+        AGE_DAYS=$(( ( $(date +%s) - MTIME ) / 86400 ))
+        if [ "$AGE_DAYS" -ge "$PREVIEW_UPDATE_CHECK_DAYS" ]; then
+            warn "🐇 This script is ${AGE_DAYS}d old (>= ${PREVIEW_UPDATE_CHECK_DAYS}d) - we are going to do an update, like brew/npm do..."
+            "$0" --update
+            exec "$0" "${ORIG_ARGS[@]}"
+        fi
+    fi
+fi
+
 if [ -n "$UPDATE" ]; then
     cd $DOCS_SITE
 
@@ -153,9 +185,13 @@ if [ -n "$INIT" ]; then
     which preview || sudo ln -sf $(realpath $0) /usr/local/bin/preview
     which preview >/dev/null || ( echo "Failed to link preview command"; exit 1 )
 
-    brew install gh jq yq
+    # HOMEBREW_NO_ASK: newer brew defaults to an "ask mode" that prompts
+    # "Do you want to proceed with the installation? [y/n]" for anything
+    # beyond exactly the named formulae - not what we want when this runs
+    # unattended from the auto-update check above.
+    HOMEBREW_NO_ASK=1 brew install gh jq yq
     gh auth token || gh auth login
-    npm ci
+    npm ci --allow-git=all
 
     if [ ! -f ~/.git-credentials ]; then
       scripts/add-credentials
@@ -169,6 +205,10 @@ if [ -n "$INIT" ]; then
     fi
 
     echo "🐇 initialised preview script"
+    # git pull may not touch this file's mtime if its content didn't change
+    # (e.g. it was already up to date) - touch it anyway so the staleness
+    # check above doesn't immediately fire again.
+    touch "$DOCS_SITE/scripts/preview"
     exit 0
 fi
 
@@ -193,7 +233,7 @@ fi
 ANTORA=$(realpath $(dirname $ANTORA))
 TOPLEVEL=$(git rev-parse --show-toplevel)
 
-export PREVIEW_REPO=$(basename $TOPLEVEL)
+export PREVIEW_REPO=$(gh repo view --json name --jq .name)
 export PREVIEW_BRANCH=$(git branch --show-current)
 export PREVIEW_START_PATH=.${ANTORA#$TOPLEVEL}
 export PREVIEW_CONFIG=${PREVIEW_CONFIG:-$PREVIEW_BRANCH}
@@ -203,8 +243,10 @@ if [ -z "$REMOTE" ]; then
     export PREVIEW_OVERRIDE=${PREVIEW_OVERRIDE:-antora-playbook.preview.local.yml}
 fi
 
-echo "   Let's build this preview!"
-env | grep ^PREVIEW
+info "🐇 Building preview for ${PREVIEW_REPO}@${PREVIEW_BRANCH} -> ${PREVIEW_COMPONENT} (start_path: ${PREVIEW_START_PATH:-.})"
+if [ -n "$DEBUG" ]; then
+    env | grep ^PREVIEW
+fi
 
 assert() {
     GOT=$1
@@ -213,10 +255,14 @@ assert() {
 
     if [ "$GOT" != "$EXPECTED" ]; then
         echo
-        echo WARNING $WARNING
-        echo "Your remote build may not match your local preview."
+        warn "WARNING $WARNING"
+        warn "Your remote build may not match your local preview."
 
-        read -n 1 -s -r -p "Press any key to continue, or Ctrl+C to exit"
+        if [ -t 1 ]; then
+            read -n 1 -s -r -p "$(printf '\033[1;31mPress any key to continue, or Ctrl+C to exit\033[0m')"
+        else
+            read -n 1 -s -r -p "Press any key to continue, or Ctrl+C to exit"
+        fi
         echo
         echo
     fi
@@ -266,7 +312,7 @@ if [ -n "$REMOTE" ]; then
                 --arg UUID $UUID \
                 '.[] | select(.displayTitle | test($UUID))| .url' )
         if [ -n "$URL" ]; then
-            echo Opening $URL in your web browser
+            success "Opening $URL in your web browser"
             # or could `gh run watch $databaseId`
             open $URL
             exit 0
@@ -283,16 +329,15 @@ else
     cd $DOCS_SITE
     echo
 
-    ANTORA="npx antora --extension lib/preview.js antora-playbook.preview.yml --stacktrace --url '$(pwd)/preview'"
-
     if [ -n "$DEBUG" ]; then
-        echo "Running in debug mode"
-        $ANTORA --log-format=pretty 2>&1 | tee preview-debug.log
-        mv preview-debug.log preview/debug.log
+        info "Running in debug mode"
+        node scripts/preview-runner.js --debug || CODE=$?
+        CODE=${CODE:-0}
 
-        echo Creating preview debug report...
-        osascript scripts/preview-debug.scpt
+        info "Opening preview/doctor - attach debug.log and these files if you're sending them to the docs team"
+        open preview/doctor 2>/dev/null || true
+        exit $CODE
     else
-        $ANTORA
+        node scripts/preview-runner.js
     fi
 fi

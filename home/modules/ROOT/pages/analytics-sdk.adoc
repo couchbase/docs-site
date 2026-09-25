@@ -15,6 +15,7 @@ include::partial$info-banner.adoc[]
 // Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 // It uses column storage, which gives speedier retrieval of data.
 
+[description]
 xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] is a self-managed, JSON-native NoSQL analytical database.
 It serves to unify data from diverse sources, allowing for the execution of complex analytical queries and the extraction of timely insights.
 

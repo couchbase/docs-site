@@ -10,12 +10,13 @@ include::home::partial$info-banner.adoc[]
 
 = Develop with Couchbase
 
+[description]
+--
 The Developer Data Platform for Critical Applications in Our AI World.
 
 Couchbase is a multipurpose NoSQL database for transactional, analytical, mobile, and AI applications.
 Develop at the edge with offline-first Couchbase Lite, for transactional workloads with SDKs in a dozen popular programming languages, for real-time analytics, and build agentic apps.
-
-
+--
 
 [.centered.card-container]
 == Development Choices for Your Use Cases

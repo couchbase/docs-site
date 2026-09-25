@@ -11,11 +11,14 @@ include::partial$info-banner.adoc[]
 
 == {empty}
 
+[description]
+--
 Couchbase is the modern database for enterprise applications.
 
 Couchbase Server is an open source, distributed, JSON document database.
 It exposes a scale-out, key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for efficient queries, and a powerful query engine for executing SQL-like queries.
 For mobile and Internet of Things environments Couchbase also runs natively on-device and manages synchronization to the server.
+--
 
 ----
 try {

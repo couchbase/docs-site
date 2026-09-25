@@ -1,0 +1,91 @@
+# RUN:
+#  scripts/patch-cutdown-playbook antora-playbook.preview4
+
+antora:
+  extensions:
+  - ./lib/report-tree.js
+
+site:
+  title: Couchbase Docs - Compatibility
+  robots: disallow
+  keys:
+    nav_groups: |
+        [
+          { "title": "Server",
+            "startPage": "home::server.adoc",
+            "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway", "compatibility"],
+            "color": "#c41016"
+          },
+          { "title": "Mobile / Edge",
+            "startPage": "home::mobile.adoc",
+            "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
+            "color": "#d9480f"
+          },
+          { "title": "Capella",
+            "startPage": "home::cloud.adoc",
+            "components": ["cloud", "app-services", "analytics"],
+            "expandHeaderLevels": 1,
+            "color": "#e8830c"
+          },
+          { "title": "AI Data Plane",
+            "startPage": "ai:get-started:intro.adoc",
+            "components": ["ai", "mcp-server"],
+            "color": "#f2a541"
+          },
+          { "title": "Develop",
+            "startPage": "home::developer.adoc",
+            "color": "#8c1c1c",
+            "subGroups": [
+              {
+                "title": "Operational SDKs",
+                "startPage": "home::sdk.adoc",
+                "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+                "expandHeaderLevels": 1
+              },
+              {
+                "title": "Analytics SDKs",
+                "startPage": "home::analytics-sdk.adoc",
+                "components": ["*-analytics-sdk", "*-columnar-sdk"],
+                "expandHeaderLevels": 1
+              }
+            ]
+          },
+          { "title": "Contribute",
+            "components": ["home", "styleguide", "ui-ux", "pendo"],
+            "color": "#f2a541"
+          }
+        ]
+
+content:
+  $prune: 1
+  $select:
+    - '.'
+    - '**/docs-columnar'
+    - '**/docs-enterprise-analytics'
+    - '**/docs-analytics'
+    - '**/docs-capella'
+    - '**/docs-server'
+    - '**/docs-devex'
+    - '**/cb-swagger'
+    - '**/docs-connectors-power-bi'
+    - '**/docs-tableau'
+    - '**/docs-sdk-java'
+    - '**/docs-sdk-common'
+    - '**/couchbase-cli'
+
+  sources:
+   - url: https://github.com/couchbaselabs/docs-compatibility
+     branches: main
+
+   - url: https://github.com/couchbaselabs/docs-devex
+     branches:
+       - capella
+
+asciidoc:
+  attributes:
+
+    # metadata for Hakim's benefit
+    docs-contact: Tim
+
+    page-show-preview-banner: true
+    page-watermark: CompatibilityPreview

@@ -13,6 +13,45 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
+asciidoc:
+  attributes:
+    site-navigation-data-path: _/js/site-navigation-data.js
+    enable-cmos: ""
+    max-include-depth: 10
+    page-partial: false
+    experimental: ""
+    idprefix: "@"
+    idseparator: -@
+    tabs: tabs
+    tabs-sync-option: ""
+    toc: null
+    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net
+    page-toclevels: 1@
+    page-rank: 50@
+    xrefstyle: short
+    ai: AI Data Plane
+    ai-long: Couchbase AI Data Plane
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    sqlpp: SQL++
+    sqlppc: SQL++ for Capella Analytics
+    sqlppea: SQL++ for Enterprise Analytics
+    sqlpp_url: https://www.couchbase.com/products/n1ql
+    cbpp: Couchbase++
+    kroki-server-url: null
+    kroki-fetch-diagram: true
+  extensions:
+    - ./lib/source-url-include-processor.js
+    - ./lib/json-config-ui-block-macro.js
+    - ./lib/inline-man-macro.js
+    - ./lib/multirow-table-head-tree-processor.js
+    - ./lib/swagger-ui-block-macro.js
+    - ./lib/description-block.js
+    - ./lib/markdown-block.js
+    - ./lib/template-block.js
+    - asciidoctor-kroki
+    - asciidoctor-external-callout
+    - "@asciidoctor/tabs"
 output:
   dir: ./public
 runtime:
@@ -89,45 +128,7 @@ site:
     google_analytics: null
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-14/ui-bundle.zip
-asciidoc:
-  extensions:
-    - ./lib/source-url-include-processor.js
-    - ./lib/json-config-ui-block-macro.js
-    - ./lib/inline-man-macro.js
-    - ./lib/multirow-table-head-tree-processor.js
-    - ./lib/swagger-ui-block-macro.js
-    - ./lib/markdown-block.js
-    - ./lib/template-block.js
-    - asciidoctor-kroki
-    - asciidoctor-external-callout
-    - "@asciidoctor/tabs"
-  attributes:
-    site-navigation-data-path: _/js/site-navigation-data.js
-    enable-cmos: ""
-    max-include-depth: 10
-    page-partial: false
-    experimental: ""
-    idprefix: "@"
-    idseparator: -@
-    tabs: tabs
-    tabs-sync-option: ""
-    toc: null
-    page-toclevels: 1@
-    page-rank: 50@
-    xrefstyle: short
-    ai: AI Data Plane
-    ai-long: Couchbase AI Data Plane
-    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
-    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
-    sqlpp: SQL++
-    sqlppc: SQL++ for Capella Analytics
-    sqlppea: SQL++ for Enterprise Analytics
-    sqlpp_url: https://www.couchbase.com/products/n1ql
-    cbpp: Couchbase++
-    kroki-server-url: null
-    kroki-fetch-diagram: true
-    page-chatbot-origin: https://d2sozpdiqok6m4.cloudfront.net
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-32/ui-bundle.zip
 content:
   branches: master
   sources:
@@ -155,12 +156,6 @@ content:
         - release/8.0
         - release/7.6
         - release/7.2
-    - url: https://github.com/couchbasecloud/couchbase-cloud
-      branches:
-        - main
-      start_paths:
-        - docs/public
-        - docs/columnar
     - url: https://github.com/couchbase/docs-capella
       branches:
         - main
@@ -176,7 +171,7 @@ content:
         - main
     - url: https://github.com/couchbaselabs/docs-mcp-server
       branches:
-        - main
+        - release/1.0
     - url: https://github.com/couchbase/couchbase-operator
       branches:
         - 2.9.x
@@ -207,6 +202,7 @@ content:
         - release/4.3
     - url: https://github.com/couchbase/docs-spark
       branches:
+        - release/4.0
         - release/3.5
     - url: https://github.com/couchbase/docs-tableau
       branches:
@@ -265,8 +261,8 @@ content:
     - url: https://github.com/couchbase/docs-sdk-cxx
       branches:
         - release/1.2
+        - release/1.4
         - release/1.3
-        - release/1.1
     - url: https://github.com/couchbase/docs-sdk-dotnet
       branches:
         - temp/3.9
@@ -370,7 +366,6 @@ content:
     - url: https://github.com/couchbase/docs-mobile
       branches:
         - release/3.1
-        - release/2.8
     - url: https://github.com/couchbase/docs-couchbase-lite
       branches:
         - release/4.1
