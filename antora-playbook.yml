@@ -18,13 +18,6 @@ antora:
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
-    - require: ./lib/override-url-component.js
-      data:
-        operational-insights:
-          - enterprise-analytics
-        operational-insights-cloud:
-          - analytics
-          - columnar
     - ./lib/report-tree.js
 site:
   url: https://docs.couchbase.com
