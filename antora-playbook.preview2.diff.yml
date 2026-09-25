@@ -8,6 +8,65 @@ antora:
 site:
   title: Couchbase Docs Preview Polaris
   robots: disallow
+  keys:
+    nav_groups: |
+        [
+          { "title": "Server",
+            "startPage": "home::server.adoc",
+            "components": ["server", "operator", "cloud-native-gateway"],
+            "color": "#c41016",
+            "subGroups": [
+              {
+                "title": "Operational SDKs",
+                "startPage": "home::sdk.adoc",
+                "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+                "expandHeaderLevels": 1
+              }
+            ]
+          },
+          { "title": "Capella",
+            "startPage": "home::cloud.adoc",
+            "components": ["cloud", "app-services"],
+            "expandHeaderLevels": 1,
+            "color": "#e8830c",
+            "subGroups": [
+              {
+                "title": "Operational SDKs",
+                "startPage": "home::sdk.adoc",
+                "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+                "expandHeaderLevels": 1
+              }
+            ]
+          },
+          { "title": "Mobile / Edge",
+            "startPage": "home::mobile.adoc",
+            "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
+            "color": "#d9480f"
+          },
+          { "title": "AI Data Plane",
+            "startPage": "ai:get-started:intro.adoc",
+            "components": ["ai", "mcp-server"],
+            "color": "#f2a541"
+          },
+          { "title": "Operational Insights",
+            "startPage": "home::operational-insights.adoc",
+            "components": ["analytics", "enterprise-analytics"],
+            "expandHeaderLevels": 1,
+            "color": "#ed9426"
+            "subGroups": [
+              {
+                "title": "Legacy Analytics SDKs",
+                "startPage": "home::analytics-sdk.adoc",
+                "components": ["*-analytics-sdk", "*-columnar-sdk"],
+                "expandHeaderLevels": 1
+              }
+            ]
+          },
+          { "title": "Contribute",
+            "components": ["home", "styleguide", "ui-ux", "pendo"],
+            "color": "#f2a541"
+          }
+        ]
 
 content:
   $prune: 1

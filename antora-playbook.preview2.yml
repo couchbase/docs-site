@@ -15,7 +15,7 @@ urls:
   latest_version_segment: current
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-234/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-235/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -27,17 +27,12 @@ antora:
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
-    - require: ./lib/override-url-component.js
-      data:
-        operational-insights:
-          - enterprise-analytics
-        operational-insights-cloud:
-          - analytics
-          - columnar
     - ./lib/report-tree.js
 site:
   url: https://docs.couchbase.com
   start_page: home::index.adoc
+  title: Couchbase Docs Preview Polaris
+  robots: disallow
   keys:
     google_analytics: GTM-MVPNN2
     nav_groups: >
@@ -75,7 +70,7 @@ site:
           "color": "#d9480f"
         },
         { "title": "AI Data Plane",
-          "startPage": "ai:get-started:intro.adoc", 
+          "startPage": "ai:get-started:intro.adoc",
           "components": ["ai", "mcp-server"],
           "color": "#f2a541"
         },
@@ -83,7 +78,7 @@ site:
           "startPage": "home::operational-insights.adoc",
           "components": ["analytics", "enterprise-analytics"],
           "expandHeaderLevels": 1,
-          "color": "#ed9426",
+          "color": "#ed9426"
           "subGroups": [
             {
               "title": "Legacy Analytics SDKs",
@@ -98,8 +93,6 @@ site:
           "color": "#f2a541"
         }
       ]
-  title: Couchbase Docs Preview Polaris
-  robots: disallow
 asciidoc:
   extensions:
     - ./lib/source-url-include-processor.js
