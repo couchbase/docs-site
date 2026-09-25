@@ -35,4 +35,3 @@ Couchbase-managed Operational Cluster in your choice of Cloud Provider.
 * Develop
 * Deploy
 * Learn
-
