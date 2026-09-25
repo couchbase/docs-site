@@ -12,7 +12,6 @@ include::partial$info-banner.adoc[]
 
 == {empty}
 
-[description]
 Couchbase provides several SDKs to allow applications to access a Couchbase cluster (Capella or self-managed), 
 as well as xref:mobile.adoc[Couchbase Lite] -- an embedded, NoSQL JSON Document Style database for your mobile apps.
 To exchange data with other platforms, we offer various Big Data Connectors.
@@ -28,9 +27,9 @@ collection.reactive.upsert("document-key", json)
 ----
 
 [TIP]
-.Analytics SDKs
+.Operational Insights SDKs
 ====
-SDKs for xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] --
+SDKs for xref:enterprise-analytics:intro:intro.adoc[Operational Insights] --
 Couchbase's analytical database (RT-OLAP) for real time apps and operational intelligence --
 are xref:analytics-sdk.adoc[available] for the Go, Java, Node.js, and Python platforms.
 
@@ -182,46 +181,46 @@ xref:sdk-extensions::distributed-acid-transactions.adoc[Distributed ACID Transac
 
 {empty} +
 
-== Enterprise Analytics SDKs
+== Operational Insights SDKs
 
-xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
-xref:analytics-sdk.adoc[Analytics SDKs] are tailored to the APIs offered by this service.
+xref:enterprise-analytics:intro:intro.adoc[Operational Insights] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
+xref:analytics-sdk.adoc[Operational Insights SDKs] are tailored to the APIs offered by this service.
 
 [#table_analytics_sdk,cols="42,40,60,50"]
 |===
-| Analytics SDK | Documentation | Hello World Example | API Reference
+| Operational Insights SDK | Documentation | Hello World Example | API Reference
 
-| .NET Analytics SDK
+| .NET Operational Insights SDK
 | xref:dotnet-analytics-sdk:hello-world:overview.adoc[Docs]
 | xref:dotnet-analytics-sdk:hello-world:start-using-sdk.adoc[.NET Getting Started]
-| https://docs.couchbase.com/sdk-api/analytics-dotnet-client[.NET Analytics API Reference]
+| https://docs.couchbase.com/sdk-api/analytics-dotnet-client[.NET Operational Insights API Reference]
 
-| Go Analytics SDK
+| Go Operational Insights SDK
 | xref:go-analytics-sdk:hello-world:overview.adoc[Docs]
 | xref:go-analytics-sdk:hello-world:start-using-sdk.adoc[Go Getting Started]
-| https://pkg.go.dev/github.com/couchbase/gocbanalytics[Go Analytics API Reference]
+| https://pkg.go.dev/github.com/couchbase/gocbanalytics[Go Operational Insights API Reference]
 
-| Java Analytics SDK
+| Java Operational Insights SDK
 | xref:java-analytics-sdk:hello-world:overview.adoc[Docs]
 | xref:java-analytics-sdk:hello-world:start-using-sdk.adoc[Java Getting Started]
-| https://docs.couchbase.com/sdk-api/couchbase-analytics-java-client[Java Analytics API Reference]
+| https://docs.couchbase.com/sdk-api/couchbase-analytics-java-client[Java Operational Insights API Reference]
 
-| Node.js Analytics SDK
+| Node.js Operational Insights SDK
 | xref:nodejs-analytics-sdk:hello-world:overview.adoc[Docs]
 | xref:nodejs-analytics-sdk:hello-world:start-using-sdk.adoc[Node.js Getting Started]
-| https://docs.couchbase.com/sdk-api/analytics-nodejs-client/[Node.js Analytics API Reference]
+| https://docs.couchbase.com/sdk-api/analytics-nodejs-client/[Node.js Operational Insights API Reference]
 
-| Python Analytics SDK
+| Python Operational Insights SDK
 | xref:python-analytics-sdk:hello-world:overview.adoc[Docs]
 | xref:python-analytics-sdk:hello-world:start-using-sdk.adoc[Python Getting Started]
-| https://docs.couchbase.com/sdk-api/analytics-python-client/[Python Analytics API Reference]
+| https://docs.couchbase.com/sdk-api/analytics-python-client/[Python Operational Insights API Reference]
 |===
 
 
 
 {empty} +
 
-== Capella Analytics SDKs
+== Operational Insights (Capella) SDKs
 
 xref:analytics:intro:intro.adoc[Capella Analytics] is an analytical database (RT-OLAP) for real time apps and operational intelligence.
 xref:columnar-sdk.adoc[Columnar SDKs] for Capella Analytics are tailored to the APIs offered by this service.
