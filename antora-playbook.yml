@@ -86,7 +86,7 @@ site:
         },
         { "title": "Operational Insights",
           "startPage": "home::operational-insights.adoc",
-          "components": ["analytics", "enterprise-analytics", "*-insights-sdk"],
+          "components": ["analytics", "enterprise-analytics", "*-insights-sdk-*"],
           "expandHeaderLevels": 1,
           "color": "#ed9426",
           "subGroups": [
