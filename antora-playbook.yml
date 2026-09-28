@@ -91,6 +91,38 @@ site:
               }
             ]
         },
+        { "title": "Operational Insights",
+          "startPage": "home::operational-insights.adoc",
+          "components": ["analytics", "enterprise-analytics", "*-insights-sdk-*"],
+          "expandHeaderLevels": 1,
+          "color": "#ed9426",
+          "subGroups": [
+            {
+              "title": "Operational Insights Enterprise",
+              "startPage": "enterprise-analytics:intro:intro.adoc",
+              "components": ["enterprise-analytics"],
+              "expandHeaderLevels": 1
+            }
+            {
+              "title": "Operational Insights Capella",
+              "startPage": "analytics:intro:intro.adoc",
+              "components": ["analytics"],
+              "expandHeaderLevels": 1
+            }
+            {
+              "title": "Insights SDKs",
+              "startPage": "home::operational-insights-sdk.adoc",
+              "components": ["*-insights-sdk-*"],
+              "expandHeaderLevels": 1
+            }
+            {
+              "title": "Legacy Analytics SDKs",
+              "startPage": "home::analytics-sdk.adoc",
+              "components": ["*-analytics-sdk", "*-columnar-sdk"],
+              "expandHeaderLevels": 1
+            }
+          ]
+        },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
           "color": "#f2a541"
