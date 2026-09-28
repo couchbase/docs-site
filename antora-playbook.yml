@@ -106,7 +106,7 @@ site:
             "startPage": "home::operational-insights.adoc",
             "components": ["analytics", "enterprise-analytics"],
             "expandHeaderLevels": 1,
-            "color": "#ed9426"
+            "color": "#ed9426",
             "subGroups": [
               {
                 "title": "Legacy Analytics SDKs",

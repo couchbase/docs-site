@@ -32,6 +32,6 @@ asciidoc:
     page-show-preview-banner: true
     page-watermark: Polaris
 
-#ui:
-  #bundle:
-    #url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-236/ui-bundle.zip

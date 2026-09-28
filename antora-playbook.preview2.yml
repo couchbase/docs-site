@@ -13,9 +13,6 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-234/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -83,7 +80,7 @@ site:
           "startPage": "home::operational-insights.adoc",
           "components": ["analytics", "enterprise-analytics"],
           "expandHeaderLevels": 1,
-          "color": "#ed9426"
+          "color": "#ed9426",
           "subGroups": [
             {
               "title": "Legacy Analytics SDKs",
@@ -142,6 +139,9 @@ asciidoc:
     docs-contact: Zeba
     page-show-preview-banner: true
     page-watermark: Polaris
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-236/ui-bundle.zip
 content:
   branches: master
   sources:
