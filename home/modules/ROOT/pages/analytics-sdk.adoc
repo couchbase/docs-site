@@ -87,14 +87,17 @@ See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytic
 == Other Analytics Services
 
 
-.SDK Compatibility with Analytics Service
+.SDK Compatibility with Operational Insights & Analytics Service
 |===
 | Analytics solution | Development option
 
-| xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
-| xref:analytics-sdk.adoc[Analytics SDKs]
+| xref:enterprise-analytics:intro:intro.adoc[Operational Insights Enterprise]
+a|
+* xref:operational-insights-sdk.adoc[Insights SDKs]
+* xref:analytics-sdk.adoc[Legacy Analytics SDKs]
 
-| xref:analytics:intro:intro.adoc[Capella Analytics]
+
+| xref:analytics:intro:intro.adoc[Operational Insights Capella]
 | xref:columnar-sdk.adoc[Columnar (Capella Analytics) SDKs]
 
 | xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] 
