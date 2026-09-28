@@ -82,9 +82,11 @@ site:
             "components": ["ai", "mcp-server"],
             "color": "#f2a541"
           },
-          { "title": "Develop",
-            "startPage": "home::developer.adoc",
-            "color": "#8c1c1c",
+          { "title": "Operational Insights",
+            "startPage": "home::operational-insights.adoc",
+            "components": ["analytics", "enterprise-analytics"],
+            "expandHeaderLevels": 1,
+            "color": "#ed9426",
             "subGroups": [
               {
                 "title": "Operational SDKs",
