@@ -63,6 +63,7 @@ site:
               "title": "Capella Operational",
               "startPage": "home::cloud.adoc",
               "components": ["cloud"]
+              "expandHeaderLevels": 1
             },
             {
               "title": "Operational SDKs",
@@ -78,23 +79,24 @@ site:
                 "title": "Couchbase Lite",
                 "startPage": "couchbase-lite::index.adoc",
                 "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"]
+              "expandHeaderLevels": 1
               },
               {
                 "title": "Sync Gateway",
                 "startPage": "sync-gateway::introduction.adoc",
                 "components": ["sync-gateway"]
+              "expandHeaderLevels": 1
               },
               {
                 "title": "App Services",
                 "startPage": "app-services:get-started:configuring-app-services.adoc",
                 "components": ["app-services"]
+              "expandHeaderLevels": 1
               }
             ]
         },
         { "title": "Operational Insights",
           "startPage": "home::operational-insights.adoc",
-          "components": ["analytics", "enterprise-analytics", "*-insights-sdk-*"],
-          "expandHeaderLevels": 1,
           "color": "#ed9426",
           "subGroups": [
             {
