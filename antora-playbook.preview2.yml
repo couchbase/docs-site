@@ -165,8 +165,7 @@ content:
         - release/8.0
       start_path: docs
     - url: https://github.com/couchbase/docs-capella
-      branches:
-        - main
+      branches: DOC-14735_analytics-rename
     - url: https://github.com/couchbaselabs/docs-capella-app-services
       branches:
         - main
@@ -174,8 +173,7 @@ content:
       branches:
         - DOC-14627-analytics-url-rename-columnar
     - url: https://github.com/couchbaselabs/docs-ai
-      branches:
-        - main
+      branches: DOC-14735_analytics-rename
     - url: https://github.com/couchbaselabs/docs-mcp-server
       branches:
         - release/1.0

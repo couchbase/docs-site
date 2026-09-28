@@ -25,6 +25,10 @@ content:
    - url: https://github.com/couchbaselabs/docs-devex
      branches:
        - capella
+   - url: https://github.com/couchbaselabs/docs-ai
+     branches: DOC-14735_analytics-rename
+   - url: https://github.com/couchbase/docs-capella
+     branches: DOC-14735_analytics-rename
 
 asciidoc:
   attributes:
