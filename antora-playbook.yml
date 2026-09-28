@@ -51,7 +51,7 @@ site:
             {
               "title": "Operational SDKs",
               "startPage": "home::sdk.adoc",
-              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector"],
               "expandHeaderLevels": 1
             }
           ]
@@ -70,7 +70,7 @@ site:
             {
               "title": "Operational SDKs",
               "startPage": "home::sdk.adoc",
-              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector"],
               "expandHeaderLevels": 1
             }
           ]
@@ -99,6 +99,7 @@ site:
         },
         { "title": "Operational Insights",
           "startPage": "home::operational-insights.adoc",
+          "components": ["enterprise-analytics", "analytics", "*-insights-sdk-*"],
           "color": "#ed9426",
           "subGroups": [
             {
