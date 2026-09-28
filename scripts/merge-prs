@@ -1,0 +1,213 @@
+#!/bin/bash
+# See scripts/merge-prs --help.
+
+set -eo pipefail
+
+info()    { [ -t 1 ] && printf '\033[36m%s\033[0m\n' "$*" || echo "$*"; }
+warn()    { [ -t 1 ] && printf '\033[1;31m%s\033[0m\n' "$*" || echo "$*"; }
+success() { [ -t 1 ] && printf '\033[32m%s\033[0m\n' "$*" || echo "$*"; }
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    cat <<HELP
+NAME
+
+    merge-prs - tentatively squash-merge all open, same-repo PRs
+                 against the current branch, into a new local branch
+
+USAGE
+
+    Run from inside the content repo you want to combine, with the
+    branch you want to build on top of already checked out, e.g.
+
+        cd ~/couchbase/docs-enterprise-analytics
+        git checkout release/3.0
+        scripts/merge-prs
+
+    This creates (or resets) a local branch 'merge-prs/release/3.0'
+    based on the tip of 'release/3.0', then walks every open PR
+    targeting that branch (excluding PRs from forks), squash-merging
+    each one in turn. Any PR GitHub reports as not mergeable is
+    skipped with a warning. Any local conflict (typically because an
+    earlier PR in the run already touched the same lines) is handed
+    to 'claude -p' to resolve; an unresolvable conflict aborts the
+    run, rolling back just that PR's attempt.
+
+    Nothing is pushed, and nothing beyond git/gh/claude happens here
+    - Antora isn't invoked. Point your own preview setup at the
+    resulting local branch if you want to build it.
+
+    Requires 'gh' and 'claude' to already be authenticated locally.
+HELP
+    exit 0
+fi
+
+# --- preconditions ---------------------------------------------------
+
+git rev-parse --show-toplevel >/dev/null 2>&1 || {
+    warn "Not inside a git repository."
+    exit 1
+}
+
+if [ -n "$(git status --porcelain)" ]; then
+    warn "You have uncommitted changes. Commit, stash, or discard them first."
+    exit 1
+fi
+
+BASE=$(git branch --show-current)
+
+if [ -z "$BASE" ]; then
+    warn "Not on a branch (detached HEAD?). Check out the branch you want to build on."
+    exit 1
+fi
+
+case "$BASE" in
+    merge-prs/*)
+        warn "You're on '$BASE', which looks like a previous run's output branch."
+        warn "Check out the real base branch (e.g. 'git checkout release/3.0') and try again."
+        exit 1
+        ;;
+esac
+
+command -v gh >/dev/null || { warn "'gh' is required but not found on PATH."; exit 1; }
+command -v jq >/dev/null || { warn "'jq' is required but not found on PATH."; exit 1; }
+command -v claude >/dev/null || { warn "'claude' is required but not found on PATH."; exit 1; }
+
+NEW="merge-prs/$BASE"
+
+info "🔀 Building $NEW from $BASE"
+
+git checkout -B "$NEW" "$BASE"
+
+# --- gather PRs --------------------------------------------------------
+
+info "Looking up open PRs against $BASE (excluding forks)..."
+
+PRS=$(gh pr list --base "$BASE" --state open \
+    --json number,title,headRefName,isCrossRepository,mergeable,url \
+    --jq '[.[] | select(.isCrossRepository == false)] | sort_by(.number)')
+
+PR_COUNT=$(echo "$PRS" | jq 'length')
+
+if [ "$PR_COUNT" -eq 0 ]; then
+    info "No open same-repo PRs found against $BASE. Nothing to do."
+    exit 0
+fi
+
+info "Found $PR_COUNT candidate PR(s)."
+
+MERGED=0
+RESOLVED=0
+SKIPPED=0
+APPLIED_SUMMARY=""
+
+# --- process each PR ----------------------------------------------------
+
+while IFS= read -r pr; do
+    NUMBER=$(echo "$pr" | jq -r '.number')
+    TITLE=$(echo "$pr" | jq -r '.title')
+    HEAD_REF=$(echo "$pr" | jq -r '.headRefName')
+    URL=$(echo "$pr" | jq -r '.url')
+    MERGEABLE=$(echo "$pr" | jq -r '.mergeable')
+
+    info ""
+    info "PR #$NUMBER: $TITLE ($URL)"
+
+    if [ "$MERGEABLE" = "UNKNOWN" ]; then
+        for i in 1 2 3 4 5; do
+            sleep 2
+            MERGEABLE=$(gh pr view "$NUMBER" --json mergeable --jq '.mergeable')
+            [ "$MERGEABLE" != "UNKNOWN" ] && break
+        done
+    fi
+
+    if [ "$MERGEABLE" != "MERGEABLE" ]; then
+        warn "GitHub reports PR #$NUMBER won't merge cleanly against $BASE (mergeable=$MERGEABLE) - skipping."
+        SKIPPED=$((SKIPPED + 1))
+        continue
+    fi
+
+    SAFE_SHA=$(git rev-parse HEAD)
+
+    git fetch origin "$HEAD_REF"
+
+    if git merge --squash "origin/$HEAD_REF" >/tmp/merge-prs-squash.log 2>&1; then
+        git commit -m "Merge PR #$NUMBER: $TITLE"
+        success "Merged PR #$NUMBER cleanly."
+        MERGED=$((MERGED + 1))
+        APPLIED_SUMMARY="$APPLIED_SUMMARY
+- PR #$NUMBER: $TITLE"
+        continue
+    fi
+
+    warn "PR #$NUMBER conflicts with PR(s) already applied in this run. Asking claude to resolve..."
+
+    PROMPT=$(cat <<PROMPT_EOF
+You are resolving a git squash-merge conflict in this repository, on branch
+'$NEW' (based on '$BASE').
+
+We are merging PR #$NUMBER: "$TITLE" ($URL) via 'git merge --squash'.
+
+PRs already squash-merged onto this branch earlier in this same run:
+${APPLIED_SUMMARY:-  (none yet)}
+
+The working tree currently has unresolved conflict markers from the failed
+'git merge --squash origin/$HEAD_REF'. Resolve every conflict marker in
+place, choosing the combination that preserves the intent of both the
+already-applied PR(s) and PR #$NUMBER. Then 'git add' every file you
+resolved. Do NOT commit - the caller will commit. Do NOT push. Do not touch
+files unrelated to the conflict.
+
+If you cannot resolve a conflict safely (e.g. the two changes are genuinely
+incompatible, not just textually overlapping), leave it and say so.
+
+The VERY LAST LINE of your reply must be, on its own, nothing but a single
+line of raw JSON (no code fence, no other text after it) in this exact
+shape:
+
+{"verdict": "ok", "message": "..."}
+{"verdict": "minor-concern", "message": "..."}
+{"verdict": "major-issue", "message": "..."}
+
+Use "ok" if fully and confidently resolved, "minor-concern" if resolved but
+worth a human double-checking, "major-issue" if you could not safely resolve
+it (leave the conflict markers in place in that case).
+PROMPT_EOF
+)
+
+    CLAUDE_OUTPUT=$(claude -p "$PROMPT" --allowedTools "Edit,Bash(git *)" || true)
+
+    VERDICT_LINE=$(echo "$CLAUDE_OUTPUT" | tail -n1)
+    VERDICT=$(echo "$VERDICT_LINE" | jq -r '.verdict' 2>/dev/null || true)
+    MESSAGE=$(echo "$VERDICT_LINE" | jq -r '.message' 2>/dev/null || true)
+
+    if [ "$VERDICT" != "ok" ] && [ "$VERDICT" != "minor-concern" ] && [ "$VERDICT" != "major-issue" ]; then
+        warn "claude did not return a parseable verdict for PR #$NUMBER. Treating as a major issue."
+        VERDICT="major-issue"
+        MESSAGE="claude output did not end with a parseable verdict line: $VERDICT_LINE"
+    fi
+
+    if [ "$VERDICT" = "major-issue" ]; then
+        warn "PR #$NUMBER: unresolved conflict - $MESSAGE"
+        warn "Rolling back this PR's attempt and stopping. Earlier PRs in this run remain merged on $NEW."
+        git reset --hard "$SAFE_SHA"
+        exit 1
+    fi
+
+    if [ "$VERDICT" = "minor-concern" ]; then
+        warn "PR #$NUMBER: resolved with a concern - $MESSAGE"
+    else
+        success "PR #$NUMBER: conflict resolved cleanly by claude."
+    fi
+
+    git commit -m "Merge PR #$NUMBER: $TITLE (claude-resolved conflict)"
+    RESOLVED=$((RESOLVED + 1))
+    APPLIED_SUMMARY="$APPLIED_SUMMARY
+- PR #$NUMBER: $TITLE (claude-resolved conflict: $MESSAGE)"
+
+done < <(echo "$PRS" | jq -c '.[]')
+
+info ""
+success "Done. $NEW is checked out."
+info "  Merged cleanly:      $MERGED"
+info "  Resolved by claude:  $RESOLVED"
+info "  Skipped (conflicts): $SKIPPED"
