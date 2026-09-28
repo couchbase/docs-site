@@ -153,6 +153,7 @@ PRs already squash-merged onto this branch earlier in this same run:
 ${APPLIED_SUMMARY:-  (none yet)}
 
 The working tree currently has unresolved conflict markers from the failed
+
 'git merge --squash origin/$HEAD_REF', in exactly these files and no others:
 $CONFLICTED_FILES
 
