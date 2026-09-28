@@ -42,7 +42,7 @@ site:
             },
             {
               "title": "Cloud Native Gateway",
-              "startPage": "cloud-native-gateway::about-cng.html.adoc",
+              "startPage": "cloud-native-gateway:intro:about-cng.adoc",
               "components": ["cloud-native-gateway"]
             },
             {
@@ -60,12 +60,36 @@ site:
           "color": "#e8830c",
           "subGroups": [
             {
+              "title": "Capella Operational",
+              "startPage": "home::cloud.adoc",
+              "components": ["cloud"]
+            },
+            {
               "title": "Operational SDKs",
               "startPage": "home::sdk.adoc",
               "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
               "expandHeaderLevels": 1
             }
           ]
+        },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
+            "subGroups": [
+              {
+                "title": "Couchbase Lite",
+                "startPage": "couchbase-lite::index.adoc",
+                "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"]
+              },
+              {
+                "title": "Sync Gateway",
+                "startPage": "sync-gateway::introduction.adoc",
+                "components": ["sync-gateway"]
+              },
+              {
+                "title": "App Services",
+                "startPage": "app-services:get-started:configuring-app-services.adoc",
+                "components": ["app-services"]
+              }
+            ]
         },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
