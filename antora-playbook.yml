@@ -64,7 +64,7 @@ site:
             {
               "title": "Capella Operational",
               "startPage": "home::cloud.adoc",
-              "components": ["cloud"]
+              "components": ["cloud"],
               "expandHeaderLevels": 1
             },
             {
@@ -75,6 +75,60 @@ site:
             }
           ]
         },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
+            "subGroups": [
+              {
+                "title": "Couchbase Lite",
+                "startPage": "couchbase-lite::index.adoc",
+                "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"],
+              "expandHeaderLevels": 1
+              },
+              {
+                "title": "Sync Gateway",
+                "startPage": "sync-gateway::introduction.adoc",
+                "components": ["sync-gateway"],
+                "expandHeaderLevels": 1
+              },
+              {
+                "title": "App Services",
+                "startPage": "app-services:get-started:configuring-app-services.adoc",
+                "components": ["app-services"],
+                "expandHeaderLevels": 1
+              }
+            ]
+        },
+        { "title": "Operational Insights",
+          "startPage": "home::operational-insights.adoc",
+          "color": "#ed9426",
+          "subGroups": [
+            {
+              "title": "Operational Insights Enterprise",
+              "startPage": "enterprise-analytics:intro:intro.adoc",
+              "components": ["enterprise-analytics"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Operational Insights Capella",
+              "startPage": "analytics:intro:intro.adoc",
+              "components": ["analytics"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Insights SDKs",
+              "startPage": "home::operational-insights-sdk.adoc",
+              "components": ["*-insights-sdk-*"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Legacy Analytics SDKs",
+              "startPage": "home::analytics-sdk.adoc",
+              "components": ["*-analytics-sdk", "*-columnar-sdk"],
+              "expandHeaderLevels": 1
+            }
+          ]
+        },
+        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai"] },
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
           "color": "#f2a541"
