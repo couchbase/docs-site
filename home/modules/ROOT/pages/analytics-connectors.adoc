@@ -1,0 +1,33 @@
+= Connectors for Enterprise Analytics 
+:page-layout: landing-page-top-level-sdk
+:page-role: tiles
+:page-rank: 75
+:dotnet: .NET
+:!sectids:
+
+
+= Connectors for Enterprise Analytics 
+
+Connectors to work with our Analytics Clusters.
+
+
+{empty} +
+
+== Analytics Connectors
+
+* https://docs.couchbase.com/tableau-connector/current/index.html[]
+* https://docs.couchbase.com/power-bi-connector/current/index.html[]
+* https://docs.couchbase.com/superset-connector/current/index.html[]
+
+
+
+{empty} +
+
+== Big Data Connectors
+
+The available options for Enterprise Analytics `DataFrame` and `Dataset` operations with the xref:spark-connector:ROOT:index.adoc[Couchbase Spark Connector]
+can be found on the Spark xref:spark-connector:ROOT:spark-sql.adoc#enterprise-analytics-options[DataFrames, Datasets, and SQL] page.
+
+See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytics] docs for information on streaming from Confluent for Kafka.
+
+{empty} +

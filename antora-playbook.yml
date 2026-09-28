@@ -124,6 +124,12 @@ site:
               "startPage": "home::analytics-sdk.adoc",
               "components": ["*-analytics-sdk", "*-columnar-sdk"],
               "expandHeaderLevels": 1
+            },
+            {
+              "title": "Analytics Connectors",
+              "startPage": "home::analytics-connectors.adoc",
+              "components": ["tableau-connector", "power-bi-connector", "superset-connector"],
+              "expandHeaderLevels": 1
             }
           ]
         },
