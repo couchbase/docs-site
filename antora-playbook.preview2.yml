@@ -141,7 +141,7 @@ asciidoc:
     page-watermark: Polaris
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-236/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-237/ui-bundle.zip
 content:
   branches: master
   sources:
