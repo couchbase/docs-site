@@ -18,7 +18,7 @@ content:
   sources:
    - url: https://github.com/couchbaselabs/docs-columnar
      branches:
-       $replace: [ DOC-14645-Rename-CA-as-Operational-Insights-Capella-remove-page-aliases ]
+       $replace: [ DOC-14645-Rename-CA-as-Operational-Insights-Capella ]
    - url: https://github.com/couchbaselabs/docs-enterprise-analytics
      branches:
        $replace: [ merge-prs/release/3.0, release/2.2, release/2.1, release/2.0 ]
