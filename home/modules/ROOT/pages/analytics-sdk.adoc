@@ -7,7 +7,7 @@
 :!sectids:
 // :page-aliases: columnar-sdk.adoc
 
-= Develop with Enterprise Analytics 
+= Develop with Operational Insights
 
 include::partial$info-banner.adoc[]
 
