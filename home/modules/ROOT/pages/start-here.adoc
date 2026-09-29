@@ -78,13 +78,14 @@ xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
 [.card-box]
 === icon:rocket[] Develop RAG and Agentic AI Applications
 
-Vector Query facilitates RAG applications speedily and at scale.
+Explore AI Services and build Agentic Apps with the xref:ai:get-started:intro.adoc[AI Data Plane].
+
+Or see how Vector Query facilitates RAG applications speedily and at scale.
 Vector Search Service offers the ability to combine searches with our sophisticated Search API.
 
 * xref:cloud:vector-search:vector-search.adoc[Vector Search in Capella Operational]
 * xref:server:vector-search:vector-search.adoc[Vector Search in self-managed Couchbase Server]
 
-Explore AI Services and build Agentic Apps (https://info.couchbase.com/capella-ai-services-signup[currently in Private Preview]).
 
 
 
