@@ -171,7 +171,7 @@ content:
         - main
     - url: https://github.com/couchbaselabs/docs-columnar
       branches:
-        - DOC-14627-analytics-url-rename-columnar
+        - DOC-14645-Rename-CA-as-Operational-Insights-Capella-remove-page-aliases
     - url: https://github.com/couchbaselabs/docs-ai
       branches: DOC-14735_analytics-rename
     - url: https://github.com/couchbaselabs/docs-mcp-server
