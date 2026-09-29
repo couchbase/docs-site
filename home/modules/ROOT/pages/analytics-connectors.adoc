@@ -15,9 +15,9 @@ Connectors to work with our Operational Insights Clusters.
 
 == Analytics (Insights) Connectors
 
-* https://docs.couchbase.com/tableau-connector/current/index.html[]
-* https://docs.couchbase.com/power-bi-connector/current/index.html[]
-* https://docs.couchbase.com/superset-connector/current/index.html[]
+* https://docs.couchbase.com/tableau-connector/current/index.html[Tableau Connector]
+* https://docs.couchbase.com/power-bi-connector/current/index.html[PowerBI Connector]
+* https://docs.couchbase.com/superset-connector/current/index.html[Apache Superset Connector]
 
 
 
