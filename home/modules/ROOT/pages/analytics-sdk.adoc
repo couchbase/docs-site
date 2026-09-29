@@ -1,4 +1,4 @@
-= Develop with Enterprise Analytics 
+= Develop with Operational Insights
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :page-rank: 75
@@ -11,21 +11,24 @@
 
 include::partial$info-banner.adoc[]
 
-// xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
+// xref:enterprise-analytics:intro:intro.adoc[Operational Insights] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
 // Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
 // It uses column storage, which gives speedier retrieval of data.
 
 [description]
-xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] is a self-managed, JSON-native NoSQL analytical database.
+xref:enterprise-analytics:intro:intro.adoc[Operational Insights] is a self-managed, JSON-native NoSQL analytical database.
 It serves to unify data from diverse sources, allowing for the execution of complex analytical queries and the extraction of timely insights.
 
 {empty} +
 
 
-== SDK APIs to work with Enterprise Analytics
+== SDK APIs to work with Operational Insights
+
+TIP: This section covers Couchbase's legacy Analytics SDKs.
+These have been superseded by the new xref:operational-insights-sdk.adoc[Operational Insights SDKs], and the Analytics SDKs will be deprecated in due course.
 
 Analytics SDKs are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
-they are purpose built for Enterprise Analytics' real-time analytical use cases.
+they are purpose built for Operational Insights' real-time analytical use cases.
 They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
 such as connection management and robust error handling.
 
@@ -77,17 +80,17 @@ https://docs.couchbase.com/sdk-api/analytics-python-client[Python API Reference]
 
 === Big Data Connectors
 
-The available options for Enterprise Analytics `DataFrame` and `Dataset` operations with the xref:spark-connector:ROOT:index.adoc[Couchbase Spark Connector]
+The available options for Operational Insights `DataFrame` and `Dataset` operations with the xref:spark-connector:ROOT:index.adoc[Couchbase Spark Connector]
 can be found on the Spark xref:spark-connector:ROOT:spark-sql.adoc#enterprise-analytics-options[DataFrames, Datasets, and SQL] page.
 
-See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Analytics] docs for information on streaming from Confluent for Kafka.
+See the xref:enterprise-analytics:sources:manage-remote.adoc[Operational Insights] docs for information on streaming from Confluent for Kafka.
 
 {empty} +
 
 == Other Analytics Services
 
 
-.SDK Compatibility with Operational Insights & Analytics Service
+.SDK Compatibility with Operational Insights & Analytics Services
 |===
 | Analytics solution | Development option
 
@@ -106,22 +109,22 @@ a|
 
 
 
-In addition to the Enterprise Analytics,
+In addition to Operational Insights Enterprise Clusters,
 // (self-managed and Capella Analytics), 
-older Couchbase Analytics services are available --
-Enterprise Analytics' forerunner, Columnar, remains available as Capella Analytics for the present time.
+older Operational Insights is also available as a managed service --
+Operational Insights Capella, formerly Columnar.
 
 Traditional, row-based analytics is also available in Couchbase operational clusters -- self-managed, or Capella Operational.
 
 
 {empty} +
 
-=== SDK APIs to work with Capella Analytics:
+=== SDK APIs to work with Operational Insights:
 
-xref:analytics:intro:intro.adoc[Capella Analytics] is a standalone, managed cloud offering from Couchbase under the Capella family of products.
+xref:analytics:intro:intro.adoc[Operational Insights Capella] is a standalone, managed cloud offering from Couchbase under the Capella family of products.
 
-Capella Analytics SDKs, formerly known as Columnar SDKs, are similar to the Enterprise Analytics SDKs.
-They must be used to connect to the current Capella Analytics Service, as it presents a different connection interface, without Enterprise Analytics' load balancer.
+Operational Insights Capella SDKs, formerly known as Columnar SDKs, are similar to the Operational Insights SDKs.
+They must be used to connect to the current Operational Insights Capella Service, as it presents a different connection interface, without Operational Insights Enterprise's load balancer.
 
 [{tabs}] 
 ==== 
