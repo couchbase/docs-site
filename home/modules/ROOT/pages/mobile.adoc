@@ -82,6 +82,13 @@ Couchbase Lite JavaScript is a lightweight, fully featured embedded NoSQL JSON d
 xref:couchbase-lite-javascript::introduction.adoc[Go to Couchbase Lite JavaScript Docs]
 
 [.column]
+.Couchbase Lite React Native
+
+[.content]
+Couchbase Lite React Native is a Native Module that brings Couchbase Lite's embedded NoSQL database and data sync to React Native and Expo apps on iOS and Android, with a TypeScript/JavaScript developer experience. +
+xref:couchbase-lite-react-native::intro.adoc[Go to Couchbase Lite React Native Docs]
+
+[.column]
 .Tutorials
 
 [.content]

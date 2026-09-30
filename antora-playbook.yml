@@ -68,7 +68,7 @@ site:
           },
           { "title": "Mobile / Edge",
             "startPage": "home::mobile.adoc",
-            "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
+            "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-lite-react-native", "sync-gateway", "couchbase-edge-server"],
             "color": "#d9480f"
           },
           { "title": "Capella",
@@ -307,6 +307,9 @@ content:
 
   - url: https://github.com/couchbaselabs/docs-couchbase-lite-js
     branches: [release/1.0]
+
+  - url: https://github.com/couchbaselabs/docs-couchbase-lite-react-native # private
+    branches: [release/1.1]
 
   - url: https://github.com/couchbase/docs-sync-gateway
     branches: [release/4.1, release/4.0, release/3.3, release/3.2, release/3.1, release/3.0]
