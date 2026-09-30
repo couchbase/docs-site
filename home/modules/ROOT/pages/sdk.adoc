@@ -293,7 +293,7 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 | 
 
 | Couchbase Lite React Native
-| xref:couchbase-lite-react-native::intro.adoc[Docs]
+| xref:cbl-reactnative::intro.adoc[Docs]
 | 
 
 | Couchbase Lite Swift

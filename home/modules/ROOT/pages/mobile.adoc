@@ -86,7 +86,7 @@ xref:couchbase-lite-javascript::introduction.adoc[Go to Couchbase Lite JavaScrip
 
 [.content]
 Couchbase Lite React Native is a Native Module that brings Couchbase Lite's embedded NoSQL database and data sync to React Native and Expo apps on iOS and Android, with a TypeScript/JavaScript developer experience. +
-xref:couchbase-lite-react-native::intro.adoc[Go to Couchbase Lite React Native Docs]
+xref:cbl-reactnative::intro.adoc[Go to Couchbase Lite React Native Docs]
 
 [.column]
 .Tutorials
