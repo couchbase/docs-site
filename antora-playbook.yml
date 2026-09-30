@@ -172,13 +172,6 @@ content:
   - url: https://github.com/couchbase/docs-operator
     branches: [release/2.9, release/2.8, release/2.7, release/2.6, release/2.5]
 
-  # unlinked. retire?
-  - url: https://github.com/couchbaselabs/observability
-    branches: [0.2.x]
-    start_path: docs
-  - url: https://github.com/couchbaselabs/cbmultimanager # private
-    branches: [0.2.x]
-    start_path: docs
 
   - url: https://github.com/couchbaselabs/docs-cloud-native-gateway # private
     branches: release/1.2
@@ -298,10 +291,6 @@ content:
     # Mobile
     ############################
 
-    # possibly legacy shared content
-  - url: https://github.com/couchbase/docs-mobile
-    branches: [release/3.1]
-
   - url: https://github.com/couchbase/docs-couchbase-lite
     branches: [release/4.1, release/4.0, release/3.4, release/3.3, release/3.2, release/3.1, release/3.0]
 
@@ -347,7 +336,6 @@ content:
 asciidoc:
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
-    enable-cmos: ''
     max-include-depth: 10
     page-partial: false
     experimental: ''
@@ -388,7 +376,7 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-234/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-235/ui-bundle.zip
 output:
   dir: ./public
 runtime:

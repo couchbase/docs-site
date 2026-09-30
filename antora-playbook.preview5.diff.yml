@@ -1,0 +1,47 @@
+# RUN:
+#  scripts/patch-cutdown-playbook antora-playbook.preview5
+
+antora:
+  extensions:
+  - ./lib/report-tree.js
+
+site:
+  title: Couchbase Docs - Totoro Preview
+  robots: disallow
+
+content:
+  $prune: 1
+  $select:
+    - '.'
+    - '**/docs-columnar'
+    - '**/docs-enterprise-analytics'
+    - '**/docs-analytics'
+    - '**/docs-capella'
+    # - '**/docs-server'
+    - '**/docs-devex'
+    - '**/cb-swagger'
+    - '**/docs-connectors-power-bi'
+    - '**/docs-tableau'
+    - '**/docs-sdk-java'
+    - '**/docs-sdk-common'
+    - '**/couchbase-cli'
+
+  sources:
+   - url: https://github.com/couchbase/docs-server
+     branches: release/8.5
+
+   - url: https://github.com/couchbaselabs/docs-fleetmanager
+     branches: main
+    
+   - url: https://github.com/couchbaselabs/docs-devex
+     branches:
+       - capella
+
+asciidoc:
+  attributes:
+
+    # metadata for Hakim's benefit
+    docs-contact: Supritha
+
+    page-show-preview-banner: true
+    page-watermark: Totoro Preview
