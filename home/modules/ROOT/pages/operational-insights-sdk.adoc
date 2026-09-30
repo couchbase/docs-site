@@ -4,6 +4,7 @@
 :page-rank: 75
 :dotnet: .NET
 :!sectids:
+:table-caption!:
 // :page-aliases: columnar-sdk.adoc
 
 = Develop with Operational Insights 
@@ -35,7 +36,7 @@ such as connection management and robust error handling.
 --
 xref:dotnet-operational-insights-sdk:hello-world:overview.adoc[.NET OI SDK Docs] |
 xref:dotnet-operational-insights-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-| https://docs.couchbase.com/sdk-api/operational-insights-dotnet-client[.NET Operational Insights API Reference]
+https://docs.couchbase.com/sdk-api/operational-insights-dotnet-client[.NET Operational Insights API Reference]
 --
 
 Go::
@@ -82,15 +83,17 @@ See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Operatio
 
 {empty} +
 
-== Other Operational-Insights Services
+== Other Operational Insights Services
 
 
-.SDK Compatibility with Operational-Insights Service
+.SDK Compatibility with Operational Insights Service
 |===
 | Operational-Insights solution | Development option
 
 | xref:enterprise-operational-insights:intro:intro.adoc[Operational Insights Enterprise]
-| xref:operational-insights-sdk.adoc[Operational Insights SDKs] & xref:analytics-sdk.adoc[Legacy Analytics SDKs]
+a|
+* xref:operational-insights-sdk.adoc[Operational Insights SDKs]
+* xref:analytics-sdk.adoc[Legacy Analytics SDKs]
 
 | xref:operational-insights:intro:intro.adoc[Operational Insights Capella]
 | xref:columnar-sdk.adoc[Columnar (Operational Insights Capella) SDKs]
@@ -152,5 +155,5 @@ https://docs.couchbase.com/sdk-api/columnar-python-client[Python API Reference]
 
 === Row-Based Couchbase Analytics
 
-xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] is our classic OLAP available as part of self-managed Couchbase Server and Capella Operational.
+xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] is our classic OLAP service, available as part of self-managed Couchbase Server and Capella Operational.
 Use the xref:sdk.adoc[operational SDKs] to develop for this service.

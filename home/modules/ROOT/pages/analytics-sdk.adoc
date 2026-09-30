@@ -5,6 +5,7 @@
 :page-nav-header-levels: 1
 :dotnet: .NET
 :!sectids:
+:table-caption!:
 // :page-aliases: columnar-sdk.adoc
 
 = Develop with Operational Insights
@@ -25,7 +26,7 @@ It serves to unify data from diverse sources, allowing for the execution of comp
 == SDK APIs to work with Operational Insights
 
 TIP: This section covers Couchbase's legacy Analytics SDKs.
-These have been superseded by the new xref:operational-insights-sdk.adoc[Operational Insights SDKs], and the Analytics SDKs will be deprecated in due course.
+These have been superseded by the new xref:operational-insights-sdk.adoc[Operational Insights SDKs], and these Analytics SDKs will be deprecated in due course.
 
 Analytics SDKs are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
 they are purpose built for Operational Insights' real-time analytical use cases.
@@ -119,7 +120,7 @@ Traditional, row-based analytics is also available in Couchbase operational clus
 
 {empty} +
 
-=== SDK APIs to work with Operational Insights:
+=== SDK APIs to work with Operational Insights Capella:
 
 xref:analytics:intro:intro.adoc[Operational Insights Capella] is a standalone, managed cloud offering from Couchbase under the Capella family of products.
 
