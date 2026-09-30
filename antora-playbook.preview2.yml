@@ -229,7 +229,7 @@ content:
         - release/3.3
     - url: https://github.com/couchbase/docs-sdk-cxx
       branches:
-        - release/1.4
+        - release/1.5
     - url: https://github.com/couchbase/docs-sdk-dotnet
       branches:
         - release/3.10
@@ -269,21 +269,39 @@ content:
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
         - main
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-common
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-dotnet
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-go
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-java
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-nodejs
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-python
+      branches:
+        - release/1.0
     - url: https://github.com/couchbase/docs-columnar-sdk-common
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-columnar-sdk-go
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-columnar-sdk-java
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-columnar-sdk-python
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-analytics-sdk-common
       branches:
         - release/1.1
