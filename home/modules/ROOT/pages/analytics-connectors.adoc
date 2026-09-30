@@ -1,0 +1,33 @@
+= Connectors for Operational Insights 
+:page-layout: landing-page-top-level-sdk
+:page-role: tiles
+:page-rank: 75
+:dotnet: .NET
+:!sectids:
+
+
+= Connectors for Operational Insights 
+
+Connectors to work with our Operational Insights Clusters.
+
+
+{empty} +
+
+== Analytics (Insights) Connectors
+
+* https://docs.couchbase.com/tableau-connector/current/index.html[Tableau Connector]
+* https://docs.couchbase.com/power-bi-connector/current/index.html[PowerBI Connector]
+* https://docs.couchbase.com/superset-connector/current/index.html[Apache Superset Connector]
+
+
+
+{empty} +
+
+== Big Data Connectors
+
+The available options for Operational Insights `DataFrame` and `Dataset` operations with the xref:spark-connector:ROOT:index.adoc[Couchbase Spark Connector]
+can be found on the Spark xref:spark-connector:ROOT:spark-sql.adoc#enterprise-analytics-options[DataFrames, Datasets, and SQL] page.
+
+See the xref:enterprise-analytics:sources:manage-remote.adoc[Operational Insights] docs for information on streaming from Confluent for Kafka.
+
+{empty} +
