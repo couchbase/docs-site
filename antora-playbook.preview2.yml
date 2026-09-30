@@ -38,58 +38,118 @@ site:
   keys:
     google_analytics: GTM-MVPNN2
     nav_groups: >
+      
       [
-        { "title": "Server",
-          "startPage": "home::server.adoc",
-          "components": ["server", "operator", "cloud-native-gateway"],
+        { "title": "Start Here", "startPage": "home::start-here.adoc"},
+        { "title": "Operational Database", "startPage": "home::operational.adoc",
           "color": "#c41016",
           "subGroups": [
             {
+              "title": "Self-Managed Server",
+              "startPage": "home::server.adoc",
+              "components": ["server"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Kubernetes Operator",
+              "startPage": "operator::overview.adoc",
+              "components": ["operator"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Cloud Native Gateway",
+              "startPage": "cloud-native-gateway:intro:about-cng.adoc",
+              "components": ["cloud-native-gateway"],
+              "expandHeaderLevels": 1
+            },
+            {
               "title": "Operational SDKs",
               "startPage": "home::sdk.adoc",
-              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector"],
               "expandHeaderLevels": 1
             }
           ]
         },
         { "title": "Capella",
           "startPage": "home::cloud.adoc",
-          "components": ["cloud", "app-services"],
-          "expandHeaderLevels": 1,
+          "components": ["cloud"],
           "color": "#e8830c",
           "subGroups": [
             {
+              "title": "Capella Operational",
+              "startPage": "home::cloud.adoc",
+              "components": ["cloud"],
+              "expandHeaderLevels": 1
+            },
+            {
               "title": "Operational SDKs",
               "startPage": "home::sdk.adoc",
-              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector", "power-bi-connector", "superset-connector", "sdk-extensions"],
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector"],
               "expandHeaderLevels": 1
             }
           ]
         },
-        { "title": "Mobile / Edge",
-          "startPage": "home::mobile.adoc",
-          "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
-          "color": "#d9480f"
-        },
-        { "title": "AI Data Plane",
-          "startPage": "ai:get-started:intro.adoc", 
-          "components": ["ai", "mcp-server"],
-          "color": "#f2a541"
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
+            "subGroups": [
+              {
+                "title": "Couchbase Lite",
+                "startPage": "couchbase-lite::index.adoc",
+                "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"],
+              "expandHeaderLevels": 1
+              },
+              {
+                "title": "Sync Gateway",
+                "startPage": "sync-gateway::introduction.adoc",
+                "components": ["sync-gateway"],
+                "expandHeaderLevels": 1
+              },
+              {
+                "title": "App Services",
+                "startPage": "app-services:ROOT:get-started/configuring-app-services.adoc",
+                "components": ["app-services"],
+                "expandHeaderLevels": 1
+              }
+            ]
         },
         { "title": "Operational Insights",
           "startPage": "home::operational-insights.adoc",
-          "components": ["analytics", "enterprise-analytics"],
-          "expandHeaderLevels": 1,
+          "components": ["enterprise-analytics", "analytics", "*-insights-sdk-*"],
           "color": "#ed9426",
           "subGroups": [
+            {
+              "title": "Operational Insights Enterprise",
+              "startPage": "enterprise-analytics:intro:intro.adoc",
+              "components": ["enterprise-analytics"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Operational Insights Capella",
+              "startPage": "analytics:intro:intro.adoc",
+              "components": ["analytics"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Insights SDKs",
+              "startPage": "home::operational-insights-sdk.adoc",
+              "components": ["*-insights-sdk-*"],
+              "expandHeaderLevels": 1
+            },
             {
               "title": "Legacy Analytics SDKs",
               "startPage": "home::analytics-sdk.adoc",
               "components": ["*-analytics-sdk", "*-columnar-sdk"],
               "expandHeaderLevels": 1
+            },
+            {
+              "title": "Analytics Connectors",
+              "startPage": "home::analytics-connectors.adoc",
+              "components": ["tableau-connector", "power-bi-connector", "superset-connector"],
+              "expandHeaderLevels": 1
             }
           ]
         },
+        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai"] },
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
           "color": "#f2a541"
@@ -184,14 +244,6 @@ content:
     - url: https://github.com/couchbase/docs-operator
       branches:
         - release/2.9
-    - url: https://github.com/couchbaselabs/observability
-      branches:
-        - 0.2.x
-      start_path: docs
-    - url: https://github.com/couchbaselabs/cbmultimanager
-      branches:
-        - 0.2.x
-      start_path: docs
     - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
       branches:
         - release/1.2
@@ -238,37 +290,37 @@ content:
         - release/8.0
     - url: https://github.com/couchbase/docs-sdk-common
       branches:
-        - release/8.0.1
+        - api/3.10
     - url: https://github.com/couchbase/docs-sdk-c
       branches:
         - release/3.3
     - url: https://github.com/couchbase/docs-sdk-cxx
       branches:
-        - release/1.4
+        - release/1.5
     - url: https://github.com/couchbase/docs-sdk-dotnet
       branches:
-        - temp/3.9
+        - release/3.10
     - url: https://github.com/couchbase/docs-efcore
       branches:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-go
       branches:
-        - release/2.12
+        - release/2.13
     - url: https://github.com/couchbase/docs-sdk-rust
       branches:
-        - release/1.0
+        - release/1.1
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
-        - release/3.12
+        - release/3.13
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
         - release/1.4
     - url: https://github.com/couchbase/docs-sdk-kotlin
       branches:
-        - temp/3.12
+        - release/3.13
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
-        - release/3.12
+        - release/3.13
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
         - temp/4.7
@@ -284,21 +336,39 @@ content:
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
         - main
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-common
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-dotnet
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-go
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-java
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-nodejs
+      branches:
+        - release/1.0
+    - url: https://github.com/couchbase/docs-operational-insights-sdk-python
+      branches:
+        - release/1.0
     - url: https://github.com/couchbase/docs-columnar-sdk-common
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-columnar-sdk-go
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-columnar-sdk-java
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-columnar-sdk-python
       branches:
-        - release/1.0
+        - DOC-14641--oi-renaming
     - url: https://github.com/couchbase/docs-analytics-sdk-common
       branches:
         - release/1.1
@@ -317,9 +387,6 @@ content:
     - url: https://github.com/couchbase/docs-analytics-sdk-python
       branches:
         - release/1.1
-    - url: https://github.com/couchbase/docs-mobile
-      branches:
-        - release/3.1
     - url: https://github.com/couchbase/docs-couchbase-lite
       branches:
         - release/4.1

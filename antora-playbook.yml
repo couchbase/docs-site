@@ -356,16 +356,16 @@ content:
 
 
   - url: https://github.com/couchbase/docs-columnar-sdk-common
-    branches: [DOC-14641--oi-renaming]
+    branches: [release/1.0]
 
   - url: https://github.com/couchbase/docs-columnar-sdk-go
-    branches: [DOC-14641--oi-renaming]
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-java
-    branches: [DOC-14641--oi-renaming]
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-nodejs
-    branches: [DOC-14641--oi-renaming]
+    branches: [release/1.0]
   - url: https://github.com/couchbase/docs-columnar-sdk-python
-    branches: [DOC-14641--oi-renaming]
+    branches: [release/1.0]
 
 
   - url: https://github.com/couchbase/docs-analytics-sdk-common
