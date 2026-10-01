@@ -128,7 +128,7 @@ content:
       branches: merge-prs/release/8.5
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
-        - release/8.5
+        - merge-prs/release/8.5
     - url: https://github.com/couchbaselabs/cb-swagger
       branches: release/8.5
       start_path: docs
