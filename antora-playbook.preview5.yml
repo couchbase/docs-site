@@ -120,6 +120,7 @@ asciidoc:
     kroki-server-url: null
     kroki-fetch-diagram: true
     docs-contact: Supritha
+    page-show-preview-banner: true
     page-watermark: Totoro Preview
 content:
   branches: master
