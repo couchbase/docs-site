@@ -80,16 +80,16 @@ git checkout -B "$NEW" "$BASE"
 
 # --- gather PRs --------------------------------------------------------
 
-info "Looking up open PRs against $BASE (excluding forks)..."
+info "Looking up open PRs against $BASE (excluding forks and drafts)..."
 
 PRS=$(gh pr list --base "$BASE" --state open \
-    --json number,title,headRefName,isCrossRepository,mergeable,url \
-    --jq '[.[] | select(.isCrossRepository == false)] | sort_by(.number)')
+    --json number,title,headRefName,isCrossRepository,isDraft,mergeable,url \
+    --jq '[.[] | select(.isCrossRepository == false and .isDraft == false)] | sort_by(.number)')
 
 PR_COUNT=$(echo "$PRS" | jq 'length')
 
 if [ "$PR_COUNT" -eq 0 ]; then
-    info "No open same-repo PRs found against $BASE. Nothing to do."
+    info "No open, non-draft, same-repo PRs found against $BASE. Nothing to do."
     exit 0
 fi
 
