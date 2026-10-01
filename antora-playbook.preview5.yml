@@ -131,9 +131,12 @@ content:
         - release/8.5
     - url: https://github.com/couchbaselabs/cb-swagger
       branches: release/8.5
+      start_path: docs
     - url: https://github.com/couchbase/docs-analytics
       branches: release/8.5
     - url: https://github.com/couchbase/couchbase-cli
       branches: master
+      start_path: docs
     - url: https://github.com/couchbase/backup
       branches: master
+      start_path: docs
