@@ -42,7 +42,7 @@ content:
    - url: https://github.com/couchbaselabs/cb-swagger
      branches: release/8.5
 
-   - url: https://github.com/couchbaselabs/docs-analytics
+   - url: https://github.com/couchbase/docs-analytics
      branches: release/8.5
 
     # have pinged Safian Ali, who will update master to 8.5 shortly
