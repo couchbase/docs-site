@@ -17,7 +17,7 @@ content:
     - '**/docs-enterprise-analytics'
     - '**/docs-analytics'
     - '**/docs-capella'
-    # - '**/docs-server'
+    - '**/docs-server'
     - '**/docs-devex'
     - '**/cb-swagger'
     - '**/docs-connectors-power-bi'
@@ -25,17 +25,32 @@ content:
     - '**/docs-sdk-java'
     - '**/docs-sdk-common'
     - '**/couchbase-cli'
+    - '**/backup'
 
   sources:
    - url: https://github.com/couchbase/docs-server
-     branches: release/8.5
+     branches: merge-prs/release/8.5
 
-   - url: https://github.com/couchbaselabs/docs-fleetmanager
-     branches: main
+   #- url: https://github.com/couchbaselabs/docs-fleetmanager
+   #branches: main
     
    - url: https://github.com/couchbaselabs/docs-devex
      branches:
+       - release/8.5
        - capella
+
+   - url: https://github.com/couchbaselabs/cb-swagger
+     branches: release/8.5
+
+   - url: https://github.com/couchbaselabs/docs-analytics
+     branches: release/8.5
+
+    # have pinged Safian Ali, who will update master to 8.5 shortly
+    #- url: https://github.com/couchbase/couchbase-cli
+    #  branches: master
+    #
+    #- url: https://github.com/couchbase/backup
+    #  branches: master
 
 asciidoc:
   attributes:

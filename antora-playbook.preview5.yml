@@ -15,7 +15,7 @@ urls:
   latest_version_segment: current
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-234/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-235/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -42,7 +42,7 @@ site:
         },
         { "title": "Mobile / Edge",
           "startPage": "home::mobile.adoc",
-          "components": ["couchbase-lite", "couchbase-lite-javascript", "sync-gateway", "couchbase-edge-server"],
+          "components": ["couchbase-lite", "couchbase-lite-javascript", "cbl-reactnative", "sync-gateway", "couchbase-edge-server"],
           "color": "#d9480f"
         },
         { "title": "Capella",
@@ -96,7 +96,6 @@ asciidoc:
     - "@asciidoctor/tabs"
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
-    enable-cmos: ""
     max-include-depth: 10
     page-partial: false
     experimental: ""
@@ -132,12 +131,12 @@ content:
       start_path: home
     - url: https://github.com/couchbaselabs/docs-devex
       branches:
+        - release/8.5
         - capella
         - release/8.0
     - url: https://github.com/couchbaselabs/cb-swagger
-      branches:
-        - release/8.0
       start_path: docs
+      branches: release/8.5
     - url: https://github.com/couchbase/docs-capella
       branches:
         - main
@@ -160,13 +159,17 @@ content:
       branches:
         - morpheus
       start_path: docs
+    - url: https://github.com/couchbase/backup
+      branches:
+        - morpheus
+      start_path: docs
+    - url: https://github.com/couchbase/docs-server
+      branches: merge-prs/release/8.5
     - url: https://github.com/couchbase/docs-sdk-common
       branches:
         - release/8.0.1
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
         - release/3.12
-    - url: https://github.com/couchbase/docs-server
+    - url: https://github.com/couchbaselabs/docs-analytics
       branches: release/8.5
-    - url: https://github.com/couchbaselabs/docs-fleetmanager
-      branches: main
