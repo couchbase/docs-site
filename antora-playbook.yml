@@ -131,7 +131,7 @@ site:
               },
               {
                 "title": "App Services",
-                "startPage": "app-services:get-started:configuring-app-services.adoc",
+                "startPage": "app-services:ROOT:get-started/configuring-app-services.adoc",
                 "components": ["app-services"],
                 "expandHeaderLevels": 1
               }

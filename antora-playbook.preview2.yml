@@ -338,7 +338,7 @@ content:
         - main
     - url: https://github.com/couchbase/docs-operational-insights-sdk-common
       branches:
-        - release/1.0
+        - api/1.0
     - url: https://github.com/couchbase/docs-operational-insights-sdk-dotnet
       branches:
         - release/1.0
