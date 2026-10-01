@@ -10,34 +10,25 @@ site:
   robots: disallow
 
 content:
-  $prune: 1
+  # prune: 1
   $select:
-    - '.'
-    - '**/docs-columnar'
-    - '**/docs-enterprise-analytics'
-    - '**/docs-analytics'
-    - '**/docs-capella'
-    - '**/docs-server'
-    - '**/docs-devex'
-    - '**/cb-swagger'
-    - '**/docs-connectors-power-bi'
-    - '**/docs-tableau'
-    - '**/docs-sdk-java'
-    - '**/docs-sdk-common'
-    - '**/couchbase-cli'
-    - '**/backup'
+    - 'none'
+    #- '**/docs-analytics'
+    #- '**/docs-server'
+    #- '**/docs-devex'
+    #- '**/cb-swagger'
+    #- '**/couchbase-cli'
+    #- '**/backup'
 
   sources:
    - url: https://github.com/couchbase/docs-server
-     branches: merge-prs/release/8.5
+     branches:
+       merge-prs/release/8.5
 
-   #- url: https://github.com/couchbaselabs/docs-fleetmanager
-   #branches: main
-    
    - url: https://github.com/couchbaselabs/docs-devex
      branches:
        - release/8.5
-       - capella
+       # - capella
 
    - url: https://github.com/couchbaselabs/cb-swagger
      branches: release/8.5
@@ -45,12 +36,12 @@ content:
    - url: https://github.com/couchbase/docs-analytics
      branches: release/8.5
 
-    # have pinged Safian Ali, who will update master to 8.5 shortly
-    #- url: https://github.com/couchbase/couchbase-cli
-    #  branches: master
-    #
-    #- url: https://github.com/couchbase/backup
-    #  branches: master
+    # confirmed `master` for now via Safian Ali
+   - url: https://github.com/couchbase/couchbase-cli
+     branches: master
+
+   - url: https://github.com/couchbase/backup
+     branches: master
 
 asciidoc:
   attributes:
@@ -58,5 +49,5 @@ asciidoc:
     # metadata for Hakim's benefit
     docs-contact: Supritha
 
-    page-show-preview-banner: true
+    # page-show-preview-banner: true
     page-watermark: Totoro Preview
