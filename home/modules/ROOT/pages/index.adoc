@@ -87,12 +87,12 @@ xref:server.adoc[Couchbase Server]
 
 {empty} +
 
-.Enterprise Analytics (RT-OLAP)
+.Operational Insights (RT-OLAP)
 
 [.content]
-Enterprise Analytics is a self-managed analytical database (RT-OLAP) for real time apps and operational intelligence.
+Operational Insights is a self-managed analytical database (RT-OLAP) for real time apps and operational intelligence.
 
-xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
+xref:enterprise-analytics:intro:intro.adoc[Operational Insights]
 
 [.column]
 ====== {empty}
@@ -138,7 +138,7 @@ Couchbase SDKs allow applications to access a Couchbase cluster and the big data
 
 xref:home:ROOT:developer.adoc[Developer Docs] |
 xref:home:ROOT:sdk.adoc[Operational SDKs] |
-xref:home:ROOT:analytics-sdk.adoc[Enterprise Analytics SDKs] |
+xref:home:ROOT:analytics-sdk.adoc[Operational Insights SDKs] |
 xref:home:ROOT:columnar-sdk.adoc[Capella Analytics SDKs]
 
 [.column]
@@ -222,7 +222,7 @@ xref:analytics:intro:intro.adoc[Capella Analytics]
 
 a| xref:server.adoc[Couchbase Server]
 
-xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics]
+xref:enterprise-analytics:intro:intro.adoc[Operational Insights]
 
 xref:operator::overview.adoc[Couchbase Autonomous Operator]
 
