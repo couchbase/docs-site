@@ -1,8 +1,7 @@
 # npx antora --clean --fetch antora-playbook.yml
 antora:
   extensions:
-    - '@antora/atlas-extension'
-    - '@opendevise/antora-navigator-extension'
+  - '@antora/site-generator-ms'
 site:
   title: Couchbase Docs Archive
   url: https://docs-archive.couchbase.com
