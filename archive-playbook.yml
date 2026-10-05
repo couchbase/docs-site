@@ -105,7 +105,6 @@ asciidoc:
   - ./lib/inline-man-macro.js
   - ./lib/multirow-table-head-tree-processor.js
   - ./lib/swagger-ui-block-macro.js
-  - ./lib/tabs-block.js
 ui:
   bundle:
     url: https://github.com/couchbase/docs-ui/releases/download/archive-1/ui-bundle.zip
