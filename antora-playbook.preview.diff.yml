@@ -21,13 +21,10 @@ content:
   - url: https://github.com/couchbaselabs/docs-cloud-native-gateway
     branches: [release/1.0]
 
-  - url: https://github.com/couchbaselabs/docs-couchbase-lite-react-native
-    branches: [release/1.1]
-
   - url: https://github.com/couchbaselabs/docs-fleetmanager
     branches: main
 
-  - url: https://github.com/couchbaselabs/docs-rosetta
+  - url: https://github.com/couchbaselabs/docs-compatibility
     branches: main
 
 asciidoc:

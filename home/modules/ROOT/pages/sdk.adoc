@@ -288,8 +288,12 @@ xref:server:sdk:sdk-doctor.adoc[SDK doctor]
 | xref:couchbase-lite:java:quickstart.adoc[Docs]
 | https://docs.couchbase.com/mobile/4.1.0/couchbase-lite-java/index.html?[API Reference]
 
-| Couchbase Lite JavaScript (Ionic, Flutter, and React Native)
+| Couchbase Lite JavaScript (Ionic and Flutter)
 | xref:couchbase-lite::javascript.adoc[Docs]
+| 
+
+| Couchbase Lite React Native
+| xref:cbl-reactnative::intro.adoc[Docs]
 | 
 
 | Couchbase Lite Swift

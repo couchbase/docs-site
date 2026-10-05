@@ -1,0 +1,56 @@
+# RUN:
+#  scripts/patch-cutdown-playbook antora-playbook.preview5
+
+antora:
+  extensions:
+  - ./lib/report-tree.js
+
+site:
+  title: Couchbase Docs - Totoro Preview
+  robots: disallow
+
+content:
+  # prune: 1
+  $select:
+    - 'none'
+    #- '**/docs-analytics'
+    #- '**/docs-server'
+    #- '**/docs-devex'
+    #- '**/cb-swagger'
+    #- '**/couchbase-cli'
+    #- '**/backup'
+
+  sources:
+   - url: https://github.com/couchbase/docs-server
+     branches:
+       merge-prs/release/8.5
+
+   - url: https://github.com/couchbaselabs/docs-devex
+     branches:
+       - merge-prs/release/8.5
+       # - capella
+
+   - url: https://github.com/couchbaselabs/cb-swagger
+     branches: release/8.5
+     start_path: docs
+
+   - url: https://github.com/couchbase/docs-analytics
+     branches: release/8.5
+
+    # confirmed `master` for now via Safian Ali
+   - url: https://github.com/couchbase/couchbase-cli
+     branches: master
+     start_path: docs
+
+   - url: https://github.com/couchbase/backup
+     branches: master
+     start_path: docs
+
+asciidoc:
+  attributes:
+
+    # metadata for Hakim's benefit
+    docs-contact: Supritha
+
+    page-show-preview-banner: true
+    page-watermark: Totoro Preview
