@@ -5,6 +5,8 @@
   "private": true,
   "dependencies": {
     "antora": "~3.1",
-    "@antora/site-generator-ms": "git+https://gitlab.com/opendevise/oss/antora-site-generator-ms#as-extension"
+    "@antora/atlas-extension": "1.0.0-alpha.6",
+    "@opendevise/antora-navigator-extension": "1.0.0-alpha.1",
+    "@asciidoctor/core": "~2.2"
   }
 }
