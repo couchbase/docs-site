@@ -4,8 +4,8 @@
 
 antora:
   extensions:
-  - '@antora/atlas-extension'
-  - '@opendevise/antora-navigator-extension'
+  - '@antora/site-generator-ms'
+  - ./lib/site-navigation-data-json.js
   - ./lib/embargo.js
   - ./lib/antora-component-version-rank.js
   - ./lib/llms-txt.js
