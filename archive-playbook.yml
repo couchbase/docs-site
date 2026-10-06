@@ -5,7 +5,7 @@ antora:
   - '@opendevise/antora-navigator-extension'
 site:
   title: Couchbase Docs Archive
-  url: https://docs-archive.couchbase.com
+  url: https://infratest.docs-test.couchbase.com/archive
   start_page: home::index.adoc
   robots: |
     User-agent: *
