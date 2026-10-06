@@ -92,6 +92,7 @@ asciidoc:
     max-include-depth: 10
     page-partial: false
     primary-site-url: https://infratest.docs-test.couchbase.com
+    primary-site-manifest-url: https://infratest.docs-test.couchbase.com/site-manifest.json
     experimental: ''
     idprefix: '@'
     idseparator: '-@'
