@@ -1,0 +1,27 @@
+# RUN:
+#  scripts/patch-cutdown-playbook antora-playbook.preview5
+
+antora:
+  extensions:
+  - ./lib/report-tree.js
+
+site:
+  title: Couchbase Docs - Fusion Preview
+  robots: disallow
+
+content:
+  $prune: 1
+
+  sources:
+   - url: https://github.com/couchbase/docs-capella
+     branches:
+       $replace: AV-103367-management-api-fusion
+
+asciidoc:
+  attributes:
+
+    # metadata for Hakim's benefit
+    docs-contact: Rebecca / Sarah
+
+    page-show-preview-banner: true
+    page-watermark: Fusion 
