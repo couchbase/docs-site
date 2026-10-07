@@ -137,8 +137,7 @@ content:
         - ui-ux
         - pendo
     - url: https://github.com/couchbaselabs/docs-devex
-      branches:
-        - release/8.0
+      branches: capella
     - url: https://github.com/couchbaselabs/cb-swagger
       branches:
         - release/8.0
@@ -207,7 +206,7 @@ content:
         - release/8.0
     - url: https://github.com/couchbase/docs-sdk-common
       branches:
-        - release/8.0.1
+        - api/3.10
     - url: https://github.com/couchbase/docs-sdk-c
       branches:
         - release/3.3
@@ -225,7 +224,7 @@ content:
         - release/2.12
     - url: https://github.com/couchbase/docs-sdk-rust
       branches:
-        - release/1.0
+        - release/1.1
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
         - release/3.12
@@ -329,5 +328,3 @@ content:
       branches:
         - master
       start_path: content
-    - url: https://github.com/couchbase/docs-devex
-      branches: capella
