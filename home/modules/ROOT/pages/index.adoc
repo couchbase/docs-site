@@ -331,6 +331,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Rust SDK
+* xref:1.1@rust-sdk:hello-world:start-using-sdk.adoc[Version 1.1]
 * xref:1.0@rust-sdk:hello-world:start-using-sdk.adoc[Version 1.0]
 
 [.tiles.browse]
