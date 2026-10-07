@@ -79,7 +79,7 @@ site:
           "color": "#f2a541"
         }
       ]
-  title: Couchbase Docs - Totoro Preview
+  title: Couchbase Docs - Server 8.5 Preview
   robots: disallow
 asciidoc:
   extensions:
@@ -121,7 +121,7 @@ asciidoc:
     kroki-fetch-diagram: true
     docs-contact: Supritha
     page-show-preview-banner: true
-    page-watermark: Totoro Preview
+    page-watermark: Release 8.5 Preview
 content:
   branches: master
   sources:

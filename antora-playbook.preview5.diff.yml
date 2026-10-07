@@ -6,7 +6,7 @@ antora:
   - ./lib/report-tree.js
 
 site:
-  title: Couchbase Docs - Totoro Preview
+  title: "Couchbase Docs - Server 8.5 Preview"
   robots: disallow
 
 content:
@@ -53,4 +53,4 @@ asciidoc:
     docs-contact: Supritha
 
     page-show-preview-banner: true
-    page-watermark: Totoro Preview
+    page-watermark: "Release 8.5 Preview"
