@@ -17,6 +17,9 @@ content:
      branches:
        $replace: AV-103367-management-api-fusion
 
+   - url: https://github.com/couchbase/docs-devex
+     branches: capella
+
 asciidoc:
   attributes:
 

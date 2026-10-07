@@ -329,3 +329,5 @@ content:
       branches:
         - master
       start_path: content
+    - url: https://github.com/couchbase/docs-devex
+      branches: capella
