@@ -88,4 +88,9 @@ asciidoc:
     docs-contact: Tim
 
     page-show-preview-banner: true
+    page-hide-preview-link: true
     page-watermark: CompatibilityPreview
+
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-238/ui-bundle.zip
