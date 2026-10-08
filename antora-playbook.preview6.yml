@@ -13,9 +13,6 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-235/ui-bundle.zip
 output:
   dir: ./public
 runtime:
@@ -121,7 +118,11 @@ asciidoc:
     kroki-fetch-diagram: true
     docs-contact: Rebecca / Sarah
     page-show-preview-banner: true
+    page-hide-preview-link: true
     page-watermark: Fusion
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-238/ui-bundle.zip
 content:
   branches: master
   sources:
@@ -221,7 +222,7 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-go
       branches:
-        - release/2.12
+        - release/2.13
     - url: https://github.com/couchbase/docs-sdk-rust
       branches:
         - release/1.1

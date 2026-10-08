@@ -89,8 +89,9 @@ asciidoc:
   attributes:
     docs-contact: Zeba
     page-show-preview-banner: true
+    page-hide-preview-link: true
     page-watermark: Polaris
 
-#ui:
-  #bundle:
-    #url: https://github.com/couchbase/docs-ui/releases/download/prod-217/ui-bundle.zip
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-238/ui-bundle.zip

@@ -57,4 +57,9 @@ asciidoc:
     docs-contact: Supritha
 
     page-show-preview-banner: true
+    page-hide-preview-link: true
     page-watermark: "Release 8.5 Preview"
+
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-238/ui-bundle.zip
