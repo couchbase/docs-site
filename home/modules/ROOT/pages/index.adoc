@@ -287,6 +287,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Go SDK
+* xref:2.13@go-sdk:hello-world:start-using-sdk.adoc[Version 2.13]
 * xref:2.12@go-sdk:hello-world:start-using-sdk.adoc[Version 2.12]
 * xref:2.11@go-sdk:hello-world:start-using-sdk.adoc[Version 2.11]
 * xref:2.10@go-sdk:hello-world:start-using-sdk.adoc[Version 2.10]
