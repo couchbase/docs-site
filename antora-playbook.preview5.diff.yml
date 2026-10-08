@@ -21,6 +21,10 @@ content:
     #- '**/backup'
 
   sources:
+   - url: .
+     start_path: home
+     branches: HEAD
+
    - url: https://github.com/couchbase/docs-server
      branches:
        merge-prs/release/8.5
