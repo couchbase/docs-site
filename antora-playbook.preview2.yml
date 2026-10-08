@@ -198,10 +198,11 @@ asciidoc:
     kroki-fetch-diagram: true
     docs-contact: Zeba
     page-show-preview-banner: true
+    page-hide-preview-link: true
     page-watermark: Polaris
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-237/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-238/ui-bundle.zip
 content:
   branches: master
   sources:
