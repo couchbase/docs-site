@@ -18,6 +18,13 @@ Operational Insights is a JSON-native analytical database with columnar storage 
 
 --
 
+[NOTE]
+====
+Couchbase Analytics is now Operational Insights.
+Your clusters, queries, and integrations work as before.
+Only the name has changed.
+====
+
 [.centered.card-container]
 == Choose Your Deployment Model
 
