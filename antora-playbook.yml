@@ -70,7 +70,7 @@ site:
             {
               "title": "Operational SDKs",
               "startPage": "home::sdk.adoc",
-              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector"],
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "sdk-extensions", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector"],
               "expandHeaderLevels": 1
             }
           ]
@@ -115,26 +115,26 @@ site:
               "expandHeaderLevels": 1
             },
             {
-              "title": "Insights SDKs",
+              "title": "Operational Insights SDKs",
               "startPage": "home::operational-insights-sdk.adoc",
-              "components": ["*-insights-sdk-*"],
+              "components": ["*-insights-sdk"],
               "expandHeaderLevels": 1
             },
             {
-              "title": "Legacy Analytics SDKs",
+              "title": "Analytics SDKs",
               "startPage": "home::analytics-sdk.adoc",
               "components": ["*-analytics-sdk", "*-columnar-sdk"],
               "expandHeaderLevels": 1
             },
             {
-              "title": "Analytics Connectors",
+              "title": "Operational Insights Connectors",
               "startPage": "home::analytics-connectors.adoc",
               "components": ["tableau-connector", "power-bi-connector", "superset-connector"],
               "expandHeaderLevels": 1
             }
           ]
         },
-        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai"] },
+        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai", "mcp-server"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
@@ -304,6 +304,7 @@ content:
     - url: https://github.com/couchbase/docs-sdk-extensions
       branches:
         - main
+
     - url: https://github.com/couchbase/docs-operational-insights-sdk-common
       branches: [api/1.0]
     - url: https://github.com/couchbase/docs-operational-insights-sdk-dotnet
@@ -316,6 +317,7 @@ content:
       branches: [release/1.0]
     - url: https://github.com/couchbase/docs-operational-insights-sdk-python
       branches: [release/1.0]
+
     - url: https://github.com/couchbase/docs-columnar-sdk-common
       branches:
         - DOC-14641--oi-renaming
@@ -331,6 +333,7 @@ content:
     - url: https://github.com/couchbase/docs-columnar-sdk-python
       branches:
         - DOC-14641--oi-renaming
+
     - url: https://github.com/couchbase/docs-analytics-sdk-common
       branches: [release/1.1, release/1.0]
     - url: https://github.com/couchbase/docs-analytics-sdk-dotnet
@@ -343,6 +346,7 @@ content:
       branches: [release/1.1, release/1.0]
     - url: https://github.com/couchbase/docs-analytics-sdk-python
       branches: [release/1.1, release/1.0]
+
     - url: https://github.com/couchbase/docs-mobile
       branches:
         - release/3.1

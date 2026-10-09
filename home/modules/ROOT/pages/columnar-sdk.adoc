@@ -23,7 +23,7 @@ They must be used to connect to the current Operational Insights Capella Service
 
 To connect to self-managed Operational Insights Enterprise, use our xref:operational-insights-sdk.adoc[Operational Insights SDKs].
 
-xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] is our classic OLAP available as part of self-managed Couchbase Server and Capella Operational.
+xref:server:learn:services-and-indexes/services/analytics-service.adoc[Analytics Service (CBAS)] is our classic OLAP available as part of self-managed Couchbase Server and Capella Operational.
 Use the xref:sdk.adoc[operational SDKs] to develop for this service.
 ====
 

@@ -17,15 +17,25 @@ include::partial$info-banner.adoc[]
 // It uses column storage, which gives speedier retrieval of data.
 
 [description]
-xref:enterprise-analytics:intro:intro.adoc[Operational Insights] is a self-managed, JSON-native NoSQL analytical database.
+xref:enterprise-analytics:intro:intro.adoc[Operational Insights] is a JSON-native NoSQL analytical database.
 It serves to unify data from diverse sources, allowing for the execution of complex analytical queries and the extraction of timely insights.
+
+{empty} +
+
+* xref:enterprise-analytics:intro:intro.adoc[Operational Insights Enterprise] is a self-managed version of Couchbase's real-time analytical database (RT-OLAP), for running in your own datacenter or private cloud.
+These pages cover the older Analytic SDKs, which are compatible with Operational Insights Enterprise 3.x. 
+Unless you are in the process of migrating from an earlier Analytics project using these SDKs, you should instead look at our xref:operational-insights-sdk.adoc[Operational Insights SDKs] -- which will be developed to cover new functionality in future releases of Operational Insights.
+
+* xref:analytics:intro:intro.adoc[Operational Insights Capella] is a Couchbase-managed version of our real-time analytical database (RT-OLAP), accessed through the Capella control plane, and running in your choice of CSP (AWS, Azure, or GCP).
+Currently, xref:columnar-sdk.adoc[Columnar SDKs] must be used to connect to the Operational Insights Capella Service, as it presents a different connection interface, without Operational Insights Enterprise’s load balancer.
+
 
 {empty} +
 
 
 == SDK APIs to work with Operational Insights
 
-TIP: This section covers Couchbase's legacy Analytics SDKs.
+TIP: This section covers Couchbase's older Analytics SDKs.
 These have been superseded by the new xref:operational-insights-sdk.adoc[Operational Insights SDKs], and these Analytics SDKs will be deprecated in due course.
 
 Analytics SDKs are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
@@ -88,23 +98,23 @@ See the xref:enterprise-analytics:sources:manage-remote.adoc[Operational Insight
 
 {empty} +
 
-== Other Analytics Services
+== Analytics Offerings in Couchbase
 
 
-.SDK Compatibility with Operational Insights & Analytics Services
+.SDKs by analytics offering
 |===
-| Analytics solution | Development option
+| Analytics offering | Development option
 
 | xref:enterprise-analytics:intro:intro.adoc[Operational Insights Enterprise]
 a|
 * xref:operational-insights-sdk.adoc[Insights SDKs]
-* xref:analytics-sdk.adoc[Legacy Analytics SDKs]
+* xref:analytics-sdk.adoc[Analytics SDKs]
 
 
 | xref:analytics:intro:intro.adoc[Operational Insights Capella]
-| xref:columnar-sdk.adoc[Columnar (Capella Analytics) SDKs]
+| xref:columnar-sdk.adoc[Columnar SDKs]
 
-| xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] 
+| xref:server:learn:services-and-indexes/services/analytics-service.adoc[Analytics Service (CBAS)] 
 | xref:sdk.adoc[Operational SDKs]
 |===
 

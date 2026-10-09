@@ -1,4 +1,4 @@
-= Develop with Enterprise Operational Insights 
+= Develop with Operational Insights Enterprise
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :page-rank: 75
@@ -76,44 +76,43 @@ https://docs.couchbase.com/sdk-api/operational-insights-python-client[Python API
 
 === Big Data Connectors
 
-The available options for Enterprise Operational-Insights `DataFrame` and `Dataset` operations with the xref:spark-connector:ROOT:index.adoc[Couchbase Spark Connector]
-can be found on the Spark xref:spark-connector:ROOT:spark-sql.adoc#enterprise-operational-insights-options[DataFrames, Datasets, and SQL] page.
+The available options for `DataFrame` and `Dataset` operations with the xref:spark-connector:ROOT:index.adoc[Couchbase Spark Connector]
+can be found on the Spark xref:spark-connector:ROOT:spark-sql.adoc#options[DataFrames, Datasets, and SQL] page.
 
-See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Operational Insights] docs for information on streaming from Confluent for Kafka.
+See the xref:enterprise-analytics:sources:manage-remote.adoc[Operational Insights Enterprise] docs for information on streaming from Confluent for Kafka.
 
 {empty} +
 
-== Other Operational Insights Services
+== Analytics Offerings in Couchbase
 
 
-.SDK Compatibility with Operational Insights Service
+.SDK by analytics offering
 |===
-| Operational-Insights solution | Development option
+| Analytics offering | Development option
 
 | xref:enterprise-operational-insights:intro:intro.adoc[Operational Insights Enterprise]
 a|
 * xref:operational-insights-sdk.adoc[Operational Insights SDKs]
-* xref:analytics-sdk.adoc[Legacy Analytics SDKs]
+* xref:analytics-sdk.adoc[Analytics SDKs]
 
 | xref:operational-insights:intro:intro.adoc[Operational Insights Capella]
-| xref:columnar-sdk.adoc[Columnar (Operational Insights Capella) SDKs]
+| xref:columnar-sdk.adoc[Columnar SDKs]
 
-| xref:server:learn:services-and-indexes/services/operational-insights-service.adoc[CBAS (Couchbase Operational-Insights Service)] 
+| xref:server:learn:services-and-indexes/services/operational-insights-service.adoc[Analytics Service (CBAS)] 
 | xref:sdk.adoc[Operational SDKs]
 |===
 
-
-
-In addition to the Operational Insights Enterprise,
-traditional, row-based analytics is also available in Couchbase operational clusters -- self-managed, or Capella Operational.
+Operational Insights is Couchbase’s analytical database. It comes in two deployment options: Operational Insights Enterprise, which you manage yourself, and Operational Insights Capella, which is fully managed. Use the SDK that matches your deployment. The Analytics Service (CBAS) provides row-based analytics inside Couchbase operational clusters. It’s available in self-managed Couchbase Server and in Capella Operational. To query it, use the Operational SDKs.
 
 
 {empty} +
 
 === SDK APIs to work with Operational Insights Capella
 
-Columnar SDKs, are similar to the Operational Insights SDKs.
-They must be used to connect to the current Operational Insights (Capella) Service, as it presents a different connection interface, without Operational Insights Enterprise's load balancer.
+Operational Insights Capella (formerly Capella Analytics) uses the Columnar SDKs, not the Analytics SDKs.
+Operational Insights Capella uses a different connection interface from Operational Insights Enterprise, which connects through a load balancer, so it needs its own SDKs.
+The Columnar SDKs are similar to the Analytics SDKs.
+
 
 [{tabs}] 
 ==== 

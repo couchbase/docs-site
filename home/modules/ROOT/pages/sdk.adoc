@@ -3,6 +3,7 @@
 :page-layout: landing-page-top-level-sdk
 :page-role: tiles
 :page-rank: 75
+:dotnet: .NET
 :!sectids:
 
 
@@ -472,6 +473,7 @@ https://docs.couchbase.com/sdk-api/couchbase-node-client/modules.html[Node.js AP
 
 {empty} +
 
+////
 [discrete]
 == Using Your Database icon:database[] 
 
@@ -545,6 +547,7 @@ Useful resources to help support your development experience with Couchbase and 
 ++++
 </div>
 ++++
+////
 --
 
 
@@ -1015,7 +1018,7 @@ for when to use the Data API, or Capella's other REST APIs, see xref:cloud:data-
 
 SDKs are also available for our real-time analytics service, 
 xref:columnar:intro:intro.adoc[Operational Insights] --
-see the xref:operational-insights-sdk.adoc[Insights SDKs pages]:
+see the xref:operational-insights-sdk.adoc[Operational Insights SDKs pages]:
 
 
 [{tabs}] 
@@ -1024,9 +1027,9 @@ see the xref:operational-insights-sdk.adoc[Insights SDKs pages]:
 {dotnet}::
 +
 --
-xref:dotnet-operational-insights-sdk:hello-world:overview.adoc[.NET OI SDK Docs] |
+xref:dotnet-operational-insights-sdk:hello-world:overview.adoc[.NET Operational Insights SDK Docs] |
 xref:dotnet-operational-insights-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-| https://docs.couchbase.com/sdk-api/operational-insights-dotnet-client[.NET Operational Insights API Reference]
+| https://docs.couchbase.com/sdk-api/operational-insights-dotnet-client[.NET API Reference]
 --
 
 Go::
@@ -1068,12 +1071,12 @@ https://docs.couchbase.com/sdk-api/operational-insights-python-client[Python API
 More developer documentation is available for:
 
 * Connectors
-** https://docs.couchbase.com/elasticsearch-connector/current/getting-started.html
-** https://docs.couchbase.com/kafka-connector/current/quickstart.html
-** https://docs.couchbase.com/spark-connector/current/getting-started.html
-** https://docs.couchbase.com/server/current/connectors/odbc-jdbc-drivers.html
-* Mobile -- xref:couchbase-lite::index.adoc[edge development with Couchbase Lite].
-* AI Data Plane -- xref:[MCP Python SDK]
+** https://docs.couchbase.com/elasticsearch-connector/current/getting-started.html[]
+** https://docs.couchbase.com/kafka-connector/current/quickstart.html[]
+** https://docs.couchbase.com/spark-connector/current/getting-started.html[]
+** https://docs.couchbase.com/server/current/connectors/odbc-jdbc-drivers.html[]
+* Mobile -- xref:couchbase-lite::index.adoc[Edge development with Couchbase Lite].
+* AI Data Plane -- xref:mcp-server::intro.adoc[MCP Python SDK]
 
 
 
