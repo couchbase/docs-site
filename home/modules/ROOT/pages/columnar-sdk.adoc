@@ -18,7 +18,7 @@ a self-managed xref:enterprise-analytics:intro:intro.adoc[Operational Insights E
 ====
 Operational Insights Capella and Operational Insights Enterprise are column-based real-time analytical databases.
 
-Operational Insights Capella SDKs, also known as Columnar SDKs, are similar to the Operational Insights Enterprise SDKs.
+Operational Insights Capella SDKs, also known as Columnar SDKs, are similar to the Operational Insights SDKs.
 They must be used to connect to the current Operational Insights Capella Service, as it presents a different connection interface, without Operational Insights Enterprise's load balancer.
 
 To connect to self-managed Operational Insights Enterprise, use our xref:operational-insights-sdk.adoc[Operational Insights SDKs].

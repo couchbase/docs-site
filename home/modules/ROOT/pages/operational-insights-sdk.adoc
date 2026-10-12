@@ -151,8 +151,3 @@ https://docs.couchbase.com/sdk-api/columnar-python-client[Python API Reference]
 
 
 {empty} +
-
-=== Row-Based Couchbase Analytics
-
-xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] is our classic OLAP service, available as part of self-managed Couchbase Server and Capella Operational.
-Use the xref:sdk.adoc[operational SDKs] to develop for this service.
