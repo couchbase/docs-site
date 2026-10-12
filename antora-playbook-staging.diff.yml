@@ -20,6 +20,10 @@ site:
   keys:
     google_analytics: ~
 
+asciidoc:
+  attributes:
+    page-hide-uncategorized-search: true
+
 content:
 
   $select:
@@ -80,4 +84,4 @@ content:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-32/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-37/ui-bundle.zip
