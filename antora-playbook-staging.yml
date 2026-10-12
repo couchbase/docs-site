@@ -128,7 +128,7 @@ asciidoc:
     page-hide-uncategorized-search: true
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-37/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-38/ui-bundle.zip
 content:
   branches: master
   sources:
