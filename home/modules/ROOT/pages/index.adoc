@@ -136,6 +136,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Java SDK
+* xref:3.13@java-sdk:hello-world:start-using-sdk.adoc[Version 3.13]
 * xref:3.12@java-sdk:hello-world:start-using-sdk.adoc[Version 3.12]
 * xref:3.11@java-sdk:hello-world:start-using-sdk.adoc[Version 3.11]
 * xref:3.10@java-sdk:hello-world:start-using-sdk.adoc[Version 3.10]
@@ -238,6 +239,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Scala SDK
+* xref:3.13@scala-sdk:hello-world:start-using-sdk.adoc[Version 3.13]
 * xref:3.12@scala-sdk:hello-world:start-using-sdk.adoc[Version 3.12]
 * xref:3.11@scala-sdk:hello-world:start-using-sdk.adoc[Version 3.11]
 * xref:3.10@scala-sdk:hello-world:start-using-sdk.adoc[Version 3.10]
@@ -256,6 +258,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Kotlin SDK
+* xref:3.13@kotlin-sdk:hello-world:overview.adoc[Version 3.13]
 * xref:3.12@kotlin-sdk:hello-world:overview.adoc[Version 3.12]
 * xref:3.11@kotlin-sdk:hello-world:overview.adoc[Version 3.11]
 * xref:3.10@kotlin-sdk:hello-world:overview.adoc[Version 3.10]
