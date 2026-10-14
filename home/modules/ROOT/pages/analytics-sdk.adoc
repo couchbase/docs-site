@@ -122,7 +122,7 @@ a|
 
 In addition to Operational Insights Enterprise Clusters,
 // (self-managed and Capella Analytics), 
-older Operational Insights is also available as a managed service --
+Operational Insights is also available as a managed service --
 Operational Insights Capella, formerly Columnar.
 
 Traditional, row-based analytics is also available in Couchbase operational clusters -- self-managed, or Capella Operational.
