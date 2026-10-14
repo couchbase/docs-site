@@ -13,7 +13,7 @@ site:
         [
           { "title": "Server",
             "startPage": "home::server.adoc",
-            "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway", "compatibility"],
+            "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway", "converge"],
             "color": "#c41016"
           },
           { "title": "Mobile / Edge",

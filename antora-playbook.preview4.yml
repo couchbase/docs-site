@@ -36,7 +36,7 @@ site:
       [
         { "title": "Server",
           "startPage": "home::server.adoc",
-          "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway", "compatibility"],
+          "components": ["server", "operator", "enterprise-analytics", "cloud-native-gateway", "converge"],
           "color": "#c41016"
         },
         { "title": "Mobile / Edge",
@@ -168,6 +168,6 @@ content:
         - api/3.10
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
-        - release/3.12
+        - release/3.13
     - url: https://github.com/couchbaselabs/docs-compatibility
       branches: main
