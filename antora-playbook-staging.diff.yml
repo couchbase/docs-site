@@ -23,6 +23,7 @@ site:
 asciidoc:
   attributes:
     page-hide-uncategorized-search: true
+    page-disable-chatbot: false
 
 content:
 
@@ -84,4 +85,4 @@ content:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-38/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-239/ui-bundle.zip

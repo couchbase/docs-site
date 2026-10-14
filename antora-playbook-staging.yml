@@ -110,7 +110,6 @@ asciidoc:
     tabs: tabs
     tabs-sync-option: ""
     toc: null
-    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net
     page-toclevels: 1@
     page-rank: 50@
     xrefstyle: short
@@ -126,9 +125,10 @@ asciidoc:
     kroki-server-url: null
     kroki-fetch-diagram: true
     page-hide-uncategorized-search: true
+    page-disable-chatbot: false
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/DOC-14537-new-docsearch-ui-38/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-239/ui-bundle.zip
 content:
   branches: master
   sources:
@@ -275,9 +275,9 @@ content:
         - release/1.0
     - url: https://github.com/couchbase/docs-sdk-java
       branches:
+        - release/3.13
         - release/3.12
         - release/3.11
-        - release/3.10
     - url: https://github.com/couchbase/docs-quarkus-extension
       branches:
         - release/1.4
@@ -292,9 +292,9 @@ content:
         - release/1.2
     - url: https://github.com/couchbase/docs-sdk-scala
       branches:
+        - release/3.13
         - release/3.12
         - release/3.11
-        - release/3.10
     - url: https://github.com/couchbase/docs-sdk-nodejs
       branches:
         - temp/4.6
