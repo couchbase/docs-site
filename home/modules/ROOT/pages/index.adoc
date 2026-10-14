@@ -138,8 +138,8 @@ Couchbase SDKs allow applications to access a Couchbase cluster and the big data
 
 xref:home:ROOT:developer.adoc[Developer Docs] |
 xref:home:ROOT:sdk.adoc[Operational SDKs] |
-xref:home:ROOT:analytics-sdk.adoc[Operational Insights SDKs] |
-xref:home:ROOT:columnar-sdk.adoc[Capella Analytics SDKs]
+xref:home:ROOT:operational-insights-sdk.adoc[Operational Insights SDKs] |
+xref:home:ROOT:analytics-sdk.adoc[Analytics SDKs]
 
 [.column]
 ====== {empty}
