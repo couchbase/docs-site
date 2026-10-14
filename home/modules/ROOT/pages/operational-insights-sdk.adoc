@@ -90,15 +90,15 @@ See the xref:enterprise-analytics:sources:manage-remote.adoc[Operational Insight
 |===
 | Analytics offering | Development option
 
-| xref:enterprise-operational-insights:intro:intro.adoc[Operational Insights Enterprise]
+| xref:enterprise-analytic:intro:intro.adoc[Operational Insights Enterprise]
 a|
 * xref:operational-insights-sdk.adoc[Operational Insights SDKs]
 * xref:analytics-sdk.adoc[Analytics SDKs]
 
-| xref:operational-insights:intro:intro.adoc[Operational Insights Capella]
+| xref:analytics:intro:intro.adoc[Operational Insights Capella]
 | xref:columnar-sdk.adoc[Columnar SDKs]
 
-| xref:server:learn:services-and-indexes/services/operational-insights-service.adoc[Analytics Service (CBAS)] 
+| xref:server:learn:services-and-indexes/services/analytics-service.adoc[Analytics Service (CBAS)] 
 | xref:sdk.adoc[Operational SDKs]
 |===
 
