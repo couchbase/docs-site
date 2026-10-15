@@ -101,7 +101,7 @@ asciidoc:
     tabs: tabs
     tabs-sync-option: ""
     toc: null
-    page-chatbot-origin: https://d2tkqbbgxczr0v.cloudfront.net
+    page-disable-chatbot: true
     page-toclevels: 1@
     page-rank: 50@
     xrefstyle: short
@@ -122,7 +122,7 @@ asciidoc:
     page-watermark: Release 8.5 Preview
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-238/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-241/ui-bundle.zip
 content:
   branches: master
   sources:
