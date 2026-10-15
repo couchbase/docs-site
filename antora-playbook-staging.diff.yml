@@ -85,4 +85,4 @@ content:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-239/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-240/ui-bundle.zip
