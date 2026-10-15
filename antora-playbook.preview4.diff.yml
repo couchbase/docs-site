@@ -89,7 +89,7 @@ asciidoc:
 
     page-show-preview-banner: true
     page-hide-preview-link: true
-    page-watermark: CompatibilityPreview
+    page-watermark: Converge Preview Documentation
 
 ui:
   bundle:
