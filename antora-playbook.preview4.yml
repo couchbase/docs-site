@@ -122,7 +122,7 @@ asciidoc:
     page-watermark: Converge Preview Documentation
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-238/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-241/ui-bundle.zip
 content:
   branches: master
   sources:
