@@ -79,7 +79,7 @@ site:
           },
           { "title": "AI Data Plane",
             "startPage": "ai:get-started:intro.adoc", 
-            "components": ["ai", "mcp-server"],
+            "components": ["ai", "agent-mem", "mcp-server"],
             "color": "#f2a541"
           },
           { "title": "Develop",
@@ -157,6 +157,8 @@ content:
 
   - url: https://github.com/couchbaselabs/docs-ai # private
     branches: [main]
+  - url: https://github.com/couchbaselabs/docs-agentmemory # private
+    branches: [release/1.0, release/1.1]
   - url: https://github.com/couchbaselabs/docs-mcp-server # private
     branches: [release/1.0]
 
