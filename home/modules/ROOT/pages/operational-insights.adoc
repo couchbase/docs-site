@@ -1,156 +1,55 @@
-= Develop with Enterprise Operational Insights 
-:page-layout: landing-page-top-level-sdk
-:page-role: tiles
-:page-rank: 75
-:dotnet: .NET
+= Operational Insights
+:page-layout: landing-page-capella
+:tabs:
+:page-rank: 85
 :!sectids:
-// :page-aliases: columnar-sdk.adoc
+:icons: font
+:page-nav-header-levels: 1
+:page-for-review:
 
-= Develop with Operational Insights 
+include::home::partial$info-banner.adoc[]
 
-include::partial$info-banner.adoc[]
+= Operational Insights
+*Real-Time Analytics on Your Operational Data. No ETL required.*
 
-// xref:enterprise-operational-insights:intro:intro.adoc[Enterprise Operational-Insights] is a real-time analytical database (RT-OLAP) for real time apps and operational intelligence.
-// Capella Columnar is a standalone, cloud-only offering from Couchbase under the Capella family of products.
-// It uses column storage, which gives speedier retrieval of data.
-
-xref:enterprise-analytics:intro:intro.adoc[Operational Insights Enterprise] is a self-managed, JSON-native NoSQL analytical database.
-It serves to unify data from diverse sources, allowing for the execution of complex analytical queries and the extraction of timely insights.
-
-{empty} +
-
-
-== SDK APIs to work with Operational Insights Enterprise
-
-Operational Insights SDKs are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
-they are purpose built for Enterprise Operational-Insights' real-time analytical use cases.
-They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
-such as connection management and robust error handling.
-
-[{tabs}] 
-==== 
-
-{dotnet}::
-+
+[description]
 --
-xref:dotnet-operational-insights-sdk:hello-world:overview.adoc[.NET OI SDK Docs] |
-xref:dotnet-operational-insights-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-| https://docs.couchbase.com/sdk-api/operational-insights-dotnet-client[.NET Operational Insights API Reference]
+Operational Insights is a JSON-native analytical database with columnar storage and a massively parallel query engine. Data from Couchbase and Kafka streams in continuously, so your analytics stay current without slowing down your applications. You can also query files and Iceberg tables directly in object storage, alongside your live data. Choose the deployment model that fits your needs: fully managed in the cloud as Operational Insights Capella, or self-managed on your own infrastructure as Operational Insights Enterprise.
+
 --
 
-Go::
-+
---
-xref:go-operational-insights-sdk:hello-world:overview.adoc[Go Operational Insights SDK Docs] |
-xref:go-operational-insights-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://pkg.go.dev/github.com/couchbase/gocboperational-insights[Go API Reference]
---
-
-Java::
-+
---
-xref:java-operational-insights-sdk:hello-world:overview.adoc[Java Operational Insights SDK Docs] |
-xref:java-operational-insights-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/couchbase-operational-insights-java-client/[Java API Reference]
---
-
-Node.js::
-+
---
-xref:nodejs-operational-insights-sdk:hello-world:overview.adoc[Node.js Operational Insights SDK Docs] |  
-xref:nodejs-operational-insights-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/operational-insights-nodejs-client[Node.js API Reference]
---
-
-Python::
-+
---
-xref:python-operational-insights-sdk:hello-world:overview.adoc[Python Operational Insights SDK Docs] |
-xref:python-operational-insights-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/operational-insights-python-client[Python API Reference]
---
+[NOTE]
+====
+Couchbase Analytics is now Operational Insights.
+Your clusters, queries, and integrations work as before.
+Only the name has changed.
 ====
 
-{empty} +
+[.centered.card-container]
+== Choose Your Deployment Model
 
-=== Big Data Connectors
+[.card-box]
+=== icon:cloud[] Operational Insights Capella
+_Fully managed · Previously Capella Analytics_
 
-The available options for Enterprise Operational-Insights `DataFrame` and `Dataset` operations with the xref:spark-connector:ROOT:index.adoc[Couchbase Spark Connector]
-can be found on the Spark xref:spark-connector:ROOT:spark-sql.adoc#enterprise-operational-insights-options[DataFrames, Datasets, and SQL] page.
+Operational Insights as a fully managed service in Couchbase Capella. Create a cluster in minutes, and Capella handles provisioning, patching, and upgrades. Connect your data sources in a few clicks and start querying.
 
-See the xref:enterprise-analytics:sources:manage-remote.adoc[Enterprise Operational Insights] docs for information on streaming from Confluent for Kafka.
+*Available on:* xref:analytics:sources:external-s3.adoc[AWS S3] | xref:analytics:sources:external-gcs.adoc[Google Cloud Storage] | xref:analytics:sources:external-azure.adoc[Azure Blob]
 
-{empty} +
+* https://cloud.couchbase.com/sign-up[Get Started^]
+* xref:analytics:query:integration.adoc[Explore Integrations & BI Tools]
+* https://www.couchbase.com/pricing/[View Pricing^]
+* https://cloud.couchbase.com/sign-up[Try It Free^]
 
-== Other Operational-Insights Services
+[.card-box]
+=== icon:server[] Operational Insights Enterprise
+_Self-managed · Previously Enterprise Analytics_
 
+Operational Insights as software you install and operate yourself, on-premises or in your own cloud VPC. Keep full control over infrastructure, networking, and security, and scale compute independently of storage. Connect your data sources and start querying.
 
-.SDK Compatibility with Operational-Insights Service
-|===
-| Operational-Insights solution | Development option
+*Object storage support:* xref:enterprise-analytics:manage:manage-nodes/aws-s3.adoc[AWS S3] | xref:enterprise-analytics:manage:manage-nodes/azure-blob-storage.adoc[Azure Blob] | xref:enterprise-analytics:sources:external-gcs.adoc[Google Cloud Storage] | xref:enterprise-analytics:manage:manage-nodes/s3-compatible-storage.adoc[S3-Compatible Storage]
 
-| xref:enterprise-operational-insights:intro:intro.adoc[Operational Insights Enterprise]
-| xref:operational-insights-sdk.adoc[Operational Insights SDKs] & xref:analytics-sdk.adoc[Legacy Analytics SDKs]
-
-| xref:operational-insights:intro:intro.adoc[Operational Insights Capella]
-| xref:columnar-sdk.adoc[Columnar (Operational Insights Capella) SDKs]
-
-| xref:server:learn:services-and-indexes/services/operational-insights-service.adoc[CBAS (Couchbase Operational-Insights Service)] 
-| xref:sdk.adoc[Operational SDKs]
-|===
-
-
-
-In addition to the Operational Insights Enterprise,
-traditional, row-based analytics is also available in Couchbase operational clusters -- self-managed, or Capella Operational.
-
-
-{empty} +
-
-=== SDK APIs to work with Operational Insights Capella
-
-Columnar SDKs, are similar to the Operational Insights SDKs.
-They must be used to connect to the current Operational Insights (Capella) Service, as it presents a different connection interface, without Operational Insights Enterprise's load balancer.
-
-[{tabs}] 
-==== 
-Go::
-+
---
-xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK Docs] |
-xref:go-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://pkg.go.dev/github.com/couchbase/gocbcolumnar[Go API Reference]
---
-
-Java::
-+
---
-xref:java-columnar-sdk:hello-world:overview.adoc[Java Columnar SDK Docs] |
-xref:java-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/couchbase-columnar-java-client[Java API Reference]
---
-
-Node.js::
-+
---
-xref:nodejs-columnar-sdk:hello-world:overview.adoc[Node.js Columnar SDK Docs] |  
-xref:nodejs-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/columnar-nodejs-client[Node.js API Reference]
---
-
-Python::
-+
---
-xref:python-columnar-sdk:hello-world:overview.adoc[Python Columnar SDK Docs] |
-xref:python-columnar-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
-https://docs.couchbase.com/sdk-api/columnar-python-client[Python API Reference]
---
-====
-
-
-{empty} +
-
-=== Row-Based Couchbase Analytics
-
-xref:server:learn:services-and-indexes/services/analytics-service.adoc[CBAS (Couchbase Analytics Service)] is our classic OLAP available as part of self-managed Couchbase Server and Capella Operational.
-Use the xref:sdk.adoc[operational SDKs] to develop for this service.
+* xref:enterprise-analytics:intro:do-a-quick-install.adoc[Get Started: Do a Quick Install]
+* xref:enterprise-analytics:sources:manage-remote.adoc[Explore Integrations, Connectors & Tools]
+* https://www.couchbase.com/pricing/[View Pricing^]
+* xref:enterprise-analytics:install:introduction-linux-installation.adoc[Download]
