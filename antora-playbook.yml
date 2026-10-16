@@ -160,7 +160,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-agentmemory # private
     branches: [release/1.0, release/1.1]
   - url: https://github.com/couchbaselabs/docs-mcp-server # private
-    branches: [release/1.0]
+    branches: [release/1.0, cloud]
 
     # Couchbase Autonomous Kubernetes Operator
     ############################
