@@ -62,7 +62,7 @@ site:
     nav_groups: >
       [
         { "title": "Start Here", "startPage": "home::start-here.adoc"},
-        { "title": "Operational Database", "startPage": "home::operational.adoc",
+        { "title": "Server", "startPage": "home::operational.adoc",
           "color": "#c41016",
           "subGroups": [
             {
