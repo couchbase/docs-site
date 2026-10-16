@@ -1,0 +1,55 @@
+= Operational Insights
+:page-layout: landing-page-capella
+:tabs:
+:page-rank: 85
+:!sectids:
+:icons: font
+:page-nav-header-levels: 1
+:page-for-review:
+
+include::home::partial$info-banner.adoc[]
+
+= Operational Insights
+*Real-Time Analytics on Your Operational Data. No ETL required.*
+
+[description]
+--
+Operational Insights is a JSON-native analytical database with columnar storage and a massively parallel query engine. Data from Couchbase and Kafka streams in continuously, so your analytics stay current without slowing down your applications. You can also query files and Iceberg tables directly in object storage, alongside your live data. Choose the deployment model that fits your needs: fully managed in the cloud as Operational Insights Capella, or self-managed on your own infrastructure as Operational Insights Enterprise.
+
+--
+
+[NOTE]
+====
+Couchbase Analytics is now Operational Insights.
+Your clusters, queries, and integrations work as before.
+Only the name has changed.
+====
+
+[.centered.card-container]
+== Choose Your Deployment Model
+
+[.card-box]
+=== icon:cloud[] Operational Insights Capella
+_Fully managed · Previously Capella Analytics_
+
+Operational Insights as a fully managed service in Couchbase Capella. Create a cluster in minutes, and Capella handles provisioning, patching, and upgrades. Connect your data sources in a few clicks and start querying.
+
+*Available on:* xref:analytics:sources:external-s3.adoc[AWS S3] | xref:analytics:sources:external-gcs.adoc[Google Cloud Storage] | xref:analytics:sources:external-azure.adoc[Azure Blob]
+
+* https://cloud.couchbase.com/sign-up[Get Started^]
+* xref:analytics:query:integration.adoc[Explore Integrations & BI Tools]
+* https://www.couchbase.com/pricing/[View Pricing^]
+* https://cloud.couchbase.com/sign-up[Try It Free^]
+
+[.card-box]
+=== icon:server[] Operational Insights Enterprise
+_Self-managed · Previously Enterprise Analytics_
+
+Operational Insights as software you install and operate yourself, on-premises or in your own cloud VPC. Keep full control over infrastructure, networking, and security, and scale compute independently of storage. Connect your data sources and start querying.
+
+*Object storage support:* xref:enterprise-analytics:manage:manage-nodes/aws-s3.adoc[AWS S3] | xref:enterprise-analytics:manage:manage-nodes/azure-blob-storage.adoc[Azure Blob] | xref:enterprise-analytics:sources:external-gcs.adoc[Google Cloud Storage] | xref:enterprise-analytics:manage:manage-nodes/s3-compatible-storage.adoc[S3-Compatible Storage]
+
+* xref:enterprise-analytics:intro:do-a-quick-install.adoc[Get Started: Do a Quick Install]
+* xref:enterprise-analytics:sources:manage-remote.adoc[Explore Integrations, Connectors & Tools]
+* https://www.couchbase.com/pricing/[View Pricing^]
+* xref:enterprise-analytics:install:introduction-linux-installation.adoc[Download]

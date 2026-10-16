@@ -99,6 +99,25 @@ MERGED=0
 RESOLVED=0
 SKIPPED=0
 APPLIED_SUMMARY=""
+FINISHED=0
+FAILED_CMD=""
+
+print_summary() {
+    info "  Merged cleanly:      $MERGED"
+    info "  Resolved by claude:  $RESOLVED"
+    info "  Skipped:             $SKIPPED"
+}
+
+# set -e kills the script silently when a bare command fails, so record
+# what failed and always show where we got to if we didn't finish.
+trap 'FAILED_CMD="line $LINENO: $BASH_COMMAND"' ERR
+trap 'rc=$?
+if [ "$FINISHED" -eq 0 ] && [ "$rc" -ne 0 ]; then
+    warn ""
+    warn "merge-prs aborted (exit $rc)${FAILED_CMD:+ at $FAILED_CMD}."
+    warn "$NEW is checked out with the PRs merged so far:"
+    print_summary
+fi' EXIT
 
 # --- process each PR ----------------------------------------------------
 
@@ -131,6 +150,11 @@ while IFS= read -r pr; do
     git fetch origin "$HEAD_REF"
 
     if git merge --squash "origin/$HEAD_REF" >/tmp/merge-prs-squash.log 2>&1; then
+        if git diff --cached --quiet; then
+            info "PR #$NUMBER adds nothing beyond earlier PRs in this run - skipping."
+            SKIPPED=$((SKIPPED + 1))
+            continue
+        fi
         git commit -m "Merge PR #$NUMBER: $TITLE"
         success "Merged PR #$NUMBER cleanly."
         MERGED=$((MERGED + 1))
@@ -237,6 +261,12 @@ PROMPT_EOF
         success "PR #$NUMBER: conflict resolved cleanly by claude."
     fi
 
+    if git diff --cached --quiet; then
+        info "PR #$NUMBER: resolution left nothing to commit - skipping."
+        SKIPPED=$((SKIPPED + 1))
+        continue
+    fi
+
     git commit -m "Merge PR #$NUMBER: $TITLE (claude-resolved conflict)"
     RESOLVED=$((RESOLVED + 1))
     APPLIED_SUMMARY="$APPLIED_SUMMARY
@@ -245,7 +275,6 @@ PROMPT_EOF
 done < <(echo "$PRS" | jq -c '.[]')
 
 info ""
+FINISHED=1
 success "Done. $NEW is checked out."
-info "  Merged cleanly:      $MERGED"
-info "  Resolved by claude:  $RESOLVED"
-info "  Skipped (conflicts): $SKIPPED"
+print_summary
