@@ -24,6 +24,13 @@ antora:
     - ./lib/embargo.js
     - ./lib/antora-component-version-rank.js
     - ./lib/llms-txt.js
+    - require: ./lib/override-url-component.js
+      data:
+        operational-insights:
+          - enterprise-analytics
+        operational-insights-cloud:
+          - analytics
+          - columnar
     - ./lib/report-tree.js
 site:
   url: https://docs.couchbase.com
@@ -75,7 +82,7 @@ site:
           "startPage": "home::operational-insights.adoc",
           "components": ["analytics", "enterprise-analytics"],
           "expandHeaderLevels": 1,
-          "color": "#ed9426"
+          "color": "#ed9426",
           "subGroups": [
             {
               "title": "Legacy Analytics SDKs",
