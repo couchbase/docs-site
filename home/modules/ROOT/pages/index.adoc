@@ -234,15 +234,17 @@ xref:cmos::index.adoc[Couchbase Monitoring and Observability Stack]
 
 
 
-a| xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
-
-xref:scala-sdk:hello-world:overview.adoc[Couchbase Scala SDK]
-
-xref:dotnet-sdk:hello-world:overview.adoc[Couchbase .NET SDK]
+a| xref:c-sdk:hello-world:overview.adoc[Couchbase C SDK]
 
 xref:cxx-sdk:hello-world:overview.adoc[Couchbase {cpp} SDK]
 
-xref:c-sdk:hello-world:overview.adoc[Couchbase C SDK]
+xref:dotnet-sdk:hello-world:overview.adoc[Couchbase .NET SDK]
+
+xref:go-sdk:hello-world:overview.adoc[Couchbase Go SDK]
+
+xref:java-sdk:hello-world:overview.adoc[Couchbase Java SDK]
+
+xref:kotlin-sdk:hello-world:overview.adoc[Couchbase Kotlin SDK]
 
 xref:nodejs-sdk:hello-world:overview.adoc[Couchbase Node.js SDK]
 
@@ -252,15 +254,30 @@ xref:python-sdk:hello-world:overview.adoc[Couchbase Python SDK]
 
 xref:ruby-sdk:hello-world:overview.adoc[Couchbase Ruby SDK]
 
-xref:go-sdk:hello-world:overview.adoc[Couchbase Go SDK]
+xref:rust-sdk:hello-world:overview.adoc[Couchbase Rust SDK]
 
-xref:kotlin-sdk:hello-world:overview.adoc[Couchbase Kotlin SDK]
+xref:scala-sdk:hello-world:overview.adoc[Couchbase Scala SDK]
+
 
 xref:elasticsearch-connector::getting-started.adoc[Couchbase Elasticsearch Connector]
 
 xref:kafka-connector::quickstart.adoc[Couchbase Kafka Connector]
 
 xref:spark-connector::getting-started.adoc[Couchbase Spark Connector]
+
+
+xref:dotnet-operational-insights-sdk:hello-world:overview.adoc[.NET Operational Insights SDK]
+
+xref:go-operational-insights-sdk:hello-world:overview.adoc[Go Operational Insights SDK]
+
+xref:java-operational-insights-sdk:hello-world:overview.adoc[Java Operational Insights SDK]
+
+xref:nodejs-operational-insights-sdk:hello-world:overview.adoc[Node.js Operational Insights SDK]  
+
+xref:python-operational-insights-sdk:hello-world:overview.adoc[Python Operational Insights SDK]
+
+
+xref:dotnet-analytics-sdk:hello-world:overview.adoc[.NET Analytics SDK] 
 
 xref:go-analytics-sdk:hello-world:overview.adoc[Go Analytics SDK]
 
@@ -269,6 +286,7 @@ xref:java-analytics-sdk:hello-world:overview.adoc[Java Analytics SDK]
 xref:nodejs-analytics-sdk:hello-world:overview.adoc[Node.js Analytics SDK]
 
 xref:python-analytics-sdk:hello-world:overview.adoc[Python Analytics SDK]
+
 
 xref:go-columnar-sdk:hello-world:overview.adoc[Go Columnar SDK]
 

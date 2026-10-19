@@ -386,7 +386,7 @@ xref:kotlin-sdk:project-docs:sdk-release-notes.adoc[] |
 https://docs.couchbase.com/sdk-api/couchbase-kotlin-client/index.html[Kotlin API Reference]
 
 {empty} +
-
+////
 [discrete]
 == Using Your Database icon:database[] 
 
@@ -460,6 +460,7 @@ Useful resources to help support your development experience with Couchbase and 
 ++++
 </div>
 ++++
+////
 --
 
 
@@ -1005,6 +1006,7 @@ xref:rust-sdk:hello-world:overview.adoc[Rust] --
 for a modern, fully-featured SDK, with excellent performance.
 ====
 
+{empty} +
 
 === Alternatives to SDKs
 
@@ -1078,6 +1080,7 @@ More developer documentation is available for:
 * Mobile -- xref:couchbase-lite::index.adoc[Edge development with Couchbase Lite].
 * AI Data Plane -- xref:mcp-server::intro.adoc[MCP Python SDK]
 
+{empty} +
 
 == Couchbase Community
 
