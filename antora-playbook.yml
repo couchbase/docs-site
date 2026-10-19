@@ -115,26 +115,26 @@ site:
           ]
         },
         { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
-            "subGroups": [
-              {
-                "title": "Couchbase Lite",
-                "startPage": "couchbase-lite::index.adoc",
-                "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"],
+          "subGroups": [
+            {
+              "title": "Couchbase Lite",
+              "startPage": "couchbase-lite::index.adoc",
+              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"],
               "expandHeaderLevels": 1
-              },
-              {
-                "title": "Sync Gateway",
-                "startPage": "sync-gateway::introduction.adoc",
-                "components": ["sync-gateway"],
-                "expandHeaderLevels": 1
-              },
-              {
-                "title": "App Services",
-                "startPage": "app-services:ROOT:get-started/configuring-app-services.adoc",
-                "components": ["app-services"],
-                "expandHeaderLevels": 1
-              }
-            ]
+            },
+            {
+              "title": "Sync Gateway",
+              "startPage": "sync-gateway::introduction.adoc",
+              "components": ["sync-gateway"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "App Services",
+              "startPage": "app-services:ROOT:get-started/configuring-app-services.adoc",
+              "components": ["app-services"],
+              "expandHeaderLevels": 1
+            }
+          ]
         },
         { "title": "Operational Insights",
           "startPage": "home::operational-insights.adoc",
@@ -271,7 +271,7 @@ content:
     ############################
 
   - url: https://github.com/couchbaselabs/docs-enterprise-analytics # private
-    branches: [release/2.2, release/2.1, release/2.0]
+    branches: [release/3.0, release/2.2, release/2.1, release/2.0]
   - url: https://github.com/couchbase/docs-analytics # private
     branches: [release/8.0, release/7.6, release/7.2]
 
@@ -465,7 +465,7 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-235/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-241/ui-bundle.zip
 output:
   dir: ./public
 runtime:
