@@ -107,6 +107,12 @@ site:
               "expandHeaderLevels": 1
             },
             {
+              "title": "Fleet Manager",
+              "startPage": "fleet-manager::introduction.adoc",
+              "components": ["fleet-manager"],
+              "expandHeaderLevels": 1
+            },
+            {
               "title": "Operational SDKs",
               "startPage": "home::sdk.adoc",
               "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "sdk-extensions", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector"],
@@ -283,6 +289,9 @@ content:
   - url: https://github.com/couchbase/backup # private
     branches: [morpheus, trinity, neo]
     start_path: docs
+
+  - url: https://github.com/couchbaselabs/docs-fleetmanager
+    branches: main
 
     # NOTE docs-server is currently after other server repos so nav key wins
 
