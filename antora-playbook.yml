@@ -179,7 +179,7 @@ site:
             }
           ]
         },
-        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai", "mcp-server"] },
+        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai", "mcp-server", "agent-mem"] },
         { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
