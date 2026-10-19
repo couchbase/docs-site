@@ -215,14 +215,14 @@ https://forums.couchbase.com/[Community]
 
 a| xref:cloud::index.adoc[Couchbase Capella]
 
-xref:analytics:intro:intro.adoc[Capella Analytics]
+xref:analytics:intro:intro.adoc[Operational Insights Capella]
 
 
 
 
 a| xref:server.adoc[Couchbase Server]
 
-xref:enterprise-analytics:intro:intro.adoc[Operational Insights]
+xref:enterprise-analytics:intro:intro.adoc[Operational Insights Enterprise]
 
 xref:operator::overview.adoc[Couchbase Autonomous Operator]
 
