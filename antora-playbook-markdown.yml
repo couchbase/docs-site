@@ -142,7 +142,7 @@ site:
             {
               "title": "Couchbase Lite",
               "startPage": "couchbase-lite::index.adoc",
-              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"],
+              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server", "cbl-reactnative"],
               "expandHeaderLevels": 1
             },
             {
