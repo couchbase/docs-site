@@ -30,7 +30,7 @@ AI Services (currently in private preview) simplify building agentic apps.
 
 Explore {sqlpp}, or the fast CRUD interface of the Data Service.
 
-https://cloud.couchbase.com/sign-up[Sign Up to Capella^] for the quickest start.
+https://cloud.couchbase.com/sign-up[Sign Up to Capella^], our managed cloud service, for the quickest start.
 Follow along with the built-in tutorial, or discover a xref:sdk.adoc[Couchbase Operational SDKs] in your favorite programming language:
 
 xref:c-sdk:hello-world:start-using-sdk.adoc[C]
@@ -46,6 +46,8 @@ xref:c-sdk:hello-world:start-using-sdk.adoc[C]
 | xref:rust-sdk:hello-world:start-using-sdk.adoc[Rust]
 | xref:scala-sdk:hello-world:start-using-sdk.adoc[Scala]
 
+Install xref:server.adoc[Couchbase Server] in your own datacenter or private cloud --
+or use xref:operator::overview.adoc[Operator on Kubernetes or OpenShift] for a truly cloud native solution.
 
 [.card-box]
 === icon:rocket[] Real Time Analytics with Operational Insights
@@ -79,6 +81,8 @@ xref:couchbase-lite:javascript:quickstart.adoc[JavaScript -- Ionic and React]
 === icon:rocket[] Develop RAG and Agentic AI Applications
 
 Explore AI Services and build Agentic Apps with the xref:ai:get-started:intro.adoc[AI Data Plane].
+
+xref:mcp-server:get-started:overview.adoc[Couchbase MCP Server] is a self-hosted MCP Server that allows AI agents to connect to and interact with data in Couchbase clusters, whether hosted on Capella or self-managed.
 
 Or see how Vector Query facilitates RAG applications speedily and at scale.
 Vector Search Service offers the ability to combine searches with our sophisticated Search API.
