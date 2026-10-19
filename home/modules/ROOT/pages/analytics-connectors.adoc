@@ -8,7 +8,7 @@
 
 = Connectors for Operational Insights 
 
-Connectors to work with our Operational Insights Clusters.
+Connectors to work with your Operational Insights Clusters.
 
 
 {empty} +
