@@ -4,7 +4,7 @@
   "homepage": "https://docs-archive.couchbase.com",
   "private": true,
   "dependencies": {
-    "antora": "~3.1",
+    "antora": "~3.2",
     "@antora/atlas-extension": "1.0.0-alpha.6",
     "@opendevise/antora-navigator-extension": "1.0.0-alpha.1",
     "@asciidoctor/core": "~2.2"
