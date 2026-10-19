@@ -1,6 +1,5 @@
 antora:
   extensions:
-  - '@antora/site-generator-ms'
   - ./lib/embargo.js
   - ./lib/antora-component-version-rank.js
 site:
