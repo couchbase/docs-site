@@ -53,14 +53,14 @@ xref:c-sdk:hello-world:overview.adoc[C]
 [.card-box]
 === icon:rocket[] Real Time Analytics with Analytics SDKs
 
-xref:enterprise-analytics:intro:intro.adoc[Enterprise Analytics] brings the power of NoSQL to the world of analytics.
-Self-managed Enterprise Analytics brings real-time adaptive applications to your datacenter or private cloud --
-or try this service fully-hosted as xref:columnar:intro:intro.adoc[Capella Analytics], which integrates seamlessly with the Couchbase Capella cloud platform.
+xref:enterprise-analytics:intro:intro.adoc[Operational Insights] brings the power of NoSQL to the world of analytics.
+Self-managed Operational Insights brings real-time adaptive applications to your datacenter or private cloud --
+or try this service fully-hosted as xref:columnar:intro:intro.adoc[Operational Insights Capella], which integrates seamlessly with the Couchbase Capella cloud platform.
 xref::analytics-sdk.adoc[Analytics SDKs] support streaming APIs to handle large datasets.
 
 ////
 xref:columnar-sdk.adoc[Columnar SDKs] are developed from the ground-up and while they maintain some syntactic similarities with the xref:sdk.adoc[operational SDKs],
-they are purpose built for Enterprise Analytics' analytical use cases.
+they are purpose built for Operational Analytics use cases.
 They support streaming APIs to handle large datasets, as well as the common features expected to be present in any modern database SDK --
 such as connection management and robust error handling.
 ////
