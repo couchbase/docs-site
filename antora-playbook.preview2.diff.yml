@@ -170,7 +170,3 @@ asciidoc:
     page-show-preview-banner: true
     page-hide-preview-link: true
     page-watermark: Polaris
-
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/rebrand-2026-2/ui-bundle.zip

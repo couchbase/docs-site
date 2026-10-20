@@ -15,13 +15,14 @@ urls:
   latest_version_segment: current
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-243/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-244/ui-bundle.zip
 output:
   dir: ./public
 runtime:
   fetch: true
 antora:
   extensions:
+    - ./lib/site-navigation-data-json.js
     - "@antora/atlas-extension"
     - "@opendevise/antora-navigator-extension"
     - ./lib/embargo.js
@@ -95,7 +96,7 @@ site:
             {
               "title": "Operational SDKs",
               "startPage": "home::sdk.adoc",
-              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "sdk-extensions", "elasticsearch-connector", "kafka-connector", "spark-connector", "tableau-connector", "talend-connector"],
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "sdk-extensions", "elasticsearch-connector", "kafka-connector", "spark-connector", "talend-connector"],
               "expandHeaderLevels": 1
             }
           ]
@@ -105,8 +106,7 @@ site:
             {
               "title": "Couchbase Lite",
               "startPage": "couchbase-lite::index.adoc",
-              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"],
-              "expandHeaderLevels": 1
+              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server", "cbl-reactnative"]
             },
             {
               "title": "Sync Gateway",

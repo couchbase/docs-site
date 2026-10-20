@@ -13,12 +13,16 @@ git:
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-244/ui-bundle.zip
 output:
   dir: ./public
 runtime:
   fetch: true
 antora:
   extensions:
+    - ./lib/site-navigation-data-json.js
     - "@antora/atlas-extension"
     - "@opendevise/antora-navigator-extension"
     - ./lib/embargo.js
@@ -198,9 +202,6 @@ asciidoc:
     page-show-preview-banner: true
     page-hide-preview-link: true
     page-watermark: Polaris
-ui:
-  bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/rebrand-2026-2/ui-bundle.zip
 content:
   branches: master
   sources:
