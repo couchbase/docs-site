@@ -19,6 +19,7 @@ runtime:
   fetch: true
 antora:
   extensions:
+    - ./lib/site-navigation-data-json.js
     - "@antora/atlas-extension"
     - "@opendevise/antora-navigator-extension"
     - ./lib/embargo.js
@@ -31,7 +32,6 @@ antora:
         operational-insights-cloud:
           - analytics
           - columnar
-    - ./lib/site-navigation-data-json.js
     - ./lib/report-tree.js
     - ./lib/site-stats-extension.js
     - ./lib/component-stats.js
@@ -110,7 +110,7 @@ site:
             {
               "title": "Couchbase Lite",
               "startPage": "couchbase-lite::index.adoc",
-              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server"],
+              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server", "cbl-reactnative"],
               "expandHeaderLevels": 1
             },
             {

@@ -4,6 +4,7 @@
 
 antora:
   extensions:
+  - ./lib/site-navigation-data-json.js
   - '@antora/atlas-extension'
   - '@opendevise/antora-navigator-extension'
   - ./lib/embargo.js
