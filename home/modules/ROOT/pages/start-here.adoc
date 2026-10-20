@@ -22,7 +22,7 @@ Use it fully managed in Capella, or self-manage it in your own environment.
 [.card-box]
 === icon:database[] Run Operational Workloads with Couchbase Server
 
-Use Couchbase Server as a managed cloud service, or deploy it yourself:
+Use Couchbase Server as a fully managed service in Capella, or deploy it yourself:
 
 * https://cloud.couchbase.com/sign-up[Sign up for Capella^], the fully managed cloud service and the quickest start
 * xref:server:install:install-intro.adoc[Install Couchbase Server] to self-manage it in your data center or private cloud
@@ -33,7 +33,7 @@ Connect your application to Capella or Couchbase Server with the xref:sdk.adoc[C
 [.card-box]
 === icon:chart-line[] Run Real-Time Analytics with Operational Insights
 
-Choose a fully managed in Capella or self-managed on premises or in your own cloud environment:
+Use Operational Insights as a fully managed service in Capella, or deploy it yourself:
 
 * xref:analytics:intro:intro.adoc[Operational Insights Capella], the fully managed analytics database
 * xref:enterprise-analytics:intro:intro.adoc[Operational Insights Enterprise], the self-managed analytics database
