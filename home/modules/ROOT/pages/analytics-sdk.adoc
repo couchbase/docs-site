@@ -100,6 +100,7 @@ See the xref:enterprise-analytics:sources:manage-remote.adoc[Operational Insight
 
 == Analytics Offerings in Couchbase
 
+{empty} +
 
 .SDKs by analytics offering
 |===
