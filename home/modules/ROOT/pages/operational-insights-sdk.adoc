@@ -34,7 +34,7 @@ such as connection management and robust error handling.
 {dotnet}::
 +
 --
-xref:dotnet-operational-insights-sdk:hello-world:overview.adoc[.NET OI SDK Docs] |
+xref:dotnet-operational-insights-sdk:hello-world:overview.adoc[.NET Operational Insights SDK Docs] |
 xref:dotnet-operational-insights-sdk:hello-world:start-using-sdk.adoc[Quickstart] |
 https://docs.couchbase.com/sdk-api/insights-dotnet-client/introduction.html[.NET Operational Insights API Reference]
 --
