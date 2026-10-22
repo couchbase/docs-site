@@ -763,15 +763,15 @@ How-to guides to help you start your development journey with Couchbase and the 
 .Lightning Fast Data Service
 * xref:ruby-sdk:howtos:kv-operations.adoc[]
 * xref:ruby-sdk:howtos:subdocument-operations.adoc[]
-* xref:ruby-sdk:howtos:encrypting-using-sdk.adoc[]
-* xref:ruby-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
+// * xref:ruby-sdk:howtos:encrypting-using-sdk.adoc[]
+// * xref:ruby-sdk:howtos:distributed-acid-transactions-from-the-sdk.adoc[Multi-Document Distributed ACID Transactions]
 
 [.column]
 .Observability & Error Handling
 * xref:ruby-sdk:howtos:error-handling.adoc[]
 * xref:ruby-sdk:howtos:collecting-information-and-logging.adoc[]
 * xref:ruby-sdk:howtos:slow-operations-logging.adoc[]
-* xref:ruby-sdk:howtos:health-check.adoc[]
+// * xref:ruby-sdk:howtos:health-check.adoc[]
 
 ++++
 </div>
@@ -802,7 +802,6 @@ Useful resources to help support your development experience with Couchbase and 
 * xref:ruby-sdk:project-docs:sdk-release-notes.adoc[]
 * xref:ruby-sdk:project-docs:compatibility.adoc[Compatibility]
 * https://docs-archive.couchbase.com/home/index.html[Older Versions Archive]
-* xref:ruby-sdk:project-docs:migrating-sdk-code-to-3.n.adoc[]
 * xref:ruby-sdk:project-docs:third-party-integrations.adoc[]
 * xref:ruby-sdk:project-docs:sdk-full-installation.adoc[]
 
