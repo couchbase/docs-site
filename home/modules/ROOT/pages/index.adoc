@@ -83,6 +83,10 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 * https://pypi.org/project/couchbase-agent-memory/[Agent Memory 1.0]
 * https://pypi.org/project/couchbase-mcp-server/1.0.0/[MCP Server 1.0]
 
+[.tile]
+.Couchbase Fleet Manager
+* xref:1.0@fleet-manager::introduction.adoc[Version 1.0]
+
 [.tiles.browse]
 == Couchbase Mobile
 
