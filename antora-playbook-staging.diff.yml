@@ -84,4 +84,4 @@ content:
 
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/rebrand-phase0-5/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/hase1-platform-1/ui-bundle.zip
