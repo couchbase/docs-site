@@ -106,6 +106,7 @@ site:
           "startPage": "home::cloud.adoc",
           "components": ["cloud"],
           "color": "#e8830c",
+          "expandHeaderLevels": 1,
           "subGroups": [
             {
               "title": "Capella Operational",
