@@ -402,7 +402,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 
 [.tiles.browse]
-== Columnar SDKs for Capella Analytics
+== Columnar SDKs for Operational Insights Capella
 
 [.tile]
 .Go SDK
