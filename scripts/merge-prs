@@ -7,12 +7,12 @@ info()    { [ -t 1 ] && printf '\033[36m%s\033[0m\n' "$*" || echo "$*"; }
 warn()    { [ -t 1 ] && printf '\033[1;31m%s\033[0m\n' "$*" || echo "$*"; }
 success() { [ -t 1 ] && printf '\033[32m%s\033[0m\n' "$*" || echo "$*"; }
 
-if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+usage() {
     cat <<HELP
 NAME
 
-    merge-prs - tentatively squash-merge all open, same-repo PRs
-                 against the current branch, into a new local branch
+    merge-prs - tentatively merge open, same-repo PRs (and optionally
+                 whole candidate branches) onto the current branch
 
 USAGE
 
@@ -25,21 +25,66 @@ USAGE
 
     This creates (or resets) a local branch 'merge-prs/release/3.0'
     based on the tip of 'release/3.0', then walks every open PR
-    targeting that branch (excluding PRs from forks), squash-merging
-    each one in turn. Any PR GitHub reports as not mergeable is
-    skipped with a warning. Any local conflict (typically because an
-    earlier PR in the run already touched the same lines) is handed
-    to 'claude -p' to resolve; an unresolvable conflict aborts the
-    run, rolling back just that PR's attempt.
+    targeting that branch (excluding PRs from forks, drafts, and PRs
+    with changes requested), squash-merging each one in turn. Any PR
+    GitHub reports as not mergeable is skipped with a warning. Any
+    local conflict (typically because an earlier PR in the run already
+    touched the same lines) is handed to 'claude -p' to resolve; an
+    unresolvable conflict aborts the run, rolling back just that
+    PR's attempt.
 
     Nothing is pushed, and nothing beyond git/gh/claude happens here
     - Antora isn't invoked. Point your own preview setup at the
     resulting local branch if you want to build it.
 
-    Requires 'gh' and 'claude' to already be authenticated locally.
+OPTIONS
+
+    --also BRANCH     First merge the whole of origin/BRANCH (a "candidate
+                      branch") with a real merge commit, then also walk
+                      the open PRs targeting BRANCH. Repeatable; applied
+                      in order. Conflicts are resolved by claude as for PRs.
+
+    --no-base-prs     Don't walk PRs targeting the current branch itself
+                      (only the --also branches and their PRs).
+
+    --in-place        Merge onto the current branch instead of creating
+                      'merge-prs/<branch>'. Refused if the branch has
+                      commits that aren't on origin. Intended for
+                      throwaway clones, e.g. lib/merge-prs.js.
+
+    --keep-going      Roll back a PR/branch that can't be resolved and
+                      carry on, instead of stopping.
+
+    --report FILE     Write a JSON report of what happened to FILE.
+
+    -h, --help        This help.
+
+    Requires 'gh', 'jq' and 'claude' to already be authenticated locally.
 HELP
-    exit 0
-fi
+}
+
+# --- options -----------------------------------------------------------
+
+IN_PLACE=0
+KEEP_GOING=0
+BASE_PRS=1
+REPORT=""
+ALSO=()
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -h|--help)     usage; exit 0 ;;
+        --in-place)    IN_PLACE=1 ;;
+        --keep-going)  KEEP_GOING=1 ;;
+        --no-base-prs) BASE_PRS=0 ;;
+        --also)        [ -n "$2" ] || { warn "--also needs a branch name."; exit 1; }
+                       ALSO+=("$2"); shift ;;
+        --report)      [ -n "$2" ] || { warn "--report needs a file name."; exit 1; }
+                       REPORT="$2"; shift ;;
+        *)             warn "Unknown option '$1'. See --help."; exit 1 ;;
+    esac
+    shift
+done
 
 # --- preconditions ---------------------------------------------------
 
@@ -72,118 +117,112 @@ command -v gh >/dev/null || { warn "'gh' is required but not found on PATH."; ex
 command -v jq >/dev/null || { warn "'jq' is required but not found on PATH."; exit 1; }
 command -v claude >/dev/null || { warn "'claude' is required but not found on PATH."; exit 1; }
 
-NEW="merge-prs/$BASE"
+BASE_SHA=$(git rev-parse HEAD)
 
-info "🔀 Building $NEW from $BASE"
-
-git checkout -B "$NEW" "$BASE"
-
-# --- gather PRs --------------------------------------------------------
-
-info "Looking up open PRs against $BASE (excluding forks and drafts)..."
-
-PRS=$(gh pr list --base "$BASE" --state open \
-    --json number,title,headRefName,isCrossRepository,isDraft,mergeable,url \
-    --jq '[.[] | select(.isCrossRepository == false and .isDraft == false)] | sort_by(.number)')
-
-PR_COUNT=$(echo "$PRS" | jq 'length')
-
-if [ "$PR_COUNT" -eq 0 ]; then
-    info "No open, non-draft, same-repo PRs found against $BASE. Nothing to do."
-    exit 0
+if [ "$IN_PLACE" -eq 1 ]; then
+    NEW="$BASE"
+    if git rev-parse -q --verify "origin/$BASE" >/dev/null \
+        && [ "$(git rev-list --count "origin/$BASE..HEAD")" -gt 0 ]; then
+        warn "--in-place: '$BASE' has commits that aren't on origin/$BASE. Refusing to build on it."
+        exit 1
+    fi
+    info "🔀 Merging in place on $BASE"
+else
+    NEW="merge-prs/$BASE"
+    info "🔀 Building $NEW from $BASE"
+    git checkout -B "$NEW" "$BASE"
 fi
-
-info "Found $PR_COUNT candidate PR(s)."
 
 MERGED=0
 RESOLVED=0
 SKIPPED=0
+FAILED=0
 APPLIED_SUMMARY=""
 FINISHED=0
 FAILED_CMD=""
+REPORT_PRS='[]'
+REPORT_CANDS='[]'
+VERDICT=""
+MESSAGE=""
 
 print_summary() {
     info "  Merged cleanly:      $MERGED"
     info "  Resolved by claude:  $RESOLVED"
     info "  Skipped:             $SKIPPED"
+    info "  Failed:              $FAILED"
+}
+
+# --- report --------------------------------------------------------------
+
+# record_pr NUMBER TITLE URL AUTHOR TARGET STATUS NOTE
+record_pr() {
+    REPORT_PRS=$(jq -c \
+        --arg number "$1" --arg title "$2" --arg url "$3" --arg author "$4" \
+        --arg target "$5" --arg status "$6" --arg note "$7" \
+        '. + [{number: ($number | tonumber), title: $title, url: $url, author: $author,
+               target: $target, status: $status, note: $note}]' <<<"$REPORT_PRS")
+}
+
+# record_cand BRANCH BEHIND STATUS NOTE
+record_cand() {
+    REPORT_CANDS=$(jq -c \
+        --arg branch "$1" --arg behind "$2" --arg status "$3" --arg note "$4" \
+        '. + [{branch: $branch, behindBy: ($behind | tonumber), status: $status, note: $note}]' \
+        <<<"$REPORT_CANDS")
+}
+
+write_report() {
+    [ -n "$REPORT" ] || return 0
+    jq -n \
+        --arg base "$BASE" --arg branch "$NEW" --arg baseSha "$BASE_SHA" \
+        --arg headSha "$(git rev-parse HEAD 2>/dev/null || true)" \
+        --argjson candidates "$REPORT_CANDS" --argjson prs "$REPORT_PRS" \
+        '{base: $base, branch: $branch, baseSha: $baseSha, headSha: $headSha,
+          candidates: $candidates, prs: $prs}' > "$REPORT"
 }
 
 # set -e kills the script silently when a bare command fails, so record
 # what failed and always show where we got to if we didn't finish.
 trap 'FAILED_CMD="line $LINENO: $BASH_COMMAND"' ERR
 trap 'rc=$?
+write_report || true
 if [ "$FINISHED" -eq 0 ] && [ "$rc" -ne 0 ]; then
     warn ""
     warn "merge-prs aborted (exit $rc)${FAILED_CMD:+ at $FAILED_CMD}."
-    warn "$NEW is checked out with the PRs merged so far:"
+    warn "$NEW is checked out with the changes merged so far:"
     print_summary
 fi' EXIT
 
-# --- process each PR ----------------------------------------------------
+# --- conflict resolution -------------------------------------------------
 
-while IFS= read -r pr; do
-    NUMBER=$(echo "$pr" | jq -r '.number')
-    TITLE=$(echo "$pr" | jq -r '.title')
-    HEAD_REF=$(echo "$pr" | jq -r '.headRefName')
-    URL=$(echo "$pr" | jq -r '.url')
-    MERGEABLE=$(echo "$pr" | jq -r '.mergeable')
+# resolve_conflicts WHAT CMD SAFE_SHA
+#   WHAT: description of the thing being merged, CMD: the git command that
+#   conflicted. Asks claude to resolve the conflict markers now in the
+#   working tree, then sets VERDICT (ok|minor-concern|major-issue) and
+#   MESSAGE. Doesn't commit or roll back: that's the caller's business.
+resolve_conflicts() {
+    local what="$1" cmd="$2" safe_sha="$3"
+    local conflicted prompt output verdict_line post_sha
 
-    info ""
-    info "PR #$NUMBER: $TITLE ($URL)"
+    conflicted=$(git diff --name-only --diff-filter=U)
 
-    if [ "$MERGEABLE" = "UNKNOWN" ]; then
-        for i in 1 2 3 4 5; do
-            sleep 2
-            MERGEABLE=$(gh pr view "$NUMBER" --json mergeable --jq '.mergeable')
-            [ "$MERGEABLE" != "UNKNOWN" ] && break
-        done
-    fi
-
-    if [ "$MERGEABLE" != "MERGEABLE" ]; then
-        warn "GitHub reports PR #$NUMBER won't merge cleanly against $BASE (mergeable=$MERGEABLE) - skipping."
-        SKIPPED=$((SKIPPED + 1))
-        continue
-    fi
-
-    SAFE_SHA=$(git rev-parse HEAD)
-
-    git fetch origin "$HEAD_REF"
-
-    if git merge --squash "origin/$HEAD_REF" >/tmp/merge-prs-squash.log 2>&1; then
-        if git diff --cached --quiet; then
-            info "PR #$NUMBER adds nothing beyond earlier PRs in this run - skipping."
-            SKIPPED=$((SKIPPED + 1))
-            continue
-        fi
-        git commit -m "Merge PR #$NUMBER: $TITLE"
-        success "Merged PR #$NUMBER cleanly."
-        MERGED=$((MERGED + 1))
-        APPLIED_SUMMARY="$APPLIED_SUMMARY
-- PR #$NUMBER: $TITLE"
-        continue
-    fi
-
-    warn "PR #$NUMBER conflicts with PR(s) already applied in this run. Asking claude to resolve..."
-
-    CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
-
-    PROMPT=$(cat <<PROMPT_EOF
-You are resolving a git squash-merge conflict in this repository, on branch
+    prompt=$(cat <<PROMPT_EOF
+You are resolving a git merge conflict in this repository, on branch
 '$NEW' (based on '$BASE').
 
-We are merging PR #$NUMBER: "$TITLE" ($URL) via 'git merge --squash'.
+We are merging $what via '$cmd'.
 
-PRs already squash-merged onto this branch earlier in this same run:
+Changes already merged onto this branch earlier in this same run:
 ${APPLIED_SUMMARY:-  (none yet)}
 
 The working tree currently has unresolved conflict markers from the failed
-'git merge --squash origin/$HEAD_REF', in exactly these files and no others:
-$CONFLICTED_FILES
+'$cmd', in exactly these files and no others:
+$conflicted
 
 Resolve every conflict marker in those files, choosing the combination that
-preserves the intent of both the already-applied PR(s) and PR #$NUMBER, then
-'git add' each resolved file. Do not touch or 'git add' any file outside
-that list.
+preserves the intent of both the already-applied changes and the one being
+merged now, then 'git add' each resolved file. Do not touch or 'git add' any
+file outside that list.
 
 For a file you cannot text-merge (e.g. a binary/image conflict), you may
 run 'git checkout --ours <path>' or 'git checkout --theirs <path>' to pick
@@ -211,24 +250,24 @@ it (leave the conflict markers in place in that case).
 PROMPT_EOF
 )
 
-    # </dev/null is essential here: this loop's stdin is a process
+    # </dev/null is essential here: the PR loop's stdin is a process
     # substitution (the PR list), and claude -p will happily read from
     # inherited stdin if we don't detach it - silently draining the rest
     # of the PR list and making the loop exit early with no error.
-    CLAUDE_OUTPUT=$(claude -p "$PROMPT" \
+    output=$(claude -p "$prompt" \
         --allowedTools "Edit,Bash(git status),Bash(git diff *),Bash(git add *),Bash(git checkout --ours *),Bash(git checkout --theirs *)" \
         --disallowedTools "Bash(git commit *),Bash(git push *),Bash(git reset *),Bash(git merge *),Bash(git branch *),Bash(gh *)" \
         < /dev/null \
         || true)
 
-    VERDICT_LINE=$(echo "$CLAUDE_OUTPUT" | tail -n1)
-    VERDICT=$(echo "$VERDICT_LINE" | jq -r '.verdict' 2>/dev/null || true)
-    MESSAGE=$(echo "$VERDICT_LINE" | jq -r '.message' 2>/dev/null || true)
+    verdict_line=$(echo "$output" | tail -n1)
+    VERDICT=$(echo "$verdict_line" | jq -r '.verdict' 2>/dev/null || true)
+    MESSAGE=$(echo "$verdict_line" | jq -r '.message' 2>/dev/null || true)
 
     if [ "$VERDICT" != "ok" ] && [ "$VERDICT" != "minor-concern" ] && [ "$VERDICT" != "major-issue" ]; then
-        warn "claude did not return a parseable verdict for PR #$NUMBER. Treating as a major issue."
+        warn "claude did not return a parseable verdict for $what. Treating as a major issue."
         VERDICT="major-issue"
-        MESSAGE="claude output did not end with a parseable verdict line: $VERDICT_LINE"
+        MESSAGE="claude output did not end with a parseable verdict line: $verdict_line"
     fi
 
     # Safety net: claude was told not to commit/checkout/reset, and the tool
@@ -236,23 +275,187 @@ PROMPT_EOF
     # trust - if HEAD moved, or conflict markers remain despite an "ok"
     # verdict, something went outside the expected contract and we should
     # not proceed as if everything's fine.
-    POST_SHA=$(git rev-parse HEAD)
-    if [ "$POST_SHA" != "$SAFE_SHA" ]; then
-        warn "PR #$NUMBER: HEAD moved during conflict resolution ($SAFE_SHA -> $POST_SHA)."
+    post_sha=$(git rev-parse HEAD)
+    if [ "$post_sha" != "$safe_sha" ]; then
+        warn "$what: HEAD moved during conflict resolution ($safe_sha -> $post_sha)."
         warn "claude appears to have committed on its own, which isn't allowed. Treating as a major issue."
         VERDICT="major-issue"
         MESSAGE="claude's session moved HEAD unexpectedly (possible unauthorized commit): $MESSAGE"
     elif [ -n "$(git ls-files -u)" ]; then
-        warn "PR #$NUMBER: conflict markers remain despite a '$VERDICT' verdict. Treating as a major issue."
+        warn "$what: conflict markers remain despite a '$VERDICT' verdict. Treating as a major issue."
         VERDICT="major-issue"
         MESSAGE="unresolved conflicts remained after claude's session: $MESSAGE"
     fi
+}
+
+# abandon WHAT SAFE_SHA
+#   Roll back a failed attempt. With --keep-going returns so the caller can
+#   move on; otherwise stops the whole run.
+abandon() {
+    warn "$1: unresolved conflict - $MESSAGE"
+    git reset --hard "$2"
+    FAILED=$((FAILED + 1))
+    if [ "$KEEP_GOING" -eq 1 ]; then
+        warn "Rolled back $1 and carrying on."
+        return 0
+    fi
+    warn "Rolling back this attempt and stopping. Earlier changes in this run remain merged on $NEW."
+    exit 1
+}
+
+# --- candidate branches ----------------------------------------------------
+
+# Real (--no-ff) merges, not squashes, so that PRs stacked on a candidate
+# still find their merge-base in our history.
+BASES=()
+[ "$BASE_PRS" -eq 1 ] && BASES+=("$BASE")
+
+for cand in "${ALSO[@]}"; do
+    info ""
+    info "Candidate branch $cand"
+
+    if ! git fetch origin "$cand"; then
+        warn "Could not fetch origin/$cand - skipping."
+        MESSAGE="could not fetch origin/$cand"
+        FAILED=$((FAILED + 1))
+        record_cand "$cand" 0 failed "$MESSAGE"
+        [ "$KEEP_GOING" -eq 1 ] || exit 1
+        continue
+    fi
+
+    BEHIND=$(git rev-list --count "origin/$cand..$BASE_SHA")
+    [ "$BEHIND" -gt 0 ] && info "$cand is $BEHIND commit(s) behind $BASE."
+
+    SAFE_SHA=$(git rev-parse HEAD)
+    CMD="git merge --no-ff origin/$cand"
+
+    if git merge --no-ff -m "Merge branch '$cand'" "origin/$cand" >/tmp/merge-prs-branch.log 2>&1; then
+        if [ "$(git rev-parse HEAD)" = "$SAFE_SHA" ]; then
+            info "$cand adds nothing - skipping."
+            SKIPPED=$((SKIPPED + 1))
+            record_cand "$cand" "$BEHIND" skipped "nothing to merge"
+        else
+            success "Merged branch $cand cleanly."
+            MERGED=$((MERGED + 1))
+            APPLIED_SUMMARY="$APPLIED_SUMMARY
+- branch $cand"
+            record_cand "$cand" "$BEHIND" merged ""
+        fi
+        BASES+=("$cand")
+        continue
+    fi
+
+    warn "Branch $cand conflicts with $BASE. Asking claude to resolve..."
+    resolve_conflicts "branch '$cand'" "$CMD" "$SAFE_SHA"
 
     if [ "$VERDICT" = "major-issue" ]; then
-        warn "PR #$NUMBER: unresolved conflict - $MESSAGE"
-        warn "Rolling back this PR's attempt and stopping. Earlier PRs in this run remain merged on $NEW."
-        git reset --hard "$SAFE_SHA"
-        exit 1
+        record_cand "$cand" "$BEHIND" failed "$MESSAGE"
+        abandon "branch $cand" "$SAFE_SHA"
+        continue
+    fi
+
+    if [ "$VERDICT" = "minor-concern" ]; then
+        warn "Branch $cand: resolved with a concern - $MESSAGE"
+    else
+        success "Branch $cand: conflict resolved cleanly by claude."
+    fi
+
+    git commit -m "Merge branch '$cand' (claude-resolved conflict)"
+    RESOLVED=$((RESOLVED + 1))
+    APPLIED_SUMMARY="$APPLIED_SUMMARY
+- branch $cand (claude-resolved conflict: $MESSAGE)"
+    record_cand "$cand" "$BEHIND" resolved "$MESSAGE"
+    BASES+=("$cand")
+done
+
+# --- gather PRs --------------------------------------------------------
+
+PRS='[]'
+for b in "${BASES[@]}"; do
+    info ""
+    info "Looking up open PRs against $b (excluding forks and drafts)..."
+    FOUND=$(gh pr list --base "$b" --state open \
+        --json number,title,headRefName,baseRefName,isCrossRepository,isDraft,mergeable,url,author,reviewDecision \
+        --jq '[.[] | select(.isCrossRepository == false and .isDraft == false)] | sort_by(.number)')
+    PRS=$(jq -c -n --argjson a "$PRS" --argjson b "$FOUND" '$a + $b')
+done
+
+PR_COUNT=$(echo "$PRS" | jq 'length')
+
+if [ "$PR_COUNT" -eq 0 ]; then
+    info "No open, non-draft, same-repo PRs found. Nothing more to do."
+    FINISHED=1
+    success "Done. $NEW is checked out."
+    print_summary
+    exit 0
+fi
+
+info "Found $PR_COUNT candidate PR(s)."
+
+# --- process each PR ----------------------------------------------------
+
+while IFS= read -r pr; do
+    NUMBER=$(echo "$pr" | jq -r '.number')
+    TITLE=$(echo "$pr" | jq -r '.title')
+    HEAD_REF=$(echo "$pr" | jq -r '.headRefName')
+    TARGET=$(echo "$pr" | jq -r '.baseRefName')
+    URL=$(echo "$pr" | jq -r '.url')
+    AUTHOR=$(echo "$pr" | jq -r '.author.login // ""')
+    MERGEABLE=$(echo "$pr" | jq -r '.mergeable')
+    REVIEW=$(echo "$pr" | jq -r '.reviewDecision // ""')
+
+    info ""
+    info "PR #$NUMBER: $TITLE ($URL)"
+
+    if [ "$REVIEW" = "CHANGES_REQUESTED" ]; then
+        warn "PR #$NUMBER has changes requested - skipping."
+        SKIPPED=$((SKIPPED + 1))
+        record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" skipped "changes requested"
+        continue
+    fi
+
+    if [ "$MERGEABLE" = "UNKNOWN" ]; then
+        for i in 1 2 3 4 5; do
+            sleep 2
+            MERGEABLE=$(gh pr view "$NUMBER" --json mergeable --jq '.mergeable')
+            [ "$MERGEABLE" != "UNKNOWN" ] && break
+        done
+    fi
+
+    if [ "$MERGEABLE" != "MERGEABLE" ]; then
+        warn "GitHub reports PR #$NUMBER won't merge cleanly against $TARGET (mergeable=$MERGEABLE) - skipping."
+        SKIPPED=$((SKIPPED + 1))
+        record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" skipped "GitHub reports it won't merge cleanly (mergeable=$MERGEABLE)"
+        continue
+    fi
+
+    SAFE_SHA=$(git rev-parse HEAD)
+
+    git fetch origin "$HEAD_REF"
+
+    if git merge --squash "origin/$HEAD_REF" >/tmp/merge-prs-squash.log 2>&1; then
+        if git diff --cached --quiet; then
+            info "PR #$NUMBER adds nothing beyond earlier PRs in this run - skipping."
+            SKIPPED=$((SKIPPED + 1))
+            record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" skipped "adds nothing beyond earlier changes in this run"
+            continue
+        fi
+        git commit -m "Merge PR #$NUMBER: $TITLE"
+        success "Merged PR #$NUMBER cleanly."
+        MERGED=$((MERGED + 1))
+        APPLIED_SUMMARY="$APPLIED_SUMMARY
+- PR #$NUMBER: $TITLE"
+        record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" merged ""
+        continue
+    fi
+
+    warn "PR #$NUMBER conflicts with change(s) already applied in this run. Asking claude to resolve..."
+    resolve_conflicts "PR #$NUMBER: \"$TITLE\" ($URL)" "git merge --squash origin/$HEAD_REF" "$SAFE_SHA"
+
+    if [ "$VERDICT" = "major-issue" ]; then
+        record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" failed "$MESSAGE"
+        abandon "PR #$NUMBER" "$SAFE_SHA"
+        continue
     fi
 
     if [ "$VERDICT" = "minor-concern" ]; then
@@ -264,6 +467,7 @@ PROMPT_EOF
     if git diff --cached --quiet; then
         info "PR #$NUMBER: resolution left nothing to commit - skipping."
         SKIPPED=$((SKIPPED + 1))
+        record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" skipped "conflict resolution left nothing to commit"
         continue
     fi
 
@@ -271,6 +475,7 @@ PROMPT_EOF
     RESOLVED=$((RESOLVED + 1))
     APPLIED_SUMMARY="$APPLIED_SUMMARY
 - PR #$NUMBER: $TITLE (claude-resolved conflict: $MESSAGE)"
+    record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" resolved "$MESSAGE"
 
 done < <(echo "$PRS" | jq -c '.[]')
 
