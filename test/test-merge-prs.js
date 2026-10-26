@@ -49,21 +49,34 @@ describe('renderPage', function () {
     baseSha: 'abcdef0123456789',
     headSha: '0123456789abcdef',
     candidates: [
-      { branch: 'october-release', behindBy: 3, status: 'resolved', note: 'took both' },
+      { branch: 'october-release', behindBy: 3, status: 'resolved', note: 'took both', stat: '2 files changed, 5 insertions(+)' },
       { branch: 'broken', behindBy: 0, status: 'failed', note: 'could not fetch' },
     ],
     prs: [
-      { number: 1, title: 'Plain', url: 'https://github.com/o/r/pull/1', author: 'alice', target: 'release/8.5', status: 'merged', note: '' },
+      { number: 1, title: 'Plain', url: 'https://github.com/o/r/pull/1', author: 'alice', target: 'release/8.5', status: 'merged', note: '', stat: '1 file changed, 1 insertion(+)' },
       { number: 2, title: 'Pipes | and ] brackets <b>', url: 'https://github.com/o/r/pull/2', author: 'bob', target: 'october-release', status: 'failed', note: 'nope | ]' },
       { number: 3, title: 'Review', url: 'https://github.com/o/r/pull/3', author: 'carol', target: 'release/8.5', status: 'skipped', note: 'changes requested' },
     ],
   }
-  const page = renderPage([{ url: 'https://github.com/o/r', branch: 'release/8.5', report }], new Date('2026-10-26T12:00:00Z'))
+  const page = renderPage([{ url: 'https://github.com/o/r', branch: 'release/8.5', report, patchName: 'merge-prs/r-release_8.5.patch' }], new Date('2026-10-26T12:00:00Z'))
 
-  ok('has a title, timestamp and commit links', function () {
+  ok('has a title, timestamp, and links only to things that exist on GitHub', function () {
     assert.match(page, /^= Merged pull requests/)
     assert.match(page, /2026-10-26T12:00:00.000Z/)
     assert.match(page, /https:\/\/github\.com\/o\/r\/commit\/abcdef0123456789\[`abcdef01`\]/)
+    // the result commit is local to the build: shown, but not linked
+    assert.ok(!page.includes('/commit/0123456789abcdef'))
+    assert.match(page, /giving `01234567` \(not on GitHub\)/)
+  })
+
+  ok('links the combined diff attachment', function () {
+    assert.ok(page.includes('xref:attachment$merge-prs/r-release_8.5.patch[combined diff]'))
+  })
+
+  ok('links candidates to a compare view and PRs to their diff, with stats', function () {
+    assert.ok(page.includes('https://github.com/o/r/compare/release/8.5...october-release[compare]'))
+    assert.ok(page.includes('https://github.com/o/r/pull/1/files[diff]'))
+    assert.match(page, /Merged \(pass:specialchars\[1 file changed, 1 insertion\(\+\)\]\)/)
   })
 
   ok('lists candidates with staleness and failures', function () {

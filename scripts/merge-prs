@@ -154,20 +154,23 @@ print_summary() {
 
 # --- report --------------------------------------------------------------
 
-# record_pr NUMBER TITLE URL AUTHOR TARGET STATUS NOTE
+# what the last commit changed, e.g. "2 files changed, 5 insertions(+)"
+last_stat() { git diff --shortstat HEAD^1 HEAD | sed 's/^ *//'; }
+
+# record_pr NUMBER TITLE URL AUTHOR TARGET STATUS NOTE [STAT]
 record_pr() {
     REPORT_PRS=$(jq -c \
         --arg number "$1" --arg title "$2" --arg url "$3" --arg author "$4" \
-        --arg target "$5" --arg status "$6" --arg note "$7" \
+        --arg target "$5" --arg status "$6" --arg note "$7" --arg stat "$8" \
         '. + [{number: ($number | tonumber), title: $title, url: $url, author: $author,
-               target: $target, status: $status, note: $note}]' <<<"$REPORT_PRS")
+               target: $target, status: $status, note: $note, stat: $stat}]' <<<"$REPORT_PRS")
 }
 
-# record_cand BRANCH BEHIND STATUS NOTE
+# record_cand BRANCH BEHIND STATUS NOTE [STAT]
 record_cand() {
     REPORT_CANDS=$(jq -c \
-        --arg branch "$1" --arg behind "$2" --arg status "$3" --arg note "$4" \
-        '. + [{branch: $branch, behindBy: ($behind | tonumber), status: $status, note: $note}]' \
+        --arg branch "$1" --arg behind "$2" --arg status "$3" --arg note "$4" --arg stat "$5" \
+        '. + [{branch: $branch, behindBy: ($behind | tonumber), status: $status, note: $note, stat: $stat}]' \
         <<<"$REPORT_CANDS")
 }
 
@@ -339,7 +342,7 @@ for cand in "${ALSO[@]}"; do
             MERGED=$((MERGED + 1))
             APPLIED_SUMMARY="$APPLIED_SUMMARY
 - branch $cand"
-            record_cand "$cand" "$BEHIND" merged ""
+            record_cand "$cand" "$BEHIND" merged "" "$(last_stat)"
         fi
         BASES+=("$cand")
         continue
@@ -364,7 +367,7 @@ for cand in "${ALSO[@]}"; do
     RESOLVED=$((RESOLVED + 1))
     APPLIED_SUMMARY="$APPLIED_SUMMARY
 - branch $cand (claude-resolved conflict: $MESSAGE)"
-    record_cand "$cand" "$BEHIND" resolved "$MESSAGE"
+    record_cand "$cand" "$BEHIND" resolved "$MESSAGE" "$(last_stat)"
     BASES+=("$cand")
 done
 
@@ -445,7 +448,7 @@ while IFS= read -r pr; do
         MERGED=$((MERGED + 1))
         APPLIED_SUMMARY="$APPLIED_SUMMARY
 - PR #$NUMBER: $TITLE"
-        record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" merged ""
+        record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" merged "" "$(last_stat)"
         continue
     fi
 
@@ -475,7 +478,7 @@ while IFS= read -r pr; do
     RESOLVED=$((RESOLVED + 1))
     APPLIED_SUMMARY="$APPLIED_SUMMARY
 - PR #$NUMBER: $TITLE (claude-resolved conflict: $MESSAGE)"
-    record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" resolved "$MESSAGE"
+    record_pr "$NUMBER" "$TITLE" "$URL" "$AUTHOR" "$TARGET" resolved "$MESSAGE" "$(last_stat)"
 
 done < <(echo "$PRS" | jq -c '.[]')
 
