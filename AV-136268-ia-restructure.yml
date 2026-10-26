@@ -238,7 +238,7 @@ content:
 
     # shared content for Server & Capella
   - url: https://github.com/couchbaselabs/docs-devex
-    branches: [AV-136268-capella-ia-restructure]
+    branches: [AV-136268-capella-ia-restructure, release/8.5]
 
   - url: https://github.com/couchbase/docs-capella # private
     branches: [AV-136268-capella-ia-restructure]
