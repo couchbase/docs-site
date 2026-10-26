@@ -1,0 +1,301 @@
+# npx antora --clean --fetch antora-playbook.yml
+# or
+# npx antora antora-playbook.yml
+
+antora:
+  extensions:
+  - ./lib/site-navigation-data-json.js
+  - '@antora/atlas-extension'
+  - '@opendevise/antora-navigator-extension'
+  - ./lib/embargo.js
+  - ./lib/antora-component-version-rank.js
+  - ./lib/llms-txt.js
+  - require: ./lib/override-url-component.js
+    data:
+      operational-insights: [enterprise-analytics]
+      operational-insights-cloud: [analytics, columnar]
+
+site:
+  title: Couchbase Docs
+  url: https://docs.couchbase.com
+
+  start_page: home::index.adoc
+
+  robots: |
+    # Disallow SEO scrapers
+    User-agent: MauiBot
+    User-agent: SemrushBot
+    User-agent: AhrefsBot
+    User-agent: BLEXBot
+    User-agent: SEO Spider
+    User-agent: DotBot
+    User-agent: MJ12bot
+    Disallow: /
+
+    # Explicitly permit AI Crawlers
+    User-agent: ClaudeBot
+    User-agent: Claude-SearchBot
+    User-agent: GPTBot
+    User-agent: PerplexityBot
+    User-agent: Google-Extended
+    User-agent: CCBot
+    User-agent: OAI-SearchBot
+    Content-Signal: ai-train=yes, search=yes, ai-input=yes
+    Allow: /
+    Allow: /*.md$
+    Disallow: /sdk-api/
+    Allow: /sdk-api/*-client/
+    Allow: /sdk-api/couchbase-core-io/
+    Allow: /sdk-api/couchbase-transactions-dotnet/
+
+    # All other crawlers
+    User-agent: *
+    Allow: /
+    Disallow: /*.md$
+    Disallow: /sdk-api/
+    Allow: /sdk-api/*-client/
+    Allow: /sdk-api/couchbase-core-io/
+    Allow: /sdk-api/couchbase-transactions-dotnet/
+
+    # Sitemaps
+    Sitemap: https://docs.couchbase.com/sitemap.xml
+
+  keys:
+    google_analytics: GTM-MVPNN2
+
+    # see https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/2963243023/FAQ+how+does+the+top+nav+bar+work
+    nav_groups: >
+      [
+        { "title": "Start Here", "startPage": "home::start-here.adoc"},
+        { "title": "Server", "startPage": "home::server.adoc",
+          "color": "#c41016",
+          "subGroups": [
+            {
+              "title": "Self-Managed Server",
+              "startPage": "home::server.adoc",
+              "components": ["server"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Kubernetes Operator",
+              "startPage": "operator::overview.adoc",
+              "components": ["operator"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Cloud Native Gateway",
+              "startPage": "cloud-native-gateway:intro:about-cng.adoc",
+              "components": ["cloud-native-gateway"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Fleet Manager",
+              "startPage": "fleet-manager::introduction.adoc",
+              "components": ["fleet-manager"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Operational SDKs",
+              "startPage": "home::sdk.adoc",
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "talend-connector"],
+              "expandHeaderLevels": 1
+            }
+          ]
+        },
+        { "title": "Capella",
+          "startPage": "home::cloud.adoc",
+          "components": ["cloud"],
+          "color": "#e8830c",
+          "expandHeaderLevels": 1,
+          "subGroups": [
+            {
+              "title": "Capella Operational",
+              "startPage": "home::cloud.adoc",
+              "components": ["cloud"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Operational SDKs",
+              "startPage": "home::sdk.adoc",
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "sdk-extensions", "elasticsearch-connector", "kafka-connector", "spark-connector", "talend-connector"],
+              "expandHeaderLevels": 1
+            }
+          ]
+        },
+        { "title": "Mobile / Edge", "startPage": "home::mobile.adoc",
+          "subGroups": [
+            {
+              "title": "Couchbase Lite",
+              "startPage": "couchbase-lite::index.adoc",
+              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server", "cbl-reactnative"]
+            },
+            {
+              "title": "Sync Gateway",
+              "startPage": "sync-gateway::introduction.adoc",
+              "components": ["sync-gateway"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "App Services",
+              "startPage": "app-services:ROOT:get-started/configuring-app-services.adoc",
+              "components": ["app-services"],
+              "expandHeaderLevels": 1
+            }
+          ]
+        },
+        { "title": "Operational Insights",
+          "startPage": "home::operational-insights.adoc",
+          "components": ["enterprise-analytics", "analytics", "*-insights-sdk-*"],
+          "color": "#ed9426",
+          "subGroups": [
+            {
+              "title": "Operational Insights Enterprise",
+              "startPage": "enterprise-analytics:intro:intro.adoc",
+              "components": ["enterprise-analytics"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Operational Insights Capella",
+              "startPage": "analytics:intro:intro.adoc",
+              "components": ["analytics"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Operational Insights SDKs",
+              "startPage": "home::operational-insights-sdk.adoc",
+              "components": ["*-insights-sdk"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Analytics SDKs",
+              "startPage": "home::analytics-sdk.adoc",
+              "components": ["*-analytics-sdk", "*-columnar-sdk"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Operational Insights Connectors",
+              "startPage": "home::analytics-connectors.adoc",
+              "components": ["tableau-connector", "power-bi-connector", "superset-connector"],
+              "expandHeaderLevels": 1
+            }
+          ]
+        },
+        { "title": "AI Data Plane", 
+          "startPage": "ai:get-started:intro.adoc", 
+          "components": ["ai", "mcp-server", "managed-mcp-server", "agent-mem"], 
+          "subgroups": [
+            {
+              "title": "Couchbase MCP Server - Self-Managed",
+              "startPage": "mcp-server:get-started:overview.adoc",
+              "components": ["mcp-server"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Couchbase MCP Server - Managed",
+              "startPage": "managed-mcp-server::about-managed-mcp.adoc",
+              "components": ["managed-mcp-server"],
+              "expandHeaderLevels": 1
+            },
+            {
+              "title": "Couchbase Agent Memory",
+              "startPage": "agent-mem::about-agent-mem.adoc",
+              "components": ["agent-mem"],
+              "expandHeaderLevels": 1
+            }
+          ]
+        },
+        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
+        { "title": "Contribute",
+          "components": ["home", "styleguide", "ui-ux", "pendo"],
+          "color": "#f2a541"
+        }
+      ]
+git:
+  ensure_git_suffix: false
+  fetch_concurrency: 1
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
+content:
+
+  branches: master
+
+  # NOTE the git@ segment in the URL indicates which repositories are private
+  ## The above has a bug when upgrading to Antora 3.1. Original sources commented
+  ## out and replaced with a non git@ prefix. To revert if it causes issues
+
+  sources:
+
+    # The main docs-site project
+    ############################
+
+  - url: .
+    branches: HEAD
+    start_path: home
+
+    # Capella & related content
+    ############################
+
+    # shared content for Server & Capella
+  - url: https://github.com/couchbaselabs/docs-devex
+    branches: [AV-136268-capella-ia-restructure]
+
+  - url: https://github.com/couchbase/docs-capella # private
+    branches: [AV-136268-capella-ia-restructure]
+
+  - url: https://github.com/couchbaselabs/docs-ai # private
+    branches: [AV-136268-ai-ia-restructure]
+  - url: https://github.com/couchbaselabs/docs-agentmemory # private
+    branches: [release/1.0, release/1.1]
+  - url: https://github.com/couchbaselabs/docs-mcp-server # private
+    branches: [AV-136268-ai-ia-restructure, AV-136268-ai-ia-restructure-self-managed]
+
+
+
+asciidoc:
+  attributes:
+    site-navigation-data-path: _/js/site-navigation-data.js
+    max-include-depth: 10
+    page-partial: false
+    experimental: ''
+    idprefix: '@'
+    idseparator: '-@'
+    tabs: tabs
+    tabs-sync-option: ''
+    toc: ~
+    page-disable-chatbot: true
+    page-toclevels: 1@
+    page-rank: 50@
+    xrefstyle: short
+    ai: AI Data Plane
+    ai-long: Couchbase AI Data Plane
+    enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+    community: https://www.couchbase.com/products/editions[COMMUNITY EDITION]
+    sqlpp: SQL++
+    sqlppc: SQL++ for Operational Insights Cloud
+    sqlppea: SQL++ for Operational Insights 
+    sqlpp_url: https://www.couchbase.com/products/n1ql
+    cbpp: Couchbase++
+    kroki-server-url: ~
+    kroki-fetch-diagram: true
+
+  extensions:
+  - ./lib/source-url-include-processor.js
+  - ./lib/json-config-ui-block-macro.js
+  - ./lib/inline-man-macro.js
+  - ./lib/multirow-table-head-tree-processor.js
+  - ./lib/swagger-ui-block-macro.js
+  - ./lib/description-block.js
+  - ./lib/markdown-block.js
+  - ./lib/template-block.js
+  - asciidoctor-kroki
+  - asciidoctor-external-callout
+  - '@asciidoctor/tabs'
+
+ui:
+  bundle:
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-244/ui-bundle.zip
+output:
+  dir: ./public
+runtime:
+  fetch: true
