@@ -248,6 +248,8 @@ content:
     branches: [release/1.0, release/1.1]
   - url: https://github.com/couchbaselabs/docs-mcp-server # private
     branches: [AV-136268-ai-ia-restructure, AV-136268-ai-ia-restructure-self-managed]
+  - url: https://github.com/couchbaselabs/docs-capella-app-services # private
+    branches: [main]
 
 
 
