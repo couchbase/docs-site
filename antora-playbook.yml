@@ -126,12 +126,12 @@ site:
             {
               "title": "Couchbase Lite",
               "startPage": "couchbase-lite::index.adoc",
-              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server", "cbl-reactnative"]
+              "components": ["couchbase-lite", "couchbase-lite-javascript", "cbl-reactnative"]
             },
             {
               "title": "Edge Server",
               "startPage": "couchbase-edge-server:introduction:intro.adoc",
-              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server", "cbl-reactnative"]
+              "components": ["couchbase-edge-server"]
             },
             {
               "title": "Sync Gateway",
