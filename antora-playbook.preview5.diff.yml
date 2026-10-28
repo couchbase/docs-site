@@ -59,3 +59,6 @@ asciidoc:
     page-show-preview-banner: true
     page-hide-preview-link: true
     page-watermark: "Release 8.5 Preview"
+
+  extensions:
+    - ./lib/inline-var-macro.js

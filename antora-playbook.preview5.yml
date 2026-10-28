@@ -83,6 +83,7 @@ site:
           "startPage": "home::cloud.adoc",
           "components": ["cloud"],
           "color": "#e8830c",
+          "expandHeaderLevels": 1,
           "subGroups": [
             {
               "title": "Capella Operational",
@@ -103,7 +104,12 @@ site:
             {
               "title": "Couchbase Lite",
               "startPage": "couchbase-lite::index.adoc",
-              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server", "cbl-reactnative"]
+              "components": ["couchbase-lite", "couchbase-lite-javascript", "cbl-reactnative"]
+            },
+            {
+              "title": "Edge Server",
+              "startPage": "couchbase-edge-server:introduction:intro.adoc",
+              "components": ["couchbase-edge-server"]
             },
             {
               "title": "Sync Gateway",
@@ -166,18 +172,6 @@ site:
   title: Couchbase Docs - Server 8.5 Preview
   robots: disallow
 asciidoc:
-  extensions:
-    - ./lib/source-url-include-processor.js
-    - ./lib/json-config-ui-block-macro.js
-    - ./lib/inline-man-macro.js
-    - ./lib/multirow-table-head-tree-processor.js
-    - ./lib/swagger-ui-block-macro.js
-    - ./lib/description-block.js
-    - ./lib/markdown-block.js
-    - ./lib/template-block.js
-    - asciidoctor-kroki
-    - asciidoctor-external-callout
-    - "@asciidoctor/tabs"
   attributes:
     site-navigation-data-path: _/js/site-navigation-data.js
     max-include-depth: 10
@@ -207,6 +201,19 @@ asciidoc:
     page-show-preview-banner: true
     page-hide-preview-link: true
     page-watermark: Release 8.5 Preview
+  extensions:
+    - ./lib/source-url-include-processor.js
+    - ./lib/json-config-ui-block-macro.js
+    - ./lib/inline-man-macro.js
+    - ./lib/multirow-table-head-tree-processor.js
+    - ./lib/swagger-ui-block-macro.js
+    - ./lib/description-block.js
+    - ./lib/markdown-block.js
+    - ./lib/template-block.js
+    - asciidoctor-kroki
+    - asciidoctor-external-callout
+    - "@asciidoctor/tabs"
+    - ./lib/inline-var-macro.js
 content:
   branches: master
   sources:
