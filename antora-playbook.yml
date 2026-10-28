@@ -237,7 +237,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-ai # private
     branches: [AV-149093_api-changelog]
   - url: https://github.com/couchbaselabs/docs-agentmemory # private
-    branches: [release/1.0, AV-149093_api-changelog]
+    branches: [AV-149093_api-changelog2, AV-149093_api-changelog]
   
 asciidoc:
   attributes:
