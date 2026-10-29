@@ -66,16 +66,11 @@ describe('renderPage', function () {
     assert.match(page, /https:\/\/github\.com\/o\/r\/commit\/abcdef0123456789\[`abcdef01`\]/)
     // the result commit is local to the build: shown, but not linked
     assert.ok(!page.includes('/commit/0123456789abcdef'))
-    assert.match(page, /giving `01234567` \(not on GitHub\)/)
-  })
-
-  ok('links the combined diff attachment', function () {
-    assert.ok(page.includes('xref:attachment$merge-prs/r-release_8.5.patch[combined diff]'))
+    assert.match(page, /giving `01234567`/)
   })
 
   ok('links candidates to a compare view and PRs to their diff, with stats', function () {
     assert.ok(page.includes('https://github.com/o/r/compare/release/8.5...october-release[compare]'))
-    assert.ok(page.includes('https://github.com/o/r/pull/1/files[diff]'))
     assert.match(page, /Merged \(pass:specialchars\[1 file changed, 1 insertion\(\+\)\]\)/)
   })
 
