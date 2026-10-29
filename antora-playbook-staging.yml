@@ -111,7 +111,12 @@ site:
             {
               "title": "Couchbase Lite",
               "startPage": "couchbase-lite::index.adoc",
-              "components": ["couchbase-lite", "couchbase-lite-javascript", "couchbase-edge-server", "cbl-reactnative"]
+              "components": ["couchbase-lite", "couchbase-lite-javascript", "cbl-reactnative"]
+            },
+            {
+              "title": "Edge Server",
+              "startPage": "couchbase-edge-server:introduction:intro.adoc",
+              "components": ["couchbase-edge-server"]
             },
             {
               "title": "Sync Gateway",
@@ -213,7 +218,7 @@ asciidoc:
     page-disable-chatbot: false
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/landing-nav-fix-1/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/phase1-platform-1/ui-bundle.zip
 content:
   branches: master
   sources:

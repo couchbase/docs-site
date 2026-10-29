@@ -84,5 +84,4 @@ content:
 
 ui:
   bundle:
-    # url: https://github.com/couchbase/docs-ui/releases/download/phase1-platform-1/ui-bundle.zip
-    url: https://github.com/couchbase/docs-ui/releases/download/landing-nav-fix-1/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/phase1-platform-1/ui-bundle.zip
