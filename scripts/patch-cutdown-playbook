@@ -63,7 +63,6 @@ sources = sources.map(({url, ...s}) => {
 
   let s2 = sn[url]
   if (s2) {
-    console.log(url, sn[url])
     delete sn[url]
     ;[s2] = s2
     s = deepmerge({mergeArray: (_) => mergeArrayPrepend})(s, s2)
