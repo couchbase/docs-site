@@ -27,11 +27,11 @@ content:
 
    - url: https://github.com/couchbase/docs-server
      branches:
-       merge-prs/release/8.5
+       - release/8.5
 
    - url: https://github.com/couchbaselabs/docs-devex
      branches:
-       - merge-prs/release/8.5
+       - release/8.5
        # - capella
 
    - url: https://github.com/couchbaselabs/cb-swagger
