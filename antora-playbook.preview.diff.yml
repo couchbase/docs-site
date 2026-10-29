@@ -1,5 +1,6 @@
 # RUN:
-#  scripts/patch-playbook antora-playbook.yml antora-playbook.preview.diff.yml > antora-playbook.preview.yml
+#  scripts/patch-cutdown-playbook antora-playbook.preview.diff.yml
+# (which writes antora-playbook.preview.generated.yml; scripts/preview does this for you)
 
 antora:
   extensions:

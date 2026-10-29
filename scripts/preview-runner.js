@@ -14,7 +14,7 @@
 
 'use strict'
 
-const { spawn } = require('node:child_process')
+const { spawn, execFileSync } = require('node:child_process')
 const fs = require('node:fs')
 const readline = require('node:readline')
 const path = require('node:path')
@@ -30,6 +30,13 @@ const DEBUG = process.argv.includes('--debug')
 // this wrapper, so stdout is never a TTY from Antora's point of view -
 // forcing IS_TTY in its env keeps those lines flowing so we can capture them.
 const OPEN_LINE = /^Open (\S+) in a browser to view (your site|the doctor's report)\.$/
+
+// do this first, so that a failure doesn't leave a spinner or log file behind
+// generate antora-playbook.preview.generated.yml from the .diff.yml
+execFileSync(
+    path.join(__dirname, 'patch-cutdown-playbook'),
+    ['antora-playbook.preview.diff.yml'],
+    { stdio: ['ignore', 'ignore', 'inherit'] })
 
 // Antora cleans its --url destination directory as part of publishing, which
 // would silently unlink a log file opened inside preview/ before the build
@@ -94,7 +101,7 @@ function handleLine(line) {
 const child = spawn('npx', [
     'antora',
     '--extension', './lib/preview.js',
-    'antora-playbook.preview.yml',
+    'antora-playbook.preview.generated.yml',
     '--stacktrace',
     '--url', path.join(process.cwd(), 'preview'),
     '--log-format', 'json',
