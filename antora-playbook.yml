@@ -97,7 +97,7 @@ site:
             {
               "title": "Operational SDKs",
               "startPage": "home::sdk.adoc",
-              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "elasticsearch-connector", "kafka-connector", "spark-connector", "talend-connector"],
+              "components": ["dotnet-sdk", "efcore-provider", "c-sdk", "cxx-sdk", "go-sdk", "java-sdk", "quarkus-extension", "kotlin-sdk", "nodejs-sdk", "php-sdk", "python-sdk", "ruby-sdk", "rust-sdk", "scala-sdk", "sdk-extensions", "elasticsearch-connector", "kafka-connector", "spark-connector", "talend-connector"],
               "expandHeaderLevels": 1
             }
           ]
