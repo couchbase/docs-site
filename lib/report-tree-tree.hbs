@@ -1,6 +1,6 @@
     <li>
         {{#if $href}}<a href="{{@root.root}}{{$href}}" target="_blank">{{/if}}
-        <span class="{{#if $children}}caret {{#unless $tag}}caret-down{{/unless}}{{else}}doc{{/if}}">{{@key}}</span>{{#if $href}}</a>{{/if}}
+        <span class="{{#if $children}}caret {{#unless $tag}}caret-down{{/unless}}{{else}}docpage{{/if}}">{{@key}}</span>{{#if $href}}</a>{{/if}}
         
         {{#if $tag}}
             {{#with $githubUrl}}

@@ -78,7 +78,7 @@ finishes (or fails), it opens preview/doctor/ in Finder - attach debug.log
 and the files below to an email or Slack message to the docs team:
 
     preview/debug.log
-    preview/doctor/tree.html
+    preview/home/doctor.html
     preview/doctor/antora-playbook.json
 
 Finder only opens automatically on MacOS.
