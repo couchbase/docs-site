@@ -185,8 +185,11 @@ site:
             }
           ]
         },
-        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai", "mcp-server", "agent-mem"] },
-        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
+        { "title": "AI Data Plane",
+          "startPage": "ai:get-started:intro.adoc",
+          "components": ["ai", "mcp-server", "agent-mem"] ,
+          "expandHeaderLevels": 1
+        },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
           "color": "#f2a541"
@@ -246,7 +249,7 @@ content:
   - url: https://github.com/couchbaselabs/docs-agentmemory # private
     branches: [release/1.0, release/1.1]
   - url: https://github.com/couchbaselabs/docs-mcp-server # private
-    branches: [release/1.0, cloud]
+    branches: [release/1.1, release/1.0, cloud]
 
     # Couchbase Autonomous Kubernetes Operator
     ############################
