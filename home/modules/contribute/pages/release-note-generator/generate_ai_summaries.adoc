@@ -1,0 +1,80 @@
+= Generate AI Summaries
+:page-topic-type: howto
+:page-pagination: prev
+:description: The release note generator can use ChatGPT to generate release note summaries
+
+[abstract]
+{description}
+
+== Overview
+
+The release note generator has the facility to create summaries of the Jira tickets,
+if the `release notes description` field hasn't been populated on any ticket flagged for inclusion in the release note.
+
+The summaries are generated using the ChatGPT using the ticket's summary and comments as the input to a supplied prompt.
+
+To make use of this facility, you must supply parameters in both the `.passwords.yaml` and `cb_release_notes_config.yaml`.
+
+=== AI setup in `.passwords.yaml`
+The `.passwords.yaml` file is used to store sensitive information such as API keys and passwords. To use the AI feature, you must add the following parameters to the `.passwords.yaml` file:
+
+[source, yaml]
+.Adding the AI token to `.passwords.yaml`
+----
+jira:
+  https://jira.issues.couchbase.com:
+    username: doc.umentarian@couchbase.com
+    token: # Jira token goes here
+ai:
+  chatgpt:
+    api_key: # ChatGPT API token goes here.
+----
+
+=== AI Setup in `.cb_release_notes_config.yaml`
+
+Each release set has its own AI setup. If we use the example from xref:./adding-a-new-product.adoc[]:
+[source, yaml]
+.Adding the AI Service to `.cb_release_notes_config.yaml`
+----
+  - name: "Sync Gateway"
+    fields:
+      - name: release_number
+        type: text
+        message: 'Enter the release number:'
+      - name: release_date
+        type: text
+        message: 'Enter the release date (Month Year):'
+      - name: file_path
+        type: file
+        message: 'Enter the file path for the release notes:'
+    url: https://jira.issues.couchbase.com
+    jql: project = CBG AND issuetype in (Bug, "New Feature", Improvement)
+      AND (fixVersion = {{release_number}} OR labels IN (known_issue))
+      ORDER BY key ASC
+    template: sync-gateway.jinja2
+    ai_service:
+      name: chatgpt
+      model: 'gpt-4o'
+      prompt: 'Summarise the following as a short release note
+      with no version numbers, no headings, no links,
+      no identifying names or email addresses, and no more than 8 sentences'
+
+----
+
+We have added the `ai_service` section which contains three new elements:
+
+[horizontal]
+
+name::
+The name of the AI service. This must match the `ai` service defined in `.passwords.yaml`,
+where it also must have a corresponding token.
+
+model::
+The model name of the AI service.
+It's a good idea to check the names of the available models for the ChatGPT service.
++
+CAUTION: Model names are case-sensitive.
+
+prompt::
+The prompt used to generate the text.
+The prompt can impact the quality of the summary, so it's worth experimenting with it.

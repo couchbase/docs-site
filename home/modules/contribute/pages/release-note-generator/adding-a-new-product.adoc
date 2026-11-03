@@ -1,0 +1,289 @@
+= Adding a New Product
+:description: Demonstrates how to add a new product to the Release Note Generator.
+:page-pagination: full
+:page-topic-type: howto
+
+[abstract]
+{description}
+
+== Prerequisites
+This guide is intended for technical writers and developers who are familiar with the Release Note Generator. If you are new to the tool, please refer to the link:https://confluence.issues.couchbase.com/wiki/spaces/DOCS/pages/3338961232/Other+Tools[installation and use of the Release Note Generator] guide for more information.
+Before you begin, make sure that you have the release note generator installed and running.
+
+You should also familiarize yourself with the xref:./design-guide.adoc[].
+
+You will also need a code editor or an IDE for editing the YAML configuration file.
+
+You should also have a terminal application running.
+
+== Overview
+
+The Release Note Generator has been designed so that it can be extended to support new Couchbase products without having to
+alter the Python script itself. Adding a new product involves two steps:
+
+. Add the new product release set to `cb_release_notes_config.yaml`.
+. Create a new Jinja template for rendering the AsciiDoc file for your new release note.
+
+
+== Adding a new product
+
+To demonstrate this process, we're going to create a test release note configuration for Couchbase Server.
+(There are already two existing configurations for this product, so this one can be safely deleted later).
+
+NOTE: You should run the following commands from the directory where your Release Notes Generator is installed.
+
+=== Step {counter: step}: Make a copy of your `cb_release_notes_config.yaml` file.
+
+You can make a copy of the file using the following terminal command:
+
+[source, shell]
+----
+cp cb_release_notes_config.yaml cb_release_notes_config.yaml.spare
+----
+
+=== Step {counter: step}: Name your release product
+
+Edit the original `cb_release_notes_config.yaml` file
+and add the new `name` item underneath the `release_settings` section:
+
+[source, yaml]
+----
+release_settings:
+  - name: "Docs Server (test)"
+----
+
+=== Step {counter: step}: Define your parameters
+
+The user will need to supply parameters that need to be fed to the script.
+These can vary depending on what's going to appear on the release note,
+and what the JQL will need to gather the tickets.
+The most common parameters are:
+
+[horizontal]
+
+Release date::
+This will appear in the release note heading.
+
+
+Release number::
+The label that our JQL will use to find the release tag.
+
+File path::
+This is a mandatory item needed for each release set.
+It supplies the name of the AsciiDoc file that the script generates.
+
+Other parameters that the SQL will need, (such as the project name), are fixed values
+and don't need to be parameterized.
+
+[source, yaml]
+.Add the input parameters
+----
+release_settings:
+  - name: "Docs Server (test)"
+    fields:
+      - name: release_date
+        type: text
+        message: 'Enter the release date (Month Year):'
+      - name: release_number
+        type: text
+        message: 'Enter the release label:'
+      - name: file_path
+        type: file
+        message: 'Enter the file path for the release notes:'
+----
+
+=== Step {counter: step}: Define your JQL statement
+
+Now, you add the URL and the JQL statements used to retrieve the Jira tickets that match your parameters:
+
+[source, yaml]
+.Adding the JQL statement
+----
+  - name: "Docs Server (test)"
+    fields:
+      - name: release_date
+        type: text
+        message: 'Enter the release date (Month Year):'
+      - name: release_number
+        type: text
+        message: 'Enter the release label:'
+      - name: release_text
+        type: text
+        message: 'Enter the release number for the title line:'
+      - name: file_path
+        type: file
+        message: 'Enter the file path for the release notes:'
+    url: https://jira.issues.couchbase.com
+    jql: project = "Couchbase Server" # <.>
+      AND type IN (Epic, Bug, Improvement, Task, "Technical Task")
+      AND fixVersion in ({{release_number}}) # <.>
+      AND labels IN (releasenote,releasenotecomplete)
+      ORDER BY key ASC # <.>
+----
+<.> Note that the JQL statement restricts the query to tickets belonging to the Couchbase Server project,
+and also ensures that the ticket is either a Bug or a New Feature.
+<.> We supply the `release_number` parameter to the JQL statement so that we only pick up tickets from the specified release.
+<.> The `ORDER BY key` clause ensures that the tickets are returned in ascending order based on their Jira key.
+This is important to ensure that the tickets are passed to the template in the correct order.
+
+[#define-release-note-field]
+=== Step {counter: step}: Define the release note field.
+
+The script needs to know which field in a Jira ticket holds the release note description.
+The script uses this to ensure that the ticket's release note description field has been filled in.
+If the field hasn't been filled in,
+the script can optionally use AI to generate a release note summary from the
+ticket and comments.
+For most of the Couchbase projects, this was added some time after the Jira system was set up,
+so the new field was added as a custom field called `customfield_11402`.
+
+[source,yaml, subs="+quotes"]
+.Define the `release_notes_field`
+----
+  - name: "Docs Server (test)"
+    fields:
+      - name: release_date
+        type: text
+        message: 'Enter the release date (Month Year):'
+      - name: release_number
+        type: text
+        message: 'Enter the release label:'
+      - name: release_text
+        type: text
+        message: 'Enter the release number for the title line:'
+      - name: file_path
+        type: file
+        message: 'Enter the file path for the release notes:'
+    url: https://jira.issues.couchbase.com
+    jql: project = "Couchbase Server"
+      AND type IN (Epic, Bug, Improvement, Task, "Technical Task")
+      AND fixVersion in ({{release_number}})
+      AND labels IN (releasenote,releasenotecomplete)
+      ORDER BY key ASC
+    #release_note_field: 'customfield_11402'#
+----
+
+Any item from the `fields` list can be designated as a `release_note_field` (e.g. the ticket's `summary` field).
+Alternatively, if the project doesn't have a release note field, then set `release_note_field` to `None`.
+
+.Retrieving JIRA field names
+****
+The field names for Jira often differ from the names displayed on the ticket's page.
+
+The easiest way to get the field names is to
+use the `CURL` and `jq` commands to retrieve an existing ticket with a public security level:
+
+[source,shell, subs="+quotes"]
+----
+curl -X GET --location "https://jira.issues.couchbase.com/rest/api/2/issue/CBG-4977" \
+    -H "Authorization: Basic #<insert your JIRA token here>#" \
+    -H "Content-Type: application/json" | jq
+----
+
+This will render the complete ticket (including field names) to the standard output.
+****
+
+
+
+[#define-your-jinja-template]
+=== Step {counter: step}: Define your JINJA template
+
+Before creating the rendering template, you need to add it's location to your release set.
+You can share templates between release sets.
+
+[source,yaml]
+.Define the Jinja template
+----
+  - name: "Docs Server (test)"
+    fields:
+      - name: release_date
+        type: text
+        message: 'Enter the release date (Month Year):'
+      - name: release_number
+        type: text
+        message: 'Enter the release label:'
+      - name: release_text
+        type: text
+        message: 'Enter the release number for the title line:'
+      - name: file_path
+        type: file
+        message: 'Enter the file path for the release notes:'
+    url: https://jira.issues.couchbase.com
+    jql: project = "Couchbase Server"
+      AND type IN (Epic, Bug, Improvement, Task, "Technical Task")
+      AND fixVersion in ({{release_number}})
+      AND labels IN (releasenote,releasenotecomplete)
+      AND ("Release Notes[Labels]" NOT IN (suppress-{{release_number}}) OR "Release Notes[Labels]" IS EMPTY)
+      AND summary !~ "System Test" AND resolution not in (Declined, "Won't Fix")
+      AND reporter not in (membersOf(couchbase-qe-team))
+      ORDER BY key ASC
+    release_note_field: 'customfield_11402'
+    template: docs-server-test.jinja2
+----
+
+=== Step {counter: step}: Create your JINJA template
+
+The templates reside in the `templates` directory, as defined near the top of the configuration file.
+Use your editor to create a new template file in this directory. The file should be called `docs-server-test.jinja2`,
+as defined in the release set configuration. (<<define-your-jinja-template>>)
+
+Copy the template below into your file, then save the file.
+
+[source, text]
+.Create the Jinja template
+----
+{%- macro generate_issue_table(filtered_issues, title, suffix) %} <1>
+
+{% if filtered_issues | length > 0 -%}
+
+    {{- "[#dlist-fixed-issues-" ~ user_settings.fields.release_number | replace_dots('') ~ "-" ~ suffix ~ "]\n"}}
+    {{- "=== " ~ title }}
+
+    {% for issue in filtered_issues %} <2>
+
+        {{- "*" ~ url_with_jira(user_settings.release_set.url, issue.key) ~ "*::"}} <3>
+
+        {{- issue.raw['fields'][user_settings.release_set.release_note_field] }} <4>
+
+   {% endfor %}
+
+{%- endif %}
+
+{%- endmacro %}
+
+
+[#release-{{ user_settings.fields.release_number | replace_dots('') }}]
+== Release {{ user_settings.fields.release_number }} ({{ user_settings.fields.release_date }})
+
+Couchbase Server {{ user_settings.fields.release_number }} was released in {{ user_settings.fields.release_date }}.
+This maintenance release contains fixes to issues.
+
+{{ "[#dlist-fixed-issues-" ~ user_settings.fields.release_number | replace_dots('') ~ "]"}}
+== Fixed Issues
+
+{% include "docs-server-components.jinja2" %}
+
+----
+
+We won't cover the breadth of what you can do with JINJA templates,
+but we will highlight some of the features used in this example:
+
+<1> We can define reusable macros that can be called from anywhere within the template.
+<2> We can define a `for … endfor` loop to iterate over the list of issues passed to the template.
+<3> We can access all the fields of an issue using the dot notation.
+<4> Use the parameter `user_settings.release_set.release_note_field` to access the release not description from the ticket.
+to filter issues based on field values.
+
+=== Step {counter: step}: Run the Release Note Generator
+
+From the terminal screen, run the application using the following command:
+
+[source, shell]
+----
+./cb-release-note
+----
+
+.Running the generator with the new release set
+image::release-note-generator/docs-server-test-example.png[Running the Release Note Generator]
+
+
