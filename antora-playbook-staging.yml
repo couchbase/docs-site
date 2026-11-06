@@ -169,8 +169,11 @@ site:
             }
           ]
         },
-        { "title": "AI Data Plane", "startPage": "ai:get-started:intro.adoc", "components": ["ai", "mcp-server", "agent-mem"] },
-        { "title": "Tutorials", "startPage": "tutorials::index.adoc", "components": ["tutorials"] },
+        { "title": "AI Data Plane",
+          "startPage": "ai:get-started:intro.adoc",
+          "components": ["ai", "mcp-server", "agent-mem"] ,
+          "expandHeaderLevels": 1
+        },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
           "color": "#f2a541"
@@ -218,7 +221,7 @@ asciidoc:
     page-disable-chatbot: false
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/prod-246/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/prod-247/ui-bundle.zip
 content:
   branches: master
   sources:
@@ -264,6 +267,7 @@ content:
         - release/1.1
     - url: https://github.com/couchbaselabs/docs-mcp-server
       branches:
+        - release/1.1
         - release/1.0
         - cloud
     - url: https://github.com/couchbase/couchbase-operator
