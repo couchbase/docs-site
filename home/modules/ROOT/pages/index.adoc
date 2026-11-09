@@ -279,6 +279,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .PHP SDK
+* xref:4.6@php-sdk:hello-world:start-using-sdk.adoc[Version 4.6]
 * xref:4.5@php-sdk:hello-world:start-using-sdk.adoc[Version 4.5]
 * xref:4.4@php-sdk:hello-world:start-using-sdk.adoc[Version 4.4]
 * xref:4.3@php-sdk:hello-world:start-using-sdk.adoc[Version 4.3]
