@@ -188,27 +188,30 @@ site:
         { "title": "AI Data Plane",
           "startPage": "ai:get-started:intro.adoc",
           "components": ["ai", "agent-mem", "mcp-server", "managed-mcp-server"],
-          "expandHeaderLevels": 1,
           "subGroups": [
             {
-              "title": "AI Data Plane Overview",
+              "title": "AI Data Plane",
               "startPage": "ai:get-started:intro.adoc",
-              "components": ["ai"]
+              "components": ["ai"],
+              "expandHeaderLevels": 1
             },
             {
-              "title": "Couchbase Agent Memory",
+              "title": "Agent Memory",
               "startPage": "agent-mem::about-agent-mem.adoc",
-              "components": ["agent-mem"]
+              "components": ["agent-mem"],
+              "expandHeaderLevels": 1
             },
             {
-              "title": "Couchbase MCP Server Managed",
+              "title": "MCP Server Managed",
               "startPage": "managed-mcp-server::about-managed-mcp.adoc",
-              "components": ["managed-mcp-server"]
+              "components": ["managed-mcp-server"],
+              "expandHeaderLevels": 1
             },
             {
-              "title": "Couchbase MCP Server Self-Managed",
+              "title": "MCP Server Self-Managed",
               "startPage": "mcp-server:reference:common-overview.adoc",
-              "components": ["mcp-server"]
+              "components": ["mcp-server"],
+              "expandHeaderLevels": 1
             }
           ]
         },
