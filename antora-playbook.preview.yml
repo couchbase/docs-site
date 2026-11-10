@@ -166,35 +166,27 @@ site:
           ]
         },
         { "title": "AI Data Plane",
-          "startPage": "ai:get-started:intro.adoc",
-          "components": ["ai", "agent-mem", "mcp-server", "managed-mcp-server"],
-          "subGroups": [
-            {
-              "title": "AI Data Plane",
-              "startPage": "ai:get-started:intro.adoc",
-              "components": ["ai"],
-              "expandHeaderLevels": 1
-            },
-            {
-              "title": "Agent Memory",
-              "startPage": "agent-mem::about-agent-mem.adoc",
-              "components": ["agent-mem"],
-              "expandHeaderLevels": 1
-            },
-            {
-              "title": "MCP Server Managed",
-              "startPage": "managed-mcp-server::about-managed-mcp.adoc",
-              "components": ["managed-mcp-server"],
-              "expandHeaderLevels": 1
-            },
-            {
-              "title": "MCP Server Self-Managed",
-              "startPage": "mcp-server:reference:common-overview.adoc",
-              "components": ["mcp-server"],
-              "expandHeaderLevels": 1
-            }
-          ]
-        },
+            "startPage": "ai:get-started:intro.adoc",
+            "subGroups": [
+              {
+                "title": "AI Data Plane",
+                "startPage": "ai:get-started:intro.adoc",
+                "components": ["ai"],
+                "expandHeaderLevels": 1
+              },
+              {
+                "title": "Agent Memory",
+                "startPage": "agent-mem::about-agent-mem.adoc",
+                "components": ["agent-mem"],
+                "expandHeaderLevels": 1
+              },
+              {
+                "title": "MCP Server",
+                "startPage": "mcp-server:reference:common-overview.adoc",
+                "components": ["mcp-server", "managed-mcp-server"]
+              }
+            ]
+          },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
           "color": "#f2a541"
