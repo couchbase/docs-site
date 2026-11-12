@@ -87,7 +87,9 @@ function buildRecords (opts) {
       const records = extractRecords({ url, $ })
       stats.pages++
       if (!records.length) stats.empty++
-      pageRecords.set(url, records)
+      // only --compare needs the records afterwards; holding the whole
+      // site's records in memory otherwise is wasted
+      if (opts.compare) pageRecords.set(url, records)
       for (const record of records) {
         const line = JSON.stringify(record)
         const size = Buffer.byteLength(line)
