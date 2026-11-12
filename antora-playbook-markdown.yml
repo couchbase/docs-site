@@ -203,10 +203,27 @@ site:
           ]
         },
         { "title": "AI Data Plane",
-          "startPage": "ai:get-started:intro.adoc",
-          "components": ["ai", "mcp-server", "agent-mem"] ,
-          "expandHeaderLevels": 1
-        },
+            "startPage": "ai:get-started:intro.adoc",
+            "subGroups": [
+              {
+                "title": "AI Data Plane",
+                "startPage": "ai:get-started:intro.adoc",
+                "components": ["ai"],
+                "expandHeaderLevels": 1
+              },
+              {
+                "title": "Agent Memory",
+                "startPage": "agent-mem::about-agent-mem.adoc",
+                "components": ["agent-mem"],
+                "expandHeaderLevels": 1
+              },
+              {
+                "title": "MCP Server",
+                "startPage": "mcp-server:reference:common-overview.adoc",
+                "components": ["mcp-server", "managed-mcp-server"]
+              }
+            ]
+          },
         { "title": "Contribute",
           "components": ["home", "styleguide", "ui-ux", "pendo"],
           "color": "#f2a541"
@@ -427,6 +444,7 @@ content:
         - temp/4.4
     - url: https://github.com/couchbase/docs-sdk-php
       branches:
+        - release/4.6
         - temp/4.5
         - temp/4.4
         - temp/4.3
