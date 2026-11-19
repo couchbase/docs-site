@@ -1,62 +1,28 @@
 # RUN:
-#  scripts/patch-cutdown-playbook antora-playbook.preview2
+#  scripts/patch-cutdown-playbook antora-playbook.preview7
 
 antora:
   extensions:
   - ./lib/report-tree.js
-  - ./lib/merge-prs.js
 
 site:
-  title: "Couchbase Docs - Server 8.5 Preview"
+  title: "Couchbase Docs - Capella Alerts Preview"
   robots: disallow
 
 content:
-  # prune: 1
-  $select:
-    - 'none'
-    #- '**/docs-analytics'
-    #- '**/docs-server'
-    #- '**/docs-devex'
-    #- '**/cb-swagger'
-    #- '**/couchbase-cli'
-    #- '**/backup'
+  $prune: 1
 
   sources:
-   - url: .
-     start_path: home
-     branches: HEAD
-
-   - url: https://github.com/couchbase/docs-server
+   - url: https://github.com/couchbase/docs-capella
      branches:
-       release/8.5+*
-
-   - url: https://github.com/couchbaselabs/docs-devex
-     branches:
-       - release/8.5+*
-       # - capella
-
-   - url: https://github.com/couchbaselabs/cb-swagger
-     branches: release/8.5
-     start_path: docs
-
-   - url: https://github.com/couchbase/docs-analytics
-     branches: release/8.5
-
-    # confirmed `master` for now via Safian Ali
-   - url: https://github.com/couchbase/couchbase-cli
-     branches: master
-     start_path: docs
-
-   - url: https://github.com/couchbase/backup
-     branches: master
-     start_path: docs
+       $replace: AV-136175_improve-alert-experience
 
 asciidoc:
   attributes:
 
     # metadata for Hakim's benefit
-    docs-contact: Supritha
+    docs-contact: Zeba / Rebecca
 
     page-show-preview-banner: true
     page-hide-preview-link: true
-    page-watermark: "Release 8.5 Preview"
+    page-watermark: "Capella Alerts Preview"
