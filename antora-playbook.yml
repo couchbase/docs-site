@@ -363,7 +363,7 @@ content:
   - url: https://github.com/couchbase/docs-sdk-php
     branches: [release/4.6, temp/4.5, temp/4.4, temp/4.3]
   - url: https://github.com/couchbase/docs-sdk-python
-    branches: [release/4.6, temp/4.5, temp/4.4, temp/4.3]
+    branches: [release/4.7, release/4.6, temp/4.5, temp/4.4, temp/4.3]
   - url: https://github.com/couchbase/docs-sdk-ruby
     branches: [release/3.9, temp/3.8, temp/3.7, temp/3.6]
 
