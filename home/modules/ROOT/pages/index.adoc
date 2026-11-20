@@ -211,6 +211,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Python SDK
+* xref:4.7@python-sdk:hello-world:start-using-sdk.adoc[Version 4.7]
 * xref:4.6@python-sdk:hello-world:start-using-sdk.adoc[Version 4.6]
 * xref:4.5@python-sdk:hello-world:start-using-sdk.adoc[Version 4.5]
 * xref:4.4@python-sdk:hello-world:start-using-sdk.adoc[Version 4.4]
