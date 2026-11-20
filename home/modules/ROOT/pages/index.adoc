@@ -169,6 +169,7 @@ Find current documentation on the https://docs.couchbase.com/home/cloud.html[Cap
 
 [.tile]
 .Node.js SDK
+* xref:4.8@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.8]
 * xref:4.7@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.7]
 * xref:4.6@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.6]
 * xref:4.5@nodejs-sdk:hello-world:start-using-sdk.adoc[Version 4.5]
