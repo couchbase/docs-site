@@ -43,4 +43,4 @@ asciidoc:
 # Search POC only: UI bundle built from couchbase/docs-ui#211
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/search-typesense-poc-1/ui-bundle.zip
+    url: https://github.com/couchbase/docs-ui/releases/download/search-pagefind-poc-1/ui-bundle.zip
