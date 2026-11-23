@@ -157,7 +157,18 @@ const overlap = (a, b, n) => {
 const pct = (x) => `${Math.round(x * 100)}%`.padStart(4)
 const short = (u) => u.replace(/^https?:\/\/[^/]+\//, '')
 
-async function compare (file, verbose, summary) {
+// The engine compared with Algolia: which components it holds, and its top
+// page URLs for a query. Pagefind supplies its own (search-pagefind.js).
+const typesenseEngine = {
+  name: 'Typesense',
+  async components () {
+    const facets = await typesense('GET', `/collections/${config.ALIAS}/documents/search?q=*&facet_by=component&max_facet_values=500&per_page=0`)
+    return facets.facet_counts[0].counts.map((c) => c.value)
+  },
+  search: searchTypesense,
+}
+
+async function compare (file, verbose, summary, engine = typesenseEngine) {
   if (!file) throw new Error('compare needs a file of queries, one per line')
   const algolia = {
     appId: process.env.ALGOLIA_APP_ID,
@@ -171,14 +182,13 @@ async function compare (file, verbose, summary) {
   const queries = fs.readFileSync(file, 'utf8').split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith('#'))
 
   // compare like with like: only the components that are actually loaded
-  const facets = await typesense('GET', `/collections/${config.ALIAS}/documents/search?q=*&facet_by=component&max_facet_values=500&per_page=0`)
-  const components = facets.facet_counts[0].counts.map((c) => c.value)
-  console.log(`Components loaded: ${components.join(', ')}\n`)
+  const components = await engine.components()
+  console.log(`${engine.name}: ${components.length} components loaded: ${components.join(', ')}\n`)
   console.log('top1  top5 top10  query')
 
   const totals = { top1: 0, top5: 0, top10: 0, empty: 0 }
   for (const q of queries) {
-    const [a, t] = await Promise.all([searchAlgolia(algolia, q, components), searchTypesense(q, components)])
+    const [a, t] = await Promise.all([searchAlgolia(algolia, q, components), engine.search(q, components)])
     const top1 = a.length && t.length && a[0] === t[0] ? 1 : (!a.length && !t.length ? 1 : 0)
     const top5 = overlap(a, t, 5)
     const top10 = overlap(a, t, 10)
@@ -212,7 +222,11 @@ async function main () {
   else throw new Error('Usage: search-typesense.js load <records.ndjson> | compare <queries.txt> [--verbose]')
 }
 
-main().catch((err) => {
-  console.error(err.message)
-  process.exit(1)
-})
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(err.message)
+    process.exit(1)
+  })
+}
+
+module.exports = { compare }
