@@ -1,0 +1,78 @@
+# Queries for scripts/search-typesense.js compare.
+#
+# Placeholder set, written by hand to cover the Capella, Operator, Python SDK
+# and Cloud Native Gateway docs. Replace with the real top searches and
+# no-result searches exported from Algolia's analytics.
+
+# Capella
+create cluster
+private endpoint
+vpc peering
+restore backup
+api key
+allowed ip
+app services
+free tier
+billing
+audit log
+sso
+organization roles
+scopes and collections
+vector search
+xdcr
+import data
+query workbench
+alerts
+
+# Operator
+helm
+helm install
+upgrade operator
+tls
+certificate rotation
+persistent volume
+autoscaling
+server groups
+couchbasecluster
+rbac
+prometheus
+logging
+openshift
+custom resource definition
+
+# Python SDK
+install python sdk
+transactions
+kv operations
+subdocument
+durability
+timeout
+error handling
+connection string
+full text search
+analytics
+async
+
+# Cloud Native Gateway
+cloud native gateway
+data api
+ingress
+load balancer
+
+# typos
+kuberntes
+authentification
+replicaton
+certficate
+
+# synonyms from the index settings
+ttl
+provision database
+troubleshooting
+cng
+paginate
+
+# prefix (search as you type)
+auth
+couchbaseb
+back
