@@ -1,0 +1,11 @@
+# Search POC preview only: remove before merging.
+#
+# A preview normally builds just this repository's own pages. These sources
+# add real product pages, so the header search bar can be tried where it
+# matters: it narrows results to the product of the page you are on.
+sources:
+  docs-server:
+    branches: [release/8.0]
+  docs-sdk-common: {}
+  docs-sdk-java:
+    branches: [release/3.13]

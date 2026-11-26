@@ -29,7 +29,8 @@
   },
   "devDependencies": {
     "cheerio": "^1.0.0",
-    "mocha": "^11.5.0"
+    "mocha": "^11.5.0",
+    "pagefind": "^1.6.0"
   },
   "scripts": {
     "test": "mocha"
